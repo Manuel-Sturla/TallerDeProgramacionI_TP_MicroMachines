@@ -3,3 +3,6 @@ Duda 2: Las partidas tienen distintas configuraciones de Vel. maxima / etc.?
 Duda 3: Como hacemos las posiciones en la carrera (1ro, 2do ,etc) durante la misma. Para los mods y mostrarlo en el cliente. --> polares?
 Duda 4: Matriz del mapa tiene que ser muy grande? Para tener en cada posicion pasto o pista.
 Duda 5: Empiezan todos en la misma posicion?
+Duda 6: Para una libería dinamica, yo creo el MyLibreria.so, pero tengo que siempre tener este Y el MiLibreria.h para poder usarla?
+		Como se puede hacer para no tener que copiar el .so y el .h en la carpeta de con las fuentes del resto del programa?
+		Y es necesario instalar la librería si o si en cada equipo para poder usarla?

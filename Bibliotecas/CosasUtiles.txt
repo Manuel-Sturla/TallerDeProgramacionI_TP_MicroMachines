@@ -1,0 +1,7 @@
+Cosas utiles,
+Para ejecutar el Cmake : rm -r build && mkdir build && cd build && cmake ..
+Links: https://gitlab.kitware.com/cmake/community/wikis/doc/cmake/RPATH-handling
+https://stackoverflow.com/questions/17511496/how-to-create-a-shared-library-with-cmake#17511705
+https://codingnest.com/basic-cmake-part-2/
+
+https://github.com/Taller-de-Programacion/compilacion/tree/master/cmake/ej-zip

@@ -4,7 +4,7 @@ project(MicroMachines)
 
 add_executable(tp main.cpp)
 
-#Para agregar librerias
+#Para crear librerias
 #add_library(nombre fuentes.cpp)
 #Para linkear librerias
 #target_link_libraries(nombre libreria)
