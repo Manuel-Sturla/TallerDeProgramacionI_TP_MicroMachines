@@ -9,11 +9,10 @@ int main(int argc, char** argv){
         return 0;
     }
     try {
-        Ventana ventana(600, 600);
+        Ventana ventana(800, 800);
         Textura textura("fondo.bmp", ventana.getRenderizador());
-        Textura textura1("imagen.bmp", ventana.getRenderizador());
-        textura.mostrar(1500);
-        textura1.mostrar(1500);
+        textura.renderizarTextura("imagen.bmp", 800/2, 200);
+        textura.mostrar(500);
     } catch(const std::runtime_error& e){
         std::cerr<<e.what()<<'\n';
         SDL_Quit();
