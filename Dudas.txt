@@ -8,3 +8,4 @@ Duda 6: Para una libería dinamica, yo creo el MyLibreria.so, pero tengo que sie
 		Y es necesario instalar la librería si o si en cada equipo para poder usarla?
 Duda 7: El interprete de Lua, debe transformar datos de C++ a lo que reciba el script y ejecutarlo cada vez? (Y luego transformar la respuesta en una accion)
 		Hay que usar como una API de Lua? Se escriben en Lua o C++?
+Duda 8: Deberíamos haberte echo todas estas dudas por mail?
