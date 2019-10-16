@@ -9,3 +9,41 @@ Duda 6: Para una libería dinamica, yo creo el MyLibreria.so, pero tengo que sie
 Duda 7: El interprete de Lua, debe transformar datos de C++ a lo que reciba el script y ejecutarlo cada vez? (Y luego transformar la respuesta en una accion)
 		Hay que usar como una API de Lua? Se escriben en Lua o C++?
 Duda 8: Deberíamos haberte echo todas estas dudas por mail?
+Duda 9: Las partidas pueden tener la cantidad de usuarios maxima y se inicia cuando se llena? O tiene que tener en espera y que alguno pueda iniciarla?
+Duda 10: Podemos cuando termine el 1ro, dejar un tiempo x y luego dar por terminada la carrera? 
+Dudo 11: Que mandamos por los sockets? dos Chars? DIR y Press
+Duda 12: Cuestiones de P. Orientada a eventos?
+Duda 13: Como ver los choques: se chequea el choque antes y luego actualiza (mutex) o chequea y actualiza todo con el mutex.
+
+Box2d tiene un listener de contacto, para que cuando estas en contacto con otro objeto, te avisa que estas en contacto. Tendríamos que modelar ciertas figuras ggeometricas que compondran la pista con los objetos de box2d. 
+Podes aplicar fuerzas en carritos, 
+
+Un hilo que recibe.
+
+Ver que van a estar hcaciend  los hilos la mayor parte del tiempo. 
+El clienteProxy siempre va a estar escuchando 
+Otro para comunicarte con el cliente. 
+Un hilo que envia y recibe por cada cliente, porque sino un cliente lento te limita el resto de las comunicacinoes con el resto.
+
+Logicas de si se desconecta un jugador: el juego sigue / gana el otro.
+
+box2d: tic, cuantos milissegundo de mi modelo fisico quiero que pasen. Haces un mundo con rozamiento... sin g 
+
+Yo tengo cuadrados y rectangulos que interactuan. Cuadrados cuerpo rigido, entonces cuando ylo tiro interactua con otras coas. (material pasto con rozamiento)
+Lista de objetos box2d, a los que les podemos decir en que posicione esta. (mundo simulate, y le preguntas a todos los objetos en que estado estan)
+
+El servidor le podemos mandar auto un en posicion tal y tal... Pista de tal manera. 
+Guardar el mapa en el cliente y mostrar d e a partes. 
+
+
+Tengo que levantar la libreria con dlopen
+Tengo que hacer una api compatible con C (que reciba puntero al objeto) y crear el Header, con extern C para poder llamar a la funcion.
+Un wrapper para la biblioteca dinamica, que hace dlopen en el constructor, y dl close en el destructor. 
+
+En lua, tener un wrapper del coso de Lua que llame en el constructor a lua_start, que permita llamar a funciones directamente haciendo los get  de las funciones etc.
+
+nm para ver las librerías y explorarlas
+
+c++filt
+ltrace 
+nm | c++filt
