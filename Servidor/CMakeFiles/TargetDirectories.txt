@@ -1,0 +1,3 @@
+/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/rebuild_cache.dir
+/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/tp.dir
+/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/edit_cache.dir
