@@ -1,1 +1,1 @@
-/usr/bin/c++    -static-libgcc -static-libstdc++ CMakeFiles/tp.dir/main.cpp.o  -o tp 3rd_party/Box2D-cmake/libBox2D-cmake.a 
+/usr/bin/c++    -static-libgcc -static-libstdc++ CMakeFiles/tp.dir/main.cpp.o CMakeFiles/tp.dir/Pista.cpp.o  -o tp 3rd_party/Box2D-cmake/libBox2D-cmake.a 

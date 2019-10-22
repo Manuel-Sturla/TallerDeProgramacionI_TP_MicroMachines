@@ -1,16 +1,14 @@
 #include <stdio.h>
 #include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
+#include "Pista.h"
 int main() {
-  // El mundo no tiene gravidad
-  b2Vec2 gravity(0.0f, 0.0f);
-
-  // Construct a world object, which will hold and simulate the rigid bodies.
-  b2World world(gravity);
+  b2Vec2 gravedad(0.0f, 0.0f);
+  Pista pista(gravedad);
 
   b2BodyDef bodyDef;
   bodyDef.type = b2_dynamicBody;
   bodyDef.position.Set(0.0f, 4.0f);
-  b2Body* body = world.CreateBody(&bodyDef);
+  b2Body* body = pista.agregarCarro(bodyDef);
 
 
   // Define another box shape for our dynamic body.
@@ -43,7 +41,7 @@ int main() {
   {
     // Instruct the world to perform a single step of simulation.
     // It is generally best to keep the time step and iterations fixed.
-    world.Step(timeStep, velocityIterations, positionIterations);
+    pista.simular(timeStep, velocityIterations, positionIterations);
 
     // Now print the position and angle of the body.
     b2Vec2 position = body->GetPosition();
@@ -51,7 +49,7 @@ int main() {
 
     printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
   }
-  
+
   //Aplico una fuerza2 para frenar
   b2Vec2 fuerza2(-100.0f, 0.0f);
   body -> ApplyForceToCenter(fuerza2, true);
@@ -61,7 +59,7 @@ int main() {
   {
     // Instruct the world to perform a single step of simulation.
     // It is generally best to keep the time step and iterations fixed.
-    world.Step(timeStep, velocityIterations, positionIterations);
+    pista.simular(timeStep, velocityIterations, positionIterations);
 
     // Now print the position and angle of the body.
     b2Vec2 position = body->GetPosition();
