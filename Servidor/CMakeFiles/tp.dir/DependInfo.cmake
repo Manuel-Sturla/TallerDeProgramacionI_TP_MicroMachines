@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/hugo/Escritorio/MicroMachines/Servidor/Carro.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/tp.dir/Carro.cpp.o"
   "/home/hugo/Escritorio/MicroMachines/Servidor/Pista.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/tp.dir/Pista.cpp.o"
   "/home/hugo/Escritorio/MicroMachines/Servidor/main.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/tp.dir/main.cpp.o"
   )

@@ -136,6 +136,33 @@ Box2D-cmake/fast:
 	$(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build
 .PHONY : Box2D-cmake/fast
 
+Carro.o: Carro.cpp.o
+
+.PHONY : Carro.o
+
+# target to build an object file
+Carro.cpp.o:
+	$(MAKE) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/Carro.cpp.o
+.PHONY : Carro.cpp.o
+
+Carro.i: Carro.cpp.i
+
+.PHONY : Carro.i
+
+# target to preprocess a source file
+Carro.cpp.i:
+	$(MAKE) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/Carro.cpp.i
+.PHONY : Carro.cpp.i
+
+Carro.s: Carro.cpp.s
+
+.PHONY : Carro.s
+
+# target to generate assembly for a file
+Carro.cpp.s:
+	$(MAKE) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/Carro.cpp.s
+.PHONY : Carro.cpp.s
+
 Pista.o: Pista.cpp.o
 
 .PHONY : Pista.o
@@ -200,6 +227,9 @@ help:
 	@echo "... tp"
 	@echo "... edit_cache"
 	@echo "... Box2D-cmake"
+	@echo "... Carro.o"
+	@echo "... Carro.i"
+	@echo "... Carro.s"
 	@echo "... Pista.o"
 	@echo "... Pista.i"
 	@echo "... Pista.s"
