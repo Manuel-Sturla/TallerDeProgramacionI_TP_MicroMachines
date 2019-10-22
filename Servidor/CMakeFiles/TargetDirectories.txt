@@ -1,0 +1,6 @@
+/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/rebuild_cache.dir
+/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/tp.dir
+/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/edit_cache.dir
+/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/rebuild_cache.dir
+/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir
+/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/edit_cache.dir
