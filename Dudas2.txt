@@ -1,0 +1,2 @@
+Duda 1: Para la librería dinamica, el stuct (aka mi clase) debe tener solo atributos tipo C. O podría tener clases C++
+Duda 2: Necesariamente, siempre para las bib dinamicas voy a tener que generar el .so y moverlo a una carpeta de librerías de mi programa original?
