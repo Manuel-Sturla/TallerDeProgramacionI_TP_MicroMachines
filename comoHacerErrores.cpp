@@ -2,7 +2,7 @@
 
 class ExcepcionConPos : public std::runtime_error {
 private:
-	static std::string crearMensaje(const char* archivo, int linea, std::string mensaje){
+	static std::string crearMensaje(const char* archivo, int linea, std::string& mensaje){
 		std::string falla("Error: " + mensaje);
 		falla.append(" en el archivo: ");
 		falla.append(archivo);

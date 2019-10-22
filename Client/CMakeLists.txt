@@ -6,7 +6,7 @@ set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
 include_directories(${PROJECT_SOURCE_DIR}/include)
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 
-set(SOURCE_FILES main.cpp Textura.cpp Textura.h Ventana.cpp Ventana.h)
+set(SOURCE_FILES main.cpp Juego/Juego.cpp Juego/Juego.h Juego/Partida.cpp Juego/Partida.h Comandos/AdministradorComandos.cpp Comandos/AdministradorComandos.h Comandos/Comando.h Comandos/ComandoAcelerar.cpp Comandos/ComandoAcelerar.h Comandos/ComandoFrenar.cpp Comandos/ComandoFrenar.h Servidor.cpp Servidor.h Comandos/ComandoIzquierda.cpp Comandos/ComandoIzquierda.h Comandos/ComandoDerecha.cpp Comandos/ComandoDerecha.h LectorTeclado.cpp LectorTeclado.h Excepciones/ExcepcionConPos.h Sdl/Ventana.cpp Sdl/Ventana.h Sdl/Renderizador.cpp Sdl/Renderizador.h)
 add_executable(OpenGLTest ${SOURCE_FILES})
 
 #pkg_search_module(SDL2 REQUIRED sdl2)
