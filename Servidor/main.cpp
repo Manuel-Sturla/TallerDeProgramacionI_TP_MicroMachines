@@ -34,11 +34,15 @@ int main() {
   int32 velocityIterations = 6;
   int32 positionIterations = 2;
 
+  //Aplico una fuerza
+  b2Vec2 fuerza(10.0f, 0.0f);
+
   // This is our little game loop.
   for (int32 i = 0; i < 60; ++i)
   {
     // Instruct the world to perform a single step of simulation.
     // It is generally best to keep the time step and iterations fixed.
+    body -> ApplyForceToCenter(fuerza, true);
     world.Step(timeStep, velocityIterations, positionIterations);
 
     // Now print the position and angle of the body.
@@ -47,7 +51,6 @@ int main() {
 
     printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
   }
-  return 0;
-  return 0;
 
+  return 0;
 }
