@@ -12,6 +12,9 @@ typedef struct PruebaMod{
 extern "C"{
 	void PruebaMod_crear(PruebaMod_t* self, int num);
 	int PruebaMod_obtener_mod(PruebaMod_t* self);
+	int sumar_1(int num){
+		return num +1;
+	}
 }
 
 

@@ -12,15 +12,15 @@ int main(){
 	//Prueba bliblioteca dinamica
 	std::cout << "Inicio pruebas de libreria dinamica" << std::endl;
 
-	void* handle = dlopen("/lib/libPruebaMod.so", RTLD_LAZY);
+	void* handle = dlopen("lib/libPruebaMod.so", RTLD_LAZY);
     if (!handle) {
         fprintf(stderr, "%s\n", dlerror());
         exit(EXIT_FAILURE);
     }
+    int (*sumar_1)(int);
+    *(void **) (&sumar_1) = dlsym(handle, "sumar_1");
 
-	std::cout << "El resultado del vector es: ";
-	for (auto num : v)
-		std::cout << num << ", ";
-	std::cout << std::endl;
+    int num = 2;
+	std::cout << "El resultado es: " << (*sumar_1)(num) << std::endl;
 	return 0;
 }
