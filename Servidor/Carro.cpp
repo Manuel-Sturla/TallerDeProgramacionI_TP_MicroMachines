@@ -39,6 +39,9 @@ void Carro::frenar() {
 void Carro::imprimirPosicion() {
   b2Vec2 position = body->GetPosition();
   float32 angle = body->GetAngle();
-
+  printf("Posicion:");
   printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
+  b2Vec2 velocidad = body->GetLinearVelocity();
+  printf("Velocidad:");
+  printf("%4.2f %4.2f\n", velocidad.x, velocidad.y);
 }
