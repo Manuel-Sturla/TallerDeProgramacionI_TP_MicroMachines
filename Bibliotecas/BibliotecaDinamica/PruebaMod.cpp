@@ -1,8 +1,9 @@
 #include "PruebaMod.h"
 
-PruebaMod::PruebaMod(std::vector<int>& v): numeros(v){}
+void PruebaMod_crear(PruebaMod_t* self, int num){
+    self->modificador = num;
+}
 
-void PruebaMod::activar(){
-	for (int& num : numeros)
-		num = num * modificador;
+int PruebaMod_obtener_mod(PruebaMod_t* self){
+    return self->modificador;
 }

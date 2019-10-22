@@ -1,0 +1,4 @@
+Duda 1: Para la librería dinamica, el stuct (aka mi clase) debe tener solo atributos tipo C. O podría tener clases C++
+Duda 2: Necesariamente, siempre para las bib dinamicas voy a tener que generar el .so y moverlo a una carpeta de librerías de mi programa original?
+Duda 3: Es necesario que tenga un struct? O podría hacer que mi librería dinamica solo tenga funciones? Es decir que no este tan orientada a "objetos"
+Duda 4: Si tengo que hacer el struct, como lo creo?

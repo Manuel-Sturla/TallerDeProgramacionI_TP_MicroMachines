@@ -1,13 +1,21 @@
 #ifndef PRUEBA_MOD_H
 #define PRUEBA_MOD_H
 
+#include <stdlib.h>
 #include <vector>
-class PruebaMod{
+
+typedef struct PruebaMod{
 	int modificador = 3;
-	std::vector<int>& numeros;
-public:
-	PruebaMod(std::vector<int>& v);
-	void activar();
-};
+	//std::vector<int>& numeros;
+}PruebaMod_t;
+
+extern "C"{
+	void PruebaMod_crear(PruebaMod_t* self, int num);
+	int PruebaMod_obtener_mod(PruebaMod_t* self);
+	int sumar_1(int num){
+		return num +1;
+	}
+}
+
 
 #endif

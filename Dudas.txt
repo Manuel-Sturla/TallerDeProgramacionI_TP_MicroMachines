@@ -46,4 +46,4 @@ nm para ver las librerías y explorarlas
 
 c++filt
 ltrace 
-nm | c++filt
+nm | c++filtnm | c++filt
