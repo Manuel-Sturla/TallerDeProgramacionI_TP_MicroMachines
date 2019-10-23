@@ -16,6 +16,10 @@ class Plugin {
 public:
     Plugin(std::string ruta);
     int activar(int param); //esta es la funcion que transoforma de cosas de C++ a C para llamarla
+    Plugin(Plugin&& otro);
+    Plugin& operator=(Plugin&& otro);
+    Plugin(const Plugin& otro) = delete;
+    Plugin& operator=(const Plugin&) = delete;
 };
 
 

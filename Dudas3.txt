@@ -1,1 +1,2 @@
 Duda 1: Por que el cmake cuando lo ejecuto a mano, a la dependencia de BibliotecaDinamica me la crea y la guarda, mientras que el del clion no. entonces no la puedo encontrar //temporalmente la voy a copiar a mano para poder usarlo y listo
+

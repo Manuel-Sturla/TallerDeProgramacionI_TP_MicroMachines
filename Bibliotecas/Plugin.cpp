@@ -11,3 +11,21 @@ Plugin::Plugin(std::string ruta) : biblioteca(ruta){
 int Plugin::activar(int param) {
     return funcion_activar(param);
 }
+
+Plugin::Plugin(Plugin &&otro) :biblioteca(std::move(biblioteca)) {
+    nombre_func = otro.nombre_func;
+    funcion_activar = otro.funcion_activar;
+
+    otro.funcion_activar = nullptr;
+    otro.nombre_func = "";
+}
+
+Plugin &Plugin::operator=(Plugin &&otro) {
+    biblioteca = std::move(otro.biblioteca);
+    nombre_func = otro.nombre_func;
+    funcion_activar = otro.funcion_activar;
+
+    otro.funcion_activar = nullptr;
+    otro.nombre_func = "";
+    return *this;
+}
