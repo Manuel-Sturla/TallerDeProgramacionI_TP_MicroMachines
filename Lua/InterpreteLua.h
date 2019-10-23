@@ -16,6 +16,7 @@ class InterpreteLua {
 public:
     InterpreteLua();
     ~InterpreteLua();
+    //ejecutar funcion.
 };
 
 

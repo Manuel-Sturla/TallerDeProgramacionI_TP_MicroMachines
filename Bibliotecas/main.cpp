@@ -1,4 +1,6 @@
 #include "BibliotecaEstatica/utilidades.h"
+#include "LibreriaDinamica.h"
+#include "ErrorLibreria.h"
 //#include "BibliotecaDinamica/PruebaMod.h"
 #include <vector>
 #include <iostream>
@@ -12,15 +14,17 @@ int main(){
 	//Prueba bliblioteca dinamica
 	std::cout << "Inicio pruebas de libreria dinamica" << std::endl;
 
-	void* handle = dlopen("lib/libPruebaMod.so", RTLD_LAZY);
-    if (!handle) {
-        fprintf(stderr, "%s\n", dlerror());
-        exit(EXIT_FAILURE);
-    }
-    int (*sumar_1)(int);
-    *(void **) (&sumar_1) = dlsym(handle, "sumar_1");
+	LibreriaDinamica libreria("lib/libPruebaMod.so");
 
-    int num = 2;
-	std::cout << "El resultado es: " << (*sumar_1)(num) << std::endl;
+    int (*sumar_1)(int);
+    try{
+        *(void**)(&sumar_1) = libreria.buscar_funcion("sumar_1");
+        int num = 2;
+        std::cout << "El resultado es: " << (*sumar_1)(num) << std::endl;
+    }catch(ErrorLibreria &e){
+        std::cerr << e.what() << std::endl;
+    }
+
+
 	return 0;
 }

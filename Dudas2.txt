@@ -2,3 +2,26 @@ Duda 1: Para la librería dinamica, el stuct (aka mi clase) debe tener solo atri
 Duda 2: Necesariamente, siempre para las bib dinamicas voy a tener que generar el .so y moverlo a una carpeta de librerías de mi programa original?
 Duda 3: Es necesario que tenga un struct? O podría hacer que mi librería dinamica solo tenga funciones? Es decir que no este tan orientada a "objetos"
 Duda 4: Si tengo que hacer el struct, como lo creo?
+Duda 5: Donde tengo que guardar el .so? Porque ponerlo adentro de build me parece feo
+Duda 6: Tengo que tener una clase wrapper de cada Plugin que sepa como castear las funciones? No pierde la idea de la librería dinamica?
+
+Huguito
+fixture tiene colisiones y sensor no
+los sensores tiene un begin contact
+das propiedades al cuerpo con create fixture le puedes dar is sensor para que sea un sensor
+hardcodear mensajes para mandar a diego y una vez que diego renderice vemos si hace bien las cosas
+hacer ruedas para que doble menos violentamente 
+
+
+Manu
+Constructor por copia eliminado en la bliblioteca dinamica y poner por moviemiento --> excepcion en el constructor.
+
+Todos los plugins tienen la misma firma.
+Plugin tiene una biblioteca 
+Podria haber varios plugins por herencia que ejecuten una funcion en particular de su biblioteca. 
+Que el plugin cuando se construye se quede con la funcion. para no buscarla todas las veces.
+Empiezo, con que la librería no tenga structs, y sea una sola. Si se hace muy feo, empezar a dividir en structs. 
+
+extern C --> usar objetos de C para la api. Los structs que tenga solo cosas de C porque son las que reciben, las funciones de la API y tiene que ser puro C.
+
+LUA: el dofile, ejecuta el archivo y queda en el interprete sin "cerrarlo", como si ejecutara un archivo de python con todas definiciones de funciones entonces quedan definidas en el LuaState. 
