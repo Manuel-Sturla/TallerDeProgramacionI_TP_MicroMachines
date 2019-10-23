@@ -17,14 +17,28 @@ int main() {
     try {
         Ventana ventana("microMachines.exe", 640, 480);
         Renderizador renderizador(ventana);
+        renderizador.agregarFondo("pista.png");
+        SDL_Rect pos;
+        pos.x = 100;
+        pos.y = 100;
+        pos.w = 100;
+        pos.h = 100;
+        renderizador.agregarTextura("auto.png", &pos);
         while(comando >= 0){
             comando = LectorTeclado::leer();
             admin.ejecutar(comando);
+            renderizador.imprimir();
         }
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';
         SDL_Quit();
         return 0;
+    } catch (std::exception& e) {
+        std::cerr<<e.what()<<'\n';
+        SDL_Quit();
+    } catch (...) {
+        std::cerr<<"Error desconocido\n";
+        SDL_Quit();
     }
     SDL_Quit();
     return 0;

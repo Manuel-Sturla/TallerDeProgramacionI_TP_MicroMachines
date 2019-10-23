@@ -22,8 +22,21 @@ Renderizador::Renderizador(Ventana &ventana) : ventana(ventana) {
     }
 }
 
+void Renderizador::imprimir() {
+    SDL_RenderPresent(renderizador);
+}
+
+void Renderizador::agregarFondo(const std::string &archivo) {
+    texturas.agregarTextura(renderizador, archivo, nullptr);
+}
+
 Renderizador::~Renderizador() {
     if(renderizador != nullptr){
         SDL_DestroyRenderer(renderizador);
     }
 }
+
+void Renderizador::agregarTextura(const std::string &archivo, SDL_Rect *pos) {
+    texturas.agregarTextura(renderizador, archivo, pos);
+}
+

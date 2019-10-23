@@ -5,5 +5,5 @@ Eso seria mas facil pero lo veo medio sensible porque considero que siempre sale
 3 - Solo el auto tiene angulo, la camara va a moverse en 4 direcciones (izq, der, arr, abj).
 4 - La camara y el auto se mueven siempre juntos para que el auto siempre este en el centro de la pantalla.
 5 - Hacer el update a cada 20ms por box2D
-tener una camara centrada, recibo x,y del box2d tranformo a pixeles delegar. Primero, dibujar todo cada vez despues pasar a dibujar la pista como textura y renderizar varias veces.
-SDL renderer advance.
+tener una camara centrada, recibo x,y del box2d tranformo a pixeles delegar. Primero, dibujar todo cada vez despues
+pasar a dibujar la pista como textura y renderizar varias veces. SDL renderer advance.
