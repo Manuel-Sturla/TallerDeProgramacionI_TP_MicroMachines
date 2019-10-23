@@ -1,6 +1,7 @@
 #include "BibliotecaEstatica/utilidades.h"
-#include "LibreriaDinamica.h"
-#include "ErrorLibreria.h"
+#include "BibliotecaDinamica.h"
+#include "ErrorBiblioteca.h"
+#include "Plugin.h"
 //#include "BibliotecaDinamica/PruebaMod.h"
 #include <vector>
 #include <iostream>
@@ -14,14 +15,14 @@ int main(){
 	//Prueba bliblioteca dinamica
 	std::cout << "Inicio pruebas de libreria dinamica" << std::endl;
 
-	LibreriaDinamica libreria("lib/libPruebaMod.so");
+	BibliotecaDinamica libreria("BibliotecaDinamica/libPruebaMod.so");
 
-    int (*sumar_1)(int);
+
+    Plugin plugin("BibliotecaDinamica/libPruebaMod.so");
     try{
-        *(void**)(&sumar_1) = libreria.buscar_funcion("sumar_1");
         int num = 2;
-        std::cout << "El resultado es: " << (*sumar_1)(num) << std::endl;
-    }catch(ErrorLibreria &e){
+        std::cout << "El resultado es: " << plugin.activar(num) << std::endl;
+    }catch(ErrorBiblioteca &e){
         std::cerr << e.what() << std::endl;
     }
 

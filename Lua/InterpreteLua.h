@@ -16,6 +16,7 @@ class InterpreteLua {
 public:
     InterpreteLua();
     ~InterpreteLua();
+    //Recibir el nobre del script a ejecutar
     //ejecutar funcion.
 };
 
