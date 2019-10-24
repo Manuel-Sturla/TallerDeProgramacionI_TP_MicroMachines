@@ -6,7 +6,8 @@ set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
 include_directories(${PROJECT_SOURCE_DIR}/include)
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 
-set(SOURCE_FILES main.cpp Juego/Juego.cpp Juego/Juego.h Juego/Partida.cpp Juego/Partida.h Comandos/AdministradorComandos.cpp Comandos/AdministradorComandos.h Comandos/Comando.h Comandos/ComandoAcelerar.cpp Comandos/ComandoAcelerar.h Comandos/ComandoFrenar.cpp Comandos/ComandoFrenar.h Servidor.cpp Servidor.h Comandos/ComandoIzquierda.cpp Comandos/ComandoIzquierda.h Comandos/ComandoDerecha.cpp Comandos/ComandoDerecha.h LectorTeclado.cpp LectorTeclado.h Excepciones/ExcepcionConPos.h Sdl/Ventana.cpp Sdl/Ventana.h Sdl/Renderizador.cpp Sdl/Renderizador.h Sdl/VectorDeTexturas.cpp Sdl/VectorDeTexturas.h Sdl/Textura.cpp Sdl/Textura.h)
+set(SOURCE_FILES main.cpp Hilo.h Juego/Juego.cpp Juego/Juego.h Vista/HiloVisualizacion.cpp Vista/HiloVisualizacion.h Comandos/AdministradorComandos.cpp Comandos/AdministradorComandos.h Comandos/Comando.h Comandos/ComandoAcelerar.cpp Comandos/ComandoAcelerar.h Comandos/ComandoFrenar.cpp Comandos/ComandoFrenar.h Servidor.cpp Servidor.h Comandos/ComandoIzquierda.cpp Comandos/ComandoIzquierda.h Comandos/ComandoDerecha.cpp Comandos/ComandoDerecha.h Lector/LectorTeclado.cpp Lector/LectorTeclado.h Excepciones/ExcepcionConPos.h Sdl/Ventana.cpp Sdl/Ventana.h Sdl/Renderizador.cpp Sdl/Renderizador.h Sdl/Textura.cpp Sdl/Textura.h Sdl/Posicion.cpp Sdl/Posicion.h Juego/Partida.cpp Juego/Partida.h Lector/HiloLector.cpp Lector/HiloLector.h Comandos/ComandoCerrar.cpp Comandos/ComandoCerrar.h)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 add_executable(OpenGLTest ${SOURCE_FILES})
 
 #pkg_search_module(SDL2 REQUIRED sdl2)

@@ -1,16 +1,25 @@
 //
-// Created by diego on 22/10/19.
+// Created by diego on 24/10/19.
 //
 
 #ifndef OPENGLTEST_PARTIDA_H
 #define OPENGLTEST_PARTIDA_H
 
 
-#include "../Comandos/AdministradorComandos.h"
+#include "../Vista/HiloVisualizacion.h"
+#include "../Lector/HiloLector.h"
 
 class Partida {
 private:
-    AdministradorComandos admin;
+    Hilo* vista;
+    Hilo* lector;
+
+public:
+    explicit Partida(Servidor& servidor);
+
+    void iniciar();
+
+    virtual ~Partida();
 };
 
 

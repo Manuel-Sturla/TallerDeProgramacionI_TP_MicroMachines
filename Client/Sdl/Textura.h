@@ -8,18 +8,25 @@
 
 #include <SDL2/SDL_render.h>
 #include <string>
+#include "Posicion.h"
 
 class Textura {
 private:
     SDL_Texture* textura;
-    SDL_Rect* posicion;
+    Posicion posicion;
 
 public:
-    Textura(SDL_Renderer* renderizador, const std::string& archivo, SDL_Rect* pos);
+    Textura(SDL_Renderer* renderizador, const std::string& archivo, Posicion& pos);
 
-    void moverA(int posX, int posY);
+    Textura(SDL_Renderer* renderizador, const std::string& archivo);
+
+    void copiar(SDL_Renderer* renderizador);
+
+    void moverA(SDL_Renderer* renderizador, int posX, int posY);
 
     virtual ~Textura();
+
+    void rotar(SDL_Renderer *renderizador, int angulo);
 };
 
 
