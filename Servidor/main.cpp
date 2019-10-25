@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
 #include "Pista.h"
 #include "Carro.h"
 int main() {

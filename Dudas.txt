@@ -38,7 +38,7 @@ Guardar el mapa en el cliente y mostrar d e a partes.
 
 Tengo que levantar la libreria con dlopen
 Tengo que hacer una api compatible con C (que reciba puntero al objeto) y crear el Header, con extern C para poder llamar a la funcion.
-Un wrapper para la biblioteca dinamica, que hace dlopen en el constructor, y dl close en el destructor. 
+Un wrapper para la biblioteca dinamica, que hace dlopen en el constructor, y dl cerrar en el destructor.
 
 En lua, tener un wrapper del coso de Lua que llame en el constructor a lua_start, que permita llamar a funciones directamente haciendo los get  de las funciones etc.
 
