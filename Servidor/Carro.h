@@ -7,6 +7,9 @@ class Carro {
   private:
     b2BodyDef bodyDef;
     b2Body* body;
+    float32 anguloDeGiro;
+
+    void aplicarFuerza()
   public:
     Carro();
 
@@ -16,7 +19,11 @@ class Carro {
 
     void frenar();
 
-    void imprimirPosicion();
+    void giroADerecha();
+
+    void giroAIzquierda();
+
+    void imprimirPosicion(); //FUNCION DE PRUEBA
 };
 
 

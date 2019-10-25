@@ -11,16 +11,17 @@ int main() {
   int32 velocityIterations = 6;
   int32 positionIterations = 2;
 
-  for (int32 i = 0; i < 60; ++i) {
+  carro.giroAIzquierda();
+  for (int32 i = 0; i < 20; ++i) {
     carro.acelerar();
     pista.simular(timeStep, velocityIterations, positionIterations);
     carro.imprimirPosicion();
   }
-
-  for (int32 i = 0; i < 60; ++i) {
+/*
+  for (int32 i = 0; i < 20; ++i) {
     carro.frenar();
     pista.simular(timeStep, velocityIterations, positionIterations);
     carro.imprimirPosicion();
-  }
+  }*/
   return 0;
 }
