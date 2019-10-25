@@ -11,6 +11,7 @@ class Servidor {
 private:
     int posX;
     int posY;
+    int angulo;
 
 public:
     Servidor(int posY, int posX);

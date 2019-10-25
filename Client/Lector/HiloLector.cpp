@@ -15,5 +15,4 @@ void HiloLector::run() {
         comando = LectorTeclado::leer();
     }
     comandos.ejecutar(comando);
-    std::cout<<"Sali\n";
 }

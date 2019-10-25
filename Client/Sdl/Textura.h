@@ -14,11 +14,11 @@ class Textura {
 private:
     SDL_Texture* textura;
     Posicion posicion;
+    int angulo;
 
 public:
-    Textura(SDL_Renderer* renderizador, const std::string& archivo, Posicion& pos);
 
-    Textura(SDL_Renderer* renderizador, const std::string& archivo);
+    Textura(SDL_Renderer* renderizador, const std::string& archivo, Posicion& pos, int angulo);
 
     void copiar(SDL_Renderer* renderizador);
 

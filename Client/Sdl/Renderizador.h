@@ -20,13 +20,15 @@ private:
 public:
     Renderizador(const char* titulo, int ancho, int altura);
 
-    void agregarTextura(const std::string& archivo, Posicion& pos, const std::string& nombre);
+    void agregarTextura(const std::string& archivo, Posicion& pos, int angulo, const std::string& nombre);
 
     void imprimir(Uint32 tiempoMs);
 
     void limpiar();
 
     void mover(const std::string& nombre, int posX, int posY);
+
+    void rotar(const std::string& nombre, int angulo);
 
     virtual ~Renderizador();
 

@@ -23,8 +23,8 @@ Renderizador::~Renderizador() {
     }
 }
 
-void Renderizador::agregarTextura(const std::string &archivo, Posicion& pos, const std::string& nombre) {
-    texturas.emplace(std::piecewise_construct, std::forward_as_tuple(nombre), std::forward_as_tuple(renderizador, archivo, pos));
+void Renderizador::agregarTextura(const std::string &archivo, Posicion& pos, int angulo, const std::string& nombre) {
+    texturas.emplace(std::piecewise_construct, std::forward_as_tuple(nombre), std::forward_as_tuple(renderizador, archivo, pos, angulo));
 }
 
 void Renderizador::limpiar() {
@@ -45,6 +45,14 @@ void Renderizador::copiar(const std::string &nombre) {
         throw ExcepcionConPos(__FILE__, __LINE__, "Intento actualizar textura no valida: "+nombre);
     }
     it->second.copiar(renderizador);
+}
+
+void Renderizador::rotar(const std::string& nombre, int angulo) {
+    auto it = texturas.find(nombre);
+    if(it == texturas.end()){
+        throw ExcepcionConPos(__FILE__, __LINE__, "Intento actualizar textura no valida: "+nombre);
+    }
+    it->second.rotar(renderizador, angulo);
 }
 
 

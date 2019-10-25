@@ -7,13 +7,15 @@
 
 void Servidor::enviar(const std::string& mensaje) {
     if(mensaje == "acelerar"){
-        posY -= 5;
+        posY -= 15;
     } else if(mensaje == "frenar"){
-        posY += 5;
+        posY += 15;
     } else if(mensaje == "doblar derecha"){
-        posX += 5;
+        angulo += 30;
+        posX += 15;
     } else if(mensaje == "doblar izquierda"){
-        posX -= 5;
+        angulo -= 30;
+        posX -= 15;
     } else if(mensaje == "cerrar"){
         posX = -1;
         posY = -1;
@@ -24,10 +26,12 @@ std::vector<int> Servidor::recibir() {
     std::vector<int> aux;
     aux.push_back(posX);
     aux.push_back(posY);
+    aux.push_back(angulo);
     return aux;
 }
 
 Servidor::Servidor(int posX, int posY) {
     this->posX = posX;
     this->posY = posY;
+    this->angulo = 0;
 }
