@@ -11,3 +11,11 @@ CadenaLua::CadenaLua(const std::string &cadena) :
 void CadenaLua::apilarAlStack(lua_State *L) {
     lua_pushlstring(L, cadena.c_str(), cadena.size());
 }
+
+Retorno CadenaLua::obtenerValor() {
+    Retorno ret;
+    ret.cadena = cadena;
+    return ret;
+}
+
+

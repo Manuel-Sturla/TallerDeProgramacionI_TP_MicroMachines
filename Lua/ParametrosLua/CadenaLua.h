@@ -13,6 +13,7 @@ class CadenaLua: public ParametroLua {
 public:
     explicit CadenaLua(const std::string& cadena);
     void apilarAlStack(lua_State *L) override;
+    Retorno obtenerValor() override;
 };
 
 

@@ -11,3 +11,9 @@ EnteroLua::EnteroLua(int num) : ParametroLua("entero"),
 void EnteroLua::apilarAlStack(lua_State *L) {
     lua_pushinteger(L, entero);
 }
+
+Retorno EnteroLua::obtenerValor() {
+    Retorno ret;
+    ret.entero = entero;
+    return ret;
+}

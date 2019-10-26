@@ -8,7 +8,7 @@
 
 #include <stdexcept>
 
-class ErrorLua : std::runtime_error{
+class ErrorLua : public std::runtime_error{
 
 public:
     ErrorLua(const std::string& msj, const std::string& script, \

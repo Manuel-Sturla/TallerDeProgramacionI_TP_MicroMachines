@@ -8,15 +8,21 @@
 	#include "lauxlib.h"
 #include "ParametrosLua/ParametroLua.h"
 #include "ParametrosLua/EnteroLua.h"
+#include "InterpreteLua.h"
+#include "ParametrosLua/CadenaLua.h"
 
 #endif
 
 int main(){
-    lua_State *L = luaL_newstate(); //Mi stack de variables esta vacio.
-    luaL_openlibs(L);
-    luaL_dostring(L, "print('Hola mundo')");
-    EnteroLua enteroLua(3);
-    ParametroLua& parametroLua = enteroLua;
-    std::cout << parametroLua.obtenerTipo() << std::endl;
-    parametroLua.apilarAlStack(L);
+    try{
+        InterpreteLua inteprete("./script.lua");
+        std::vector<std::unique_ptr<ParametroLua>> params;
+        params.emplace_back(new CadenaLua("Hola"));
+        params.emplace_back(new EnteroLua(3));
+        std::vector<std::unique_ptr<ParametroLua>> ret = inteprete.ejecutar_funcion("multiplicarString", params);
+        Retorno cadenaRepetido = ret[0]->obtenerValor();
+        std::cout << cadenaRepetido.cadena << std::endl;
+    }catch(std::runtime_error &e){
+        std::cerr << e.what() << std::endl;
+    }
 }
