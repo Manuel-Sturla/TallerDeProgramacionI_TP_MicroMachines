@@ -76,6 +76,16 @@ math.h
 Pista.h
 /home/hugo/Escritorio/MicroMachines/Servidor/Pista.h
 
+/home/hugo/Escritorio/MicroMachines/Servidor/ManejadorDeContactos.cpp
+ManejadorDeContactos.h
+/home/hugo/Escritorio/MicroMachines/Servidor/ManejadorDeContactos.h
+Carro.h
+/home/hugo/Escritorio/MicroMachines/Servidor/Carro.h
+
+/home/hugo/Escritorio/MicroMachines/Servidor/ManejadorDeContactos.h
+3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h
+/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h
+
 /home/hugo/Escritorio/MicroMachines/Servidor/Pista.cpp
 Pista.h
 /home/hugo/Escritorio/MicroMachines/Servidor/Pista.h
@@ -83,6 +93,8 @@ Pista.h
 /home/hugo/Escritorio/MicroMachines/Servidor/Pista.h
 3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h
 /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h
+ManejadorDeContactos.h
+/home/hugo/Escritorio/MicroMachines/Servidor/ManejadorDeContactos.h
 
 /home/hugo/Escritorio/MicroMachines/Servidor/Recta.cpp
 Recta.h

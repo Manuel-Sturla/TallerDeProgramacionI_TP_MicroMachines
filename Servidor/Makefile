@@ -163,6 +163,33 @@ Carro.cpp.s:
 	$(MAKE) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/Carro.cpp.s
 .PHONY : Carro.cpp.s
 
+ManejadorDeContactos.o: ManejadorDeContactos.cpp.o
+
+.PHONY : ManejadorDeContactos.o
+
+# target to build an object file
+ManejadorDeContactos.cpp.o:
+	$(MAKE) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/ManejadorDeContactos.cpp.o
+.PHONY : ManejadorDeContactos.cpp.o
+
+ManejadorDeContactos.i: ManejadorDeContactos.cpp.i
+
+.PHONY : ManejadorDeContactos.i
+
+# target to preprocess a source file
+ManejadorDeContactos.cpp.i:
+	$(MAKE) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/ManejadorDeContactos.cpp.i
+.PHONY : ManejadorDeContactos.cpp.i
+
+ManejadorDeContactos.s: ManejadorDeContactos.cpp.s
+
+.PHONY : ManejadorDeContactos.s
+
+# target to generate assembly for a file
+ManejadorDeContactos.cpp.s:
+	$(MAKE) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/ManejadorDeContactos.cpp.s
+.PHONY : ManejadorDeContactos.cpp.s
+
 Pista.o: Pista.cpp.o
 
 .PHONY : Pista.o
@@ -257,6 +284,9 @@ help:
 	@echo "... Carro.o"
 	@echo "... Carro.i"
 	@echo "... Carro.s"
+	@echo "... ManejadorDeContactos.o"
+	@echo "... ManejadorDeContactos.i"
+	@echo "... ManejadorDeContactos.s"
 	@echo "... Pista.o"
 	@echo "... Pista.i"
 	@echo "... Pista.s"
