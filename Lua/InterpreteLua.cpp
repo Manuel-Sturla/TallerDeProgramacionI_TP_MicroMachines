@@ -28,9 +28,8 @@ InterpreteLua::InterpreteLua(const std::string& script) : InterpreteLua(){
     }
 }
 
-std::vector<std::unique_ptr<ParametroLua>> InterpreteLua::ejecutar_funcion(const std::string nombre,\
+std::vector<std::unique_ptr<ParametroLua>> InterpreteLua::ejecutarFuncion(const std::string& nombre,\
     std::vector<std::unique_ptr<ParametroLua>>& parametros) {
-    size_t topePila = lua_gettop(L);
     if (lua_getglobal(L, nombre.c_str()) != LUA_TFUNCTION){
         lua_pop(L,-1);
         throw ErrorLua("La funcion llamada", nombre,\
@@ -40,22 +39,90 @@ std::vector<std::unique_ptr<ParametroLua>> InterpreteLua::ejecutar_funcion(const
         parametro->apilarAlStack(L);
     }
     lua_call(L, parametros.size(), LUA_MULTRET);
-    size_t cantArgumentos = lua_gettop(L) - topePila;
+    size_t cantArgumentos = lua_gettop(L) - tope;
     std::vector<std::unique_ptr<ParametroLua>> retorno;
-    for (size_t i = topePila+1; i <= topePila+cantArgumentos; i++){
+    for (size_t i = tope+1; i <= tope+cantArgumentos; i++){
         retorno.emplace_back(std::unique_ptr<ParametroLua>(obtenerElemento(i)));
     }
     //vacio los parametros de la pila
-    lua_settop(L, topePila);
+    lua_settop(L, tope);
     return retorno;
 }
 
 std::unique_ptr<ParametroLua> InterpreteLua::obtenerElemento(size_t pos) {
-    if (lua_isnumber(L, pos)){
-        return std::unique_ptr<ParametroLua>(new FlotanteLua(lua_tonumber(L,pos)));
-    }else if(lua_isinteger(L,pos)){
-        return std::unique_ptr<ParametroLua>(new EnteroLua(lua_tointeger(L, pos)));
+    if (lua_isinteger(L, pos)){
+        return std::unique_ptr<ParametroLua>(new EnteroLua(lua_tonumber(L,pos)));
+    }else if(lua_isnumber(L,pos)){
+        return std::unique_ptr<ParametroLua>(new FlotanteLua(lua_tointeger(L, pos)));
     }else if(lua_isstring(L, pos)){
         return std::unique_ptr<ParametroLua>(new CadenaLua(lua_tostring(L,pos)));
     }
+}
+
+void InterpreteLua::agregarElementoTabla(const std::string& tabla,ParametroLua& clave, ParametroLua& valor) {
+    const char* tabla_c = tabla.c_str();
+    std::cout << "Cantidad de elementos antes de agregar "<< std::endl;
+    imprimirPila();
+    if(lua_getglobal(L, tabla_c) != LUA_TTABLE){
+        lua_settop(L, tope);
+        lua_newtable(L);
+        lua_setglobal(L,tabla_c);
+        lua_getglobal(L, tabla_c);
+    }
+    std::cout << "Cantidad de elementos luego de llamar a la tabla "<< std::endl;
+    imprimirPila();
+
+    clave.apilarAlStack(L);
+    valor.apilarAlStack(L);
+    lua_settable(L,-3);
+    lua_settop(L, tope);
+    std::cout << "Cantidad de elementos luego de agregar "<< lua_gettop(L) << std::endl;
+    imprimirPila();
+
+}
+
+std::vector<std::unique_ptr<ParametroLua>> InterpreteLua::ejecutarFuncion(const std::string &nombre) {
+    std::vector<std::unique_ptr<ParametroLua>> aux;
+    return ejecutarFuncion(nombre, aux);
+}
+
+std::unique_ptr<ParametroLua> InterpreteLua::obtenerElementoTabla(const std::string &tabla, ParametroLua& clave) {
+    if(lua_getglobal(L, tabla.c_str()) != LUA_TTABLE){
+        lua_settop(L, tope);
+        throw ErrorLua("Error al buscar elemento de la tabla: ", tabla,\
+        "no existe una variable global con ese nombre", __LINE__, __FILE__);
+    }
+    clave.apilarAlStack(L);
+    lua_gettable(L, -2);
+    std::unique_ptr<ParametroLua> ret = obtenerElemento(-1);
+    lua_settop(L, tope);
+    return ret;
+}
+
+void InterpreteLua::imprimirPila() {
+        int i;
+        int top = lua_gettop(L); /* depth of the stack */
+        for (i = 1; i <= top; i++) { /* repeat for each level */
+            int t = lua_type(L, i);
+            switch (t) {
+                case LUA_TSTRING: { /* strings */
+                    printf("'%s'", lua_tostring(L, i));
+                    break;
+                }
+                case LUA_TBOOLEAN: { /* Booleans */
+                    printf(lua_toboolean(L, i) ? "true" : "false");
+                    break;
+                }
+                case LUA_TNUMBER: { /* numbers */
+                    printf("%g", lua_tonumber(L, i));
+                    break;
+                }
+                default: { /* other values */
+                    printf("%s", lua_typename(L, t));
+                    break;
+                }
+            }
+            printf(" "); /* put a separator */
+        }
+        printf("\n"); /* end the listing */
 }

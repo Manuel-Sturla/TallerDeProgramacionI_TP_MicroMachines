@@ -16,13 +16,19 @@
 #include <memory>
 class InterpreteLua {
     lua_State* L;
+    size_t tope = 0;
+    void imprimirPila();
+    std::unique_ptr<ParametroLua> obtenerElemento(size_t pos);
 public:
     InterpreteLua();
     InterpreteLua(const std::string& script);
     ~InterpreteLua();
-    std::vector<std::unique_ptr<ParametroLua>> ejecutar_funcion(const std::string nombre,\
+    std::vector<std::unique_ptr<ParametroLua>> ejecutarFuncion(const std::string& nombre,\
     std::vector<std::unique_ptr<ParametroLua>>& parametros);
-    std::unique_ptr<ParametroLua> obtenerElemento(size_t pos);
+    std::vector<std::unique_ptr<ParametroLua>> ejecutarFuncion(const std::string& nombre);
+    void agregarElementoTabla(const std::string& tabla, ParametroLua& clave, ParametroLua& valor);
+
+    std::unique_ptr<ParametroLua> obtenerElementoTabla(const std::string &tabla, ParametroLua& clave);
 };
 
 

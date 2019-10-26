@@ -8,5 +8,5 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/out)
 add_executable(LuaTest
         main.cpp InterpreteLua.cpp InterpreteLua.h
         ErrorLua.cpp ErrorLua.h
-        ParametrosLua/ParametroLua.cpp ParametrosLua/ParametroLua.h ParametrosLua/EnteroLua.cpp ParametrosLua/EnteroLua.h ParametrosLua/FlotanteLua.cpp ParametrosLua/FlotanteLua.h ParametrosLua/CadenaLua.cpp ParametrosLua/CadenaLua.h)
+        ParametrosLua/ParametroLua.cpp ParametrosLua/ParametroLua.h ParametrosLua/EnteroLua.cpp ParametrosLua/EnteroLua.h ParametrosLua/FlotanteLua.cpp ParametrosLua/FlotanteLua.h ParametrosLua/CadenaLua.cpp ParametrosLua/CadenaLua.h JugadorCPU.cpp JugadorCPU.h)
 target_link_libraries(LuaTest lua5.3)
