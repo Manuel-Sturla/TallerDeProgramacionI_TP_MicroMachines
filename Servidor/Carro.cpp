@@ -36,7 +36,7 @@ void Carro::acelerar() {
 
 void Carro::frenar() {
   b2Vec2 velocidad = body->GetLinearVelocity();
-  if (velocidad.Length() < VELOCIDAD_MAXIMA * 0.3) {
+  if (velocidad.Length() <= VELOCIDAD_MAXIMA) {
     float32 angulo = body->GetAngle();
     b2Vec2 fuerza(-100.0f * cos(angulo), -100.0f * sin(angulo));
     body->ApplyForceToCenter(fuerza, true);
@@ -56,9 +56,10 @@ void Carro::giroAIzquierda() {
 void Carro::imprimirPosicion() {
   b2Vec2 position = body->GetPosition();
   float32 angle = body->GetAngle();
-  printf("Posicion:");
+  printf("Nueva iteracion\n");
+  printf("Posicion: ");
   printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
   b2Vec2 velocidad = body->GetLinearVelocity();
-  printf("Velocidad:");
+  printf("Velocidad: ");
   printf("%4.2f %4.2f\n", velocidad.x, velocidad.y);
 }
