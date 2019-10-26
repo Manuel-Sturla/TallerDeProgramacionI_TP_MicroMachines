@@ -11,7 +11,7 @@ class Pista {
   public:
     Pista(b2Vec2& gravedad);
 
-    b2Body* agregarCarro(b2BodyDef& carro);
+    b2Body* agregarObjeto(b2BodyDef& carro);
 
     void simular(float32 tiempo, int32 velocidad, int32 iteraciones);
 

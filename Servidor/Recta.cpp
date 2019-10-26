@@ -1,12 +1,15 @@
 #include "Recta.h"
+#include "Asfalto.h"
+#include "Pasto.h"
 
 Recta::Recta() {
   bodyDef.type = b2_staticBody;
   bodyDef.position.Set(0.0f, 4.0f);
+  material = new Asfalto();
 }
 
 void Recta::agregarseA(Pista *pista) {
-  body = pista -> agregarCarro(bodyDef);
+  body = pista -> agregarObjeto(bodyDef);
   // Definicion del cuerpo dinamico
   b2PolygonShape staticBox;
   staticBox.SetAsBox(10.0f, 10.0f);
@@ -23,4 +26,5 @@ void Recta::agregarseA(Pista *pista) {
 }
 
 Recta::~Recta() {
+  delete material;
 }

@@ -10,7 +10,7 @@ Carro::Carro() {
 }
 
 void Carro::agregarseA(Pista *pista) {
-  body = pista -> agregarCarro(bodyDef);
+  body = pista -> agregarObjeto(bodyDef);
   body -> SetUserData(this);
   // Definicion del cuerpo dinamico
   b2PolygonShape dynamicBox;

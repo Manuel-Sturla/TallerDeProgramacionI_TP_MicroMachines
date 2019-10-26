@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor"
+CMAKE_SOURCE_DIR = /home/hugo/Escritorio/MicroMachines/Servidor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor"
+CMAKE_BINARY_DIR = /home/hugo/Escritorio/MicroMachines/Servidor
 
 # Include any dependencies generated for this target.
 include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/depend.make
@@ -59,16 +59,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2BroadPhase.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2BroadPhase.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2BroadPhase.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2BroadPhase.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2BroadPhase.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2BroadPhase.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2BroadPhase.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.o.requires:
 
@@ -83,16 +83,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideCircle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideCircle.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideCircle.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideCircle.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideCircle.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideCircle.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideCircle.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.o.requires:
 
@@ -107,16 +107,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideEdge.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideEdge.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideEdge.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideEdge.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideEdge.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideEdge.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollideEdge.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.o.requires:
 
@@ -131,16 +131,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollidePolygon.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollidePolygon.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollidePolygon.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollidePolygon.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollidePolygon.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollidePolygon.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2CollidePolygon.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollidePolygon.cpp.o.requires:
 
@@ -155,16 +155,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Collision.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Collision.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Collision.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Collision.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Collision.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Collision.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Collision.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Collision.cpp.o.requires:
 
@@ -179,16 +179,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Distance.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Distance.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Distance.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Distance.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Distance.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Distance.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2Distance.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.o.requires:
 
@@ -203,16 +203,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2DynamicTree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2DynamicTree.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2DynamicTree.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2DynamicTree.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2DynamicTree.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2DynamicTree.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2DynamicTree.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.o.requires:
 
@@ -227,16 +227,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2TimeOfImpact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2TimeOfImpact.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2TimeOfImpact.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2TimeOfImpact.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2TimeOfImpact.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2TimeOfImpact.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/b2TimeOfImpact.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.o.requires:
 
@@ -251,16 +251,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.o.requires:
 
@@ -275,16 +275,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.o.requires:
 
@@ -299,16 +299,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.o.requires:
 
@@ -323,16 +323,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.o.requires:
 
@@ -347,16 +347,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2BlockAllocator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2BlockAllocator.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2BlockAllocator.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2BlockAllocator.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2BlockAllocator.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2BlockAllocator.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2BlockAllocator.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.o.requires:
 
@@ -371,16 +371,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Draw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Draw.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Draw.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Draw.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Draw.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Draw.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Draw.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.o.requires:
 
@@ -395,16 +395,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Math.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Math.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Math.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Math.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Math.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Math.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Math.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.o.requires:
 
@@ -419,16 +419,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Settings.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Settings.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Settings.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Settings.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Settings.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Settings.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Settings.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Settings.cpp.o.requires:
 
@@ -443,16 +443,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2StackAllocator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2StackAllocator.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2StackAllocator.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2StackAllocator.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2StackAllocator.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2StackAllocator.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2StackAllocator.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2StackAllocator.cpp.o.requires:
 
@@ -467,16 +467,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Timer.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Timer.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Timer.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Timer.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Timer.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Common/b2Timer.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Timer.cpp.o.requires:
 
@@ -491,16 +491,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndCircleContact.cpp.o.requires:
 
@@ -515,16 +515,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ChainAndPolygonContact.cpp.o.requires:
 
@@ -539,16 +539,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2CircleContact.cpp.o.requires:
 
@@ -563,16 +563,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2Contact.cpp.o.requires:
 
@@ -587,16 +587,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2ContactSolver.cpp.o.requires:
 
@@ -611,16 +611,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndCircleContact.cpp.o.requires:
 
@@ -635,16 +635,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2EdgeAndPolygonContact.cpp.o.requires:
 
@@ -659,16 +659,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonAndCircleContact.cpp.o.requires:
 
@@ -683,16 +683,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Contacts/b2PolygonContact.cpp.o.requires:
 
@@ -707,16 +707,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.cpp.o.requires:
 
@@ -731,16 +731,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.cpp.o.requires:
 
@@ -755,16 +755,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2GearJoint.cpp.o.requires:
 
@@ -779,16 +779,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2Joint.cpp.o.requires:
 
@@ -803,16 +803,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.cpp.o.requires:
 
@@ -827,16 +827,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.cpp.o.requires:
 
@@ -851,16 +851,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.cpp.o.requires:
 
@@ -875,16 +875,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.cpp.o.requires:
 
@@ -899,16 +899,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.cpp.o.requires:
 
@@ -923,16 +923,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.cpp.o.requires:
 
@@ -947,16 +947,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.cpp.o.requires:
 
@@ -971,16 +971,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.cpp.o.requires:
 
@@ -995,16 +995,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Body.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Body.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Body.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Body.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Body.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Body.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Body.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Body.cpp.o.requires:
 
@@ -1019,16 +1019,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2ContactManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2ContactManager.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2ContactManager.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2ContactManager.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2ContactManager.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2ContactManager.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2ContactManager.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2ContactManager.cpp.o.requires:
 
@@ -1043,16 +1043,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Fixture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Fixture.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Fixture.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Fixture.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Fixture.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Fixture.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Fixture.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Fixture.cpp.o.requires:
 
@@ -1067,16 +1067,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Island.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Island.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Island.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Island.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Island.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Island.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2Island.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.o.requires:
 
@@ -1091,16 +1091,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2World.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2World.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2World.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2World.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2World.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2World.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2World.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.o.requires:
 
@@ -1115,16 +1115,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.o.requires:
 
@@ -1139,16 +1139,16 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o: 3rd_party/Box2D-cmake/Box2D/Box2D/Rope/b2Rope.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Rope/b2Rope.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Rope/b2Rope.cpp
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.i"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Rope/b2Rope.cpp" > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.i
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Rope/b2Rope.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.i
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.s"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Rope/b2Rope.cpp" -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.s
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Rope/b2Rope.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.s
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o.requires:
 
@@ -1417,15 +1417,9 @@ Box2D__cmake_EXTERNAL_OBJECTS =
 3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o
 3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make
 3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/link.txt
-<<<<<<< Updated upstream
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Linking CXX static library libBox2D-cmake.a"
 	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && $(CMAKE_COMMAND) -P CMakeFiles/Box2D-cmake.dir/cmake_clean_target.cmake
 	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Box2D-cmake.dir/link.txt --verbose=$(VERBOSE)
-=======
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_47) "Linking CXX static library libBox2D-cmake.a"
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && $(CMAKE_COMMAND) -P CMakeFiles/Box2D-cmake.dir/cmake_clean_target.cmake
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Box2D-cmake.dir/link.txt --verbose=$(VERBOSE)
->>>>>>> Stashed changes
 
 # Rule to build all files generated by this target.
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build: 3rd_party/Box2D-cmake/libBox2D-cmake.a
@@ -1488,10 +1482,10 @@ Box2D__cmake_EXTERNAL_OBJECTS =
 .PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/requires
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/clean:
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" && $(CMAKE_COMMAND) -P CMakeFiles/Box2D-cmake.dir/cmake_clean.cmake
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && $(CMAKE_COMMAND) -P CMakeFiles/Box2D-cmake.dir/cmake_clean.cmake
 .PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/clean
 
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/depend:
-	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor" "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor" "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake" "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/DependInfo.cmake" --color=$(COLOR)
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hugo/Escritorio/MicroMachines/Servidor /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake /home/hugo/Escritorio/MicroMachines/Servidor /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/depend
 
