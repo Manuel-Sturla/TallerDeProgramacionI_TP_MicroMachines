@@ -1,2 +1,5 @@
 Duda 1: Por que el cmake cuando lo ejecuto a mano, a la dependencia de BibliotecaDinamica me la crea y la guarda, mientras que el del clion no. entonces no la puedo encontrar //temporalmente la voy a copiar a mano para poder usarlo y listo
 
+Duda 2: Como hago para que el interprete pueda ejecutar una funcion de forma generica si no sabe de que tipos y cuantos argumentos debe recibir?
+
+Idea: es muy posible que para los scripts de lua sea copado que primero se llame a una funcion quee reciba el mapa y lo guarde en una tabla o algo asi. Y que luego se llame con la posicion del auto propio y otros jugadores o obstaculos para que decida que hacer. Y así evitamos pasar el mapa todas las veces que es un garron.

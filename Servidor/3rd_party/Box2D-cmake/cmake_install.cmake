@@ -1,4 +1,4 @@
-# Install script for directory: /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake
+# Install script for directory: /home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
