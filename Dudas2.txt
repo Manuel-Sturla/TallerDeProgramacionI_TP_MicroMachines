@@ -10,7 +10,6 @@ fixture tiene colisiones y sensor no
 los sensores tiene un begin contact
 das propiedades al cuerpo con create fixture le puedes dar is sensor para que sea un sensor
 hardcodear mensajes para mandar a diego y una vez que diego renderice vemos si hace bien las cosas
-hacer ruedas para que doble menos violentamente 
 
 
 Manu
