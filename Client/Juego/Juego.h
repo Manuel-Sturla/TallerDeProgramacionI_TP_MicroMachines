@@ -6,11 +6,11 @@
 #define OPENGLTEST_JUEGO_H
 
 
-#include "Partida.h"
+#include "../Vista/HiloVisualizacion.h"
 
 class Juego {
 private:
-    Partida partida;
+    HiloVisualizacion partida;
 
 };
 

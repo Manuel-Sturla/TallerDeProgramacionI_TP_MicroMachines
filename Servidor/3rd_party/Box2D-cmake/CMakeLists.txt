@@ -48,6 +48,12 @@ set(SOURCES
   ${PROJECT_SOURCE_DIR}/Box2D/Box2D/Dynamics/b2World.cpp
   ${PROJECT_SOURCE_DIR}/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp
   ${PROJECT_SOURCE_DIR}/Box2D/Box2D/Rope/b2Rope.cpp
+  ${PROJECT_SOURCE_DIR}/Box2D/Testbed/Framework/DebugDraw.cpp
+  ${PROJECT_SOURCE_DIR}/Box2D/Testbed/glad/glad.c
+  ${PROJECT_SOURCE_DIR}/Box2D/Testbed/imgui/imgui.cpp
+  ${PROJECT_SOURCE_DIR}/Box2D/Testbed/imgui/imgui_demo.cpp
+  ${PROJECT_SOURCE_DIR}/Box2D/Testbed/imgui/imgui_draw.cpp
+  ${PROJECT_SOURCE_DIR}/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp
 )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCES})

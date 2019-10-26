@@ -5,10 +5,20 @@
 #ifndef OPENGLTEST_SERVIDOR_H
 #define OPENGLTEST_SERVIDOR_H
 #include <string>
+#include <vector>
 
 class Servidor {
+private:
+    int posX;
+    int posY;
+    int angulo;
+
 public:
-    void enviar(std::string comando);
+    Servidor(int posY, int posX);
+
+    void enviar(const std::string& mensaje);
+
+    std::vector<int> recibir();
 };
 
 

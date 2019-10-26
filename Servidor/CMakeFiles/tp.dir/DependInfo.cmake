@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hugo/Escritorio/MicroMachines/Servidor/Carro.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/tp.dir/Carro.cpp.o"
   "/home/hugo/Escritorio/MicroMachines/Servidor/Pista.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/tp.dir/Pista.cpp.o"
+  "/home/hugo/Escritorio/MicroMachines/Servidor/Recta.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/tp.dir/Recta.cpp.o"
   "/home/hugo/Escritorio/MicroMachines/Servidor/main.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/tp.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

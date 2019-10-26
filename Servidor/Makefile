@@ -190,6 +190,33 @@ Pista.cpp.s:
 	$(MAKE) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/Pista.cpp.s
 .PHONY : Pista.cpp.s
 
+Recta.o: Recta.cpp.o
+
+.PHONY : Recta.o
+
+# target to build an object file
+Recta.cpp.o:
+	$(MAKE) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/Recta.cpp.o
+.PHONY : Recta.cpp.o
+
+Recta.i: Recta.cpp.i
+
+.PHONY : Recta.i
+
+# target to preprocess a source file
+Recta.cpp.i:
+	$(MAKE) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/Recta.cpp.i
+.PHONY : Recta.cpp.i
+
+Recta.s: Recta.cpp.s
+
+.PHONY : Recta.s
+
+# target to generate assembly for a file
+Recta.cpp.s:
+	$(MAKE) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/Recta.cpp.s
+.PHONY : Recta.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -233,6 +260,9 @@ help:
 	@echo "... Pista.o"
 	@echo "... Pista.i"
 	@echo "... Pista.s"
+	@echo "... Recta.o"
+	@echo "... Recta.i"
+	@echo "... Recta.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

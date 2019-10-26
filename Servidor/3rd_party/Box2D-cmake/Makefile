@@ -1367,6 +1367,168 @@ Box2D/Box2D/Rope/b2Rope.cpp.s:
 	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.s
 .PHONY : Box2D/Box2D/Rope/b2Rope.cpp.s
 
+Box2D/Testbed/Framework/DebugDraw.o: Box2D/Testbed/Framework/DebugDraw.cpp.o
+
+.PHONY : Box2D/Testbed/Framework/DebugDraw.o
+
+# target to build an object file
+Box2D/Testbed/Framework/DebugDraw.cpp.o:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o
+.PHONY : Box2D/Testbed/Framework/DebugDraw.cpp.o
+
+Box2D/Testbed/Framework/DebugDraw.i: Box2D/Testbed/Framework/DebugDraw.cpp.i
+
+.PHONY : Box2D/Testbed/Framework/DebugDraw.i
+
+# target to preprocess a source file
+Box2D/Testbed/Framework/DebugDraw.cpp.i:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.i
+.PHONY : Box2D/Testbed/Framework/DebugDraw.cpp.i
+
+Box2D/Testbed/Framework/DebugDraw.s: Box2D/Testbed/Framework/DebugDraw.cpp.s
+
+.PHONY : Box2D/Testbed/Framework/DebugDraw.s
+
+# target to generate assembly for a file
+Box2D/Testbed/Framework/DebugDraw.cpp.s:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.s
+.PHONY : Box2D/Testbed/Framework/DebugDraw.cpp.s
+
+Box2D/Testbed/glad/glad.o: Box2D/Testbed/glad/glad.c.o
+
+.PHONY : Box2D/Testbed/glad/glad.o
+
+# target to build an object file
+Box2D/Testbed/glad/glad.c.o:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o
+.PHONY : Box2D/Testbed/glad/glad.c.o
+
+Box2D/Testbed/glad/glad.i: Box2D/Testbed/glad/glad.c.i
+
+.PHONY : Box2D/Testbed/glad/glad.i
+
+# target to preprocess a source file
+Box2D/Testbed/glad/glad.c.i:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.i
+.PHONY : Box2D/Testbed/glad/glad.c.i
+
+Box2D/Testbed/glad/glad.s: Box2D/Testbed/glad/glad.c.s
+
+.PHONY : Box2D/Testbed/glad/glad.s
+
+# target to generate assembly for a file
+Box2D/Testbed/glad/glad.c.s:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.s
+.PHONY : Box2D/Testbed/glad/glad.c.s
+
+Box2D/Testbed/imgui/imgui.o: Box2D/Testbed/imgui/imgui.cpp.o
+
+.PHONY : Box2D/Testbed/imgui/imgui.o
+
+# target to build an object file
+Box2D/Testbed/imgui/imgui.cpp.o:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o
+.PHONY : Box2D/Testbed/imgui/imgui.cpp.o
+
+Box2D/Testbed/imgui/imgui.i: Box2D/Testbed/imgui/imgui.cpp.i
+
+.PHONY : Box2D/Testbed/imgui/imgui.i
+
+# target to preprocess a source file
+Box2D/Testbed/imgui/imgui.cpp.i:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.i
+.PHONY : Box2D/Testbed/imgui/imgui.cpp.i
+
+Box2D/Testbed/imgui/imgui.s: Box2D/Testbed/imgui/imgui.cpp.s
+
+.PHONY : Box2D/Testbed/imgui/imgui.s
+
+# target to generate assembly for a file
+Box2D/Testbed/imgui/imgui.cpp.s:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.s
+.PHONY : Box2D/Testbed/imgui/imgui.cpp.s
+
+Box2D/Testbed/imgui/imgui_demo.o: Box2D/Testbed/imgui/imgui_demo.cpp.o
+
+.PHONY : Box2D/Testbed/imgui/imgui_demo.o
+
+# target to build an object file
+Box2D/Testbed/imgui/imgui_demo.cpp.o:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o
+.PHONY : Box2D/Testbed/imgui/imgui_demo.cpp.o
+
+Box2D/Testbed/imgui/imgui_demo.i: Box2D/Testbed/imgui/imgui_demo.cpp.i
+
+.PHONY : Box2D/Testbed/imgui/imgui_demo.i
+
+# target to preprocess a source file
+Box2D/Testbed/imgui/imgui_demo.cpp.i:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.i
+.PHONY : Box2D/Testbed/imgui/imgui_demo.cpp.i
+
+Box2D/Testbed/imgui/imgui_demo.s: Box2D/Testbed/imgui/imgui_demo.cpp.s
+
+.PHONY : Box2D/Testbed/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+Box2D/Testbed/imgui/imgui_demo.cpp.s:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.s
+.PHONY : Box2D/Testbed/imgui/imgui_demo.cpp.s
+
+Box2D/Testbed/imgui/imgui_draw.o: Box2D/Testbed/imgui/imgui_draw.cpp.o
+
+.PHONY : Box2D/Testbed/imgui/imgui_draw.o
+
+# target to build an object file
+Box2D/Testbed/imgui/imgui_draw.cpp.o:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o
+.PHONY : Box2D/Testbed/imgui/imgui_draw.cpp.o
+
+Box2D/Testbed/imgui/imgui_draw.i: Box2D/Testbed/imgui/imgui_draw.cpp.i
+
+.PHONY : Box2D/Testbed/imgui/imgui_draw.i
+
+# target to preprocess a source file
+Box2D/Testbed/imgui/imgui_draw.cpp.i:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.i
+.PHONY : Box2D/Testbed/imgui/imgui_draw.cpp.i
+
+Box2D/Testbed/imgui/imgui_draw.s: Box2D/Testbed/imgui/imgui_draw.cpp.s
+
+.PHONY : Box2D/Testbed/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+Box2D/Testbed/imgui/imgui_draw.cpp.s:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.s
+.PHONY : Box2D/Testbed/imgui/imgui_draw.cpp.s
+
+Box2D/Testbed/imgui/imgui_impl_glfw_gl3.o: Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o
+
+.PHONY : Box2D/Testbed/imgui/imgui_impl_glfw_gl3.o
+
+# target to build an object file
+Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o
+.PHONY : Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o
+
+Box2D/Testbed/imgui/imgui_impl_glfw_gl3.i: Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.i
+
+.PHONY : Box2D/Testbed/imgui/imgui_impl_glfw_gl3.i
+
+# target to preprocess a source file
+Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.i:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.i
+.PHONY : Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.i
+
+Box2D/Testbed/imgui/imgui_impl_glfw_gl3.s: Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.s
+
+.PHONY : Box2D/Testbed/imgui/imgui_impl_glfw_gl3.s
+
+# target to generate assembly for a file
+Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.s:
+	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.s
+.PHONY : Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1514,6 +1676,24 @@ help:
 	@echo "... Box2D/Box2D/Rope/b2Rope.o"
 	@echo "... Box2D/Box2D/Rope/b2Rope.i"
 	@echo "... Box2D/Box2D/Rope/b2Rope.s"
+	@echo "... Box2D/Testbed/Framework/DebugDraw.o"
+	@echo "... Box2D/Testbed/Framework/DebugDraw.i"
+	@echo "... Box2D/Testbed/Framework/DebugDraw.s"
+	@echo "... Box2D/Testbed/glad/glad.o"
+	@echo "... Box2D/Testbed/glad/glad.i"
+	@echo "... Box2D/Testbed/glad/glad.s"
+	@echo "... Box2D/Testbed/imgui/imgui.o"
+	@echo "... Box2D/Testbed/imgui/imgui.i"
+	@echo "... Box2D/Testbed/imgui/imgui.s"
+	@echo "... Box2D/Testbed/imgui/imgui_demo.o"
+	@echo "... Box2D/Testbed/imgui/imgui_demo.i"
+	@echo "... Box2D/Testbed/imgui/imgui_demo.s"
+	@echo "... Box2D/Testbed/imgui/imgui_draw.o"
+	@echo "... Box2D/Testbed/imgui/imgui_draw.i"
+	@echo "... Box2D/Testbed/imgui/imgui_draw.s"
+	@echo "... Box2D/Testbed/imgui/imgui_impl_glfw_gl3.o"
+	@echo "... Box2D/Testbed/imgui/imgui_impl_glfw_gl3.i"
+	@echo "... Box2D/Testbed/imgui/imgui_impl_glfw_gl3.s"
 .PHONY : help
 
 
