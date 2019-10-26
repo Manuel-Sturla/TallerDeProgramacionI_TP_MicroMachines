@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hugo/Escritorio/MicroMachines/Servidor
+CMAKE_SOURCE_DIR = "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hugo/Escritorio/MicroMachines/Servidor
+CMAKE_BINARY_DIR = "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/tp.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/tp.dir/flags.make
 
 CMakeFiles/tp.dir/main.cpp.o: CMakeFiles/tp.dir/flags.make
 CMakeFiles/tp.dir/main.cpp.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tp.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tp.dir/main.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tp.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tp.dir/main.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/main.cpp"
 
 CMakeFiles/tp.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tp.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/main.cpp > CMakeFiles/tp.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/main.cpp" > CMakeFiles/tp.dir/main.cpp.i
 
 CMakeFiles/tp.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tp.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/main.cpp -o CMakeFiles/tp.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/main.cpp" -o CMakeFiles/tp.dir/main.cpp.s
 
 CMakeFiles/tp.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/tp.dir/main.cpp.o.provides.build: CMakeFiles/tp.dir/main.cpp.o
 
 CMakeFiles/tp.dir/Pista.cpp.o: CMakeFiles/tp.dir/flags.make
 CMakeFiles/tp.dir/Pista.cpp.o: Pista.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tp.dir/Pista.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tp.dir/Pista.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/Pista.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tp.dir/Pista.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tp.dir/Pista.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/Pista.cpp"
 
 CMakeFiles/tp.dir/Pista.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tp.dir/Pista.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/Pista.cpp > CMakeFiles/tp.dir/Pista.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/Pista.cpp" > CMakeFiles/tp.dir/Pista.cpp.i
 
 CMakeFiles/tp.dir/Pista.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tp.dir/Pista.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/Pista.cpp -o CMakeFiles/tp.dir/Pista.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/Pista.cpp" -o CMakeFiles/tp.dir/Pista.cpp.s
 
 CMakeFiles/tp.dir/Pista.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/tp.dir/Pista.cpp.o.provides.build: CMakeFiles/tp.dir/Pista.cpp.o
 
 CMakeFiles/tp.dir/Carro.cpp.o: CMakeFiles/tp.dir/flags.make
 CMakeFiles/tp.dir/Carro.cpp.o: Carro.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tp.dir/Carro.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tp.dir/Carro.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/Carro.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tp.dir/Carro.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tp.dir/Carro.cpp.o -c "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/Carro.cpp"
 
 CMakeFiles/tp.dir/Carro.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tp.dir/Carro.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/Carro.cpp > CMakeFiles/tp.dir/Carro.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/Carro.cpp" > CMakeFiles/tp.dir/Carro.cpp.i
 
 CMakeFiles/tp.dir/Carro.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tp.dir/Carro.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/Carro.cpp -o CMakeFiles/tp.dir/Carro.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/Carro.cpp" -o CMakeFiles/tp.dir/Carro.cpp.s
 
 CMakeFiles/tp.dir/Carro.cpp.o.requires:
 
@@ -170,7 +170,11 @@ tp: CMakeFiles/tp.dir/Recta.cpp.o
 tp: CMakeFiles/tp.dir/build.make
 tp: 3rd_party/Box2D-cmake/libBox2D-cmake.a
 tp: CMakeFiles/tp.dir/link.txt
+<<<<<<< Updated upstream
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable tp"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable tp"
+>>>>>>> Stashed changes
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -190,6 +194,6 @@ CMakeFiles/tp.dir/clean:
 .PHONY : CMakeFiles/tp.dir/clean
 
 CMakeFiles/tp.dir/depend:
-	cd /home/hugo/Escritorio/MicroMachines/Servidor && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hugo/Escritorio/MicroMachines/Servidor /home/hugo/Escritorio/MicroMachines/Servidor /home/hugo/Escritorio/MicroMachines/Servidor /home/hugo/Escritorio/MicroMachines/Servidor /home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles/tp.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor" "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor" "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor" "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor" "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles/tp.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/tp.dir/depend
 

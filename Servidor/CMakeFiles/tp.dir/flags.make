@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D 
+CXX_INCLUDES = -I"/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D" 
 

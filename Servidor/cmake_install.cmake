@@ -1,4 +1,4 @@
-# Install script for directory: /home/hugo/Escritorio/MicroMachines/Servidor
+# Install script for directory: /home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/cmake_install.cmake")
+  include("/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/hugo/Escritorio/MicroMachines/Servidor/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
