@@ -1161,6 +1161,150 @@ include 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o.provides.build: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o
 
 
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o: 3rd_party/Box2D-cmake/Box2D/Testbed/Framework/DebugDraw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/Framework/DebugDraw.cpp
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.i"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/Framework/DebugDraw.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.i
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.s"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/Framework/DebugDraw.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.s
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o.requires:
+
+.PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o.requires
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o.provides: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o.requires
+	$(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o.provides.build
+.PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o.provides
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o.provides.build: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o
+
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o: 3rd_party/Box2D-cmake/Box2D/Testbed/glad/glad.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o   -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/glad/glad.c
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.i"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/glad/glad.c > CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.i
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.s"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/glad/glad.c -o CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.s
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o.requires:
+
+.PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o.requires
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o.provides: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o.requires
+	$(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o.provides.build
+.PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o.provides
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o.provides.build: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o
+
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o: 3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui.cpp
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.i"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.i
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.s"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.s
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o.requires:
+
+.PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o.requires
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o.provides: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o.requires
+	$(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o.provides.build
+.PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o.provides
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o.provides.build: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o
+
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o: 3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_demo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_demo.cpp
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.i"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_demo.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.i
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.s"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_demo.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.s
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o.requires:
+
+.PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o.requires
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o.provides: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o.requires
+	$(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o.provides.build
+.PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o.provides
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o.provides.build: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o
+
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o: 3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_draw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_draw.cpp
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.i"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_draw.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.i
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.s"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_draw.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.s
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o.requires:
+
+.PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o.requires
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o.provides: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o.requires
+	$(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o.provides.build
+.PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o.provides
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o.provides.build: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o
+
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/flags.make
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o: 3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o -c /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.i"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp > CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.i
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.s"
+	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp -o CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.s
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o.requires:
+
+.PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o.requires
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o.provides: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o.requires
+	$(MAKE) -f 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o.provides.build
+.PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o.provides
+
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o.provides.build: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o
+
+
 # Object files for target Box2D-cmake
 Box2D__cmake_OBJECTS = \
 "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.o" \
@@ -1208,7 +1352,13 @@ Box2D__cmake_OBJECTS = \
 "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2Island.cpp.o" \
 "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.o" \
 "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.o" \
-"CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o"
+"CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o" \
+"CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o" \
+"CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o" \
+"CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o" \
+"CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o" \
+"CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o" \
+"CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o"
 
 # External object files for target Box2D-cmake
 Box2D__cmake_EXTERNAL_OBJECTS =
@@ -1259,9 +1409,15 @@ Box2D__cmake_EXTERNAL_OBJECTS =
 3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.o
 3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.o
 3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o
+3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o
+3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o
+3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o
+3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o
+3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o
+3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o
 3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/build.make
 3rd_party/Box2D-cmake/libBox2D-cmake.a: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Linking CXX static library libBox2D-cmake.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hugo/Escritorio/MicroMachines/Servidor/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Linking CXX static library libBox2D-cmake.a"
 	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && $(CMAKE_COMMAND) -P CMakeFiles/Box2D-cmake.dir/cmake_clean_target.cmake
 	cd /home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Box2D-cmake.dir/link.txt --verbose=$(VERBOSE)
 
@@ -1316,6 +1472,12 @@ Box2D__cmake_EXTERNAL_OBJECTS =
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/requires: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.o.requires
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/requires: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.o.requires
 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/requires: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o.requires
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/requires: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o.requires
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/requires: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o.requires
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/requires: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o.requires
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/requires: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o.requires
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/requires: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o.requires
+3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/requires: 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o.requires
 
 .PHONY : 3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/requires
 

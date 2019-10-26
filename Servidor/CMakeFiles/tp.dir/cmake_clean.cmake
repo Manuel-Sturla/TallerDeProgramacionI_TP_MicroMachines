@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/tp.dir/main.cpp.o"
   "CMakeFiles/tp.dir/Pista.cpp.o"
   "CMakeFiles/tp.dir/Carro.cpp.o"
+  "CMakeFiles/tp.dir/Recta.cpp.o"
   "tp.pdb"
   "tp"
 )

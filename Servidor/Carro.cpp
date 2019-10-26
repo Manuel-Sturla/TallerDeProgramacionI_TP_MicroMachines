@@ -1,6 +1,7 @@
 #include "Carro.h"
 #include <math.h>
-#define ANGULO_PARA_GIRO 0.5 * b2_pi
+#define ANGULO_PARA_GIRO 0.5 * b2_pi //HARDCODEADO
+#define VELOCIDAD_MAXIMA 5
 
 Carro::Carro() {
   bodyDef.type = b2_dynamicBody;
@@ -19,21 +20,27 @@ void Carro::agregarseA(Pista *pista) {
   // La densidad debe ser mayor a cero para que sea dinamico
   fixtureDef.density = 1.0f;
   // Override the default friction.
-  fixtureDef.friction = 0.3f;
+  fixtureDef.friction = 0.0f;
   // Add the shape to the body.
   body->CreateFixture(&fixtureDef);
 }
 
 void Carro::acelerar() {
-  float32 angulo = body -> GetAngle();
-  b2Vec2 fuerza(100.0f * cos(angulo), 100.0f * sin(angulo));
-  body -> ApplyForceToCenter(fuerza, true);
+  b2Vec2 velocidad = body->GetLinearVelocity();
+  if (velocidad.Length() < VELOCIDAD_MAXIMA) {
+    float32 angulo = body -> GetAngle();
+    b2Vec2 fuerza(100.0f * cos(angulo), 100.0f * sin(angulo));
+    body -> ApplyForceToCenter(fuerza, true);
+  }
 }
 
 void Carro::frenar() {
-  float32 angulo = body -> GetAngle();
-  b2Vec2 fuerza(-100.0f * cos(angulo), -100.0f * sin(angulo));
-  body -> ApplyForceToCenter(fuerza, true);
+  b2Vec2 velocidad = body->GetLinearVelocity();
+  if (velocidad.Length() < VELOCIDAD_MAXIMA * 0.3) {
+    float32 angulo = body->GetAngle();
+    b2Vec2 fuerza(-100.0f * cos(angulo), -100.0f * sin(angulo));
+    body->ApplyForceToCenter(fuerza, true);
+  }
 }
 
 void Carro::giroADerecha() {

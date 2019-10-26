@@ -45,11 +45,17 @@ file(REMOVE_RECURSE
   "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.o"
   "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.o"
   "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o"
+  "CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o"
+  "CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o"
+  "CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o"
+  "CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o"
+  "CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o"
+  "CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o"
   "libBox2D-cmake.pdb"
   "libBox2D-cmake.a"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang C CXX)
   include(CMakeFiles/Box2D-cmake.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

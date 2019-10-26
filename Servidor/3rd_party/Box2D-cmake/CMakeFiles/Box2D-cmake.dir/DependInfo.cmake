@@ -1,8 +1,18 @@
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
+  "C"
   "CXX"
   )
 # The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_C
+  "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/glad/glad.c" "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/glad/glad.c.o"
+  )
+set(CMAKE_C_COMPILER_ID "GNU")
+
+# The include file search paths:
+set(CMAKE_C_TARGET_INCLUDE_PATH
+  "3rd_party/Box2D-cmake/Box2D"
+  )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.o"
   "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.o"
@@ -50,6 +60,11 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2World.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2World.cpp.o"
   "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Dynamics/b2WorldCallbacks.cpp.o"
   "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Box2D/Rope/b2Rope.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Rope/b2Rope.cpp.o"
+  "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/Framework/DebugDraw.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/Framework/DebugDraw.cpp.o"
+  "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui.cpp.o"
+  "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_demo.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o"
+  "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_draw.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o"
+  "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp" "/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

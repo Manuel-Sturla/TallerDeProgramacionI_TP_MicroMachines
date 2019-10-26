@@ -9,7 +9,7 @@ class Carro {
     b2Body* body;
     float32 anguloDeGiro;
 
-    void aplicarFuerza()
+    void aplicarFuerza();
   public:
     Carro();
 
