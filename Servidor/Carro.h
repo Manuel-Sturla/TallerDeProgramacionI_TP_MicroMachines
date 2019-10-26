@@ -25,6 +25,8 @@ class Carro {
 
     void giroAIzquierda();
 
+    void aplicarFriccion(float32 coeficienteDeRozamiento);
+
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };
 

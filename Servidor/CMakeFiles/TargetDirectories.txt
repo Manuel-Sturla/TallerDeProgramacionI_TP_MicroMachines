@@ -1,6 +1,0 @@
-/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles/rebuild_cache.dir
-/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles/tp.dir
-/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/CMakeFiles/edit_cache.dir
-/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/rebuild_cache.dir
-/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/Box2D-cmake.dir
-/home/manfer/Documentos/Fiuba/Taller de Programacion I/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeFiles/edit_cache.dir

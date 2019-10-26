@@ -7,5 +7,5 @@ add_subdirectory(3rd_party/Box2D-cmake)
 
 set(SOURCE_FILES main.cpp Pista.cpp Carro.cpp)
 
-add_executable(tp main.cpp Pista.cpp Carro.cpp Recta.cpp)
+add_executable(tp main.cpp Pista.cpp Carro.cpp Recta.cpp ManejadorDeContactos.cpp)
 target_link_libraries(tp tobanteGaming::Box2D)

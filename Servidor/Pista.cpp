@@ -1,6 +1,7 @@
 #include "Pista.h"
 
 Pista::Pista(b2Vec2& gravedad): pista(gravedad) {
+  pista.SetContactListener(&manejadorDeContactos);
 }
 
 b2Body* Pista::agregarCarro(b2BodyDef& carro) {

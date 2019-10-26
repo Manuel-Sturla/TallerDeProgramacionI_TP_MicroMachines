@@ -11,6 +11,7 @@ Carro::Carro() {
 
 void Carro::agregarseA(Pista *pista) {
   body = pista -> agregarCarro(bodyDef);
+  body -> SetUserData(this);
   // Definicion del cuerpo dinamico
   b2PolygonShape dynamicBox;
   dynamicBox.SetAsBox(1.0f, 1.0f);
@@ -53,6 +54,11 @@ void Carro::giroADerecha() {
 void Carro::giroAIzquierda() {
   float32 anguloActual = body -> GetAngle();
   body -> SetTransform(body->GetPosition(), anguloActual + anguloDeGiro);
+}
+
+void Carro::aplicarFriccion(float32 coeficienteDeRozamiento) {
+  float32 friccion = (body -> GetMass()) * -9.8f * coeficienteDeRozamiento;
+  aplicarFuerza(friccion);
 }
 
 void Carro::imprimirPosicion() {

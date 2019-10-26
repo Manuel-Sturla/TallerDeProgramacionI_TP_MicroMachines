@@ -11,7 +11,6 @@ int main() {
   recta.agregarseA(&pista);
   Carro carro;
   carro.agregarseA(&pista);
-  //DebugDraw debug;
 
   float32 timeStep = 1.0f / 60.0f;
   int32 velocityIterations = 6;
