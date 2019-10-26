@@ -10,13 +10,14 @@ void Recta::agregarseA(Pista *pista) {
   // Definicion del cuerpo dinamico
   b2PolygonShape staticBox;
   staticBox.SetAsBox(10.0f, 10.0f);
+
   // Define the dynamic body fixture.
   b2FixtureDef fixtureDef;
   fixtureDef.shape = &staticBox;
-  // La densidad debe ser mayor a cero para que sea dinamico
   fixtureDef.density = 0.0f;
   // Override the default friction.
-  fixtureDef.friction = 0.0f;
+  fixtureDef.friction = 0.3f;
+  fixtureDef.isSensor = true;
   // Add the shape to the body.
   body->CreateFixture(&fixtureDef);
 }

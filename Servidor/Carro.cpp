@@ -20,27 +20,29 @@ void Carro::agregarseA(Pista *pista) {
   // La densidad debe ser mayor a cero para que sea dinamico
   fixtureDef.density = 1.0f;
   // Override the default friction.
-  fixtureDef.friction = 0.0f;
+  fixtureDef.friction = 0.3f;
   // Add the shape to the body.
   body->CreateFixture(&fixtureDef);
 }
 
 void Carro::acelerar() {
   b2Vec2 velocidad = body->GetLinearVelocity();
-  if (velocidad.Length() < VELOCIDAD_MAXIMA) {
-    float32 angulo = body -> GetAngle();
-    b2Vec2 fuerza(100.0f * cos(angulo), 100.0f * sin(angulo));
-    body -> ApplyForceToCenter(fuerza, true);
+  if (velocidad.Length() <= VELOCIDAD_MAXIMA) {
+    aplicarFuerza(100.0f);
   }
 }
 
 void Carro::frenar() {
   b2Vec2 velocidad = body->GetLinearVelocity();
   if (velocidad.Length() <= VELOCIDAD_MAXIMA) {
-    float32 angulo = body->GetAngle();
-    b2Vec2 fuerza(-100.0f * cos(angulo), -100.0f * sin(angulo));
-    body->ApplyForceToCenter(fuerza, true);
+    aplicarFuerza(-100.0f);
   }
+}
+
+void Carro::aplicarFuerza(float32 factorDeFuerza) {
+  float32 angulo = body->GetAngle();
+  b2Vec2 fuerza(factorDeFuerza * cos(angulo), factorDeFuerza * sin(angulo));
+  body->ApplyForceToCenter(fuerza, true);
 }
 
 void Carro::giroADerecha() {

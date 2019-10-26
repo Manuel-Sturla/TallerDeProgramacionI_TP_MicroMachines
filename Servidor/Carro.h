@@ -9,7 +9,9 @@ class Carro {
     b2Body* body;
     float32 anguloDeGiro;
 
-    void aplicarFuerza();
+    //El factor de fuerza es multiplicado por el cos del angulo en el eje x
+    // y por el sen del angulo en y
+    void aplicarFuerza(float32 factorDeFuerza);
   public:
     Carro();
 
