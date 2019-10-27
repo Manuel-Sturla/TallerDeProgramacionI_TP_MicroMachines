@@ -3,7 +3,8 @@
 
 #include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
 #include "Pista.h"
-class Carro {
+#include "Objeto.h"
+class Carro: public Objeto {
   private:
     b2BodyDef bodyDef;
     b2Body* body;
@@ -26,6 +27,8 @@ class Carro {
     void giroAIzquierda();
 
     void aplicarFriccion(float32 coeficienteDeRozamiento);
+
+    std::string darId();
 
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };

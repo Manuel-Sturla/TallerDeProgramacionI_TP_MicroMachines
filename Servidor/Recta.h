@@ -8,9 +8,9 @@ class Recta {
   private:
     b2BodyDef bodyDef;
     b2Body* body;
-  public:
     Material* material;
 
+  public:
     Recta();
 
     void agregarseA(Pista *pista);

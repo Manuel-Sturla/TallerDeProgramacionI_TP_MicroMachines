@@ -9,7 +9,7 @@ class Asfalto: public Material {
 
     std::string darId();
 
-    void interactuar();
+    void interactuar(Carro* unCarro);
 
     ~Asfalto();
 

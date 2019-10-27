@@ -1,12 +1,13 @@
 #include "Carro.h"
 #include <math.h>
 #define ANGULO_PARA_GIRO 0.5 * b2_pi //HARDCODEADO
-#define VELOCIDAD_MAXIMA 5
+#define VELOCIDAD_MAXIMA 5 //HARCODEADO
 
 Carro::Carro() {
   bodyDef.type = b2_dynamicBody;
   bodyDef.position.Set(0.0f, 4.0f);
   anguloDeGiro = ANGULO_PARA_GIRO;
+  id = "Carro";
 }
 
 void Carro::agregarseA(Pista *pista) {
@@ -59,6 +60,10 @@ void Carro::giroAIzquierda() {
 void Carro::aplicarFriccion(float32 coeficienteDeRozamiento) {
   float32 friccion = (body -> GetMass()) * -9.8f * coeficienteDeRozamiento;
   aplicarFuerza(friccion);
+}
+
+std::string Carro::darId() {
+  return id;
 }
 
 void Carro::imprimirPosicion() {

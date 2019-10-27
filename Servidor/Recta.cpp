@@ -5,12 +5,12 @@
 Recta::Recta() {
   bodyDef.type = b2_staticBody;
   bodyDef.position.Set(0.0f, 4.0f);
-  material = new Asfalto();
+  material = new Pasto();
 }
 
 void Recta::agregarseA(Pista *pista) {
   body = pista -> agregarObjeto(bodyDef);
-  // Definicion del cuerpo dinamico
+  body -> SetUserData(material);
   b2PolygonShape staticBox;
   staticBox.SetAsBox(10.0f, 10.0f);
 

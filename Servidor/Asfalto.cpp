@@ -11,8 +11,9 @@ std::string Asfalto::darId() {
   return id;
 }
 
-void Asfalto::interactuar() {
+void Asfalto::interactuar(Carro* unCarro) {
   printf("Sobre Asfalto\n");
+  unCarro -> aplicarFriccion(coeficienteDeRozamiento);
 }
 
 Asfalto::~Asfalto() {
