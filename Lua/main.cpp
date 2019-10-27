@@ -16,8 +16,9 @@
 
 int main(){
     try{
-        std::vector<std::string> posPastoMapa = {"0-1", "0-2", "0-3"};
+        std::vector<std::string> posPastoMapa = {"0-0", "0-1", "0-2"};
         JugadorCPU bot("../ScriptsLua/script.lua", posPastoMapa);
+        std::cout << bot.obtenerAccion("1-1") << std::endl;
     }catch(std::runtime_error &e){
         std::cerr << e.what() << std::endl;
     }

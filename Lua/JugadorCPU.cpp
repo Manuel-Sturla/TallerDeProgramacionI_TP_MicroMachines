@@ -9,8 +9,11 @@
 
 #define FUNC_NUEVA_ACCION "obtenerNuevaAccion"
 #define FUNC_NUEVO_MAPA "crearMapa"
-std::string JugadorCPU::obtenerAccion() {
-    std::vector<std::unique_ptr<ParametroLua>> ret = interprete.ejecutarFuncion(FUNC_NUEVA_ACCION);
+
+std::string JugadorCPU::obtenerAccion(const std::string& posAuto) {
+    std::vector<std::unique_ptr<ParametroLua>> params;
+    params.emplace_back(new CadenaLua (posAuto));
+    std::vector<std::unique_ptr<ParametroLua>> ret = interprete.ejecutarFuncion(FUNC_NUEVA_ACCION, params);
     return ret[0]->obtenerValor().cadena;
 }
 

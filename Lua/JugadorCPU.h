@@ -12,7 +12,7 @@ class JugadorCPU {
     InterpreteLua interprete;
 public:
     JugadorCPU(const std::string& rutaScript, std::vector<std::string>& posPasto); //Puede recibir el mapa, para recibirlo una vez.
-    std::string obtenerAccion(); //recibe, posPropia, posAutosContrarios, posExtras.
+    std::string obtenerAccion(const std::string& posAuto); //recibe, posPropia, posAutosContrarios, posExtras.
 };
 
 

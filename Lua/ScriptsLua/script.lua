@@ -50,7 +50,6 @@ function crearMapa(posPasto)
 		--pos = split(valor, SEPARADOR)
 		mapa[pos] = PASTO
 	end	
-	imprimir_tabla(mapa)
 end
 
 
@@ -66,7 +65,7 @@ function hayPastoIzq(pos)
 	elementos = split(pos, SEPARADOR)
 	pos_izq = table.concat(obtenerNuevaPos(elementos, 0,-1) , SEPARADOR)
 	pos_izq_adelante = table.concat(obtenerNuevaPos(elementos, -1,-1), SEPARADOR)
-	print("Posiciones a chequear: ", pos_izq, pos_izq_adelante)
+	--print("Posiciones a chequear: ", pos_izq, pos_izq_adelante)
 	return mapa[pos_izq] == PASTO or mapa[pos_izq_adelante] == PASTO
 end
 function hayPastoDer(pos)
@@ -93,3 +92,7 @@ function obtenerNuevaAccion(posAuto, posOtros, posExtras)
 	if hayPastoEnf(posAuto) then return FRENAR end
 	return ACELERAR
 end
+--[[
+crearMapa({"0-0", "0-1", "0-2"})
+print(obtenerNuevaAccion("1-1"))
+]]
