@@ -27,7 +27,18 @@ InterpreteLua::InterpreteLua(const std::string& script) : InterpreteLua(){
         lua_tostring(L,-1) + std::to_string(retorno), __LINE__, __FILE__);
     }
 }
-
+std::vector<std::unique_ptr<ParametroLua>>
+InterpreteLua::ejecutarFuncion(const std::string &nombre, std::vector<std::string> &variables) {
+    if (lua_getglobal(L, nombre.c_str()) != LUA_TFUNCTION){
+        lua_pop(L,-1);
+        throw ErrorLua("La funcion llamada", nombre,\
+        "no existe o es de un tipo no llamable", __LINE__, __FILE__ );
+    }
+    for (std::string& var : variables){
+        lua_getglobal(L, var.c_str());
+    }
+    return llamar(variables.size());
+}
 std::vector<std::unique_ptr<ParametroLua>> InterpreteLua::ejecutarFuncion(const std::string& nombre,\
     std::vector<std::unique_ptr<ParametroLua>>& parametros) {
     if (lua_getglobal(L, nombre.c_str()) != LUA_TFUNCTION){
@@ -38,7 +49,10 @@ std::vector<std::unique_ptr<ParametroLua>> InterpreteLua::ejecutarFuncion(const 
     for (std::unique_ptr<ParametroLua>& parametro : parametros){
         parametro->apilarAlStack(L);
     }
-    lua_call(L, parametros.size(), LUA_MULTRET);
+    return llamar(parametros.size());
+}
+std::vector<std::unique_ptr<ParametroLua>> InterpreteLua::llamar(size_t cantParametros){
+    lua_call(L, cantParametros, LUA_MULTRET);
     size_t cantArgumentos = lua_gettop(L) - tope;
     std::vector<std::unique_ptr<ParametroLua>> retorno;
     for (size_t i = tope+1; i <= tope+cantArgumentos; i++){
@@ -48,7 +62,6 @@ std::vector<std::unique_ptr<ParametroLua>> InterpreteLua::ejecutarFuncion(const 
     lua_settop(L, tope);
     return retorno;
 }
-
 std::unique_ptr<ParametroLua> InterpreteLua::obtenerElemento(size_t pos) {
     if (lua_isinteger(L, pos)){
         return std::unique_ptr<ParametroLua>(new EnteroLua(lua_tonumber(L,pos)));
@@ -61,24 +74,16 @@ std::unique_ptr<ParametroLua> InterpreteLua::obtenerElemento(size_t pos) {
 
 void InterpreteLua::agregarElementoTabla(const std::string& tabla,ParametroLua& clave, ParametroLua& valor) {
     const char* tabla_c = tabla.c_str();
-    std::cout << "Cantidad de elementos antes de agregar "<< std::endl;
-    imprimirPila();
     if(lua_getglobal(L, tabla_c) != LUA_TTABLE){
         lua_settop(L, tope);
         lua_newtable(L);
         lua_setglobal(L,tabla_c);
         lua_getglobal(L, tabla_c);
     }
-    std::cout << "Cantidad de elementos luego de llamar a la tabla "<< std::endl;
-    imprimirPila();
-
     clave.apilarAlStack(L);
     valor.apilarAlStack(L);
     lua_settable(L,-3);
     lua_settop(L, tope);
-    std::cout << "Cantidad de elementos luego de agregar "<< lua_gettop(L) << std::endl;
-    imprimirPila();
-
 }
 
 std::vector<std::unique_ptr<ParametroLua>> InterpreteLua::ejecutarFuncion(const std::string &nombre) {
@@ -96,6 +101,10 @@ std::unique_ptr<ParametroLua> InterpreteLua::obtenerElementoTabla(const std::str
     lua_gettable(L, -2);
     std::unique_ptr<ParametroLua> ret = obtenerElemento(-1);
     lua_settop(L, tope);
+    if (ret.get() == NULL){
+        throw ErrorLua("Error al buscar elemento en la tabla: ", tabla, \
+        "no existe una clave con el nombre indicado", __LINE__, __FILE__);
+    }
     return ret;
 }
 
@@ -126,3 +135,7 @@ void InterpreteLua::imprimirPila() {
         }
         printf("\n"); /* end the listing */
 }
+
+
+
+

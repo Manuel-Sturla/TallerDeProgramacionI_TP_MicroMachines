@@ -19,6 +19,7 @@ class InterpreteLua {
     size_t tope = 0;
     void imprimirPila();
     std::unique_ptr<ParametroLua> obtenerElemento(size_t pos);
+    std::vector<std::unique_ptr<ParametroLua>> llamar(size_t cantParametros);
 public:
     InterpreteLua();
     InterpreteLua(const std::string& script);
@@ -26,6 +27,9 @@ public:
     std::vector<std::unique_ptr<ParametroLua>> ejecutarFuncion(const std::string& nombre,\
     std::vector<std::unique_ptr<ParametroLua>>& parametros);
     std::vector<std::unique_ptr<ParametroLua>> ejecutarFuncion(const std::string& nombre);
+    std::vector<std::unique_ptr<ParametroLua>> ejecutarFuncion(const std::string& nombre, \
+    std::vector<std::string>& variables);
+
     void agregarElementoTabla(const std::string& tabla, ParametroLua& clave, ParametroLua& valor);
 
     std::unique_ptr<ParametroLua> obtenerElementoTabla(const std::string &tabla, ParametroLua& clave);
