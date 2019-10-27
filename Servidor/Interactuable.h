@@ -2,14 +2,12 @@
 #define _INTERACTUABLE_H_
 
 #include <string>
+#include "Objeto.h"
+#include "Carro.h"
 
-class Interactuable {
-  protected:
-    std::string id;
+class Interactuable: public Objeto {
   public:
-    virtual std::string darId() = 0;
-
-    virtual void interactuar() = 0;
+    virtual void interactuar(Carro* unCarro) = 0;
 };
 
 #endif

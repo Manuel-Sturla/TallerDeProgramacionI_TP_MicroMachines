@@ -1,41 +1,37 @@
 #include "Carro.h"
 #include <math.h>
-#define ANGULO_PARA_GIRO 0.5 * b2_pi //HARDCODEADO
-#define VELOCIDAD_MAXIMA 5
 
-Carro::Carro() {
+Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro) {
   bodyDef.type = b2_dynamicBody;
-  bodyDef.position.Set(0.0f, 4.0f);
-  anguloDeGiro = ANGULO_PARA_GIRO;
+  bodyDef.position.Set(0.0f, 4.0f); //POSICION HARDCODEADA
+  this -> anguloDeGiro = anguloDeGiro;
+  this -> velocidadMax = velocidadMaxima;
+  id = "Carro";
 }
 
 void Carro::agregarseA(Pista *pista) {
   body = pista -> agregarObjeto(bodyDef);
   body -> SetUserData(this);
-  // Definicion del cuerpo dinamico
   b2PolygonShape dynamicBox;
   dynamicBox.SetAsBox(1.0f, 1.0f);
-  // Define the dynamic body fixture.
   b2FixtureDef fixtureDef;
   fixtureDef.shape = &dynamicBox;
   // La densidad debe ser mayor a cero para que sea dinamico
   fixtureDef.density = 1.0f;
-  // Override the default friction.
   fixtureDef.friction = 0.3f;
-  // Add the shape to the body.
-  body->CreateFixture(&fixtureDef);
+  body -> CreateFixture(&fixtureDef);
 }
 
 void Carro::acelerar() {
-  b2Vec2 velocidad = body->GetLinearVelocity();
-  if (velocidad.Length() <= VELOCIDAD_MAXIMA) {
+  b2Vec2 velocidad = body -> GetLinearVelocity();
+  if (velocidad.Length() <= velocidadMax) {
     aplicarFuerza(100.0f);
   }
 }
 
 void Carro::frenar() {
-  b2Vec2 velocidad = body->GetLinearVelocity();
-  if (velocidad.Length() <= VELOCIDAD_MAXIMA) {
+  b2Vec2 velocidad = body -> GetLinearVelocity();
+  if (velocidad.Length() <= velocidadMax) {
     aplicarFuerza(-100.0f);
   }
 }
@@ -43,7 +39,7 @@ void Carro::frenar() {
 void Carro::aplicarFuerza(float32 factorDeFuerza) {
   float32 angulo = body->GetAngle();
   b2Vec2 fuerza(factorDeFuerza * cos(angulo), factorDeFuerza * sin(angulo));
-  body->ApplyForceToCenter(fuerza, true);
+  body -> ApplyForceToCenter(fuerza, true);
 }
 
 void Carro::giroADerecha() {
@@ -61,9 +57,13 @@ void Carro::aplicarFriccion(float32 coeficienteDeRozamiento) {
   aplicarFuerza(friccion);
 }
 
+std::string Carro::darId() {
+  return id;
+}
+
 void Carro::imprimirPosicion() {
-  b2Vec2 position = body->GetPosition();
-  float32 angle = body->GetAngle();
+  b2Vec2 position = body -> GetPosition();
+  float32 angle = body -> GetAngle();
   printf("Nueva iteracion\n");
   printf("Posicion: ");
   printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);

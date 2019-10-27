@@ -9,8 +9,9 @@ std::string Pasto::darId() {
   return id;
 }
 
-void Pasto::interactuar() {
+void Pasto::interactuar(Carro* unCarro) {
   printf("Sobre Pasto");
+  unCarro -> aplicarFriccion(coeficienteDeRozamiento);
 }
 
 Pasto::~Pasto() {
