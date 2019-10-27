@@ -7,11 +7,11 @@
 class Recta {
   private:
     b2BodyDef bodyDef;
-    b2Body* body;
-    Material* material;
+    b2Body *body;
+    Material *material;
 
   public:
-    Recta();
+    Recta(Material *unMaterial);
 
     void agregarseA(Pista *pista);
 

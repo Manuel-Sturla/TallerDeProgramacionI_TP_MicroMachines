@@ -2,14 +2,20 @@
 #include "Pista.h"
 #include "Carro.h"
 #include "Recta.h"
-//#include "3rd_party/Box2D-cmake/Box2D/Testbed/Framework/DebugDraw.h"
+#include "Pasto.h"
+#include "Asfalto.h"
+#include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
+#define ANGULO_PARA_GIRO 0.5 * b2_pi //HARDCODEADO
+#define VELOCIDAD_MAXIMA 5 //HARCODEADO
 
 int main() {
   b2Vec2 gravedad(0.0f, 0.0f);
   Pista pista(gravedad);
-  Recta recta;
+  Pasto pasto;
+  Asfalto asfalto;
+  Recta recta(&asfalto);
   recta.agregarseA(&pista);
-  Carro carro;
+  Carro carro(VELOCIDAD_MAXIMA, ANGULO_PARA_GIRO);
   carro.agregarseA(&pista);
 
   float32 timeStep = 1.0f / 60.0f;
@@ -20,12 +26,6 @@ int main() {
     pista.simular(timeStep, velocityIterations, positionIterations);
     carro.imprimirPosicion();
   }
-/*
-  for (int32 i = 0; i < 12; ++i) {
-    carro.frenar();
-    pista.simular(timeStep, velocityIterations, positionIterations);
-    carro.imprimirPosicion();
-  }
-*/
+
   return 0;
 }

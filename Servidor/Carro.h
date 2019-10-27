@@ -9,12 +9,13 @@ class Carro: public Objeto {
     b2BodyDef bodyDef;
     b2Body* body;
     float32 anguloDeGiro;
+    float32 velocidadMax;
 
     //El factor de fuerza es multiplicado por el cos del angulo en el eje x
     // y por el sen del angulo en y
     void aplicarFuerza(float32 factorDeFuerza);
   public:
-    Carro();
+    Carro(float32 velocidadMaxima, float32 anguloDeGiro);
 
     void agregarseA(Pista *pista);
 

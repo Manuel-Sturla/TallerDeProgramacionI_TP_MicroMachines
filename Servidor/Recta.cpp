@@ -2,29 +2,24 @@
 #include "Asfalto.h"
 #include "Pasto.h"
 
-Recta::Recta() {
+Recta::Recta(Material *unMaterial) {
   bodyDef.type = b2_staticBody;
-  bodyDef.position.Set(0.0f, 4.0f);
-  material = new Pasto();
+  bodyDef.position.Set(0.0f, 4.0f); //POSICION HARDCODEADA
+  material = unMaterial;
 }
 
 void Recta::agregarseA(Pista *pista) {
   body = pista -> agregarObjeto(bodyDef);
   body -> SetUserData(material);
   b2PolygonShape staticBox;
-  staticBox.SetAsBox(10.0f, 10.0f);
-
-  // Define the dynamic body fixture.
+  staticBox.SetAsBox(10.0f, 10.0f); //TAMANIO DE RECTA HARDCODEADO
   b2FixtureDef fixtureDef;
   fixtureDef.shape = &staticBox;
   fixtureDef.density = 0.0f;
-  // Override the default friction.
   fixtureDef.friction = 0.3f;
   fixtureDef.isSensor = true;
-  // Add the shape to the body.
-  body->CreateFixture(&fixtureDef);
+  body -> CreateFixture(&fixtureDef);
 }
 
 Recta::~Recta() {
-  delete material;
 }
