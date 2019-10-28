@@ -8,7 +8,7 @@ class Accion {
     void aplicarFuerza(b2Body* body, float32 factorDeFuerza);
 
   public:
-    virtual void ejecutar(b2Body* body, float32 velocidadMax) = 0;
+    virtual void ejecutar(b2Body* body, float32 velocidadMax, float32 angulo) = 0;
 };
 
 

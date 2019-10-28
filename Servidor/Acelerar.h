@@ -5,8 +5,7 @@
 
 class Acelerar: public Accion {
   public:
-    void ejecutar(b2Body* body, float32 velocidadMax);
+    void ejecutar(b2Body* body, float32 velocidadMax, float32 angulo);
 };
-
 
 #endif
