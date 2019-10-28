@@ -40,6 +40,10 @@ std::string Carro::darId() {
   return id;
 }
 
+void Carro::recibirDanio(int danio) {
+  vida.recibirDanio(danio);
+}
+
 void Carro::imprimirPosicion() {
   b2Vec2 position = body -> GetPosition();
   float32 angle = body -> GetAngle();

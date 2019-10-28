@@ -5,11 +5,13 @@
 #include "Pista.h"
 #include "Accion.h"
 #include "Objeto.h"
+#include "Vida.h"
 
 class Carro: public Objeto {
   private:
     b2BodyDef bodyDef;
     b2Body* body;
+    Vida vida;
     float32 anguloDeGiro;
     float32 velocidadMax;
     float32 coeficienteDeRozamiento;
@@ -26,6 +28,8 @@ class Carro: public Objeto {
     void aplicarFriccion(float32 coeficienteDeRozamiento);
 
     std::string darId();
+
+    void recibirDanio(int danio);
 
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };
