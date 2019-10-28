@@ -22,34 +22,14 @@ void Carro::agregarseA(Pista *pista) {
   body -> CreateFixture(&fixtureDef);
 }
 
-void Carro::acelerar() {
-  b2Vec2 velocidad = body -> GetLinearVelocity();
-  if (velocidad.Length() <= velocidadMax) {
-    aplicarFuerza(100.0f);
-  }
-}
-
-void Carro::frenar() {
-  b2Vec2 velocidad = body -> GetLinearVelocity();
-  if (velocidad.Length() <= velocidadMax) {
-    aplicarFuerza(-100.0f);
-  }
+void Carro::ejecutarAccion(Accion *unaAccion) {
+  unaAccion -> ejecutar(body, velocidadMax);
 }
 
 void Carro::aplicarFuerza(float32 factorDeFuerza) {
   float32 angulo = body->GetAngle();
   b2Vec2 fuerza(factorDeFuerza * cos(angulo), factorDeFuerza * sin(angulo));
   body -> ApplyForceToCenter(fuerza, true);
-}
-
-void Carro::giroADerecha() {
-  float32 anguloActual = body -> GetAngle();
-  body -> SetTransform(body->GetPosition(), anguloActual - anguloDeGiro);
-}
-
-void Carro::giroAIzquierda() {
-  float32 anguloActual = body -> GetAngle();
-  body -> SetTransform(body->GetPosition(), anguloActual + anguloDeGiro);
 }
 
 void Carro::aplicarFriccion(float32 coeficienteDeRozamiento) {

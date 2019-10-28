@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include "Pista.h"
+#include "Acelerar.h"
+#include "Frenar.cpp.h"
 #include "Carro.h"
 #include "Recta.h"
 #include "Pasto.h"
@@ -17,11 +19,12 @@ int main() {
   recta.agregarseA(&pista);
   Carro carro(VELOCIDAD_MAXIMA, ANGULO_PARA_GIRO);
   carro.agregarseA(&pista);
-
+  Acelerar acelerar;
   float32 timeStep = 1.0f / 60.0f;
   int32 velocityIterations = 6;
   int32 positionIterations = 2;
-  carro.acelerar();
+
+  carro.ejecutarAccion(&frenar);
   for (int32 i = 0; i < 12; ++i) {
     pista.simular(timeStep, velocityIterations, positionIterations);
     carro.imprimirPosicion();

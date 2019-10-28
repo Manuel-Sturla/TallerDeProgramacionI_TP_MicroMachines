@@ -3,7 +3,9 @@
 
 #include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
 #include "Pista.h"
+#include "Accion.h"
 #include "Objeto.h"
+
 class Carro: public Objeto {
   private:
     b2BodyDef bodyDef;
@@ -19,6 +21,8 @@ class Carro: public Objeto {
 
     void agregarseA(Pista *pista);
 
+    void ejecutarAccion(Accion* unaAccion);
+/*
     void acelerar();
 
     void frenar();
@@ -26,7 +30,7 @@ class Carro: public Objeto {
     void giroADerecha();
 
     void giroAIzquierda();
-
+*/
     void aplicarFriccion(float32 coeficienteDeRozamiento);
 
     std::string darId();
