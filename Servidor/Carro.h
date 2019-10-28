@@ -12,6 +12,7 @@ class Carro: public Objeto {
     b2Body* body;
     float32 anguloDeGiro;
     float32 velocidadMax;
+    float32 coeficienteDeRozamiento;
 
   public:
     Carro(float32 velocidadMaxima, float32 anguloDeGiro);

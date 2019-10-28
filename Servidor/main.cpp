@@ -25,9 +25,9 @@ int main() {
   float32 timeStep = 1.0f / 60.0f;
   int32 velocityIterations = 6;
   int32 positionIterations = 2;
-  carro.ejecutarAccion(&giroADerecha);
   carro.ejecutarAccion(&acelerar);
-  for (int32 i = 0; i < 2000; ++i) {
+  for (int32 i = 0; i < 1521; ++i) {
+    carro.ejecutarAccion(&acelerar);
     pista.simular(timeStep, velocityIterations, positionIterations);
     carro.imprimirPosicion();
     carro.actualizar();

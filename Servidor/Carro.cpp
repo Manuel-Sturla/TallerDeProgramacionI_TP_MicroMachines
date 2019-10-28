@@ -29,12 +29,11 @@ void Carro::ejecutarAccion(Accion *unaAccion) {
 void Carro::actualizar() {
   b2Vec2 velocidad = body -> GetLinearVelocity();
   float32 factorDeFuerza = -2 * velocidad.Normalize();
-  body -> ApplyForce(0.3f * factorDeFuerza * velocidad, body -> GetWorldCenter(), true);
+  body -> ApplyForce(coeficienteDeRozamiento * factorDeFuerza * velocidad, body -> GetWorldCenter(), true);
 }
 
 void Carro::aplicarFriccion(float32 coeficienteDeRozamiento) {
-  //float32 friccion = (body -> GetMass()) * -9.8f * coeficienteDeRozamiento;
-  //aplicarFuerza(friccion);
+  this -> coeficienteDeRozamiento = coeficienteDeRozamiento;
 }
 
 std::string Carro::darId() {
