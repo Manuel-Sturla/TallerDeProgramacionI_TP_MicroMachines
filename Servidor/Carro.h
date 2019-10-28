@@ -31,6 +31,8 @@ class Carro: public Objeto {
 
     void recibirDanio(int danio);
 
+    void curar(int aumentoDeVida);
+
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };
 

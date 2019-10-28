@@ -9,6 +9,8 @@ class Vida {
 
     void recibirDanio(int danio);
 
+    void aumentarVida(int aumento);
+
     void matar();
 
     void revivir();

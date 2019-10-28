@@ -44,6 +44,10 @@ void Carro::recibirDanio(int danio) {
   vida.recibirDanio(danio);
 }
 
+void Carro::curar(int aumentoDeVida) {
+  vida.aumentarVida(aumentoDeVida);
+}
+
 void Carro::imprimirPosicion() {
   b2Vec2 position = body -> GetPosition();
   float32 angle = body -> GetAngle();
