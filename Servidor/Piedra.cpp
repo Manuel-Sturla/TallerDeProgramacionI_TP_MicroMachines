@@ -3,6 +3,7 @@
 
 Piedra::Piedra(Pista *pista) {
   b2BodyDef bodyDef;
+  this -> pista = pista;
   bodyDef.type = b2_staticBody;
   bodyDef.position.Set(3.0f, 4.0f); //POSICION HARDCODEADA
   cuerpo = pista -> agregarObjeto(bodyDef);
@@ -13,6 +14,7 @@ Piedra::Piedra(Pista *pista) {
   fixtureDef.shape = &staticBox;
   fixtureDef.density = 1.0f;
   fixtureDef.isSensor = true;
+  validez = true;
   cuerpo -> CreateFixture(&fixtureDef);
 }
 
@@ -23,7 +25,12 @@ std::string Piedra::darId() {
 void Piedra::interactuar(Carro *unCarro) {
   unCarro -> recibirDanio(DANIO_POR_PIEDRA);
   unCarro -> reducirVelocidad(0.75f);
+  validez = false;
 }
 
 Piedra::~Piedra() {
+}
+
+bool Piedra::esValido() {
+  return validez;
 }

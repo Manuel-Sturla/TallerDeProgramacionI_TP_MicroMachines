@@ -15,3 +15,7 @@ void Pasto::interactuar(Carro* unCarro) {
 
 Pasto::~Pasto() {
 }
+
+bool Pasto::esValido() {
+  return true;
+}

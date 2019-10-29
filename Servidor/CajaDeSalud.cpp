@@ -3,6 +3,7 @@
 
 CajaDeSalud::CajaDeSalud(Pista *pista) {
   b2BodyDef bodyDef;
+  this -> pista = pista;
   bodyDef.type = b2_staticBody;
   bodyDef.position.Set(1.0f, 4.0f); //POSICION HARDCODEADA
   cuerpo = pista -> agregarObjeto(bodyDef);
@@ -14,12 +15,13 @@ CajaDeSalud::CajaDeSalud(Pista *pista) {
   // La densidad debe ser mayor a cero para que sea dinamico
   fixtureDef.density = 1.0f;
   fixtureDef.isSensor = true;
+  validez = true;
   cuerpo -> CreateFixture(&fixtureDef);
 }
 
 void CajaDeSalud::interactuar(Carro *unCarro) {
   unCarro -> curar(CURACION);
-  //eliminarseDePista(); //ROMPE AL INTENTAR ELIMINARLO
+  validez = false;
 }
 
 void CajaDeSalud::eliminarseDePista() {
@@ -27,9 +29,13 @@ void CajaDeSalud::eliminarseDePista() {
 }
 
 std::string CajaDeSalud::darId() {
-  return "CajaDeSalud";
+  return "Modificador";
 }
 
 CajaDeSalud::~CajaDeSalud() {
 
+}
+
+bool CajaDeSalud::esValido() {
+  return validez;
 }

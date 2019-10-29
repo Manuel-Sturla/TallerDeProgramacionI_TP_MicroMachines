@@ -1,6 +1,4 @@
 #include "Recta.h"
-#include "Asfalto.h"
-#include "Pasto.h"
 
 Recta::Recta(Material *unMaterial) {
   bodyDef.type = b2_staticBody;
@@ -22,4 +20,8 @@ void Recta::agregarseA(Pista *pista) {
 }
 
 Recta::~Recta() {
+}
+
+bool Recta::esValido() {
+  return true;
 }

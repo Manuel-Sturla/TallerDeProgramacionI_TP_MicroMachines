@@ -8,6 +8,8 @@ class Aceite: public Modificador {
     std::string darId();
 
     void interactuar(Carro* unCarro);
+
+    bool esValido();
 };
 
 

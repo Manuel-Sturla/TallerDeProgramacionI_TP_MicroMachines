@@ -17,3 +17,7 @@ void Asfalto::interactuar(Carro* unCarro) {
 
 Asfalto::~Asfalto() {
 }
+
+bool Asfalto::esValido() {
+  return true;
+}

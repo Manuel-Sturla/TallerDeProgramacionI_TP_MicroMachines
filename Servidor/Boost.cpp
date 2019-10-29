@@ -2,6 +2,7 @@
 
 Boost::Boost(Pista *pista) {
   b2BodyDef bodyDef;
+  this -> pista = pista;
   bodyDef.type = b2_staticBody;
   bodyDef.position.Set(1.0f, 4.0f); //POSICION HARDCODEADA
   cuerpo = pista -> agregarObjeto(bodyDef);
@@ -12,12 +13,14 @@ Boost::Boost(Pista *pista) {
   fixtureDef.shape = &staticBox;
   // La densidad debe ser mayor a cero para que sea dinamico
   fixtureDef.density = 1.0f;
+  validez = true;
   fixtureDef.isSensor = true;
   cuerpo -> CreateFixture(&fixtureDef);
 }
 
 void Boost::interactuar(Carro *unCarro) {
   unCarro -> recibirBoost();
+  validez = false;
 }
 
 std::string Boost::darId() {
@@ -25,4 +28,8 @@ std::string Boost::darId() {
 }
 
 Boost::~Boost() {
+}
+
+bool Boost::esValido() {
+  return validez;
 }

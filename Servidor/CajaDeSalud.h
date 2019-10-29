@@ -9,15 +9,18 @@ class CajaDeSalud: public Modificador {
   private:
     b2Body* cuerpo;
     Pista *pista;
-
-    void eliminarseDePista();
+    bool validez;
 
   public:
     CajaDeSalud(Pista *pista);
 
-    std::string darId();
+    std::string darId() override;
 
     void interactuar(Carro* unCarro);
+
+    void eliminarseDePista();
+
+    bool esValido();
 
     ~CajaDeSalud();
 };

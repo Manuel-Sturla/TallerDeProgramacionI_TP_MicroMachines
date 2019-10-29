@@ -11,6 +11,8 @@ class Asfalto: public Material {
 
     void interactuar(Carro* unCarro);
 
+    bool esValido();
+
     ~Asfalto();
 
 };

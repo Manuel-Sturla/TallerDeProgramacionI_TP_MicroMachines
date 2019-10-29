@@ -76,3 +76,7 @@ void Carro::imprimirPosicion() {
   printf("Velocidad: ");
   printf("%4.2f %4.2f\n", velocidad.x, velocidad.y);
 }
+
+bool Carro::esValido() {
+  return true;
+}

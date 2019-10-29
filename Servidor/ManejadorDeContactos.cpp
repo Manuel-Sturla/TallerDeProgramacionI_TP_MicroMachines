@@ -2,7 +2,7 @@
 #include "Carro.h"
 #include "Interactuable.h"
 #include "Objeto.h"
-
+#include <iostream>
 ManejadorDeContactos::ManejadorDeContactos() {
 }
 

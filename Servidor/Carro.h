@@ -43,6 +43,8 @@ class Carro: public Objeto {
 
     void reducirVisibilidad();
 
+    bool esValido() override;
+
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };
 

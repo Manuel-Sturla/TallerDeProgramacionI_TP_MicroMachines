@@ -15,6 +15,8 @@ class Recta {
 
     void agregarseA(Pista *pista);
 
+    bool esValido();
+
     ~Recta();
 };
 

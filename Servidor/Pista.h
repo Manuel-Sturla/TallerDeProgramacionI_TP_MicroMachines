@@ -17,6 +17,8 @@ class Pista {
 
     void simular(float32 tiempo, int32 velocidad, int32 iteraciones);
 
+    void actualizar();
+
     ~Pista();
 };
 
