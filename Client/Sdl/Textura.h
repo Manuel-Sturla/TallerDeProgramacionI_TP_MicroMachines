@@ -13,20 +13,21 @@
 class Textura {
 private:
     SDL_Texture* textura;
-    Posicion posicion;
+    Posicion* posicion;
     int angulo;
 
 public:
-
-    Textura(SDL_Renderer* renderizador, const std::string& archivo, Posicion& pos, int angulo);
+    Textura(SDL_Renderer* renderizador, const std::string& archivo, Posicion* pos, int angulo);
 
     void copiar(SDL_Renderer* renderizador);
 
-    void moverA(SDL_Renderer* renderizador, int posX, int posY);
+    void moverA(int posX, int posY);
+
+    void mover(Posicion& pos);
+
+    void rotar(int angulo);
 
     virtual ~Textura();
-
-    void rotar(SDL_Renderer *renderizador, int angulo);
 };
 
 

@@ -21,6 +21,10 @@ public:
     const SDL_Rect *getRect();
 
     void moverA(int posX, int posY);
+
+    void mover(Posicion& pos);
+
+    Posicion operator - (Posicion const& pos2);
 };
 
 

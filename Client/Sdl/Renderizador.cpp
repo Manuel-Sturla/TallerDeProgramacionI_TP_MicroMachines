@@ -2,6 +2,7 @@
 // Created by diego on 22/10/19.
 //
 
+#include <iostream>
 #include "Renderizador.h"
 #include "../Excepciones/ExcepcionConPos.h"
 
@@ -17,42 +18,33 @@ void Renderizador::imprimir(Uint32 tiempoMs) {
     SDL_Delay(tiempoMs);
 }
 
-Renderizador::~Renderizador() {
-    if(renderizador != nullptr){
-        SDL_DestroyRenderer(renderizador);
-    }
-}
-
-void Renderizador::agregarTextura(const std::string &archivo, Posicion& pos, int angulo, const std::string& nombre) {
-    texturas.emplace(std::piecewise_construct, std::forward_as_tuple(nombre), std::forward_as_tuple(renderizador, archivo, pos, angulo));
+void Renderizador::agregarTextura(const std::string &archivo, Posicion* pos, int angulo) {
+    texturas.emplace_back(renderizador, archivo, pos, angulo);
 }
 
 void Renderizador::limpiar() {
     SDL_RenderClear(renderizador);
 }
 
-void Renderizador::mover(const std::string &nombre, int posX, int posY) {
-    auto it = texturas.find(nombre);
-    if(it == texturas.end()){
-        throw ExcepcionConPos(__FILE__, __LINE__, "Intento actualizar textura no valida: "+nombre);
+void Renderizador::copiarTodo() {
+    for(auto & trecho : pista){
+        trecho.copiar(renderizador);
     }
-    it->second.moverA(renderizador, posX, posY);
+    for(auto & textura : texturas){
+        textura.copiar(renderizador);
+    }
 }
 
-void Renderizador::copiar(const std::string &nombre) {
-    auto it = texturas.find(nombre);
-    if(it == texturas.end()){
-        throw ExcepcionConPos(__FILE__, __LINE__, "Intento actualizar textura no valida: "+nombre);
+Renderizador::~Renderizador() {
+    if(renderizador != nullptr){
+        SDL_DestroyRenderer(renderizador);
     }
-    it->second.copiar(renderizador);
 }
 
-void Renderizador::rotar(const std::string& nombre, int angulo) {
-    auto it = texturas.find(nombre);
-    if(it == texturas.end()){
-        throw ExcepcionConPos(__FILE__, __LINE__, "Intento actualizar textura no valida: "+nombre);
-    }
-    it->second.rotar(renderizador, angulo);
+void Renderizador::agregarTrecho(const std::string &archivo, Posicion* pos, int angulo) {
+    pista.emplace_back(renderizador, archivo, pos, angulo);
 }
 
-
+std::vector<Textura> &Renderizador::getPista() {
+    return pista;
+}
