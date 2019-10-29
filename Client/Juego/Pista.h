@@ -11,16 +11,13 @@
 #include "../Sdl/Renderizador.h"
 
 class Pista {
-    Renderizador& renderizador;
-    std::vector<Textura>& pista;
+
     int tamImagen;
 
 public:
-    Pista(Renderizador& renderizador, std::vector<Textura>& pista);
+    explicit Pista(Renderizador &renderizador);
 
-    void crearPista();
-
-    void mover(Posicion posicion);
+    void crearPista(Renderizador& renderizador);
 };
 
 

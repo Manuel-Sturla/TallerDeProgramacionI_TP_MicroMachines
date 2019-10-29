@@ -10,10 +10,12 @@
 
 class Auto {
 private:
-    Renderizador& renderizador;
+
 
 public:
-    explicit Auto(Renderizador& renderizador);
+    void rotar(int &angulo);
+
+    void crear(Renderizador& renderizador, int ancho, int altura);
 };
 
 
