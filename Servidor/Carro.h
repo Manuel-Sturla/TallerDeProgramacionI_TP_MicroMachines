@@ -37,6 +37,8 @@ class Carro: public Objeto {
 
     void reducirVelocidad(float32 factor);
 
+    void recibirBoost();
+
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };
 

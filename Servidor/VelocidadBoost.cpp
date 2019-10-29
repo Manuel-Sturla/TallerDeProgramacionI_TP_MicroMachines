@@ -11,6 +11,7 @@ EstrategiaDeVelocidad(velocidadBase + AUMENTO_VEL){
 
 std::shared_ptr<EstrategiaDeVelocidad> VelocidadBoost::boost() {
   duracion += DURACION_INICIAL;
+  return std::shared_ptr<EstrategiaDeVelocidad>(this);
 }
 
 std::shared_ptr<EstrategiaDeVelocidad> VelocidadBoost::actualizar() {

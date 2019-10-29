@@ -33,6 +33,7 @@ void Carro::actualizar() {
   b2Vec2 velocidad = body -> GetLinearVelocity();
   float32 factorDeFuerza = -2 * velocidad.Normalize();
   body -> ApplyForce(coeficienteDeRozamiento * factorDeFuerza * velocidad, body -> GetWorldCenter(), true);
+  //estrategiaDeVelocidad = estrategiaDeVelocidad -> actualizar();
 }
 
 void Carro::aplicarFriccion(float32 coeficienteDeRozamiento) {
@@ -54,6 +55,10 @@ void Carro::curar(int aumentoDeVida) {
 void Carro::reducirVelocidad(float32 factor) {
   b2Vec2 velocidad = body -> GetLinearVelocity();
   body -> SetLinearVelocity(factor * velocidad);
+}
+
+void Carro::recibirBoost() {
+  estrategiaDeVelocidad = estrategiaDeVelocidad -> boost();
 }
 
 void Carro::imprimirPosicion() {
