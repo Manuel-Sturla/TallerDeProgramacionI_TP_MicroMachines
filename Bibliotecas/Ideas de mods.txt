@@ -1,4 +1,4 @@
 Ideas de mods:
 
-Intercambiar lugares entre el primero y el último (tal vez intercambiar random?)
+Intercambiar lugares entre el primero y el último (tal vez intercambiar random?) Para esto tendría que recibir todas las posiciones de los autos en el orden que se encuentran!! Y con un rand() % 10 ponele si sale entre [0;1] (20% de probabilidad), swapee las posiciones de el primero y el ultimo
 Controles invertidos!
