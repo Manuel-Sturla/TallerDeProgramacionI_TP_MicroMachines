@@ -33,6 +33,8 @@ class Carro: public Objeto {
 
     void curar(int aumentoDeVida);
 
+    void reducirVelocidad(float32 factor);
+
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };
 

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "Pista.h"
 #include "Acelerar.h"
-#include "CajaDeSalud.h"
+#include "Piedra.h"
 #include "Carro.h"
 #include "Recta.h"
 #include "Asfalto.h"
@@ -15,7 +15,7 @@ int main() {
   Asfalto asfalto;
   Recta recta(&asfalto);
   recta.agregarseA(&pista);
-  CajaDeSalud cajaDeSalud(&pista);
+  Piedra piedra(&pista);
   Carro carro(VELOCIDAD_MAXIMA, ANGULO_PARA_GIRO);
   carro.agregarseA(&pista);
   Acelerar acelerar;
@@ -23,7 +23,7 @@ int main() {
   int32 velocityIterations = 6;
   int32 positionIterations = 2;
   carro.ejecutarAccion(&acelerar);
-  for (int32 i = 0; i < 1; ++i) {
+  for (int32 i = 0; i < 20; ++i) {
     carro.ejecutarAccion(&acelerar);
     pista.simular(timeStep, velocityIterations, positionIterations);
     carro.imprimirPosicion();

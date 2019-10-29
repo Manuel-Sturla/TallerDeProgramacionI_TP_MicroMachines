@@ -15,3 +15,4 @@ Dudas Hugo:
     Duda 2: Friccion en pasto el doble de friccion en pista?
     Duda 3: Agarre?
     Duda 4: Como hacer curvas?
+    Duda 5: Como eliminar correctamente objetos del mundo Box2D (Como lo estoy haciendo da Sigv)

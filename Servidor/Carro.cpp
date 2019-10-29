@@ -49,6 +49,11 @@ void Carro::curar(int aumentoDeVida) {
   vida.aumentarVida(aumentoDeVida);
 }
 
+void Carro::reducirVelocidad(float32 factor) {
+  b2Vec2 velocidad = body -> GetLinearVelocity();
+  body -> SetLinearVelocity(factor * velocidad);
+}
+
 void Carro::imprimirPosicion() {
   b2Vec2 position = body -> GetPosition();
   float32 angle = body -> GetAngle();

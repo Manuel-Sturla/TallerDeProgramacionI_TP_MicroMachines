@@ -11,6 +11,7 @@ class CajaDeSalud: public Modificador {
     Pista *pista;
 
     void eliminarseDePista();
+
   public:
     CajaDeSalud(Pista *pista);
 
@@ -20,6 +21,5 @@ class CajaDeSalud: public Modificador {
 
     ~CajaDeSalud();
 };
-
 
 #endif

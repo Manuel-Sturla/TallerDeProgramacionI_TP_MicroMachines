@@ -9,6 +9,7 @@ void Vida::recibirDanio(int danio) {
   int nuevaVida = vida - danio;
   if (nuevaVida > 0) {
     vida = nuevaVida;
+    std::cout << "Vida diminuida a " << vida << std::endl;
   } else {
     matar();
   }
