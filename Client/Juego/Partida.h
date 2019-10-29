@@ -20,6 +20,7 @@ public:
     void iniciar();
 
     virtual ~Partida();
+
 };
 
 

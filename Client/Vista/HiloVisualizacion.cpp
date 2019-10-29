@@ -8,19 +8,16 @@
 
 HiloVisualizacion::HiloVisualizacion(Servidor& servidor) : renderizador("microMachines.exe", 1000, 1000)\
 , servidor(servidor), camara(renderizador) {
-    camara.inicializar();
 }
 
 void HiloVisualizacion::run() {
     try{
         std::vector<int> mensaje = servidor.recibir();
-        renderizador.copiarTodo();
-        renderizador.imprimir(500);
         while(mensaje[0] != -1){
-            renderizador.imprimir(20);
             renderizador.limpiar();
-            camara.actualizar(mensaje);
             renderizador.copiarTodo();
+            renderizador.imprimir(20);
+            camara.actualizar(mensaje);
             mensaje = servidor.recibir();
         }
     } catch(const ExcepcionConPos& e){
