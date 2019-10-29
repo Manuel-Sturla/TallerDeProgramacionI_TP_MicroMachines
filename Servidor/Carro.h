@@ -6,12 +6,14 @@
 #include "Accion.h"
 #include "Objeto.h"
 #include "Vida.h"
+#include "EstrategiaDeVelocidad.h"
 
 class Carro: public Objeto {
   private:
     b2BodyDef bodyDef;
     b2Body* body;
     Vida vida;
+    EstrategiaDeVelocidad& estrategiaDeVelocidad;
     float32 anguloDeGiro;
     float32 velocidadMax;
     float32 coeficienteDeRozamiento;

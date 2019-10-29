@@ -1,5 +1,6 @@
 #include "Carro.h"
 #include <math.h>
+#include "VelocidadBase.h"
 #include <iostream>
 
 Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro) {
@@ -8,6 +9,7 @@ Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro) {
   this -> anguloDeGiro = anguloDeGiro;
   this -> velocidadMax = velocidadMaxima;
   id = "Carro";
+  estrategiaDeVelocidad = VelocidadBase(velocidadMaxima)&;
 }
 
 void Carro::agregarseA(Pista *pista) {
