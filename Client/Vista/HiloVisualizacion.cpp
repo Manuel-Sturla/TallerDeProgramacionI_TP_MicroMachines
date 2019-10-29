@@ -12,6 +12,8 @@ HiloVisualizacion::HiloVisualizacion(Servidor& servidor) : renderizador("microMa
 
 void HiloVisualizacion::run() {
     try{
+        renderizador.copiarTodo();
+        renderizador.imprimir(1000);
         std::vector<int> mensaje = servidor.recibir();
         while(mensaje[0] != -1){
             renderizador.limpiar();
@@ -19,6 +21,7 @@ void HiloVisualizacion::run() {
             renderizador.imprimir(20);
             camara.actualizar(mensaje);
             mensaje = servidor.recibir();
+            //camara.actualizar(mensaje);
         }
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';

@@ -11,4 +11,10 @@ Camara::Camara(Renderizador& renderizador) : pista(renderizador), miAuto(renderi
 void Camara::actualizar(std::vector<int>& mensaje) {
     Posicion posFinal(mensaje[0], mensaje[1], 1000, 1000);
     posCamara = posFinal;
+
+}
+
+void Camara::inicializar(Renderizador& renderizador) {
+    pista.crearPista(renderizador);
+    miAuto.crear(renderizador, 1000, 1000);
 }

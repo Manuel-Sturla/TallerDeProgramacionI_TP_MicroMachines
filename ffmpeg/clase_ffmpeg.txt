@@ -1,0 +1,47 @@
+Levantar un contexto de ffmpeg --> Context con los codecs y todo
+
+Para importar las coasas:
+extern "C" {
+#include <libavformat/avformat.h>
+}
+La inicializo: av_register_all()
+
+Puedo inicializar un contexto, que es un puntero de C
+Se carga con una funcion avformat_alloc_context(), (clase que alloca en el constructor y lo libera en el destructor)
+
+Puedo instancia tambien un formato de salida. En el tutorial OutputFormat
+Y puedo generar datos para mi video de salida. Tengo que especificar la salida, que se puede hacer con guessformat, que se fija en funcion de la extencino del archivo.
+Luego del formato de salida es el codec, El video son capas de colores, cuantos bytes le dedico a cada capa? 1 byte? 3 bbytes? En que disposicion, una en cada color superpuesta, superpongo bytes; tengo 3 bytes y uno de padding.
+Luego busco el encoder para grabar en ese formato con ese codex
+Luego inicializo varias configuraciones:
+ - framerate segun espacio y a cuanto dfunciona el juego
+ - el formato de pixeles, en el ejemmplo usa otras cosas mas raras que un RGB normal. 
+ Y luego con eso tenemos el codec "construido" para codificar un video.
+ Recien ahi puedo abrir un archivo que vaa ser mi archivo de salida. 
+
+ Entonces para escribir un frame, tenemos que instanciarlo (av_frame_alloc)
+ Y le tengo que instanciar las dimensiones en funcion de lo que uarde en el codex.
+ Con las direcciones seteadas puedo tener un buffer. 
+ Y luego puedo escribir de a paquetes, entonces tengo que allocar un paquete. Y le voy grabando los frames al paquete. Cada frame tiene su ID, que es donde va? Y una vex que lo configure, hago un encode, que recibe un frame y lo manda al contexto. Y eventualmente trata de escribirle los paquetes al archivo.
+
+
+ Para escribir desde SLD
+ inicializamos el contexto.
+ Inicializamos un "archivo de salida"
+ Vamos a tner que crear una Textura, que vva a ser la que voy a grabar en el video.
+Esta textura es una especie de buffer. Le tengo que pasar el renderer. 
+Luego inicializo un contexto de sws que sirve para escalado, y transformacion de formatos de pixeles.
+Este contexto cuando lo inicializo tiene las dimensiones de entrada, salida y formatos salidas... .
+Tambien vamos a tener un data buffer, para usar las imagnes de SDL que estan en GPU al CPU y luego en algun momento de ahi al Disco
+Uso un vector de chars.
+Cuando digo que vot a dibujar sobre la ventana. y luego sobre el buffer que a mi me sirve para el video.
+SDLrender readpixels esto lo baja a memoria principal. (de la venta al buffer?)
+Y iuna vez que lo tengo en mi vector de char, lo puedo escribir por frames.
+El problema que tiene el ejemplo del tutorial. El renderPixels es una operacion lenta y el writeFrame es muy lenta. Esto no se puede hacer en el loop principal del juego porque tarda mucho y te laguea todo --> tiene que estar en un hilo aparte.
+
+Finalmente cierro el hilo y cierro los recursos de ffmpeg.
+A lo que esta en el tutorial en teoría se podría agregarle grabar sonido.
+La version del tutorial es: 3.4, de la 4 en adelante puede que hay cosas que cambiaron.
+Eventos de SDL,  
+
+El hilo que graba tiene que tener un atomic keep_running para cuando se decida para la grabacion del video de la pantalla.

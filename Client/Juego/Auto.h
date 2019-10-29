@@ -13,7 +13,9 @@ private:
 
 
 public:
-    explicit Auto(Renderizador& renderizador);
+    void rotar(int &angulo);
+
+    void crear(Renderizador& renderizador, int ancho, int altura);
 };
 
 
