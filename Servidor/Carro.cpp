@@ -1,5 +1,6 @@
 #include "Carro.h"
 #include <math.h>
+#include <iostream>
 
 Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro) {
   bodyDef.type = b2_dynamicBody;

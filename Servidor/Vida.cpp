@@ -16,7 +16,7 @@ void Vida::recibirDanio(int danio) {
 
 void Vida::aumentarVida(int aumento) {
   vida += aumento;
-  std::cout << "Vida aumentada a " + vida << std::endl;
+  std::cout << "Vida aumentada a " << vida << std::endl;
 }
 
 void Vida::matar() {
