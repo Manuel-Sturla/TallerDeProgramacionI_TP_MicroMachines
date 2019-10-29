@@ -4,6 +4,6 @@
 
 #include "Auto.h"
 
-Auto::Auto(Renderizador& renderizador) : renderizador(renderizador){
+Auto::Auto(Renderizador& renderizador){
 
 }

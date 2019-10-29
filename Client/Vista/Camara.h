@@ -20,8 +20,6 @@ private:
 public:
     explicit Camara(Renderizador& renderizador);
 
-    void inicializar();
-
     void actualizar(std::vector<int>& mensaje);
 };
 

@@ -11,8 +11,17 @@ Textura::Textura(SDL_Renderer *renderizador, const std::string &archivo, Posicio
     this->angulo = angulo;
     textura = IMG_LoadTexture(renderizador, archivo.c_str());
     if(textura == nullptr){
-        throw ExcepcionConPos(__FILE__, __LINE__, "No pude cargar la textura: " + archivo);
+        throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
     }
+}
+
+Textura::Textura(Textura&& text) {
+    this->textura = text.textura;
+    this->angulo = text.angulo;
+    this->posicion = text.posicion;
+    text.textura = nullptr;
+    text.angulo = 0;
+    text.posicion = nullptr;
 }
 
 void Textura::moverA(int posX, int posY) {
@@ -27,6 +36,10 @@ void Textura::copiar(SDL_Renderer *renderizador) {
     if(SDL_RenderCopyEx(renderizador, textura, nullptr, posicion->getRect(), angulo, nullptr, SDL_FLIP_VERTICAL)<0){
         throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
     }
+}
+
+void Textura::mover(Posicion &pos) {
+    posicion->mover(pos);
 }
 
 Textura::~Textura() {

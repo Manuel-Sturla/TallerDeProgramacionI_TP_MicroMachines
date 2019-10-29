@@ -10,7 +10,7 @@
 
 class Auto {
 private:
-    Renderizador& renderizador;
+
 
 public:
     explicit Auto(Renderizador& renderizador);

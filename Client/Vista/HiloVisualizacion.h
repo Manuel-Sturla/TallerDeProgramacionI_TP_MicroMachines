@@ -13,9 +13,9 @@
 
 class HiloVisualizacion : public Hilo {
 private:
-    Camara camara;
     Renderizador renderizador;
     Servidor& servidor;
+    Camara camara;
 
 public:
     explicit HiloVisualizacion(Servidor& servidor);
