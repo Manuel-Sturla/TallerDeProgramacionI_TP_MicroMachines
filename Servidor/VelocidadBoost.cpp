@@ -1,27 +1,23 @@
 #include "VelocidadBoost.h"
 #include "VelocidadBase.h"
 #include <iostream>
-
-VelocidadBoost::VelocidadBoost(float32 velocidadBase) {
+#define AUMENTO_VEL 5
+VelocidadBoost::VelocidadBoost(float32 velocidadBase) :
+EstrategiaDeVelocidad(velocidadBase + AUMENTO_VEL){
   this -> velocidadBase = velocidadBase;
-  velocidadMaxima = velocidadBase + 5;
   duracion = 5;
 }
 
-EstrategiaDeVelocidad VelocidadBoost::boost() {
+std::shared_ptr<EstrategiaDeVelocidad> VelocidadBoost::boost() {
   duracion += 5;
 }
 
-EstrategiaDeVelocidad VelocidadBoost::actualizar() {
+std::shared_ptr<EstrategiaDeVelocidad> VelocidadBoost::actualizar() {
   duracion -= 1;
   if (duracion == 0) {
     VelocidadBase nuevaEstrategia(velocidadBase);
-    return std::move(nuevaEstrategia);
+    return std::shared_ptr<EstrategiaDeVelocidad> (new VelocidadBase(velocidadBase));
   } else {
-    return *this;
+    return std::shared_ptr<EstrategiaDeVelocidad>(this);
   }
-}
-
-bool VelocidadBoost::alcanzoLaVelocidadMaxima(int32 velocidadActual) {
-  return  (velocidadActual >= velocidadMaxima);
 }
