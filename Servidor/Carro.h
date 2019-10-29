@@ -6,6 +6,7 @@
 #include "Accion.h"
 #include "Objeto.h"
 #include "Vida.h"
+#include "Visibilidad.h"
 #include "EstrategiaDeVelocidad.h"
 
 class Carro: public Objeto {
@@ -13,6 +14,7 @@ class Carro: public Objeto {
     b2BodyDef bodyDef;
     b2Body* body;
     Vida vida;
+    Visibilidad visibilidad;
     std::shared_ptr<EstrategiaDeVelocidad> estrategiaDeVelocidad;
     float32 anguloDeGiro;
     float32 velocidadMax;
@@ -38,6 +40,8 @@ class Carro: public Objeto {
     void reducirVelocidad(float32 factor);
 
     void recibirBoost();
+
+    void reducirVisibilidad();
 
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };

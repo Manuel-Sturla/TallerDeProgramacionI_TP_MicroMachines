@@ -33,11 +33,16 @@ void Carro::actualizar() {
   b2Vec2 velocidad = body -> GetLinearVelocity();
   float32 factorDeFuerza = -2 * velocidad.Normalize();
   body -> ApplyForce(coeficienteDeRozamiento * factorDeFuerza * velocidad, body -> GetWorldCenter(), true);
+  visibilidad.actualizar();
   //estrategiaDeVelocidad = estrategiaDeVelocidad -> actualizar();
 }
 
 void Carro::aplicarFriccion(float32 coeficienteDeRozamiento) {
   this -> coeficienteDeRozamiento = coeficienteDeRozamiento;
+}
+
+void Carro::reducirVisibilidad() {
+  visibilidad.reducirVisibilidad();
 }
 
 std::string Carro::darId() {
