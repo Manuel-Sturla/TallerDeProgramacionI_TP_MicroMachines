@@ -9,30 +9,31 @@
 #include "Ventana.h"
 #include "Textura.h"
 #include <SDL2/SDL.h>
-#include <map>
+#include <vector>
 
 class Renderizador {
 private:
     SDL_Renderer* renderizador;
     Ventana ventana;
-    std::map<std::string, Textura> texturas;
+    std::vector<Textura> texturas;
+    std::vector<Textura> pista;
 
 public:
     Renderizador(const char* titulo, int ancho, int altura);
 
-    void agregarTextura(const std::string& archivo, Posicion& pos, int angulo, const std::string& nombre);
+    void agregarTextura(const std::string &archivo, Posicion* pos, int angulo);
+
+    void agregarTrecho(const std::string &archivo, Posicion* pos, int angulo);
 
     void imprimir(Uint32 tiempoMs);
 
+    std::vector<Textura>& getPista();
+
     void limpiar();
 
-    void mover(const std::string& nombre, int posX, int posY);
-
-    void rotar(const std::string& nombre, int angulo);
+    void copiarTodo();
 
     virtual ~Renderizador();
-
-    void copiar(const std::string &nombre);
 };
 
 

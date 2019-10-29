@@ -9,9 +9,11 @@
 #include "../Sdl/Renderizador.h"
 #include "../Servidor.h"
 #include "../Hilo.h"
+#include "Camara.h"
 
 class HiloVisualizacion : public Hilo {
 private:
+    Camara camara;
     Renderizador renderizador;
     Servidor& servidor;
 

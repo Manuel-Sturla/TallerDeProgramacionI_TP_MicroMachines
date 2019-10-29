@@ -4,24 +4,30 @@
 
 #include <iostream>
 #include "HiloVisualizacion.h"
+#include "../Excepciones/ExcepcionConPos.h"
 
-HiloVisualizacion::HiloVisualizacion(Servidor& servidor) : renderizador("microMachines.exe", 1000, 1000), servidor(servidor) {
-    Posicion posPista(0, 0, 1000, 1000);
-    renderizador.agregarTextura("pista.png", posPista, 90, "pista");
-    Posicion posAuto(450, 450, 100, 100);
-    renderizador.agregarTextura("auto.png", posAuto, 0, "auto");
+HiloVisualizacion::HiloVisualizacion(Servidor& servidor) : renderizador("microMachines.exe", 1000, 1000)\
+, servidor(servidor), camara(renderizador) {
+    camara.inicializar();
 }
 
 void HiloVisualizacion::run() {
-    std::vector<int> mensaje = servidor.recibir();
-    while(mensaje[0] != -1){
-        renderizador.limpiar();
-        renderizador.copiar("pista");
-        renderizador.mover("auto", mensaje[0], mensaje[1]);
-        if(mensaje.size() > 2){
-            renderizador.rotar("auto", mensaje[2]);
+    try{
+        std::vector<int> mensaje = servidor.recibir();
+        renderizador.copiarTodo();
+        renderizador.imprimir(500);
+        while(mensaje[0] != -1){
+            renderizador.imprimir(20);
+            renderizador.limpiar();
+            camara.actualizar(mensaje);
+            renderizador.copiarTodo();
+            mensaje = servidor.recibir();
         }
-        renderizador.imprimir(20);
-        mensaje = servidor.recibir();
+    } catch(const ExcepcionConPos& e){
+        std::cerr<<e.what()<<'\n';
+    } catch (std::exception& e) {
+        std::cerr<<e.what()<<'\n';
+    } catch (...) {
+        std::cerr<<"Error desconocido\n";
     }
 }
