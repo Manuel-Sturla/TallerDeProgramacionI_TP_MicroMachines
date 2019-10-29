@@ -5,7 +5,7 @@
 
 class GiroAIzquierda: public Accion {
   public:
-    void ejecutar(b2Body* body, float32 velocidadMax);
+    void ejecutar(b2Body* body, EstrategiaDeVelocidad *estrategiaDeVelocidad, float32 angulo);
 };
 
 

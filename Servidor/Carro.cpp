@@ -1,5 +1,7 @@
 #include "Carro.h"
 #include <math.h>
+#include "VelocidadBase.h"
+#include <iostream>
 
 Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro) {
   bodyDef.type = b2_dynamicBody;
@@ -7,6 +9,7 @@ Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro) {
   this -> anguloDeGiro = anguloDeGiro;
   this -> velocidadMax = velocidadMaxima;
   id = "Carro";
+  estrategiaDeVelocidad = VelocidadBase(velocidadMaxima)&;
 }
 
 void Carro::agregarseA(Pista *pista) {
@@ -23,22 +26,34 @@ void Carro::agregarseA(Pista *pista) {
 }
 
 void Carro::ejecutarAccion(Accion *unaAccion) {
-  unaAccion -> ejecutar(body, velocidadMax);
+  unaAccion -> ejecutar(body, velocidadMax, anguloDeGiro);
 }
 
-void Carro::aplicarFuerza(float32 factorDeFuerza) {
-  float32 angulo = body->GetAngle();
-  b2Vec2 fuerza(factorDeFuerza * cos(angulo), factorDeFuerza * sin(angulo));
-  body -> ApplyForceToCenter(fuerza, true);
+void Carro::actualizar() {
+  b2Vec2 velocidad = body -> GetLinearVelocity();
+  float32 factorDeFuerza = -2 * velocidad.Normalize();
+  body -> ApplyForce(coeficienteDeRozamiento * factorDeFuerza * velocidad, body -> GetWorldCenter(), true);
 }
 
 void Carro::aplicarFriccion(float32 coeficienteDeRozamiento) {
-  float32 friccion = (body -> GetMass()) * -9.8f * coeficienteDeRozamiento;
-  aplicarFuerza(friccion);
+  this -> coeficienteDeRozamiento = coeficienteDeRozamiento;
 }
 
 std::string Carro::darId() {
   return id;
+}
+
+void Carro::recibirDanio(int danio) {
+  vida.recibirDanio(danio);
+}
+
+void Carro::curar(int aumentoDeVida) {
+  vida.aumentarVida(aumentoDeVida);
+}
+
+void Carro::reducirVelocidad(float32 factor) {
+  b2Vec2 velocidad = body -> GetLinearVelocity();
+  body -> SetLinearVelocity(factor * velocidad);
 }
 
 void Carro::imprimirPosicion() {

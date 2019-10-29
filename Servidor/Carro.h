@@ -5,35 +5,37 @@
 #include "Pista.h"
 #include "Accion.h"
 #include "Objeto.h"
+#include "Vida.h"
+#include "EstrategiaDeVelocidad.h"
 
 class Carro: public Objeto {
   private:
     b2BodyDef bodyDef;
     b2Body* body;
+    Vida vida;
+    EstrategiaDeVelocidad& estrategiaDeVelocidad;
     float32 anguloDeGiro;
     float32 velocidadMax;
+    float32 coeficienteDeRozamiento;
 
-    //El factor de fuerza es multiplicado por el cos del angulo en el eje x
-    // y por el sen del angulo en y
-    void aplicarFuerza(float32 factorDeFuerza);
   public:
     Carro(float32 velocidadMaxima, float32 anguloDeGiro);
 
     void agregarseA(Pista *pista);
 
+    void actualizar();
+
     void ejecutarAccion(Accion* unaAccion);
-/*
-    void acelerar();
 
-    void frenar();
-
-    void giroADerecha();
-
-    void giroAIzquierda();
-*/
     void aplicarFriccion(float32 coeficienteDeRozamiento);
 
     std::string darId();
+
+    void recibirDanio(int danio);
+
+    void curar(int aumentoDeVida);
+
+    void reducirVelocidad(float32 factor);
 
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };
