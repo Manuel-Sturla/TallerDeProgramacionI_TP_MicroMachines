@@ -2,14 +2,15 @@
 #include "VelocidadBase.h"
 #include <iostream>
 #define AUMENTO_VEL 5
+#define DURACION_INICIAL 5
 VelocidadBoost::VelocidadBoost(float32 velocidadBase) :
 EstrategiaDeVelocidad(velocidadBase + AUMENTO_VEL){
   this -> velocidadBase = velocidadBase;
-  duracion = 5;
+  duracion = DURACION_INICIAL;
 }
 
 std::shared_ptr<EstrategiaDeVelocidad> VelocidadBoost::boost() {
-  duracion += 5;
+  duracion += DURACION_INICIAL;
 }
 
 std::shared_ptr<EstrategiaDeVelocidad> VelocidadBoost::actualizar() {
