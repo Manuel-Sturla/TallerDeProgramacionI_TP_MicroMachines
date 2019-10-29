@@ -9,7 +9,7 @@ class Accion {
     void aplicarFuerza(b2Body* body, float32 factorDeFuerza);
 
   public:
-    virtual void ejecutar(b2Body* body, EstrategiaDeVelocidad *estrategiaDeVelocidad, float32 angulo) = 0;
+    virtual void ejecutar(b2Body* body, std::shared_ptr<EstrategiaDeVelocidad> estrategiaDeVelocidad, float32 angulo) = 0;
 };
 
 

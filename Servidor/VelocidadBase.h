@@ -5,13 +5,12 @@
 
 class VelocidadBase: public EstrategiaDeVelocidad {
   public:
-    VelocidadBase(float32 velocidadMaxima);
+    explicit VelocidadBase(float32 velocidadMaxima);
 
-    EstrategiaDeVelocidad boost();
+    std::shared_ptr<EstrategiaDeVelocidad> boost() override;
 
-    EstrategiaDeVelocidad actualizar();
+    std::shared_ptr<EstrategiaDeVelocidad> actualizar() override;
 
-    bool alcanzoLaVelocidadMaxima();
 };
 
 

@@ -13,7 +13,7 @@ class Carro: public Objeto {
     b2BodyDef bodyDef;
     b2Body* body;
     Vida vida;
-    EstrategiaDeVelocidad& estrategiaDeVelocidad;
+    std::shared_ptr<EstrategiaDeVelocidad> estrategiaDeVelocidad;
     float32 anguloDeGiro;
     float32 velocidadMax;
     float32 coeficienteDeRozamiento;
@@ -36,6 +36,8 @@ class Carro: public Objeto {
     void curar(int aumentoDeVida);
 
     void reducirVelocidad(float32 factor);
+
+    void recibirBoost();
 
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };

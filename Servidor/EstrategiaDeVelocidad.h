@@ -7,11 +7,12 @@ class EstrategiaDeVelocidad {
   protected:
     float32 velocidadMaxima;
   public:
-    virtual EstrategiaDeVelocidad& boost() = 0;
+    EstrategiaDeVelocidad(float32 velocidadMaxima);
+    virtual std::shared_ptr<EstrategiaDeVelocidad> boost() = 0;
 
-    virtual EstrategiaDeVelocidad& actualizar() = 0;
+    virtual std::shared_ptr<EstrategiaDeVelocidad> actualizar() = 0;
 
-    virtual bool alcanzoLaVelocidadMaxima(int32 velocidadActual) = 0;
+    bool alcanzoLaVelocidadMaxima(b2Vec2 velocidadActual);
 };
 
 #endif

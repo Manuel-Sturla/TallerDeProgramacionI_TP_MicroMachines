@@ -5,7 +5,7 @@
 
 class GiroADerecha: public Accion {
   public:
-    void ejecutar(b2Body* body, EstrategiaDeVelocidad *estrategiaDeVelocidad, float32 angulo);
+    void ejecutar(b2Body* body, std::shared_ptr<EstrategiaDeVelocidad> estrategiaDeVelocidad, float32 angulo);
 };
 
 

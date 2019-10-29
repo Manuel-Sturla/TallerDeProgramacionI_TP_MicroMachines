@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "Pista.h"
 #include "Acelerar.h"
-#include "Piedra.h"
+#include "Boost.h"
 #include "Carro.h"
 #include "Recta.h"
 #include "Asfalto.h"
@@ -15,7 +15,7 @@ int main() {
   Asfalto asfalto;
   Recta recta(&asfalto);
   recta.agregarseA(&pista);
-  Piedra piedra(&pista);
+  //Boost boost(&pista);
   Carro carro(VELOCIDAD_MAXIMA, ANGULO_PARA_GIRO);
   carro.agregarseA(&pista);
   Acelerar acelerar;

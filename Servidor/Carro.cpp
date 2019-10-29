@@ -3,13 +3,13 @@
 #include "VelocidadBase.h"
 #include <iostream>
 
-Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro) {
+Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro):
+estrategiaDeVelocidad(new VelocidadBase(velocidadMaxima)) {
   bodyDef.type = b2_dynamicBody;
   bodyDef.position.Set(0.0f, 4.0f); //POSICION HARDCODEADA
   this -> anguloDeGiro = anguloDeGiro;
   this -> velocidadMax = velocidadMaxima;
   id = "Carro";
-  estrategiaDeVelocidad = VelocidadBase(velocidadMaxima)&;
 }
 
 void Carro::agregarseA(Pista *pista) {
@@ -26,13 +26,14 @@ void Carro::agregarseA(Pista *pista) {
 }
 
 void Carro::ejecutarAccion(Accion *unaAccion) {
-  unaAccion -> ejecutar(body, velocidadMax, anguloDeGiro);
+  unaAccion -> ejecutar(body, estrategiaDeVelocidad, anguloDeGiro);
 }
 
 void Carro::actualizar() {
   b2Vec2 velocidad = body -> GetLinearVelocity();
   float32 factorDeFuerza = -2 * velocidad.Normalize();
   body -> ApplyForce(coeficienteDeRozamiento * factorDeFuerza * velocidad, body -> GetWorldCenter(), true);
+  //estrategiaDeVelocidad = estrategiaDeVelocidad -> actualizar();
 }
 
 void Carro::aplicarFriccion(float32 coeficienteDeRozamiento) {
@@ -54,6 +55,10 @@ void Carro::curar(int aumentoDeVida) {
 void Carro::reducirVelocidad(float32 factor) {
   b2Vec2 velocidad = body -> GetLinearVelocity();
   body -> SetLinearVelocity(factor * velocidad);
+}
+
+void Carro::recibirBoost() {
+  estrategiaDeVelocidad = estrategiaDeVelocidad -> boost();
 }
 
 void Carro::imprimirPosicion() {
