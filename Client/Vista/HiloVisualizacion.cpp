@@ -14,8 +14,6 @@ HiloVisualizacion::HiloVisualizacion(Servidor& servidor) : renderizador("microMa
 void HiloVisualizacion::run() {
     try{
         std::vector<int> mensaje = servidor.recibir();
-        renderizador.copiarTodo();
-        renderizador.imprimir(500);
         while(mensaje[0] != -1){
             renderizador.imprimir(20);
             renderizador.limpiar();

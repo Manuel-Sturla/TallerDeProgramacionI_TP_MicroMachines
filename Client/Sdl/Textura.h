@@ -18,7 +18,7 @@ private:
 
 public:
     Textura(SDL_Renderer* renderizador, const std::string& archivo, Posicion* pos, int angulo);
-
+    Textura(Textura&& otra);
     void copiar(SDL_Renderer* renderizador);
 
     void moverA(int posX, int posY);

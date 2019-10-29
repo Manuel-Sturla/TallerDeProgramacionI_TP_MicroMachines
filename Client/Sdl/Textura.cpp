@@ -38,3 +38,13 @@ Textura::~Textura() {
 void Textura::mover(Posicion &pos) {
     posicion->mover(pos);
 }
+
+Textura::Textura(Textura &&otra) {
+    this->textura = otra.textura;
+    this->angulo = otra.angulo;
+    this->posicion = otra.posicion;
+
+    otra.textura = nullptr;
+    otra.angulo = 0;
+    otra.posicion = nullptr;
+}
