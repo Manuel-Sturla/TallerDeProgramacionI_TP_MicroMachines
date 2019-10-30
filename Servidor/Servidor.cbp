@@ -441,10 +441,10 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/EstrategiaDeVelocidad.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/EstadoVelocidad.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/EstrategiaDeVelocidad.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/EstadoVelocidad.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Frenar.cpp">
@@ -505,6 +505,12 @@
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Recta.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Velocidad.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Velocidad.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/VelocidadBase.cpp">

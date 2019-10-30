@@ -2,10 +2,11 @@
 #define _FRENAR_H_
 
 #include "Accion.h"
+#include "EstadoVelocidad.h"
 
 class Frenar: public Accion {
   public:
-    void ejecutar(b2Body* body, std::shared_ptr<EstrategiaDeVelocidad> estrategiaDeVelocidad, float32 angulo);
+    void ejecutar(b2Body* body, EstadoVelocidad *estadoVelocidad, float32 angulo);
 };
 
 

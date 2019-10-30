@@ -4,11 +4,10 @@
 #include <iostream>
 
 Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro):
-estrategiaDeVelocidad(new VelocidadBase(velocidadMaxima)) {
+estadoVelocidad(velocidadMaxima) {
   bodyDef.type = b2_dynamicBody;
   bodyDef.position.Set(0.0f, 4.0f); //POSICION HARDCODEADA
   this -> anguloDeGiro = anguloDeGiro;
-  this -> velocidadMax = velocidadMaxima;
   id = "Carro";
 }
 
@@ -26,7 +25,7 @@ void Carro::agregarseA(Pista *pista) {
 }
 
 void Carro::ejecutarAccion(Accion *unaAccion) {
-  unaAccion -> ejecutar(body, estrategiaDeVelocidad, anguloDeGiro);
+  unaAccion -> ejecutar(body, &estadoVelocidad, anguloDeGiro);
 }
 
 void Carro::actualizar() {
@@ -63,7 +62,7 @@ void Carro::reducirVelocidad(float32 factor) {
 }
 
 void Carro::recibirBoost() {
-  estrategiaDeVelocidad = estrategiaDeVelocidad -> boost();
+  estadoVelocidad.boost();
 }
 
 void Carro::imprimirPosicion() {

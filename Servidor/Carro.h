@@ -7,7 +7,8 @@
 #include "Objeto.h"
 #include "Vida.h"
 #include "Visibilidad.h"
-#include "EstrategiaDeVelocidad.h"
+#include "Velocidad.h"
+#include "EstadoVelocidad.h"
 
 class Carro: public Objeto {
   private:
@@ -15,9 +16,8 @@ class Carro: public Objeto {
     b2Body* body;
     Vida vida;
     Visibilidad visibilidad;
-    std::shared_ptr<EstrategiaDeVelocidad> estrategiaDeVelocidad;
+    EstadoVelocidad estadoVelocidad;
     float32 anguloDeGiro;
-    float32 velocidadMax;
     float32 coeficienteDeRozamiento;
 
   public:

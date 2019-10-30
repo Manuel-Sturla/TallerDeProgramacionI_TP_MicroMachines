@@ -18,8 +18,6 @@ class CajaDeSalud: public Modificador {
 
     void interactuar(Carro* unCarro);
 
-    void eliminarseDePista();
-
     bool esValido();
 
     ~CajaDeSalud();

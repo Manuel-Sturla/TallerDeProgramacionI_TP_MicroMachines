@@ -24,10 +24,6 @@ void CajaDeSalud::interactuar(Carro *unCarro) {
   validez = false;
 }
 
-void CajaDeSalud::eliminarseDePista() {
-  pista -> eliminarCuerpo(cuerpo);
-}
-
 std::string CajaDeSalud::darId() {
   return "Modificador";
 }
