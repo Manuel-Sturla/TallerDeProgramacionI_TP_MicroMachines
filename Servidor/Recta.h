@@ -4,21 +4,17 @@
 #include "Pista.h"
 #include "Material.h"
 #include "Suelo.h"
+#include "Cuadrado.h"
 
 class Recta: public Suelo {
   private:
-    b2BodyDef bodyDef;
-    b2Body *body;
     Material *material;
+    Cuadrado cuadrado;
 
   public:
-    Recta(Material *unMaterial);
+    Recta(Pista *pista, Material *unMaterial);
 
-    void agregarseA(Pista *pista);
-
-    std::string darId();
-
-    void interactuar(Carro *unCarro) override;
+    void interactuar(Carro *unCarro);
 
     ~Recta();
 };

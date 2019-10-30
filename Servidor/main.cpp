@@ -7,7 +7,7 @@ int main() {
   b2Vec2 gravedad(0.0f, 0.0f);
   Partida partida(gravedad);
 
-  for (int32 i = 0; i < 20; ++i) {
+  for (int32 i = 0; i < 2000; ++i) {
     partida.simular();
   }
   return 0;
