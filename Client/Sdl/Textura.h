@@ -23,10 +23,6 @@ public:
 
     void copiar(SDL_Renderer* renderizador, Camara& camara);
 
-    void moverA(int posX, int posY);
-
-    void mover(Posicion& pos);
-
     virtual ~Textura();
 };
 

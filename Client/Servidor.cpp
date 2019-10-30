@@ -7,9 +7,9 @@
 
 void Servidor::enviar(const std::string& mensaje) {
     if(mensaje == "acelerar"){
-        posY += 5;
+        posY -= 20;
     } else if(mensaje == "frenar"){
-        posY -= 5;
+        posY += 20;
     } else if(mensaje == "doblar derecha"){
         angulo += 30;
         posX += 5;

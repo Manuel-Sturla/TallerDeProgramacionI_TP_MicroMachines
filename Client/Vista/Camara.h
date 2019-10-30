@@ -16,7 +16,7 @@ private:
 public:
     Camara(Posicion& miAuto, int tamPantalla);
 
-    SDL_Rect obtenerPosImpresion(Posicion* pos);
+    SDL_Rect obtenerPosImpresion(SDL_Rect posPista);
 };
 
 
