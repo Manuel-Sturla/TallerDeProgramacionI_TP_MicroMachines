@@ -19,13 +19,11 @@ public:
 
     void moverA(int posX, int posY);
 
-    void mover(Posicion& pos);
-
     void rotar(int angulo);
 
     int getAngulo();
 
-    Posicion operator - (Posicion const& pos2);
+//    Posicion operator - (Posicion const& pos2);
 
     bool estaEnRango(int ancho, int largo);
 };

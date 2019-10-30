@@ -19,9 +19,15 @@ private:
 public:
     Textura(SDL_Renderer* renderizador, const std::string& archivo, Posicion* pos);
 
+    Textura(SDL_Renderer* renderizador, const std::string& archivo);
+
+    Textura& operator=(const Textura& text);
+
     Textura(Textura&& text) noexcept;
 
     void copiar(SDL_Renderer* renderizador, Camara& camara);
+
+    void destruir();
 
     virtual ~Textura();
 };

@@ -11,9 +11,12 @@
 
 class Pista {
     int tamImagen;
+    std::vector<Posicion*> pistaPos;
 
 public:
     explicit Pista(Renderizador &renderizador);
+
+    virtual ~Pista();
 };
 
 

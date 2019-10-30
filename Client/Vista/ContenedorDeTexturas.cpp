@@ -6,6 +6,7 @@
 #include "ContenedorDeTexturas.h"
 
 ContenedorDeTexturas::ContenedorDeTexturas(Renderizador& renderizador) : pista(renderizador), miAuto(renderizador, 100) {
+    renderizador.agregarFondo("pasto.png");
 }
 
 void ContenedorDeTexturas::actualizar(std::vector<int>& mensaje) {
