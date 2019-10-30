@@ -4,27 +4,30 @@
 
 #ifndef OPENGLTEST_POSICION_H
 #define OPENGLTEST_POSICION_H
-#define PANTALLA_COMPLETA -1
 
 #include <SDL2/SDL_rect.h>
 
 class Posicion {
 private:
     SDL_Rect posicion;
-    bool pantallaCompleta;
+    int angulo;
 
 public:
-    Posicion();
+    Posicion(int posX, int posY, int ancho, int altura, int angulo);
 
-    Posicion(int posX, int posY, int ancho, int altura);
-
-    const SDL_Rect *getRect();
+    SDL_Rect getRect();
 
     void moverA(int posX, int posY);
 
     void mover(Posicion& pos);
 
+    void rotar(int angulo);
+
+    int getAngulo();
+
     Posicion operator - (Posicion const& pos2);
+
+    bool estaEnRango(int ancho, int largo);
 };
 
 

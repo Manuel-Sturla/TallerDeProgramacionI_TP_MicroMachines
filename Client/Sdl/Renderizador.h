@@ -5,11 +5,11 @@
 #ifndef OPENGLTEST_RENDERIZADOR_H
 #define OPENGLTEST_RENDERIZADOR_H
 
-
-#include "Ventana.h"
-#include "Textura.h"
-#include <SDL2/SDL.h>
+#include <SDL2/SDL_system.h>
 #include <vector>
+#include "Ventana.h"
+#include "Posicion.h"
+#include "Textura.h"
 
 class Renderizador {
 private:
@@ -21,20 +21,17 @@ private:
 public:
     Renderizador(const char* titulo, int ancho, int altura);
 
-    void agregarTextura(const std::string &archivo, Posicion* pos, int angulo);
+    void agregarTextura(const std::string &archivo, Posicion* pos);
 
-    void agregarTrecho(const std::string &archivo, Posicion* pos, int angulo);
+    void agregarTrecho(const std::string &archivo, Posicion* pos);
 
     void imprimir(Uint32 tiempoMs);
 
-    std::vector<Textura>& getPista();
-
     void limpiar();
 
-    void copiarTodo();
+    void copiarTodo(Camara& camara);
 
     virtual ~Renderizador();
 };
-
 
 #endif //OPENGLTEST_RENDERIZADOR_H

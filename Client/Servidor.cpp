@@ -12,8 +12,10 @@ void Servidor::enviar(const std::string& mensaje) {
         posY -= 5;
     } else if(mensaje == "doblar derecha"){
         angulo += 30;
+        posX += 5;
     } else if(mensaje == "doblar izquierda"){
         angulo -= 30;
+        posX -= 5;
     } else if(mensaje == "cerrar"){
         posX = -1;
         posY = -1;

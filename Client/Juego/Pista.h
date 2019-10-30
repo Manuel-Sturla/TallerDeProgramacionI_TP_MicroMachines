@@ -7,17 +7,13 @@
 
 
 #include <vector>
-#include "../Sdl/Textura.h"
 #include "../Sdl/Renderizador.h"
 
 class Pista {
-
     int tamImagen;
 
 public:
     explicit Pista(Renderizador &renderizador);
-
-    void crearPista(Renderizador& renderizador);
 };
 
 

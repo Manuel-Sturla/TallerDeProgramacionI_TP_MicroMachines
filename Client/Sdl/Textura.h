@@ -6,28 +6,26 @@
 #define OPENGLTEST_TEXTURA_H
 
 
-#include <SDL2/SDL_render.h>
-#include <string>
+#include <SDL2/SDL_system.h>
 #include "Posicion.h"
+#include "../Vista/Camara.h"
+#include <string>
 
 class Textura {
 private:
     SDL_Texture* textura;
     Posicion* posicion;
-    int angulo;
 
 public:
-    Textura(SDL_Renderer* renderizador, const std::string& archivo, Posicion* pos, int angulo);
+    Textura(SDL_Renderer* renderizador, const std::string& archivo, Posicion* pos);
 
-    Textura(Textura&& text);
+    Textura(Textura&& text) noexcept;
 
-    void copiar(SDL_Renderer* renderizador);
+    void copiar(SDL_Renderer* renderizador, Camara& camara);
 
     void moverA(int posX, int posY);
 
     void mover(Posicion& pos);
-
-    void rotar(int angulo);
 
     virtual ~Textura();
 };

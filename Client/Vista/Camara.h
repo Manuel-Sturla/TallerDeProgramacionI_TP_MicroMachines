@@ -1,5 +1,5 @@
 //
-// Created by diego on 28/10/19.
+// Created by diego on 29/10/19.
 //
 
 #ifndef OPENGLTEST_CAMARA_H
@@ -7,20 +7,16 @@
 
 
 #include "../Sdl/Posicion.h"
-#include "../Juego/Pista.h"
-#include "../Juego/Auto.h"
-#include "../Sdl/Renderizador.h"
 
 class Camara {
 private:
-    Posicion posCamara;
-    Pista pista;
-    Auto miAuto;
+    Posicion& posAuto;
+    int tamPantalla;
 
 public:
-    explicit Camara(Renderizador& renderizador);
+    Camara(Posicion& miAuto, int tamPantalla);
 
-    void actualizar(std::vector<int>& mensaje);
+    SDL_Rect obtenerPosImpresion(Posicion* pos);
 };
 
 

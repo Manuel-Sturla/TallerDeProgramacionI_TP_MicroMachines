@@ -6,22 +6,19 @@
 #define OPENGLTEST_AUTO_H
 
 
+#include "../Sdl/Posicion.h"
 #include "../Sdl/Renderizador.h"
 
 class Auto {
 private:
-
-<<<<<<< HEAD
-
-public:
-    void rotar(int &angulo);
-
-    void crear(Renderizador& renderizador, int ancho, int altura);
-=======
+    Posicion posicion;
 
 public:
-    explicit Auto(Renderizador& renderizador);
->>>>>>> parent of 1a3b754... Agrego camara en renderizador
+    Auto(Renderizador &renderizador, int tam);
+
+    void mover(int &posX, int &posY, int &angulo);
+
+    Posicion& getPos();
 };
 
 

@@ -4,23 +4,21 @@
 
 #include "Textura.h"
 #include "../Excepciones/ExcepcionConPos.h"
+#include "../Vista/Camara.h"
 #include <SDL2/SDL_image.h>
 #include <iostream>
 
-Textura::Textura(SDL_Renderer *renderizador, const std::string &archivo, Posicion* pos, int angulo) : posicion(pos) {
-    this->angulo = angulo;
+Textura::Textura(SDL_Renderer *renderizador, const std::string &archivo, Posicion* pos) : posicion(pos) {
     textura = IMG_LoadTexture(renderizador, archivo.c_str());
     if(textura == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
     }
 }
 
-Textura::Textura(Textura&& text) {
+Textura::Textura(Textura&& text) noexcept {
     this->textura = text.textura;
-    this->angulo = text.angulo;
     this->posicion = text.posicion;
     text.textura = nullptr;
-    text.angulo = 0;
     text.posicion = nullptr;
 }
 
@@ -28,12 +26,9 @@ void Textura::moverA(int posX, int posY) {
     posicion->moverA(posX, posY);
 }
 
-void Textura::rotar(int angulo) {
-    this->angulo = angulo;
-}
-
-void Textura::copiar(SDL_Renderer *renderizador) {
-    if(SDL_RenderCopyEx(renderizador, textura, nullptr, posicion->getRect(), angulo, nullptr, SDL_FLIP_VERTICAL)<0){
+void Textura::copiar(SDL_Renderer *renderizador, Camara& camara) {
+    SDL_Rect posImpresion = camara.obtenerPosImpresion(posicion);
+    if(SDL_RenderCopyEx(renderizador, textura, nullptr, &posImpresion, posicion->getAngulo(), nullptr, SDL_FLIP_VERTICAL)<0){
         throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
     }
 }
@@ -46,18 +41,4 @@ Textura::~Textura() {
     if(textura != nullptr){
         SDL_DestroyTexture(textura);
     }
-}
-
-void Textura::mover(Posicion &pos) {
-    posicion->mover(pos);
-}
-
-Textura::Textura(Textura &&otra) {
-    this->textura = otra.textura;
-    this->angulo = otra.angulo;
-    this->posicion = otra.posicion;
-
-    otra.textura = nullptr;
-    otra.angulo = 0;
-    otra.posicion = nullptr;
 }
