@@ -19,7 +19,7 @@ Barro::Barro(Pista *pista) {
 }
 
 std::string Barro::darId() {
-  return "Barro";
+  return "Modificador";
 }
 
 void Barro::interactuar(Carro *unCarro) {

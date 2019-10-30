@@ -13,8 +13,6 @@ class Pista {
 
     b2Body* agregarObjeto(b2BodyDef& objeto);
 
-    void eliminarCuerpo(b2Body* cuerpo);
-
     void simular(float32 tiempo, int32 velocidad, int32 iteraciones);
 
     void actualizar();

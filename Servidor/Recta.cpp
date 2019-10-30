@@ -8,7 +8,7 @@ Recta::Recta(Material *unMaterial) {
 
 void Recta::agregarseA(Pista *pista) {
   body = pista -> agregarObjeto(bodyDef);
-  body -> SetUserData(material);
+  body -> SetUserData(this);
   b2PolygonShape staticBox;
   staticBox.SetAsBox(10.0f, 10.0f); //TAMANIO DE RECTA HARDCODEADO
   b2FixtureDef fixtureDef;
@@ -22,6 +22,10 @@ void Recta::agregarseA(Pista *pista) {
 Recta::~Recta() {
 }
 
-bool Recta::esValido() {
-  return true;
+void Recta::interactuar(Carro *unCarro) {
+  material -> interactuar(unCarro);
+}
+
+std::string Recta::darId() {
+  return "Recta";
 }

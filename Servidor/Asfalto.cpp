@@ -4,11 +4,6 @@
 
 Asfalto::Asfalto() {
   coeficienteDeRozamiento = 0.3f;
-  id = "Asfalto";
-}
-
-std::string Asfalto::darId() {
-  return id;
 }
 
 void Asfalto::interactuar(Carro* unCarro) {
@@ -16,8 +11,4 @@ void Asfalto::interactuar(Carro* unCarro) {
 }
 
 Asfalto::~Asfalto() {
-}
-
-bool Asfalto::esValido() {
-  return true;
 }

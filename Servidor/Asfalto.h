@@ -2,16 +2,13 @@
 #define _ASFALTO_H_
 
 #include "Material.h"
+#include "Carro.h"
 
 class Asfalto: public Material {
   public:
     Asfalto();
 
-    std::string darId();
-
-    void interactuar(Carro* unCarro);
-
-    bool esValido();
+    void interactuar(Carro* unCarro) override;
 
     ~Asfalto();
 

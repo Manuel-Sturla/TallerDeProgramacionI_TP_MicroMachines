@@ -24,7 +24,7 @@ void Boost::interactuar(Carro *unCarro) {
 }
 
 std::string Boost::darId() {
-  return "Boost";
+  return "Modificador";
 }
 
 Boost::~Boost() {

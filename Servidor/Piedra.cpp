@@ -19,7 +19,7 @@ Piedra::Piedra(Pista *pista) {
 }
 
 std::string Piedra::darId() {
-  return "Piedra";
+  return "Modificador";
 }
 
 void Piedra::interactuar(Carro *unCarro) {

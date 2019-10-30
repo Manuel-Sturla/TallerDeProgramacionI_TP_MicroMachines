@@ -3,8 +3,9 @@
 
 #include "Pista.h"
 #include "Material.h"
+#include "Suelo.h"
 
-class Recta {
+class Recta: public Suelo {
   private:
     b2BodyDef bodyDef;
     b2Body *body;
@@ -15,7 +16,9 @@ class Recta {
 
     void agregarseA(Pista *pista);
 
-    bool esValido();
+    std::string darId();
+
+    void interactuar(Carro *unCarro) override;
 
     ~Recta();
 };

@@ -1,0 +1,1 @@
+#include "Curva.h"
