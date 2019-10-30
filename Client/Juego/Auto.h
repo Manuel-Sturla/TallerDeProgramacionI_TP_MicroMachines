@@ -11,11 +11,17 @@
 class Auto {
 private:
 
+<<<<<<< HEAD
 
 public:
     void rotar(int &angulo);
 
     void crear(Renderizador& renderizador, int ancho, int altura);
+=======
+
+public:
+    explicit Auto(Renderizador& renderizador);
+>>>>>>> parent of 1a3b754... Agrego camara en renderizador
 };
 
 

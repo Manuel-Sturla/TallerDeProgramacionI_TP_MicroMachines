@@ -18,7 +18,7 @@ private:
     Auto miAuto;
 
 public:
-    explicit Camara(std::vector<Textura>& pista);
+    explicit Camara(Renderizador& renderizador);
 
     void actualizar(std::vector<int>& mensaje);
 };
