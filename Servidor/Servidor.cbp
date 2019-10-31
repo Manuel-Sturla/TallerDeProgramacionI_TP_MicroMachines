@@ -441,12 +441,6 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Cuadrado.cpp">
-			<Option target="tp"/>
-		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Cuadrado.h">
-			<Option target="tp"/>
-		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Curva.cpp">
 			<Option target="tp"/>
 		</Unit>

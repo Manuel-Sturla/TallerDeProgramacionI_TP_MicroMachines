@@ -19,7 +19,7 @@ class EstadoVelocidad {
 
     void boost();
 
-    void actualizar();
+    void actualizar(b2Body *cuerpo);
 
     bool alcanzoLaVelocidadMaxima(b2Vec2 velocidadActual);
 

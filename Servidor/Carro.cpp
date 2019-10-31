@@ -2,6 +2,7 @@
 #include <math.h>
 #include "VelocidadBase.h"
 #include "GiroAIzquierda.h"
+#include "GiroADerecha.h"
 #include <iostream>
 
 Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro):
@@ -23,8 +24,9 @@ void Carro::agregarseA(Pista *pista) {
   fixtureDef.density = 1.0f;
   fixtureDef.friction = 0.3f;
   body -> CreateFixture(&fixtureDef);
-  GiroAIzquierda giroAIzquierda;
-  ejecutarAccion(&giroAIzquierda);
+  body -> SetTransform(body -> GetPosition(), -0.5f * b2_pi);
+  //GiroADerecha giroAIzquierda;
+  //ejecutarAccion(&giroAIzquierda);
 }
 
 void Carro::ejecutarAccion(Accion *unaAccion) {
@@ -34,9 +36,12 @@ void Carro::ejecutarAccion(Accion *unaAccion) {
 void Carro::actualizar() {
   b2Vec2 velocidad = body -> GetLinearVelocity();
   float32 factorDeFuerza = -2 * velocidad.Normalize();
+  //VER COMO IR FRENANDO LA VELOCIDAD ANGULAR..........................................
+  // HACER LA PARTE DEL AGARRE.........................................................
+  //body -> ApplyAngularImpulse(0.1f * - body -> GetAngularVelocity(), true);
   body -> ApplyForce(coeficienteDeRozamiento * factorDeFuerza * velocidad, body -> GetWorldCenter(), true);
   visibilidad.actualizar();
-  //estrategiaDeVelocidad = estrategiaDeVelocidad -> actualizar();
+  estadoVelocidad.actualizar(body);
 }
 
 void Carro::aplicarFriccion(float32 coeficienteDeRozamiento) {
