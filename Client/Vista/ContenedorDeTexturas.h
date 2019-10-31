@@ -10,16 +10,18 @@
 #include "../Juego/Pista.h"
 #include "../Juego/Auto.h"
 #include "../Sdl/Renderizador.h"
+#include "../Servidor.h"
 
 class ContenedorDeTexturas {
 private:
+    Servidor& servidor;
     Pista pista;
     Auto miAuto;
 
 public:
-    explicit ContenedorDeTexturas(Renderizador& renderizador);
+    ContenedorDeTexturas(Renderizador& renderizador, Servidor& servidor);
 
-    void actualizar(std::vector<int>& mensaje);
+    bool actualizar();
 
     Auto& getAuto();
 };

@@ -18,7 +18,9 @@ public:
 
     void enviar(const std::string& mensaje);
 
-    std::vector<int> recibir();
+    std::vector<std::string> recibir();
+
+    std::vector<std::string> iniciarPista();
 };
 
 
