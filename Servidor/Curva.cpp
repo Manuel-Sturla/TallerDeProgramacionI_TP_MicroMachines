@@ -2,6 +2,10 @@
 #define FUERA_DE_CURVA 0
 #define EN_ASFALTO 3
 #define EN_PASTO 2
+#define ANGULO_CURVA_1 0
+#define ANGULO_CURVA_2 0.5f * b2_pi
+#define ANGULO_CURVA_3 b2_pi
+#define ANGULO_CURVA_4 1.5f * b2_pi
 
 Curva::Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto) {
   defCuerpo.type = b2_staticBody;
@@ -33,6 +37,7 @@ void Curva::agregarseAPista(Pista *pista) {
   fixtureCirculo.isSensor = true;
   fixtureCirculo.userData = (void*) &circulo;
   cuerpo -> CreateFixture(&fixtureCirculo);
+  cuerpo -> SetTransform(cuerpo -> GetPosition(), ANGULO_CURVA_2);
 }
 
 std::string Curva::darId() {
@@ -41,15 +46,10 @@ std::string Curva::darId() {
 
 void Curva::interactuar(Carro *unCarro) {
   if (interaccion == EN_ASFALTO) {
-    std::cout <<"En asfaltooooooooooooooooooooooooooooooooooooooooooooo" << std::endl;
     asfalto -> interactuar(unCarro);
   } else if (interaccion == EN_PASTO) {
-    std::cout <<"En pastoooooooooooooooooooooooooooooooooooooooooooooo" << std::endl;
     pasto -> interactuar(unCarro);
-  } else {
-    std::cout <<"En NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << std::endl;
   }
-
 }
 
 Curva::~Curva() {

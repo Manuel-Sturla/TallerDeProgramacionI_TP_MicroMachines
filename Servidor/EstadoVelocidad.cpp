@@ -15,7 +15,7 @@ bool EstadoVelocidad::alcanzoLaVelocidadMaxima(b2Vec2 velocidadActual) {
   return estados[estadoActual] -> alcanzoLaVelocidadMaxima(velocidadActual);
 }
 
-void EstadoVelocidad::actualizar() {
+void EstadoVelocidad::actualizar(b2Body *cuerpo) {
   estadoActual = estados[estadoActual] -> actualizar();
 }
 

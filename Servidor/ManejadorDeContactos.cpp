@@ -41,7 +41,6 @@ void ManejadorDeContactos::manejarFinDeContacto(b2Fixture *fixture1, b2Fixture *
     if (static_cast<Objeto*>(objeto2) -> darId() == "Curva") {
       int interaccion = tipoDeInteraccionCarroCurva(fixture1 -> GetBody(), fixture2 -> GetBody());
       int data = *(int *)fixture2 ->GetUserData();
-      std::cout << "La data es " << data << std::endl;
       interaccion -= data;
       static_cast<Curva*>(objeto2) -> tipoDeInteraccion(interaccion);
       static_cast<Interactuable*>(objeto2) -> interactuar(static_cast<Carro*>(objeto1));
