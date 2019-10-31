@@ -15,7 +15,6 @@
 class HiloVisualizacion : public Hilo {
 private:
     Renderizador renderizador;
-    Servidor& servidor;
     ContenedorDeTexturas contenedor;
     Camara camara;
 

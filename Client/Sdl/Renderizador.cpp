@@ -39,10 +39,6 @@ void Renderizador::copiarTodo(Camara& camara) {
     }
 }
 
-void Renderizador::agregarFondo(const std::string& archivo) {
-    pista.emplace(pista.begin(), renderizador, archivo);
-}
-
 Renderizador::~Renderizador() {
     for(auto & texura : texturas){
         texura.destruir();

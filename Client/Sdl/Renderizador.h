@@ -25,8 +25,6 @@ public:
 
     void agregarTrecho(const std::string &archivo, Posicion* pos);
 
-    void agregarFondo(const std::string& archivo);
-
     void imprimir(Uint32 tiempoMs);
 
     void limpiar();

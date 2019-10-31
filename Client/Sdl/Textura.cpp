@@ -21,12 +21,6 @@ Textura::Textura(Textura&& text) noexcept : posicion(text.posicion) {
 }
 
 void Textura::copiar(SDL_Renderer *renderizador, Camara& camara) {
-    if(posicion == nullptr){
-        if(SDL_RenderCopyEx(renderizador, textura, nullptr, nullptr, 0, nullptr, SDL_FLIP_VERTICAL)<0){
-            throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
-        }
-        return;
-    }
     SDL_Rect posImpresion = camara.obtenerPosImpresion(posicion->getRect());
     if(SDL_RenderCopyEx(renderizador, textura, nullptr, &posImpresion, posicion->getAngulo(), nullptr, SDL_FLIP_VERTICAL)<0){
         throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
@@ -43,14 +37,6 @@ void Textura::destruir() {
 Textura::~Textura() {
     if(textura != nullptr){
         SDL_DestroyTexture(textura);
-    }
-}
-
-Textura::Textura(SDL_Renderer* renderizador, const std::string& archivo) {
-    posicion = nullptr;
-    textura = IMG_LoadTexture(renderizador, archivo.c_str());
-    if(textura == nullptr){
-        throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
     }
 }
 
