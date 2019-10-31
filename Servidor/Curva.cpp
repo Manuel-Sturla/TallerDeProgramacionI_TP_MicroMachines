@@ -25,7 +25,7 @@ void Curva::agregarseAPista(Pista *pista) {
   cuerpo -> CreateFixture(&fixtureCuadrado);
 
   b2CircleShape circuloShape;
-  circuloShape.m_p.Set(2.0,2.0); //HARCODEADO A TIPO DE CURVA 1
+  circuloShape.m_p.Set(2.0,-2.0); //HARCODEADO A TIPO DE CURVA 1, ES RELATIVO AL PUNTO DE DEFCUERPO
   circuloShape.m_radius = 4.0f; //DEPENDE DEL TAMANIO QUE VAYA A TENER LA PISTA
   b2FixtureDef fixtureCirculo;
   fixtureCirculo.shape = &circuloShape;
@@ -41,19 +41,21 @@ std::string Curva::darId() {
 
 void Curva::interactuar(Carro *unCarro) {
   if (interaccion == EN_ASFALTO) {
-    std::cout <<"En asfalto" << std::endl;
+    std::cout <<"En asfaltooooooooooooooooooooooooooooooooooooooooooooo" << std::endl;
     asfalto -> interactuar(unCarro);
   } else if (interaccion == EN_PASTO) {
-    std::cout <<"En pasto" << std::endl;
+    std::cout <<"En pastoooooooooooooooooooooooooooooooooooooooooooooo" << std::endl;
     pasto -> interactuar(unCarro);
+  } else {
+    std::cout <<"En NADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << std::endl;
   }
+
 }
 
 Curva::~Curva() {
 }
 
 void Curva::tipoDeInteraccion(int identificadorDeInteraccion) {
-  std::cout <<"Se modifico el tipo de interaccion" << std::endl;
   interaccion = identificadorDeInteraccion;
 }
 

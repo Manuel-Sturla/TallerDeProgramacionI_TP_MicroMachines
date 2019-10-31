@@ -1,6 +1,7 @@
 #include "Carro.h"
 #include <math.h>
 #include "VelocidadBase.h"
+#include "GiroAIzquierda.h"
 #include <iostream>
 
 Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro):
@@ -22,6 +23,8 @@ void Carro::agregarseA(Pista *pista) {
   fixtureDef.density = 1.0f;
   fixtureDef.friction = 0.3f;
   body -> CreateFixture(&fixtureDef);
+  GiroAIzquierda giroAIzquierda;
+  ejecutarAccion(&giroAIzquierda);
 }
 
 void Carro::ejecutarAccion(Accion *unaAccion) {
@@ -72,8 +75,8 @@ void Carro::imprimirPosicion() {
   printf("Posicion: ");
   printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
   b2Vec2 velocidad = body->GetLinearVelocity();
-  printf("Velocidad: ");
-  printf("%4.2f %4.2f\n", velocidad.x, velocidad.y);
+  //printf("Velocidad: ");
+  //printf("%4.2f %4.2f\n", velocidad.x, velocidad.y);
 }
 
 bool Carro::esValido() {
