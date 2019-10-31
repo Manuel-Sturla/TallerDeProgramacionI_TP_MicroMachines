@@ -405,6 +405,12 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Accion.h">
 			<Option target="tp"/>
 		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Aceite.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Aceite.h">
+			<Option target="tp"/>
+		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acelerar.cpp">
 			<Option target="tp"/>
 		</Unit>
@@ -481,6 +487,12 @@
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/ManejadorDeContactos.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Modificador.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Modificador.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida.cpp">

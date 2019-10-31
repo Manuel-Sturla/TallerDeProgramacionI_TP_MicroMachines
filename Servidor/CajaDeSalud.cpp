@@ -3,7 +3,6 @@
 
 CajaDeSalud::CajaDeSalud(Pista *pista, float32 x, float32 y) {
   b2BodyDef bodyDef;
-  this -> pista = pista;
   bodyDef.type = b2_staticBody;
   bodyDef.position.Set(x, y);
   cuerpo = pista -> agregarObjeto(bodyDef);
@@ -21,10 +20,6 @@ CajaDeSalud::CajaDeSalud(Pista *pista, float32 x, float32 y) {
 void CajaDeSalud::interactuar(Carro *unCarro) {
   unCarro -> curar(CURACION);
   validez = false;
-}
-
-std::string CajaDeSalud::darId() {
-  return "Modificador";
 }
 
 CajaDeSalud::~CajaDeSalud() {

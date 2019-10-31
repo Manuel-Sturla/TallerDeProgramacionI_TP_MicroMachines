@@ -3,7 +3,6 @@
 
 Piedra::Piedra(Pista *pista, float32 x, float32 y) {
   b2BodyDef bodyDef;
-  this -> pista = pista;
   bodyDef.type = b2_staticBody;
   bodyDef.position.Set(x, y);
   cuerpo = pista -> agregarObjeto(bodyDef);
@@ -16,10 +15,6 @@ Piedra::Piedra(Pista *pista, float32 x, float32 y) {
   fixtureDef.isSensor = true;
   validez = true;
   cuerpo -> CreateFixture(&fixtureDef);
-}
-
-std::string Piedra::darId() {
-  return "Modificador";
 }
 
 void Piedra::interactuar(Carro *unCarro) {

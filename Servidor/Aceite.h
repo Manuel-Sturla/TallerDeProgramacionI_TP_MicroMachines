@@ -5,11 +5,13 @@
 
 class Aceite: public Modificador {
   public:
-    std::string darId();
+    Aceite(Pista *pista, float32 x, float32 y);
 
-    void interactuar(Carro* unCarro);
+    void interactuar(Carro* unCarro) override;
 
-    bool esValido();
+    bool esValido() override;
+
+    ~Aceite();
 };
 
 

@@ -13,6 +13,8 @@ class Vida {
 
     void matar();
 
+    bool estoyVivo();
+
     void revivir();
 
     ~Vida();

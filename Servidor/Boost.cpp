@@ -2,7 +2,6 @@
 
 Boost::Boost(Pista *pista, float32 x, float32 y) {
   b2BodyDef bodyDef;
-  this -> pista = pista;
   bodyDef.type = b2_staticBody;
   bodyDef.position.Set(x, y);
   cuerpo = pista -> agregarObjeto(bodyDef);
@@ -20,10 +19,6 @@ Boost::Boost(Pista *pista, float32 x, float32 y) {
 void Boost::interactuar(Carro *unCarro) {
   unCarro -> recibirBoost();
   validez = false;
-}
-
-std::string Boost::darId() {
-  return "Modificador";
 }
 
 Boost::~Boost() {

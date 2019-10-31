@@ -79,5 +79,5 @@ void Carro::imprimirPosicion() {
 }
 
 bool Carro::esValido() {
-  return true;
+  return vida.estoyVivo();
 }

@@ -1,5 +1,4 @@
 #include "Vida.h"
-#include <iostream>
 
 Vida::Vida() {
   revivir();
@@ -27,4 +26,8 @@ void Vida::revivir() {
 }
 
 Vida::~Vida() {
+}
+
+bool Vida::estoyVivo() {
+  return vida != 0;
 }

@@ -4,14 +4,8 @@
 #include "Modificador.h"
 
 class Barro: public Modificador {
-  protected:
-    b2Body* cuerpo;
-    Pista *pista;
-    bool validez;
   public:
     Barro(Pista *pista, float32 x, float32 y);
-
-    std::string darId();
 
     void interactuar(Carro* unCarro);
 

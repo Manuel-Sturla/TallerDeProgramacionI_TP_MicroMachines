@@ -5,6 +5,11 @@
 #include "Carro.h"
 
 class Modificador: public Interactuable {
+  protected:
+    bool validez;
+    b2Body* cuerpo;
+  public:
+    std::string darId();
 };
 
 #endif
