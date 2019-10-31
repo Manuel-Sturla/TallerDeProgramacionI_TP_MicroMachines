@@ -42,4 +42,3 @@ siempre ambos jugadores me devuelven mis eventos de avanzar/ etc. entonces puedo
 
     Dos hilos uno que agarre y escuche eventos y otro que lo envie al servidor.
     Y otro hilo que envia estos eventos.
-    Y

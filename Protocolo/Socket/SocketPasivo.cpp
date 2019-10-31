@@ -1,5 +1,5 @@
 #include "SocketPasivo.h"
-#include "server_SocketPassiveException.h"
+#include "SocketPassiveException.h"
 #include <sys/socket.h>
 #include <netdb.h>
 #include <cstring>
@@ -9,16 +9,17 @@ SocketPasivo::SocketPasivo() {
   fd = -1;
 }
 
-void SocketPasivo::unirse(const char *aService) {
+void SocketPasivo::unirse(const std::string &aService) {
   struct addrinfo hints;
   struct addrinfo *rst;
   memset(&hints, 0, sizeof(struct addrinfo));
   hints.ai_family = AF_INET;
   hints.ai_socktype = SOCK_STREAM;
   hints.ai_flags = AI_PASSIVE;
-  int errCheck = getaddrinfo(nullptr, aService, &hints, &rst);
+  int errCheck = getaddrinfo(nullptr, aService.c_str(), &hints, &rst);
   if (errCheck != 0) {
-    throw server_SocketPassiveException("Fallo Imprevisto en Bind");
+      freeaddrinfo(rst);
+      throw SocketPassiveException("Fallo en Bind: ", strerror(errno), __FILE__, __LINE__);
   }
   fd = getBind(rst);
   freeaddrinfo(rst);
@@ -31,7 +32,7 @@ int SocketPasivo::getBind(struct addrinfo *rst) {
   for (ptr = rst; ptr != nullptr && !binded; ptr = ptr -> ai_next) {
     aFd = socket(ptr -> ai_family, ptr -> ai_socktype, ptr -> ai_protocol);
     if (aFd == -1) {
-      throw server_SocketPassiveException("FD Invalido");
+      throw SocketPassiveException("Error al obtener FD: ", strerror(errno), __FILE__, __LINE__);
     }
     int val = 1;
     int errCheck = setsockopt(aFd, SOL_SOCKET, SO_REUSEADDR, &val, sizeof(val));
@@ -50,16 +51,16 @@ int SocketPasivo::getBind(struct addrinfo *rst) {
 void SocketPasivo::escuchar () {
   int errCheck = ::listen(fd, 1);
   if (errCheck == -1) {
-    throw server_SocketPassiveException("Fallo Imprevisto en Listen");
+    throw SocketPassiveException("Fallo en Listen: ", strerror(errno), __FILE__, __LINE__);
   }
 }
 
 SocketAmigo SocketPasivo::aceptarCliente() {
   int aFd = accept(fd, nullptr, nullptr);
   if (aFd == -1) {
-    throw server_SocketPassiveException("ACCEPT ERROR");
+    throw SocketPassiveException("Error en Accept: ", strerror(errno), __FILE__, __LINE__);
   }
-  return std::move(common_SocketPeer(aFd));
+  return std::move(SocketAmigo(aFd));
 }
 
 void SocketPasivo::cerrar() {
@@ -70,6 +71,11 @@ void SocketPasivo::cerrar() {
 
 SocketPasivo::~SocketPasivo() {
   if (fd != -1) {
-    close();
+    cerrar();
   }
+}
+
+void SocketPasivo::unirseYEscuchar(const std::string &servicio) {
+    unirse(servicio);
+    escuchar();
 }

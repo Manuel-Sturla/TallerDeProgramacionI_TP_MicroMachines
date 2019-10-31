@@ -13,7 +13,7 @@ class SocketActivo: public SocketAmigo {
   public:
     SocketActivo();
 
-    void conectar(const char* hostName, const char* service);
+    void conectar(const std::string &hostName, const std::string &service);
 
     ~SocketActivo();
 };

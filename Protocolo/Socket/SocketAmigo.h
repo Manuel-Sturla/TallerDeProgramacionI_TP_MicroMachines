@@ -15,7 +15,7 @@ class SocketAmigo {
 
     void enviar(std::string message);
 
-    void recibir(std::string* answer);
+    void recibir(std::string& answer, size_t lenght);
 
     void cerrar();
 

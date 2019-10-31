@@ -14,9 +14,11 @@ class SocketPasivo {
   public:
     SocketPasivo();
 
-    void unirse(const char *aService);
+    void unirse(const std::string &aService);
 
     void escuchar();
+
+    void unirseYEscuchar(const std::string& servicio);
 
     SocketAmigo aceptarCliente();
 
