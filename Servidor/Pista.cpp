@@ -24,7 +24,6 @@ void Pista::actualizar() {
     if (!static_cast<Objeto*>(objetoActual) -> esValido()) {
       b2Body* cuerpoAux = cuerpoActual -> GetNext();
       pista.DestroyBody(cuerpoActual);
-      std::cout << "Destruyendo objeto" << std::endl;
       cuerpoActual = cuerpoAux;
     } else {
       cuerpoActual = cuerpoActual -> GetNext();

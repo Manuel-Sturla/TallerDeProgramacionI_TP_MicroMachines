@@ -19,7 +19,7 @@ class Curva: public Suelo {
     Pasto *pasto;
 
   public:
-    Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto);
+    Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y);
 
     void agregarseAPista(Pista *pista);
 

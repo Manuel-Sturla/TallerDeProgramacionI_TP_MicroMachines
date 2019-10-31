@@ -12,7 +12,7 @@ class Recta: public Suelo {
     Material *material;
 
   public:
-    Recta(Pista *pista, Material *unMaterial);
+    Recta(Pista *pista, Material *unMaterial, float32 x, float32 y);
 
     void interactuar(Carro *unCarro);
 

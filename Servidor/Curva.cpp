@@ -7,9 +7,9 @@
 #define ANGULO_CURVA_3 b2_pi
 #define ANGULO_CURVA_4 1.5f * b2_pi
 
-Curva::Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto) {
+Curva::Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y) {
   defCuerpo.type = b2_staticBody;
-  defCuerpo.position.Set(0.0f, 4.0f); //POSICION HARDCODEADA
+  defCuerpo.position.Set(x, y);
   agregarseAPista(pista);
   this -> asfalto = asfalto;
   this -> pasto = pasto;
@@ -29,7 +29,7 @@ void Curva::agregarseAPista(Pista *pista) {
   cuerpo -> CreateFixture(&fixtureCuadrado);
 
   b2CircleShape circuloShape;
-  circuloShape.m_p.Set(2.0,-2.0); //HARCODEADO A TIPO DE CURVA 1, ES RELATIVO AL PUNTO DE DEFCUERPO
+  circuloShape.m_p.Set(2.0,-2.0);
   circuloShape.m_radius = 4.0f; //DEPENDE DEL TAMANIO QUE VAYA A TENER LA PISTA
   b2FixtureDef fixtureCirculo;
   fixtureCirculo.shape = &circuloShape;

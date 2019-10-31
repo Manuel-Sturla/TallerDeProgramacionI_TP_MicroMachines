@@ -12,7 +12,7 @@ class CajaDeSalud: public Modificador {
     bool validez;
 
   public:
-    CajaDeSalud(Pista *pista);
+    CajaDeSalud(Pista *pista, float32 x, float32 y);
 
     std::string darId() override;
 

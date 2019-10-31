@@ -1,9 +1,9 @@
 #include "Recta.h"
 
-Recta::Recta(Pista *pista, Material *unMaterial) {
+Recta::Recta(Pista *pista, Material *unMaterial, float32 x, float32 y) {
   material = unMaterial;
   defCuerpo.type = b2_staticBody;
-  defCuerpo.position.Set(0.0f, 4.0f); //Posicion HARDCODEADA
+  defCuerpo.position.Set(x, y);
   cuerpo = pista -> agregarObjeto(defCuerpo);
   cuerpo -> SetUserData(this);
   b2PolygonShape cajaEstatica;

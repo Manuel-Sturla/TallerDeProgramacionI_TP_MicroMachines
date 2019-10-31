@@ -9,7 +9,7 @@ class Boost: public Modificador {
     Pista *pista;
     bool validez;
   public:
-    Boost(Pista *pista);
+    Boost(Pista *pista, float32 x, float32 y);
 
     std::string darId();
 

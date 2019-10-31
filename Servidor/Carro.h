@@ -21,7 +21,7 @@ class Carro: public Objeto {
     float32 coeficienteDeRozamiento;
 
   public:
-    Carro(float32 velocidadMaxima, float32 anguloDeGiro);
+    Carro(float32 velocidadMaxima, float32 anguloDeGiro, float32 x,  float32 y);
 
     void agregarseA(Pista *pista);
 

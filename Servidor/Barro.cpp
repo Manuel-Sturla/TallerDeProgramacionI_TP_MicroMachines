@@ -1,10 +1,10 @@
 #include "Barro.h"
 
-Barro::Barro(Pista *pista) {
+Barro::Barro(Pista *pista, float32 x, float32 y) {
   b2BodyDef bodyDef;
   this -> pista = pista;
   bodyDef.type = b2_staticBody;
-  bodyDef.position.Set(1.0f, 4.0f); //POSICION HARDCODEADA
+  bodyDef.position.Set(x, y);
   cuerpo = pista -> agregarObjeto(bodyDef);
   cuerpo -> SetUserData(this);
   b2PolygonShape staticBox;

@@ -1,11 +1,11 @@
 #include "Piedra.h"
 #define DANIO_POR_PIEDRA 25
 
-Piedra::Piedra(Pista *pista) {
+Piedra::Piedra(Pista *pista, float32 x, float32 y) {
   b2BodyDef bodyDef;
   this -> pista = pista;
   bodyDef.type = b2_staticBody;
-  bodyDef.position.Set(3.0f, 4.0f); //POSICION HARDCODEADA
+  bodyDef.position.Set(x, y);
   cuerpo = pista -> agregarObjeto(bodyDef);
   cuerpo -> SetUserData(this);
   b2PolygonShape staticBox;

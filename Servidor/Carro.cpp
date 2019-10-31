@@ -5,10 +5,10 @@
 #include "GiroADerecha.h"
 #include <iostream>
 
-Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro):
+Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro, float32 x, float32 y):
 estadoVelocidad(velocidadMaxima) {
   bodyDef.type = b2_dynamicBody;
-  bodyDef.position.Set(0.0f, 4.0f); //POSICION HARDCODEADA
+  bodyDef.position.Set(x, y);
   this -> anguloDeGiro = anguloDeGiro;
   id = "Carro";
 }
@@ -20,13 +20,10 @@ void Carro::agregarseA(Pista *pista) {
   dynamicBox.SetAsBox(1.0f, 1.0f);
   b2FixtureDef fixtureDef;
   fixtureDef.shape = &dynamicBox;
-  // La densidad debe ser mayor a cero para que sea dinamico
   fixtureDef.density = 1.0f;
   fixtureDef.friction = 0.3f;
   body -> CreateFixture(&fixtureDef);
   body -> SetTransform(body -> GetPosition(), -0.5f * b2_pi);
-  //GiroADerecha giroAIzquierda;
-  //ejecutarAccion(&giroAIzquierda);
 }
 
 void Carro::ejecutarAccion(Accion *unaAccion) {
@@ -79,9 +76,6 @@ void Carro::imprimirPosicion() {
   printf("Nueva iteracion\n");
   printf("Posicion: ");
   printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
-  b2Vec2 velocidad = body->GetLinearVelocity();
-  //printf("Velocidad: ");
-  //printf("%4.2f %4.2f\n", velocidad.x, velocidad.y);
 }
 
 bool Carro::esValido() {

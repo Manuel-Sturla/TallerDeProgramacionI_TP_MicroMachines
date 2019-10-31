@@ -11,7 +11,7 @@ class Piedra: public Modificador {
     bool validez;
 
   public:
-    Piedra(Pista *pista);
+    Piedra(Pista *pista, float32 x, float32 y);
 
     std::string darId();
 

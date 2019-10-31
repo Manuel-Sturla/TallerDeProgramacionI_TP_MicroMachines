@@ -1,7 +1,3 @@
-//
-// Created by manfer on 29/10/19.
-//
-
 #include "Velocidad.h"
 
 Velocidad::Velocidad(float32 velocidadMaxima):
