@@ -17,6 +17,7 @@ Aceite::Aceite(Pista *pista, float32 x, float32 y) {
 }
 
 void Aceite::interactuar(Carro *unCarro) {
+  unCarro -> reducirAgarre();
   validez = false;
 }
 

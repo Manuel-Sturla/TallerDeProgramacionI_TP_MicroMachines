@@ -13,15 +13,16 @@
 class Carro: public Objeto {
   private:
     b2BodyDef bodyDef;
-    b2Body* body;
+    b2Body* cuerpo;
     Vida vida;
     Visibilidad visibilidad;
     EstadoVelocidad estadoVelocidad;
     float32 anguloDeGiro;
     float32 coeficienteDeRozamiento;
+    float32 agarre;
 
   public:
-    Carro(float32 velocidadMaxima, float32 anguloDeGiro, float32 x,  float32 y);
+    Carro(float32 velocidadMaxima, float32 anguloDeGiro, float32 agarre, float32 x,  float32 y);
 
     void agregarseA(Pista *pista);
 
@@ -42,6 +43,8 @@ class Carro: public Objeto {
     void recibirBoost();
 
     void reducirVisibilidad();
+
+    void reducirAgarre();
 
     bool esValido() override;
 
