@@ -14,4 +14,4 @@ class Figura: public Interactuable {
 };
 
 
-#endif //_FIGURA_H_
+#endif 

@@ -9,12 +9,16 @@
 #include "Asfalto.h"
 #include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
 #include "CajaDeSalud.h"
+#include "Pasto.h"
+#include "Curva.h"
 
 class Partida {
   private:
     Pista pista;
     Asfalto asfalto;
-    Recta recta;
+    Pasto pasto;
+    Curva curva;
+    //Recta recta;
     Carro carro;
     CajaDeSalud cajaDeSalud;
     float32 timeStep;

@@ -10,21 +10,24 @@
 
 class Curva: public Suelo {
   private:
-    b2BodyDef defCirculo;
-    b2BodyDef defCuadrado;
-    b2Body *circulo;
-    b2Body *cuadrado;
-    Material *material;
-    Asfalto asfalto;
-    Pasto pasto;
-    bool tocandoCirculo;
-    bool tocandoCuadrado;
+    b2BodyDef defCuerpo;
+    b2Body *cuerpo;
+    const int circulo = 1;
+    const int cuadrado = 2;
+    int interaccion;
+    Asfalto *asfalto;
+    Pasto *pasto;
+
   public:
-    Curva();
+    Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto);
 
     void agregarseAPista(Pista *pista);
 
     std::string darId();
+
+    bool esValido() override;
+
+    void tipoDeInteraccion(int identificadorDeInteraccion);
 
     void interactuar(Carro *unCarro);
 

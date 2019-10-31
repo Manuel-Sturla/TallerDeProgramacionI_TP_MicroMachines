@@ -4,17 +4,21 @@
 #include "Pista.h"
 #include "Material.h"
 #include "Suelo.h"
-#include "Cuadrado.h"
 
 class Recta: public Suelo {
   private:
+    b2BodyDef defCuerpo;
+    b2Body *cuerpo;
     Material *material;
-    Cuadrado cuadrado;
 
   public:
     Recta(Pista *pista, Material *unMaterial);
 
     void interactuar(Carro *unCarro);
+
+    std::string darId();
+
+    bool esValido();
 
     ~Recta();
 };
