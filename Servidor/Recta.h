@@ -3,17 +3,22 @@
 
 #include "Pista.h"
 #include "Material.h"
+#include "Suelo.h"
 
-class Recta {
+class Recta: public Suelo {
   private:
-    b2BodyDef bodyDef;
-    b2Body *body;
+    b2BodyDef defCuerpo;
+    b2Body *cuerpo;
     Material *material;
 
   public:
-    Recta(Material *unMaterial);
+    Recta(Pista *pista, Material *unMaterial, float32 x, float32 y);
 
-    void agregarseA(Pista *pista);
+    void interactuar(Carro *unCarro);
+
+    std::string darId();
+
+    bool esValido();
 
     ~Recta();
 };

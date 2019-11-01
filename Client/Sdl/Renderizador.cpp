@@ -2,7 +2,7 @@
 // Created by diego on 22/10/19.
 //
 
-#include <iostream>
+#include <SDL2/SDL_timer.h>
 #include "Renderizador.h"
 #include "../Excepciones/ExcepcionConPos.h"
 
@@ -18,33 +18,35 @@ void Renderizador::imprimir(Uint32 tiempoMs) {
     SDL_Delay(tiempoMs);
 }
 
-void Renderizador::agregarTextura(const std::string &archivo, Posicion* pos, int angulo) {
-    texturas.emplace_back(renderizador, archivo, pos, angulo);
+void Renderizador::agregarTextura(const std::string &archivo, Posicion* pos) {
+    texturas.emplace_back(renderizador, archivo, pos);
+}
+
+void Renderizador::agregarTrecho(const std::string &archivo, Posicion* pos) {
+    pista.emplace_back(renderizador, archivo, pos);
 }
 
 void Renderizador::limpiar() {
     SDL_RenderClear(renderizador);
 }
 
-void Renderizador::copiarTodo() {
+void Renderizador::copiarTodo(Camara& camara) {
     for(auto & trecho : pista){
-        trecho.copiar(renderizador);
+        trecho.copiar(renderizador, camara);
     }
     for(auto & textura : texturas){
-        textura.copiar(renderizador);
+        textura.copiar(renderizador, camara);
     }
 }
 
 Renderizador::~Renderizador() {
+    for(auto & texura : texturas){
+        texura.destruir();
+    }
+    for(auto & trecho : pista){
+        trecho.destruir();
+    }
     if(renderizador != nullptr){
         SDL_DestroyRenderer(renderizador);
     }
-}
-
-void Renderizador::agregarTrecho(const std::string &archivo, Posicion* pos, int angulo) {
-    pista.emplace_back(renderizador, archivo, pos, angulo);
-}
-
-std::vector<Textura> &Renderizador::getPista() {
-    return pista;
 }

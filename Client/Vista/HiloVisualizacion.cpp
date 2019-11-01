@@ -7,21 +7,17 @@
 #include "../Excepciones/ExcepcionConPos.h"
 
 HiloVisualizacion::HiloVisualizacion(Servidor& servidor) : renderizador("microMachines.exe", 1000, 1000)\
-, servidor(servidor), camara(renderizador) {
-}
+, contenedor(renderizador, servidor), camara(contenedor.getAuto().getPos(), 1000) {}
 
 void HiloVisualizacion::run() {
     try{
-        renderizador.copiarTodo();
-        renderizador.imprimir(1000);
-        std::vector<int> mensaje = servidor.recibir();
-        while(mensaje[0] != -1){
+        bool keepTalking = true;
+        contenedor.actualizar();
+        while(keepTalking){
             renderizador.limpiar();
-            renderizador.copiarTodo();
+            renderizador.copiarTodo(camara);
             renderizador.imprimir(20);
-            camara.actualizar(mensaje);
-            mensaje = servidor.recibir();
-            //camara.actualizar(mensaje);
+            keepTalking = contenedor.actualizar();
         }
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';

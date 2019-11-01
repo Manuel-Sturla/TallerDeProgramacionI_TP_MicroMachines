@@ -6,16 +6,19 @@
 #define OPENGLTEST_AUTO_H
 
 
+#include "../Sdl/Posicion.h"
 #include "../Sdl/Renderizador.h"
 
 class Auto {
 private:
-
+    Posicion posicion;
 
 public:
-    void rotar(int &angulo);
+    Auto(Renderizador &renderizador, int tam);
 
-    void crear(Renderizador& renderizador, int ancho, int altura);
+    void mover(int &posX, int &posY, int &angulo);
+
+    Posicion& getPos();
 };
 
 

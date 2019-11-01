@@ -1,18 +1,18 @@
 #ifndef _VELOCIDADBOOST_H_
 #define _VELOCIDADBOOST_H_
 
-#include "EstrategiaDeVelocidad.h"
+#include "Velocidad.h"
 
-class VelocidadBoost: public EstrategiaDeVelocidad {
+class VelocidadBoost: public Velocidad {
   private:
     float32 velocidadBase;
     int32 duracion;
   public:
     VelocidadBoost(float32 velocidadBase);
 
-    std::shared_ptr<EstrategiaDeVelocidad> boost() override;
+    std::string boost() override;
 
-    std::shared_ptr<EstrategiaDeVelocidad> actualizar() override;
+    std::string actualizar() override;
 };
 
 

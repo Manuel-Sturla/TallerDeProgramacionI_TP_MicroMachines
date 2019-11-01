@@ -4,7 +4,7 @@
 #include "Juego/Partida.h"
 
 int main() {
-    Servidor servidor(0, 0);
+    Servidor servidor(450, 450);
     if(SDL_Init(SDL_INIT_VIDEO) != 0){
         SDL_Log("No pude incializar el SDL %s", SDL_GetError());
         return 0;

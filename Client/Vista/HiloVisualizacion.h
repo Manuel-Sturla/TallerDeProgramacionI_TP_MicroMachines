@@ -9,12 +9,13 @@
 #include "../Sdl/Renderizador.h"
 #include "../Servidor.h"
 #include "../Hilo.h"
+#include "ContenedorDeTexturas.h"
 #include "Camara.h"
 
 class HiloVisualizacion : public Hilo {
 private:
     Renderizador renderizador;
-    Servidor& servidor;
+    ContenedorDeTexturas contenedor;
     Camara camara;
 
 public:

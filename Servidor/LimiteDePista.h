@@ -7,8 +7,6 @@ class LimiteDePista: public Material {
   public:
     LimiteDePista();
 
-    std::string darId();
-
     void interactuar(Carro* unCarro);
 
     ~LimiteDePista();

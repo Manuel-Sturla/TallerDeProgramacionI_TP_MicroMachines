@@ -7,21 +7,22 @@
 #include "Objeto.h"
 #include "Vida.h"
 #include "Visibilidad.h"
-#include "EstrategiaDeVelocidad.h"
+#include "Velocidad.h"
+#include "EstadoVelocidad.h"
 
 class Carro: public Objeto {
   private:
     b2BodyDef bodyDef;
-    b2Body* body;
+    b2Body* cuerpo;
     Vida vida;
     Visibilidad visibilidad;
-    std::shared_ptr<EstrategiaDeVelocidad> estrategiaDeVelocidad;
+    EstadoVelocidad estadoVelocidad;
     float32 anguloDeGiro;
-    float32 velocidadMax;
     float32 coeficienteDeRozamiento;
+    float32 agarre;
 
   public:
-    Carro(float32 velocidadMaxima, float32 anguloDeGiro);
+    Carro(float32 velocidadMaxima, float32 anguloDeGiro, float32 agarre, float32 x,  float32 y);
 
     void agregarseA(Pista *pista);
 
@@ -42,6 +43,10 @@ class Carro: public Objeto {
     void recibirBoost();
 
     void reducirVisibilidad();
+
+    void reducirAgarre();
+
+    bool esValido() override;
 
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };

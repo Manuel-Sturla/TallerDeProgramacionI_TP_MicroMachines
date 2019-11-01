@@ -7,8 +7,6 @@ class Pasto: public Material {
   public:
     Pasto();
 
-    std::string darId();
-
     void interactuar(Carro* unCarro);
 
     ~Pasto();

@@ -2,10 +2,11 @@
 #define _ACELERAR_H_
 
 #include "Accion.h"
+#include "EstadoVelocidad.h"
 
 class Acelerar: public Accion {
   public:
-    void ejecutar(b2Body* body, std::shared_ptr<EstrategiaDeVelocidad> estrategiaDeVelocidad, float32 angulo);
+    void ejecutar(b2Body* body, EstadoVelocidad *estadoVelocidad, float32 angulo);
 };
 
 #endif

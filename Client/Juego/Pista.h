@@ -7,17 +7,24 @@
 
 
 #include <vector>
-#include "../Sdl/Textura.h"
 #include "../Sdl/Renderizador.h"
 
 class Pista {
-
+    Renderizador& renderizador;
     int tamImagen;
+    std::vector<Posicion*> pistaPos;
+
+    void agregarPasto(int posX, int posY, int angulo);
+
+    void agregarRecta(int posX, int posY, int angulo);
 
 public:
-    explicit Pista(Renderizador &renderizador);
 
-    void crearPista(Renderizador& renderizador);
+    explicit Pista(Renderizador &renderizador, std::vector<std::string> mensaje);
+
+    virtual ~Pista();
+
+    void agregarCurva(int posX, int posY, int angulo);
 };
 
 

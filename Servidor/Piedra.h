@@ -5,15 +5,12 @@
 #include "Pista.h"
 
 class Piedra: public Modificador {
-  private:
-    b2Body* cuerpo;
-    Pista *pista;
   public:
-    Piedra(Pista *pista);
-
-    std::string darId();
+    Piedra(Pista *pista, float32 x, float32 y);
 
     void interactuar(Carro* unCarro);
+
+    bool esValido();
 
     ~Piedra();
 };

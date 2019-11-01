@@ -6,18 +6,12 @@
 #include "Pista.h"
 
 class CajaDeSalud: public Modificador {
-  private:
-    b2Body* cuerpo;
-    Pista *pista;
-
-    void eliminarseDePista();
-
   public:
-    CajaDeSalud(Pista *pista);
-
-    std::string darId();
+    CajaDeSalud(Pista *pista, float32 x, float32 y);
 
     void interactuar(Carro* unCarro);
+
+    bool esValido();
 
     ~CajaDeSalud();
 };

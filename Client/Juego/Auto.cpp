@@ -3,12 +3,17 @@
 //
 
 #include "Auto.h"
+#include "../Sdl/Renderizador.h"
 
-Auto::Auto(Renderizador& renderizador){
+Auto::Auto(Renderizador& renderizador, int tam) : posicion(0,0, tam, tam, 0){
+    renderizador.agregarTextura("auto.png", &posicion);
+}
 
-void Auto::crear(Renderizador& renderizador, int ancho, int altura) {
-    int tamAuto = 100;
-    auto* posicion = new Posicion(ancho/2, altura/2, tamAuto, tamAuto);
-    renderizador.agregarTextura("auto.png", posicion, 0);
-    textura = renderizador.obtenerUltimaTextura();
+void Auto::mover(int &posX, int &posY, int &angulo) {
+    posicion.moverA(posX, posY);
+    posicion.rotar(angulo);
+}
+
+Posicion &Auto::getPos() {
+    return posicion;
 }
