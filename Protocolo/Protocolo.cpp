@@ -19,6 +19,17 @@ std::string Protocolo::recibir() {
     return mensaje;
 }
 
-Protocolo::Protocolo(SocketAmigo& socketAmigo) :socket(std::move(socketAmigo)){
+Protocolo::Protocolo(SocketAmigo socketAmigo) :socket(std::move(socketAmigo)){
 
+}
+
+Protocolo::Protocolo(Protocolo &&otro): socket(std::move(otro.socket)) {
+}
+
+Protocolo &Protocolo::operator=(Protocolo &&otro) {
+    if (this == &otro) {
+        return *this;
+    }
+    this->socket = std::move(otro.socket);
+    return *this;
 }

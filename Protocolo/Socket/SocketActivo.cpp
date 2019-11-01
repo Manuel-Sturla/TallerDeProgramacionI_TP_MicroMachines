@@ -43,3 +43,8 @@ int SocketActivo::conseguirConexion(struct addrinfo *result) {
 
 SocketActivo::~SocketActivo() {
 }
+
+SocketActivo::SocketActivo(const std::string &hostName, const std::string &service):
+SocketAmigo(-1){
+    conectar(hostName, service);
+}

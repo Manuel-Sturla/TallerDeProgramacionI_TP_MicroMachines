@@ -7,7 +7,6 @@
 
 
 #include "Protocolo.h"
-
 class ClienteProxy {
     Protocolo protocolo;
 public:

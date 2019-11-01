@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.15)
 project(Protocolo)
 
 set(CMAKE_CXX_STANDARD 11)
+SET(CMAKE_CXX_FLAGS -pthread)
+
 include_directories(Socket)
 add_executable(Protocolo main.cpp
         Socket/SocketPeerException.cpp
@@ -13,4 +15,15 @@ add_executable(Protocolo main.cpp
         Socket/SocketAmigo.cpp
         Socket/SocketAmigo.h
         Socket/SocketPasivo.cpp
-        Socket/SocketPasivo.h Socket/SocketException.cpp Socket/SocketException.h Protocolo.cpp Protocolo.h ClienteProxy.cpp ClienteProxy.h)
+        Socket/SocketPasivo.h
+        Socket/SocketException.cpp
+        Socket/SocketException.h
+        Protocolo.cpp
+        Protocolo.h
+        ClienteProxy.cpp
+        ClienteProxy.h
+        ServidorProxy.cpp
+        ServidorProxy.h
+        Utilidades.cpp
+        Utilidades.h
+        Hilos/Hilo.h Hilos/HiloCliente.cpp Hilos/HiloCliente.h Hilos/HiloServidor.cpp Hilos/HiloServidor.h)

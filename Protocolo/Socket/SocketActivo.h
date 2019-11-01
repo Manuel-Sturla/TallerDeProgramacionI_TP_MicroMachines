@@ -12,6 +12,7 @@ class SocketActivo: public SocketAmigo {
 
   public:
     SocketActivo();
+    SocketActivo(const std::string &hostName, const std::string &service);
 
     void conectar(const std::string &hostName, const std::string &service);
 

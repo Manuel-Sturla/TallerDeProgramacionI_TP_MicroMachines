@@ -13,6 +13,7 @@ class SocketPasivo {
     int getBind(struct addrinfo* ptr);
   public:
     SocketPasivo();
+    SocketPasivo(const std::string& servicio);
 
     void unirse(const std::string &aService);
 

@@ -10,10 +10,11 @@
 #include <vector>
 
 class Protocolo {
-    SocketAmigo socket; //Posiblemente luego no guarde una referencia
+    SocketAmigo socket;
 public:
-    explicit Protocolo(SocketAmigo& socketAmigo);
-    void enviar(std::vector<std::string> elementos);
+    explicit Protocolo(SocketAmigo socketAmigo);
+    Protocolo(Protocolo&& otro);
+    Protocolo& operator=(Protocolo&& otro);
     void enviar(const std::string &mensaje);
     std::string recibir();
 };

@@ -8,6 +8,9 @@
 SocketPasivo::SocketPasivo() {
   fd = -1;
 }
+SocketPasivo::SocketPasivo(const std::string &servicio) :SocketPasivo(){
+    unirseYEscuchar(servicio);
+}
 
 void SocketPasivo::unirse(const std::string &aService) {
   struct addrinfo hints;
@@ -79,3 +82,5 @@ void SocketPasivo::unirseYEscuchar(const std::string &servicio) {
     unirse(servicio);
     escuchar();
 }
+
+
