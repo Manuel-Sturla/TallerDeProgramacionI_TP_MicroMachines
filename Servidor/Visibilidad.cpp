@@ -7,7 +7,7 @@ Visibilidad::Visibilidad() {
 
 void Visibilidad::reducirVisibilidad() {
   visibilidadReducida = true;
-  duracion = 5;
+  duracion += 5;
 }
 
 void Visibilidad::actualizar() {

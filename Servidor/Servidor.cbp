@@ -417,6 +417,12 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acelerar.h">
 			<Option target="tp"/>
 		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Agarre.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Agarre.h">
+			<Option target="tp"/>
+		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Asfalto.cpp">
 			<Option target="tp"/>
 		</Unit>

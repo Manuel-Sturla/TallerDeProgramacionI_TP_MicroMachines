@@ -9,6 +9,7 @@
 #include "Visibilidad.h"
 #include "Velocidad.h"
 #include "EstadoVelocidad.h"
+#include "Agarre.h"
 
 class Carro: public Objeto {
   private:
@@ -17,11 +18,12 @@ class Carro: public Objeto {
     Vida vida;
     Visibilidad visibilidad;
     EstadoVelocidad estadoVelocidad;
+    Agarre agarre;
     float32 anguloDeGiro;
     float32 coeficienteDeRozamiento;
-    float32 agarre;
 
   public:
+    //El agarre debe ser un numero en el intervalo (0 ; 100]
     Carro(float32 velocidadMaxima, float32 anguloDeGiro, float32 agarre, float32 x,  float32 y);
 
     void agregarseA(Pista *pista);

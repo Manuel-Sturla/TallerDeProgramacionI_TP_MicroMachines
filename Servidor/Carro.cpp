@@ -6,11 +6,10 @@
 #include <iostream>
 
 Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y):
-estadoVelocidad(velocidadMaxima) {
+estadoVelocidad(velocidadMaxima), agarre(agarre) {
   bodyDef.type = b2_dynamicBody;
   bodyDef.position.Set(x, y);
   this -> anguloDeGiro = anguloDeGiro;
-  this -> agarre = agarre;
   id = "Carro";
 }
 
@@ -33,8 +32,7 @@ void Carro::ejecutarAccion(Accion *unaAccion) {
 void Carro::actualizar() {
   b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
   float32 factorDeFuerza = -2 * velocidad.Normalize();
-  cuerpo -> SetAngularVelocity(0);
-  // HACER LA PARTE DEL AGARRE.........................................................
+  agarre.actualizar(cuerpo);
   //PREGUNTAR COMO NORMALIZAR LOS ANGULOS
   cuerpo -> ApplyForce(coeficienteDeRozamiento * factorDeFuerza * velocidad, cuerpo -> GetWorldCenter(), true);
   visibilidad.actualizar();
@@ -83,5 +81,5 @@ bool Carro::esValido() {
 }
 
 void Carro::reducirAgarre() {
-  agarre -= 1;
+  agarre.reducirAgarre();
 }
