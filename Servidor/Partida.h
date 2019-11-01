@@ -2,15 +2,15 @@
 #define _PARTIDA_H_
 
 #include "Pista.h"
-#include "Acelerar.h"
-#include "Boost.h"
-#include "Carro.h"
-#include "Recta.h"
-#include "Asfalto.h"
+#include "Acciones/Acelerar.h"
+#include "Modificadores/Boost.h"
+#include "Carro/Carro.h"
+#include "Suelos/Recta.h"
+#include "Suelos/Asfalto.h"
 #include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
-#include "CajaDeSalud.h"
-#include "Pasto.h"
-#include "Curva.h"
+#include "Modificadores/CajaDeSalud.h"
+#include "Suelos/Pasto.h"
+#include "Suelos/Curva.h"
 
 class Partida {
   private:

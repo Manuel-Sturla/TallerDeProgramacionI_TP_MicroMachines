@@ -5,16 +5,16 @@ set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
 
 add_subdirectory(3rd_party/Box2D-cmake)
 
-set(SOURCE_FILES main.cpp Pista.cpp Accion.cpp Frenar.cpp GiroAIzquierda.cpp
-        GiroADerecha.cpp Acelerar.cpp Vida.cpp Modificador.cpp CajaDeSalud.cpp VelocidadBase.cpp
-        VelocidadBoost.cpp EstadoVelocidad.cpp Curva.cpp
-        Boost.cpp Barro.cpp Aceite.cpp Visibilidad.cpp  Agarre.cpp Partida.cpp
-        Piedra.cpp Carro.cpp )
+set(SOURCE_FILES main.cpp  Servidor.cpp Planos/PlanoDePista.cpp Pista.cpp Acciones/Accion.cpp Acciones/Frenar.cpp Acciones/GiroAIzquierda.cpp
+        Acciones/GiroADerecha.cpp Acciones/Acelerar.cpp Carro/Vida.cpp Modificadores/Modificador.cpp Modificadores/CajaDeSalud.cpp Carro/VelocidadBase.cpp
+        Carro/VelocidadBoost.cpp Carro/EstadoVelocidad.cpp Suelos/Curva.cpp
+        Modificadores/Boost.cpp Modificadores/Barro.cpp Modificadores/Aceite.cpp Carro/Visibilidad.cpp Carro/Agarre.cpp Partida.cpp
+        Modificadores/Piedra.cpp Carro/Carro.cpp)
 
-add_executable(tp main.cpp Pista.cpp Accion.cpp Acelerar.cpp Frenar.cpp
-        GiroAIzquierda.cpp GiroADerecha.cpp Vida.cpp Modificador.cpp CajaDeSalud.cpp Piedra.cpp
-        VelocidadBase.cpp VelocidadBoost.cpp EstadoVelocidad.cpp
-        Boost.cpp Barro.cpp  Aceite.cpp Visibilidad.cpp  Agarre.cpp Curva.cpp
-        Carro.cpp Recta.cpp ManejadorDeContactos.cpp Asfalto.cpp Partida.cpp
-        LimiteDePista.cpp Pasto.cpp Velocidad.cpp)
+add_executable(tp main.cpp Servidor.cpp Planos/PlanoDePista.cpp Pista.cpp Acciones/Accion.cpp Acciones/Acelerar.cpp Acciones/Frenar.cpp
+        Acciones/GiroAIzquierda.cpp Acciones/GiroADerecha.cpp Carro/Vida.cpp Modificadores/Modificador.cpp Modificadores/CajaDeSalud.cpp Modificadores/Piedra.cpp
+        Carro/VelocidadBase.cpp Carro/VelocidadBoost.cpp Carro/EstadoVelocidad.cpp
+        Modificadores/Boost.cpp Modificadores/Barro.cpp Modificadores/Aceite.cpp Carro/Visibilidad.cpp Carro/Agarre.cpp Suelos/Curva.cpp
+        Carro/Carro.cpp Suelos/Recta.cpp ManejadorDeContactos.cpp Suelos/Asfalto.cpp Partida.cpp
+        Suelos/LimiteDePista.cpp Suelos/Pasto.cpp Carro/Velocidad.cpp)
 target_link_libraries(tp tobanteGaming::Box2D)

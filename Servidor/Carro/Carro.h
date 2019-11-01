@@ -1,10 +1,10 @@
 #ifndef _CARRO_H_
 #define _CARRO_H_
 
-#include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
-#include "Pista.h"
-#include "Accion.h"
-#include "Objeto.h"
+#include "Box2D/Box2D.h"
+#include "../Pista.h"
+#include "../Acciones/Accion.h"
+#include "../Objeto.h"
 #include "Vida.h"
 #include "Visibilidad.h"
 #include "Velocidad.h"

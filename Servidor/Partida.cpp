@@ -1,7 +1,7 @@
 #include "Partida.h"
-#include "CajaDeSalud.h"
-#include "GiroADerecha.h"
-#include "GiroAIzquierda.h"
+#include "Modificadores/CajaDeSalud.h"
+#include "Acciones/GiroADerecha.h"
+#include "Acciones/GiroAIzquierda.h"
 #define ANGULO_PARA_GIRO b2_pi / 4 //HARDCODEADO
 #define VELOCIDAD_MAXIMA 5 //HARCODEADO
 

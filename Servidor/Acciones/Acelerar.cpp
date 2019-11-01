@@ -1,5 +1,5 @@
 #include "Acelerar.h"
-#include "EstadoVelocidad.h"
+#include "../Carro/EstadoVelocidad.h"
 
 void Acelerar::ejecutar(b2Body *body, EstadoVelocidad *estadoVelocidad, float32 angulo) {
   b2Vec2 velocidad = body -> GetLinearVelocity();

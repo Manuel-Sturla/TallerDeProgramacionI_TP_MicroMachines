@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Pista.h"
 #include "Objeto.h"
 

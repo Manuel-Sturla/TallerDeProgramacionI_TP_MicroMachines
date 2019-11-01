@@ -2,7 +2,7 @@
 #define _FIGURA_H_
 
 #include "Interactuable.h"
-#include "Suelo.h"
+#include "Suelos/Suelo.h"
 
 class Figura: public Interactuable {
   protected:

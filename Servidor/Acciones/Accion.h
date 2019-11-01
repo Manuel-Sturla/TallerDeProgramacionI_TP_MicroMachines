@@ -1,9 +1,9 @@
 #ifndef _ACCION_H_
 #define _ACCION_H_
 
-#include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
-#include "Velocidad.h"
-#include "EstadoVelocidad.h"
+#include "Box2D/Box2D.h"
+#include "../Carro/Velocidad.h"
+#include "../Carro/EstadoVelocidad.h"
 
 class Accion {
   protected:

@@ -1,8 +1,8 @@
 #include "Carro.h"
 #include <math.h>
 #include "VelocidadBase.h"
-#include "GiroAIzquierda.h"
-#include "GiroADerecha.h"
+#include "../Acciones/GiroAIzquierda.h"
+#include "../Acciones/GiroADerecha.h"
 #include <iostream>
 
 Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y):

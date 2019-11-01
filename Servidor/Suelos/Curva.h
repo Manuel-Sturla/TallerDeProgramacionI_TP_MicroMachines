@@ -3,7 +3,7 @@
 
 #include <Box2D/Box2D.h>
 #include "Material.h"
-#include "Pista.h"
+#include "../Pista.h"
 #include "Suelo.h"
 #include "Asfalto.h"
 #include "Pasto.h"
