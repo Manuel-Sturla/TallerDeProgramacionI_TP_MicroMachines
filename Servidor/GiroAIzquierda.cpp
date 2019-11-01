@@ -1,5 +1,8 @@
+#include <iostream>
 #include "GiroAIzquierda.h"
 
 void GiroAIzquierda::ejecutar(b2Body *body, EstadoVelocidad *estadoVelocidad, float32 angulo) {
-  body -> ApplyTorque(angulo * body -> GetMass() * 10, true);
+  float desiredAngularVelocity = angulo * 60;
+  float torque = body -> GetInertia() * desiredAngularVelocity * 60.0;
+  body->ApplyTorque(torque, true);
 }

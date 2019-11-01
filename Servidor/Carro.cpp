@@ -24,7 +24,6 @@ void Carro::agregarseA(Pista *pista) {
   fixtureDef.density = 1.0f;
   fixtureDef.friction = 0.3f;
   cuerpo -> CreateFixture(&fixtureDef);
-  cuerpo -> SetTransform(cuerpo -> GetPosition(), -0.5f * b2_pi);
 }
 
 void Carro::ejecutarAccion(Accion *unaAccion) {
@@ -34,9 +33,9 @@ void Carro::ejecutarAccion(Accion *unaAccion) {
 void Carro::actualizar() {
   b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
   float32 factorDeFuerza = -2 * velocidad.Normalize();
-  //VER COMO IR FRENANDO LA VELOCIDAD ANGULAR..........................................
+  cuerpo -> SetAngularVelocity(0);
   // HACER LA PARTE DEL AGARRE.........................................................
-  //body -> ApplyAngularImpulse(0.1f * - body -> GetAngularVelocity(), true);
+  //PREGUNTAR COMO NORMALIZAR LOS ANGULOS
   cuerpo -> ApplyForce(coeficienteDeRozamiento * factorDeFuerza * velocidad, cuerpo -> GetWorldCenter(), true);
   visibilidad.actualizar();
   estadoVelocidad.actualizar(cuerpo);

@@ -1,6 +1,8 @@
 #include "Partida.h"
 #include "CajaDeSalud.h"
-#define ANGULO_PARA_GIRO 0.5 * b2_pi //HARDCODEADO
+#include "GiroADerecha.h"
+#include "GiroAIzquierda.h"
+#define ANGULO_PARA_GIRO b2_pi / 4 //HARDCODEADO
 #define VELOCIDAD_MAXIMA 5 //HARCODEADO
 
 Partida::Partida(b2Vec2 gravedad): pista(gravedad), curva(&pista, &asfalto, &pasto, 0.0f, 4.0f),
@@ -12,8 +14,10 @@ carro(VELOCIDAD_MAXIMA, ANGULO_PARA_GIRO, 5.0f, 0.0f, 4.0f), cajaDeSalud(&pista,
 }
 
 void Partida::simular() {
-  Acelerar acelerar;
-  carro.ejecutarAccion(&acelerar);
+  //Acelerar acelerar;
+  //carro.ejecutarAccion(&acelerar);
+  GiroAIzquierda giroADerecha;
+  carro.ejecutarAccion(&giroADerecha);
   pista.simular(timeStep, velocidadDeIteraciones, positionIterations);
   pista.actualizar();
   carro.imprimirPosicion();
