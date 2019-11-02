@@ -1,6 +1,6 @@
 #include "Partida.h"
 
-Partida::Partida(b2Vec2 gravedad): mapa(gravedad) {
+Partida::Partida() {
 }
 
 void Partida::simular() {
@@ -12,4 +12,12 @@ Partida::~Partida() {
 
 void Partida::crearPista(PlanoDePista *planoDePista) {
   planoDePista -> crearPista(&mapa, mapa.darPista());
+}
+
+std::vector<std::string> &Partida::obtenerExtras() {
+  return extras;
+}
+
+std::vector<std::string> &Partida::obtenerAutos() {
+  return autos;
 }

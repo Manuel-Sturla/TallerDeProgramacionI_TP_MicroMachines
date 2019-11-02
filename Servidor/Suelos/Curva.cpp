@@ -11,7 +11,7 @@ Curva::Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y)
   b2BodyDef defCuerpo;
   defCuerpo.type = b2_staticBody;
   defCuerpo.position.Set(x, y);
-  cuerpo = pista -> agregarObjeto(defCuerpo);
+  cuerpo = pista -> agregarObjeto(&defCuerpo);
   agregarseAPista(pista);
   this -> asfalto = asfalto;
   this -> pasto = pasto;

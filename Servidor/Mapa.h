@@ -19,7 +19,7 @@ class Mapa {
     std::list<Curva> curvas;
 
   public:
-    Mapa(b2Vec2 gravedad);
+    Mapa();
 
     Material* darMaterial(std::string materialPedido);
 

@@ -3,8 +3,7 @@
 #define ANGULO_PARA_GIRO b2_pi / 4 //HARDCODEADO
 #define VELOCIDAD_MAXIMA 5 //HARCODEADO
 
-Mapa::Mapa(b2Vec2 gravedad): pista(gravedad),
-carro(VELOCIDAD_MAXIMA, ANGULO_PARA_GIRO, 100.0f, 0.0f, 4.0f)  {
+Mapa::Mapa(): carro(VELOCIDAD_MAXIMA, ANGULO_PARA_GIRO, 100.0f, 0.0f, 0.0f)  {
   carro.agregarseA(&pista);
 }
 
@@ -25,10 +24,17 @@ void Mapa::simular() {
   float32 timeStep = 1.0f / 60.0f;
   int32 velocidadDeIteraciones = 6;
   int32 positionIterations = 2;
-  pista.simular(timeStep, velocidadDeIteraciones, positionIterations);
-  pista.actualizar();
-  carro.imprimirPosicion();
-  carro.actualizar();
+  Recta recta(&pista, &asfalto, 0, 0);
+  Curva curva(&pista, &asfalto, &pasto, 2, 0);
+  Recta recta1(&pista, &pasto, 2, 2);
+  Recta recta2(&pista, &asfalto, 0, 2);
+
+  for (int32 i = 0; i < 5; ++i) {
+    pista.simular(timeStep, velocidadDeIteraciones, positionIterations);
+    pista.actualizar();
+    carro.imprimirPosicion();
+    carro.actualizar();
+  }
 }
 
 void Mapa::agregarRecta(Recta recta) {
