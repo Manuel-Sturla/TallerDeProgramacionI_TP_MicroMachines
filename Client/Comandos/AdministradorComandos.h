@@ -14,7 +14,7 @@ class AdministradorComandos {
 private:
     std::map<SDL_Keycode, Comando*> comandos;
 public:
-    explicit AdministradorComandos(Servidor& servidor);
+    explicit AdministradorComandos(ServidorProxy& servidor);
 
     virtual ~AdministradorComandos();
 

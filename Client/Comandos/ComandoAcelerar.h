@@ -10,7 +10,7 @@
 
 class ComandoAcelerar : public Comando {
 public:
-    explicit ComandoAcelerar(Servidor &servidor) : Comando(servidor) {}
+    explicit ComandoAcelerar(ServidorProxy &servidor) : Comando(servidor) {}
 
     void ejecutar() override;
 };

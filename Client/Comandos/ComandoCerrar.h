@@ -10,7 +10,7 @@
 
 class ComandoCerrar : public Comando {
 public:
-    explicit ComandoCerrar(Servidor &servidor) : Comando(servidor) {}
+    explicit ComandoCerrar(ServidorProxy &servidor) : Comando(servidor) {}
 
     void ejecutar() override;
 };

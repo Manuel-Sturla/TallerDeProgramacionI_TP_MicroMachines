@@ -10,7 +10,7 @@
 
 class ComandoFrenar : public Comando {
 public:
-    explicit ComandoFrenar(Servidor &servidor) : Comando(servidor) {}
+    explicit ComandoFrenar(ServidorProxy &servidor) : Comando(servidor) {}
 
     void ejecutar() override;
 };

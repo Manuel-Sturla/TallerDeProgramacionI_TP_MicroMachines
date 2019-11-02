@@ -5,5 +5,5 @@
 #include "ComandoAcelerar.h"
 
 void ComandoAcelerar::ejecutar() {
-    servidor.enviar("acelerar");
+    servidor.ejecutarMovimiento("acelerar");
 }

@@ -15,7 +15,7 @@ private:
     Hilo* lector;
 
 public:
-    explicit Partida(Servidor& servidor);
+    explicit Partida(ServidorProxy& servidor);
 
     void iniciar();
 

@@ -10,7 +10,7 @@
 
 class ComandoDerecha : public Comando {
 public:
-    explicit ComandoDerecha(Servidor &servidor) : Comando(servidor) {}
+    explicit ComandoDerecha(ServidorProxy &servidor) : Comando(servidor) {}
 
     void ejecutar() override;
 };

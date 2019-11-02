@@ -5,5 +5,5 @@
 #include "ComandoCerrar.h"
 
 void ComandoCerrar::ejecutar() {
-    servidor.enviar("cerrar");
+    servidor.ejecutarMovimiento("cerrar");
 }

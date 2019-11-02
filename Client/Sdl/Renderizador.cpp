@@ -39,6 +39,11 @@ void Renderizador::copiarTodo(Camara& camara) {
     }
 }
 
+void Renderizador::destruirTexturas() {
+    texturas.clear();
+    pista.clear();
+}
+
 Renderizador::~Renderizador() {
     for(auto & texura : texturas){
         texura.destruir();

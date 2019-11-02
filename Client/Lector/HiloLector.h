@@ -15,7 +15,7 @@ private:
     AdministradorComandos comandos;
 
 public:
-    explicit HiloLector(Servidor& servidor);
+    explicit HiloLector(ServidorProxy& servidor);
 
     void run() override;
 };
