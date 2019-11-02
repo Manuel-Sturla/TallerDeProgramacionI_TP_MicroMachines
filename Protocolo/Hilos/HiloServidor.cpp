@@ -13,10 +13,13 @@ socket(servicio){
 }
 
 void HiloServidor::run() {
-    ClienteProxy clienteProxy2(socket.aceptarCliente());
+    Partida partida;
+    ClienteProxy clienteProxy2(socket.aceptarCliente(), partida);
     clienteProxy = &clienteProxy2;
-    std::cout << "Inicio Prueba de obtener comando" << std::endl;
-    std::cout << "Comando obtenido: " << clienteProxy->obtenerComando() << std::endl;
-    std::cout << "Partida nueva obtenida: " << unir(clienteProxy->obtenerPartida(), SEPARADOR) << std::endl;
-    std::cout << "PArtida elegida:  " <<  unir(clienteProxy->obtenerPartida(), SEPARADOR) << std::endl;
+    std::cout << "Inicio Prueba de obtener posiciones" << std::endl;
+    clienteProxy->ejecutarComando();
+    std::cout << "Inicio Prueba de obtener mapa" << std::endl;
+    clienteProxy->ejecutarComando();
+    //std::cout << "Partida nueva obtenida: " << unir(clienteProxy->obtenerPartida(), SEPARADOR) << std::endl;
+    //std::cout << "PArtida elegida:  " <<  unir(clienteProxy->obtenerPartida(), SEPARADOR) << std::endl;
 }

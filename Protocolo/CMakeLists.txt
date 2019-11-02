@@ -26,4 +26,4 @@ add_executable(Protocolo main.cpp
         ServidorProxy.h
         Utilidades.cpp
         Utilidades.h
-        Hilos/Hilo.h Hilos/HiloCliente.cpp Hilos/HiloCliente.h Hilos/HiloServidor.cpp Hilos/HiloServidor.h)
+        Hilos/Hilo.h Hilos/HiloCliente.cpp Hilos/HiloCliente.h Hilos/HiloServidor.cpp Hilos/HiloServidor.h Comandos/Comando.cpp Comandos/Comando.h Comandos/ElegirPartida.cpp Comandos/ElegirPartida.h Comandos/EnviarPosiciones.cpp Comandos/EnviarPosiciones.h Partida.cpp Partida.h Comandos/EnviarMapa.cpp Comandos/EnviarMapa.h)

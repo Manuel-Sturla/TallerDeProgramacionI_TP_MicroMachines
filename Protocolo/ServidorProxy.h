@@ -15,6 +15,9 @@ public:
     void ejecutarComando(const std::string& comando);
     void elegirPartida(const std::string& nombre);
     void crearPartida(const std::string& nombre, const int& cantJugadores);
+    std::vector<std::string> obtenerPartidas();
+    void obtenerPosiciones(std::vector<std::string> &extras, std::vector<std::string> &autos);
+    std::vector<std::string> obtenerMapa();
 };
 
 

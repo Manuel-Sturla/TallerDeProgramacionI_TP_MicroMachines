@@ -1,0 +1,22 @@
+PARTIDA:
+En la partida falta pasar lo los mapas para elegir que mapa.
+El servidor tiene que mandar el ID del auto propio y el servidorProxy se lo tiene que guardar para luego ponerlo al principio cuando se manden las Posiciones.
+
+
+
+MAPA
+Que cosas recibe el cliente del mapa: mandado del MAPA
+	Asfaltos
+	Pasto
+	Limite = casteado a pasto.
+
+	["tipo", "posx", "posY", "ang", "tipo", "posx", "posy",...]
+
+POS
+Autos: ["id", X, Y, vida, angulo, efecto=[barro-no visible; chocó]]
+Extras: [tipo, x, y] (se renderizan todas las veces)
+
+1ro los extras, luego los autos.
+
+
+Los comandos se pueden crear 	1 VEZ por partida
