@@ -399,82 +399,88 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.h">
 			<Option target="Box2D-cmake"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Accion.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acciones/Accion.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Accion.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acciones/Accion.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acelerar.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acciones/Acelerar.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acelerar.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acciones/Acelerar.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Agarre.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acciones/Frenar.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Agarre.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acciones/Frenar.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Asfalto.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acciones/GiroADerecha.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Asfalto.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acciones/GiroADerecha.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acciones/GiroAIzquierda.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Acciones/GiroAIzquierda.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Curva.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/Agarre.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Curva.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/Agarre.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/EstadoVelocidad.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/Carro.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/EstadoVelocidad.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/Carro.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Frenar.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/EstadoVelocidad.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Frenar.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/EstadoVelocidad.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/GiroADerecha.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/Velocidad.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/GiroADerecha.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/Velocidad.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/GiroAIzquierda.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/VelocidadBase.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/GiroAIzquierda.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/VelocidadBase.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/LimiteDePista.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/VelocidadBoost.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/LimiteDePista.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/VelocidadBoost.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/Vida.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/Vida.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/Visibilidad.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/Visibilidad.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/ManejadorDeContactos.cpp">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/ManejadorDeContactos.h">
-			<Option target="tp"/>
-		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Modificador.cpp">
-			<Option target="tp"/>
-		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Modificador.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Modificadores/Aceite.cpp">
@@ -501,22 +507,22 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Modificadores/CajaDeSalud.h">
 			<Option target="tp"/>
 		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Modificadores/Modificador.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Modificadores/Modificador.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Modificadores/Piedra.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Modificadores/Piedra.h">
+			<Option target="tp"/>
+		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida.cpp">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida.h">
-			<Option target="tp"/>
-		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Pasto.cpp">
-			<Option target="tp"/>
-		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Pasto.h">
-			<Option target="tp"/>
-		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Piedra.cpp">
-			<Option target="tp"/>
-		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Piedra.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Pista.cpp">
@@ -525,16 +531,28 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Pista.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/PlanoDePista.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeCurva.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/PlanoDePista.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeCurva.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Recta.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDePista.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Recta.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDePista.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeRecta.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeRecta.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeSuelo.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeSuelo.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Servidor.cpp">
@@ -543,34 +561,34 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Servidor.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Velocidad.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Asfalto.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Velocidad.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Asfalto.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/VelocidadBase.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Curva.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/VelocidadBase.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Curva.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/VelocidadBoost.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/LimiteDePista.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/VelocidadBoost.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/LimiteDePista.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Vida.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Pasto.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Vida.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Pasto.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Visibilidad.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Recta.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Visibilidad.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Recta.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/main.cpp">

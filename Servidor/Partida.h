@@ -17,8 +17,8 @@ class Partida {
     Pista pista;
     Asfalto asfalto;
     Pasto pasto;
-    Curva curva;
-    //Recta recta;
+    //Curva curva;
+    Recta recta;
     Carro carro;
     CajaDeSalud cajaDeSalud;
     float32 timeStep;

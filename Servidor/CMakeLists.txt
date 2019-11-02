@@ -16,5 +16,5 @@ add_executable(tp main.cpp Servidor.cpp Planos/PlanoDePista.cpp Pista.cpp Accion
         Carro/VelocidadBase.cpp Carro/VelocidadBoost.cpp Carro/EstadoVelocidad.cpp
         Modificadores/Boost.cpp Modificadores/Barro.cpp Modificadores/Aceite.cpp Carro/Visibilidad.cpp Carro/Agarre.cpp Suelos/Curva.cpp
         Carro/Carro.cpp Suelos/Recta.cpp ManejadorDeContactos.cpp Suelos/Asfalto.cpp Partida.cpp
-        Suelos/LimiteDePista.cpp Suelos/Pasto.cpp Carro/Velocidad.cpp)
+        Suelos/LimiteDePista.cpp Suelos/Pasto.cpp Carro/Velocidad.cpp Planos/PlanoDeSuelo.cpp Planos/PlanoDeSuelo.h Planos/PlanoDeRecta.cpp Planos/PlanoDeRecta.h Planos/PlanoDeCurva.cpp Planos/PlanoDeCurva.h)
 target_link_libraries(tp tobanteGaming::Box2D)
