@@ -9,9 +9,9 @@ class Pista {
     b2World pista;
     ManejadorDeContactos manejadorDeContactos;
   public:
-    Pista(b2Vec2& gravedad);
+    Pista();
 
-    b2Body* agregarObjeto(b2BodyDef& objeto);
+    b2Body* agregarObjeto(b2BodyDef* objeto);
 
     void simular(float32 tiempo, int32 velocidad, int32 iteraciones);
 

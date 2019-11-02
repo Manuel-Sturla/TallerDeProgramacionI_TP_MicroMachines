@@ -7,14 +7,14 @@
 
 Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y):
 estadoVelocidad(velocidadMaxima), agarre(agarre) {
-  bodyDef.type = b2_dynamicBody;
-  bodyDef.position.Set(x, y);
   this -> anguloDeGiro = anguloDeGiro;
   id = "Carro";
 }
 
 void Carro::agregarseA(Pista *pista) {
-  cuerpo = pista -> agregarObjeto(bodyDef);
+  bodyDef.type = b2_dynamicBody;
+  bodyDef.position.Set(0.0f, 4.0f);
+  cuerpo = pista -> agregarObjeto(&bodyDef);
   cuerpo -> SetUserData(this);
   b2PolygonShape dynamicBox;
   dynamicBox.SetAsBox(1.0f, 1.0f);
@@ -33,7 +33,6 @@ void Carro::actualizar() {
   b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
   float32 factorDeFuerza = -2 * velocidad.Normalize();
   agarre.actualizar(cuerpo);
-  //PREGUNTAR COMO NORMALIZAR LOS ANGULOS
   cuerpo -> ApplyForce(coeficienteDeRozamiento * factorDeFuerza * velocidad, cuerpo -> GetWorldCenter(), true);
   visibilidad.actualizar();
   estadoVelocidad.actualizar(cuerpo);

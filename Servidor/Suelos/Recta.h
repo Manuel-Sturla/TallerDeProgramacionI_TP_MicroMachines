@@ -15,6 +15,10 @@ class Recta: public Suelo {
 
     Recta(Recta &&otraRecta);
 
+    Recta(const Recta&);
+
+    Recta&operator=(const Recta &otraRecta);
+
     Recta& operator= (Recta &&otraRecta);
 
     void interactuar(Carro *unCarro);

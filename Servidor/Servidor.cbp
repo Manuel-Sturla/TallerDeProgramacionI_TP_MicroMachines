@@ -477,6 +477,42 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Carro/Visibilidad.h">
 			<Option target="tp"/>
 		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/ClienteProxy.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/ClienteProxy.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/AgregarMovimiento.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/AgregarMovimiento.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/Comando.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/Comando.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/ElegirPartida.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/ElegirPartida.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/EnviarMapa.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/EnviarMapa.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/EnviarPosiciones.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/EnviarPosiciones.h">
+			<Option target="tp"/>
+		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/ManejadorDeContactos.cpp">
 			<Option target="tp"/>
 		</Unit>
@@ -558,10 +594,46 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeSuelo.h">
 			<Option target="tp"/>
 		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Protocolo.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Protocolo.h">
+			<Option target="tp"/>
+		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Servidor.cpp">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Servidor.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/SocketAmigo.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/SocketAmigo.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/SocketException.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/SocketException.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/SocketPasivo.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/SocketPasivo.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/SocketPassiveException.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/SocketPassiveException.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/SocketPeerException.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/SocketPeerException.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Asfalto.cpp">
@@ -592,6 +664,12 @@
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Recta.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Utilidades.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Utilidades.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/main.cpp">

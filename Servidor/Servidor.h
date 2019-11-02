@@ -5,14 +5,18 @@
 #include <string>
 #include <memory>
 #include "Planos/PlanoDePista.h"
+#include "../Protocolo/Socket/SocketPasivo.h"
 
 class Servidor {
   private:
-    std::unordered_map<std::string, std::shared_ptr<PlanoDePista>> planosDePistas;
+    std::unordered_map<std::string, PlanoDePista*> planosDePistas;
+    SocketPasivo *socketPasivo;
     void levantarPistas();
 
   public:
-    Servidor();
+    Servidor(SocketPasivo *unSocketPasivo);
+
+    void run();
 
     void jugar();
 

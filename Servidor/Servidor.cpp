@@ -1,11 +1,17 @@
 #include "Servidor.h"
 #include "Partida.h"
+#include "ClienteProxy.h"
 #include <fstream>
 #include <iostream>
 #include <memory>
 
-Servidor::Servidor() {
-  levantarPistas();
+Servidor::Servidor(SocketPasivo *unSocketPasivo) {
+  //levantarPistas();
+  socketPasivo = unSocketPasivo;
+  //HARDCODEAR SERVICIOOOOOOOOOOOOOOOOOO
+  socketPasivo ->unirse("7777");
+  socketPasivo -> escuchar();
+
 }
 
 void Servidor::levantarPistas() {
@@ -27,13 +33,21 @@ void Servidor::levantarPistas() {
 }
 
 Servidor::~Servidor() {
+  /*
+  std::unordered_map<std::string, PlanoDePista*>::iterator it;
+  for (it = planosDePistas.begin(); it != planosDePistas.end(); it++) {
+    delete it -> second;
+  }*/
 }
 
 void Servidor::jugar() {
-  b2Vec2 gravedad(0.0f, 0.0f);
-  Partida partida(gravedad);
   //partida.crearPista(planosDePistas["Prueba 1"]);
-  for (int32 i = 0; i < 5; ++i) {
-    partida.simular();
-  }
+  //partida.simular();
+}
+
+void Servidor::run() {
+  Partida partida;
+  //SocketAmigo socketAmigo = std::move(socketPasivo -> aceptarCliente());
+  //ClienteProxy clienteProxy(std::move(socketAmigo), partida);
+  partida.simular();
 }
