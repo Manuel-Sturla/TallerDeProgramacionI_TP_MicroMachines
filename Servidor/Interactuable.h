@@ -3,7 +3,7 @@
 
 #include <string>
 #include "Objeto.h"
-#include "Carro.h"
+#include "Carro/Carro.h"
 
 class Interactuable: public Objeto {
   public:

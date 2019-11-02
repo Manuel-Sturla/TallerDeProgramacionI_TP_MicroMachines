@@ -1,16 +1,15 @@
 #include "Carro.h"
 #include <math.h>
 #include "VelocidadBase.h"
-#include "GiroAIzquierda.h"
-#include "GiroADerecha.h"
+#include "../Acciones/GiroAIzquierda.h"
+#include "../Acciones/GiroADerecha.h"
 #include <iostream>
 
 Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y):
-estadoVelocidad(velocidadMaxima) {
+estadoVelocidad(velocidadMaxima), agarre(agarre) {
   bodyDef.type = b2_dynamicBody;
   bodyDef.position.Set(x, y);
   this -> anguloDeGiro = anguloDeGiro;
-  this -> agarre = agarre;
   id = "Carro";
 }
 
@@ -24,7 +23,6 @@ void Carro::agregarseA(Pista *pista) {
   fixtureDef.density = 1.0f;
   fixtureDef.friction = 0.3f;
   cuerpo -> CreateFixture(&fixtureDef);
-  cuerpo -> SetTransform(cuerpo -> GetPosition(), -0.5f * b2_pi);
 }
 
 void Carro::ejecutarAccion(Accion *unaAccion) {
@@ -34,9 +32,8 @@ void Carro::ejecutarAccion(Accion *unaAccion) {
 void Carro::actualizar() {
   b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
   float32 factorDeFuerza = -2 * velocidad.Normalize();
-  //VER COMO IR FRENANDO LA VELOCIDAD ANGULAR..........................................
-  // HACER LA PARTE DEL AGARRE.........................................................
-  //body -> ApplyAngularImpulse(0.1f * - body -> GetAngularVelocity(), true);
+  agarre.actualizar(cuerpo);
+  //PREGUNTAR COMO NORMALIZAR LOS ANGULOS
   cuerpo -> ApplyForce(coeficienteDeRozamiento * factorDeFuerza * velocidad, cuerpo -> GetWorldCenter(), true);
   visibilidad.actualizar();
   estadoVelocidad.actualizar(cuerpo);
@@ -84,5 +81,5 @@ bool Carro::esValido() {
 }
 
 void Carro::reducirAgarre() {
-  agarre -= 1;
+  agarre.reducirAgarre();
 }

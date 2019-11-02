@@ -2,7 +2,7 @@
 #define _PIEDRA_H_
 
 #include "Modificador.h"
-#include "Pista.h"
+#include "../Pista.h"
 
 class Piedra: public Modificador {
   public:

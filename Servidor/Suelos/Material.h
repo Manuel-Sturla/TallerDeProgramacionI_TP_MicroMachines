@@ -2,8 +2,8 @@
 #define _MATERIAL_H_
 
 #include <iostream>
-#include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
-#include "Carro.h"
+#include "Box2D/Box2D.h"
+#include "../Carro/Carro.h"
 
 class Material {
   protected:

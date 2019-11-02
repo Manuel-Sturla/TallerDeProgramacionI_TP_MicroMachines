@@ -1,5 +1,5 @@
 #include "Asfalto.h"
-#include "Interactuable.h"
+#include "../Interactuable.h"
 #include <iostream>
 
 Asfalto::Asfalto() {

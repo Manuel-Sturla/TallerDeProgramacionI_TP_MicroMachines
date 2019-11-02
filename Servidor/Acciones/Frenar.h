@@ -2,7 +2,7 @@
 #define _FRENAR_H_
 
 #include "Accion.h"
-#include "EstadoVelocidad.h"
+#include "../Carro/EstadoVelocidad.h"
 
 class Frenar: public Accion {
   public:

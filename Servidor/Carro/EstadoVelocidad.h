@@ -6,7 +6,7 @@
 #include "Velocidad.h"
 #include "VelocidadBase.h"
 #include "VelocidadBoost.h"
-#include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
+#include "Box2D/Box2D.h"
 
 class EstadoVelocidad {
   private:

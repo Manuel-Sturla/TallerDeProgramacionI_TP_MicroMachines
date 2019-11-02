@@ -1,7 +1,7 @@
 #ifndef _VELOCIDAD_H_
 #define _VELOCIDAD_H_
 
-#include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
+#include "Box2D/Box2D.h"
 #include <string>
 
 class Velocidad {

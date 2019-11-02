@@ -1,0 +1,7 @@
+Nueva Pista
+Prueba 1
+Recta,Limite,0,0,0
+Recta,Limite,1,0,0
+Recta,Limite,2,0,0
+Recta,Limite,3,0,0
+Fin Pista

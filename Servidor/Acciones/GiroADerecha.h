@@ -1,12 +1,13 @@
-#ifndef _ACELERAR_H_
-#define _ACELERAR_H_
+#ifndef _GIROADERECHA_H_
+#define _GIROADERECHA_H_
 
 #include "Accion.h"
-#include "EstadoVelocidad.h"
+#include "../Carro/EstadoVelocidad.h"
 
-class Acelerar: public Accion {
+class GiroADerecha: public Accion {
   public:
     void ejecutar(b2Body* body, EstadoVelocidad *estadoVelocidad, float32 angulo);
 };
+
 
 #endif
