@@ -483,6 +483,12 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/ManejadorDeContactos.h">
 			<Option target="tp"/>
 		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Mapa.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Mapa.h">
+			<Option target="tp"/>
+		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Modificadores/Aceite.cpp">
 			<Option target="tp"/>
 		</Unit>
@@ -547,9 +553,6 @@
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeRecta.h">
-			<Option target="tp"/>
-		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeSuelo.cpp">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeSuelo.h">

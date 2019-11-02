@@ -7,6 +7,8 @@ class PlanoDeCurva: public PlanoDeSuelo {
   public:
     PlanoDeCurva(std::string configuracion);
 
+    void agregarSueloA(Pista *pista) override;
+
 };
 
 

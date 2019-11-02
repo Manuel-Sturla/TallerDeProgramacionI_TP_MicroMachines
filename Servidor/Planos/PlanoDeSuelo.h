@@ -5,15 +5,8 @@
 #include "../Pista.h"
 
 class PlanoDeSuelo {
-  protected:
-    std::string configuracion;
-
   public:
-    PlanoDeSuelo(std::string unaConfiguracion);
-
-    void agregarSueloA(Pista *pista);
-
+    virtual void agregarSueloA(Pista *pista) = 0;
 };
-
 
 #endif
