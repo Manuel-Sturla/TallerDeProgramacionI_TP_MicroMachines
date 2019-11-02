@@ -32,5 +32,9 @@ void Mapa::simular() {
 }
 
 void Mapa::agregarRecta(Recta recta) {
+  rectas.emplace_back(recta);
+}
 
+void Mapa::agregarCurva(Curva curva) {
+  curvas.emplace_back(curva);
 }

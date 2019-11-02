@@ -17,6 +17,7 @@ PlanoDeRecta::PlanoDeRecta(std::string configuracion) {
 void PlanoDeRecta::agregarSueloA(Mapa *mapa, Pista *pista) {
   Material *materialParaRecta = mapa -> darMaterial(material);
   Recta recta(pista, materialParaRecta, posicionX, posicionY);
+  mapa -> agregarRecta(recta); //HACERLO POR MOVE SEMANTICS
 }
 
 PlanoDeRecta::~PlanoDeRecta() {

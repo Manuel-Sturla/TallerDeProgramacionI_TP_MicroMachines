@@ -5,10 +5,16 @@
 #include "../Mapa.h"
 
 class PlanoDeCurva: public PlanoDeSuelo {
+  private:
+    int posicionX;
+    int posicionY;
+    std::string tipo;
   public:
     PlanoDeCurva(std::string configuracion);
 
     void agregarSueloA(Mapa *mapa, Pista *pista) override;
+
+    ~PlanoDeCurva();
 
 };
 
