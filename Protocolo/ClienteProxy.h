@@ -19,6 +19,7 @@ public:
     ClienteProxy(SocketAmigo socketCliente, Partida &partida);
     void ejecutarComando();
     std::string obtenerComando();
+    ~ClienteProxy();
 };
 
 

@@ -10,13 +10,15 @@
 #define CMD_PARTIDAS "PAR"
 #define CMD_POSICIONES "POS"
 #define CMD_MAPA "MAP"
+#define CMD_MOVIMIENTO "MOV"
 #define MSJ_FIN "F"
 
 ServidorProxy::ServidorProxy(const std::string &host, const std::string &servicio):
 protocolo(std::move(SocketActivo(host, servicio))){
 }
 
-void ServidorProxy::ejecutarComando(const std::string& comando) {
+void ServidorProxy::ejecutarMovimiento(const std::string& comando) {
+    protocolo.enviar(CMD_MOVIMIENTO);
     protocolo.enviar(comando);
 }
 

@@ -12,7 +12,7 @@ class ServidorProxy {
     Protocolo protocolo;
 public:
     ServidorProxy(const std::string& host, const std::string& servicio);
-    void ejecutarComando(const std::string& comando);
+    void ejecutarMovimiento(const std::string& comando);
     void elegirPartida(const std::string& nombre);
     void crearPartida(const std::string& nombre, const int& cantJugadores);
     std::vector<std::string> obtenerPartidas();

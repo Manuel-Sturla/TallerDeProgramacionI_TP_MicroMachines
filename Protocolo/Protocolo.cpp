@@ -6,7 +6,8 @@
 #define LONG_EN_BYTES 1
 void Protocolo::enviar(const std::string &mensaje) {
     char longitud = mensaje.length();
-    socket.enviar(&longitud);
+    std::string l_s (1,longitud);
+    socket.enviar(l_s);
     socket.enviar(mensaje);
 }
 

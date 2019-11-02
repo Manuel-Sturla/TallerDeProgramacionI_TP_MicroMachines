@@ -12,6 +12,7 @@
 class Comando {
 public:
     virtual void ejecutar() = 0;
+    ~Comando() = default;
 };
 
 

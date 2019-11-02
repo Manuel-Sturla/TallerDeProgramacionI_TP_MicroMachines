@@ -22,14 +22,17 @@ void HiloCliente::run() {
     std::vector<std::string> extras;
     std::vector<std::string> autos;
     servidorProxy.obtenerPosiciones(extras, autos);
+    std::cout << "EXTRAS: ";
     for (auto& extra : extras){
             std::cout << extra << ", ";
     }
     std::cout << std::endl;
+    std::cout << "AUTOS: ";
     for (auto& miAuto : autos){
         std::cout << miAuto << ", ";
     }
     std::cout << std::endl;
+    std::cout << "MAPA: ";
     std::vector<std::string> mapa = servidorProxy.obtenerMapa();
     for (auto& pos : mapa){
         std::cout << pos << ", ";

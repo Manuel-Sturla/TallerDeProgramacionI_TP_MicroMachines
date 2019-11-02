@@ -16,6 +16,7 @@ class EnviarMapa: public Comando {
 public:
     EnviarMapa(Protocolo& protocolo); //Falta que reciba el mapa
     void ejecutar() override;
+
 };
 
 
