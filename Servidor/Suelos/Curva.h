@@ -10,7 +10,6 @@
 
 class Curva: public Suelo {
   private:
-    b2BodyDef defCuerpo;
     b2Body *cuerpo;
     const int circulo = 1;
     const int cuadrado = 2;
@@ -24,6 +23,10 @@ class Curva: public Suelo {
     void agregarseAPista(Pista *pista);
 
     std::string darId();
+
+    Curva(Curva &&otraCurva);
+
+    Curva& operator= (Curva &&otraCurva);
 
     bool esValido() override;
 

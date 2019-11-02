@@ -8,8 +8,10 @@
 #define ANGULO_CURVA_4 1.5f * b2_pi
 
 Curva::Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y) {
+  b2BodyDef defCuerpo;
   defCuerpo.type = b2_staticBody;
   defCuerpo.position.Set(x, y);
+  cuerpo = pista -> agregarObjeto(defCuerpo);
   agregarseAPista(pista);
   this -> asfalto = asfalto;
   this -> pasto = pasto;
@@ -17,7 +19,6 @@ Curva::Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y)
 }
 
 void Curva::agregarseAPista(Pista *pista) {
-  cuerpo = pista -> agregarObjeto(defCuerpo);
   cuerpo -> SetUserData(this);
   b2PolygonShape caja;
   caja.SetAsBox(2.0f, 2.0f);
@@ -61,4 +62,28 @@ void Curva::tipoDeInteraccion(int identificadorDeInteraccion) {
 
 bool Curva::esValido() {
   return true;
+}
+
+Curva::Curva(Curva &&otraCurva) {
+  this -> cuerpo = otraCurva.cuerpo;
+  this -> asfalto = otraCurva.asfalto;
+  this -> pasto = otraCurva.pasto;
+  this -> interaccion = otraCurva.interaccion;
+  otraCurva.cuerpo = nullptr;
+  otraCurva.asfalto = nullptr;
+  otraCurva.pasto = nullptr;
+}
+
+Curva &Curva::operator=(Curva &&otraCurva) {
+  if (this == &otraCurva) {
+    return *this;
+  }
+  this -> cuerpo = otraCurva.cuerpo;
+  this -> asfalto = otraCurva.asfalto;
+  this -> pasto = otraCurva.pasto;
+  this -> interaccion = otraCurva.interaccion;
+  otraCurva.cuerpo = nullptr;
+  otraCurva.asfalto = nullptr;
+  otraCurva.pasto = nullptr;
+  return  *this;
 }
