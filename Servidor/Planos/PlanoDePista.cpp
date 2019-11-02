@@ -19,10 +19,10 @@ void PlanoDePista::agregarSuelo(std::string configuracion) {
   }
 }
 
-void PlanoDePista::crearPista(Partida *partida,Pista *pista) {
+void PlanoDePista::crearPista(Mapa *mapa,Pista *pista) {
   std::list<std::unique_ptr<PlanoDeSuelo>>::iterator it;
   for (it = planosDeSuelos.begin(); it != planosDeSuelos.end(); it ++) {
-    (*it) -> agregarSueloA(pista);
+    (*it)->agregarSueloA(nullptr, pista);
   }
 }
 

@@ -14,9 +14,9 @@ PlanoDeRecta::PlanoDeRecta(std::string configuracion) {
   getline(stringConfiguracion, tipo, ',');
 }
 
-void PlanoDeRecta::agregarSueloA(Pista *pista) {
-  //Material *materialParaRecta = pista -> darMaterial(material);
-  //Recta recta(pista, materialParaRecta, posicionX, posicionY);
+void PlanoDeRecta::agregarSueloA(Mapa *mapa, Pista *pista) {
+  Material *materialParaRecta = mapa -> darMaterial(material);
+  Recta recta(pista, materialParaRecta, posicionX, posicionY);
 }
 
 PlanoDeRecta::~PlanoDeRecta() {

@@ -5,8 +5,8 @@ Pista::Pista(b2Vec2& gravedad): pista(gravedad) {
   pista.SetContactListener(&manejadorDeContactos);
 }
 
-b2Body* Pista::agregarObjeto(b2BodyDef& carro) {
-  return pista.CreateBody(&carro);
+b2Body* Pista::agregarObjeto(b2BodyDef& objeto) {
+  return pista.CreateBody(&objeto);
 }
 
 void Pista::simular(float32 tiempo, int32 velocidad, int32 iteraciones) {

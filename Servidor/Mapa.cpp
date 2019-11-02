@@ -5,6 +5,7 @@
 
 Mapa::Mapa(b2Vec2 gravedad): pista(gravedad),
 carro(VELOCIDAD_MAXIMA, ANGULO_PARA_GIRO, 100.0f, 0.0f, 4.0f)  {
+  carro.agregarseA(&pista);
 }
 
 Material *Mapa::darMaterial(std::string materialPedido) {
@@ -24,13 +25,12 @@ void Mapa::simular() {
   float32 timeStep = 1.0f / 60.0f;
   int32 velocidadDeIteraciones = 6;
   int32 positionIterations = 2;
-  GiroAIzquierda giroADerecha;
-  carro.ejecutarAccion(&giroADerecha);
   pista.simular(timeStep, velocidadDeIteraciones, positionIterations);
   pista.actualizar();
   carro.imprimirPosicion();
   carro.actualizar();
-  pista.actualizar();
-  carro.imprimirPosicion();
-  carro.actualizar();
+}
+
+void Mapa::agregarRecta(Recta recta) {
+
 }

@@ -2,11 +2,11 @@
 #define _PLANODESUELO_H_
 
 #include <string>
-#include "../Pista.h"
+#include "../Mapa.h"
 
 class PlanoDeSuelo {
   public:
-    virtual void agregarSueloA(Pista *pista) = 0;
+    virtual void agregarSueloA(Mapa *mapa, Pista *pista) = 0;
 };
 
 #endif

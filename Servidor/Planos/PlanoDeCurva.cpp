@@ -3,6 +3,6 @@
 PlanoDeCurva::PlanoDeCurva(std::string configuracion) {
 }
 
-void PlanoDeCurva::agregarSueloA(Pista *pista) {
+void PlanoDeCurva::agregarSueloA(Mapa *mapa, Pista *pista) {
 
 }

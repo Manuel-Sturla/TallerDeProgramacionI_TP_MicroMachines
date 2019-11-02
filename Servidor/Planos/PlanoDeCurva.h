@@ -2,12 +2,13 @@
 #define _PLANODECURVA_H_
 
 #include "PlanoDeSuelo.h"
+#include "../Mapa.h"
 
 class PlanoDeCurva: public PlanoDeSuelo {
   public:
     PlanoDeCurva(std::string configuracion);
 
-    void agregarSueloA(Pista *pista) override;
+    void agregarSueloA(Mapa *mapa, Pista *pista) override;
 
 };
 
