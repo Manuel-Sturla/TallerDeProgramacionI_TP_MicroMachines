@@ -8,11 +8,13 @@
 
 class Servidor {
   private:
-    std::unordered_map<std::string, std::unique_ptr<PlanoDePista>> planosDePistas;
+    std::unordered_map<std::string, std::shared_ptr<PlanoDePista>> planosDePistas;
     void levantarPistas();
 
   public:
     Servidor();
+
+    void jugar();
 
     ~Servidor();
 

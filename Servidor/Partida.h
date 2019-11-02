@@ -3,6 +3,7 @@
 
 #include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
 #include "Mapa.h"
+#include "Planos/PlanoDePista.h"
 
 class Partida {
   private:
@@ -12,6 +13,8 @@ class Partida {
     Partida(b2Vec2 gravedad);
 
     void simular();
+
+    void crearPista(PlanoDePista *planoDePista);
 
     ~Partida();
 };

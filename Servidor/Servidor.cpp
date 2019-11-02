@@ -1,4 +1,5 @@
 #include "Servidor.h"
+#include "Partida.h"
 #include <fstream>
 #include <iostream>
 #include <memory>
@@ -26,4 +27,13 @@ void Servidor::levantarPistas() {
 }
 
 Servidor::~Servidor() {
+}
+
+void Servidor::jugar() {
+  b2Vec2 gravedad(0.0f, 0.0f);
+  Partida partida(gravedad);
+  //partida.crearPista(planosDePistas["Prueba 1"]);
+  for (int32 i = 0; i < 5; ++i) {
+    partida.simular();
+  }
 }

@@ -25,6 +25,8 @@ class Mapa {
 
     void simular();
 
+    Pista* darPista();
+
     void agregarRecta(Recta recta);
 
     void agregarCurva(Curva curva);

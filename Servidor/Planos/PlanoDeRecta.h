@@ -11,7 +11,7 @@ class PlanoDeRecta: public PlanoDeSuelo {
     int posicionY;
     std::string tipo;
   public:
-    PlanoDeRecta(std::string configuracion);
+    PlanoDeRecta(const std::string& configuracion);
 
     void agregarSueloA(Mapa *mapa, Pista *pista) override;
 

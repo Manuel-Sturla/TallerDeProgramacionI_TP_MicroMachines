@@ -3,7 +3,7 @@
 #include "../Suelos/Recta.h"
 #define MITAD_DE_LARGO_DE_SUELO 2
 
-PlanoDeRecta::PlanoDeRecta(std::string configuracion) {
+PlanoDeRecta::PlanoDeRecta(const std::string& configuracion) {
   std::istringstream stringConfiguracion(configuracion);
   std::string posicionString;
   getline(stringConfiguracion, material, ',');
@@ -17,7 +17,7 @@ PlanoDeRecta::PlanoDeRecta(std::string configuracion) {
 void PlanoDeRecta::agregarSueloA(Mapa *mapa, Pista *pista) {
   Material *materialParaRecta = mapa -> darMaterial(material);
   Recta recta(pista, materialParaRecta, posicionX, posicionY);
-  mapa -> agregarRecta(recta); //HACERLO POR MOVE SEMANTICS
+  mapa -> agregarRecta(std::move(recta));
 }
 
 PlanoDeRecta::~PlanoDeRecta() {

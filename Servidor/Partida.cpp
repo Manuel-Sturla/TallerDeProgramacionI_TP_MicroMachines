@@ -9,3 +9,7 @@ void Partida::simular() {
 
 Partida::~Partida() {
 }
+
+void Partida::crearPista(PlanoDePista *planoDePista) {
+  planoDePista -> crearPista(&mapa, mapa.darPista());
+}

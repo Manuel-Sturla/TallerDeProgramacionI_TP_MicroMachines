@@ -2,6 +2,7 @@
 
 Recta::Recta(Pista *pista, Material *unMaterial, float32 x, float32 y) {
   material = unMaterial;
+  b2BodyDef defCuerpo;
   defCuerpo.type = b2_staticBody;
   defCuerpo.position.Set(x, y);
   cuerpo = pista -> agregarObjeto(defCuerpo);
@@ -29,4 +30,22 @@ std::string Recta::darId() {
 
 bool Recta::esValido() {
   return true;
+}
+
+Recta::Recta(Recta &&otraRecta) {
+  this -> cuerpo = otraRecta.cuerpo;
+  this -> material = otraRecta.material;
+  otraRecta.cuerpo = nullptr;
+  otraRecta.material = nullptr;
+}
+
+Recta &Recta::operator=(Recta &&otraRecta) {
+  if (this == &otraRecta) {
+    return *this;
+  }
+  this -> cuerpo = otraRecta.cuerpo;
+  this -> material = otraRecta.material;
+  otraRecta.cuerpo = nullptr;
+  otraRecta.material = nullptr;
+  return *this;
 }

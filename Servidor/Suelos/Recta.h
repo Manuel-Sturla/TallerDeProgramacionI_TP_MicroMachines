@@ -7,12 +7,15 @@
 
 class Recta: public Suelo {
   private:
-    b2BodyDef defCuerpo;
     b2Body *cuerpo;
     Material *material;
 
   public:
     Recta(Pista *pista, Material *unMaterial, float32 x, float32 y);
+
+    Recta(Recta &&otraRecta);
+
+    Recta& operator= (Recta &&otraRecta);
 
     void interactuar(Carro *unCarro);
 

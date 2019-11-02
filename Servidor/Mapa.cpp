@@ -32,9 +32,13 @@ void Mapa::simular() {
 }
 
 void Mapa::agregarRecta(Recta recta) {
-  rectas.emplace_back(recta);
+  rectas.emplace_back(std::move(recta));
 }
 
 void Mapa::agregarCurva(Curva curva) {
-  curvas.emplace_back(curva);
+  curvas.emplace_back(std::move(curva));
+}
+
+Pista *Mapa::darPista() {
+  return &pista;
 }
