@@ -14,6 +14,7 @@ Boost::Boost(Pista *pista, float32 x, float32 y) {
   validez = true;
   fixtureDef.isSensor = true;
   cuerpo -> CreateFixture(&fixtureDef);
+  id = "Boost";
 }
 
 void Boost::interactuar(Carro *unCarro) {

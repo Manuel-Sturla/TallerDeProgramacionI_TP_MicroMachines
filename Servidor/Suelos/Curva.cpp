@@ -93,3 +93,9 @@ Curva::Curva(const Curva &otraCurva) {
   this -> asfalto = otraCurva.asfalto;
   this -> pasto = otraCurva.pasto;
 }
+
+void Curva::empaquetar(std::vector<std::string> *destino) {
+  destino -> emplace_back("Curva");
+  empaquetarPosicion(destino);
+  empaquetarAngulo(destino);
+}

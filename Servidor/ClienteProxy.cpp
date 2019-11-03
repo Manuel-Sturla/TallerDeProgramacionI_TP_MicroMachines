@@ -18,7 +18,7 @@ ClienteProxy::ClienteProxy(SocketAmigo socketCliente, Partida &partida) : protoc
     partidas["Partida1"] = "Mira que loco";
     comandos.emplace("PAR", new ElegirPartida(protocolo, partidas));
     comandos.emplace("POS", new EnviarPosiciones(protocolo, partida.obtenerExtras(), partida.obtenerAutos()));
-    comandos.emplace("MAP", new EnviarMapa(protocolo));
+    comandos.emplace("MAP", new EnviarMapa(protocolo, partida.obtenerMapa()));
     comandos.emplace("MOV", new AgregarMovimiento(protocolo));
 
 }

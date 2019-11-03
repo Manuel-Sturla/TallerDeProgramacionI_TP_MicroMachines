@@ -2,6 +2,7 @@
 
 Asfalto::Asfalto() {
   coeficienteDeRozamiento = 0.3f;
+  id = "Asfalto";
 }
 
 void Asfalto::interactuar(Carro* unCarro) {

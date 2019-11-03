@@ -41,8 +41,9 @@ Servidor::~Servidor() {
 
 void Servidor::run() {
   Partida partida;
-  //SocketAmigo socketAmigo = std::move(socketPasivo -> aceptarCliente());
-  //ClienteProxy clienteProxy(std::move(socketAmigo), partida);
+  SocketAmigo socketAmigo = std::move(socketPasivo -> aceptarCliente());
+  ClienteProxy clienteProxy(std::move(socketAmigo), partida);
+  partida.actualizar();
   partida.crearPista(planosDePistas["Prueba 1"]);
   partida.simular();
 }

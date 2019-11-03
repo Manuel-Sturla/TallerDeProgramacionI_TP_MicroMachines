@@ -14,6 +14,7 @@ Barro::Barro(Pista *pista, float32 x, float32 y) {
   fixtureDef.isSensor = true;
   validez = true;
   cuerpo -> CreateFixture(&fixtureDef);
+  id = "Barro";
 }
 
 void Barro::interactuar(Carro *unCarro) {

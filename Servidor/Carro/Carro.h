@@ -14,7 +14,6 @@
 class Carro: public Objeto {
   private:
     b2BodyDef bodyDef;
-    b2Body* cuerpo;
     Vida vida;
     Visibilidad visibilidad;
     EstadoVelocidad estadoVelocidad;
@@ -34,7 +33,7 @@ class Carro: public Objeto {
 
     void aplicarFriccion(float32 coeficienteDeRozamiento);
 
-    std::string darId();
+    std::string darId() override;
 
     void recibirDanio(int danio);
 
@@ -49,6 +48,8 @@ class Carro: public Objeto {
     void reducirAgarre();
 
     bool esValido() override;
+
+    void empaquetar(std::vector<std::string> *destino) override;
 
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };

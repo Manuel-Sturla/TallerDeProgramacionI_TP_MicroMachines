@@ -3,10 +3,6 @@
 Partida::Partida() {
 }
 
-void Partida::simular() {
-  mapa.simular();
-}
-
 Partida::~Partida() {
 }
 
@@ -20,4 +16,17 @@ std::vector<std::string> &Partida::obtenerExtras() {
 
 std::vector<std::string> &Partida::obtenerAutos() {
   return autos;
+}
+
+void Partida::simular() {
+  mapa.simular();
+}
+
+void Partida::actualizar() {
+  mapa.empaquetarSuelos(&suelos);
+  mapa.empaquetarCarro(&autos);
+}
+
+std::vector<std::string> &Partida::obtenerMapa() {
+  return suelos;
 }

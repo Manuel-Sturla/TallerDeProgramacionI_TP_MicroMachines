@@ -63,3 +63,9 @@ Recta::Recta(const Recta &otraRecta) {
   this -> cuerpo = otraRecta.cuerpo;
   this -> material = otraRecta.material;
 }
+
+void Recta::empaquetar(std::vector<std::string> *destino) {
+  material -> empaquetarMaterial(destino);
+  empaquetarPosicion(destino);
+  empaquetarAngulo(destino);
+}

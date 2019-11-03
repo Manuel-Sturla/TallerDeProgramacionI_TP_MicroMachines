@@ -86,3 +86,8 @@ bool Carro::esValido() {
 void Carro::reducirAgarre() {
   agarre.reducirAgarre();
 }
+
+void Carro::empaquetar(std::vector<std::string> *destino) {
+  empaquetarPosicion(destino);
+  empaquetarAngulo(destino);
+}

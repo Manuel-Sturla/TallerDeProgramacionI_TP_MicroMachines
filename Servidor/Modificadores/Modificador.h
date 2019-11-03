@@ -7,9 +7,11 @@
 class Modificador: public Interactuable {
   protected:
     bool validez;
-    b2Body* cuerpo;
+    std::string id;
   public:
-    std::string darId();
+    std::string darId(); //ESTO DEBE VOLARRRRRRRR
+
+    void empaquetar(std::vector<std::string> *destino);
 };
 
 #endif

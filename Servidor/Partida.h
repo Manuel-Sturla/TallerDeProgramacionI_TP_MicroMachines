@@ -11,6 +11,7 @@ class Partida {
     Mapa mapa;
     std::vector<std::string> extras;
     std::vector<std::string> autos;
+    std::vector<std::string> suelos;
 
   public:
     Partida();
@@ -20,6 +21,10 @@ class Partida {
     std::vector<std::string>& obtenerExtras();
 
     std::vector<std::string>& obtenerAutos();
+
+    std::vector<std::string>& obtenerMapa();
+
+    void actualizar();
 
     void crearPista(PlanoDePista *planoDePista);
 

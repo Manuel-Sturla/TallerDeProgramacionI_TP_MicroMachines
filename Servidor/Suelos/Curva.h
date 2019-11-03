@@ -10,7 +10,6 @@
 
 class Curva: public Suelo {
   private:
-    b2Body *cuerpo;
     const int circulo = 1;
     const int cuadrado = 2;
     int interaccion;
@@ -35,6 +34,8 @@ class Curva: public Suelo {
     void tipoDeInteraccion(int identificadorDeInteraccion);
 
     void interactuar(Carro *unCarro);
+
+    void empaquetar(std::vector<std::string> *destino);
 
     ~Curva();
 

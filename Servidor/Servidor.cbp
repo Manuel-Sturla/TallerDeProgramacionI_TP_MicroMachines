@@ -561,6 +561,12 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Modificadores/Piedra.h">
 			<Option target="tp"/>
 		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Objeto.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Objeto.h">
+			<Option target="tp"/>
+		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida.cpp">
 			<Option target="tp"/>
 		</Unit>
@@ -652,6 +658,12 @@
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/LimiteDePista.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Material.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Material.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Suelos/Pasto.cpp">

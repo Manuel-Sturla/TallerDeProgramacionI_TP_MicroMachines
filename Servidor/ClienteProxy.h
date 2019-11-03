@@ -21,5 +21,4 @@ public:
     ~ClienteProxy();
 };
 
-
-#endif //PROTOCOLO_CLIENTEPROXY_H
+#endif

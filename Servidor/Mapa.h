@@ -27,6 +27,10 @@ class Mapa {
 
     Pista* darPista();
 
+    void empaquetarCarro(std::vector<std::string> *destino);
+
+    void empaquetarSuelos(std::vector<std::string> *destino);
+
     void agregarRecta(Recta recta);
 
     void agregarCurva(Curva curva);

@@ -1,10 +1,7 @@
-//
-// Created by manfer on 2/11/19.
-//
-
 #include "EnviarMapa.h"
 
-EnviarMapa::EnviarMapa(Protocolo &protocolo):protocolo(protocolo), posMapa( std::vector<std::string> {"Asfalto, 2-1", "..."}) {
+EnviarMapa::EnviarMapa(Protocolo &protocolo, std::vector<std::string>& mapa):
+protocolo(protocolo), posMapa(mapa) {
 }
 
 void EnviarMapa::ejecutar() {

@@ -21,20 +21,6 @@ Material *Mapa::darMaterial(std::string materialPedido) {
 Mapa::~Mapa() {
 }
 
-void Mapa::simular() {
-  float32 timeStep = 1.0f / 60.0f;
-  int32 velocidadDeIteraciones = 6;
-  int32 positionIterations = 2;
-  for (int32 i = 0; i < 50; ++i) {
-    Acelerar acelerar;
-    carro.ejecutarAccion(&acelerar);
-    pista.simular(timeStep, velocidadDeIteraciones, positionIterations);
-    pista.actualizar();
-    carro.imprimirPosicion();
-    carro.actualizar();
-  }
-}
-
 void Mapa::agregarRecta(Recta recta) {
   rectas.emplace_back(std::move(recta));
 }
@@ -45,4 +31,32 @@ void Mapa::agregarCurva(Curva curva) {
 
 Pista *Mapa::darPista() {
   return &pista;
+}
+
+void Mapa::simular() {
+  float32 timeStep = 1.0f / 60.0f;
+  int32 velocidadDeIteraciones = 6;
+  int32 positionIterations = 2;
+  for (int32 i = 0; i < 50; ++i) {
+    pista.simular(timeStep, velocidadDeIteraciones, positionIterations);
+    pista.actualizar();
+    carro.imprimirPosicion();
+    carro.actualizar();
+  }
+}
+
+void Mapa::empaquetarCarro(std::vector<std::string> *destino) {
+  carro.empaquetar(destino);
+}
+
+void Mapa::empaquetarSuelos(std::vector<std::string> *destino) {
+  std::list<Recta>::iterator itRectas;
+  std::list<Curva>::iterator itCurvas;
+  destino -> emplace_back("4"); //LONGITUD DEL CUADRADO
+  for (itRectas = rectas.begin(); itRectas != rectas.end(); itRectas++) {
+    itRectas -> empaquetar(destino);
+  }
+  for (itCurvas = curvas.begin(); itCurvas != curvas.end(); itCurvas++) {
+    itCurvas ->empaquetar(destino);
+  }
 }

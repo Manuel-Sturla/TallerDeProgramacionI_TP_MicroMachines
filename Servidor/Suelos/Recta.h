@@ -7,7 +7,6 @@
 
 class Recta: public Suelo {
   private:
-    b2Body *cuerpo;
     Material *material;
 
   public:
@@ -26,6 +25,8 @@ class Recta: public Suelo {
     std::string darId();
 
     bool esValido();
+
+    void empaquetar(std::vector<std::string> *destino);
 
     ~Recta();
 };
