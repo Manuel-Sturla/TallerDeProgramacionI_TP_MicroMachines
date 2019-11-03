@@ -12,7 +12,7 @@ class PlanoDeCurva: public PlanoDeSuelo {
   public:
     PlanoDeCurva(const std::string& configuracion);
 
-    void agregarSueloA(Mapa *mapa, Pista *pista) override;
+    void agregarSueloA(Mapa *mapa) override;
 
     ~PlanoDeCurva();
 
