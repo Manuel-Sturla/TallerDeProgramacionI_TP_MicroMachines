@@ -5,7 +5,8 @@
 #define ANGULO_PARA_GIRO b2_pi / 4 //HARDCODEADO
 #define VELOCIDAD_MAXIMA 5 //HARCODEADO
 
-Mapa::Mapa(): carro(&pista, VELOCIDAD_MAXIMA, ANGULO_PARA_GIRO, 100.0f, 0.0f, 0.0f)  {
+Mapa::Mapa(): carro(&pista, VELOCIDAD_MAXIMA, ANGULO_PARA_GIRO, 100.0f, 0.0f, 0.0f),
+recta(&pista, &asfalto, 0, 0){
 }
 
 Material *Mapa::darMaterial(std::string materialPedido) {
@@ -50,13 +51,15 @@ void Mapa::empaquetarCarro(std::vector<std::string> *destino) {
 }
 
 void Mapa::empaquetarSuelos(std::vector<std::string> *destino) {
-  std::list<Recta>::iterator itRectas;
-  std::list<Curva>::iterator itCurvas;
+  //std::list<Recta>::iterator itRectas;
+  //std::list<Curva>::iterator itCurvas;
   destino -> emplace_back("4"); //LONGITUD DEL CUADRADO
+  recta.empaquetar(destino);
+  /*
   for (itRectas = rectas.begin(); itRectas != rectas.end(); itRectas++) {
     itRectas -> empaquetar(destino);
   }
   for (itCurvas = curvas.begin(); itCurvas != curvas.end(); itCurvas++) {
     itCurvas ->empaquetar(destino);
-  }
+  }*/
 }
