@@ -13,9 +13,12 @@ class Mapa {
     Pista pista;
     Carro carro;
     Asfalto asfalto;
-    Recta recta;
     Pasto pasto;
     LimiteDePista limiteDePista;
+    Recta recta;
+    Recta recta1;
+    Recta recta2;
+    Curva curva;
     std::list<Recta> rectas;
     std::list<Curva> curvas;
 

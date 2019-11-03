@@ -21,6 +21,7 @@ public:
     std::vector<std::string> obtenerPartidas();
     void obtenerPosiciones(std::vector<std::string> &extras, std::vector<std::string> &autos);
     std::vector<std::string> obtenerMapa();
+    void terminarConexion();
 };
 
 

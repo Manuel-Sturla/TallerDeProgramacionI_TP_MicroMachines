@@ -15,7 +15,7 @@ class AgregarMovimiento: public Comando {
     std::queue<std::string> movimientos;
     Protocolo& protocolo;
 public:
-    AgregarMovimiento(Protocolo& protocolo);
+    explicit AgregarMovimiento(Protocolo& protocolo);
 
     void ejecutar() override;
 };

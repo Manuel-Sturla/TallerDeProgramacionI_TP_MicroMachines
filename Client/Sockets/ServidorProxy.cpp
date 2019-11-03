@@ -2,6 +2,7 @@
 // Created by manfer on 31/10/19.
 //
 
+#include <iostream>
 #include "ServidorProxy.h"
 #include "SocketActivo.h"
 #include "Utilidades.h"
@@ -67,4 +68,8 @@ std::vector<std::string> ServidorProxy::obtenerMapa() {
 
 bool ServidorProxy::creePartida() {
     return protocolo.recibir() == "iniciar partida";
+}
+
+void ServidorProxy::terminarConexion() {
+    protocolo.terminarConexion();
 }

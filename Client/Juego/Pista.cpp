@@ -2,6 +2,7 @@
 // Created by diego on 28/10/19.
 //
 
+#include <iostream>
 #include "Pista.h"
 #include "../Excepciones/ExcepcionConPos.h"
 
@@ -13,19 +14,20 @@ void Pista::crear(std::vector<std::string> mensaje) {
     if(mensaje.empty()){
         throw ExcepcionConPos(__FILE__, __LINE__, "Mensaje incompleto");
     }
-    tamImagen = std::stoi(mensaje[0]);
+    tamImagen = std::stoi(mensaje[0])*100;
     mensaje.erase(mensaje.begin());
     if(mensaje.size()%4 != 0){
         tamImagen = 0;
         throw ExcepcionConPos(__FILE__, __LINE__, "Mensaje incompleto");
     }
     for(int i = 0; i < mensaje.size()/4; ++i){
-        if(mensaje[4*i] == "recta"){
-            agregarRecta(std::stoi(mensaje[4*i+1]), std::stoi(mensaje[4*i+2]), std::stoi(mensaje[4*i+3]));
-        } else if(mensaje[4*i] == "curva"){
-            agregarCurva(std::stoi(mensaje[4*i+1]), std::stoi(mensaje[4*i+2]), std::stoi(mensaje[4*i+3]));
-        } else if(mensaje[4*i] == "pasto"){
-            agregarPasto(std::stoi(mensaje[4*i+1]), std::stoi(mensaje[4*i+2]), std::stoi(mensaje[4*i+3]));
+        std::cout<<mensaje[4*i]<<','<<mensaje[4*i+1]<<','<<mensaje[4*i+2]<<','<<mensaje[4*i+3]<<'\n';
+        if(mensaje[4*i] == "Asfalto"){
+            agregarRecta(std::stoi(mensaje[4*i+1])*100-tamImagen/2, std::stoi(mensaje[4*i+2])*100-tamImagen/2, std::stoi(mensaje[4*i+3]));
+        } else if(mensaje[4*i] == "Curva"){
+            agregarCurva(std::stoi(mensaje[4*i+1])*100-tamImagen/2, std::stoi(mensaje[4*i+2])*100-tamImagen/2, std::stoi(mensaje[4*i+3]));
+        } else if(mensaje[4*i] == "Pasto"){
+            agregarPasto(std::stoi(mensaje[4*i+1])*100-tamImagen/2, std::stoi(mensaje[4*i+2])*100-tamImagen/2, std::stoi(mensaje[4*i+3]));
         } else {
             throw ExcepcionConPos(__FILE__, __LINE__, "Tipo de pista invalido" + mensaje[i]);
         }
@@ -33,17 +35,20 @@ void Pista::crear(std::vector<std::string> mensaje) {
 }
 
 void Pista::agregarRecta(int posX, int posY, int angulo) {
+    std::cout<<posX<<','<<posY<<'\n';
     pistaPos.push_back(new Posicion(posX, posY, tamImagen, tamImagen, angulo));
     renderizador.agregarTrecho("pista.png", pistaPos[pistaPos.size()-1]);
 }
 
 void Pista::agregarCurva(int posX, int posY, int angulo) {
+    std::cout<<posX<<','<<posY<<'\n';
     pistaPos.push_back(new Posicion(posX, posY, tamImagen, tamImagen, angulo));
     renderizador.agregarTrecho("pasto.png", pistaPos[pistaPos.size()-1]);
     renderizador.agregarTrecho("curva.png", pistaPos[pistaPos.size()-1]);
 }
 
 void Pista::agregarPasto(int posX, int posY, int angulo) {
+    std::cout<<posX<<','<<posY<<'\n';
     pistaPos.push_back(new Posicion(posX, posY, tamImagen, tamImagen, angulo));
     renderizador.agregarTrecho("pasto.png", pistaPos[pistaPos.size()-1]);
 }
