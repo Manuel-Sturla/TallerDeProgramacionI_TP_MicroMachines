@@ -5,19 +5,15 @@
 #include <iostream>
 #include "Partida.h"
 
-Partida::Partida(Servidor &servidor) {
-    lector = new HiloLector(servidor);
-    vista = new HiloVisualizacion(servidor);
+Partida::Partida(ServidorProxy &servidor) {
+//    vista = new HiloVisualizacion(servidor);
 }
 
-void Partida::iniciar() {
-    lector->start();
+void Partida::iniciar() {\
     vista->start();
 }
 
 Partida::~Partida() {
-    lector->join();
     vista->join();
     delete(vista);
-    delete(lector);
 }

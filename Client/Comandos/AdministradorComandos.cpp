@@ -2,14 +2,17 @@
 // Created by diego on 22/10/19.
 //
 
+#include <iostream>
 #include "AdministradorComandos.h"
 #include "ComandoAcelerar.h"
 #include "ComandoFrenar.h"
 #include "ComandoIzquierda.h"
 #include "ComandoDerecha.h"
 #include "ComandoCerrar.h"
+#include "ComandoIniciarPartida.h"
 
-AdministradorComandos::AdministradorComandos(Servidor& servidor) {
+AdministradorComandos::AdministradorComandos(ServidorProxy& servidor) {
+    comandos.insert(std::pair<SDL_Keycode, Comando*>(SDLK_i, new ComandoIniciarPartida(servidor)));
     comandos.insert(std::pair<SDL_Keycode, Comando*>(SDLK_UP, new ComandoAcelerar(servidor)));
     comandos.insert(std::pair<SDL_Keycode, Comando*>(SDLK_DOWN, new ComandoFrenar(servidor)));
     comandos.insert(std::pair<SDL_Keycode, Comando*>(SDLK_LEFT, new ComandoIzquierda(servidor)));

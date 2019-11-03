@@ -2,11 +2,14 @@
 // Created by diego on 28/10/19.
 //
 
-#include <iostream>
 #include "Pista.h"
 #include "../Excepciones/ExcepcionConPos.h"
 
-Pista::Pista(Renderizador &renderizador, std::vector<std::string> mensaje) : renderizador(renderizador) {
+Pista::Pista(Renderizador &renderizador) : renderizador(renderizador) {
+    tamImagen = 0;
+}
+
+void Pista::crear(std::vector<std::string> mensaje) {
     if(mensaje.empty()){
         throw ExcepcionConPos(__FILE__, __LINE__, "Mensaje incompleto");
     }
@@ -16,9 +19,6 @@ Pista::Pista(Renderizador &renderizador, std::vector<std::string> mensaje) : ren
         tamImagen = 0;
         throw ExcepcionConPos(__FILE__, __LINE__, "Mensaje incompleto");
     }
-/*    for(int i = 0; i<mensaje.size(); i++){
-        std::cout<<mensaje[i]<<'\n';
-    }*/
     for(int i = 0; i < mensaje.size()/4; ++i){
         if(mensaje[4*i] == "recta"){
             agregarRecta(std::stoi(mensaje[4*i+1]), std::stoi(mensaje[4*i+2]), std::stoi(mensaje[4*i+3]));

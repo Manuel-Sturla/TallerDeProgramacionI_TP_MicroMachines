@@ -5,5 +5,5 @@
 #include "ComandoIzquierda.h"
 
 void ComandoIzquierda::ejecutar() {
-    servidor.enviar("doblar izquierda");
+    servidor.ejecutarMovimiento("doblar izquierda");
 }

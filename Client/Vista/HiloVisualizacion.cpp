@@ -6,18 +6,20 @@
 #include "HiloVisualizacion.h"
 #include "../Excepciones/ExcepcionConPos.h"
 
-HiloVisualizacion::HiloVisualizacion(Servidor& servidor) : renderizador("microMachines.exe", 1000, 1000)\
-, contenedor(renderizador, servidor), camara(contenedor.getAuto().getPos(), 1000) {}
+HiloVisualizacion::HiloVisualizacion(ServidorProxy& servidor, bool& keepTalking) : servidor(servidor), renderizador("microMachines.exe", 1000, 1000)\
+, pista(renderizador), camara(1000), keepTalking(keepTalking) {
+    this->receptor = nullptr;
+}
 
 void HiloVisualizacion::run() {
     try{
-        bool keepTalking = true;
-        contenedor.actualizar();
-        while(keepTalking){
+        pista.crear(servidor.obtenerMapa());
+        receptor = new HiloReceptor(renderizador, servidor, camara, keepTalking);
+        receptor->start();
+        while(keepTalking) {
             renderizador.limpiar();
             renderizador.copiarTodo(camara);
             renderizador.imprimir(20);
-            keepTalking = contenedor.actualizar();
         }
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';
@@ -25,5 +27,12 @@ void HiloVisualizacion::run() {
         std::cerr<<e.what()<<'\n';
     } catch (...) {
         std::cerr<<"Error desconocido\n";
+    }
+}
+
+HiloVisualizacion::~HiloVisualizacion() {
+    if(receptor != nullptr){
+        receptor->join();
+        delete(receptor);
     }
 }

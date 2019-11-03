@@ -6,11 +6,13 @@
 #define OPENGLTEST_POSICION_H
 
 #include <SDL2/SDL_rect.h>
+#include <mutex>
 
 class Posicion {
 private:
     SDL_Rect posicion;
     int angulo;
+    std::mutex mutex;
 
 public:
     Posicion(int posX, int posY, int ancho, int altura, int angulo);

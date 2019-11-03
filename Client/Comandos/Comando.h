@@ -6,13 +6,13 @@
 #define OPENGLTEST_COMANDO_H
 
 
-#include "../Servidor.h"
+#include "../Sockets/ServidorProxy.h"
 
 class Comando {
 protected:
-    Servidor& servidor;
+    ServidorProxy& servidor;
 public:
-    explicit Comando(Servidor &servidor) : servidor(servidor) {}
+    explicit Comando(ServidorProxy &servidor) : servidor(servidor) {}
 
     virtual void ejecutar() = 0;
 

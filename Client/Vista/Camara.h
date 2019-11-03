@@ -10,11 +10,13 @@
 
 class Camara {
 private:
-    Posicion& posAuto;
+    Posicion* posAuto;
     int tamPantalla;
 
 public:
-    Camara(Posicion& miAuto, int tamPantalla);
+    explicit Camara(int tamPantalla);
+
+    void setPosAuto(Posicion* pos);
 
     SDL_Rect obtenerPosImpresion(SDL_Rect posPista);
 };

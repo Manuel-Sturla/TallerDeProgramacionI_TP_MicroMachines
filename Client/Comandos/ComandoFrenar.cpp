@@ -5,5 +5,5 @@
 #include "ComandoFrenar.h"
 
 void ComandoFrenar::ejecutar() {
-    servidor.enviar("frenar");
+    servidor.ejecutarMovimiento("frenar");
 }

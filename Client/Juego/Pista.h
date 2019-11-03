@@ -18,13 +18,15 @@ class Pista {
 
     void agregarRecta(int posX, int posY, int angulo);
 
+    void agregarCurva(int posX, int posY, int angulo);
+
 public:
 
-    explicit Pista(Renderizador &renderizador, std::vector<std::string> mensaje);
+    explicit Pista(Renderizador &renderizador);
+
+    void crear(std::vector<std::string> instrucciones);
 
     virtual ~Pista();
-
-    void agregarCurva(int posX, int posY, int angulo);
 };
 
 

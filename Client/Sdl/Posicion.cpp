@@ -14,18 +14,16 @@ Posicion::Posicion(int posX, int posY, int ancho, int altura, int angulo) {
 }
 
 SDL_Rect Posicion::getRect() {
+    std::unique_lock<std::mutex> l(mutex);
     return posicion;
 }
 
 void Posicion::moverA(int posX, int posY) {
+    std::unique_lock<std::mutex> l(mutex);
     posicion.x = posX;
     posicion.y = posY;
 }
-/*
-Posicion Posicion::operator-(Posicion const &pos) {
-    return {posicion->x-pos.posicion.x, posicion.y-pos.posicion.y, posicion.w, posicion.h, angulo};
-}
-*/
+
 void Posicion::rotar(int angulo) {
     this->angulo = angulo;
 }

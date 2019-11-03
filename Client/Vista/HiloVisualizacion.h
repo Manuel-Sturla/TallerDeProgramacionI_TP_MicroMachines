@@ -7,21 +7,27 @@
 
 
 #include "../Sdl/Renderizador.h"
-#include "../Servidor.h"
+#include "../Sockets/ServidorProxy.h"
 #include "../Hilo.h"
-#include "ContenedorDeTexturas.h"
 #include "Camara.h"
+#include "HiloReceptor.h"
+#include "../Juego/Pista.h"
 
 class HiloVisualizacion : public Hilo {
 private:
+    ServidorProxy& servidor;
     Renderizador renderizador;
-    ContenedorDeTexturas contenedor;
+    Pista pista;
     Camara camara;
+    HiloReceptor* receptor;
+    bool& keepTalking;
 
 public:
-    explicit HiloVisualizacion(Servidor& servidor);
+    explicit HiloVisualizacion(ServidorProxy& servidor, bool& keepTalking);
 
     void run() override;
+
+    ~HiloVisualizacion() override;
 };
 
 
