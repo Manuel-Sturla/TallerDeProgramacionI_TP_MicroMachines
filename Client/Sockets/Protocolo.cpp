@@ -34,3 +34,7 @@ Protocolo &Protocolo::operator=(Protocolo &&otro) {
     this->socket = std::move(otro.socket);
     return *this;
 }
+
+void Protocolo::terminarConexion() {
+    socket.cerrar();
+}

@@ -5,18 +5,22 @@
 #include "Juego/Partida.h"
 #include "HiloMenu.h"
 
-int main() {
-    ServidorProxy servidor("a", "b"); //Falta agregar el host y el servicio.
+int main(int argc, char const* argv[]) {
+    if(argc != 3){
+        std::cout<<"Uso correcto ./client host servicio\n";
+        return 1;
+    }
     if(SDL_Init(SDL_INIT_VIDEO) != 0){
         SDL_Log("No pude incializar el SDL %s", SDL_GetError());
         return 0;
     }
     try {
+        ServidorProxy servidor(argv[1], argv[2]);
         Renderizador renderizador("micromachines.exe", 1000, 1000);
         HiloLector lector(servidor);
         lector.start();
         bool enMenu = true;
-        HiloMenu menu(servidor, enMenu);
+/*        HiloMenu menu(servidor, enMenu);
         menu.start();
         renderizador.agregarTextura("inicio.jpeg", nullptr);
         Camara cam(100);
@@ -24,7 +28,7 @@ int main() {
         while(enMenu){
             renderizador.imprimir(20);
         }
-        menu.join();
+        menu.join();*/
         bool enPartida = true;
         HiloVisualizacion partida(servidor, enPartida);
         partida.start();

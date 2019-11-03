@@ -1,0 +1,2 @@
+Cosas que faltan:
+Manu: el servidorProxi transforma los metros a pixeles (con una clase nueva) y puede devolver un vector de structs o algo asi para que diego no haga un recorrido horrible del vectors

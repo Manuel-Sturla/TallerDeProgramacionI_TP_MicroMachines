@@ -11,7 +11,6 @@ Servidor::Servidor(SocketPasivo *unSocketPasivo) {
   //HARDCODEAR SERVICIOOOOOOOOOOOOOOOOOO
   socketPasivo ->unirse("7777");
   socketPasivo -> escuchar();
-
 }
 
 void Servidor::levantarPistas() {
@@ -40,10 +39,16 @@ Servidor::~Servidor() {
 }
 
 void Servidor::run() {
+
   Partida partida;
-  //SocketAmigo socketAmigo = std::move(socketPasivo -> aceptarCliente());
-  //ClienteProxy clienteProxy(std::move(socketAmigo), partida);
+  SocketAmigo socketAmigo = std::move(socketPasivo -> aceptarCliente());
+  ClienteProxy clienteProxy(std::move(socketAmigo), partida);
   partida.actualizar();
+  clienteProxy.ejecutarComando();
   partida.crearPista(planosDePistas["Prueba 1"]);
-  partida.simular();
+  while (clienteProxy.estaConectado()){
+    partida.simular();
+    partida.actualizar();
+    clienteProxy.ejecutarComando();
+  }
 }
