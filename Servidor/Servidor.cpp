@@ -6,7 +6,7 @@
 #include <memory>
 
 Servidor::Servidor(SocketPasivo *unSocketPasivo) {
-  //levantarPistas();
+  levantarPistas();
   socketPasivo = unSocketPasivo;
   //HARDCODEAR SERVICIOOOOOOOOOOOOOOOOOO
   socketPasivo ->unirse("7777");
@@ -33,21 +33,16 @@ void Servidor::levantarPistas() {
 }
 
 Servidor::~Servidor() {
-  /*
   std::unordered_map<std::string, PlanoDePista*>::iterator it;
   for (it = planosDePistas.begin(); it != planosDePistas.end(); it++) {
     delete it -> second;
-  }*/
-}
-
-void Servidor::jugar() {
-  //partida.crearPista(planosDePistas["Prueba 1"]);
-  //partida.simular();
+  }
 }
 
 void Servidor::run() {
   Partida partida;
   //SocketAmigo socketAmigo = std::move(socketPasivo -> aceptarCliente());
   //ClienteProxy clienteProxy(std::move(socketAmigo), partida);
+  partida.crearPista(planosDePistas["Prueba 1"]);
   partida.simular();
 }

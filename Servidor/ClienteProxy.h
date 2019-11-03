@@ -13,8 +13,11 @@ class ClienteProxy {
     std::unordered_map<std::string, std::unique_ptr<Comando>> comandos;
 public:
     ClienteProxy(SocketAmigo socketCliente, Partida &partida);
+
     void ejecutarComando();
+
     std::string obtenerComando();
+
     ~ClienteProxy();
 };
 

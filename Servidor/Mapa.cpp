@@ -1,10 +1,11 @@
 #include "Mapa.h"
 #include "Acciones/GiroAIzquierda.h"
+#include "Acciones/Acelerar.h"
+
 #define ANGULO_PARA_GIRO b2_pi / 4 //HARDCODEADO
 #define VELOCIDAD_MAXIMA 5 //HARCODEADO
 
-Mapa::Mapa(): carro(VELOCIDAD_MAXIMA, ANGULO_PARA_GIRO, 100.0f, 0.0f, 0.0f)  {
-  carro.agregarseA(&pista);
+Mapa::Mapa(): carro(&pista, VELOCIDAD_MAXIMA, ANGULO_PARA_GIRO, 100.0f, 0.0f, 0.0f)  {
 }
 
 Material *Mapa::darMaterial(std::string materialPedido) {
@@ -24,12 +25,9 @@ void Mapa::simular() {
   float32 timeStep = 1.0f / 60.0f;
   int32 velocidadDeIteraciones = 6;
   int32 positionIterations = 2;
-  Recta recta(&pista, &asfalto, 0, 0);
-  Curva curva(&pista, &asfalto, &pasto, 2, 0);
-  Recta recta1(&pista, &pasto, 2, 2);
-  Recta recta2(&pista, &asfalto, 0, 2);
-
-  for (int32 i = 0; i < 5; ++i) {
+  for (int32 i = 0; i < 50; ++i) {
+    Acelerar acelerar;
+    carro.ejecutarAccion(&acelerar);
     pista.simular(timeStep, velocidadDeIteraciones, positionIterations);
     pista.actualizar();
     carro.imprimirPosicion();

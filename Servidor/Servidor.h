@@ -18,8 +18,6 @@ class Servidor {
 
     void run();
 
-    void jugar();
-
     ~Servidor();
 
 };

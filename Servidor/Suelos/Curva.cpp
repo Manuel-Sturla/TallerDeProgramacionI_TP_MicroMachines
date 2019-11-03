@@ -87,3 +87,9 @@ Curva &Curva::operator=(Curva &&otraCurva) {
   otraCurva.pasto = nullptr;
   return  *this;
 }
+
+Curva::Curva(const Curva &otraCurva) {
+  this -> cuerpo = otraCurva.cuerpo;
+  this -> asfalto = otraCurva.asfalto;
+  this -> pasto = otraCurva.pasto;
+}

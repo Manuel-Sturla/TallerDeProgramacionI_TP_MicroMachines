@@ -26,6 +26,8 @@ class Curva: public Suelo {
 
     Curva(Curva &&otraCurva);
 
+    Curva(const Curva& otraCurva);
+
     Curva& operator= (Curva &&otraCurva);
 
     bool esValido() override;

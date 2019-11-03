@@ -5,15 +5,17 @@
 #include "../Acciones/GiroADerecha.h"
 #include <iostream>
 
-Carro::Carro(float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y):
+Carro::Carro(Pista *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y):
 estadoVelocidad(velocidadMaxima), agarre(agarre) {
   this -> anguloDeGiro = anguloDeGiro;
+  agregarseA(pista, x, y);
   id = "Carro";
+  coeficienteDeRozamiento = 0;
 }
 
-void Carro::agregarseA(Pista *pista) {
+void Carro::agregarseA(Pista *pista, float32 x, float32 y) {
   bodyDef.type = b2_dynamicBody;
-  bodyDef.position.Set(0.0f, 4.0f);
+  bodyDef.position.Set(x, y);
   cuerpo = pista -> agregarObjeto(&bodyDef);
   cuerpo -> SetUserData(this);
   b2PolygonShape dynamicBox;
@@ -70,9 +72,11 @@ void Carro::recibirBoost() {
 void Carro::imprimirPosicion() {
   b2Vec2 position = cuerpo -> GetPosition();
   float32 angle = cuerpo -> GetAngle();
+  b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
   printf("Nueva iteracion\n");
   printf("Posicion: ");
   printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
+  std::cout << "Velocidad: " << velocidad.x << " " << velocidad.y << std::endl;
 }
 
 bool Carro::esValido() {

@@ -24,9 +24,9 @@ class Carro: public Objeto {
 
   public:
     //El agarre debe ser un numero en el intervalo (0 ; 100]
-    Carro(float32 velocidadMaxima, float32 anguloDeGiro, float32 agarre, float32 x,  float32 y);
+    Carro(Pista *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32 agarre, float32 x,  float32 y);
 
-    void agregarseA(Pista *pista);
+    void agregarseA(Pista *pista, float32 x, float32 y);
 
     void actualizar();
 
