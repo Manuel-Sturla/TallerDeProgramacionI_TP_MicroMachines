@@ -3,6 +3,7 @@
 //
 
 #include <SDL2/SDL_timer.h>
+#include <iostream>
 #include "Renderizador.h"
 #include "../Excepciones/ExcepcionConPos.h"
 

@@ -2,6 +2,7 @@
 // Created by diego on 28/10/19.
 //
 
+#include <iostream>
 #include "Auto.h"
 #include "../Sdl/Renderizador.h"
 
