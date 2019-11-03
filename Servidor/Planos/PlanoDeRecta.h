@@ -13,7 +13,7 @@ class PlanoDeRecta: public PlanoDeSuelo {
   public:
     PlanoDeRecta(const std::string& configuracion);
 
-    void agregarSueloA(Mapa *mapa, Pista *pista) override;
+    void agregarSueloA(Mapa *mapa) override;
 
     ~PlanoDeRecta();
 };

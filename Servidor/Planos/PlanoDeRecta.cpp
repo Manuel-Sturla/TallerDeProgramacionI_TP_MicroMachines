@@ -14,10 +14,8 @@ PlanoDeRecta::PlanoDeRecta(const std::string& configuracion) {
   getline(stringConfiguracion, tipo, ',');
 }
 
-void PlanoDeRecta::agregarSueloA(Mapa *mapa, Pista *pista) {
-  Material *materialParaRecta = mapa -> darMaterial(material); //CREO QUE AQUI ESTA EL PROBLEMA
-  Recta recta(pista, materialParaRecta, posicionX, posicionY);
-  mapa -> agregarRecta(std::move(recta));
+void PlanoDeRecta::agregarSueloA(Mapa *mapa) {
+  mapa->agregarRecta(material, posicionX, posicionY, 0);
 }
 
 PlanoDeRecta::~PlanoDeRecta() {

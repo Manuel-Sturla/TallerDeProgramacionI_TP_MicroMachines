@@ -13,7 +13,6 @@ class Mapa {
     Pista pista;
     Carro carro;
     Asfalto asfalto;
-    Recta recta;
     Pasto pasto;
     LimiteDePista limiteDePista;
     std::list<Recta> rectas;
@@ -32,9 +31,10 @@ class Mapa {
 
     void empaquetarSuelos(std::vector<std::string> *destino);
 
-    void agregarRecta(Recta recta);
+    void
+    agregarRecta(std::string &material, float32 x, float32 y, float32 angulo);
 
-    void agregarCurva(Curva curva);
+    void agregarCurva(float32 x, float32 y, float32 angulo);
 
     ~Mapa();
 };

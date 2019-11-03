@@ -22,7 +22,7 @@ void PlanoDePista::agregarSuelo(std::string configuracion) {
 void PlanoDePista::crearPista(Mapa *mapa,Pista *pista) {
   std::list<std::unique_ptr<PlanoDeSuelo>>::iterator it;
   for (it = planosDeSuelos.begin(); it != planosDeSuelos.end(); it ++) {
-    (*it)->agregarSueloA(mapa, pista);
+    (*it)->agregarSueloA(mapa);
   }
 }
 
