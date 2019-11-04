@@ -7,27 +7,33 @@
 
 #include <SDL2/SDL_rect.h>
 #include <mutex>
+#include <vector>
+
+typedef struct{
+  float x;
+  float y;
+  float w;
+  float h;
+}pos_t;
 
 class Posicion {
 private:
-    SDL_Rect posicion;
+    pos_t posicion;
     int angulo;
     std::mutex mutex;
 
 public:
-    Posicion(int posX, int posY, int ancho, int altura, int angulo);
+    Posicion(float posX, float posY, float ancho, float altura, int angulo);
 
-    SDL_Rect getRect();
+    pos_t getPosicion();
 
-    void moverA(int posX, int posY);
+    void moverA(float posX, float posY);
 
     void rotar(int angulo);
 
     int getAngulo();
 
-//    Posicion operator - (Posicion const& pos2);
-
-    bool estaEnRango(int ancho, int largo);
+//    bool estaEnRango(int ancho, int largo);
 };
 
 

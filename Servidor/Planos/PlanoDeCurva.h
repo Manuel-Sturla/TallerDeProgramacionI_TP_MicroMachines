@@ -5,17 +5,16 @@
 #include "../Partida/Mapa.h"
 
 class PlanoDeCurva: public PlanoDeSuelo {
-  private:
-    int posicionX;
-    int posicionY;
-    std::string tipo;
-  public:
-    PlanoDeCurva(const std::string& configuracion);
+private:
+  int posicionX;
+  int posicionY;
+  std::string tipo;
+public:
+  PlanoDeCurva(const std::string& configuracion);
 
-    void agregarSueloA(Mapa *mapa) override;
+  void agregarSueloA(Mapa *mapa) override;
 
-    ~PlanoDeCurva();
-
+  ~PlanoDeCurva();
 };
 
 

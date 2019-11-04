@@ -5,7 +5,7 @@
 #include "../Partida/Mapa.h"
 
 class PlanoDeSuelo {
-  public:
+public:
     virtual void agregarSueloA(Mapa *mapa) = 0;
 };
 

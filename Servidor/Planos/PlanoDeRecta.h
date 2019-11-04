@@ -5,12 +5,12 @@
 #include "../Partida/Mapa.h"
 
 class PlanoDeRecta: public PlanoDeSuelo {
-  private:
+private:
     std::string material;
     int posicionX;
     int posicionY;
     std::string tipo;
-  public:
+public:
     PlanoDeRecta(const std::string& configuracion);
 
     void agregarSueloA(Mapa *mapa) override;

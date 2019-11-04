@@ -74,8 +74,7 @@ void Carro::imprimirPosicion() {
   float32 angle = cuerpo -> GetAngle();
   b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
   printf("Nueva iteracion\n");
-  printf("Posicion: ");
-  printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
+  std::cout << "Posicion: " << position.x << " " << position.y << " " <<  angle << std::endl;
   std::cout << "Velocidad: " << velocidad.x << " " << velocidad.y << std::endl;
 }
 

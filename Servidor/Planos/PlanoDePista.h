@@ -8,9 +8,9 @@
 #include "../Partida/Mapa.h"
 
 class PlanoDePista {
-  private:
+private:
     std::list<std::unique_ptr<PlanoDeSuelo>> planosDeSuelos;
-  public:
+public:
     PlanoDePista();
 
     void agregarSuelo(std::string configuracion);
