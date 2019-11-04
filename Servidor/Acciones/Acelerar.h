@@ -5,7 +5,7 @@
 #include "../Objetos/Carro/EstadoVelocidad.h"
 
 class Acelerar: public Accion {
-  public:
+public:
     void ejecutar(b2Body* body, EstadoVelocidad *estadoVelocidad, float32 angulo);
 };
 

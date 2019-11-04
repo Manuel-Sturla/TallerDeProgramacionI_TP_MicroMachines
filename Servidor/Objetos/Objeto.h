@@ -6,13 +6,13 @@
 #include <Box2D/Dynamics/b2Body.h>
 
 class Objeto {
-  protected:
+protected:
     std::string id;
     b2Body *cuerpo;
 
     void empaquetarPosicion(std::vector<std::string> *destino);
     void empaquetarAngulo(std::vector<std::string> *destino);
-  public:
+public:
     virtual std::string darId() = 0;
 
     virtual bool esValido() = 0;

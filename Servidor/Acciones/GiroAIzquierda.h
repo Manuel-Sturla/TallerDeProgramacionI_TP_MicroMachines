@@ -4,7 +4,7 @@
 #include "Accion.h"
 
 class GiroAIzquierda: public Accion {
-  public:
+public:
     void ejecutar(b2Body* body, EstadoVelocidad *estadoVelocidad, float32 angulo);
 };
 

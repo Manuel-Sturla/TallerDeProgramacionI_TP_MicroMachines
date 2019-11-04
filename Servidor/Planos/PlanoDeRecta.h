@@ -10,6 +10,8 @@ private:
     int posicionX;
     int posicionY;
     std::string tipo;
+
+    float32 obtenerAngulo();
 public:
     PlanoDeRecta(const std::string& configuracion);
 

@@ -6,10 +6,10 @@
 #include "../Objetos/Carro/EstadoVelocidad.h"
 
 class Accion {
-  protected:
+protected:
     void aplicarFuerza(b2Body* body, float32 factorDeFuerza);
 
-  public:
+public:
     virtual void ejecutar(b2Body* body, EstadoVelocidad *estadoVelocidad, float32 angulo) = 0;
 };
 

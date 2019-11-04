@@ -17,9 +17,10 @@ class Curva: public Suelo {
     Pasto *pasto;
 
   public:
-    Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y);
+    Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y,
+          float32 angulo);
 
-    void agregarseAPista(Pista *pista);
+    void agregarseAPista(Pista *pista, float32 angulo);
 
     std::string darId();
 

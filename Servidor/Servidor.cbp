@@ -501,6 +501,9 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Utilidades.h">
 			<Option target="tp"/>
 		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Hilo.h">
+			<Option target="tp"/>
+		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Objetos/Carro/Agarre.cpp">
 			<Option target="tp"/>
 		</Unit>

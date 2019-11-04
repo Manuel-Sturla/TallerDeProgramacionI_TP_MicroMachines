@@ -6,7 +6,7 @@
 #include "Carro/Carro.h"
 
 class Interactuable: public Objeto {
-  public:
+public:
     virtual void interactuar(Carro* unCarro) = 0;
 };
 

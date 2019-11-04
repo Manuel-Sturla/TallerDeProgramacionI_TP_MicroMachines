@@ -1,7 +1,9 @@
 Nueva Pista
 Prueba 1
-Recta,Asfalto,0,0,0
-Recta,Asfalto,4,0,0
-Recta,Asfalto,0,4,0
-Curva,4,4,0
+Curva,0,0,1
+Curva,4,0,2
+Curva,0,4,3
+Curva,4,4,4
+Recta,Asfalto,8,0,1
+Recta,Asfalto,0,8,1
 Fin Pista

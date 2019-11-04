@@ -6,15 +6,17 @@
 
 class PlanoDeCurva: public PlanoDeSuelo {
 private:
-  int posicionX;
-  int posicionY;
-  std::string tipo;
+    int posicionX;
+    int posicionY;
+    std::string tipo;
+
+    float32 obtenerAngulo();
 public:
-  PlanoDeCurva(const std::string& configuracion);
+    PlanoDeCurva(const std::string& configuracion);
 
-  void agregarSueloA(Mapa *mapa) override;
+    void agregarSueloA(Mapa *mapa) override;
 
-  ~PlanoDeCurva();
+    ~PlanoDeCurva();
 };
 
 

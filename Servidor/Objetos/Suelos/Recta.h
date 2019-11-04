@@ -10,7 +10,8 @@ class Recta: public Suelo {
     Material *material;
 
   public:
-    Recta(Pista *pista, Material *unMaterial, float32 x, float32 y);
+    Recta(Pista *pista, Material *unMaterial, float32 x, float32 y,
+          float32 angulo);
 
     Recta(Recta &&otraRecta);
 
