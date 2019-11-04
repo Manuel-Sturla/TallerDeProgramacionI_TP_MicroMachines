@@ -25,6 +25,7 @@ void Servidor::levantarPistas() {
       getline(pistas, linea);
       while (linea != "Fin Pista") {
         planosDePistas[nombreDePista] -> agregarSuelo(linea);
+          std::cout << "Lei " << linea << std::endl;
         getline(pistas, linea);
       }
     }

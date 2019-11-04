@@ -3,5 +3,5 @@ Prueba 1
 Recta,Asfalto,0,0,0
 Recta,Asfalto,4,0,0
 Recta,Asfalto,0,4,0
-Recta.Asfalto,4,4,0
+Curva,4,4,0
 Fin Pista
