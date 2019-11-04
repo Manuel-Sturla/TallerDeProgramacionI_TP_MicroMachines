@@ -16,7 +16,7 @@ private:
 public:
     Auto(Renderizador &renderizador, int tam);
 
-    void mover(int &posX, int &posY, int &angulo);
+    void mover(float posX, float posY, int &angulo);
 
     Posicion& getPos();
 };

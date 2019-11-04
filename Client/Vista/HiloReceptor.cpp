@@ -19,10 +19,10 @@ void HiloReceptor::run() {
             std::vector<std::string> autos;
             std::vector<std::string> extras;
             servidor.obtenerPosiciones(extras, autos);
-/*            int posX = std::stoi(autos[0]);
-            int posY = std::stoi(autos[1]);
-            int angulo = std::stoi(autos[2]);
-            miAuto.mover(posX, posY, angulo);*/
+            float posX = std::stof(autos[0]);
+            float posY = std::stof(autos[1]);
+            int angulo = (int)std::stof(autos[2]);
+            miAuto.mover(posX, posY, angulo);
         }
     } catch (const SocketPeerException& e){
         keepTalking = false;

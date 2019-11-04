@@ -8,3 +8,9 @@ Eso seria mas facil pero lo veo medio sensible porque considero que siempre sale
 tener una camara centrada, recibo x,y del box2d tranformo a pixeles delegar. Primero, dibujar todo cada vez despues
 pasar a dibujar la pista como textura y renderizar varias veces. SDL renderer advance.
 6 - A cada 20ms no se ve laggeado, velocidad que estaria buena aumentar 10 pixeles
+
+
+Errores en movimiento:
+1) Angulo huguito es cero en x y el mio es 0 en y.
+2) Se mueve a la velocidad de la luz.
+3) el agunlo de huguito es en radianes y el de diego son enteros.

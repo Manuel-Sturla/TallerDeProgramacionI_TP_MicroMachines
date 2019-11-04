@@ -17,7 +17,7 @@ SDL_Rect Camara::obtenerPosImpresion(pos_t posTextura) {
         throw ExcepcionConPos(__FILE__, __LINE__, "La partida no fue inicializada");
     }
     pos_t aux = posAuto->getPosicion();
-//    std::cout<<"Pos posta: "<<posTextura.x<<','<<posTextura.y<<'\n';
+    std::cout<<"Pos auto: "<<aux.x<<','<<aux.y<<'\n';
     amplificarValores(aux);
     amplificarValores(posTextura);
     posTextura.x -= posTextura.w/2;
