@@ -5,7 +5,7 @@
 #include <list>
 #include <memory>
 #include "PlanoDeSuelo.h"
-#include "../Mapa.h"
+#include "../Partida/Mapa.h"
 
 class PlanoDePista {
   private:

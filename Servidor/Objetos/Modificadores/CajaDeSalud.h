@@ -3,7 +3,7 @@
 
 #include "Box2D/Box2D.h"
 #include "Modificador.h"
-#include "../Pista.h"
+#include "../../Partida/Pista.h"
 
 class CajaDeSalud: public Modificador {
   public:

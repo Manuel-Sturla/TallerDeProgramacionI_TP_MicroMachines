@@ -1,7 +1,7 @@
 #ifndef _PISTA_H_
 #define _PISTA_H_
 
-#include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
+#include "Box2D/Box2D.h"
 #include "ManejadorDeContactos.h"
 
 class Pista {

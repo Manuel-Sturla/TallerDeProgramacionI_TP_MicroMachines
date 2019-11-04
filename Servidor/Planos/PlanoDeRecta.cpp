@@ -1,6 +1,6 @@
 #include <sstream>
 #include "PlanoDeRecta.h"
-#include "../Suelos/Recta.h"
+#include "../Objetos/Suelos/Recta.h"
 #define MITAD_DE_LARGO_DE_SUELO 2
 
 PlanoDeRecta::PlanoDeRecta(const std::string& configuracion) {

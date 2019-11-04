@@ -1,7 +1,7 @@
 #ifndef _RECTA_H_
 #define _RECTA_H_
 
-#include "../Pista.h"
+#include "../../Partida/Pista.h"
 #include "Material.h"
 #include "Suelo.h"
 

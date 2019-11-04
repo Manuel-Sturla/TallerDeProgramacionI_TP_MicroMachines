@@ -2,9 +2,9 @@
 #define _PARTIDA_H_
 
 #include <vector>
-#include "3rd_party/Box2D-cmake/Box2D/Box2D/Box2D.h"
+#include "Box2D/Box2D.h"
 #include "Mapa.h"
-#include "Planos/PlanoDePista.h"
+#include "../Planos/PlanoDePista.h"
 
 class Partida {
   private:

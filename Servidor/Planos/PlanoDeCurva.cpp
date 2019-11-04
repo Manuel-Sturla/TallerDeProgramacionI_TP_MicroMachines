@@ -1,6 +1,6 @@
 #include <sstream>
 #include "PlanoDeCurva.h"
-#include "../Suelos/Curva.h"
+#include "../Objetos/Suelos/Curva.h"
 
 #define MITAD_DE_LARGO_DE_SUELO 2
 

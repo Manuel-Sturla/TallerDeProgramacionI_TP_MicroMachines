@@ -2,7 +2,7 @@
 #define _PLANODESUELO_H_
 
 #include <string>
-#include "../Mapa.h"
+#include "../Partida/Mapa.h"
 
 class PlanoDeSuelo {
   public:

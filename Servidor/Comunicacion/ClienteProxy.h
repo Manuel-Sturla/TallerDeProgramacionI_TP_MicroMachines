@@ -8,7 +8,7 @@
 #include <queue>
 #include "Protocolo.h"
 #include "Comandos/Comando.h"
-#include "Partida.h"
+#include "../Partida/Partida.h"
 
 class ClienteProxy {
     Protocolo protocolo;

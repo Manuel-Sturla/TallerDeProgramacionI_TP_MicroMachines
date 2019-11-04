@@ -483,12 +483,6 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/ClienteProxy.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/AgregarMovimiento.cpp">
-			<Option target="tp"/>
-		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/AgregarMovimiento.h">
-			<Option target="tp"/>
-		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comandos/Comando.cpp">
 			<Option target="tp"/>
 		</Unit>

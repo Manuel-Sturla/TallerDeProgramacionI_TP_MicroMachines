@@ -2,11 +2,11 @@
 #define _MAPA_H_
 
 #include <list>
-#include "Suelos/Pasto.h"
-#include "Suelos/Asfalto.h"
-#include "Suelos/LimiteDePista.h"
-#include "Suelos/Recta.h"
-#include "Suelos/Curva.h"
+#include "../Objetos/Suelos/Pasto.h"
+#include "../Objetos/Suelos/Asfalto.h"
+#include "../Objetos/Suelos/LimiteDePista.h"
+#include "../Objetos/Suelos/Recta.h"
+#include "../Objetos/Suelos/Curva.h"
 
 class Mapa {
   private:

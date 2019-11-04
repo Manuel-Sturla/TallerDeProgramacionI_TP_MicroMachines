@@ -1,27 +1,18 @@
-//
-// Created by manfer on 31/10/19.
-//
-
-#include <sstream>
 #include "ClienteProxy.h"
 #include "Utilidades.h"
 #include "Comandos/ElegirPartida.h"
 #include "Comandos/EnviarPosiciones.h"
 #include "Comandos/EnviarMapa.h"
-#include "SocketPeerException.h"
-#include "Acciones/Acelerar.h"
-#include "Acciones/Frenar.h"
-#include "Acciones/GiroADerecha.h"
-#include "Acciones/GiroAIzquierda.h"
+#include "Sockets/SocketPeerException.h"
+#include "../Acciones/Acelerar.h"
+#include "../Acciones/Frenar.h"
+#include "../Acciones/GiroADerecha.h"
+#include "../Acciones/GiroAIzquierda.h"
 
 #define MSJ_CMD_INVALIDO "Comando invalido"
-
-#define CMD_ACELERAR "acelarar"
-
+#define CMD_ACELERAR "acelerar"
 #define CMD_FRENAR "frenar"
-
 #define CMD_DERECHA "doblar derecha"
-
 #define CMD_IZQUIERDA "doblar izquierda"
 
 ClienteProxy::ClienteProxy(SocketAmigo socketCliente, Partida &partida) :
@@ -63,7 +54,7 @@ void ClienteProxy::desconectar() {
 }
 
 void ClienteProxy::recibirAccion() {
-    std::string accion = protocolo.recibir();
+  std::string accion = protocolo.recibir();
     if (accion == CMD_ACELERAR){
       movimientos.push(std::unique_ptr<Accion>(new Acelerar()));
     }else if (accion == CMD_FRENAR){
@@ -78,6 +69,6 @@ void ClienteProxy::recibirAccion() {
 void ClienteProxy::ejecutarAccion(Carro *autinio) {
     if (!movimientos.empty()){
       autinio->ejecutarAccion(movimientos.front().get());
-
+      movimientos.pop();
     }
 }

@@ -2,7 +2,7 @@
 #define _ACELERAR_H_
 
 #include "Accion.h"
-#include "../Carro/EstadoVelocidad.h"
+#include "../Objetos/Carro/EstadoVelocidad.h"
 
 class Acelerar: public Accion {
   public:

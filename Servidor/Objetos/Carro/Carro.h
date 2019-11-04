@@ -2,8 +2,8 @@
 #define _CARRO_H_
 
 #include "Box2D/Box2D.h"
-#include "../Pista.h"
-#include "../Acciones/Accion.h"
+#include "../../Partida/Pista.h"
+#include "../../Acciones/Accion.h"
 #include "../Objeto.h"
 #include "Vida.h"
 #include "Visibilidad.h"

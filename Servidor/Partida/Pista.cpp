@@ -1,5 +1,5 @@
 #include "Pista.h"
-#include "Objeto.h"
+#include "../Objetos/Objeto.h"
 
 Pista::Pista(): pista(b2Vec2(0.0f, 0.0f)) {
   pista.SetContactListener(&manejadorDeContactos);

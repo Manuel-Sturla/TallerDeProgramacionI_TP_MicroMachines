@@ -2,7 +2,7 @@
 #define _PLANODERECTA_H_
 
 #include "PlanoDeSuelo.h"
-#include "../Mapa.h"
+#include "../Partida/Mapa.h"
 
 class PlanoDeRecta: public PlanoDeSuelo {
   private:

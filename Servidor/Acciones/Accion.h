@@ -2,8 +2,8 @@
 #define _ACCION_H_
 
 #include "Box2D/Box2D.h"
-#include "../Carro/Velocidad.h"
-#include "../Carro/EstadoVelocidad.h"
+#include "../Objetos/Carro/Velocidad.h"
+#include "../Objetos/Carro/EstadoVelocidad.h"
 
 class Accion {
   protected:

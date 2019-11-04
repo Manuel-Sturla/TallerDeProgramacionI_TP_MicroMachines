@@ -5,7 +5,7 @@
 #ifndef PROTOCOLO_PROTOCOLO_H
 #define PROTOCOLO_PROTOCOLO_H
 
-#include "SocketAmigo.h"
+#include "Sockets/SocketAmigo.h"
 #include <vector>
 
 class Protocolo {

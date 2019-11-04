@@ -1,6 +1,6 @@
 #include "Servidor.h"
-#include "Partida.h"
-#include "ClienteProxy.h"
+#include "Partida/Partida.h"
+#include "Comunicacion/ClienteProxy.h"
 #include <fstream>
 #include <iostream>
 #include <memory>
@@ -47,8 +47,9 @@ void Servidor::run() {
   clienteProxy.ejecutarComando();
   while (clienteProxy.estaConectado()){
     clienteProxy.recibirAccion();
+    clienteProxy.ejecutarAccion(partida.getCarro());
     partida.simular();
     partida.actualizar();
-    clienteProxy.ejecutarComando();
+    //clienteProxy.ejecutarComando();
   }
 }

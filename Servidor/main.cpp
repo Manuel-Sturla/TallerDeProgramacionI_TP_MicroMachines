@@ -1,4 +1,4 @@
-#include "Partida.h"
+#include "Partida/Partida.h"
 #include "Servidor.h"
 
 int main() {

@@ -1,5 +1,5 @@
 #include "Mapa.h"
-#include "Acciones/GiroAIzquierda.h"
+#include "../Acciones/GiroAIzquierda.h"
 
 #define ANGULO_PARA_GIRO b2_pi / 4 //HARDCODEADO
 #define VELOCIDAD_MAXIMA 5 //HARCODEADO
@@ -46,7 +46,6 @@ void Mapa::simular() {
 
 void Mapa::empaquetarCarro(std::vector<std::string> *destino) {
   carro.empaquetar(destino);
-  carro.imprimirPosicion();
 }
 
 void Mapa::empaquetarSuelos(std::vector<std::string> *destino) {

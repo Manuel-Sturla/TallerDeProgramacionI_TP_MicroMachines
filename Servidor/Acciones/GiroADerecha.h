@@ -2,7 +2,7 @@
 #define _GIROADERECHA_H_
 
 #include "Accion.h"
-#include "../Carro/EstadoVelocidad.h"
+#include "../Objetos/Carro/EstadoVelocidad.h"
 
 class GiroADerecha: public Accion {
   public:
