@@ -24,6 +24,8 @@ class Partida {
 
     std::vector<std::string>& obtenerMapa();
 
+    Carro* getCarro();
+
     void actualizar();
 
     void crearPista(PlanoDePista *planoDePista);

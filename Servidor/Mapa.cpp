@@ -46,6 +46,7 @@ void Mapa::simular() {
 
 void Mapa::empaquetarCarro(std::vector<std::string> *destino) {
   carro.empaquetar(destino);
+  carro.imprimirPosicion();
 }
 
 void Mapa::empaquetarSuelos(std::vector<std::string> *destino) {
@@ -58,4 +59,8 @@ void Mapa::empaquetarSuelos(std::vector<std::string> *destino) {
   for (itCurvas = curvas.begin(); itCurvas != curvas.end(); itCurvas++) {
     itCurvas ->empaquetar(destino);
   }
+}
+
+Carro *Mapa::getCarro() {
+  return &carro;
 }

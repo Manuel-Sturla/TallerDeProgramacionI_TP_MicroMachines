@@ -12,7 +12,7 @@ set(SOURCE_FILES main.cpp SocketPasivo.cpp SocketAmigo.cpp Servidor.cpp Planos/P
         Modificadores/Boost.cpp Modificadores/Barro.cpp Modificadores/Aceite.cpp Carro/Visibilidad.cpp Carro/Agarre.cpp Partida.cpp
         Modificadores/Piedra.cpp Carro/Carro.cpp)
 
-add_executable(tp main.cpp ClienteProxy.cpp Comandos/AgregarMovimiento.cpp Comandos/Comando.cpp Comandos/ElegirPartida.cpp Comandos/EnviarMapa.cpp Comandos/EnviarPosiciones.cpp
+add_executable(tp main.cpp ClienteProxy.cpp Comandos/Comando.cpp Comandos/ElegirPartida.cpp Comandos/EnviarMapa.cpp Comandos/EnviarPosiciones.cpp
         Utilidades.cpp
         SocketPasivo.cpp Protocolo.cpp SocketAmigo.cpp SocketPassiveException.cpp SocketPeerException.cpp SocketPassiveException.cpp SocketException.cpp Servidor.cpp Planos/PlanoDePista.cpp Pista.cpp Acciones/Accion.cpp Acciones/Acelerar.cpp Acciones/Frenar.cpp
         Acciones/GiroAIzquierda.cpp Acciones/GiroADerecha.cpp Carro/Vida.cpp Modificadores/Modificador.cpp Modificadores/CajaDeSalud.cpp Modificadores/Piedra.cpp

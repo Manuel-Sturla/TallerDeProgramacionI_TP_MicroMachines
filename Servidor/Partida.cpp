@@ -30,3 +30,7 @@ void Partida::actualizar() {
 std::vector<std::string> &Partida::obtenerMapa() {
   return suelos;
 }
+
+Carro *Partida::getCarro() {
+  return mapa.getCarro();
+}

@@ -1,0 +1,7 @@
+/home/hugo/Escritorio/MicroMachines/Client/CMakeFiles/install/strip.dir
+/home/hugo/Escritorio/MicroMachines/Client/CMakeFiles/edit_cache.dir
+/home/hugo/Escritorio/MicroMachines/Client/CMakeFiles/install.dir
+/home/hugo/Escritorio/MicroMachines/Client/CMakeFiles/rebuild_cache.dir
+/home/hugo/Escritorio/MicroMachines/Client/CMakeFiles/list_install_components.dir
+/home/hugo/Escritorio/MicroMachines/Client/CMakeFiles/client.dir
+/home/hugo/Escritorio/MicroMachines/Client/CMakeFiles/install/local.dir

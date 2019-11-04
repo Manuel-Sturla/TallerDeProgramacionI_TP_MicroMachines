@@ -27,6 +27,8 @@ class Mapa {
 
     Pista* darPista();
 
+    Carro* getCarro();
+
     void empaquetarCarro(std::vector<std::string> *destino);
 
     void empaquetarSuelos(std::vector<std::string> *destino);
