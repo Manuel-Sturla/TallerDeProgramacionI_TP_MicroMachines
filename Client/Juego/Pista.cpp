@@ -25,7 +25,7 @@ void Pista::crear(std::vector<std::string> mensaje) {
             agregarRecta(std::stoi(mensaje[4*i+1]), -1*std::stoi(mensaje[4*i+2]), std::stoi(mensaje[4*i+3]));
         } else if(mensaje[4*i] == "Curva"){
             agregarCurva(std::stoi(mensaje[4*i+1]), -1*std::stoi(mensaje[4*i+2]), std::stoi(mensaje[4*i+3]));
-        } else if(mensaje[4*i] == "Pasto"){
+        } else if(mensaje[4*i] == "Pasto" || mensaje[4*i] == "Limite"){
             agregarPasto(std::stoi(mensaje[4*i+1]), -1*std::stoi(mensaje[4*i+2]), std::stoi(mensaje[4*i+3]));
         } else {
             throw ExcepcionConPos(__FILE__, __LINE__, "Tipo de pista invalido" + mensaje[i]);
