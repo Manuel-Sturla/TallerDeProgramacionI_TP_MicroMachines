@@ -50,6 +50,6 @@ void Servidor::run() {
     clienteProxy.ejecutarAccion(partida.getCarro());
     partida.simular();
     partida.actualizar();
-    //clienteProxy.ejecutarComando();
+    clienteProxy.ejecutarComando();
   }
 }

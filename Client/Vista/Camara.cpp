@@ -12,36 +12,39 @@ Camara::Camara(int tamPantalla, int aumento) {
     this->tamPantalla = tamPantalla;
 }
 
-SDL_Rect Camara::obtenerPosImpresion(SDL_Rect posPista) {
+SDL_Rect Camara::obtenerPosImpresion(pos_t posTextura) {
     if(posAuto == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, "La partida no fue inicializada");
     }
-    SDL_Rect rectAuto = posAuto->getRect();
-    amplificarValores(rectAuto);
-    amplificarValores(posPista);
-    if(esAuto(rectAuto, posPista)){
-        posPista.x -= rectAuto.w/2;
-        posPista.y -= rectAuto.h/2;
-    }
-    posPista.x -= rectAuto.x - tamPantalla/2;
-    posPista.y -= rectAuto.y - tamPantalla/2;
-    return posPista;
+    pos_t aux = posAuto->getPosicion();
+//    std::cout<<"Pos posta: "<<posTextura.x<<','<<posTextura.y<<'\n';
+    amplificarValores(aux);
+    amplificarValores(posTextura);
+    posTextura.x -= posTextura.w/2;
+    posTextura.y -= posTextura.h/2;
+    SDL_Rect posImpresion;
+    posImpresion.x = (int)posTextura.x;
+    posImpresion.y = (int)posTextura.y;
+    posImpresion.h = (int)posTextura.w;
+    posImpresion.w = (int)posTextura.h;
+    posImpresion.x += tamPantalla / 2;
+    posImpresion.y += tamPantalla / 2;
+//    std::cout<<posImpresion.x<<','<<posImpresion.y<<'\n';
+    return posImpresion;
 }
 
 void Camara::setPosAuto(Posicion *pos) {
     posAuto = pos;
 }
 
-void Camara::amplificarValores(SDL_Rect &rect) {
-    rect.x -= rect.w/2;
-    rect.y -= rect.h/2;
-    rect.x = rect.x * aumento;
-    rect.y = rect.y * aumento;
-    rect.w = rect.w * aumento;
-    rect.h = rect.h * aumento;
+void Camara::amplificarValores(pos_t &pos) {
+    pos.x *= aumento;
+    pos.y *= aumento;
+    pos.w *= aumento;
+    pos.h *= aumento;
 }
 
-bool Camara::esAuto(SDL_Rect &rectAuto, SDL_Rect &posPista) {
-    return ((rectAuto.x == posPista.x) && (rectAuto.y == posPista.y)\
-    && (rectAuto.w == posPista.w) && (rectAuto.h == posPista.h));
+bool Camara::esAuto(pos_t &posAuto, pos_t &posText) {
+    return posText.x == posAuto.x && posText.y == posAuto.y && posText.w == posAuto.w\
+    && posText.h == posAuto.h;
 }

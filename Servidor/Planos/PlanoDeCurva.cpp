@@ -8,9 +8,9 @@ PlanoDeCurva::PlanoDeCurva(const std::string& configuracion) {
   std::istringstream stringConfiguracion(configuracion);
   std::string posicionString;
   getline(stringConfiguracion, posicionString, ',');
-  posicionX = stoi(posicionString) * MITAD_DE_LARGO_DE_SUELO;
+  posicionX = stoi(posicionString);
   getline(stringConfiguracion, posicionString, ',');
-  posicionY = stoi(posicionString) * MITAD_DE_LARGO_DE_SUELO;
+  posicionY = stoi(posicionString);
   getline(stringConfiguracion, tipo, ','); //SOSPECHOSO
 }
 
