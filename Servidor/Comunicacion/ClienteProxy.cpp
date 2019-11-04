@@ -15,13 +15,15 @@
 #define CMD_DERECHA "doblar derecha"
 #define CMD_IZQUIERDA "doblar izquierda"
 
-ClienteProxy::ClienteProxy(SocketAmigo socketCliente, Partida &partida) :
+#define SALIR "salir"
+
+ClienteProxy::ClienteProxy(SocketAmigo socketCliente, Servidor &servidor, Partida& partida) :
 protocolo(std::move(socketCliente)), conectado(true){
     //Creo un hash de partidas hardcodeado, despues el cliente proxy recibirá el servidor con su hash
-    std::map<std::string, std::string> partidas;
-    partidas["Partida1"] = "Mira que loco";
-    comandos.emplace("PAR", new ElegirPartida(protocolo, partidas));
+    comandos.emplace("PAR", new ElegirPartida(protocolo, servidor));
+    //comandos.emplace("POS", new EnviarPosiciones(protocolo, servidor.obtenerPartidas()["prueba"].obtenerExtras(), servidor.obtenerPartidas()["prueba"].obtenerAutos()));
     comandos.emplace("POS", new EnviarPosiciones(protocolo, partida.obtenerExtras(), partida.obtenerAutos()));
+    //comandos.emplace("MAP", neS", new EnviarPosiciones(protocolo, servidor.obtenerPartidas()["prueba"].obtenerExtras(), servidor.obtenerPartidas()["prueba"].obtenerAutos()));
     comandos.emplace("MAP", new EnviarMapa(protocolo, partida.obtenerMapa()));
 }
 
@@ -63,6 +65,8 @@ void ClienteProxy::recibirAccion() {
       movimientos.push(std::unique_ptr<Accion>(new GiroADerecha()));
     }else if (accion == CMD_IZQUIERDA){
       movimientos.push(std::unique_ptr<Accion>(new GiroAIzquierda()));
+    }else if (accion == SALIR){
+        conectado = false;
     }
 }
 
@@ -70,5 +74,19 @@ void ClienteProxy::ejecutarAccion(Carro *autinio) {
     if (!movimientos.empty()){
       autinio->ejecutarAccion(movimientos.front().get());
       movimientos.pop();
+    }
+}
+
+void ClienteProxy::enviarPosiciones() {
+    comandos["POS"]->ejecutar();
+}
+
+void ClienteProxy::run() {
+    try{
+        while (estaConectado()){
+            recibirAccion();
+        }
+    }catch (SocketPeerException &e){
+        conectado = false;
     }
 }

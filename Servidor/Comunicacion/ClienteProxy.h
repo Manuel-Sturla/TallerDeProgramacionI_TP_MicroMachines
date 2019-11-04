@@ -9,17 +9,21 @@
 #include "Protocolo.h"
 #include "Comandos/Comando.h"
 #include "../Partida/Partida.h"
+#include "../Servidor.h"
 
-class ClienteProxy {
+class ClienteProxy: public Hilo {
     Protocolo protocolo;
     std::queue<std::unique_ptr<Accion>> movimientos;
     std::unordered_map<std::string, std::unique_ptr<Comando>> comandos;
     std::atomic<bool> conectado;
 public:
-    ClienteProxy(SocketAmigo socketCliente, Partida &partida);
+    ClienteProxy(SocketAmigo socketCliente, Servidor &servidor, Partida& partida);
+
+    void run() override;
 
     void ejecutarComando();
     void recibirAccion(); // Se hace en un hilo aparte que recibe acciones todo el tiempo y las encola
+    void enviarPosiciones();
     void desconectar();
     void ejecutarAccion(Carro *autinio);
     ~ClienteProxy();

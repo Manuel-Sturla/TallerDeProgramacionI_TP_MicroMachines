@@ -1,20 +1,20 @@
 #include "Servidor.h"
 #include "Partida/Partida.h"
 #include "Comunicacion/ClienteProxy.h"
+#include "Comunicacion/Sockets/SocketPeerException.h"
 #include <fstream>
 #include <iostream>
 #include <memory>
+#include <map>
+#include <string>
 
-Servidor::Servidor(SocketPasivo *unSocketPasivo) {
+
+Servidor::Servidor(const std::string& servicio): socketPasivo(servicio), continuar(true) {
   levantarPistas();
-  socketPasivo = unSocketPasivo;
-  //HARDCODEAR SERVICIOOOOOOOOOOOOOOOOOO
-  socketPasivo ->unirse("7777");
-  socketPasivo -> escuchar();
 }
 
 void Servidor::levantarPistas() {
-  std::ifstream pistas("Pistas.txt", std::ifstream::in);
+  std::ifstream pistas("../Pistas.txt", std::ifstream::in);
   std::string linea;
   while (!pistas.eof()) {
     getline(pistas, linea);
@@ -39,17 +39,35 @@ Servidor::~Servidor() {
 }
 
 void Servidor::run() {
-  Partida partida;
-  SocketAmigo socketAmigo = std::move(socketPasivo -> aceptarCliente());
-  ClienteProxy clienteProxy(std::move(socketAmigo), partida);
-  partida.crearPista(planosDePistas["Prueba 1"]);
-  partida.actualizar();
-  clienteProxy.ejecutarComando();
-  while (clienteProxy.estaConectado()){
-    clienteProxy.recibirAccion();
-    clienteProxy.ejecutarAccion(partida.getCarro());
-    partida.simular();
+
+    //Acepto cliente y se une/crea partida
+    //partidas.emplace(std::make_pair("prueba",Partida{}));
+    //Partida partida = partidas["prueba"];
+    Partida partida;
+    partida.crearPista(planosDePistas["Prueba 1"]);
     partida.actualizar();
-    //clienteProxy.ejecutarComando();
-  }
+    SocketAmigo socketAmigo = std::move(socketPasivo.aceptarCliente());
+    ClienteProxy clienteProxy(std::move(socketAmigo), *this, partida);
+    clienteProxy.ejecutarComando();
+    clienteProxy.start();
+    //
+    //Esto de aca abajo va ir al hilo de la partida
+
+    while (continuar){
+        try{
+            clienteProxy.ejecutarAccion(partida.getCarro());
+            partida.simular();
+            partida.actualizar();
+            clienteProxy.enviarPosiciones();
+
+        }catch (SocketPeerException &e){
+            continuar = false;
+        }
+    }
+    clienteProxy.join();
+
+}
+
+std::map<std::string, Partida>& Servidor::obtenerPartidas() {
+    return partidas;
 }

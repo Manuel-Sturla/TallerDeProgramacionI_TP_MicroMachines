@@ -9,12 +9,13 @@
 #include <map>
 #include "../Protocolo.h"
 #include "Comando.h"
+#include "../../Servidor.h"
 
 class ElegirPartida: public Comando {
     Protocolo& protocolo;
-    std::map<std::string, std::string>& partidas;
+    Servidor& servidor;
 public:
-    explicit ElegirPartida(Protocolo &protocolo, std::map<std::string, std::string> &partidas);
+    explicit ElegirPartida(Protocolo &protocolo, Servidor &servidor);
 
     void ejecutar() override;
 

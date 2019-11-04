@@ -92,10 +92,22 @@ Curva::Curva(const Curva &otraCurva) {
   this -> cuerpo = otraCurva.cuerpo;
   this -> asfalto = otraCurva.asfalto;
   this -> pasto = otraCurva.pasto;
+    this -> interaccion = otraCurva.interaccion;
 }
 
 void Curva::empaquetar(std::vector<std::string> *destino) {
   destino -> emplace_back("Curva");
   empaquetarPosicion(destino);
   empaquetarAngulo(destino);
+}
+
+Curva &Curva::operator=(const Curva &otraCurva) {
+    if (this == &otraCurva) {
+        return *this;
+    }
+    this -> cuerpo = otraCurva.cuerpo;
+    this -> asfalto = otraCurva.asfalto;
+    this -> pasto = otraCurva.pasto;
+    this -> interaccion = otraCurva.interaccion;
+    return *this;
 }

@@ -23,6 +23,8 @@ void Partida::simular() {
 }
 
 void Partida::actualizar() {
+    autos.clear();
+    suelos.clear();
   mapa.empaquetarSuelos(&suelos);
   mapa.empaquetarCarro(&autos);
 }
