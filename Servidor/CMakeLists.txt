@@ -11,7 +11,7 @@ set(SOURCE_FILES main.cpp Comunicacion/Sockets/SocketPasivo.cpp Comunicacion/Soc
         Acciones/GiroADerecha.cpp Acciones/Acelerar.cpp Objetos/Carro/Vida.cpp Objetos/Modificadores/Modificador.cpp Objetos/Modificadores/CajaDeSalud.cpp Objetos/Carro/VelocidadBase.cpp
         Objetos/Carro/VelocidadBoost.cpp Objetos/Carro/EstadoVelocidad.cpp Objetos/Suelos/Curva.cpp
         Objetos/Modificadores/Boost.cpp Objetos/Modificadores/Barro.cpp Objetos/Modificadores/Aceite.cpp Objetos/Carro/Visibilidad.cpp Objetos/Carro/Agarre.cpp Partida/Partida.cpp
-        Objetos/Modificadores/Piedra.cpp Objetos/Carro/Carro.cpp Hilo.h Planos/PlanoDeCarro.cpp Planos/PlanoDeCarro.h ConfiguracionServidor.cpp ConfiguracionServidor.h)
+        Objetos/Modificadores/Piedra.cpp Objetos/Carro/Carro.cpp Hilo.h Planos/PlanoDeCarro.cpp Planos/PlanoDeCarro.h ConfiguracionServidor.cpp ConfiguracionServidor.h ServidorException.cpp ServidorException.h)
 
 add_executable(tp ${SOURCE_FILES} main.cpp Comunicacion/ClienteProxy.cpp Comunicacion/Comandos/Comando.cpp Comunicacion/Comandos/ElegirPartida.cpp Comunicacion/Comandos/EnviarMapa.cpp Comunicacion/Comandos/EnviarPosiciones.cpp
         Comunicacion/Utilidades.cpp
