@@ -16,16 +16,12 @@
 #define CMD_IZQUIERDA "doblar izquierda"
 #define SALIR "salir"
 
-ClienteProxy::ClienteProxy(SocketAmigo socketCliente, Servidor &servidor,
-                           Partida &partida,
-                           Carro *unCarro) :
+ClienteProxy::ClienteProxy(SocketAmigo socketCliente, Servidor &servidor, Carro *unCarro) :
 protocolo(std::move(socketCliente)), conectado(true){
     //Creo un hash de partidas hardcodeado, despues el cliente proxy recibirá el servidor con su hash
     comandos.emplace("PAR", new ElegirPartida(protocolo, servidor));
     //comandos.emplace("POS", new EnviarPosiciones(protocolo, servidor.obtenerPartidas()["prueba"].obtenerExtras(), servidor.obtenerPartidas()["prueba"].obtenerAutos()));
-    comandos.emplace("POS", new EnviarPosiciones(protocolo, partida.obtenerExtras(), partida.obtenerAutos()));
     //comandos.emplace("MAP", neS", new EnviarPosiciones(protocolo, servidor.obtenerPartidas()["prueba"].obtenerExtras(), servidor.obtenerPartidas()["prueba"].obtenerAutos()));
-    comandos.emplace("MAP", new EnviarMapa(protocolo, partida.obtenerMapa()));
     miCarro = unCarro;
 }
 
@@ -91,4 +87,12 @@ void ClienteProxy::run() {
     }catch (SocketPeerException &e){
         conectado = false;
     }
+}
+
+void ClienteProxy::unirseAPartida() {
+    comandos["PAR"]->ejecutar();
+}
+
+bool ClienteProxy::estaMuerto() {
+    return conectado;
 }
