@@ -17,9 +17,10 @@ SDL_Rect Camara::obtenerPosImpresion(pos_t posTextura) {
         throw ExcepcionConPos(__FILE__, __LINE__, "La partida no fue inicializada");
     }
     pos_t aux = posAuto->getPosicion();
-    std::cout<<"Pos auto: "<<aux.x<<','<<aux.y<<'\n';
     amplificarValores(aux);
     amplificarValores(posTextura);
+    posTextura.x -= aux.x;
+    posTextura.y -= aux.y;
     posTextura.x -= posTextura.w/2;
     posTextura.y -= posTextura.h/2;
     SDL_Rect posImpresion;
@@ -29,11 +30,10 @@ SDL_Rect Camara::obtenerPosImpresion(pos_t posTextura) {
     posImpresion.w = (int)posTextura.h;
     posImpresion.x += tamPantalla / 2;
     posImpresion.y += tamPantalla / 2;
-//    std::cout<<posImpresion.x<<','<<posImpresion.y<<'\n';
     return posImpresion;
 }
 
-void Camara::setPosAuto(Posicion *pos) {
+void Camara::setAuto(Posicion *pos) {
     posAuto = pos;
 }
 
@@ -44,7 +44,16 @@ void Camara::amplificarValores(pos_t &pos) {
     pos.h *= aumento;
 }
 
-bool Camara::esAuto(pos_t &posAuto, pos_t &posText) {
-    return posText.x == posAuto.x && posText.y == posAuto.y && posText.w == posAuto.w\
-    && posText.h == posAuto.h;
+int Camara::obtenerAngulo(int angulo) {
+    return (-1*angulo-90);
+}
+
+bool Camara::estaEnRango(pos_t posTextura) {
+    pos_t aux = posAuto->getPosicion();
+    if(abs(posTextura.x-aux.x) > (tamPantalla/aumento + posTextura.w)/2){
+        return false;
+    } else if(abs(posTextura.y-aux.y) > (tamPantalla/aumento + posTextura.h)/2) {
+        return false;
+    }
+    return true;
 }

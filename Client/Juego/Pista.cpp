@@ -22,8 +22,6 @@ void Pista::crear(std::vector<std::string> mensaje) {
     }
     for(unsigned long i = 0; i < mensaje.size()/4; ++i){
         if(mensaje[4*i] == "Asfalto"){
-            std::cout<<"AAAAAAA\n";
-            std::cout<<mensaje[4*i+1]<<','<<mensaje[4*i+2]<<'\n';
             agregarRecta(std::stoi(mensaje[4*i+1]), -1*std::stoi(mensaje[4*i+2]), std::stoi(mensaje[4*i+3]));
         } else if(mensaje[4*i] == "Curva"){
             agregarCurva(std::stoi(mensaje[4*i+1]), -1*std::stoi(mensaje[4*i+2]), std::stoi(mensaje[4*i+3]));

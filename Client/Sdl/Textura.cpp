@@ -27,8 +27,12 @@ void Textura::copiar(SDL_Renderer *renderizador, Camara& camara) {
             throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
         }
     } else {
+        if(!camara.estaEnRango(posicion->getPosicion())){
+            return;
+        }
         SDL_Rect posImpresion = camara.obtenerPosImpresion(posicion->getPosicion());
-        if(SDL_RenderCopyEx(renderizador, textura, nullptr, &posImpresion, posicion->getAngulo(), nullptr, SDL_FLIP_VERTICAL)<0){
+        if(SDL_RenderCopyEx(renderizador, textura, nullptr, &posImpresion,\
+        camara.obtenerAngulo(posicion->getAngulo()), nullptr, SDL_FLIP_NONE)<0){
             throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
         }
     }

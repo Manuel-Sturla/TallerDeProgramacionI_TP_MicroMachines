@@ -32,8 +32,6 @@ public:
     void rotar(int angulo);
 
     int getAngulo();
-
-//    bool estaEnRango(int ancho, int largo);
 };
 
 

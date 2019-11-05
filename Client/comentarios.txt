@@ -14,3 +14,6 @@ Errores en movimiento:
 1) Angulo huguito es cero en x y el mio es 0 en y.
 2) Se mueve a la velocidad de la luz.
 3) el agunlo de huguito es en radianes y el de diego son enteros.
+
+ - Conviene que gire la pantalla con el autito?
+ - 

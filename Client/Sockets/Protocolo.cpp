@@ -2,6 +2,7 @@
 // Created by manfer on 31/10/19.
 //
 
+#include <iostream>
 #include "Protocolo.h"
 #define LONG_EN_BYTES 1
 void Protocolo::enviar(const std::string &mensaje) {

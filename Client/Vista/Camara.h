@@ -13,16 +13,19 @@ private:
     Posicion* posAuto;
     int tamPantalla;
     int aumento;
+    int offset;
     void amplificarValores(pos_t &pos);
 
 public:
     explicit Camara(int tamPantalla, int aumento);
 
-    void setPosAuto(Posicion* pos);
+    void setAuto(Posicion *pos);
 
     SDL_Rect obtenerPosImpresion(pos_t posTextura);
 
-    bool esAuto(pos_t &posAuto, pos_t &posText);
+    int obtenerAngulo(int angulo);
+
+    bool estaEnRango(pos_t posTextura);
 };
 
 

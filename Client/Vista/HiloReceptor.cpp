@@ -10,7 +10,7 @@
 
 HiloReceptor::HiloReceptor(Renderizador& renderizador, ServidorProxy &servidor, Camara &camara, bool& keepTalking) : keepTalking(keepTalking)\
 , servidor(servidor), miAuto(renderizador, 1){
-    camara.setPosAuto(&miAuto.getPos());
+    camara.setAuto(&miAuto.getPos());
 }
 
 void HiloReceptor::run() {
@@ -20,7 +20,7 @@ void HiloReceptor::run() {
             std::vector<std::string> extras;
             servidor.obtenerPosiciones(extras, autos);
             float posX = std::stof(autos[0]);
-            float posY = std::stof(autos[1]);
+            float posY = std::stof(autos[1])*(-1);
             int angulo = (int)std::stof(autos[2]);
             miAuto.mover(posX, posY, angulo);
         }

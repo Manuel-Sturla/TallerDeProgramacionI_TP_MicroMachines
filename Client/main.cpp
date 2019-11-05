@@ -3,7 +3,6 @@
 #include <SDL2/SDL_image.h>
 #include "Excepciones/ExcepcionConPos.h"
 #include "Juego/Partida.h"
-#include "HiloMenu.h"
 
 int main(int argc, char const* argv[]) {
     if(argc != 3){
