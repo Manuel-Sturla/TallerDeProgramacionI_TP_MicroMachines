@@ -1,5 +1,6 @@
 #include <fstream>
 #include "ConfiguracionServidor.h"
+#include "ServidorException.h"
 
 ConfiguracionServidor::ConfiguracionServidor() {
     levantarPistas();
@@ -8,6 +9,9 @@ ConfiguracionServidor::ConfiguracionServidor() {
 
 void ConfiguracionServidor::levantarPistas() {
     std::ifstream pistas("../Pistas.txt", std::ifstream::in);
+    if (!pistas.is_open()){
+        throw ServidorException("Error al abrir el archivo de pistas", __LINE__, __FILE__);
+    }
     std::string linea;
     while (!pistas.eof()) {
         getline(pistas, linea);
@@ -37,6 +41,9 @@ ConfiguracionServidor::~ConfiguracionServidor() {
 
 void ConfiguracionServidor::levantarCarros() {
     std::ifstream carros("../Carros.txt", std::ifstream::in);
+    if (!carros.is_open()){
+        throw ServidorException("No se pudo abrir el archivo de Carros", __LINE__, __FILE__);
+    }
     std::string linea;
     while (!carros.eof()) {
         getline(carros, linea);

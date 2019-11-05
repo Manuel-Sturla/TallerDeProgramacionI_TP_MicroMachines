@@ -15,7 +15,11 @@ Servidor::~Servidor() {
 void Servidor::run() {
 
     //Acepto cliente y se une/crea partida
-    //partidas.emplace(std::make_pair("prueba",Partida{}));
+    partidas.emplace(std::piecewise_construct, std::make_tuple("prueba"), std::make_tuple());
+    //Creo que usa el constructor por copia entonces todo  muere. Vale tener punteros para evitar los
+    //constructores?
+    //partidas.emplace(std::pair<std::string, Partida>("prueba2", {}));
+
     //Partida partida = partidas["prueba"];
     Partida partida;
     partida.crearPista(configuracion.darPlanoDePista("Prueba 1"));
