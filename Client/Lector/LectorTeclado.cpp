@@ -4,6 +4,7 @@
 
 #include "LectorTeclado.h"
 #include <SDL2/SDL.h>
+#include <iostream>
 
 SDL_Keycode LectorTeclado::leer() {
     SDL_Event evento;

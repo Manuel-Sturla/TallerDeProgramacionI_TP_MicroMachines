@@ -6,17 +6,59 @@
 
 #IncludeRegexTransform: 
 
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/AdministradorComandos.cpp
+iostream
+-
+SDL2/SDL_events.h
+-
+AdministradorComandos.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/AdministradorComandos.h
+ComandoAcelerar.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoAcelerar.h
+ComandoFrenar.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoFrenar.h
+ComandoIzquierda.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoIzquierda.h
+ComandoDerecha.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoDerecha.h
+ComandoIniciarPartida.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoIniciarPartida.h
+
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/AdministradorComandos.h
+map
+-
+SDL2/SDL_keycode.h
+-
+Comando.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
+ComandoCerrar.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoCerrar.h
+
 /home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
 ../Sockets/ServidorProxy.h
 /home/hugo/Escritorio/MicroMachines/Client/Sockets/ServidorProxy.h
 
-/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoAcelerar.cpp
-iostream
--
-ComandoAcelerar.h
 /home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoAcelerar.h
+Comando.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
 
-/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoAcelerar.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoCerrar.h
+Comando.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
+
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoDerecha.h
+Comando.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
+
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoFrenar.h
+Comando.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
+
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoIniciarPartida.h
+Comando.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
+
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoIzquierda.h
 Comando.h
 /home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
 

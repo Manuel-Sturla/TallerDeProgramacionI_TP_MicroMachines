@@ -89,6 +89,7 @@ CMakeFiles/client.dir/Juego/Juego.cpp.o: Vista/HiloVisualizacion.h
 
 CMakeFiles/client.dir/Juego/Partida.cpp.o: Comandos/AdministradorComandos.h
 CMakeFiles/client.dir/Juego/Partida.cpp.o: Comandos/Comando.h
+CMakeFiles/client.dir/Juego/Partida.cpp.o: Comandos/ComandoCerrar.h
 CMakeFiles/client.dir/Juego/Partida.cpp.o: Hilo.h
 CMakeFiles/client.dir/Juego/Partida.cpp.o: Juego/Auto.h
 CMakeFiles/client.dir/Juego/Partida.cpp.o: Juego/Partida.cpp
@@ -118,6 +119,7 @@ CMakeFiles/client.dir/Juego/Pista.cpp.o: Vista/Camara.h
 
 CMakeFiles/client.dir/Lector/HiloLector.cpp.o: Comandos/AdministradorComandos.h
 CMakeFiles/client.dir/Lector/HiloLector.cpp.o: Comandos/Comando.h
+CMakeFiles/client.dir/Lector/HiloLector.cpp.o: Comandos/ComandoCerrar.h
 CMakeFiles/client.dir/Lector/HiloLector.cpp.o: Hilo.h
 CMakeFiles/client.dir/Lector/HiloLector.cpp.o: Lector/HiloLector.cpp
 CMakeFiles/client.dir/Lector/HiloLector.cpp.o: Lector/HiloLector.h
@@ -221,6 +223,7 @@ CMakeFiles/client.dir/Vista/HiloVisualizacion.cpp.o: Vista/HiloVisualizacion.h
 
 CMakeFiles/client.dir/main.cpp.o: Comandos/AdministradorComandos.h
 CMakeFiles/client.dir/main.cpp.o: Comandos/Comando.h
+CMakeFiles/client.dir/main.cpp.o: Comandos/ComandoCerrar.h
 CMakeFiles/client.dir/main.cpp.o: Excepciones/ExcepcionConPos.h
 CMakeFiles/client.dir/main.cpp.o: Hilo.h
 CMakeFiles/client.dir/main.cpp.o: Juego/Auto.h

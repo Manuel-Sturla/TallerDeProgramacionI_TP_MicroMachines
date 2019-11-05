@@ -90,6 +90,7 @@ CMakeFiles/client.dir/Juego/Juego.cpp.o
 CMakeFiles/client.dir/Juego/Partida.cpp.o
  /home/hugo/Escritorio/MicroMachines/Client/Comandos/AdministradorComandos.h
  /home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
+ /home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoCerrar.h
  /home/hugo/Escritorio/MicroMachines/Client/Hilo.h
  /home/hugo/Escritorio/MicroMachines/Client/Juego/Auto.h
  /home/hugo/Escritorio/MicroMachines/Client/Juego/Partida.cpp
@@ -119,6 +120,7 @@ CMakeFiles/client.dir/Juego/Pista.cpp.o
 CMakeFiles/client.dir/Lector/HiloLector.cpp.o
  /home/hugo/Escritorio/MicroMachines/Client/Comandos/AdministradorComandos.h
  /home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
+ /home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoCerrar.h
  /home/hugo/Escritorio/MicroMachines/Client/Hilo.h
  /home/hugo/Escritorio/MicroMachines/Client/Lector/HiloLector.cpp
  /home/hugo/Escritorio/MicroMachines/Client/Lector/HiloLector.h
@@ -222,6 +224,7 @@ CMakeFiles/client.dir/Vista/HiloVisualizacion.cpp.o
 CMakeFiles/client.dir/main.cpp.o
  /home/hugo/Escritorio/MicroMachines/Client/Comandos/AdministradorComandos.h
  /home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
+ /home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoCerrar.h
  /home/hugo/Escritorio/MicroMachines/Client/Excepciones/ExcepcionConPos.h
  /home/hugo/Escritorio/MicroMachines/Client/Hilo.h
  /home/hugo/Escritorio/MicroMachines/Client/Juego/Auto.h

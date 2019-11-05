@@ -15,19 +15,8 @@ int main(int argc, char const* argv[]) {
     }
     try {
         ServidorProxy servidor(argv[1], argv[2]);
-        Renderizador renderizador("micromachines.exe", 1000, 1000);
         HiloLector lector(servidor);
         lector.start();
-        bool enMenu = true;
-/*        HiloMenu menu(servidor, enMenu);
-        menu.start();
-        renderizador.agregarTextura("inicio.jpeg", nullptr);
-        Camara cam(100);
-        renderizador.copiarTodo(cam);
-        while(enMenu){
-            renderizador.imprimir(20);
-        }
-        menu.join();*/
         bool enPartida = true;
         HiloVisualizacion partida(servidor, enPartida);
         partida.start();
