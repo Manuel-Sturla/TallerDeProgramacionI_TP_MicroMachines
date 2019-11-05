@@ -14,10 +14,11 @@
 #define CMD_FRENAR "frenar"
 #define CMD_DERECHA "doblar derecha"
 #define CMD_IZQUIERDA "doblar izquierda"
-
 #define SALIR "salir"
 
-ClienteProxy::ClienteProxy(SocketAmigo socketCliente, Servidor &servidor, Partida& partida) :
+ClienteProxy::ClienteProxy(SocketAmigo socketCliente, Servidor &servidor,
+                           Partida &partida,
+                           Carro *unCarro) :
 protocolo(std::move(socketCliente)), conectado(true){
     //Creo un hash de partidas hardcodeado, despues el cliente proxy recibirá el servidor con su hash
     comandos.emplace("PAR", new ElegirPartida(protocolo, servidor));
@@ -25,6 +26,7 @@ protocolo(std::move(socketCliente)), conectado(true){
     comandos.emplace("POS", new EnviarPosiciones(protocolo, partida.obtenerExtras(), partida.obtenerAutos()));
     //comandos.emplace("MAP", neS", new EnviarPosiciones(protocolo, servidor.obtenerPartidas()["prueba"].obtenerExtras(), servidor.obtenerPartidas()["prueba"].obtenerAutos()));
     comandos.emplace("MAP", new EnviarMapa(protocolo, partida.obtenerMapa()));
+    miCarro = unCarro;
 }
 
 
@@ -70,9 +72,9 @@ void ClienteProxy::recibirAccion() {
     }
 }
 
-void ClienteProxy::ejecutarAccion(Carro *autinio) {
+void ClienteProxy::ejecutarAccion() {
     if (!movimientos.empty()){
-      autinio->ejecutarAccion(movimientos.front().get());
+      miCarro->ejecutarAccion(movimientos.front().get());
       movimientos.pop();
     }
 }

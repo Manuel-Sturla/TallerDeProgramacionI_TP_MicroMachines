@@ -3,12 +3,13 @@
 
 #include <vector>
 #include "Box2D/Box2D.h"
-#include "Mapa.h"
+#include "Pista.h"
 #include "../Planos/PlanoDePista.h"
+#include "../Planos/PlanoDeCarro.h"
 
 class Partida {
   private:
-    Mapa mapa;
+    Pista pista;
     std::vector<std::string> extras;
     std::vector<std::string> autos;
     std::vector<std::string> suelos;
@@ -24,7 +25,7 @@ class Partida {
 
     std::vector<std::string>& obtenerMapa();
 
-    Carro* getCarro();
+    Carro* agregarCliente(PlanoDeCarro *planoDeCarro);
 
     void actualizar();
 

@@ -1,7 +1,7 @@
 #include "Piedra.h"
 #define DANIO_POR_PIEDRA 25
 
-Piedra::Piedra(Pista *pista, float32 x, float32 y) {
+Piedra::Piedra(MundoBox2D *pista, float32 x, float32 y) {
   b2BodyDef bodyDef;
   bodyDef.type = b2_staticBody;
   bodyDef.position.Set(x, y);

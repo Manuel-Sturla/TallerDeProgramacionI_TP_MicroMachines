@@ -7,32 +7,32 @@ Partida::~Partida() {
 }
 
 void Partida::crearPista(PlanoDePista *planoDePista) {
-  planoDePista -> crearPista(&mapa, mapa.darPista());
+    planoDePista -> crearPista(&pista);
 }
 
 std::vector<std::string> &Partida::obtenerExtras() {
-  return extras;
+    return extras;
 }
 
 std::vector<std::string> &Partida::obtenerAutos() {
-  return autos;
+    return autos;
 }
 
 void Partida::simular() {
-  mapa.simular();
+    pista.simular();
 }
 
 void Partida::actualizar() {
     autos.clear();
     suelos.clear();
-  mapa.empaquetarSuelos(&suelos);
-  mapa.empaquetarCarro(&autos);
+    pista.empaquetarSuelos(&suelos);
+    pista.empaquetarCarro(&autos);
 }
 
 std::vector<std::string> &Partida::obtenerMapa() {
-  return suelos;
+    return suelos;
 }
 
-Carro *Partida::getCarro() {
-  return mapa.getCarro();
+Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro) {
+    return planoDeCarro -> crearCarro(&pista);
 }

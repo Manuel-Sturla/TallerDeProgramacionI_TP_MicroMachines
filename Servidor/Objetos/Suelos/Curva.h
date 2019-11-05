@@ -3,7 +3,7 @@
 
 #include <Box2D/Box2D.h>
 #include "Material.h"
-#include "../../Partida/Pista.h"
+#include "../../Partida/MundoBox2D.h"
 #include "Suelo.h"
 #include "Asfalto.h"
 #include "Pasto.h"
@@ -17,10 +17,10 @@ class Curva: public Suelo {
     Pasto *pasto;
 
   public:
-    Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y,
+    Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y,
           float32 angulo);
 
-    void agregarseAPista(Pista *pista, float32 angulo);
+    void agregarseAPista(MundoBox2D *pista, float32 angulo);
 
     std::string darId();
 

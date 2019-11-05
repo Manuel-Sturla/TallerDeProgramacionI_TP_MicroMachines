@@ -5,7 +5,7 @@
 #include <list>
 #include <memory>
 #include "PlanoDeSuelo.h"
-#include "../Partida/Mapa.h"
+#include "../Partida/Pista.h"
 
 class PlanoDePista {
 private:
@@ -15,7 +15,7 @@ public:
 
     void agregarSuelo(std::string configuracion);
 
-    void crearPista(Mapa *mapa, Pista *pista);
+    void crearPista(Pista *mapa);
 
     ~PlanoDePista();
 };

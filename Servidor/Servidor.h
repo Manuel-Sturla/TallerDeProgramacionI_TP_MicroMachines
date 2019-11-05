@@ -10,16 +10,16 @@
 #include "../Protocolo/Socket/SocketPasivo.h"
 #include "Hilo.h"
 #include "Partida/Partida.h"
+#include "ConfiguracionServidor.h"
 
 class Servidor: public Hilo {
-  private:
-    std::unordered_map<std::string, PlanoDePista*> planosDePistas;
+private:
+    ConfiguracionServidor configuracion;
     SocketPasivo socketPasivo;
     std::map<std::string, Partida> partidas;
     std::atomic<bool> continuar;
-    void levantarPistas();
 
-  public:
+public:
     Servidor(const std::string& servicio);
     std::map<std::string, Partida>& obtenerPartidas();
     void run() override;

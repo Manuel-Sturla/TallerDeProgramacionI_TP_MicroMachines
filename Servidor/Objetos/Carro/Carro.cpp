@@ -1,11 +1,9 @@
 #include "Carro.h"
-#include <math.h>
 #include "VelocidadBase.h"
 #include "../../Acciones/GiroAIzquierda.h"
-#include "../../Acciones/GiroADerecha.h"
 #include <iostream>
 
-Carro::Carro(Pista *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y):
+Carro::Carro(MundoBox2D *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y):
 estadoVelocidad(velocidadMaxima), agarre(agarre) {
   this -> anguloDeGiro = anguloDeGiro;
   agregarseA(pista, x, y);
@@ -13,7 +11,7 @@ estadoVelocidad(velocidadMaxima), agarre(agarre) {
   coeficienteDeRozamiento = 0;
 }
 
-void Carro::agregarseA(Pista *pista, float32 x, float32 y) {
+void Carro::agregarseA(MundoBox2D *pista, float32 x, float32 y) {
   bodyDef.type = b2_dynamicBody;
   bodyDef.position.Set(x, y);
   cuerpo = pista -> agregarObjeto(&bodyDef);

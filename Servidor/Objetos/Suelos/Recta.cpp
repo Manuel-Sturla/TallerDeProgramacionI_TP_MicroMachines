@@ -1,6 +1,6 @@
 #include "Recta.h"
 
-Recta::Recta(Pista *pista, Material *unMaterial, float32 x, float32 y,
+Recta::Recta(MundoBox2D *pista, Material *unMaterial, float32 x, float32 y,
              float32 angulo) {
     material = unMaterial;
     b2BodyDef defCuerpo;

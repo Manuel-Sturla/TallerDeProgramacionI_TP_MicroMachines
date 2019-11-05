@@ -5,7 +5,7 @@
 
 class Aceite: public Modificador {
   public:
-    Aceite(Pista *pista, float32 x, float32 y);
+    Aceite(MundoBox2D *pista, float32 x, float32 y);
 
     void interactuar(Carro* unCarro) override;
 

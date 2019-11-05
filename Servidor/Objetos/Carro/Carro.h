@@ -2,7 +2,7 @@
 #define _CARRO_H_
 
 #include "Box2D/Box2D.h"
-#include "../../Partida/Pista.h"
+#include "../../Partida/MundoBox2D.h"
 #include "../../Acciones/Accion.h"
 #include "../Objeto.h"
 #include "Vida.h"
@@ -23,9 +23,9 @@ class Carro: public Objeto {
 
   public:
     //El agarre debe ser un numero en el intervalo (0 ; 100]
-    Carro(Pista *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32 agarre, float32 x,  float32 y);
+    Carro(MundoBox2D *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32 agarre, float32 x,  float32 y);
 
-    void agregarseA(Pista *pista, float32 x, float32 y);
+    void agregarseA(MundoBox2D *pista, float32 x, float32 y);
 
     void actualizar();
 

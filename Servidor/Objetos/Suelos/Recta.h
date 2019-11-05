@@ -1,7 +1,7 @@
 #ifndef _RECTA_H_
 #define _RECTA_H_
 
-#include "../../Partida/Pista.h"
+#include "../../Partida/MundoBox2D.h"
 #include "Material.h"
 #include "Suelo.h"
 
@@ -10,7 +10,7 @@ class Recta: public Suelo {
     Material *material;
 
   public:
-    Recta(Pista *pista, Material *unMaterial, float32 x, float32 y,
+    Recta(MundoBox2D *pista, Material *unMaterial, float32 x, float32 y,
           float32 angulo);
 
     Recta(Recta &&otraRecta);

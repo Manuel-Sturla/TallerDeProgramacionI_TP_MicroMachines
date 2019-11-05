@@ -14,7 +14,7 @@ PlanoDeRecta::PlanoDeRecta(const std::string& configuracion) {
     getline(stringConfiguracion, tipo, ',');
 }
 
-void PlanoDeRecta::agregarSueloA(Mapa *mapa) {
+void PlanoDeRecta::agregarSueloA(Pista *mapa) {
     mapa->agregarRecta(material, posicionX, posicionY, obtenerAngulo());
 }
 

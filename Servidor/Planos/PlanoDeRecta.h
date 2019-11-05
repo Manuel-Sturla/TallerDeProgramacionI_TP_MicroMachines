@@ -2,7 +2,7 @@
 #define _PLANODERECTA_H_
 
 #include "PlanoDeSuelo.h"
-#include "../Partida/Mapa.h"
+#include "../Partida/Pista.h"
 
 class PlanoDeRecta: public PlanoDeSuelo {
 private:
@@ -15,7 +15,7 @@ private:
 public:
     PlanoDeRecta(const std::string& configuracion);
 
-    void agregarSueloA(Mapa *mapa) override;
+    void agregarSueloA(Pista *mapa) override;
 
     ~PlanoDeRecta();
 };

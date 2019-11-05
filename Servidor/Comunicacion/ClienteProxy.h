@@ -16,8 +16,11 @@ class ClienteProxy: public Hilo {
     std::queue<std::unique_ptr<Accion>> movimientos;
     std::unordered_map<std::string, std::unique_ptr<Comando>> comandos;
     std::atomic<bool> conectado;
+    Carro *miCarro;
 public:
-    ClienteProxy(SocketAmigo socketCliente, Servidor &servidor, Partida& partida);
+    ClienteProxy(SocketAmigo socketCliente, Servidor &servidor,
+                 Partida &partida,
+                 Carro *unCarro);
 
     void run() override;
 
@@ -25,7 +28,7 @@ public:
     void recibirAccion(); // Se hace en un hilo aparte que recibe acciones todo el tiempo y las encola
     void enviarPosiciones();
     void desconectar();
-    void ejecutarAccion(Carro *autinio);
+    void ejecutarAccion();
     ~ClienteProxy();
 
     bool estaConectado();

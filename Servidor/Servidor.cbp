@@ -501,6 +501,12 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Utilidades.h">
 			<Option target="tp"/>
 		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/ConfiguracionServidor.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/ConfiguracionServidor.h">
+			<Option target="tp"/>
+		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Hilo.h">
 			<Option target="tp"/>
 		</Unit>
@@ -636,10 +642,10 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida/ManejadorDeContactos.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida/Mapa.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida/MundoBox2D.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida/Mapa.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida/MundoBox2D.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida/Partida.cpp">
@@ -652,6 +658,12 @@
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida/Pista.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeCarro.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeCarro.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeCurva.cpp">

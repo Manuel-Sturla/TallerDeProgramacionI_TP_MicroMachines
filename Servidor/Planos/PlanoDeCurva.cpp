@@ -15,7 +15,7 @@ PlanoDeCurva::PlanoDeCurva(const std::string& configuracion) {
     getline(stringConfiguracion, tipo, ',');
 }
 
-void PlanoDeCurva::agregarSueloA(Mapa *mapa) {
+void PlanoDeCurva::agregarSueloA(Pista *mapa) {
     mapa->agregarCurva(posicionX, posicionY, obtenerAngulo());
 }
 

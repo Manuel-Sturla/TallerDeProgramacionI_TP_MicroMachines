@@ -3,11 +3,11 @@
 
 #include "Box2D/Box2D.h"
 #include "Modificador.h"
-#include "../../Partida/Pista.h"
+#include "../../Partida/MundoBox2D.h"
 
 class CajaDeSalud: public Modificador {
   public:
-    CajaDeSalud(Pista *pista, float32 x, float32 y);
+    CajaDeSalud(MundoBox2D *pista, float32 x, float32 y);
 
     void interactuar(Carro* unCarro);
 

@@ -1,21 +1,40 @@
 #ifndef _PISTA_H_
 #define _PISTA_H_
 
-#include "Box2D/Box2D.h"
-#include "ManejadorDeContactos.h"
+#include <list>
+#include "../Objetos/Suelos/Pasto.h"
+#include "../Objetos/Suelos/Asfalto.h"
+#include "../Objetos/Suelos/LimiteDePista.h"
+#include "../Objetos/Suelos/Recta.h"
+#include "../Objetos/Suelos/Curva.h"
 
 class Pista {
-  private:
-    b2World pista;
-    ManejadorDeContactos manejadorDeContactos;
-  public:
+private:
+    MundoBox2D mundoBox2D;
+    Asfalto asfalto;
+    Pasto pasto;
+    LimiteDePista limiteDePista;
+    std::list<Recta> rectas;
+    std::list<Curva> curvas;
+    std::list<Carro> carros;
+
+    Material* darMaterial(std::string materialPedido);
+
+public:
     Pista();
 
-    b2Body* agregarObjeto(b2BodyDef* objeto);
+    void simular();
 
-    void simular(float32 tiempo, int32 velocidad, int32 iteraciones);
+    Carro *crearCarro(int velocidad, float32 anguloEnRadianes, int agarre);
 
-    void actualizar();
+    void empaquetarCarro(std::vector<std::string> *destino);
+
+    void empaquetarSuelos(std::vector<std::string> *destino);
+
+    void
+    agregarRecta(std::string &material, float32 x, float32 y, float32 angulo);
+
+    void agregarCurva(float32 x, float32 y, float32 angulo);
 
     ~Pista();
 };

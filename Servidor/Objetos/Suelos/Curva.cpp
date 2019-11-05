@@ -3,7 +3,7 @@
 #define EN_ASFALTO 3
 #define EN_PASTO 2
 
-Curva::Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y,
+Curva::Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y,
              float32 angulo) {
     b2BodyDef defCuerpo;
     defCuerpo.type = b2_staticBody;
@@ -15,7 +15,7 @@ Curva::Curva(Pista *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y,
     interaccion = FUERA_DE_CURVA;
 }
 
-void Curva::agregarseAPista(Pista *pista, float32 angulo) {
+void Curva::agregarseAPista(MundoBox2D *pista, float32 angulo) {
     cuerpo -> SetUserData(this);
     b2PolygonShape caja;
     caja.SetAsBox(2.0f, 2.0f);
