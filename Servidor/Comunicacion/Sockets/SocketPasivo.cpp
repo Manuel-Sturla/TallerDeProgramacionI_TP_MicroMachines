@@ -8,7 +8,7 @@
 SocketPasivo::SocketPasivo() {
   fd = -1;
 }
-SocketPasivo::SocketPasivo(const std::string &servicio) :SocketPasivo(){
+SocketPasivo::SocketPasivo(const std::string &servicio) : SocketPasivo(){
     unirseYEscuchar(servicio);
 }
 

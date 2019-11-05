@@ -7,7 +7,7 @@ ConfiguracionServidor::ConfiguracionServidor() {
 }
 
 void ConfiguracionServidor::levantarPistas() {
-    std::ifstream pistas("Pistas.txt", std::ifstream::in);
+    std::ifstream pistas("../Pistas.txt", std::ifstream::in);
     std::string linea;
     while (!pistas.eof()) {
         getline(pistas, linea);
@@ -36,7 +36,7 @@ ConfiguracionServidor::~ConfiguracionServidor() {
 }
 
 void ConfiguracionServidor::levantarCarros() {
-    std::ifstream carros("Carros.txt", std::ifstream::in);
+    std::ifstream carros("../Carros.txt", std::ifstream::in);
     std::string linea;
     while (!carros.eof()) {
         getline(carros, linea);
