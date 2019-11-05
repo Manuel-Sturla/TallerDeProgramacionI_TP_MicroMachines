@@ -6,57 +6,37 @@
 
 #IncludeRegexTransform: 
 
-/home/hugo/Escritorio/MicroMachines/Client/Excepciones/ExcepcionConPos.h
-stdexcept
--
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
+../Sockets/ServidorProxy.h
+/home/hugo/Escritorio/MicroMachines/Client/Sockets/ServidorProxy.h
 
-/home/hugo/Escritorio/MicroMachines/Client/Sdl/Posicion.h
-SDL2/SDL_rect.h
--
-mutex
--
-vector
--
-
-/home/hugo/Escritorio/MicroMachines/Client/Sdl/Renderizador.cpp
-SDL2/SDL_timer.h
--
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoAcelerar.cpp
 iostream
 -
-Renderizador.h
-/home/hugo/Escritorio/MicroMachines/Client/Sdl/Renderizador.h
-../Excepciones/ExcepcionConPos.h
-/home/hugo/Escritorio/MicroMachines/Client/Excepciones/ExcepcionConPos.h
+ComandoAcelerar.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoAcelerar.h
 
-/home/hugo/Escritorio/MicroMachines/Client/Sdl/Renderizador.h
-SDL2/SDL_system.h
--
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoAcelerar.h
+Comando.h
+/home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h
+
+/home/hugo/Escritorio/MicroMachines/Client/Sockets/Protocolo.h
+SocketAmigo.h
+/home/hugo/Escritorio/MicroMachines/Client/Sockets/SocketAmigo.h
 vector
 -
-Ventana.h
-/home/hugo/Escritorio/MicroMachines/Client/Sdl/Ventana.h
-Posicion.h
-/home/hugo/Escritorio/MicroMachines/Client/Sdl/Posicion.h
-Textura.h
-/home/hugo/Escritorio/MicroMachines/Client/Sdl/Textura.h
-
-/home/hugo/Escritorio/MicroMachines/Client/Sdl/Textura.h
-SDL2/SDL_system.h
--
-Posicion.h
-/home/hugo/Escritorio/MicroMachines/Client/Sdl/Posicion.h
-../Vista/Camara.h
-/home/hugo/Escritorio/MicroMachines/Client/Vista/Camara.h
 string
 -
 
-/home/hugo/Escritorio/MicroMachines/Client/Sdl/Ventana.h
-SDL2/SDL_video.h
+/home/hugo/Escritorio/MicroMachines/Client/Sockets/ServidorProxy.h
+string
 -
-SDL2/SDL_render.h
+vector
 -
+Protocolo.h
+/home/hugo/Escritorio/MicroMachines/Client/Sockets/Protocolo.h
 
-/home/hugo/Escritorio/MicroMachines/Client/Vista/Camara.h
-../Sdl/Posicion.h
-/home/hugo/Escritorio/MicroMachines/Client/Sdl/Posicion.h
+/home/hugo/Escritorio/MicroMachines/Client/Sockets/SocketAmigo.h
+string
+-
 

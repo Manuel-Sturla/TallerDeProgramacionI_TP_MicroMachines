@@ -1,8 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.o"
-  "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.o"
-  "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.o"
-  "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.o"
   "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2BroadPhase.cpp.o"
   "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideCircle.cpp.o"
   "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2CollideEdge.cpp.o"
@@ -11,6 +7,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2Distance.cpp.o"
   "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2DynamicTree.cpp.o"
   "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/b2TimeOfImpact.cpp.o"
+  "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2ChainShape.cpp.o"
+  "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2CircleShape.cpp.o"
+  "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2EdgeShape.cpp.o"
+  "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Collision/Shapes/b2PolygonShape.cpp.o"
   "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2BlockAllocator.cpp.o"
   "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Draw.cpp.o"
   "CMakeFiles/Box2D-cmake.dir/Box2D/Box2D/Common/b2Math.cpp.o"
@@ -51,8 +51,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_demo.cpp.o"
   "CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_draw.cpp.o"
   "CMakeFiles/Box2D-cmake.dir/Box2D/Testbed/imgui/imgui_impl_glfw_gl3.cpp.o"
-  "libBox2D-cmake.a"
   "libBox2D-cmake.pdb"
+  "libBox2D-cmake.a"
 )
 
 # Per-language clean rules from dependency scanning.

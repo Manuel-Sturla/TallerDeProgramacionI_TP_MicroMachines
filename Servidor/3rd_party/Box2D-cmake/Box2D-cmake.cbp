@@ -11,10 +11,10 @@
 				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Box2D-cmake">
@@ -25,12 +25,20 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 Box2D-cmake"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 Box2D-cmake"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Box2D-cmake/fast">
@@ -41,12 +49,20 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 Box2D-cmake/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 Box2D-cmake/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>

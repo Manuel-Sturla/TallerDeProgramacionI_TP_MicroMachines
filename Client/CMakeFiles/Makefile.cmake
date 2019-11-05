@@ -27,7 +27,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeDetermineCompilerABI.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeDetermineCompilerId.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeDetermineSystem.cmake"
+  "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeFindBinUtils.cmake"
+  "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeFindCodeBlocks.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeGenericSystem.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeInitializeConfigs.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeLanguageInformation.cmake"
@@ -39,6 +41,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeTestCCompiler.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeTestCXXCompiler.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeTestCompilerCommon.cmake"
+  "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/CMakeUnixFindMake.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/Compiler/ADSP-DetermineCompiler.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/Compiler/ARMCC-DetermineCompiler.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/Compiler/ARMClang-DetermineCompiler.cmake"
@@ -95,6 +98,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/Platform/Linux-GNU.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/Platform/Linux.cmake"
   "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/Platform/UnixPaths.cmake"
+  "/home/hugo/Escritorio/clion-2019.2.2/bin/cmake/linux/share/cmake-3.15/Modules/ProcessorCount.cmake"
   )
 
 # The corresponding makefile is:
