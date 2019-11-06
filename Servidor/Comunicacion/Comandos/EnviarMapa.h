@@ -1,18 +1,20 @@
-#ifndef PROTOCOLO_ENVIARMAPA_H
-#define PROTOCOLO_ENVIARMAPA_H
+
+#ifndef SERVIDOR_ENVIARMAPA_H
+#define SERVIDOR_ENVIARMAPA_H
 
 
-#include "../Protocolo.h"
+#include <map>
 #include "Comando.h"
+#include "../../Partida/Partida.h"
 
 class EnviarMapa: public Comando {
-    Protocolo& protocolo;
-    //Este sería una referencia al pista de verdad? y despues se parsea
-    std::vector<std::string>& posMapa;
+    std::map<std::string, std::shared_ptr<Partida>>& partidas;
 public:
-    EnviarMapa(Protocolo& protocolo, std::vector<std::string>& mapa); //Falta que reciba el pista
-    void ejecutar() override;
+    void ejecutar(ClienteProxy &cliente) override;
+
+    explicit EnviarMapa(std::map<std::string, std::shared_ptr<Partida>>& partidas);
 
 };
 
-#endif
+
+#endif //SERVIDOR_ENVIARMAPA_H

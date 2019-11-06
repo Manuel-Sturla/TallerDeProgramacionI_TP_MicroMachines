@@ -7,7 +7,6 @@
 #include "../Objetos/Suelos/LimiteDePista.h"
 #include "../Objetos/Suelos/Recta.h"
 #include "../Objetos/Suelos/Curva.h"
-
 class Pista {
 private:
     MundoBox2D mundoBox2D;
@@ -18,14 +17,16 @@ private:
     std::list<Curva> curvas;
     std::list<Carro> carros;
 
-    Material* darMaterial(std::string materialPedido);
+    Material* darMaterial(const std::string& materialPedido);
 
 public:
-    Pista();
+    Pista() = default;
 
     void simular();
 
     Carro *crearCarro(int velocidad, float32 anguloEnRadianes, int agarre);
+
+    int cantidadDeCarros();
 
     void empaquetarCarro(std::vector<std::string> *destino);
 
@@ -38,6 +39,7 @@ public:
 
     ~Pista();
 };
+
 
 
 #endif

@@ -5,13 +5,15 @@
 #ifndef PROTOCOLO_COMANDO_H
 #define PROTOCOLO_COMANDO_H
 
+#include "../ClienteProxy.h"
+
 #define MSJ_FIN "F"
 #define SEPARADOR ';'
 
 
 class Comando {
 public:
-    virtual void ejecutar() = 0;
+    virtual void ejecutar(ClienteProxy &cliente) = 0;
     ~Comando() = default;
 };
 

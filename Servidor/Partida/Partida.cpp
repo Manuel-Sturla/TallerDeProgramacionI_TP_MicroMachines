@@ -1,6 +1,11 @@
 #include "Partida.h"
+#include "../Comunicacion/Sockets/SocketPeerException.h"
+#include "../PartidaLlenaExcepcion.h"
+#include "../Comunicacion/Comandos/Comando.h"
 
-Partida::Partida() {
+Partida::Partida(int cantJugadores, PlanoDePista *pista) : continuar(true) {
+    cantidadMaximaDeJugadores = cantJugadores;
+    crearPista(pista);
 }
 
 Partida::~Partida() {
@@ -33,6 +38,44 @@ std::vector<std::string> &Partida::obtenerMapa() {
     return suelos;
 }
 
-Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro) {
+Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente) {
+    if (pista.cantidadDeCarros() == cantidadMaximaDeJugadores) {
+        throw PartidaLlenaExcepcion("La partida se encuentra llena", 40);
+    }
+    clientes.emplace_back(cliente);
     return planoDeCarro -> crearCarro(&pista);
 }
+
+void Partida::run() {
+    std::vector<ClienteProxy*>::iterator cliente;
+    while (continuar){
+        try{
+            for (cliente = clientes.begin(); cliente != clientes.end(); cliente++) {
+                (*cliente) -> ejecutarAccion();
+            }
+            simular();
+            actualizar();
+            for (cliente = clientes.begin(); cliente != clientes.end(); cliente++) {
+                enviarPosicion(**cliente);
+            }
+        }catch (SocketPeerException &e){
+            continuar = false;
+        }
+    }
+}
+
+bool Partida::estaMuerto() {
+    return continuar;
+}
+
+void Partida::enviarPosicion(ClienteProxy &proxy) {
+    for (auto& extra : extras){
+        proxy.enviar(extra); //parsearExtra(extra);
+    }
+    proxy.enviar(MSJ_FIN);
+    for (auto& unAuto : autos){
+        proxy.enviar(unAuto);
+    }
+    proxy.enviar(MSJ_FIN);
+}
+

@@ -7,32 +7,23 @@
 #include <atomic>
 #include <queue>
 #include "Protocolo.h"
-#include "Comandos/Comando.h"
-#include "../Partida/Partida.h"
-#include "../Servidor.h"
+#include "../Acciones/Accion.h"
+#include "../Objetos/Carro/Carro.h"
 
-class ClienteProxy: public Hilo {
+class ClienteProxy{
     Protocolo protocolo;
     std::queue<std::unique_ptr<Accion>> movimientos;
-    std::unordered_map<std::string, std::unique_ptr<Comando>> comandos;
-    std::atomic<bool> conectado;
     Carro *miCarro;
 public:
-    ClienteProxy(SocketAmigo socketCliente, Servidor &servidor, Carro *unCarro);
-
-    void run() override;
-
-    void ejecutarComando();
-    void recibirAccion(); // Se hace en un hilo aparte que recibe acciones todo el tiempo y las encola
-    void enviarPosiciones();
-    void unirseAPartida();
+    explicit ClienteProxy(SocketAmigo socketCliente);
+    ClienteProxy(ClienteProxy&& otro);
+    void jugar();
+    void encolarAccion(Accion* accion);
     void desconectar();
     void ejecutarAccion();
-    bool estaMuerto();
-
+    void enviar(const std::string&  mensaje);
+    std::string recibir();
     ~ClienteProxy();
-
-    bool estaConectado();
 };
 
 #endif

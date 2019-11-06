@@ -9,17 +9,19 @@
 #include "Planos/PlanoDePista.h"
 #include "../Protocolo/Socket/SocketPasivo.h"
 #include "Hilo.h"
-#include "Partida/Partida.h"
 #include "ConfiguracionServidor.h"
-#include "Comunicacion/ClienteProxy.h"
+#include "Partida/Partida.h"
+#include "Comunicacion/HiloCliente.h"
 
 class Servidor: public Hilo {
 private:
     ConfiguracionServidor configuracion;
     SocketPasivo socketPasivo;
     std::map<std::string, std::shared_ptr<Partida>> partidas;
-    std::vector<std::unique_ptr<ClienteProxy>> clientes;
+    std::vector<std::unique_ptr<HiloCliente>> clientes;
     std::atomic<bool> continuar;
+    EnJuego enJuego;
+    EnMenu enMenu;
 
 public:
     Servidor(const std::string& servicio);

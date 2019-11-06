@@ -19,7 +19,8 @@ public:
     PlanoDePista* darPlanoDePista(std::string planoBuscado);
 
     PlanoDeCarro* darPlanoDeCarro(std::string planoBuscado);
-
+    std::vector<std::string> obtenerNombresPlanos();
+    std::vector<std::string> obtenerNombresCarros();
     ~ConfiguracionServidor();
 };
 

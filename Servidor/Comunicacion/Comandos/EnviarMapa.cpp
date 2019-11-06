@@ -1,12 +1,17 @@
+//
+// Created by manfer on 6/11/19.
+//
+
 #include "EnviarMapa.h"
 
-EnviarMapa::EnviarMapa(Protocolo &protocolo, std::vector<std::string>& mapa):
-protocolo(protocolo), posMapa(mapa) {
+EnviarMapa::EnviarMapa(std::map<std::string, std::shared_ptr<Partida>> &partidas): partidas(partidas) {
 }
 
-void EnviarMapa::ejecutar() {
-    for (auto& pos: posMapa){
-        protocolo.enviar(pos);
+void EnviarMapa::ejecutar(ClienteProxy &cliente) {
+    //Recibe la partida de la cual se va a enviar el mapa
+    std::string partida = cliente.recibir();
+    for (auto& pos : partidas[partida]->obtenerMapa()){
+        cliente.enviar(pos);
     }
-    protocolo.enviar(MSJ_FIN);
+    cliente.enviar(MSJ_FIN);
 }

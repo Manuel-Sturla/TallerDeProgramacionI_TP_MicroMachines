@@ -64,3 +64,19 @@ PlanoDePista *ConfiguracionServidor::darPlanoDePista(std::string planoBuscado) {
 PlanoDeCarro *ConfiguracionServidor::darPlanoDeCarro(std::string planoBuscado) {
     return planosDeCarros[planoBuscado];
 }
+
+std::vector<std::string> ConfiguracionServidor::obtenerNombresPlanos() {
+    std::vector<std::string> nombres;
+    for (auto it = planosDePistas.begin(); it != planosDePistas.end(); it ++){
+        nombres.push_back(it->first);
+    }
+    return nombres;
+}
+
+std::vector<std::string> ConfiguracionServidor::obtenerNombresCarros() {
+    std::vector<std::string> nombres;
+    for (auto it = planosDePistas.begin(); it != planosDePistas.end(); it ++){
+        nombres.push_back(it->first);
+    }
+    return nombres;
+}
