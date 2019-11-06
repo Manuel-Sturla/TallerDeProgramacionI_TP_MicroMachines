@@ -6,6 +6,5 @@
 #include "ComandoAcelerar.h"
 
 void ComandoAcelerar::ejecutar() {
-    std::cout << "Ejecute el comando acelerar" << std::endl;
     servidor.ejecutarMovimiento("acelerar");
 }

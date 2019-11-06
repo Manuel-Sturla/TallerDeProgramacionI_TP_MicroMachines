@@ -38,7 +38,6 @@ void Renderizador::copiarTodo(Camara& camara) {
     for(auto & textura : texturas){
         textura.copiar(renderizador, camara);
     }
-    std::cout<<"FIN\n";
 }
 
 void Renderizador::destruirTexturas() {
