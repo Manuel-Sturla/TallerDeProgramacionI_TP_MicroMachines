@@ -3,6 +3,7 @@
 //
 
 #include "CrearPartida.h"
+#include "../Utilidades.h"
 
 #define MSJ_PARTIDA_INVALIDA "Partida Ya existente"
 
@@ -11,20 +12,21 @@ CrearPartida::CrearPartida(std::map<std::string, std::shared_ptr<Partida>> &part
 }
 
 void CrearPartida::ejecutar(ClienteProxy &cliente) {
-    std::string nombrePartida = cliente.recibir();
-    auto it = partidas.find(nombrePartida);
+    std::string datosPartida = cliente.recibir();
+    std::vector<std::string> datos = separar(datosPartida, ';');
+    auto it = partidas.find(datos[0]);
     if (it != partidas.end()){
         cliente.enviar(MSJ_PARTIDA_INVALIDA);
         return;
     }
     //Elije un mapa
-    for (auto& mapa : mapasYAutos.obtenerNombresPlanos()){
+/*    for (auto& mapa : mapasYAutos.obtenerNombresPlanos()){
         cliente.enviar(mapa);
     }
     cliente.enviar(MSJ_FIN);
-    std::string mapa = cliente.recibir();
-    int cantJugadores = std::stoi(cliente.recibir());
-    partidas.emplace(nombrePartida, new Partida(cantJugadores, mapasYAutos.darPlanoDePista(mapa)));
+    std::string mapa = cliente.recibir();*/
+    int cantJugadores = std::stoi(datos[1]);
+    partidas.emplace(datos[0], new Partida(cantJugadores, mapasYAutos.darPlanoDePista("Prueba 1")));
     //Envio que la partida se creo correctamente?
-    //Falta en algun lugar enviarle las posicoines del mapa
+    //Falta en algun lugar enviarle las p   osicoines del mapa
 }

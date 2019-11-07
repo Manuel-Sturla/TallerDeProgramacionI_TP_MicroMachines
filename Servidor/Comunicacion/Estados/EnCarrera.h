@@ -18,7 +18,6 @@ public:
     EnCarrera(Pista& pista, std::vector<ClienteProxy*>& clientes);
     void ejecutar() override;
     bool enJuego() override;
-
     void enviarPosicion(ClienteProxy &proxy);
 };
 

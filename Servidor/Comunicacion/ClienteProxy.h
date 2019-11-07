@@ -14,10 +14,13 @@ class ClienteProxy{
     Protocolo protocolo;
     std::queue<std::unique_ptr<Accion>> movimientos;
     Carro *miCarro;
+    bool enJuego;
 public:
     explicit ClienteProxy(SocketAmigo socketCliente);
     ClienteProxy(ClienteProxy&& otro);
     void jugar();
+    bool estaEnJuego();
+    void setCarro(Carro* carringuis);
     void encolarAccion(Accion* accion);
     void desconectar();
     void ejecutarAccion();

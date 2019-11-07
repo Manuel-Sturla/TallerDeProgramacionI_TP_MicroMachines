@@ -6,16 +6,19 @@
 #include "Sockets/SocketPeerException.h"
 
 HiloCliente::HiloCliente(SocketAmigo& cliente, EnMenu &enMenu, EnJuego &enJuego):
-    cliente(std::move(cliente)), menu(enMenu), juego(enJuego),estado(&juego), conectado(true){
+    cliente(std::move(cliente)), menu(enMenu), juego(enJuego),estado(&menu), conectado(true){
 
 }
 
 void HiloCliente::run() {
     try {
         while (conectado) {
+            if (cliente.estaEnJuego()){
+                estado = &juego;
+            }
             estado->ejecutar(cliente);
-        }}
-    catch (SocketPeerException & e){
+        }
+    }catch (SocketPeerException & e){
         desconectar();
     }
 }

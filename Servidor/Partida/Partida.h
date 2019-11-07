@@ -19,7 +19,9 @@ private:
     std::atomic<bool> continuar;
     std::vector<std::string> suelos;
 
+    void enviarMapa();
 public:
+
     Partida(int cantJugadores, PlanoDePista *pista);
 
     void run() override;

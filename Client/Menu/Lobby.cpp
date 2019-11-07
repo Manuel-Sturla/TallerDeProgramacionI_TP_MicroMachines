@@ -19,8 +19,9 @@ void Lobby::conectar() {
 
 void Lobby::crearPartida() {
     std::string nombre = findChild<QLineEdit*>("nombre")->text().toStdString();
-    int cantJugadores = std::stoi(findChild<QLineEdit*>("cantJug")->text().toStdString());
+    std::string cantJugadores = findChild<QLineEdit*>("cantJug")->text().toStdString();
     servidor.crearPartida(nombre, cantJugadores);
+    servidor.elegirPartida(nombre);
 }
 
 void Lobby::copiarPistas(std::vector<std::string> &partidas) {

@@ -25,10 +25,10 @@ void Inicio::conectar() {
 void Inicio::leerPantalla() {
     auto* aux = findChild<QLineEdit*>("Servicio");
     if(aux != nullptr){
-        host = aux->text().toStdString();
+        servicio = aux->text().toStdString();
     }
     aux = findChild<QLineEdit*>("Host");
     if(aux != nullptr){
-        servicio = aux->text().toStdString();
+        host = aux->text().toStdString();
     }
 }

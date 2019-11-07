@@ -19,6 +19,7 @@ void EnEspera::ejecutar() {
     while (!enJuego()){
         estaLLena.wait(lock);
     }
+
 }
 
 bool EnEspera::enJuego() {

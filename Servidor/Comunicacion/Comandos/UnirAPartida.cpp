@@ -7,10 +7,6 @@ UnirAPartida::UnirAPartida(std::map<std::string, std::shared_ptr<Partida>> &part
 }
 
 void UnirAPartida::ejecutar(ClienteProxy &cliente) {
-    for(auto& partida : partidas){
-        cliente.enviar(partida.first); //Aca formatearia los datos de la partida
-    }
-    cliente.enviar(MSJ_FIN);
     //Recibo el nombre de la partida a la cual el usuario quiere agregarse o crear
     std::string nombrePartida = cliente.recibir();
     auto it = partidas.find(nombrePartida);
@@ -25,8 +21,8 @@ void UnirAPartida::ejecutar(ClienteProxy &cliente) {
     cliente.enviar(MSJ_FIN);
     std::string carro = cliente.recibir();
     */
-    std::string carro = "Manu movil";
-    partidas[nombrePartida]->agregarCliente(mapasYAutos.darPlanoDeCarro(carro), &cliente);
+    std::string carro = "ManuMovil";
+    cliente.setCarro(partidas[nombrePartida]->agregarCliente(mapasYAutos.darPlanoDeCarro(carro), &cliente));
     //Agregar el nombre de la partida a la que se unio al cliente
     cliente.jugar();
 }

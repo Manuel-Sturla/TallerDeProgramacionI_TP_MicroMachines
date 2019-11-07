@@ -8,8 +8,8 @@
 #include "Camara.h"
 #include "../Sockets/SocketPeerException.h"
 
-HiloReceptor::HiloReceptor(Renderizador& renderizador, ServidorProxy &servidor, Camara &camara, bool& keepTalking) : keepTalking(keepTalking)\
-, servidor(servidor), miAuto(renderizador, 1){
+HiloReceptor::HiloReceptor(Renderizador& renderizador, ServidorProxy &servidor, Camara &camara, bool& keepTalking)\
+: keepTalking(keepTalking), servidor(servidor), miAuto(renderizador, 1){
     camara.setAuto(&miAuto.getPos());
 }
 
@@ -33,5 +33,4 @@ void HiloReceptor::run() {
     } catch (...) {
         std::cerr<<"Error desconocido\n";
     }
-
 }

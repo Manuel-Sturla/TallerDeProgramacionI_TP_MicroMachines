@@ -16,7 +16,7 @@
 #define SALIR "salir"
 
 ClienteProxy::ClienteProxy(SocketAmigo socketCliente) :
-protocolo(std::move(socketCliente)){
+        protocolo(std::move(socketCliente)), enJuego(false){
 }
 
 
@@ -46,6 +46,7 @@ void ClienteProxy::encolarAccion(Accion* accion) {
 }
 
 void ClienteProxy::jugar() {
+    enJuego = true;
 }
 
 ClienteProxy::ClienteProxy(ClienteProxy&& otro): protocolo(std::move(otro.protocolo)){
@@ -53,4 +54,12 @@ ClienteProxy::ClienteProxy(ClienteProxy&& otro): protocolo(std::move(otro.protoc
     miCarro = otro.miCarro;
 
     otro.miCarro = nullptr;
+}
+
+bool ClienteProxy::estaEnJuego() {
+    return enJuego;
+}
+
+void ClienteProxy::setCarro(Carro* carro) {
+    miCarro = carro;
 }

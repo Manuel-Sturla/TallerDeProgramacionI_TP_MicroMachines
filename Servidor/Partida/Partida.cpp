@@ -36,10 +36,11 @@ Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente
 
 void Partida::run() {
     estado->ejecutar();
+    enviarMapa();
     estado = std::unique_ptr<EstadoPartida> (new EnCarrera(pista, clientes));
     while(continuar)
         try {
-            //Aca falta el sleep por 20 seg
+            std::this_thread::sleep_for(std::chrono::milliseconds (20));
             estado->ejecutar();
         }catch (SocketPeerException &e){
             continuar = false;
@@ -59,5 +60,14 @@ void Partida::cerrar() {
         estadoEnEspera->sumarJugador();
     }
 
+}
+
+void Partida::enviarMapa() {
+    for (auto& cliente : clientes){
+        for (auto& pos : obtenerMapa()){
+            cliente->enviar(pos);
+        }
+        cliente->enviar(MSJ_FIN);
+    }
 }
 
