@@ -16,7 +16,7 @@ private:
     std::string& servicio;
 
 public:
-    Inicio(std::string &host, std::string& servicio, QWidget* parent = 0);
+    Inicio(std::string &host, std::string& servicio, QWidget* parent = nullptr);
 
     void leerPantalla();
 

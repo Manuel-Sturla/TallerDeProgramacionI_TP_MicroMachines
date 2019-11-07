@@ -14,7 +14,7 @@ private:
     ServidorProxy& servidor;
 
 public:
-    Lobby(ServidorProxy &servidor);
+    explicit Lobby(ServidorProxy &servidor, QWidget* parent = nullptr);
 
     void conectar();
 

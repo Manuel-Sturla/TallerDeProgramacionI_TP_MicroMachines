@@ -14,11 +14,14 @@ int ejecutarInicio(int argc, char* argv[], std::string& host, std::string& servi
     return QApplication::exec();
 }
 
+int ejecutarLobby(int argc, char* argv[], ServidorProxy& servidor){
+    QApplication app(argc, argv);
+    Lobby lobby(servidor);
+    lobby.show();
+    return QApplication::exec();
+}
+
 int main(int argc, char* argv[]) {
-    if(argc != 3){
-        std::cout<<"Uso correcto ./client host servicio\n";
-        return 1;
-    }
     if(SDL_Init(SDL_INIT_VIDEO) != 0){
         SDL_Log("No pude incializar el SDL %s", SDL_GetError());
         return 0;
@@ -27,14 +30,14 @@ int main(int argc, char* argv[]) {
         std::string host, servicio;
         ejecutarInicio(argc, argv, host, servicio);
         ServidorProxy servidor(host, servicio);
-        Lobby lobby(servidor);
-/*        HiloLector lector(servidor);
+        ejecutarLobby(argc, argv, servidor);
+        HiloLector lector(servidor);
         lector.start();
         bool enPartida = true;
         HiloVisualizacion partida(servidor, enPartida);
         partida.start();
         partida.join();
-        lector.join();*/
+        lector.join();
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';
         IMG_Quit();
