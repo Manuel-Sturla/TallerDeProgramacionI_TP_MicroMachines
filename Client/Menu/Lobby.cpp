@@ -15,6 +15,7 @@ Lobby::Lobby(ServidorProxy &servidor, QWidget* parent) : servidor(servidor) {
 
 void Lobby::conectar() {
     QObject::connect(findChild<QPushButton*>("crear"), &QPushButton::clicked, this, &Lobby::crearPartida);
+    QObject::connect(findChild<QPushButton*>("crear"), &QPushButton::clicked, this, &QWidget::close);
 }
 
 void Lobby::crearPartida() {

@@ -27,6 +27,5 @@ void CrearPartida::ejecutar(ClienteProxy &cliente) {
     std::string mapa = cliente.recibir();*/
     int cantJugadores = std::stoi(datos[1]);
     partidas.emplace(datos[0], new Partida(cantJugadores, mapasYAutos.darPlanoDePista("Prueba 1")));
-    //Envio que la partida se creo correctamente?
-    //Falta en algun lugar enviarle las p   osicoines del mapa
+    partidas[datos[0]]->start();
 }
