@@ -14,6 +14,9 @@ EnMenu::EnMenu(std::map<std::string, std::shared_ptr<Partida>> &partidas, Config
     //Creo comando CrearPartida y UnirseAPartida
     comandos.emplace("CrearPAR", new CrearPartida(partidas, mapasYAutos));
     comandos.emplace("UnirPAR", new UnirAPartida(partidas, mapasYAutos));
+    //ObtenerPartidas
+    //ObtenerMapa
+    //ObtenerAutos ?
 }
 
 void EnMenu::ejecutar(ClienteProxy &cliente) {

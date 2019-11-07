@@ -26,7 +26,7 @@ void Servidor::run() {
             SocketAmigo socketCliente = socketPasivo.aceptarCliente();
             clientes.emplace_back(new HiloCliente(socketCliente, enMenu, enJuego));
             clientes.back()->start();
-            //hardcodo el inicio del hilo partida
+
             cerrar_clientes_desconectados();
             cerrar_partidas_terminadas();
         }catch (SocketPassiveException &e){

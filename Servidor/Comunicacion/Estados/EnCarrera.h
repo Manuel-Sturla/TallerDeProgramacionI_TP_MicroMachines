@@ -1,6 +1,3 @@
-//
-// Created by manfer on 7/11/19.
-//
 
 #ifndef SERVIDOR_ENCARRERA_H
 #define SERVIDOR_ENCARRERA_H

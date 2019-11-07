@@ -1,7 +1,3 @@
-//
-// Created by manfer on 5/11/19.
-//
-
 #include "UnirAPartida.h"
 
 #define MSJ_PARTIDA_INEXISTENTE "La Partida no existe"
@@ -23,11 +19,14 @@ void UnirAPartida::ejecutar(ClienteProxy &cliente) {
         return;
     }
     //Elije un auto
-    for (auto& carro : mapasYAutos.obtenerNombresCarros()){
+    /*for (auto& carro : mapasYAutos.obtenerNombresCarros()){
         cliente.enviar(carro);
     }
     cliente.enviar(MSJ_FIN);
     std::string carro = cliente.recibir();
+    */
+    std::string carro = "Manu movil";
     partidas[nombrePartida]->agregarCliente(mapasYAutos.darPlanoDeCarro(carro), &cliente);
+    //Agregar el nombre de la partida a la que se unio al cliente
     cliente.jugar();
 }

@@ -39,6 +39,7 @@ void Partida::run() {
     estado = std::unique_ptr<EstadoPartida> (new EnCarrera(pista, clientes));
     while(continuar)
         try {
+            //Aca falta el sleep por 20 seg
             estado->ejecutar();
         }catch (SocketPeerException &e){
             continuar = false;

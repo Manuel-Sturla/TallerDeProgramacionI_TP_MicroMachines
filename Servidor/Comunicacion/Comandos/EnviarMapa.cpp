@@ -10,6 +10,8 @@ EnviarMapa::EnviarMapa(std::map<std::string, std::shared_ptr<Partida>> &partidas
 void EnviarMapa::ejecutar(ClienteProxy &cliente) {
     //Recibe la partida de la cual se va a enviar el mapa
     //std::string partida = cliente.recibir();
+
+    //El cliente tiene a que partida esta unido
     std::string partida = "prueba";
     std::vector<std::string> posiciones = partidas[partida]->obtenerMapa();
     for (auto& pos : partidas[partida]->obtenerMapa()){
