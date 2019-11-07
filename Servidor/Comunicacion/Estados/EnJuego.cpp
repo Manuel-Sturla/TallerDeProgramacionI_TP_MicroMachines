@@ -1,5 +1,5 @@
 #include "EnJuego.h"
-#include "Comandos/EnviarMapa.h"
+#include "../Comandos/EnviarMapa.h"
 
 #define MSJ_CMD_INVALIDO "ComandoInvalido"
 

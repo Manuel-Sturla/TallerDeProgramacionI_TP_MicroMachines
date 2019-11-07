@@ -7,11 +7,11 @@
 
 
 #include <map>
-#include "Estado.h"
-#include "Comandos/RecibirAccion.h"
-#include "../Partida/Partida.h"
+#include "EstadoCliente.h"
+#include "../Comandos/RecibirAccion.h"
+#include "../../Partida/Partida.h"
 
-class EnJuego: public Estado {
+class EnJuego: public EstadoCliente {
     RecibirAccion recibirAccion;
     std::map<std::string, std::shared_ptr<Comando>> comandos;
 

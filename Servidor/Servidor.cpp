@@ -12,6 +12,9 @@ socketPasivo(servicio),
 continuar(true),
 enJuego(partidas),
 enMenu(partidas, configuracion){
+    //Partida hardcodeada para probar
+    partidas.emplace("prueba", new Partida(1, configuracion.darPlanoDePista("Prueba 1")));
+    partidas["prueba"] -> start();
 }
 
 Servidor::~Servidor() {
@@ -23,20 +26,22 @@ void Servidor::run() {
             SocketAmigo socketCliente = socketPasivo.aceptarCliente();
             clientes.emplace_back(new HiloCliente(socketCliente, enMenu, enJuego));
             clientes.back()->start();
+            //hardcodo el inicio del hilo partida
             cerrar_clientes_desconectados();
             cerrar_partidas_terminadas();
         }catch (SocketPassiveException &e){
             break;
         }
     }
+    //Mato a las partidas
+    for (auto it = partidas.begin(); it != partidas.end(); it ++) {
+        it->second->cerrar();
+        it->second->join();
+    }
     //Mato a los clientes
     for (auto& cliente : clientes){
         cliente->desconectar();
         cliente->join();
-    }
-    //Mato a las partidas
-    for (auto it = partidas.begin(); it != partidas.end(); it ++) {
-        it->second->join();
     }
 }
 
@@ -69,4 +74,9 @@ void Servidor::cerrar_partidas_terminadas() {
         partidas[clave]->join();
         partidas.erase(clave);
     }
+}
+
+void Servidor::apagar() {
+    continuar = false;
+    socketPasivo.cerrar();
 }

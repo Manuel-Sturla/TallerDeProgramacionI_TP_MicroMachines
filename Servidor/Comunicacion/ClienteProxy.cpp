@@ -5,8 +5,8 @@
 #include "../Acciones/Frenar.h"
 #include "../Acciones/GiroADerecha.h"
 #include "../Acciones/GiroAIzquierda.h"
-#include "EnMenu.h"
-#include "EnJuego.h"
+#include "Estados/EnMenu.h"
+#include "Estados/EnJuego.h"
 
 #define MSJ_CMD_INVALIDO "Comando invalido"
 #define CMD_ACELERAR "acelerar"

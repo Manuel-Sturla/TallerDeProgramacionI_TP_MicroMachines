@@ -8,15 +8,15 @@
 #include "../Planos/PlanoDeCarro.h"
 #include "../Hilo.h"
 #include "../Comunicacion/ClienteProxy.h"
+#include "../Comunicacion/Estados/EstadoPartida.h"
 
 class Partida: public Hilo {
 private:
     Pista pista;
     int cantidadMaximaDeJugadores;
     std::vector<ClienteProxy*> clientes;
+    std::unique_ptr<EstadoPartida> estado;
     std::atomic<bool> continuar;
-    std::vector<std::string> extras;
-    std::vector<std::string> autos;
     std::vector<std::string> suelos;
 
 public:
@@ -24,25 +24,17 @@ public:
 
     void run() override;
 
-    void simular();
-
-    std::vector<std::string>& obtenerExtras();
-
-    std::vector<std::string>& obtenerAutos();
-
     std::vector<std::string>& obtenerMapa();
 
     Carro * agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente);
 
-    void actualizar();
-
     bool estaMuerto();
+
+    void cerrar();
 
     void crearPista(PlanoDePista *planoDePista);
 
     ~Partida();
-
-    void enviarPosicion(ClienteProxy &proxy);
 };
 
 #endif

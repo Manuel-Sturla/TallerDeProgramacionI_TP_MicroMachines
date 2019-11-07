@@ -2,10 +2,15 @@
 #include "../Comunicacion/Sockets/SocketPeerException.h"
 #include "../PartidaLlenaExcepcion.h"
 #include "../Comunicacion/Comandos/Comando.h"
+#include "../Comunicacion/Estados/EnCarrera.h"
+#include "../Comunicacion/Estados/EnEspera.h"
 
-Partida::Partida(int cantJugadores, PlanoDePista *pista) : continuar(true) {
+Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
+continuar(true), estado(new EnEspera(cantJugadores)) {
     cantidadMaximaDeJugadores = cantJugadores;
-    crearPista(pista);
+    crearPista(planoPista);
+    suelos.clear();
+    pista.empaquetarSuelos(&suelos);
 }
 
 Partida::~Partida() {
@@ -15,67 +20,43 @@ void Partida::crearPista(PlanoDePista *planoDePista) {
     planoDePista -> crearPista(&pista);
 }
 
-std::vector<std::string> &Partida::obtenerExtras() {
-    return extras;
-}
-
-std::vector<std::string> &Partida::obtenerAutos() {
-    return autos;
-}
-
-void Partida::simular() {
-    pista.simular();
-}
-
-void Partida::actualizar() {
-    autos.clear();
-    suelos.clear();
-    pista.empaquetarSuelos(&suelos);
-    pista.empaquetarCarro(&autos);
-}
-
 std::vector<std::string> &Partida::obtenerMapa() {
     return suelos;
 }
 
 Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente) {
-    if (pista.cantidadDeCarros() == cantidadMaximaDeJugadores) {
-        throw PartidaLlenaExcepcion("La partida se encuentra llena", 40);
+    if (estado->enJuego()) {
+        throw PartidaLlenaExcepcion("La partida se encuentra llena", __LINE__);
     }
     clientes.emplace_back(cliente);
+    EnEspera* estadoEnEspera = dynamic_cast<EnEspera *>(estado.get());
+    estadoEnEspera->sumarJugador();
     return planoDeCarro -> crearCarro(&pista);
 }
 
 void Partida::run() {
-    std::vector<ClienteProxy*>::iterator cliente;
-    while (continuar){
-        try{
-            for (cliente = clientes.begin(); cliente != clientes.end(); cliente++) {
-                (*cliente) -> ejecutarAccion();
-            }
-            simular();
-            actualizar();
-            for (cliente = clientes.begin(); cliente != clientes.end(); cliente++) {
-                enviarPosicion(**cliente);
-            }
+    estado->ejecutar();
+    estado = std::unique_ptr<EstadoPartida> (new EnCarrera(pista, clientes));
+    while(continuar)
+        try {
+            estado->ejecutar();
         }catch (SocketPeerException &e){
             continuar = false;
-        }
     }
 }
+
 
 bool Partida::estaMuerto() {
-    return continuar;
+    return !continuar;
 }
 
-void Partida::enviarPosicion(ClienteProxy &proxy) {
-    for (auto& extra : extras){
-        proxy.enviar(extra); //parsearExtra(extra);
+
+void Partida::cerrar() {
+    continuar = false;
+    while (!estado->enJuego()){
+        EnEspera* estadoEnEspera = dynamic_cast<EnEspera *>(estado.get());
+        estadoEnEspera->sumarJugador();
     }
-    proxy.enviar(MSJ_FIN);
-    for (auto& unAuto : autos){
-        proxy.enviar(unAuto);
-    }
-    proxy.enviar(MSJ_FIN);
+
 }
 

@@ -33,6 +33,8 @@ public:
     void cerrar_clientes_desconectados();
 
     void cerrar_partidas_terminadas();
+
+    void apagar();
 };
 
 #endif

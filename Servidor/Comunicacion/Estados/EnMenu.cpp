@@ -3,9 +3,9 @@
 //
 
 #include "EnMenu.h"
-#include "Sockets/SocketPeerException.h"
-#include "Comandos/CrearPartida.h"
-#include "Comandos/UnirAPartida.h"
+#include "../Sockets/SocketPeerException.h"
+#include "../Comandos/CrearPartida.h"
+#include "../Comandos/UnirAPartida.h"
 
 #define MSJ_CMD_INVALIDO "ComandoInvalido"
 

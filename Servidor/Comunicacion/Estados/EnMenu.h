@@ -8,13 +8,13 @@
 
 #include <map>
 #include <memory>
-#include "Estado.h"
-#include "../Partida/Partida.h"
-#include "../ConfiguracionServidor.h"
-#include "Comandos/Comando.h"
+#include "EstadoCliente.h"
+#include "../../Partida/Partida.h"
+#include "../../ConfiguracionServidor.h"
+#include "../Comandos/Comando.h"
 
 
-class EnMenu: public Estado {
+class EnMenu: public EstadoCliente {
     std::map<std::string, std::shared_ptr<Partida>>& partidas;
     ConfiguracionServidor& mapasYAutos;
     std::map<std::string, std::shared_ptr<Comando>> comandos;

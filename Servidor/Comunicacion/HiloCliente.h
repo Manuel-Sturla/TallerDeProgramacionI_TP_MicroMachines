@@ -8,14 +8,14 @@
 
 #include "../Hilo.h"
 #include "ClienteProxy.h"
-#include "EnJuego.h"
-#include "EnMenu.h"
+#include "Estados/EnJuego.h"
+#include "Estados/EnMenu.h"
 
 class HiloCliente: public Hilo {
     ClienteProxy cliente;
     EnMenu& menu;
     EnJuego& juego;
-    Estado* estado;
+    EstadoCliente* estado;
     std::atomic<bool> conectado;
 
 public:
