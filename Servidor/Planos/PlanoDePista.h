@@ -9,15 +9,17 @@
 
 class PlanoDePista {
 private:
-    std::list<std::unique_ptr<PlanoDeSuelo>> planosDeSuelos;
+  std::list<std::unique_ptr<PlanoDeSuelo>> planosDeSuelos;
 public:
-    PlanoDePista();
+  PlanoDePista();
 
-    void agregarSuelo(std::string configuracion);
+  void agregarRecta(std::string material, int x, int y, int tipo);
 
-    void crearPista(Pista *mapa);
+  void agregarCurva(int x, int y, int tipo);
 
-    ~PlanoDePista();
+  void crearPista(Pista *mapa);
+
+  ~PlanoDePista();
 };
 
 

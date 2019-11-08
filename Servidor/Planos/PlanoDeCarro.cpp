@@ -1,16 +1,10 @@
 #include <sstream>
 #include "PlanoDeCarro.h"
 
-PlanoDeCarro::PlanoDeCarro(const std::string &configuracion) {
-    std::istringstream stringConfiguracion(configuracion);
-    std::string posicionString;
-    getline(stringConfiguracion, posicionString, ',');
-    velocidadMax = stoi(posicionString);
-    getline(stringConfiguracion, posicionString, ',');
-    anguloDeGiro = stoi(posicionString); //RECIBE UN ANGULO EN GRADOS
-    anguloDeGiro = (anguloDeGiro * b2_pi) / 180; //LO PASA A RADIANES
-    getline(stringConfiguracion, posicionString, ',');
-    agarre = stoi(posicionString);
+PlanoDeCarro::PlanoDeCarro(int velocidadMax, float32 anguloDeGiro, int agarre) {
+    this -> velocidadMax = velocidadMax;
+    this -> anguloDeGiro = (anguloDeGiro * b2_pi) / 180;
+    this -> agarre = agarre;
 }
 
 Carro * PlanoDeCarro::crearCarro(Pista *pista) {

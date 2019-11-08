@@ -1,6 +1,8 @@
 #include <fstream>
 #include "ConfiguracionServidor.h"
 #include "ServidorException.h"
+#include "yaml-cpp/yaml.h"
+#include "yaml-cpp/node/node.h"
 
 ConfiguracionServidor::ConfiguracionServidor() {
     levantarPistas();
@@ -8,22 +10,25 @@ ConfiguracionServidor::ConfiguracionServidor() {
 }
 
 void ConfiguracionServidor::levantarPistas() {
-    std::ifstream pistas("../Pistas.txt", std::ifstream::in);
-    if (!pistas.is_open()){
-        throw ServidorException("Error al abrir el archivo de pistas", __LINE__, __FILE__);
-    }
-    std::string linea;
-    while (!pistas.eof()) {
-        getline(pistas, linea);
-        if (linea == "Nueva Pista") {
-            std::string nombreDePista;
-            getline(pistas, nombreDePista);
-            planosDePistas.emplace(nombreDePista, new PlanoDePista());
-            getline(pistas, linea);
-            while (linea != "Fin Pista") {
-                planosDePistas[nombreDePista] -> agregarSuelo(linea);
-                getline(pistas, linea);
-            }
+    YAML::Node configuracion = YAML::LoadFile("../pistas.yaml");
+    //lanzar excepcion si no logro abrir el arhivo
+    for (unsigned i = 0; i < configuracion.size(); i++) {
+        std::string nombre = configuracion[i]["nombre"].as<std::string>();
+        planosDePistas.emplace(nombre, new PlanoDePista());
+        YAML::Node rectas = configuracion[i]["rectas"];
+        for (auto &&rectasInfo : rectas) {
+            std::string material = rectasInfo["material"].as<std::string>();
+            int x = rectasInfo["x"].as<int>();
+            int y = rectasInfo["y"].as<int>();
+            int tipo = rectasInfo["tipo"].as<int>();
+            planosDePistas[nombre] -> agregarRecta(material, x, y, tipo);
+        }
+        YAML::Node curvas = configuracion[i]["curvas"];
+        for (auto &&curvasInfo : curvas) {
+            int x = curvasInfo["x"].as<int>();
+            int y = curvasInfo["y"].as<int>();
+            int tipo = curvasInfo["tipo"].as<int>();
+            planosDePistas[nombre] -> agregarCurva(x, y, tipo);
         }
     }
 }
@@ -40,20 +45,16 @@ ConfiguracionServidor::~ConfiguracionServidor() {
 }
 
 void ConfiguracionServidor::levantarCarros() {
-    std::ifstream carros("../Carros.txt", std::ifstream::in);
-    if (!carros.is_open()){
-        throw ServidorException("No se pudo abrir el archivo de Carros", __LINE__, __FILE__);
-    }
-    std::string linea;
-    while (!carros.eof()) {
-        getline(carros, linea);
-        if (linea == "Nuevo Carro") {
-            std::string nombreDeCarro;
-            getline(carros, nombreDeCarro);
-            std::cout << nombreDeCarro << std::endl;
-            getline(carros, linea);
-            planosDeCarros.emplace(nombreDeCarro, new PlanoDeCarro(linea));
-        }
+    YAML::Node configuracion = YAML::LoadFile("../configuracion.yaml");
+    YAML::Node autos = configuracion["carros"];
+    //Tirar excepcion si el archivo no se abrio
+    for (auto &&autoInfo : autos) {
+        std::string nombreDeCarro = autoInfo["nombre"].as<std::string>();
+        int velocidadMax = autoInfo["velocidad_max"].as<int>();
+        float32 anguloDeGiro = autoInfo["angulo_de_giro"].as<float32 >();
+        int agarre = autoInfo ["agarre"].as<int>();
+        std::cout << nombreDeCarro << std::endl;
+        planosDeCarros.emplace(nombreDeCarro, new PlanoDeCarro(velocidadMax, anguloDeGiro, agarre));
     }
 }
 

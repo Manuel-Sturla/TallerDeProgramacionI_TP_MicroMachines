@@ -3,6 +3,7 @@
 #include "Comunicacion/ClienteProxy.h"
 #include "Comunicacion/Sockets/SocketPeerException.h"
 #include <map>
+#include <chrono>
 #include <string>
 
 
@@ -35,6 +36,7 @@ void Servidor::run() {
 
     while (continuar){
         try{
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000/60));
             clienteProxy.ejecutarAccion();
             partida.simular();
             partida.actualizar();

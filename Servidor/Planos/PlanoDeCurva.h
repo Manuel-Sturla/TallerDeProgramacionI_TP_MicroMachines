@@ -8,11 +8,11 @@ class PlanoDeCurva: public PlanoDeSuelo {
 private:
     int posicionX;
     int posicionY;
-    std::string tipo;
+    int tipo;
 
     float32 obtenerAngulo();
 public:
-    PlanoDeCurva(const std::string& configuracion);
+    PlanoDeCurva(int x, int y, int tipo);
 
     void agregarSueloA(Pista *mapa) override;
 

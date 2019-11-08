@@ -5,7 +5,7 @@
 		<Option title="Servidor"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\3rd_party\;CMake Files\3rd_party\Box2D-cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\3rd_party\;CMake Files\3rd_party\Box2D-cmake\;CMake Files\yaml-cpp\;CMake Files\yaml-cpp\util\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor"/>
@@ -17,11 +17,21 @@
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="rebuild_cache">
+			<Target title="install/strip">
 				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 edit_cache"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
@@ -35,6 +45,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D"/>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -59,6 +70,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/Box2D"/>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -75,14 +87,268 @@
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="edit_cache">
+			<Target title="rebuild_cache">
 				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
 					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="releasable">
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 releasable"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="debuggable">
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 debuggable"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="yaml-cpp">
+				<Option output="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/libyaml-cpp.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include"/>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 yaml-cpp"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="yaml-cpp/fast">
+				<Option output="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/libyaml-cpp.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include"/>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 yaml-cpp/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="format">
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 format"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sandbox">
+				<Option output="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/sandbox" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 sandbox"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="sandbox/fast">
+				<Option output="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/sandbox" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 sandbox/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="parse">
+				<Option output="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/parse" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 parse"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="parse/fast">
+				<Option output="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/parse" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 parse/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="read">
+				<Option output="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/read" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 read"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="read/fast">
+				<Option output="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/read" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 read/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Box2D-cmake">
@@ -734,11 +1000,299 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/main.cpp">
 			<Option target="tp"/>
 		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/anchor.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/binary.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/contrib/anchordict.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/contrib/graphbuilder.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/dll.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/emitfromevents.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/emitter.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/emitterdef.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/emittermanip.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/emitterstyle.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/eventhandler.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/exceptions.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/mark.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/convert.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/detail/bool_type.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/detail/impl.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/detail/iterator.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/detail/iterator_fwd.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/detail/memory.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/detail/node.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/detail/node_data.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/detail/node_ref.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/emit.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/impl.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/iterator.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/node.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/parse.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/ptr.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/node/type.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/null.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/ostream_wrapper.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/parser.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/stlemitter.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/traits.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/include/yaml-cpp/yaml.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/binary.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/collectionstack.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/contrib/graphbuilder.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/contrib/graphbuilderadapter.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/contrib/graphbuilderadapter.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/convert.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/directives.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/directives.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/emit.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/emitfromevents.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/emitter.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/emitterstate.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/emitterstate.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/emitterutils.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/emitterutils.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/exceptions.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/exp.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/exp.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/indentation.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/memory.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/node.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/node_data.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/nodebuilder.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/nodebuilder.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/nodeevents.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/nodeevents.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/null.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/ostream_wrapper.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/parse.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/parser.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/ptr_vector.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/regex_yaml.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/regex_yaml.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/regeximpl.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/scanner.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/scanner.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/scanscalar.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/scanscalar.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/scantag.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/scantag.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/scantoken.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/setting.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/simplekey.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/singledocparser.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/singledocparser.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/stream.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/stream.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/streamcharsource.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/stringsource.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/tag.cpp">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/tag.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/src/token.h">
+			<Option target="yaml-cpp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/parse.cpp">
+			<Option target="parse"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/read.cpp">
+			<Option target="read"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/sandbox.cpp">
+			<Option target="sandbox"/>
+		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\3rd_party\Box2D-cmake\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/yaml-cpp-config-version.cmake.in">
+			<Option virtualFolder="CMake Files\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/yaml-cpp-config.cmake.in">
+			<Option virtualFolder="CMake Files\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/yaml-cpp.pc.cmake">
+			<Option virtualFolder="CMake Files\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\yaml-cpp\util\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -5,7 +5,7 @@
 		<Option title="Box2D-cmake"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\3rd_party\;CMake Files\3rd_party\Box2D-cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\3rd_party\;CMake Files\3rd_party\Box2D-cmake\;CMake Files\yaml-cpp\;CMake Files\yaml-cpp\util\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake"/>
@@ -368,6 +368,21 @@
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/3rd_party/Box2D-cmake/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\3rd_party\Box2D-cmake\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/yaml-cpp-config-version.cmake.in">
+			<Option virtualFolder="CMake Files\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/yaml-cpp-config.cmake.in">
+			<Option virtualFolder="CMake Files\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/yaml-cpp.pc.cmake">
+			<Option virtualFolder="CMake Files\yaml-cpp\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/yaml-cpp/util/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\yaml-cpp\util\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

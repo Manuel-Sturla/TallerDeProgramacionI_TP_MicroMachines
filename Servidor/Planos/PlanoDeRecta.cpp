@@ -3,15 +3,11 @@
 #define ANGULO_RECTA_1 0
 #define ANGULO_RECTA_2 0.5f * b2_pi
 
-PlanoDeRecta::PlanoDeRecta(const std::string& configuracion) {
-    std::istringstream stringConfiguracion(configuracion);
-    std::string posicionString;
-    getline(stringConfiguracion, material, ',');
-    getline(stringConfiguracion, posicionString, ',');
-    posicionX = stoi(posicionString);
-    getline(stringConfiguracion, posicionString, ',');
-    posicionY = stoi(posicionString);
-    getline(stringConfiguracion, tipo, ',');
+PlanoDeRecta::PlanoDeRecta(std::string material, int x, int y, int tipo) {
+    this -> material = material;
+    this -> posicionX = x;
+    this -> posicionY = y;
+    this -> tipo = tipo;
 }
 
 void PlanoDeRecta::agregarSueloA(Pista *mapa) {
@@ -23,7 +19,7 @@ PlanoDeRecta::~PlanoDeRecta() {
 
 float32 PlanoDeRecta::obtenerAngulo() {
     float32 angulo = ANGULO_RECTA_1;
-    if (tipo == "2") {
+    if (tipo == 2) {
         angulo = ANGULO_RECTA_2;
     }
     return angulo;

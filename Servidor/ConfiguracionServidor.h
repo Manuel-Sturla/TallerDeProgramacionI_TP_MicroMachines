@@ -5,6 +5,7 @@
 #include <string>
 #include "Planos/PlanoDePista.h"
 #include "Planos/PlanoDeCarro.h"
+#include "yaml-cpp/node/node.h"
 
 class ConfiguracionServidor {
 private:

@@ -11,7 +11,7 @@ private:
     float32 anguloDeGiro;
     int aceleracion;
 public:
-    explicit PlanoDeCarro(const std::string& configuracion);
+    explicit PlanoDeCarro(int velocidadMax, float32 anguloDeGiro, int agarre);
 
     Carro *crearCarro(Pista *pista);
 

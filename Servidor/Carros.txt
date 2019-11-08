@@ -1,4 +1,0 @@
-Nuevo Carro
-ManuMovil
-5,45,100
-Fin Carro
