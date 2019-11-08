@@ -1,20 +1,36 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 #include <SDL2/SDL_image.h>
+#include <QtWidgets/QApplication>
 #include "Excepciones/ExcepcionConPos.h"
 #include "Juego/Partida.h"
+#include "Menu/Lobby.h"
+#include "Menu/Inicio.h"
 
-int main(int argc, char const* argv[]) {
-    if(argc != 3){
-        std::cout<<"Uso correcto ./client host servicio\n";
-        return 1;
-    }
+int ejecutarInicio(int argc, char* argv[], std::string& host, std::string& servicio){
+    QApplication app(argc, argv);
+    Inicio inicio(host, servicio);
+    inicio.show();
+    return QApplication::exec();
+}
+
+int ejecutarLobby(int argc, char* argv[], ServidorProxy& servidor){
+    QApplication app(argc, argv);
+    Lobby lobby(servidor);
+    lobby.show();
+    return QApplication::exec();
+}
+
+int main(int argc, char* argv[]) {
     if(SDL_Init(SDL_INIT_VIDEO) != 0){
         SDL_Log("No pude incializar el SDL %s", SDL_GetError());
         return 0;
     }
     try {
-        ServidorProxy servidor(argv[1], argv[2]);
+        std::string host, servicio;
+        ejecutarInicio(argc, argv, host, servicio);
+        ServidorProxy servidor(host, servicio);
+        ejecutarLobby(argc, argv, servidor);
         HiloLector lector(servidor);
         lector.start();
         bool enPartida = true;

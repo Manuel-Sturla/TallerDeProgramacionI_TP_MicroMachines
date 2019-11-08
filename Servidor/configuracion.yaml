@@ -3,34 +3,3 @@ carros:
   [
   {nombre: ManuMovil, velocidad_max: 5, angulo_de_giro: 10, agarre: 100}
   ]
-pistas:
-  - nombre: Prueba 1
-    rectas: [
-    {material: Asfalto, x: 0, y: 0, tipo: 1}, #Inicio de Pista [0]
-    {material: Asfalto, x: 4, y: 4, tipo: 2}, #[2]
-    {material: Asfalto, x: 8, y: 0, tipo: 1}, #[4]
-    {material: Asfalto, x: 4, y: -4, tipo: 2}, #[6]
-    {material: Pasto, x: -4, y: -4, tipo: 1},
-    {material: Pasto, x: -4, y: 0, tipo: 1},
-    {material: Pasto, x: -4, y: 4, tipo: 1},
-    {material: Pasto, x: -4, y: 8, tipo: 1},
-    {material: Pasto, x: 0, y: 8, tipo: 1},
-    {material: Pasto, x: 4, y: 8, tipo: 1},
-    {material: Pasto, x: 8, y: 8, tipo: 1},
-    {material: Pasto, x: 12, y: 8, tipo: 1},
-    {material: Pasto, x: 12, y: 4, tipo: 1},
-    {material: Pasto, x: 12, y: 0, tipo: 1},
-    {material: Pasto, x: 12, y: -4, tipo: 1},
-    {material: Pasto, x: 12, y: -8, tipo: 1},
-    {material: Pasto, x: 8, y: -8, tipo: 1},
-    {material: Pasto, x: 4, y: -8, tipo: 1},
-    {material: Pasto, x: 0, y: -8, tipo: 1},
-    {material: Pasto, x: -4, y: -8, tipo: 1},
-    {material: Pasto, x: 4, y: 0, tipo: 1}
-    ]
-    curvas: [
-    {x: 0, y: 4, tipo: 1},
-    {x: 8, y: 4, tipo: 4},
-    {x: 8, y: -4, tipo: 3},
-    {x: 0, y: -4, tipo: 2}
-    ]

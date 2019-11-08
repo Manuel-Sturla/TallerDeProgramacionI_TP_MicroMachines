@@ -54,13 +54,15 @@ void SocketAmigo::recibir(std::string& answer, size_t lenght) {
 }
 
 void SocketAmigo::cerrar() {
-  shutdown(fd, SHUT_RDWR);
-  ::close(fd);
-  fd = -1;
+    if (fd > 1){
+        shutdown(fd, SHUT_RDWR);
+        ::close(fd);
+        fd = -1;
+    }
 }
 
 SocketAmigo::~SocketAmigo() {
-  if (fd != -1) {
+  if (fd > -1) {
     cerrar();
   }
 }

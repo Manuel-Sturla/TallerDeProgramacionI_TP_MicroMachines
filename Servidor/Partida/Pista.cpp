@@ -1,10 +1,9 @@
 #include "Pista.h"
 #include "../Acciones/GiroAIzquierda.h"
 
-Pista::Pista() {
-}
+#define LONGITUD_DE_PISTA "4"
 
-Material *Pista::darMaterial(std::string materialPedido) {
+Material *Pista::darMaterial(const std::string& materialPedido) {
     if (materialPedido == "Asfalto") {
         return &asfalto;
     } else if (materialPedido == "Pasto"){
@@ -49,7 +48,7 @@ void Pista::empaquetarCarro(std::vector<std::string> *destino) {
 void Pista::empaquetarSuelos(std::vector<std::string> *destino) {
     std::list<Recta>::iterator itRectas;
     std::list<Curva>::iterator itCurvas;
-    destino -> emplace_back("4"); //LONGITUD DEL CUADRADO
+    destino -> emplace_back(LONGITUD_DE_PISTA);
     for (itRectas = rectas.begin(); itRectas != rectas.end(); itRectas++) {
         itRectas -> empaquetar(destino);
     }
@@ -60,5 +59,9 @@ void Pista::empaquetarSuelos(std::vector<std::string> *destino) {
 
 Carro *Pista::crearCarro(int velocidad, float32 anguloEnRadianes, int agarre) {
     carros.emplace_back(&mundoBox2D, velocidad, anguloEnRadianes, agarre, 0.0f, 0.0f);
-    return &carros.back(); //DUDOSO... PREGUNTAR A MANU
+    return &carros.back();
+}
+
+int Pista::cantidadDeCarros() {
+    return carros.size();
 }

@@ -6,28 +6,33 @@
 #include "Pista.h"
 #include "../Planos/PlanoDePista.h"
 #include "../Planos/PlanoDeCarro.h"
+#include "../Hilo.h"
+#include "../Comunicacion/ClienteProxy.h"
+#include "../Comunicacion/Estados/EstadoPartida.h"
 
-class Partida {
-  private:
+class Partida: public Hilo {
+private:
     Pista pista;
-    std::vector<std::string> extras;
-    std::vector<std::string> autos;
+    int cantidadMaximaDeJugadores;
+    std::vector<ClienteProxy*> clientes;
+    std::unique_ptr<EstadoPartida> estado;
+    std::atomic<bool> continuar;
     std::vector<std::string> suelos;
 
-  public:
-    Partida();
+    void enviarMapa();
+public:
 
-    void simular();
+    Partida(int cantJugadores, PlanoDePista *pista);
 
-    std::vector<std::string>& obtenerExtras();
-
-    std::vector<std::string>& obtenerAutos();
+    void run() override;
 
     std::vector<std::string>& obtenerMapa();
 
-    Carro* agregarCliente(PlanoDeCarro *planoDeCarro);
+    Carro * agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente);
 
-    void actualizar();
+    bool estaMuerto();
+
+    void cerrar();
 
     void crearPista(PlanoDePista *planoDePista);
 

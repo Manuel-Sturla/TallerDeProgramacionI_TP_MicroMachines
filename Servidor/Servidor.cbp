@@ -739,22 +739,76 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/Comando.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/ElegirPartida.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/CrearPartida.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/ElegirPartida.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/CrearPartida.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/EnviarMapa.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/ObtenerPartidas.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/EnviarMapa.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/ObtenerPartidas.h">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/EnviarPosiciones.cpp">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/RecibirAccion.cpp">
 			<Option target="tp"/>
 		</Unit>
-		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/EnviarPosiciones.h">
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/RecibirAccion.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/UnirAPartida.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Comandos/UnirAPartida.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Estados/EnCarrera.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Estados/EnCarrera.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Estados/EnEspera.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Estados/EnEspera.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Estados/EnJuego.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Estados/EnJuego.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Estados/EnMenu.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Estados/EnMenu.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Estados/EstadoCliente.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Estados/EstadoCliente.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Estados/EstadoPartida.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Estados/EstadoPartida.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/HiloCliente.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/HiloCliente.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/HiloPartida.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/HiloPartida.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Comunicacion/Protocolo.cpp">
@@ -956,6 +1010,12 @@
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida/Pista.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/PartidaLlenaExcepcion.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/PartidaLlenaExcepcion.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Planos/PlanoDeCarro.cpp">

@@ -20,16 +20,17 @@ ServidorProxy::ServidorProxy(const std::string &host, const std::string &servici
 }
 
 void ServidorProxy::ejecutarMovimiento(const std::string& comando) {
-    protocolo.enviar(CMD_MOVIMIENTO);
     protocolo.enviar(comando);
 }
 
 void ServidorProxy::elegirPartida(const std::string &nombre) {
+    protocolo.enviar("UnirPAR");
     protocolo.enviar(nombre);
 }
 
-void ServidorProxy::crearPartida(const std::string &nombre, const int& cantJugadores) {
-    std::vector<std::string> aux ={nombre, std::to_string(cantJugadores)};
+void ServidorProxy::crearPartida(const std::string &nombre, const std::string& cantJugadores) {
+    protocolo.enviar("CrearPAR");
+    std::vector<std::string> aux ={nombre, cantJugadores};
     protocolo.enviar(unir(aux, SEPARADOR));
 }
 
@@ -44,7 +45,6 @@ std::vector<std::string> ServidorProxy::obtenerPartidas() {
 }
 
 void ServidorProxy::obtenerPosiciones(std::vector<std::string> &extras, std::vector<std::string> &autos) {
-    protocolo.enviar(CMD_POSICIONES);
     std::string aux;
     while ((aux = protocolo.recibir()) != MSJ_FIN){
         //Aca se podría desempaquetar o desparsear los datos...
@@ -57,17 +57,12 @@ void ServidorProxy::obtenerPosiciones(std::vector<std::string> &extras, std::vec
 }
 
 std::vector<std::string> ServidorProxy::obtenerMapa() {
-    protocolo.enviar(CMD_MAPA);
     std::vector<std::string> resultado;
     std::string aux;
     while ((aux = protocolo.recibir()) != MSJ_FIN){
         resultado.push_back(aux);
     }
     return resultado;
-}
-
-bool ServidorProxy::creePartida() {
-    return protocolo.recibir() == "iniciar partida";
 }
 
 void ServidorProxy::terminarConexion() {

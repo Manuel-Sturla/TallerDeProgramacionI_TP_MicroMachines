@@ -6,5 +6,5 @@
 #include "ComandoIniciarPartida.h"
 
 void ComandoIniciarPartida::ejecutar() {
-    servidor.crearPartida("part1", 1);
+    servidor.crearPartida("part1", "1");
 }
