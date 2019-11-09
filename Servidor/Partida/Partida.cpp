@@ -5,6 +5,8 @@
 #include "../Comunicacion/Estados/EnCarrera.h"
 #include "../Comunicacion/Estados/EnEspera.h"
 
+#define MSJ_COMENZO_PARTIDA "PartidaComienza"
+
 Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
 continuar(true), estado(new EnEspera(cantJugadores, clientes)) {
     cantidadMaximaDeJugadores = cantJugadores;
@@ -36,6 +38,8 @@ Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente
 
 void Partida::run() {
     estado->ejecutar();
+    //
+    enviarComenzoLaPartida();
     enviarMapa();
     //enviarAutosPropios();
     estado = std::unique_ptr<EstadoPartida> (new EnCarrera(pista, clientes));
@@ -69,6 +73,12 @@ void Partida::enviarMapa() {
             cliente->enviar(pos);
         }
         cliente->enviar(MSJ_FIN);
+    }
+}
+
+void Partida::enviarComenzoLaPartida() {
+    for (auto& cliente : clientes){
+        cliente->enviar(MSJ_COMENZO_PARTIDA);
     }
 }
 
