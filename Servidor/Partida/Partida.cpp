@@ -6,7 +6,7 @@
 #include "../Comunicacion/Estados/EnEspera.h"
 
 Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
-continuar(true), estado(new EnEspera(cantJugadores)) {
+continuar(true), estado(new EnEspera(cantJugadores, clientes)) {
     cantidadMaximaDeJugadores = cantJugadores;
     crearPista(planoPista);
     suelos.clear();
