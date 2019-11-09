@@ -13,9 +13,9 @@ private:
 public:
   PlanoDePista();
 
-  void agregarRecta(std::string material, int x, int y, int tipo);
+  void agregarRecta(std::string material, int x, int y, int tipo, int numero);
 
-  void agregarCurva(int x, int y, int tipo);
+  void agregarCurva(int x, int y, int tipo, int numero);
 
   void crearPista(Pista *mapa);
 

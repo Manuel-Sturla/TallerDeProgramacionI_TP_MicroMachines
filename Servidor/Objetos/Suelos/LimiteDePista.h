@@ -7,7 +7,7 @@ class LimiteDePista: public Material {
   public:
     LimiteDePista();
 
-    void interactuar(Carro* unCarro);
+    void interactuar(Carro *unCarro, int numeroDeSuelo);
 
     ~LimiteDePista();
 };

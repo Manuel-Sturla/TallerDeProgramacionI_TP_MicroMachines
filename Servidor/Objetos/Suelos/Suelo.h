@@ -4,7 +4,9 @@
 #include "../Interactuable.h"
 
 class Suelo: public Interactuable {
-  public:
+protected:
+    int numeroDeSuelo;
+public:
     virtual void interactuar(Carro *unCarro) = 0;
 };
 

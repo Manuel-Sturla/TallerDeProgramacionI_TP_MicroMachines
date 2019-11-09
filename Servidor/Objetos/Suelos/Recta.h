@@ -11,7 +11,7 @@ class Recta: public Suelo {
 
   public:
     Recta(MundoBox2D *pista, Material *unMaterial, float32 x, float32 y,
-          float32 angulo);
+          float32 angulo, int numeroDeSuelo);
 
     Recta(Recta &&otraRecta);
 

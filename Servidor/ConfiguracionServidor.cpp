@@ -21,14 +21,16 @@ void ConfiguracionServidor::levantarPistas() {
             int x = rectasInfo["x"].as<int>();
             int y = rectasInfo["y"].as<int>();
             int tipo = rectasInfo["tipo"].as<int>();
-            planosDePistas[nombre] -> agregarRecta(material, x, y, tipo);
+            int numero = rectasInfo["numero"].as<int>();
+            planosDePistas[nombre] -> agregarRecta(material, x, y, tipo, numero);
         }
         YAML::Node curvas = configuracion[i]["curvas"];
         for (auto &&curvasInfo : curvas) {
             int x = curvasInfo["x"].as<int>();
             int y = curvasInfo["y"].as<int>();
             int tipo = curvasInfo["tipo"].as<int>();
-            planosDePistas[nombre] -> agregarCurva(x, y, tipo);
+            int numero = curvasInfo["numero"].as<int>();
+            planosDePistas[nombre] -> agregarCurva(x, y, tipo, numero);
         }
     }
 }

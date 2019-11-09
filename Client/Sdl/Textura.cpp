@@ -22,19 +22,13 @@ Textura::Textura(Textura&& text) noexcept : posicion(text.posicion) {
 }
 
 void Textura::copiar(SDL_Renderer *renderizador, Camara& camara) {
-    if(posicion == nullptr){
-        if(SDL_RenderCopyEx(renderizador, textura, nullptr, nullptr, -180, nullptr, SDL_FLIP_VERTICAL)<0){
-            throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
-        }
-    } else {
-        if(!camara.estaEnRango(posicion->getPosicion())){
-            return;
-        }
-        SDL_Rect posImpresion = camara.obtenerPosImpresion(posicion->getPosicion());
-        if(SDL_RenderCopyEx(renderizador, textura, nullptr, &posImpresion,\
-        camara.obtenerAngulo(posicion->getAngulo()), nullptr, SDL_FLIP_NONE)<0){
-            throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
-        }
+    if(!camara.estaEnRango(posicion->getPosicion())){
+        return;
+    }
+    SDL_Rect posImpresion = camara.obtenerPosImpresion(posicion->getPosicion());
+    if(SDL_RenderCopyEx(renderizador, textura, nullptr, &posImpresion,\
+    camara.obtenerAngulo(posicion->getAngulo()), nullptr, SDL_FLIP_NONE)<0){
+        throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
     }
 }
 

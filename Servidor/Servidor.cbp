@@ -880,6 +880,12 @@
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Objetos/Carro/EstadoVelocidad.h">
 			<Option target="tp"/>
 		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Objetos/Carro/Posicion.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Objetos/Carro/Posicion.h">
+			<Option target="tp"/>
+		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Objetos/Carro/Velocidad.cpp">
 			<Option target="tp"/>
 		</Unit>
@@ -1010,6 +1016,12 @@
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida/Pista.h">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida/Podio.cpp">
+			<Option target="tp"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/Partida/Podio.h">
 			<Option target="tp"/>
 		</Unit>
 		<Unit filename="/home/hugo/Escritorio/MicroMachines/Servidor/PartidaLlenaExcepcion.cpp">

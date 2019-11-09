@@ -7,7 +7,7 @@ class Pasto: public Material {
   public:
     Pasto();
 
-    void interactuar(Carro* unCarro);
+    void interactuar(Carro *unCarro, int numeroDeSuelo);
 
     ~Pasto();
 };

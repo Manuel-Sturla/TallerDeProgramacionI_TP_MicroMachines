@@ -5,8 +5,9 @@ Asfalto::Asfalto() {
   id = "Asfalto";
 }
 
-void Asfalto::interactuar(Carro* unCarro) {
+void Asfalto::interactuar(Carro *unCarro, int numeroDeSuelo) {
   unCarro -> aplicarFriccion(coeficienteDeRozamiento);
+  unCarro -> actualizarPosicion(numeroDeSuelo);
 }
 
 Asfalto::~Asfalto() {

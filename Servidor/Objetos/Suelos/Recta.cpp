@@ -1,7 +1,7 @@
 #include "Recta.h"
 
 Recta::Recta(MundoBox2D *pista, Material *unMaterial, float32 x, float32 y,
-             float32 angulo) {
+             float32 angulo, int numeroDeSuelo) {
     material = unMaterial;
     b2BodyDef defCuerpo;
     defCuerpo.type = b2_staticBody;
@@ -17,13 +17,14 @@ Recta::Recta(MundoBox2D *pista, Material *unMaterial, float32 x, float32 y,
     fixtureDef.isSensor = true;
     cuerpo -> CreateFixture(&fixtureDef);
     cuerpo -> SetTransform(cuerpo -> GetPosition(), angulo);
+    this -> numeroDeSuelo = numeroDeSuelo;
 }
 
 Recta::~Recta() {
 }
 
 void Recta::interactuar(Carro *unCarro) {
-    material -> interactuar(unCarro);
+    material->interactuar(unCarro, numeroDeSuelo);
 }
 
 std::string Recta::darId() {

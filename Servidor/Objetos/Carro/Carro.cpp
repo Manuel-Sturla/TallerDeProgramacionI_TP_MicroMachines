@@ -17,7 +17,7 @@ void Carro::agregarseA(MundoBox2D *pista, float32 x, float32 y) {
   cuerpo = pista -> agregarObjeto(&bodyDef);
   cuerpo -> SetUserData(this);
   b2PolygonShape dynamicBox;
-  dynamicBox.SetAsBox(1.0f, 1.0f);
+  dynamicBox.SetAsBox(0.5f, 0.5f);
   b2FixtureDef fixtureDef;
   fixtureDef.shape = &dynamicBox;
   fixtureDef.density = 1.0f;
@@ -68,12 +68,13 @@ void Carro::recibirBoost() {
 }
 
 void Carro::imprimirPosicion() {
+    /*
   b2Vec2 position = cuerpo -> GetPosition();
   float32 angle = cuerpo -> GetAngle();
   b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
   printf("Nueva iteracion\n");
   std::cout << "Posicion: " << position.x << " " << position.y << " " <<  angle << std::endl;
-  std::cout << "Velocidad: " << velocidad.x << " " << velocidad.y << std::endl;
+  std::cout << "Velocidad: " << velocidad.x << " " << velocidad.y << std::endl;*/
 }
 
 bool Carro::esValido() {
@@ -87,4 +88,9 @@ void Carro::reducirAgarre() {
 void Carro::empaquetar(std::vector<std::string> *destino) {
   empaquetarPosicion(destino);
   empaquetarAngulo(destino);
+}
+
+void Carro::actualizarPosicion(int numeroDeSuelo) {
+    std::cout << "Me llego el suelo numero " << numeroDeSuelo << std::endl;
+    posicion.actualizar(numeroDeSuelo);
 }
