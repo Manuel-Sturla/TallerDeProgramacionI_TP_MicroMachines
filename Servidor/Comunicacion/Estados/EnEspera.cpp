@@ -53,5 +53,6 @@ void EnEspera::cerrarCliente(size_t posicion){
 }
 
 void EnEspera::cerrar() {
+    cantActualJugadores = cantMaximaJugadores;
     estaLLena.notify_all();
 }
