@@ -10,7 +10,7 @@ class Material {
     std::string id;
     float32 coeficienteDeRozamiento;
   public:
-    virtual void interactuar(Carro* unCarro) = 0;
+    virtual void interactuar(Carro *unCarro, int numeroDeSuelo) = 0;
 
     void empaquetarMaterial(std::vector<std::string> *destino);
 };

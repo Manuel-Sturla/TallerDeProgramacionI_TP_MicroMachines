@@ -33,9 +33,9 @@ public:
     void empaquetarSuelos(std::vector<std::string> *destino);
 
     void
-    agregarRecta(std::string &material, float32 x, float32 y, float32 angulo);
+    agregarRecta(std::string &material, float32 x, float32 y, float32 angulo, int numeroDeSuelo);
 
-    void agregarCurva(float32 x, float32 y, float32 angulo);
+    void agregarCurva(float32 x, float32 y, float32 angulo, int numeroDeSuelo);
 
     ~Pista();
 };

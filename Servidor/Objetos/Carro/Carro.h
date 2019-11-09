@@ -10,6 +10,7 @@
 #include "Velocidad.h"
 #include "EstadoVelocidad.h"
 #include "Agarre.h"
+#include "Posicion.h"
 
 class Carro: public Objeto {
   private:
@@ -18,6 +19,7 @@ class Carro: public Objeto {
     Visibilidad visibilidad;
     EstadoVelocidad estadoVelocidad;
     Agarre agarre;
+    Posicion posicion;
     float32 anguloDeGiro;
     float32 coeficienteDeRozamiento;
 
@@ -46,6 +48,8 @@ class Carro: public Objeto {
     void reducirVisibilidad();
 
     void reducirAgarre();
+
+    void actualizarPosicion(int numeroDeSuelo);
 
     bool esValido() override;
 

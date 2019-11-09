@@ -17,12 +17,12 @@ Pista::~Pista() {
 }
 
 void Pista::agregarRecta(std::string &material, float32 x, float32 y,
-                         float32 angulo = 0) {
-    rectas.emplace_back(&mundoBox2D, darMaterial(material), x, y, angulo);
+                         float32 angulo, int numeroDeSuelo) {
+    rectas.emplace_back(&mundoBox2D, darMaterial(material), x, y, angulo, numeroDeSuelo);
 }
 
-void Pista::agregarCurva(float32 x, float32 y, float32 angulo = 0) {
-    curvas.emplace_back(&mundoBox2D, &asfalto, &pasto, x, y, angulo);
+void Pista::agregarCurva(float32 x, float32 y, float32 angulo, int numeroDeSuelo) {
+    curvas.emplace_back(&mundoBox2D, &asfalto, &pasto, x, y, angulo, numeroDeSuelo);
 }
 
 void Pista::simular() {

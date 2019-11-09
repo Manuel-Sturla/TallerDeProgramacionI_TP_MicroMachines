@@ -1,7 +1,6 @@
 #include "ManejadorDeContactos.h"
 #include "../Objetos/Carro/Carro.h"
 #include "../Objetos/Interactuable.h"
-#include "../Objetos/Objeto.h"
 #include "../Objetos/Suelos/Curva.h"
 #include <iostream>
 ManejadorDeContactos::ManejadorDeContactos() {

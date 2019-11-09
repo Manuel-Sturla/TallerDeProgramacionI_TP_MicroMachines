@@ -13,12 +13,13 @@ class Curva: public Suelo {
     const int circulo = 1;
     const int cuadrado = 2;
     int interaccion;
+
     Asfalto *asfalto;
     Pasto *pasto;
 
   public:
-    Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y,
-          float32 angulo);
+    Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x,
+          float32 y, float32 angulo, int numeroDeSuelo);
 
     void agregarseAPista(MundoBox2D *pista, float32 angulo);
 

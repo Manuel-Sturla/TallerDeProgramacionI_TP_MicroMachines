@@ -8,7 +8,7 @@ class Asfalto: public Material {
   public:
     Asfalto();
 
-    void interactuar(Carro* unCarro) override;
+    void interactuar(Carro *unCarro, int numeroDeSuelo) override;
 
     ~Asfalto();
 

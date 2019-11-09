@@ -3,8 +3,8 @@
 #define EN_ASFALTO 3
 #define EN_PASTO 2
 
-Curva::Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y,
-             float32 angulo) {
+Curva::Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x,
+             float32 y, float32 angulo, int numeroDeSuelo) {
     b2BodyDef defCuerpo;
     defCuerpo.type = b2_staticBody;
     defCuerpo.position.Set(x, y);
@@ -13,6 +13,7 @@ Curva::Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float
     this -> asfalto = asfalto;
     this -> pasto = pasto;
     interaccion = FUERA_DE_CURVA;
+    this -> numeroDeSuelo = numeroDeSuelo;
 }
 
 void Curva::agregarseAPista(MundoBox2D *pista, float32 angulo) {
@@ -44,9 +45,9 @@ std::string Curva::darId() {
 
 void Curva::interactuar(Carro *unCarro) {
     if (interaccion == EN_ASFALTO) {
-        asfalto -> interactuar(unCarro);
+        asfalto->interactuar(unCarro, numeroDeSuelo);
     } else if (interaccion == EN_PASTO) {
-        pasto -> interactuar(unCarro);
+        pasto->interactuar(unCarro, numeroDeSuelo);
     }
 }
 
