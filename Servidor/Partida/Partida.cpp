@@ -37,6 +37,7 @@ Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente
 void Partida::run() {
     estado->ejecutar();
     enviarMapa();
+    //enviarAutosPropios();
     estado = std::unique_ptr<EstadoPartida> (new EnCarrera(pista, clientes));
     while(continuar)
         try {
@@ -54,11 +55,12 @@ bool Partida::estaMuerto() {
 
 void Partida::cerrar() {
     continuar = false;
-    while (!estado->enJuego()){
+    //Para asegurarme que no envíe nada a ningun cliente porque la quiero cerrar
+    clientes.clear();
+    if (!estado->enJuego()){
         EnEspera* estadoEnEspera = dynamic_cast<EnEspera *>(estado.get());
-        estadoEnEspera->sumarJugador();
+        estadoEnEspera->cerrar();
     }
-
 }
 
 void Partida::enviarMapa() {

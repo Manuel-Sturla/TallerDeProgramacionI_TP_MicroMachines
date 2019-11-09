@@ -1,4 +1,5 @@
 
+#include <iostream>
 #include "EnEspera.h"
 #include "../Sockets/SocketPeerException.h"
 
@@ -12,6 +13,7 @@ void EnEspera::sumarJugador() {
     std::unique_lock<std::mutex> lock(mutex);
     cantActualJugadores++;
     enviarCantidadDeJugadores();
+    std::cout << "Cantidad actual de jugadores: " << cantActualJugadores << std::endl;
     if (enJuego()){
         estaLLena.notify_all();
     }
@@ -48,4 +50,8 @@ void EnEspera::cerrarCliente(size_t posicion){
     //cierro el cliente, dado que asumo que murió.
     clientes.back()->desconectar();
     clientes.pop_back();
+}
+
+void EnEspera::cerrar() {
+    estaLLena.notify_all();
 }
