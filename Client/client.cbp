@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="client"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Client"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Client"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="client">
+				<Option output="/home/hugo/Escritorio/MicroMachines/Client/client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Client"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Client"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 client"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="client/fast">
+				<Option output="/home/hugo/Escritorio/MicroMachines/Client/client" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Client"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_NO_DEBUG"/>
+					<Add directory="/home/hugo/Escritorio/MicroMachines/Client"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtWidgets"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtGui"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/qt5/QtCore"/>
+					<Add directory="/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 client/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/hugo/Escritorio/MicroMachines/Client"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/home/hugo/Escritorio/MicroMachines/Client/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/AdministradorComandos.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/AdministradorComandos.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/Comando.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoAcelerar.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoAcelerar.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoCerrar.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoCerrar.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoDerecha.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoDerecha.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoFrenar.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoFrenar.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoIniciarPartida.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoIniciarPartida.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoIzquierda.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Comandos/ComandoIzquierda.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Excepciones/ExcepcionConPos.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Hilo.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Juego/Auto.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Juego/Auto.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Juego/Juego.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Juego/Juego.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Juego/Partida.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Juego/Partida.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Juego/Pista.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Juego/Pista.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Lector/HiloLector.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Lector/HiloLector.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Lector/LectorTeclado.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Lector/LectorTeclado.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Menu/Inicio.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Menu/Inicio.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Menu/Lobby.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Menu/Lobby.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sdl/Posicion.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sdl/Posicion.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sdl/Renderizador.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sdl/Renderizador.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sdl/Textura.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sdl/Textura.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sdl/Ventana.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sdl/Ventana.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/Protocolo.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/Protocolo.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/ServidorProxy.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/ServidorProxy.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/SocketActivo.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/SocketActivo.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/SocketAmigo.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/SocketAmigo.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/SocketException.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/SocketException.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/SocketPeerException.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/SocketPeerException.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/Utilidades.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Sockets/Utilidades.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Ui/inicio.ui">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Ui/lobby.ui">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Vista/Camara.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Vista/Camara.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Vista/HiloReceptor.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Vista/HiloReceptor.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Vista/HiloVisualizacion.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/Vista/HiloVisualizacion.h">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/main.cpp">
+			<Option target="client"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/hugo/Escritorio/MicroMachines/Client/../../../../../usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

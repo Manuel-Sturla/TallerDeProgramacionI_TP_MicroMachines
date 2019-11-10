@@ -1,0 +1,19 @@
+1 - Ver si puedo renderizar una imagen muy grande y moverla por la pantalla.
+2 - Ver como hacer lo de las posiciones, la idea es recibir una posicion y dibujarla en pantalla. Pero esa posicion no
+es la de la ventana si no que la del mapa en el fondo. Como pudeo hacer esa conversion? Puedo considerar el movimoento?
+Eso seria mas facil pero lo veo medio sensible porque considero que siempre sale todo bien en el servidor.
+3 - Solo el auto tiene angulo, la camara va a moverse en 4 direcciones (izq, der, arr, abj).
+4 - La camara y el auto se mueven siempre juntos para que el auto siempre este en el centro de la pantalla.
+5 - Hacer el update a cada 20ms por box2D
+pasar a dibujar la pista como textura y renderizar varias veces. SDL renderer advance.
+6 - A cada 20ms no se ve laggeado, velocidad que estaria buena aumentar 10 pixeles
+
+
+Errores en movimiento:
+1) Angulo huguito es cero en x y el mio es 0 en y.
+2) Se mueve a la velocidad de la luz.
+3) el agunlo de huguito es en radianes y el de diego son enteros.
+
+ - Conviene que gire la pantalla con el autito?
+ - Para  especiales hacer dos comandos, borrar y agregar.
+ - Qt designer
