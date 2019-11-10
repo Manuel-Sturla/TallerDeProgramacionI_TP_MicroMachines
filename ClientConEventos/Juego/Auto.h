@@ -8,17 +8,17 @@
 
 #include "../Sdl/Posicion.h"
 #include "../Sdl/Renderizador.h"
+#include "Desplazable.h"
 
-class Auto {
-private:
-    Posicion posicion;
-
+class Auto : public Desplazable {
 public:
     Auto(Renderizador &renderizador, int tam);
 
-    void mover(float posX, float posY, int &angulo);
+    void mover(float posX, float posY, int angulo) override;
 
-    Posicion& getPos();
+    void morir() override;
+
+    void modificar(std::string &mensaje) override;
 };
 
 

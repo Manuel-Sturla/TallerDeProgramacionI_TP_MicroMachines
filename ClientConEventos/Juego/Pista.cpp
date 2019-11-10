@@ -35,18 +35,18 @@ void Pista::crear(std::vector<std::string> mensaje) {
 
 void Pista::agregarRecta(int posX, int posY, int angulo) {
     pistaPos.push_back(new Posicion(posX, posY, tamImagen, tamImagen, angulo));
-    renderizador.agregarTrecho("pista.png", pistaPos[pistaPos.size()-1]);
+    renderizador.agregarTrecho("../pista.png", pistaPos[pistaPos.size()-1]);
 }
 
 void Pista::agregarCurva(int posX, int posY, int angulo) {
     pistaPos.push_back(new Posicion(posX, posY, tamImagen, tamImagen, angulo));
-    renderizador.agregarTrecho("pasto.png", pistaPos[pistaPos.size()-1]);
-    renderizador.agregarTrecho("curva.png", pistaPos[pistaPos.size()-1]);
+    renderizador.agregarTrecho("../pasto.png", pistaPos[pistaPos.size()-1]);
+    renderizador.agregarTrecho("../curva.png", pistaPos[pistaPos.size()-1]);
 }
 
 void Pista::agregarPasto(int posX, int posY, int angulo) {
     pistaPos.push_back(new Posicion(posX, posY, tamImagen, tamImagen, angulo));
-    renderizador.agregarTrecho("pasto.png", pistaPos[pistaPos.size()-1]);
+    renderizador.agregarTrecho("../pasto.png", pistaPos[pistaPos.size()-1]);
 }
 
 Pista::~Pista() {

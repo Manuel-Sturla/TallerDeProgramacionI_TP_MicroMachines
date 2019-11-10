@@ -31,8 +31,6 @@ public:
 
     void copiarTodo(Camara& camara);
 
-    void destruirTexturas();
-
     virtual ~Renderizador();
 };
 

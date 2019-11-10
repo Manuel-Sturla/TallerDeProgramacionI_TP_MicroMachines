@@ -6,8 +6,9 @@
 #include "HiloVisualizacion.h"
 #include "../Excepciones/ExcepcionConPos.h"
 
-HiloVisualizacion::HiloVisualizacion(ServidorProxy& servidor, bool& keepTalking) : servidor(servidor), renderizador("microMachines.exe", 1000, 1000)\
-, pista(renderizador), camara(1000, 100), keepTalking(keepTalking) {
+HiloVisualizacion::HiloVisualizacion(ServidorProxy& servidor, bool& keepTalking) : servidor(servidor),\
+renderizador("microMachines.exe", 1000, 1000), pista(renderizador),\
+camara(1000, 100), keepTalking(keepTalking) {
     this->receptor = nullptr;
 }
 

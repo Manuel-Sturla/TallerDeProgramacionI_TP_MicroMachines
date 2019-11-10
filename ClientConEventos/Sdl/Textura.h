@@ -23,7 +23,7 @@ public:
 
     Textura(Textura&& text) noexcept;
 
-    void copiar(SDL_Renderer* renderizador, Camara& camara);
+    bool copiar(SDL_Renderer* renderizador, Camara& camara);
 
     void destruir();
 

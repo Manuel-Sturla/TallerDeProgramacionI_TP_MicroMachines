@@ -3,7 +3,6 @@
 //
 
 #include <SDL2/SDL_timer.h>
-#include <iostream>
 #include "Renderizador.h"
 #include "../Excepciones/ExcepcionConPos.h"
 
@@ -32,17 +31,23 @@ void Renderizador::limpiar() {
 }
 
 void Renderizador::copiarTodo(Camara& camara) {
-    for(auto & trecho : pista){
-        trecho.copiar(renderizador, camara);
+    int i = 0;
+    while(i < pista.size()){
+        if(!pista[i].copiar(renderizador, camara)){
+            std::iter_swap(pista.begin()+i, pista.end()-1);
+            pista.pop_back();
+        } else {
+            i++;
+        }
     }
-    for(auto & textura : texturas){
-        textura.copiar(renderizador, camara);
+    while(i < texturas.size()){
+        if(!texturas[i].copiar(renderizador, camara)){
+            std::iter_swap(texturas.begin()+i, texturas.end()-1);
+            texturas.pop_back();
+        } else {
+            i++;
+        }
     }
-}
-
-void Renderizador::destruirTexturas() {
-    texturas.clear();
-    pista.clear();
 }
 
 Renderizador::~Renderizador() {

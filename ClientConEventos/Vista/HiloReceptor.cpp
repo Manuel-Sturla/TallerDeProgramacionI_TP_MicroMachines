@@ -9,20 +9,18 @@
 #include "../Sockets/SocketPeerException.h"
 
 HiloReceptor::HiloReceptor(Renderizador& renderizador, ServidorProxy &servidor, Camara &camara, bool& keepTalking)\
-: keepTalking(keepTalking), servidor(servidor), miAuto(renderizador, 1){
-    camara.setAuto(&miAuto.getPos());
+: keepTalking(keepTalking), servidor(servidor), desplazables(renderizador) {
+    std::vector<std::string> eventos = servidor.obtenerEventos();
+    desplazables.ejecutarEventos(eventos);
+    desplazables.setCamara(camara);
 }
 
 void HiloReceptor::run() {
     try {
         while(keepTalking){
-            std::vector<std::string> autos;
-            std::vector<std::string> extras;
-            servidor.obtenerPosiciones(extras, autos);
-            float posX = std::stof(autos[0]);
-            float posY = std::stof(autos[1])*(-1);
-            int angulo = (int)std::stof(autos[2]);
-            miAuto.mover(posX, posY, angulo);
+            std::vector<std::string> eventos;
+            eventos = servidor.obtenerEventos();
+            desplazables.ejecutarEventos(eventos);
         }
     } catch (const SocketPeerException& e){
         keepTalking = false;

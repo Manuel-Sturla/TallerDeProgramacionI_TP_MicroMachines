@@ -11,6 +11,7 @@ Posicion::Posicion(float posX, float posY, float ancho, float altura, int angulo
     posicion.w = ancho;
     posicion.h = altura;
     this->angulo = angulo;
+    valida = true;
 }
 
 pos_t Posicion::getPosicion() {
@@ -28,4 +29,12 @@ void Posicion::rotar(int angulo) {
 
 int Posicion::getAngulo() {
     return angulo;
+}
+
+bool Posicion::esValida() {
+    return valida;
+}
+
+void Posicion::invalidar() {
+    valida = false;
 }
