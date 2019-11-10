@@ -7,7 +7,7 @@
 #include "Auto.h"
 
 Administrador::Administrador(Renderizador &renderizador) : renderizador(renderizador), pista(renderizador),\
-posTexto(0,0,50,50,0){
+posTexto(200,200,300,100,-90){
     cantJugadores = 1;
 }
 
@@ -76,7 +76,6 @@ void Administrador::ejecutarPosicionarAuto(std::vector<std::string> &eventos) {
 }
 
 void Administrador::actualizarJugadores(std::vector<std::string> &evento) {
-    posTexto.invalidar();
     renderizador.agregarTexto("Cantidad de jugadores: " + evento[0], &posTexto);
 }
 

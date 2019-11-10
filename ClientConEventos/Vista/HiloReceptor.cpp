@@ -39,7 +39,7 @@ void HiloReceptor::esperarInicioPartida() {
     evento.emplace_back("1");
     admin.actualizarJugadores(evento);
     evento = servidor.obtenerEvento();
-    while(evento[0] != "inicio partida"){
+    while(evento[0] != "inicioPartida"){
         admin.actualizarJugadores(evento);
         evento = servidor.obtenerEvento();
     }

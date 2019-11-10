@@ -2,6 +2,7 @@
 #include <iostream>
 #include <SDL2/SDL_image.h>
 #include <QtWidgets/QApplication>
+#include <SDL2/SDL_ttf.h>
 #include "Excepciones/ExcepcionConPos.h"
 #include "Juego/Partida.h"
 #include "Menu/Lobby.h"
@@ -22,7 +23,7 @@ int ejecutarLobby(int argc, char* argv[], ServidorProxy& servidor){
 }
 
 int main(int argc, char* argv[]) {
-    if(SDL_Init(SDL_INIT_VIDEO) != 0){
+    if(SDL_Init(SDL_INIT_VIDEO) != 0 || TTF_Init() == -1){
         SDL_Log("No pude incializar el SDL %s", SDL_GetError());
         return 0;
     }
@@ -41,18 +42,22 @@ int main(int argc, char* argv[]) {
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';
         IMG_Quit();
+        TTF_Quit();
         SDL_Quit();
         return 0;
     } catch (std::exception& e) {
         std::cerr<<e.what()<<'\n';
         IMG_Quit();
+        TTF_Quit();
         SDL_Quit();
     } catch (...) {
         std::cerr<<"Error desconocido\n";
         IMG_Quit();
+        TTF_Quit();
         SDL_Quit();
     }
     IMG_Quit();
+    TTF_Quit();
     SDL_Quit();
     return 0;
 }

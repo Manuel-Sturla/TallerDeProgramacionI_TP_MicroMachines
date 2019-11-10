@@ -42,6 +42,7 @@ void Renderizador::copiarTodo() {
             i++;
         }
     }
+    i = 0;
     while(i < texturas.size()){
         if(!texturas[i].copiar(renderizador, camara)){
             std::iter_swap(texturas.begin()+i, texturas.end()-1);
@@ -57,7 +58,7 @@ void Renderizador::configurarCamara(Posicion* posicion) {
 }
 
 void Renderizador::agregarTexto(const std::string &texto, Posicion *posicion) {
-    TTF_Font* fuente = TTF_OpenFont("Sans.ttf", 24);
+    TTF_Font* fuente = TTF_OpenFont("../fuente.ttf", 24);
     SDL_Color color = {255, 255, 255};
     SDL_Surface* superficie = TTF_RenderText_Solid(fuente, texto.c_str(), color);
     SDL_Texture* mensaje = SDL_CreateTextureFromSurface(renderizador, superficie);
