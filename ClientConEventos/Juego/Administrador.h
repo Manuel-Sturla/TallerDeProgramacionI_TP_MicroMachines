@@ -2,17 +2,21 @@
 // Created by diego on 9/11/19.
 //
 
-#ifndef CLIENT_ADMINISTRADORDEDESPLAZABLES_H
-#define CLIENT_ADMINISTRADORDEDESPLAZABLES_H
+#ifndef CLIENT_ADMINISTRADOR_H
+#define CLIENT_ADMINISTRADOR_H
 
 
 #include <map>
 #include "Desplazable.h"
+#include "Pista.h"
 
-class AdministradorDeDesplazables {
+class Administrador {
 private:
     Renderizador& renderizador;
     std::map<std::string, Desplazable*> desplazables;
+    Pista pista;
+    int cantJugadores;
+    Posicion posTexto;
 
     void ejecutarMorir(std::vector<std::string> &eventos);
     void ejecutarPosicionarExtra(std::vector<std::string> &eventos);
@@ -20,12 +24,16 @@ private:
     void ejecutarPosicionarAuto(std::vector<std::string> &vector);
 
 public:
-    explicit AdministradorDeDesplazables(Renderizador& renderizador);
+    explicit Administrador(Renderizador& renderizador);
 
     void ejecutarEventos(std::vector<std::string>& eventos);
 
-    void setCamara(Camara &camara);
+    void actualizarJugadores(std::vector<std::string> &evento);
+
+    void crearPista(std::vector<std::string> &planos);
+
+    void crearMiAuto(std::vector<std::string> &evento);
 };
 
 
-#endif //CLIENT_ADMINISTRADORDEDESPLAZABLES_H
+#endif //CLIENT_ADMINISTRADOR_H

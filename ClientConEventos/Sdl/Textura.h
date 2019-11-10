@@ -19,6 +19,8 @@ private:
 public:
     Textura(SDL_Renderer* renderizador, const std::string& archivo, Posicion* pos);
 
+    Textura(SDL_Texture* textura, Posicion* pos);
+
     Textura& operator=(const Textura& text);
 
     Textura(Textura&& text) noexcept;

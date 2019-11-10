@@ -13,6 +13,7 @@ HiloVisualizacion::HiloVisualizacion(ServidorProxy& servidor, bool& keepTalking)
 
 void HiloVisualizacion::run() {
     try{
+        esperarInicioDePartida();
         pista.crear(servidor.obtenerMapa());
         receptor = new HiloReceptor(renderizador, servidor, camara, keepTalking);
         receptor->start();
@@ -35,4 +36,9 @@ HiloVisualizacion::~HiloVisualizacion() {
         receptor->join();
         delete(receptor);
     }
+}
+
+void HiloVisualizacion::esperarInicioDePartida() {
+    int cantJugadores = 0;
+    while(servidor.obtenerEventos)
 }

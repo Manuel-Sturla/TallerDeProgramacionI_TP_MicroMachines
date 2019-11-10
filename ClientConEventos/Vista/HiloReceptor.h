@@ -9,16 +9,19 @@
 #include "../Hilo.h"
 #include "../Sockets/ServidorProxy.h"
 #include "../Juego/Auto.h"
-#include "../Juego/AdministradorDeDesplazables.h"
+#include "../Juego/Administrador.h"
 
 class HiloReceptor : public Hilo {
 private:
     ServidorProxy& servidor;
     bool& keepTalking;
-    AdministradorDeDesplazables desplazables;
+    Administrador admin;
+    bool& enJuego;
+    void esperarInicioPartida();
 
 public:
-    explicit HiloReceptor(Renderizador& renderizador, ServidorProxy& servidor, Camara& camara, bool& keepTalking);
+
+    explicit HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor, bool &keepTalking, bool &enJuego);
 
     void run() override;
 };

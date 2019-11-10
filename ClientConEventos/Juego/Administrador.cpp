@@ -2,13 +2,16 @@
 // Created by diego on 9/11/19.
 //
 
-#include "AdministradorDeDesplazables.h"
+#include "Administrador.h"
 #include "Extra.h"
 #include "Auto.h"
 
-AdministradorDeDesplazables::AdministradorDeDesplazables(Renderizador &renderizador) : renderizador(renderizador) {}
+Administrador::Administrador(Renderizador &renderizador) : renderizador(renderizador), pista(renderizador),\
+posTexto(0,0,50,50,0){
+    cantJugadores = 1;
+}
 
-void AdministradorDeDesplazables::ejecutarEventos(std::vector<std::string> &eventos) {
+void Administrador::ejecutarEventos(std::vector<std::string> &eventos) {
     while(!eventos.empty()){
         if(eventos[0] == "morir" && eventos.size() >= 2){
             eventos.erase(eventos.begin());
@@ -28,14 +31,14 @@ void AdministradorDeDesplazables::ejecutarEventos(std::vector<std::string> &even
     }
 }
 
-void AdministradorDeDesplazables::ejecutarMorir(std::vector<std::string> &eventos) {
+void Administrador::ejecutarMorir(std::vector<std::string> &eventos) {
     auto it = desplazables.find(eventos[0]);
     eventos.erase(eventos.begin());
     if(it == desplazables.end()){ return; }
     it->second->morir();
 }
 
-void AdministradorDeDesplazables::ejecutarPosicionarExtra(std::vector<std::string> &eventos) {
+void Administrador::ejecutarPosicionarExtra(std::vector<std::string> &eventos) {
     auto it = desplazables.find(eventos[0]);
     if(it == desplazables.end()){
         desplazables.emplace(eventos[0], new Extra(renderizador, std::stoi(eventos[1]), std::__cxx11::string()));
@@ -50,7 +53,7 @@ void AdministradorDeDesplazables::ejecutarPosicionarExtra(std::vector<std::strin
     eventos.erase(eventos.begin());
 }
 
-void AdministradorDeDesplazables::ejecutarModificar(std::vector<std::string> &eventos) {
+void Administrador::ejecutarModificar(std::vector<std::string> &eventos) {
     auto it = desplazables.find(eventos[0]);
     eventos.erase(eventos.begin());
     if(it == desplazables.end()){ return; }
@@ -58,11 +61,7 @@ void AdministradorDeDesplazables::ejecutarModificar(std::vector<std::string> &ev
     eventos.erase(eventos.begin());
 }
 
-void AdministradorDeDesplazables::setCamara(Camara &camara) {
-    camara.setAuto(desplazables.begin()->second->getPosicion());
-}
-
-void AdministradorDeDesplazables::ejecutarPosicionarAuto(std::vector<std::string> &eventos) {
+void Administrador::ejecutarPosicionarAuto(std::vector<std::string> &eventos) {
     auto it = desplazables.find(eventos[0]);
     if(it == desplazables.end()){
         desplazables.emplace(eventos[0], new Auto(renderizador, std::stoi(eventos[1])));
@@ -74,4 +73,20 @@ void AdministradorDeDesplazables::ejecutarPosicionarAuto(std::vector<std::string
     eventos.erase(eventos.begin());
     eventos.erase(eventos.begin());
     eventos.erase(eventos.begin());
+}
+
+void Administrador::actualizarJugadores(std::vector<std::string> &evento) {
+    posTexto.invalidar();
+    renderizador.agregarTexto("Cantidad de jugadores: " + evento[0], &posTexto);
+}
+
+void Administrador::crearPista(std::vector<std::string> &planos) {
+    pista.crear(planos);
+}
+
+void Administrador::crearMiAuto(std::vector<std::string> &evento) {
+    evento.erase(evento.begin());
+    desplazables.emplace(evento[0], new Auto(renderizador, std::stoi(evento[1])));
+    auto it = desplazables.find(evento[0]);
+    renderizador.configurarCamara(it->second->getPosicion());
 }

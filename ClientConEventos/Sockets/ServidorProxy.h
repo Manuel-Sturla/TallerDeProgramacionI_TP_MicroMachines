@@ -18,7 +18,9 @@ public:
     void elegirPartida(const std::string& nombre);
     void crearPartida(const std::string& nombre, const std::string& cantJugadores);
     std::vector<std::string> obtenerPartidas();
-    std::vector<std::string> obtenerEventos();
+    std::vector<std::string> obtenerEventosJuego();
+    std::vector<std::string> obtenerEvento();
+    std::vector<std::string> obtenerMiAuto();
     std::vector<std::string> obtenerMapa();
     void terminarConexion();
 };

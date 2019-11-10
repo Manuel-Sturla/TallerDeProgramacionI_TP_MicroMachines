@@ -18,7 +18,6 @@ public:
     Protocolo& operator=(Protocolo&& otro);
     void enviar(const std::string &mensaje);
     std::string recibir();
-
     void terminarConexion();
 };
 

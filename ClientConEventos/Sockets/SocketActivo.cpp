@@ -29,11 +29,14 @@ int SocketActivo::conseguirConexion(struct addrinfo *result) {
     for (ptr = result; ptr != nullptr && !connected; ptr = ptr -> ai_next) {
         aFd = socket(ptr -> ai_family, ptr -> ai_socktype, ptr -> ai_protocol);
         if (aFd == -1) {
+            freeaddrinfo(result);
             throw SocketPeerException("Error al crear socket: ", strerror(errno), __FILE__, __LINE__);
         } else{
             int errcheck = ::connect(aFd, ptr -> ai_addr, ptr -> ai_addrlen);
             if (errcheck == -1) {
                 ::close(aFd);
+                freeaddrinfo(result);
+                throw SocketPeerException("Error al conectar: ", strerror(errno), __FILE__, __LINE__);
             }
             connected = (aFd != -1);
         }

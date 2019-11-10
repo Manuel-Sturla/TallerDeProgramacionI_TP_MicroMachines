@@ -17,6 +17,7 @@ private:
     Ventana ventana;
     std::vector<Textura> texturas;
     std::vector<Textura> pista;
+    Camara camara;
 
 public:
     Renderizador(const char* titulo, int ancho, int altura);
@@ -25,11 +26,15 @@ public:
 
     void agregarTrecho(const std::string &archivo, Posicion* pos);
 
+    void agregarTexto(const std::string &texto, Posicion *posicion);
+
     void imprimir(Uint32 tiempoMs);
 
     void limpiar();
 
-    void copiarTodo(Camara& camara);
+    void copiarTodo();
+
+    void configurarCamara(Posicion* posicion);
 
     virtual ~Renderizador();
 };

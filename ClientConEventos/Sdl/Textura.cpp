@@ -14,6 +14,8 @@ Textura::Textura(SDL_Renderer *renderizador, const std::string &archivo, Posicio
     }
 }
 
+Textura::Textura(SDL_Texture *textura, Posicion *pos) : textura(textura), posicion(pos) {}
+
 Textura::Textura(Textura&& text) noexcept : posicion(text.posicion) {
     this->textura = text.textura;
     text.posicion = nullptr;

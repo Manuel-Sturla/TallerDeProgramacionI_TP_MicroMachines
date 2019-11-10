@@ -26,8 +26,8 @@ int main(int argc, char* argv[]) {
         SDL_Log("No pude incializar el SDL %s", SDL_GetError());
         return 0;
     }
+    std::string host, servicio;
     try {
-        std::string host, servicio;
         ejecutarInicio(argc, argv, host, servicio);
         ServidorProxy servidor(host, servicio);
         ejecutarLobby(argc, argv, servidor);

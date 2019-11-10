@@ -33,7 +33,8 @@ int main(int argc, char* argv[]) {
         ejecutarLobby(argc, argv, servidor);
         HiloLector lector(servidor);
         lector.start();
-        bool enPartida = true;
+        bool enPartida = false;
+        /*Ver si hay funcion para borrar qt*/
         HiloVisualizacion partida(servidor, enPartida);
         partida.start();
         partida.join();

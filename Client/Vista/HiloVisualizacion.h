@@ -21,6 +21,7 @@ private:
     Camara camara;
     HiloReceptor* receptor;
     bool& keepTalking;
+    void esperarInicioDePartida();
 
 public:
     explicit HiloVisualizacion(ServidorProxy& servidor, bool& keepTalking);
