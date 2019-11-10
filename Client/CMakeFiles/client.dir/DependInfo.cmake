@@ -48,7 +48,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "."
-  "/usr/include/x86_64-linux-gnu"
   "/usr/include/x86_64-linux-gnu/qt5"
   "/usr/include/x86_64-linux-gnu/qt5/QtWidgets"
   "/usr/include/x86_64-linux-gnu/qt5/QtGui"

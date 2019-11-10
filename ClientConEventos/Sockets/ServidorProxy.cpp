@@ -27,8 +27,7 @@ void ServidorProxy::elegirPartida(const std::string &nombre) {
 }
 
 void ServidorProxy::crearPartida(const std::string &nombre, const std::string& cantJugadores) {
-    protocolo.enviar("CrearPAR");
-    std::vector<std::string> aux ={nombre, cantJugadores};
+    std::vector<std::string> aux ={"CrearPAR", nombre, cantJugadores};
     protocolo.enviar(unir(aux, SEPARADOR));
 }
 

@@ -29,8 +29,8 @@ int main(int argc, char* argv[]) {
     }
     std::string host, servicio;
     try {
-        ejecutarInicio(argc, argv, host, servicio);
-        ServidorProxy servidor(host, servicio);
+//        ejecutarInicio(argc, argv, host, servicio);
+        ServidorProxy servidor("localhost", "7777");
         ejecutarLobby(argc, argv, servidor);
         HiloLector lector(servidor);
         lector.start();
