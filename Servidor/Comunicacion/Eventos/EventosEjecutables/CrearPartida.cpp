@@ -3,8 +3,8 @@
 //
 
 #include "CrearPartida.h"
-#include "../Utilidades.h"
-#include "PartidaInvalida.h"
+#include "../../Utilidades.h"
+#include "../EventosParseables/PartidaInvalida.h"
 
 #define MSJ_PARTIDA_INVALIDA "Partida Ya existente"
 

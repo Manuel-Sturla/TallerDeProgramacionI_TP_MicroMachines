@@ -1,6 +1,6 @@
 
 #include "EnviarPartidas.h"
-#include "../Utilidades.h"
+#include "../../Utilidades.h"
 
 #define EVENTO_ENVIAR_PARTIDAS "ObtenerPartidas"
 

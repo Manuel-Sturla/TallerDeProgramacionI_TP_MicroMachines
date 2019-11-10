@@ -7,9 +7,8 @@
 
 
 #include <map>
-#include "Evento.h"
-#include "../../Partida/Partida.h"
-#include "../../Partida/HashProtegido.h"
+#include "../../../Partida/Partida.h"
+#include "../../../Partida/HashProtegido.h"
 #include "EventoEjecutables.h"
 
 class ObtenerPartidas : public EventoEjecutables {

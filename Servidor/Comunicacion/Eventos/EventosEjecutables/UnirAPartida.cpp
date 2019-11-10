@@ -1,7 +1,7 @@
 #include "UnirAPartida.h"
-#include "../../PartidaLlenaExcepcion.h"
-#include "NoSePudoUnir.h"
-#include "UnirAPartidaCorrecto.h"
+#include "../../../PartidaLlenaExcepcion.h"
+#include "../EventosParseables/NoSePudoUnir.h"
+#include "../EventosParseables/UnirAPartidaCorrecto.h"
 
 #define MSJ_NO_UNIDO "UnirNoOK"
 

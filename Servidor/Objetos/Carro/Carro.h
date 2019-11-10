@@ -25,7 +25,7 @@ class Carro: public Objeto {
     float32 coeficienteDeRozamiento;
 
   public:
-    //El agarre debe ser un numero en el intervalo (0 ; 100]
+
     Carro(MundoBox2D *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32 agarre, float32 x,  float32 y);
 
     void agregarseA(MundoBox2D *pista, float32 x, float32 y);

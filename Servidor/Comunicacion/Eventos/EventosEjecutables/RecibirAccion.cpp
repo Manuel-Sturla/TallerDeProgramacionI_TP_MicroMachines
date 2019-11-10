@@ -3,10 +3,10 @@
 //
 
 #include "RecibirAccion.h"
-#include "../../Acciones/Acelerar.h"
-#include "../../Acciones/Frenar.h"
-#include "../../Acciones/GiroADerecha.h"
-#include "../../Acciones/GiroAIzquierda.h"
+#include "../../../Acciones/Acelerar.h"
+#include "../../../Acciones/Frenar.h"
+#include "../../../Acciones/GiroADerecha.h"
+#include "../../../Acciones/GiroAIzquierda.h"
 
 #define MSJ_CMD_INVALIDO "Comando invalido"
 #define CMD_ACELERAR "acelerar"
