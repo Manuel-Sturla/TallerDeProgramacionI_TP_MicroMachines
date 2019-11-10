@@ -14,7 +14,12 @@ Camara::Camara(int tamPantalla, int aumento) {
 
 SDL_Rect Camara::obtenerPosImpresion(pos_t posTextura) {
     if(posAuto == nullptr){
-        throw ExcepcionConPos(__FILE__, __LINE__, "La partida no fue inicializada");
+        SDL_Rect posImpresion;
+        posImpresion.x = (int)posTextura.x;
+        posImpresion.y = (int)posTextura.y;
+        posImpresion.h = (int)posTextura.w;
+        posImpresion.w = (int)posTextura.h;
+        return posImpresion;
     }
     pos_t aux = posAuto->getPosicion();
     amplificarValores(aux);
@@ -49,6 +54,9 @@ int Camara::obtenerAngulo(int angulo) {
 }
 
 bool Camara::estaEnRango(pos_t posTextura) {
+    if(!posAuto){
+        return true;
+    }
     pos_t aux = posAuto->getPosicion();
     if(abs(posTextura.x-aux.x) > (tamPantalla/aumento + posTextura.w)/2){
         return false;
