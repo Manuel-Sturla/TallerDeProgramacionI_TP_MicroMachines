@@ -5,7 +5,7 @@ LimiteDePista::LimiteDePista() {
   id = "Limite";
 }
 
-void LimiteDePista::interactuar(Carro *unCarro) {
+void LimiteDePista::interactuar(Carro *unCarro, int numeroDeSuelo) {
   unCarro -> recibirDanio(VIDA_MAX_DE_CARRO);
 }
 

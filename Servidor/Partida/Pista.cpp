@@ -14,15 +14,20 @@ Material *Pista::darMaterial(const std::string& materialPedido) {
 }
 
 Pista::~Pista() {
+    //Liberar memoria de punteros o que manu ponga los unique pointers
 }
 
 void Pista::agregarRecta(std::string &material, float32 x, float32 y,
-                         float32 angulo = 0) {
-    rectas.emplace_back(&mundoBox2D, darMaterial(material), x, y, angulo);
+                         float32 angulo, int numeroDeSuelo) {
+    if (material == "Asfalto") {
+        BloquesDeasfalto.emplace(std::pair<int, std::unique_ptr<Suelo>>(numeroDeSuelo, new Recta(&mundoBox2D, darMaterial(material), x, y, angulo, numeroDeSuelo) ));
+    } else {
+        rectas.emplace_back(&mundoBox2D, darMaterial(material), x, y, angulo, numeroDeSuelo);
+    }
 }
 
-void Pista::agregarCurva(float32 x, float32 y, float32 angulo = 0) {
-    curvas.emplace_back(&mundoBox2D, &asfalto, &pasto, x, y, angulo);
+void Pista::agregarCurva(float32 x, float32 y, float32 angulo, int numeroDeSuelo) {
+    BloquesDeasfalto.emplace(std::pair<int, Suelo*>(numeroDeSuelo, new Curva(&mundoBox2D, &asfalto, &pasto, x, y, angulo, numeroDeSuelo)));
 }
 
 void Pista::simular() {
@@ -47,13 +52,13 @@ void Pista::empaquetarCarro(std::vector<std::string> *destino) {
 
 void Pista::empaquetarSuelos(std::vector<std::string> *destino) {
     std::list<Recta>::iterator itRectas;
-    std::list<Curva>::iterator itCurvas;
     destino -> emplace_back(LONGITUD_DE_PISTA);
+    std::map<int, std::unique_ptr<Suelo>>::iterator itRectasDeAsfalto;
+    for (itRectasDeAsfalto = BloquesDeasfalto.begin(); itRectasDeAsfalto != BloquesDeasfalto.end(); itRectasDeAsfalto++) {
+        (itRectasDeAsfalto) -> second -> empaquetar(destino);
+    }
     for (itRectas = rectas.begin(); itRectas != rectas.end(); itRectas++) {
         itRectas -> empaquetar(destino);
-    }
-    for (itCurvas = curvas.begin(); itCurvas != curvas.end(); itCurvas++) {
-        itCurvas ->empaquetar(destino);
     }
 }
 

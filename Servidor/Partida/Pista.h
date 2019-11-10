@@ -2,6 +2,7 @@
 #define _PISTA_H_
 
 #include <list>
+#include <map>
 #include "../Objetos/Suelos/Pasto.h"
 #include "../Objetos/Suelos/Asfalto.h"
 #include "../Objetos/Suelos/LimiteDePista.h"
@@ -13,8 +14,8 @@ private:
     Asfalto asfalto;
     Pasto pasto;
     LimiteDePista limiteDePista;
+    std::map<int, std::unique_ptr<Suelo>> BloquesDeasfalto;
     std::list<Recta> rectas;
-    std::list<Curva> curvas;
     std::list<Carro> carros;
 
     Material* darMaterial(const std::string& materialPedido);
@@ -33,9 +34,9 @@ public:
     void empaquetarSuelos(std::vector<std::string> *destino);
 
     void
-    agregarRecta(std::string &material, float32 x, float32 y, float32 angulo);
+    agregarRecta(std::string &material, float32 x, float32 y, float32 angulo, int numeroDeSuelo);
 
-    void agregarCurva(float32 x, float32 y, float32 angulo);
+    void agregarCurva(float32 x, float32 y, float32 angulo, int numeroDeSuelo);
 
     ~Pista();
 };

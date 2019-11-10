@@ -16,10 +16,11 @@ void PlanoDePista::crearPista(Pista *mapa) {
 PlanoDePista::~PlanoDePista() {
 }
 
-void PlanoDePista::agregarRecta(std::string material, int x, int y, int tipo) {
-    planosDeSuelos.emplace_back(new PlanoDeRecta(material, x, y, tipo));
+void PlanoDePista::agregarRecta(std::string material, int x, int y, int tipo,
+                                int numero) {
+    planosDeSuelos.emplace_back(new PlanoDeRecta(material, x, y, tipo, numero));
 }
 
-void PlanoDePista::agregarCurva(int x, int y, int tipo) {
-    planosDeSuelos.emplace_back(new PlanoDeCurva(x, y, tipo));
+void PlanoDePista::agregarCurva(int x, int y, int tipo, int numero) {
+    planosDeSuelos.emplace_back(new PlanoDeCurva(x, y, tipo, numero));
 }

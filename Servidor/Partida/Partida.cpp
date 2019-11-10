@@ -5,8 +5,10 @@
 #include "../Comunicacion/Estados/EnCarrera.h"
 #include "../Comunicacion/Estados/EnEspera.h"
 
+#define MSJ_COMENZO_PARTIDA "PartidaComienza"
+
 Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
-continuar(true), estado(new EnEspera(cantJugadores)) {
+continuar(true), estado(new EnEspera(cantJugadores, clientes)) {
     cantidadMaximaDeJugadores = cantJugadores;
     crearPista(planoPista);
     suelos.clear();
@@ -25,18 +27,17 @@ std::vector<std::string> &Partida::obtenerMapa() {
 }
 
 Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente) {
-    if (estado->enJuego()) {
-        throw PartidaLlenaExcepcion("La partida se encuentra llena", __LINE__);
-    }
-    clientes.emplace_back(cliente);
     EnEspera* estadoEnEspera = dynamic_cast<EnEspera *>(estado.get());
-    estadoEnEspera->sumarJugador();
+    estadoEnEspera->sumarJugador(cliente);
     return planoDeCarro -> crearCarro(&pista);
 }
 
 void Partida::run() {
     estado->ejecutar();
+    //
+    enviarComenzoLaPartida();
     enviarMapa();
+    //enviarAutosPropios();
     estado = std::unique_ptr<EstadoPartida> (new EnCarrera(pista, clientes));
     while(continuar)
         try {
@@ -54,11 +55,12 @@ bool Partida::estaMuerto() {
 
 void Partida::cerrar() {
     continuar = false;
-    while (!estado->enJuego()){
+    //Para asegurarme que no envíe nada a ningun cliente porque la quiero cerrar
+    clientes.clear();
+    if (!estado->enJuego()){
         EnEspera* estadoEnEspera = dynamic_cast<EnEspera *>(estado.get());
-        estadoEnEspera->sumarJugador();
+        estadoEnEspera->cerrar();
     }
-
 }
 
 void Partida::enviarMapa() {
@@ -67,6 +69,12 @@ void Partida::enviarMapa() {
             cliente->enviar(pos);
         }
         cliente->enviar(MSJ_FIN);
+    }
+}
+
+void Partida::enviarComenzoLaPartida() {
+    for (auto& cliente : clientes){
+        cliente->enviar(MSJ_COMENZO_PARTIDA);
     }
 }
 

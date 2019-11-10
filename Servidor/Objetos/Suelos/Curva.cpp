@@ -3,8 +3,8 @@
 #define EN_ASFALTO 3
 #define EN_PASTO 2
 
-Curva::Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float32 y,
-             float32 angulo) {
+Curva::Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x,
+             float32 y, float32 angulo, int numeroDeSuelo) {
     b2BodyDef defCuerpo;
     defCuerpo.type = b2_staticBody;
     defCuerpo.position.Set(x, y);
@@ -13,6 +13,7 @@ Curva::Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x, float
     this -> asfalto = asfalto;
     this -> pasto = pasto;
     interaccion = FUERA_DE_CURVA;
+    this -> numeroDeSuelo = numeroDeSuelo;
 }
 
 void Curva::agregarseAPista(MundoBox2D *pista, float32 angulo) {
@@ -44,9 +45,9 @@ std::string Curva::darId() {
 
 void Curva::interactuar(Carro *unCarro) {
     if (interaccion == EN_ASFALTO) {
-        asfalto -> interactuar(unCarro);
+        asfalto->interactuar(unCarro, numeroDeSuelo);
     } else if (interaccion == EN_PASTO) {
-        pasto -> interactuar(unCarro);
+        pasto->interactuar(unCarro, numeroDeSuelo);
     }
 }
 
@@ -66,6 +67,7 @@ Curva::Curva(Curva &&otraCurva) {
     this -> asfalto = otraCurva.asfalto;
     this -> pasto = otraCurva.pasto;
     this -> interaccion = otraCurva.interaccion;
+    this -> numeroDeSuelo = otraCurva.numeroDeSuelo;
     otraCurva.cuerpo = nullptr;
     otraCurva.asfalto = nullptr;
     otraCurva.pasto = nullptr;
@@ -79,6 +81,7 @@ Curva &Curva::operator=(Curva &&otraCurva) {
     this -> asfalto = otraCurva.asfalto;
     this -> pasto = otraCurva.pasto;
     this -> interaccion = otraCurva.interaccion;
+    this -> numeroDeSuelo = otraCurva.numeroDeSuelo;
     otraCurva.cuerpo = nullptr;
     otraCurva.asfalto = nullptr;
     otraCurva.pasto = nullptr;
@@ -90,6 +93,7 @@ Curva::Curva(const Curva &otraCurva) {
     this -> asfalto = otraCurva.asfalto;
     this -> pasto = otraCurva.pasto;
     this -> interaccion = otraCurva.interaccion;
+    this -> numeroDeSuelo = otraCurva.numeroDeSuelo;
 }
 
 void Curva::empaquetar(std::vector<std::string> *destino) {
@@ -105,6 +109,7 @@ Curva &Curva::operator=(const Curva &otraCurva) {
     this -> cuerpo = otraCurva.cuerpo;
     this -> asfalto = otraCurva.asfalto;
     this -> pasto = otraCurva.pasto;
+    this -> numeroDeSuelo = otraCurva.numeroDeSuelo;
     this -> interaccion = otraCurva.interaccion;
     return *this;
 }

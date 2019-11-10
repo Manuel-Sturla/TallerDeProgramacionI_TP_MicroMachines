@@ -4,12 +4,14 @@
 #include "Box2D/Box2D.h"
 #include "../../Partida/MundoBox2D.h"
 #include "../../Acciones/Accion.h"
-#include "../Objeto.h"
 #include "Vida.h"
 #include "Visibilidad.h"
 #include "Velocidad.h"
 #include "EstadoVelocidad.h"
 #include "Agarre.h"
+#include "Posicion.h"
+#include "../Objeto.h"
+
 
 class Carro: public Objeto {
   private:
@@ -18,6 +20,7 @@ class Carro: public Objeto {
     Visibilidad visibilidad;
     EstadoVelocidad estadoVelocidad;
     Agarre agarre;
+    Posicion posicion;
     float32 anguloDeGiro;
     float32 coeficienteDeRozamiento;
 
@@ -47,9 +50,13 @@ class Carro: public Objeto {
 
     void reducirAgarre();
 
+    void actualizarPosicion(int numeroDeSuelo);
+
     bool esValido() override;
 
     void empaquetar(std::vector<std::string> *destino) override;
+
+    void interactuar(Carro *otroCarro);
 
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };

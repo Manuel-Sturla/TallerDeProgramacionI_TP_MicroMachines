@@ -9,10 +9,10 @@ private:
     int posicionX;
     int posicionY;
     int tipo;
-
+    int numero;
     float32 obtenerAngulo();
 public:
-    PlanoDeCurva(int x, int y, int tipo);
+    PlanoDeCurva(int x, int y, int tipo, int numero);
 
     void agregarSueloA(Pista *mapa) override;
 

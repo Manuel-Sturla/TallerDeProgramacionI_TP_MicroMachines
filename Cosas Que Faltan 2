@@ -1,0 +1,8 @@
+1- Tiene que haber un hilo enviador porr cada cliente
+2- Seguramente tengamos una cola con shared_ptrs a Eventos para las posiciones y las otras cosas
+3- Para sacar clientes cuando la partida esta en espera, cada vez que se conecta 1 le mandamos a todos que se conecto y si alguno explota lo sacamos
+4- Proteger las partidas
+
+
+5- Recibir bien el mensaje de cuando se une un jugador nuevo [Ver estad EnEspera de la partida]
+6- Recibir el mensaje de que se unioOK a la partida o no. [ver Comando UnirAPartida]

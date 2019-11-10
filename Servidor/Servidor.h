@@ -12,12 +12,13 @@
 #include "ConfiguracionServidor.h"
 #include "Partida/Partida.h"
 #include "Comunicacion/HiloCliente.h"
+#include "Partida/HashProtegido.h"
 
 class Servidor: public Hilo {
 private:
     ConfiguracionServidor configuracion;
     SocketPasivo socketPasivo;
-    std::map<std::string, std::shared_ptr<Partida>> partidas;
+    HashProtegido partidas;
     std::vector<std::unique_ptr<HiloCliente>> clientes;
     std::atomic<bool> continuar;
     EnJuego enJuego;
@@ -25,7 +26,7 @@ private:
 
 public:
     Servidor(const std::string& servicio);
-    std::map<std::string, std::shared_ptr<Partida>> & obtenerPartidas();
+    HashProtegido & obtenerPartidas();
     void run() override;
 
     ~Servidor();

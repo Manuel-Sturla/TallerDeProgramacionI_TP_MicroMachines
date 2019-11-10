@@ -1,14 +1,11 @@
 #include "ManejadorDeContactos.h"
 #include "../Objetos/Carro/Carro.h"
-#include "../Objetos/Interactuable.h"
-#include "../Objetos/Objeto.h"
 #include "../Objetos/Suelos/Curva.h"
 #include <iostream>
 ManejadorDeContactos::ManejadorDeContactos() {
 }
 
 void ManejadorDeContactos::BeginContact(b2Contact *contact) {
-  //Solo un carro
   b2Fixture *fixture1 = contact -> GetFixtureA();
   b2Fixture *fixture2 = contact -> GetFixtureB();
   manejarContacto(fixture1, fixture2);
@@ -30,7 +27,11 @@ void ManejadorDeContactos::manejarContacto(b2Fixture *fixture1, b2Fixture *fixtu
       int interaccion = tipoDeInteraccionCarroCurva(fixture1 -> GetBody(), fixture2 -> GetBody());
       static_cast<Curva*>(objeto2) -> tipoDeInteraccion(interaccion);
     }
-    static_cast<Interactuable*>(objeto2) -> interactuar(static_cast<Carro*>(objeto1));
+    if (static_cast<Objeto*>(objeto2) -> darId() == "Carro") {
+        static_cast<Carro*>(objeto2) -> interactuar(static_cast<Carro*>(objeto1));
+    } else {
+        static_cast<Interactuable*>(objeto2) -> interactuar(static_cast<Carro*>(objeto1));
+    }
   }
 }
 

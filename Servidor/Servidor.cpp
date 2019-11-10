@@ -14,8 +14,8 @@ continuar(true),
 enJuego(partidas),
 enMenu(partidas, configuracion){
     //Partida hardcodeada para probar
-    partidas.emplace("prueba", new Partida(1, configuracion.darPlanoDePista("Prueba 1")));
-    partidas["prueba"] -> start();
+    partidas.ubicar("prueba", new Partida(1, configuracion.darPlanoDePista("Prueba 1")));
+    partidas.obtener("prueba") -> start();
 }
 
 Servidor::~Servidor() {
@@ -33,20 +33,20 @@ void Servidor::run() {
             break;
         }
     }
-    //Mato a las partidas
-    for (auto it = partidas.begin(); it != partidas.end(); it ++) {
-        it->second->cerrar();
-        it->second->join();
-    }
     //Mato a los clientes
     for (auto& cliente : clientes){
         cliente->desconectar();
         cliente->join();
     }
+    //Mato a las partidas
+    for (auto& partida : partidas.obtenerClaves()) {
+        partidas.obtener(partida)->cerrar();
+        partidas.obtener(partida)->join();
+    }
 }
 
 
-std::map<std::string, std::shared_ptr<Partida>> & Servidor::obtenerPartidas() {
+HashProtegido & Servidor::obtenerPartidas() {
     return partidas;
 }
 
@@ -64,15 +64,10 @@ void Servidor::cerrar_clientes_desconectados() {
 }
 
 void Servidor::cerrar_partidas_terminadas() {
-    std::vector <std::string> muertas;
-    for (auto it = partidas.begin(); it != partidas.end(); it ++){
-        if (it->second->estaMuerto()){
-            muertas.emplace_back(it->first);
+    for (auto& partida : partidas.obtenerClaves()){
+        if (partidas.obtener(partida)->estaMuerto()){
+            partidas.eliminar(partida);
         }
-    }
-    for (std::string& clave : muertas){
-        partidas[clave]->join();
-        partidas.erase(clave);
     }
 }
 

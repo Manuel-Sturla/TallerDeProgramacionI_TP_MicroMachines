@@ -9,7 +9,7 @@ class Modificador: public Interactuable {
     bool validez;
     std::string id;
   public:
-    std::string darId(); //ESTO DEBE VOLARRRRRRRR
+    std::string darId();
 
     void empaquetar(std::vector<std::string> *destino);
 };

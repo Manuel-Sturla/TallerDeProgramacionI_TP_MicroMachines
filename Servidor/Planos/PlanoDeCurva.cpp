@@ -4,14 +4,15 @@
 #define ANGULO_CURVA_3 b2_pi
 #define ANGULO_CURVA_4 1.5f * b2_pi
 
-PlanoDeCurva::PlanoDeCurva(int x, int y, int tipo) {
+PlanoDeCurva::PlanoDeCurva(int x, int y, int tipo, int numero) {
     this -> posicionX = x;
     this -> posicionY = y;
     this -> tipo = tipo;
+    this -> numero = numero;
 }
 
 void PlanoDeCurva::agregarSueloA(Pista *mapa) {
-    mapa->agregarCurva(posicionX, posicionY, obtenerAngulo());
+    mapa->agregarCurva(posicionX, posicionY, obtenerAngulo(), numero);
 }
 
 PlanoDeCurva::~PlanoDeCurva() {

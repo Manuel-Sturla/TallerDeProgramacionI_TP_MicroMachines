@@ -12,7 +12,7 @@ private:
     Pista& pista;
     std::vector<std::string> extras;
     std::vector<std::string> autos;
-    std::vector<ClienteProxy*> clientes;
+    std::vector<ClienteProxy*>& clientes;
     void actualizarEventos();
 public:
     EnCarrera(Pista& pista, std::vector<ClienteProxy*>& clientes);

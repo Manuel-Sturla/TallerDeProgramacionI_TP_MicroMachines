@@ -10,10 +10,11 @@ private:
     int posicionX;
     int posicionY;
     int tipo;
+    int numero;
 
     float32 obtenerAngulo();
 public:
-    PlanoDeRecta(std::string material, int x, int y, int tipo);
+    PlanoDeRecta(std::string material, int x, int y, int tipo, int numero);
 
     void agregarSueloA(Pista *mapa) override;
 

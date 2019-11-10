@@ -11,6 +11,8 @@
 #define CMD_PARTIDAS "PAR"
 #define MSJ_FIN "F"
 
+#define MSJ_COMIENZO_PARTIDA "PartidaComienza"
+
 ServidorProxy::ServidorProxy(const std::string &host, const std::string &servicio):
         protocolo(std::move(SocketActivo(host, servicio))){
 }
@@ -42,6 +44,9 @@ std::vector<std::string> ServidorProxy::obtenerPartidas() {
 
 std::vector<std::string> ServidorProxy::obtenerMapa() {
     std::vector<std::string> resultado;
+    while (protocolo.recibir() != MSJ_COMIENZO_PARTIDA){
+        //Recibe las conexiones de los otros jugadores y temporalmente las ignora
+    }
     std::string aux;
     while ((aux = protocolo.recibir()) != MSJ_FIN){
         resultado.push_back(aux);

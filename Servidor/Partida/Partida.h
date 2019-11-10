@@ -37,6 +37,8 @@ public:
     void crearPista(PlanoDePista *planoDePista);
 
     ~Partida();
+
+    void enviarComenzoLaPartida();
 };
 
 #endif
