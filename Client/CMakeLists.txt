@@ -19,7 +19,7 @@ set(SOURCE_FILES main.cpp Hilo.h Juego/Pista.cpp Juego/Pista.h Juego/Juego.cpp J
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 add_executable(client Ui/inicio.ui Ui/lobby.ui ${SOURCE_FILES})
 
-find_package( TIFF REQUIRED )
+find_package( TIFF)
 if ( TIFF_FOUND )
     include_directories( ${TIFF_INCLUDE_DIRS} )
     target_link_libraries(client ${TIFF_LIBRARIES} )

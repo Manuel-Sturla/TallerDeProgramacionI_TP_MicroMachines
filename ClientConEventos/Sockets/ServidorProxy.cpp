@@ -58,7 +58,29 @@ void ServidorProxy::terminarConexion() {
     protocolo.terminarConexion();
 }
 
-std::vector<std::string> ServidorProxy::obtenerEventos() {
-    return std::vector<std::string>();
+std::vector<std::string> ServidorProxy::obtenerEventosJuego() {
+    std::vector<std::string> eventos;
+    std::vector<std::string> aux = obtenerEvento();
+    while(aux[0] != "fin simulacion"){
+        for(auto & i : aux){
+            eventos.emplace_back(i);
+        }
+        aux = obtenerEvento();
+    }
+    return eventos;
+}
+
+std::vector<std::string> ServidorProxy::obtenerEvento() {
+    std::string aux = protocolo.recibir();
+    std::vector<std::string> evento = separar(aux, ',');
+    return evento;
+}
+
+std::vector<std::string> ServidorProxy::obtenerMiAuto() {
+    std::vector<std::string> evento = obtenerEvento();
+    while(evento[0] != "posicionarAuto"){
+        evento = obtenerEvento();
+    }
+    return evento;
 }
 

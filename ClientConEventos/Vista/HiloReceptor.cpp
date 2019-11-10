@@ -8,27 +8,41 @@
 #include "Camara.h"
 #include "../Sockets/SocketPeerException.h"
 
-HiloReceptor::HiloReceptor(Renderizador& renderizador, ServidorProxy &servidor, Camara &camara, bool& keepTalking)\
-: keepTalking(keepTalking), servidor(servidor), desplazables(renderizador) {
-    std::vector<std::string> eventos = servidor.obtenerEventos();
-    desplazables.ejecutarEventos(eventos);
-    desplazables.setCamara(camara);
-}
+HiloReceptor::HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor,\
+bool &keepTalking,bool &enJuego) : keepTalking(keepTalking), servidor(servidor),\
+admin(renderizador), enJuego(enJuego) {}
 
 void HiloReceptor::run() {
     try {
+        esperarInicioPartida();
         while(keepTalking){
             std::vector<std::string> eventos;
-            eventos = servidor.obtenerEventos();
-            desplazables.ejecutarEventos(eventos);
+            eventos = servidor.obtenerEventosJuego();
+            admin.ejecutarEventos(eventos);
         }
     } catch (const SocketPeerException& e){
         keepTalking = false;
     } catch(const ExcepcionConPos& e){
+        keepTalking = false;
         std::cerr<<e.what()<<'\n';
     } catch (std::exception& e) {
+        keepTalking = false;
         std::cerr<<e.what()<<'\n';
     } catch (...) {
+        keepTalking = false;
         std::cerr<<"Error desconocido\n";
     }
+}
+
+void HiloReceptor::esperarInicioPartida() {
+    std::vector<std::string> evento;
+    evento = servidor.obtenerEvento();
+    while(evento[0] != "inicio partida"){
+        admin.actualizarJugadores(evento);
+    }
+    evento = servidor.obtenerMapa();
+    admin.crearPista(evento);
+    evento = servidor.obtenerMiAuto();
+    admin.crearMiAuto(evento);
+    enJuego = true;
 }

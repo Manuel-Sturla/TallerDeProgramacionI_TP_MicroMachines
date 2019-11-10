@@ -5,8 +5,10 @@
 #include <SDL2/SDL_timer.h>
 #include "Renderizador.h"
 #include "../Excepciones/ExcepcionConPos.h"
+#include <SDL2/SDL_ttf.h>
 
-Renderizador::Renderizador(const char* titulo, int ancho, int altura) : ventana(titulo, ancho, altura) {
+Renderizador::Renderizador(const char* titulo, int ancho, int altura) : ventana(titulo, ancho, altura),\
+camara(1000, 100) {
     renderizador = ventana.crearRenderizador(-1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if(renderizador == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, "No pude crear el renderizador");
@@ -30,7 +32,7 @@ void Renderizador::limpiar() {
     SDL_RenderClear(renderizador);
 }
 
-void Renderizador::copiarTodo(Camara& camara) {
+void Renderizador::copiarTodo() {
     int i = 0;
     while(i < pista.size()){
         if(!pista[i].copiar(renderizador, camara)){
@@ -48,6 +50,18 @@ void Renderizador::copiarTodo(Camara& camara) {
             i++;
         }
     }
+}
+
+void Renderizador::configurarCamara(Posicion* posicion) {
+    camara.setAuto(posicion);
+}
+
+void Renderizador::agregarTexto(const std::string &texto, Posicion *posicion) {
+    TTF_Font* fuente = TTF_OpenFont("Sans.ttf", 24);
+    SDL_Color color = {255, 255, 255};
+    SDL_Surface* superficie = TTF_RenderText_Solid(fuente, texto.c_str(), color);
+    SDL_Texture* mensaje = SDL_CreateTextureFromSurface(renderizador, superficie);
+    texturas.emplace_back(mensaje, posicion);
 }
 
 Renderizador::~Renderizador() {

@@ -17,10 +17,9 @@ class HiloVisualizacion : public Hilo {
 private:
     ServidorProxy& servidor;
     Renderizador renderizador;
-    Pista pista;
-    Camara camara;
     HiloReceptor* receptor;
     bool& keepTalking;
+    void esperarInicioPartida(bool &enJuego);
 
 public:
     explicit HiloVisualizacion(ServidorProxy& servidor, bool& keepTalking);
