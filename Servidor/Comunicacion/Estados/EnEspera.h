@@ -20,12 +20,12 @@ class EnEspera: public EstadoPartida {
     std::vector<ClienteProxy*> & clientes;
 
     void enviarCantidadDeJugadores();
-    void cerrarCliente(size_t posicion);
+    void sacarCliente(size_t posicion);
 public:
 
     explicit EnEspera(size_t cantMaxima, std::vector<ClienteProxy*>& clientes);
 
-    void sumarJugador();
+    void sumarJugador(ClienteProxy *cliente);
 
     bool enJuego() override;
 

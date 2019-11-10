@@ -27,12 +27,8 @@ std::vector<std::string> &Partida::obtenerMapa() {
 }
 
 Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente) {
-    if (estado->enJuego()) {
-        throw PartidaLlenaExcepcion("La partida se encuentra llena", __LINE__);
-    }
-    clientes.emplace_back(cliente);
     EnEspera* estadoEnEspera = dynamic_cast<EnEspera *>(estado.get());
-    estadoEnEspera->sumarJugador();
+    estadoEnEspera->sumarJugador(cliente);
     return planoDeCarro -> crearCarro(&pista);
 }
 
