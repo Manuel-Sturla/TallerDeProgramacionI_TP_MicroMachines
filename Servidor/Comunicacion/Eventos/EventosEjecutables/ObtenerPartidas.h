@@ -7,9 +7,8 @@
 
 
 #include <map>
-#include "Evento.h"
-#include "../../Partida/Partida.h"
-#include "../../Partida/HashProtegido.h"
+#include "../../../Partida/Partida.h"
+#include "../../../Partida/HashProtegido.h"
 #include "EventoEjecutables.h"
 
 class ObtenerPartidas : public EventoEjecutables {
@@ -19,7 +18,7 @@ private:
 public:
     explicit ObtenerPartidas(HashProtegido &partidas);
 
-    void ejecutar(ClienteProxy &cliente) override;
+    void ejecutar(ClienteProxy &cliente, std::vector<std::string> argumentos) override;
 
 };
 

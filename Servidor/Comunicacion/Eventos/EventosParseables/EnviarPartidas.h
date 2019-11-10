@@ -6,7 +6,7 @@
 #define SERVIDOR_ENVIARPARTIDAS_H
 
 
-#include "../../Partida/HashProtegido.h"
+#include "../../../Partida/HashProtegido.h"
 #include "EventosParseables.h"
 
 class EnviarPartidas: public EventosParseables {

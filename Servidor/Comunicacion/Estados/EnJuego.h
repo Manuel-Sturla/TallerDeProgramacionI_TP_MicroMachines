@@ -8,7 +8,7 @@
 
 #include <map>
 #include "EstadoCliente.h"
-#include "../Eventos/RecibirAccion.h"
+#include "../Eventos/EventosEjecutables/RecibirAccion.h"
 #include "../../Partida/Partida.h"
 #include "../../Partida/HashProtegido.h"
 

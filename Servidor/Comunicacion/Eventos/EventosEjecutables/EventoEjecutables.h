@@ -5,12 +5,11 @@
 #ifndef SERVIDOR_EVENTOEJECUTABLES_H
 #define SERVIDOR_EVENTOEJECUTABLES_H
 
+#include "../../ClienteProxy.h"
 
-#include "Evento.h"
-
-class EventoEjecutables: public Evento {
+class EventoEjecutables {
 public:
-    virtual void ejecutar(ClienteProxy &cliente) = 0;
+    virtual void ejecutar(ClienteProxy &cliente, std::vector<std::string> argumentos) = 0;
 
 };
 

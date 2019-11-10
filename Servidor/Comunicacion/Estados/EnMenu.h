@@ -12,7 +12,7 @@
 #include "../../Partida/Partida.h"
 #include "../../ConfiguracionServidor.h"
 #include "../../Partida/HashProtegido.h"
-#include "../Eventos/EventoEjecutables.h"
+#include "../Eventos/EventosEjecutables/EventoEjecutables.h"
 
 
 class EnMenu: public EstadoCliente {

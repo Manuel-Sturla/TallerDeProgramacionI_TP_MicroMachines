@@ -7,10 +7,9 @@
 
 
 #include <map>
-#include "Evento.h"
-#include "../../Partida/Partida.h"
-#include "../../ConfiguracionServidor.h"
-#include "../../Partida/HashProtegido.h"
+#include "../../../Partida/Partida.h"
+#include "../../../ConfiguracionServidor.h"
+#include "../../../Partida/HashProtegido.h"
 #include "EventoEjecutables.h"
 
 class UnirAPartida: public EventoEjecutables {
@@ -19,7 +18,7 @@ class UnirAPartida: public EventoEjecutables {
 public:
     UnirAPartida(HashProtegido &partidas, ConfiguracionServidor& config);
 
-    void ejecutar(ClienteProxy &cliente) override;
+    void ejecutar(ClienteProxy &cliente, std::vector<std::string> argumento) override;
 };
 
 

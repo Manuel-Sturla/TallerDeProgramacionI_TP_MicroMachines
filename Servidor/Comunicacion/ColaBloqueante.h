@@ -9,7 +9,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <queue>
-#include "Eventos/EventosParseables.h"
+#include "Eventos/EventosParseables/EventosParseables.h"
 
 class ColaBloqueante {
     std::mutex mutex;

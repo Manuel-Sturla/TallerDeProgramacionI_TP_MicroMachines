@@ -1,7 +1,7 @@
 #include "UnirAPartida.h"
-#include "../../PartidaLlenaExcepcion.h"
-#include "NoSePudoUnir.h"
-#include "UnirAPartidaCorrecto.h"
+#include "../../../PartidaLlenaExcepcion.h"
+#include "../EventosParseables/NoSePudoUnir.h"
+#include "../EventosParseables/UnirAPartidaCorrecto.h"
 
 #define MSJ_NO_UNIDO "UnirNoOK"
 
@@ -11,7 +11,7 @@ UnirAPartida::UnirAPartida(HashProtegido &partidas,
                            ConfiguracionServidor& config): partidas(partidas), mapasYAutos(config) {
 }
 
-void UnirAPartida::ejecutar(ClienteProxy &cliente) {
+void UnirAPartida::ejecutar(ClienteProxy &cliente, std::vector<std::string> argumento) {
     //Recibo el nombre de la partida a la cual el usuario quiere agregarse o crear
     std::string nombrePartida = cliente.recibir();
     if (!partidas.contiene(nombrePartida)) {

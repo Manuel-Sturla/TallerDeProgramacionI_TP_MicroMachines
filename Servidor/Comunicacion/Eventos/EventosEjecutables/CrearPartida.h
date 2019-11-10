@@ -7,10 +7,9 @@
 
 
 #include <map>
-#include "Evento.h"
-#include "../../Partida/Partida.h"
-#include "../../ConfiguracionServidor.h"
-#include "../../Partida/HashProtegido.h"
+#include "../../../Partida/Partida.h"
+#include "../../../ConfiguracionServidor.h"
+#include "../../../Partida/HashProtegido.h"
 #include "EventoEjecutables.h"
 
 class CrearPartida: public EventoEjecutables {
@@ -20,7 +19,7 @@ public:
     CrearPartida(HashProtegido &partidas,
                  ConfiguracionServidor &mapasYAutos);
 
-    void ejecutar(ClienteProxy &cliente) override;
+    void ejecutar(ClienteProxy &cliente, std::vector<std::string> argumentos) override;
 };
 
 

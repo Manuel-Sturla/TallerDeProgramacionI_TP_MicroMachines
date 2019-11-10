@@ -68,13 +68,12 @@ void Carro::recibirBoost() {
 }
 
 void Carro::imprimirPosicion() {
-    /*
   b2Vec2 position = cuerpo -> GetPosition();
   float32 angle = cuerpo -> GetAngle();
   b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
   printf("Nueva iteracion\n");
   std::cout << "Posicion: " << position.x << " " << position.y << " " <<  angle << std::endl;
-  std::cout << "Velocidad: " << velocidad.x << " " << velocidad.y << std::endl;*/
+  std::cout << "Velocidad: " << velocidad.x << " " << velocidad.y << std::endl;
 }
 
 bool Carro::esValido() {
@@ -91,7 +90,6 @@ void Carro::empaquetar(std::vector<std::string> *destino) {
 }
 
 void Carro::actualizarPosicion(int numeroDeSuelo) {
-    std::cout << "Me llego el suelo numero " << numeroDeSuelo << std::endl;
     posicion.actualizar(numeroDeSuelo);
 }
 

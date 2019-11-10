@@ -4,9 +4,10 @@
 
 #include "EnMenu.h"
 #include "../Sockets/SocketPeerException.h"
-#include "../Eventos/CrearPartida.h"
-#include "../Eventos/UnirAPartida.h"
-#include "../Eventos/ObtenerPartidas.h"
+#include "../Eventos/EventosEjecutables/CrearPartida.h"
+#include "../Eventos/EventosEjecutables/UnirAPartida.h"
+#include "../Eventos/EventosEjecutables/ObtenerPartidas.h"
+#include "../Utilidades.h"
 
 #define MSJ_CMD_INVALIDO "ComandoInvalido"
 
@@ -22,11 +23,14 @@ EnMenu::EnMenu(HashProtegido &partidas, ConfiguracionServidor &config):
 }
 
 void EnMenu::ejecutar(ClienteProxy &cliente) {
-    std::string comando = cliente.recibir();
-    if (comandos.find(comando) == comandos.end()){
+    std::string evento = cliente.recibir();
+    std::vector<std::string> argumentos = separar(evento, ';');
+    std::string eventoId = *argumentos.begin();
+    if (comandos.find(eventoId) == comandos.end()){
         cliente.enviar(MSJ_CMD_INVALIDO);
     }else{
-        comandos[comando]->ejecutar(cliente);
+        argumentos.erase(argumentos.begin());
+        comandos[eventoId]->ejecutar(cliente, argumentos);
     }
 }
 
