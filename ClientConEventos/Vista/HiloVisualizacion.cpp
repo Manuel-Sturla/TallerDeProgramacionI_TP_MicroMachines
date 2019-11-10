@@ -45,8 +45,7 @@ HiloVisualizacion::~HiloVisualizacion() {
 
 void HiloVisualizacion::esperarInicioPartida(bool &enJuego) {
     Posicion posicion(0,0, ANCHO_PANTALLA, ALTURA_PANTALLA, 0);
-    renderizador.agregarTextura("pantallaEspera", &posicion);
-
+    renderizador.agregarTextura("../inicio.jpeg", &posicion);
     while(!enJuego){
         renderizador.limpiar();
         renderizador.copiarTodo();

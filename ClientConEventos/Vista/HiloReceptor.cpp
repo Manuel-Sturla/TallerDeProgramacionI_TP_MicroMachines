@@ -36,9 +36,12 @@ void HiloReceptor::run() {
 
 void HiloReceptor::esperarInicioPartida() {
     std::vector<std::string> evento;
+    evento.emplace_back("1");
+    admin.actualizarJugadores(evento);
     evento = servidor.obtenerEvento();
     while(evento[0] != "inicio partida"){
         admin.actualizarJugadores(evento);
+        evento = servidor.obtenerEvento();
     }
     evento = servidor.obtenerMapa();
     admin.crearPista(evento);

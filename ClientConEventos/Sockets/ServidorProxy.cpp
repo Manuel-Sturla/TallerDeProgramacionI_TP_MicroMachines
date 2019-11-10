@@ -33,12 +33,11 @@ void ServidorProxy::crearPartida(const std::string &nombre, const std::string& c
 }
 
 std::vector<std::string> ServidorProxy::obtenerPartidas() {
-    protocolo.enviar(CMD_PARTIDAS);
+    protocolo.enviar("PAR");
     std::vector<std::string> resultado;
-    std::string aux;
-    while ((aux = protocolo.recibir()) != MSJ_FIN){
-        resultado.push_back(aux);
-    }
+    std::string aux = protocolo.recibir();
+    resultado = separar(aux, ';');
+    resultado.erase(resultado.begin());
     return resultado;
 }
 

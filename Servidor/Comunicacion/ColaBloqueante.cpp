@@ -6,10 +6,12 @@
 
 void ColaBloqueante::encolar(EventosParseables *evento) {
     cola.emplace(evento);
+    estaVacia.notify_all();
 }
 
 void ColaBloqueante::encolar(std::shared_ptr<EventosParseables>& evento) {
     cola.push(evento);
+    estaVacia.notify_all();
 }
 
 std::shared_ptr<EventosParseables> ColaBloqueante::desencolar() {
