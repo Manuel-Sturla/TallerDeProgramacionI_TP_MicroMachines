@@ -1,12 +1,7 @@
 #include "ClienteProxy.h"
-#include "Utilidades.h"
-#include "Sockets/SocketPeerException.h"
 #include "../Acciones/Acelerar.h"
-#include "../Acciones/Frenar.h"
-#include "../Acciones/GiroADerecha.h"
-#include "../Acciones/GiroAIzquierda.h"
-#include "Estados/EnMenu.h"
-#include "Estados/EnJuego.h"
+#include "Eventos/EventosParseables/EnviarAutoPropio.h"
+#include "ClienteCerradoExcepcion.h"
 
 #define MSJ_CMD_INVALIDO "Comando invalido"
 #define CMD_ACELERAR "acelerar"
@@ -24,7 +19,9 @@ ClienteProxy::~ClienteProxy() {
 }
 
 void ClienteProxy::desconectar() {
+    eventosAEnviar.encolar(nullptr);
     protocolo.terminarConexion();
+
 }
 void ClienteProxy::ejecutarAccion() {
     if (!movimientos.empty()){
@@ -66,10 +63,21 @@ void ClienteProxy::setCarro(Carro* carro) {
 
 void ClienteProxy::enviarEvento() {
     auto evento = eventosAEnviar.desencolar();
+    if (evento.get() == nullptr){
+        throw ClienteCerradoExcepcion();
+    }
     std::string eventoParseado = evento->obtenerParseado();
     enviar(eventoParseado);
 }
 
 void ClienteProxy::encolarEvento(EventosParseables *evento) {
     eventosAEnviar.encolar(evento);
+}
+
+void ClienteProxy::encolarEvento(std::shared_ptr<EventosParseables>& evento) {
+    eventosAEnviar.encolar(evento);
+}
+
+void ClienteProxy::mandarAutoPropio() {
+    eventosAEnviar.encolar(new EnviarAutoPropio(miCarro));
 }

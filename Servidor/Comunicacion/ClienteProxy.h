@@ -27,6 +27,8 @@ public:
     void encolarAccion(Accion* accion);
 
     void encolarEvento(EventosParseables* evento);
+    void encolarEvento(std::shared_ptr<EventosParseables>& evento);
+    void mandarAutoPropio();
     void ejecutarAccion();
     void desconectar();
     void enviar(const std::string&  mensaje);

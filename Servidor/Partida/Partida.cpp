@@ -3,8 +3,9 @@
 #include "../PartidaLlenaExcepcion.h"
 #include "../Comunicacion/Estados/EnCarrera.h"
 #include "../Comunicacion/Estados/EnEspera.h"
+#include "../Comunicacion/Eventos/EventosParseables/ComenzoLaPartida.h"
+#include "../Comunicacion/Eventos/EventosParseables/EnviarMapa.h"
 
-#define MSJ_COMENZO_PARTIDA "PartidaComienza"
 
 Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
 continuar(true), estado(new EnEspera(cantJugadores, clientes)) {
@@ -33,10 +34,7 @@ Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente
 
 void Partida::run() {
     estado->ejecutar();
-    //
-    enviarComenzoLaPartida();
-    enviarMapa();
-    //enviarAutosPropios();
+    enviarMensajesInicio();
     estado = std::unique_ptr<EstadoPartida> (new EnCarrera(pista, clientes));
     while(continuar)
         try {
@@ -62,18 +60,16 @@ void Partida::cerrar() {
     }
 }
 
-void Partida::enviarMapa() {
-    for (auto& cliente : clientes){
-        for (auto& pos : obtenerMapa()){
-            cliente->enviar(pos);
-        }
-        cliente->enviar(MSJ_FIN);
-    }
-}
 
-void Partida::enviarComenzoLaPartida() {
+
+
+void Partida::enviarMensajesInicio() {
+    std::shared_ptr<EventosParseables> eventoComenzo (new ComenzoLaPartida());
+    std::shared_ptr<EventosParseables> eventoEnviarMapa (new EnviarMapa(pista));
     for (auto& cliente : clientes){
-        cliente->enviar(MSJ_COMENZO_PARTIDA);
+        cliente->encolarEvento(eventoComenzo);
+        cliente->mandarAutoPropio();
+        cliente->encolarEvento(eventoEnviarMapa);
     }
 }
 

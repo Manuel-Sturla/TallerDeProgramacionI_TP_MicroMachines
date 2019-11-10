@@ -39,6 +39,10 @@ public:
     ~Partida();
 
     void enviarComenzoLaPartida();
+
+    void enviarAutosPropios();
+
+    void enviarMensajesInicio();
 };
 
 #endif
