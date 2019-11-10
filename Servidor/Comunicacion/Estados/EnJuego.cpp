@@ -1,20 +1,23 @@
 #include "EnJuego.h"
 #include "../../Partida/HashProtegido.h"
+#include "../Utilidades.h"
 
 
 #define MSJ_CMD_INVALIDO "ComandoInvalido"
 
 void EnJuego::ejecutar(ClienteProxy &cliente) {
-    /*std::string comando = cliente.recibir();
-    if (comandos.find(comando) == comandos.end()){
+    std::string evento = cliente.recibir();
+    std::vector<std::string> argumentos = separar(evento, ';');
+    std::string eventoId = *argumentos.begin();
+    if (comandos.find(eventoId) == comandos.end()){
         cliente.enviar(MSJ_CMD_INVALIDO);
     }else{
-        comandos[comando]->ejecutar(cliente);
-    }*/
-    comandos["MOV"]->ejecutar(cliente);
+        argumentos.erase(argumentos.begin());
+        comandos[eventoId]->ejecutar(cliente, argumentos);
+    }
 }
 
 
 EnJuego::EnJuego(HashProtegido &partidas) {
-    comandos.emplace("MOV", new RecibirAccion());
+    comandos.emplace("Accion", new RecibirAccion());
 }

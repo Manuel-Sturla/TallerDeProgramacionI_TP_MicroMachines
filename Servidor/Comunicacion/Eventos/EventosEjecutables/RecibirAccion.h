@@ -8,7 +8,7 @@ class RecibirAccion: public EventoEjecutables {
 public:
     RecibirAccion() = default;
 
-    void ejecutar(ClienteProxy &cliente) override;
+    void ejecutar(ClienteProxy &cliente, std::vector<std::string> argumentos) override;
 };
 
 

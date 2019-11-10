@@ -9,7 +9,7 @@
 
 class EventoEjecutables {
 public:
-    virtual void ejecutar(ClienteProxy &cliente) = 0;
+    virtual void ejecutar(ClienteProxy &cliente, std::vector<std::string> argumentos) = 0;
 
 };
 

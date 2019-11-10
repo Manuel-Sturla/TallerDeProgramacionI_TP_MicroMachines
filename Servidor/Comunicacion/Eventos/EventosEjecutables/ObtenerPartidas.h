@@ -18,7 +18,7 @@ private:
 public:
     explicit ObtenerPartidas(HashProtegido &partidas);
 
-    void ejecutar(ClienteProxy &cliente) override;
+    void ejecutar(ClienteProxy &cliente, std::vector<std::string> argumentos) override;
 
 };
 

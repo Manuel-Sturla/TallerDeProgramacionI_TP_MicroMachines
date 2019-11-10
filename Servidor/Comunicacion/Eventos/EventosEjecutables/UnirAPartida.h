@@ -18,7 +18,7 @@ class UnirAPartida: public EventoEjecutables {
 public:
     UnirAPartida(HashProtegido &partidas, ConfiguracionServidor& config);
 
-    void ejecutar(ClienteProxy &cliente) override;
+    void ejecutar(ClienteProxy &cliente, std::vector<std::string> argumento) override;
 };
 
 

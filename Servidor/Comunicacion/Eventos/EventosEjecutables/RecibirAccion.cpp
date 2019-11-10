@@ -15,8 +15,8 @@
 #define CMD_IZQUIERDA "doblar izquierda"
 #define SALIR "salir"
 
-void RecibirAccion::ejecutar(ClienteProxy &cliente) {
-    std::string accion = cliente.recibir();
+void RecibirAccion::ejecutar(ClienteProxy &cliente, std::vector<std::string> argumentos) {
+    std::string accion = argumentos[0];
     if (accion == CMD_ACELERAR){
         cliente.encolarAccion(new Acelerar());
     }else if (accion == CMD_FRENAR){

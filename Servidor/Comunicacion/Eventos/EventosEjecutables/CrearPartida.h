@@ -19,7 +19,7 @@ public:
     CrearPartida(HashProtegido &partidas,
                  ConfiguracionServidor &mapasYAutos);
 
-    void ejecutar(ClienteProxy &cliente) override;
+    void ejecutar(ClienteProxy &cliente, std::vector<std::string> argumentos) override;
 };
 
 

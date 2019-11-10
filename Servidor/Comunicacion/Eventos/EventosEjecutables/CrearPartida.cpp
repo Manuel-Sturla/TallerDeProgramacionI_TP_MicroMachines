@@ -12,11 +12,10 @@ CrearPartida::CrearPartida(HashProtegido &partidas,
                            ConfiguracionServidor &mapasYAutos) : partidas(partidas), mapasYAutos(mapasYAutos) {
 }
 
-void CrearPartida::ejecutar(ClienteProxy &cliente) {
+void CrearPartida::ejecutar(ClienteProxy &cliente, std::vector<std::string> argumentos) {
     std::string datosPartida = cliente.recibir();
-    std::vector<std::string> datos = separar(datosPartida, ';');
-    std::string clave = datos[0];
-    int cantJugadores = std::stoi(datos[1]);
+    std::string clave = argumentos[0];
+    int cantJugadores = std::stoi(argumentos[1]);
     if (partidas.ubicar(clave, new Partida(cantJugadores, mapasYAutos.darPlanoDePista("Prueba 1")))){
         partidas.obtener(clave)->start();
     }else{
