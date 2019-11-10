@@ -18,6 +18,7 @@ Recta::Recta(MundoBox2D *pista, Material *unMaterial, float32 x, float32 y,
     cuerpo -> CreateFixture(&fixtureDef);
     cuerpo -> SetTransform(cuerpo -> GetPosition(), angulo);
     this -> numeroDeSuelo = numeroDeSuelo;
+    id = "Recta";
 }
 
 Recta::~Recta() {
@@ -38,6 +39,7 @@ bool Recta::esValido() {
 Recta::Recta(Recta &&otraRecta) {
     this -> cuerpo = otraRecta.cuerpo;
     this -> material = otraRecta.material;
+    this -> numeroDeSuelo = otraRecta.numeroDeSuelo;
     otraRecta.cuerpo = nullptr;
     otraRecta.material = nullptr;
 }
@@ -48,24 +50,28 @@ Recta &Recta::operator=(Recta &&otraRecta) {
     }
     this -> cuerpo = otraRecta.cuerpo;
     this -> material = otraRecta.material;
+    this -> numeroDeSuelo = otraRecta.numeroDeSuelo;
     otraRecta.cuerpo = nullptr;
     otraRecta.material = nullptr;
     return *this;
 }
-
+/*
 Recta &Recta::operator=(const Recta &otraRecta) {
     if (this == &otraRecta) {
         return *this;
     }
     this -> cuerpo = otraRecta.cuerpo;
+    this -> numeroDeSuelo = otraRecta.numeroDeSuelo;
     this -> material = otraRecta.material;
     return *this;
-}
-
+}*/
+/*
 Recta::Recta(const Recta &otraRecta) {
     this -> cuerpo = otraRecta.cuerpo;
     this -> material = otraRecta.material;
+    this -> numeroDeSuelo = otraRecta.numeroDeSuelo;
 }
+ */
 
 void Recta::empaquetar(std::vector<std::string> *destino) {
     material -> empaquetarMaterial(destino);

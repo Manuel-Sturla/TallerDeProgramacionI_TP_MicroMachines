@@ -94,3 +94,7 @@ void Carro::actualizarPosicion(int numeroDeSuelo) {
     std::cout << "Me llego el suelo numero " << numeroDeSuelo << std::endl;
     posicion.actualizar(numeroDeSuelo);
 }
+
+void Carro::interactuar(Carro *otroCarro) {
+    otroCarro->recibirDanio(5);
+}

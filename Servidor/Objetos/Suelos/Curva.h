@@ -23,7 +23,7 @@ class Curva: public Suelo {
 
     void agregarseAPista(MundoBox2D *pista, float32 angulo);
 
-    std::string darId();
+    std::string darId() override;
 
     Curva(Curva &&otraCurva);
 

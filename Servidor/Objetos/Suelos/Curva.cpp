@@ -67,6 +67,7 @@ Curva::Curva(Curva &&otraCurva) {
     this -> asfalto = otraCurva.asfalto;
     this -> pasto = otraCurva.pasto;
     this -> interaccion = otraCurva.interaccion;
+    this -> numeroDeSuelo = otraCurva.numeroDeSuelo;
     otraCurva.cuerpo = nullptr;
     otraCurva.asfalto = nullptr;
     otraCurva.pasto = nullptr;
@@ -80,6 +81,7 @@ Curva &Curva::operator=(Curva &&otraCurva) {
     this -> asfalto = otraCurva.asfalto;
     this -> pasto = otraCurva.pasto;
     this -> interaccion = otraCurva.interaccion;
+    this -> numeroDeSuelo = otraCurva.numeroDeSuelo;
     otraCurva.cuerpo = nullptr;
     otraCurva.asfalto = nullptr;
     otraCurva.pasto = nullptr;
@@ -91,6 +93,7 @@ Curva::Curva(const Curva &otraCurva) {
     this -> asfalto = otraCurva.asfalto;
     this -> pasto = otraCurva.pasto;
     this -> interaccion = otraCurva.interaccion;
+    this -> numeroDeSuelo = otraCurva.numeroDeSuelo;
 }
 
 void Curva::empaquetar(std::vector<std::string> *destino) {
@@ -106,6 +109,7 @@ Curva &Curva::operator=(const Curva &otraCurva) {
     this -> cuerpo = otraCurva.cuerpo;
     this -> asfalto = otraCurva.asfalto;
     this -> pasto = otraCurva.pasto;
+    this -> numeroDeSuelo = otraCurva.numeroDeSuelo;
     this -> interaccion = otraCurva.interaccion;
     return *this;
 }

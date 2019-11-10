@@ -1,11 +1,12 @@
 #include <sstream>
+#include <utility>
 #include "PlanoDeRecta.h"
 #define ANGULO_RECTA_1 0
 #define ANGULO_RECTA_2 0.5f * b2_pi
 
 PlanoDeRecta::PlanoDeRecta(std::string material, int x, int y, int tipo,
                            int numero) {
-    this -> material = material;
+    this -> material = std::move(material);
     this -> posicionX = x;
     this -> posicionY = y;
     this -> tipo = tipo;

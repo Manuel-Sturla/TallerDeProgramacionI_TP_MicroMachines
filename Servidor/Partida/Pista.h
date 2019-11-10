@@ -2,6 +2,7 @@
 #define _PISTA_H_
 
 #include <list>
+#include <map>
 #include "../Objetos/Suelos/Pasto.h"
 #include "../Objetos/Suelos/Asfalto.h"
 #include "../Objetos/Suelos/LimiteDePista.h"
@@ -13,8 +14,8 @@ private:
     Asfalto asfalto;
     Pasto pasto;
     LimiteDePista limiteDePista;
+    std::map<int, Suelo*> BloquesDeasfalto;
     std::list<Recta> rectas;
-    std::list<Curva> curvas;
     std::list<Carro> carros;
 
     Material* darMaterial(const std::string& materialPedido);

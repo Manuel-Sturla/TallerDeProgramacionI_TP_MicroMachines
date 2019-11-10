@@ -15,9 +15,9 @@ class Recta: public Suelo {
 
     Recta(Recta &&otraRecta);
 
-    Recta(const Recta&);
+    Recta(const Recta&) = delete;
 
-    Recta&operator=(const Recta &otraRecta);
+    Recta&operator=(const Recta &otraRecta) = delete;
 
     Recta& operator= (Recta &&otraRecta);
 
