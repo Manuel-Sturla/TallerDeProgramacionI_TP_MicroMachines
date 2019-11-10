@@ -10,7 +10,7 @@
 
 #define MSJ_CMD_INVALIDO "ComandoInvalido"
 
-EnMenu::EnMenu(std::map<std::string, std::shared_ptr<Partida>> &partidas, ConfiguracionServidor &config):
+EnMenu::EnMenu(HashProtegido &partidas, ConfiguracionServidor &config):
     partidas(partidas), mapasYAutos(config){
     //Creo comando CrearPartida y UnirseAPartida
     comandos.emplace("CrearPAR", new CrearPartida(partidas, mapasYAutos));

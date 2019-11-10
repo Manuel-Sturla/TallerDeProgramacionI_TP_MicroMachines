@@ -10,13 +10,14 @@
 #include "EstadoCliente.h"
 #include "../Comandos/RecibirAccion.h"
 #include "../../Partida/Partida.h"
+#include "../../Partida/HashProtegido.h"
 
 class EnJuego: public EstadoCliente {
     RecibirAccion recibirAccion;
     std::map<std::string, std::shared_ptr<Comando>> comandos;
 
 public:
-    EnJuego(std::map<std::string, std::shared_ptr<Partida>>& partidas);
+    EnJuego(HashProtegido &partidas);
 
     void ejecutar(ClienteProxy &cliente) override;
 };

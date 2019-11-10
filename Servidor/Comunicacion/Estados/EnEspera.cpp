@@ -16,7 +16,7 @@ void EnEspera::sumarJugador(ClienteProxy *cliente) {
         throw PartidaLlenaExcepcion("La partida se encuentra llena", __LINE__);
     }
     cantActualJugadores++;
-    clientes.emplace_back(cliente);
+    clientes.push_back(cliente);
     enviarCantidadDeJugadores();
     std::cout << "Cantidad actual de jugadores: " << cantActualJugadores << std::endl;
     if (enJuego()){

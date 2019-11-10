@@ -14,7 +14,7 @@ private:
     Asfalto asfalto;
     Pasto pasto;
     LimiteDePista limiteDePista;
-    std::map<int, Suelo*> BloquesDeasfalto;
+    std::map<int, std::unique_ptr<Suelo>> BloquesDeasfalto;
     std::list<Recta> rectas;
     std::list<Carro> carros;
 

@@ -20,7 +20,7 @@ Pista::~Pista() {
 void Pista::agregarRecta(std::string &material, float32 x, float32 y,
                          float32 angulo, int numeroDeSuelo) {
     if (material == "Asfalto") {
-        BloquesDeasfalto.emplace(std::pair<int, Suelo*>(numeroDeSuelo, new Recta(&mundoBox2D, darMaterial(material), x, y, angulo, numeroDeSuelo) ));
+        BloquesDeasfalto.emplace(std::pair<int, std::unique_ptr<Suelo>>(numeroDeSuelo, new Recta(&mundoBox2D, darMaterial(material), x, y, angulo, numeroDeSuelo) ));
     } else {
         rectas.emplace_back(&mundoBox2D, darMaterial(material), x, y, angulo, numeroDeSuelo);
     }
@@ -53,7 +53,7 @@ void Pista::empaquetarCarro(std::vector<std::string> *destino) {
 void Pista::empaquetarSuelos(std::vector<std::string> *destino) {
     std::list<Recta>::iterator itRectas;
     destino -> emplace_back(LONGITUD_DE_PISTA);
-    std::map<int, Suelo*>::iterator itRectasDeAsfalto;
+    std::map<int, std::unique_ptr<Suelo>>::iterator itRectasDeAsfalto;
     for (itRectasDeAsfalto = BloquesDeasfalto.begin(); itRectasDeAsfalto != BloquesDeasfalto.end(); itRectasDeAsfalto++) {
         (itRectasDeAsfalto) -> second -> empaquetar(destino);
     }

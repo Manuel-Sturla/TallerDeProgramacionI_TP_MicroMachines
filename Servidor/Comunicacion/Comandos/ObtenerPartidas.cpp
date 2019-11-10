@@ -3,13 +3,14 @@
 //
 
 #include "ObtenerPartidas.h"
+#include "../../Partida/HashProtegido.h"
 
-ObtenerPartidas::ObtenerPartidas(std::map<std::string, std::shared_ptr<Partida>> &partidas) :\
+ObtenerPartidas::ObtenerPartidas(HashProtegido &partidas) :\
 partidas(partidas) {}
 
 void ObtenerPartidas::ejecutar(ClienteProxy &cliente) {
-    for(auto& partida : partidas){
-        cliente.enviar(partida.first);
+    for(auto& partida : partidas.obtenerClaves()){
+        cliente.enviar(partida);
     }
     cliente.enviar(MSJ_FIN);
 }

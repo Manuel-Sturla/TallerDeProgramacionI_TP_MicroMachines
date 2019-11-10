@@ -1,4 +1,5 @@
 #include "EnJuego.h"
+#include "../../Partida/HashProtegido.h"
 
 
 #define MSJ_CMD_INVALIDO "ComandoInvalido"
@@ -14,6 +15,6 @@ void EnJuego::ejecutar(ClienteProxy &cliente) {
 }
 
 
-EnJuego::EnJuego(std::map<std::string, std::shared_ptr<Partida>>& partidas) {
+EnJuego::EnJuego(HashProtegido &partidas) {
     comandos.emplace("MOV", new RecibirAccion());
 }

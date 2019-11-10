@@ -10,12 +10,13 @@
 #include "Comando.h"
 #include "../../Partida/Partida.h"
 #include "../../ConfiguracionServidor.h"
+#include "../../Partida/HashProtegido.h"
 
 class UnirAPartida: public Comando {
-    std::map<std::string, std::shared_ptr<Partida>>& partidas;
+    HashProtegido& partidas;
     ConfiguracionServidor& mapasYAutos;
 public:
-    UnirAPartida(std::map<std::string, std::shared_ptr<Partida>>& partidas, ConfiguracionServidor& config);
+    UnirAPartida(HashProtegido &partidas, ConfiguracionServidor& config);
 
     void ejecutar(ClienteProxy &cliente) override;
 

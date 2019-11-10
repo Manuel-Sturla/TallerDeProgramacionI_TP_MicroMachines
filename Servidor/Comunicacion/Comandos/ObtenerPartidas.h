@@ -9,13 +9,14 @@
 #include <map>
 #include "Comando.h"
 #include "../../Partida/Partida.h"
+#include "../../Partida/HashProtegido.h"
 
 class ObtenerPartidas : public Comando {
 private:
-    std::map<std::string, std::shared_ptr<Partida>>& partidas;
+    HashProtegido& partidas;
 
 public:
-    explicit ObtenerPartidas(std::map<std::string, std::shared_ptr<Partida>>& partidas);
+    explicit ObtenerPartidas(HashProtegido &partidas);
 
     void ejecutar(ClienteProxy &cliente) override;
 

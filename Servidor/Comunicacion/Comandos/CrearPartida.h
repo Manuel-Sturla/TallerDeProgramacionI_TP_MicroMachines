@@ -10,12 +10,13 @@
 #include "Comando.h"
 #include "../../Partida/Partida.h"
 #include "../../ConfiguracionServidor.h"
+#include "../../Partida/HashProtegido.h"
 
 class CrearPartida: public Comando {
-    std::map<std::string, std::shared_ptr<Partida>>& partidas;
+    HashProtegido& partidas;
     ConfiguracionServidor& mapasYAutos;
 public:
-    CrearPartida(std::map<std::string, std::shared_ptr<Partida>> &partidas,
+    CrearPartida(HashProtegido &partidas,
                  ConfiguracionServidor &mapasYAutos);
 
     void ejecutar(ClienteProxy &cliente) override;
