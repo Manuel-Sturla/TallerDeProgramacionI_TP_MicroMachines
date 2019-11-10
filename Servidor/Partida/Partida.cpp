@@ -1,7 +1,7 @@
 #include "Partida.h"
 #include "../Comunicacion/Sockets/SocketPeerException.h"
 #include "../PartidaLlenaExcepcion.h"
-#include "../Comunicacion/Comandos/Comando.h"
+#include "../Comunicacion/Eventos/Evento.h"
 #include "../Comunicacion/Estados/EnCarrera.h"
 #include "../Comunicacion/Estados/EnEspera.h"
 

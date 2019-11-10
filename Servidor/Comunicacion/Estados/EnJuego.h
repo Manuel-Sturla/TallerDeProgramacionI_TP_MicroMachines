@@ -8,13 +8,13 @@
 
 #include <map>
 #include "EstadoCliente.h"
-#include "../Comandos/RecibirAccion.h"
+#include "../Eventos/RecibirAccion.h"
 #include "../../Partida/Partida.h"
 #include "../../Partida/HashProtegido.h"
 
 class EnJuego: public EstadoCliente {
     RecibirAccion recibirAccion;
-    std::map<std::string, std::shared_ptr<Comando>> comandos;
+    std::map<std::string, std::shared_ptr<EventoEjecutables>> comandos;
 
 public:
     EnJuego(HashProtegido &partidas);

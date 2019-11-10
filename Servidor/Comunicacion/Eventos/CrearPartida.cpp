@@ -4,6 +4,7 @@
 
 #include "CrearPartida.h"
 #include "../Utilidades.h"
+#include "PartidaInvalida.h"
 
 #define MSJ_PARTIDA_INVALIDA "Partida Ya existente"
 
@@ -19,7 +20,7 @@ void CrearPartida::ejecutar(ClienteProxy &cliente) {
     if (partidas.ubicar(clave, new Partida(cantJugadores, mapasYAutos.darPlanoDePista("Prueba 1")))){
         partidas.obtener(clave)->start();
     }else{
-        cliente.enviar(MSJ_PARTIDA_INVALIDA);
+        cliente.encolarEvento(new PartidaInvalida());
     }
 
     //EL MAPA SE ELIJE ANTES

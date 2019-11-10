@@ -1,7 +1,7 @@
 #include "UnirAPartida.h"
 #include "../../PartidaLlenaExcepcion.h"
-
-#define MSJ_PARTIDA_INEXISTENTE "La Partida no existe"
+#include "NoSePudoUnir.h"
+#include "UnirAPartidaCorrecto.h"
 
 #define MSJ_NO_UNIDO "UnirNoOK"
 
@@ -14,8 +14,8 @@ UnirAPartida::UnirAPartida(HashProtegido &partidas,
 void UnirAPartida::ejecutar(ClienteProxy &cliente) {
     //Recibo el nombre de la partida a la cual el usuario quiere agregarse o crear
     std::string nombrePartida = cliente.recibir();
-    if (!partidas.contiene(nombrePartida)){
-        cliente.enviar(MSJ_PARTIDA_INEXISTENTE);
+    if (!partidas.contiene(nombrePartida)) {
+        cliente.encolarEvento(new NoSePudoUnir());
         return;
     }
     //Elije un auto
@@ -26,12 +26,13 @@ void UnirAPartida::ejecutar(ClienteProxy &cliente) {
     std::string carro = cliente.recibir();
     */
     std::string carro = "ManuMovil";
-    try{
+    try {
         cliente.setCarro(partidas.obtener(nombrePartida)->agregarCliente(mapasYAutos.darPlanoDeCarro(carro), &cliente));
         cliente.jugar();
-    }catch (PartidaLlenaExcepcion &e){
-        cliente.enviar(MSJ_NO_UNIDO);
+    } catch (PartidaLlenaExcepcion &e) {  //Catcheo excepcion de que no existe el carro
+        cliente.encolarEvento(new NoSePudoUnir());
     }
     //Agregar el nombre de la partida a la que se unio al cliente
-    cliente.enviar(MSJ_UNIR_OK);
+    cliente.encolarEvento(new UnirAPartidaCorrecto());
 }
+

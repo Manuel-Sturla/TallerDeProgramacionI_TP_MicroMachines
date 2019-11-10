@@ -10,6 +10,7 @@
 #include "ClienteProxy.h"
 #include "Estados/EnJuego.h"
 #include "Estados/EnMenu.h"
+#include "HiloEnviador.h"
 
 class HiloCliente: public Hilo {
     ClienteProxy cliente;
@@ -17,9 +18,10 @@ class HiloCliente: public Hilo {
     EnJuego& juego;
     EstadoCliente* estado;
     std::atomic<bool> conectado;
+    HiloEnviador enviador;
 
 public:
-    HiloCliente(SocketAmigo& cliente, EnMenu& enMenu, EnJuego& enJuego);
+    HiloCliente(SocketAmigo& socketCliente, EnMenu& enMenu, EnJuego& enJuego);
     void desconectar();
     bool estaMuerto();
     void run() override;

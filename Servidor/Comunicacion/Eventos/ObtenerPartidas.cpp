@@ -4,13 +4,12 @@
 
 #include "ObtenerPartidas.h"
 #include "../../Partida/HashProtegido.h"
+#include "EnviarPartidas.h"
 
 ObtenerPartidas::ObtenerPartidas(HashProtegido &partidas) :\
 partidas(partidas) {}
 
 void ObtenerPartidas::ejecutar(ClienteProxy &cliente) {
-    for(auto& partida : partidas.obtenerClaves()){
-        cliente.enviar(partida);
-    }
-    cliente.enviar(MSJ_FIN);
+    cliente.encolarEvento(new EnviarPartidas(partidas));
 }
+

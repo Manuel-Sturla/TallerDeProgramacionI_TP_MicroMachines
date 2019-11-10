@@ -63,3 +63,13 @@ bool ClienteProxy::estaEnJuego() {
 void ClienteProxy::setCarro(Carro* carro) {
     miCarro = carro;
 }
+
+void ClienteProxy::enviarEvento() {
+    auto evento = eventosAEnviar.desencolar();
+    std::string eventoParseado = evento->obtenerParseado();
+    enviar(eventoParseado);
+}
+
+void ClienteProxy::encolarEvento(EventosParseables *evento) {
+    eventosAEnviar.encolar(evento);
+}

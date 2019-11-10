@@ -3,9 +3,10 @@
 #define SERVIDOR_RECIBIRACCION_H
 
 
-#include "Comando.h"
+#include "Evento.h"
+#include "EventoEjecutables.h"
 
-class RecibirAccion: public Comando {
+class RecibirAccion: public EventoEjecutables {
 public:
     RecibirAccion() = default;
 

@@ -7,14 +7,11 @@
 
 #include "../ClienteProxy.h"
 
-#define MSJ_FIN "F"
-#define SEPARADOR ';'
 
 
-class Comando {
+class Evento {
 public:
-    virtual void ejecutar(ClienteProxy &cliente) = 0;
-    ~Comando() = default;
+    ~Evento() = default;
 };
 
 

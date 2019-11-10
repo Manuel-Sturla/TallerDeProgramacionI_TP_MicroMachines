@@ -2,25 +2,25 @@
 // Created by manfer on 5/11/19.
 //
 
-#ifndef SERVIDOR_CREARPARTIDA_H
-#define SERVIDOR_CREARPARTIDA_H
+#ifndef SERVIDOR_UNIRAPARTIDA_H
+#define SERVIDOR_UNIRAPARTIDA_H
 
 
 #include <map>
-#include "Comando.h"
+#include "Evento.h"
 #include "../../Partida/Partida.h"
 #include "../../ConfiguracionServidor.h"
 #include "../../Partida/HashProtegido.h"
+#include "EventoEjecutables.h"
 
-class CrearPartida: public Comando {
+class UnirAPartida: public EventoEjecutables {
     HashProtegido& partidas;
     ConfiguracionServidor& mapasYAutos;
 public:
-    CrearPartida(HashProtegido &partidas,
-                 ConfiguracionServidor &mapasYAutos);
+    UnirAPartida(HashProtegido &partidas, ConfiguracionServidor& config);
 
     void ejecutar(ClienteProxy &cliente) override;
 };
 
 
-#endif //SERVIDOR_CREARPARTIDA_H
+#endif //SERVIDOR_UNIRAPARTIDA_H

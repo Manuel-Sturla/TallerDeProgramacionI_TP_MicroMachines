@@ -7,11 +7,12 @@
 
 
 #include <map>
-#include "Comando.h"
+#include "Evento.h"
 #include "../../Partida/Partida.h"
 #include "../../Partida/HashProtegido.h"
+#include "EventoEjecutables.h"
 
-class ObtenerPartidas : public Comando {
+class ObtenerPartidas : public EventoEjecutables {
 private:
     HashProtegido& partidas;
 
