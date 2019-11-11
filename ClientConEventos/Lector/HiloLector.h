@@ -13,9 +13,10 @@
 class HiloLector : public Hilo {
 private:
     AdministradorComandos comandos;
+    bool& keepTalking;
 
 public:
-    explicit HiloLector(ServidorProxy& servidor);
+    explicit HiloLector(ServidorProxy &servidor, bool &keepTalking);
 
     void run() override;
 };

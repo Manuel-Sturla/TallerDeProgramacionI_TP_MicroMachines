@@ -10,7 +10,6 @@ SDL_Keycode LectorTeclado::leer() {
     SDL_Event evento;
     SDL_WaitEvent(&evento);
     if(evento.type == SDL_QUIT){
-        std::cout<<"AAAAAAA\n";
         return -1;
     } else if(evento.type == SDL_KEYDOWN) {
         auto& keyEvent = (SDL_KeyboardEvent&) evento;
