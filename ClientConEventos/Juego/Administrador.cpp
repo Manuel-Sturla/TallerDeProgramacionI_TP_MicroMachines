@@ -7,7 +7,7 @@
 #include "Auto.h"
 
 Administrador::Administrador(Renderizador &renderizador) : renderizador(renderizador), pista(renderizador),\
-posTexto(200,200,300,100,-90){
+posTexto(0,200,100,1000,-90){
     cantJugadores = 1;
 }
 
