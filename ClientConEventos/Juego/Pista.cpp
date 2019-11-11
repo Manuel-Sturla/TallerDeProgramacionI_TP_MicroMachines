@@ -10,7 +10,7 @@ Pista::Pista(Renderizador &renderizador) : renderizador(renderizador) {
     tamImagen = 0;
 }
 
-void Pista::crear(std::vector<std::string> mensaje) {
+void Pista::crear(std::vector<std::string>& mensaje) {
     if(mensaje.empty()){
         throw ExcepcionConPos(__FILE__, __LINE__, "Mensaje vacio");
     }

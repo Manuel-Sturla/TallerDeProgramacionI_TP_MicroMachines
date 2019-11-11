@@ -42,13 +42,8 @@ std::vector<std::string> ServidorProxy::obtenerPartidas() {
 
 std::vector<std::string> ServidorProxy::obtenerMapa() {
     std::vector<std::string> resultado;
-    while (protocolo.recibir() != MSJ_COMIENZO_PARTIDA){
-        //Recibe las conexiones de los otros jugadores y temporalmente las ignora
-    }
-    std::string aux;
-    while ((aux = protocolo.recibir()) != MSJ_FIN){
-        resultado.push_back(aux);
-    }
+    std::string aux = protocolo.recibir();
+    resultado = separar(aux, ';');
     return resultado;
 }
 
@@ -70,7 +65,7 @@ std::vector<std::string> ServidorProxy::obtenerEventosJuego() {
 
 std::vector<std::string> ServidorProxy::obtenerEvento() {
     std::string aux = protocolo.recibir();
-    std::vector<std::string> evento = separar(aux, ',');
+    std::vector<std::string> evento = separar(aux, ';');
     return evento;
 }
 

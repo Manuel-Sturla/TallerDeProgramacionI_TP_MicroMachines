@@ -33,6 +33,5 @@ void UnirAPartida::ejecutar(ClienteProxy &cliente, std::vector<std::string> argu
         cliente.encolarEvento(new NoSePudoUnir());
     }
     //Agregar el nombre de la partida a la que se unio al cliente
-    cliente.encolarEvento(new UnirAPartidaCorrecto());
 }
 

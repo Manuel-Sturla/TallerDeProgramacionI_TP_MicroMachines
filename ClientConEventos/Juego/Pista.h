@@ -24,7 +24,7 @@ public:
 
     explicit Pista(Renderizador &renderizador);
 
-    void crear(std::vector<std::string> instrucciones);
+    void crear(std::vector<std::string>& instrucciones);
 
     virtual ~Pista();
 };

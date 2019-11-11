@@ -68,8 +68,8 @@ void Partida::enviarMensajesInicio() {
     std::shared_ptr<EventosParseables> eventoEnviarMapa (new EnviarMapa(pista));
     for (auto& cliente : clientes){
         cliente->encolarEvento(eventoComenzo);
-        cliente->mandarAutoPropio();
         cliente->encolarEvento(eventoEnviarMapa);
+        cliente->mandarAutoPropio();
     }
 }
 
