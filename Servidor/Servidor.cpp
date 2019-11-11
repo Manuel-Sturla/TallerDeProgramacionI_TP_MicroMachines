@@ -54,6 +54,7 @@ void Servidor::cerrar_clientes_desconectados() {
     size_t i = 0;
     while(i < clientes.size()) {
         if (clientes[i]->estaMuerto()) {
+            clientes[i]->desconectar();
             clientes[i]->join();
             clientes.erase(clientes.begin() + i);
         } else {
