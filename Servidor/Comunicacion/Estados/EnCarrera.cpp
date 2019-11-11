@@ -31,7 +31,6 @@ bool EnCarrera::enJuego() {
 }
 
 void EnCarrera::enviarPosicion(ClienteProxy &proxy) {
-    autos.insert(autos.begin(), "posicionarAuto");
     proxy.enviar(unir(autos, SEPARADOR));
     proxy.enviar("finSimulacion");
     /*
