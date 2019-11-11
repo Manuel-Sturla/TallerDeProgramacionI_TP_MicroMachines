@@ -33,7 +33,7 @@ bool EnCarrera::enJuego() {
 }
 
 void EnCarrera::enviarPosiciones() {
-    std::shared_ptr<EventosParseables> eventoFinSimulacion (new FinSimulacion());
+    std::shared_ptr<EventoParseable> eventoFinSimulacion (new FinSimulacion());
     for (auto& cliente : clientes){
         for (auto& evento : eventos){
             cliente->encolarEvento(evento);

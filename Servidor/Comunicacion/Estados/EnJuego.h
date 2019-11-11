@@ -14,7 +14,7 @@
 
 class EnJuego: public EstadoCliente {
     RecibirAccion recibirAccion;
-    std::map<std::string, std::shared_ptr<EventoEjecutables>> comandos;
+    std::map<std::string, std::shared_ptr<EventoEjecutable>> comandos;
 
 public:
     EnJuego(HashProtegido &partidas);

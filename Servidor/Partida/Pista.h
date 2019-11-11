@@ -9,7 +9,7 @@
 #include "../Objetos/Suelos/LimiteDePista.h"
 #include "../Objetos/Suelos/Recta.h"
 #include "../Objetos/Suelos/Curva.h"
-#include "../Comunicacion/Eventos/EventosParseables/EventosParseables.h"
+#include "../Comunicacion/Eventos/EventosParseables/EventoParseable.h"
 #include "Podio.h"
 #include "../Objetos/Modificadores/Modificador.h"
 
@@ -38,8 +38,8 @@ public:
 
     int cantidadDeCarros();
 
-    void empaquetarCarro(std::vector<std::shared_ptr<EventosParseables>> *destino);
-    void empaquetarExtras(std::vector<std::shared_ptr<EventosParseables>> * destino);
+    void empaquetarCarro(std::vector<std::shared_ptr<EventoParseable>> *destino);
+    void empaquetarExtras(std::vector<std::shared_ptr<EventoParseable>> * destino);
     void empaquetarSuelos(std::vector<std::string> *destino);
 
     void agregarPosicionDeInicio(b2Vec2 &posicion);

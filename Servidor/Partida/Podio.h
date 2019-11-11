@@ -16,7 +16,9 @@ public:
 
     void actualizarPodio();
 
-    void analizarVictoria();
+    bool analizarVictoria();
+
+    std::string obtenerGanador();
 
     ~Podio();
 

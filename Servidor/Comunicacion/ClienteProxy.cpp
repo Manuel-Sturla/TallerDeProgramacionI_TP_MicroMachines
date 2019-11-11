@@ -70,11 +70,11 @@ void ClienteProxy::enviarEvento() {
     enviar(eventoParseado);
 }
 
-void ClienteProxy::encolarEvento(EventosParseables *evento) {
+void ClienteProxy::encolarEvento(EventoParseable *evento) {
     eventosAEnviar.encolar(evento);
 }
 
-void ClienteProxy::encolarEvento(std::shared_ptr<EventosParseables>& evento) {
+void ClienteProxy::encolarEvento(std::shared_ptr<EventoParseable>& evento) {
     eventosAEnviar.encolar(evento);
 }
 

@@ -13,7 +13,7 @@ private:
     Pista& pista;
     Podio podio;
     std::vector<std::string> extras;
-    std::vector<std::shared_ptr<EventosParseables>> eventos;
+    std::vector<std::shared_ptr<EventoParseable>> eventos;
     std::vector<ClienteProxy*>& clientes;
     void actualizarEventos();
 public:

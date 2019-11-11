@@ -2,9 +2,9 @@
 #ifndef SERVIDOR_RECIBIRACCION_H
 #define SERVIDOR_RECIBIRACCION_H
 
-#include "EventoEjecutables.h"
+#include "EventoEjecutable.h"
 
-class RecibirAccion: public EventoEjecutables {
+class RecibirAccion: public EventoEjecutable {
 public:
     RecibirAccion() = default;
 

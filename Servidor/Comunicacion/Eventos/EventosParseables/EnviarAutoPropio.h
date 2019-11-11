@@ -6,10 +6,10 @@
 #define SERVIDOR_ENVIARAUTOPROPIO_H
 
 
-#include "EventosParseables.h"
+#include "EventoParseable.h"
 #include "../../../Objetos/Carro/Carro.h"
 
-class EnviarAutoPropio: public EventosParseables {
+class EnviarAutoPropio: public EventoParseable {
     Carro* carro;
 public:
     explicit EnviarAutoPropio(Carro* carro);

@@ -9,17 +9,17 @@
 #include <mutex>
 #include <condition_variable>
 #include <queue>
-#include "Eventos/EventosParseables/EventosParseables.h"
+#include "Eventos/EventosParseables/EventoParseable.h"
 
 class ColaBloqueante {
     std::mutex mutex;
     std::condition_variable estaVacia;
-    std::queue<std::shared_ptr<EventosParseables>> cola;
+    std::queue<std::shared_ptr<EventoParseable>> cola;
 public:
     ColaBloqueante() = default;
-    void encolar(EventosParseables* evento);
-    void encolar(std::shared_ptr<EventosParseables>& evento);
-    std::shared_ptr<EventosParseables> desencolar();
+    void encolar(EventoParseable* evento);
+    void encolar(std::shared_ptr<EventoParseable>& evento);
+    std::shared_ptr<EventoParseable> desencolar();
 };
 
 

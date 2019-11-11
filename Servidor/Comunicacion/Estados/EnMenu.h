@@ -12,13 +12,13 @@
 #include "../../Partida/Partida.h"
 #include "../../ConfiguracionServidor.h"
 #include "../../Partida/HashProtegido.h"
-#include "../Eventos/EventosEjecutables/EventoEjecutables.h"
+#include "../Eventos/EventosEjecutables/EventoEjecutable.h"
 
 
 class EnMenu: public EstadoCliente {
     HashProtegido& partidas;
     ConfiguracionServidor& mapasYAutos;
-    std::map<std::string, std::shared_ptr<EventoEjecutables>> comandos;
+    std::map<std::string, std::shared_ptr<EventoEjecutable>> comandos;
 
 public:
     EnMenu(HashProtegido &partidas,

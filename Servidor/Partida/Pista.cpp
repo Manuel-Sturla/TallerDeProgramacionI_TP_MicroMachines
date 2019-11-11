@@ -1,6 +1,6 @@
 #include "Pista.h"
 #include "../Acciones/GiroAIzquierda.h"
-#include "../Comunicacion/Eventos/EventosParseables/EventosParseables.h"
+#include "../Comunicacion/Eventos/EventosParseables/EventoParseable.h"
 #include "../Comunicacion/Eventos/EventosParseables/EnviarCarro.h"
 #include "../Comunicacion/Eventos/EventosParseables/EnviarExtra.h"
 
@@ -45,13 +45,13 @@ void Pista::simular() {
     }
 }
 
-void Pista::empaquetarCarro(std::vector<std::shared_ptr<EventosParseables>> *destino) {
+void Pista::empaquetarCarro(std::vector<std::shared_ptr<EventoParseable>> *destino) {
     std::list<Carro>::iterator itCarros;
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
         destino->emplace_back(new EnviarCarro(*itCarros));
     }
 }
-void Pista::empaquetarExtras(std::vector<std::shared_ptr<EventosParseables>> *destino) {
+void Pista::empaquetarExtras(std::vector<std::shared_ptr<EventoParseable>> *destino) {
     for (auto& extra : extras){
         destino->emplace_back(new EnviarExtra(extra));
     }

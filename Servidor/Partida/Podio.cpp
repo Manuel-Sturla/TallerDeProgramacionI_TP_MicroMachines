@@ -20,9 +20,14 @@ void Podio::agregarCarro(Carro *carro) {
     carros.push_back(carro);
 }
 
-void Podio::analizarVictoria() {
+bool Podio::analizarVictoria() {
     auto it = carros.begin();
-    if ((*it) -> termineCarrera(cantidadDeVueltas)) {
-        std::cout << "GANO EL WACHO" << std::endl;
-    }
+    return (*it)->termineCarrera(cantidadDeVueltas);
+}
+
+std::string Podio::obtenerGanador() {
+    auto it = carros.begin();
+    std::string mensaje = "El ganador es: ";
+    mensaje += (*it) -> darIdConductor();
+    return mensaje;
 }
