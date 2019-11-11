@@ -2,6 +2,7 @@
 #include "../Acciones/GiroAIzquierda.h"
 #include "../Comunicacion/Eventos/EventosParseables/EventosParseables.h"
 #include "../Comunicacion/Eventos/EventosParseables/EnviarCarro.h"
+#include "../Comunicacion/Eventos/EventosParseables/EnviarExtra.h"
 
 #define LONGITUD_DE_PISTA "4"
 
@@ -50,6 +51,11 @@ void Pista::empaquetarCarro(std::vector<std::shared_ptr<EventosParseables>> *des
         destino->emplace_back(new EnviarCarro(*itCarros));
     }
 }
+void Pista::empaquetarExtras(std::vector<std::shared_ptr<EventosParseables>> *destino) {
+    for (auto& extra : extras){
+        destino->emplace_back(new EnviarExtra(extra));
+    }
+}
 
 void Pista::empaquetarSuelos(std::vector<std::string> *destino) {
     std::list<Recta>::iterator itRectas;
@@ -63,6 +69,7 @@ void Pista::empaquetarSuelos(std::vector<std::string> *destino) {
     }
 }
 
+
 Carro *Pista::crearCarro(int velocidad, float32 anguloEnRadianes, int agarre) {
     carros.emplace_back(&mundoBox2D, velocidad, anguloEnRadianes, agarre, 0.0f, 0.0f, carros.size());
     return &carros.back();
@@ -71,3 +78,4 @@ Carro *Pista::crearCarro(int velocidad, float32 anguloEnRadianes, int agarre) {
 int Pista::cantidadDeCarros() {
     return carros.size();
 }
+

@@ -67,6 +67,7 @@ void Servidor::cerrar_clientes_desconectados() {
 void Servidor::cerrar_partidas_terminadas() {
     for (auto& partida : partidas.obtenerClaves()){
         if (partidas.obtener(partida)->estaMuerto()){
+            partidas.obtener(partida)->join();
             partidas.eliminar(partida);
         }
     }
