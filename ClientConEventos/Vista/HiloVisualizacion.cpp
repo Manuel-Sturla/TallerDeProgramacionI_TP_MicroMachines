@@ -44,7 +44,7 @@ HiloVisualizacion::~HiloVisualizacion() {
 }
 
 void HiloVisualizacion::esperarInicioPartida() {
-    while(!enJuego){
+    while(!enJuego && keepTalking){
         renderizador.limpiar();
         renderizador.copiarTodo();
         renderizador.imprimir(100);

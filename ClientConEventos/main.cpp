@@ -32,10 +32,10 @@ int main(int argc, char* argv[]) {
         ejecutarInicio(argc, argv, host, servicio);
         ServidorProxy servidor(host, servicio);
         ejecutarLobby(argc, argv, servidor);
-        HiloLector lector(servidor);
+        bool keepTalking = true;
+        HiloLector lector(servidor, keepTalking);
         lector.start();
-        bool enPartida = true;
-        HiloVisualizacion partida(servidor, enPartida);
+        HiloVisualizacion partida(servidor, keepTalking);
         partida.start();
         partida.join();
         lector.join();
