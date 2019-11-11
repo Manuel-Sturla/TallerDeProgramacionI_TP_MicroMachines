@@ -1,6 +1,7 @@
 #include <chrono>
 #include <thread>
 #include "EnCarrera.h"
+#include "../Utilidades.h"
 
 EnCarrera::EnCarrera(Pista &pista, std::vector<ClienteProxy *>& clientes):
     pista(pista), clientes(clientes){
@@ -30,10 +31,14 @@ bool EnCarrera::enJuego() {
 }
 
 void EnCarrera::enviarPosicion(ClienteProxy &proxy) {
+    autos.insert(autos.begin(), "posicionarAuto");
+    proxy.enviar(unir(autos, SEPARADOR));
+    proxy.enviar("finSimulacion");
+    /*
     for (auto& extra : extras){
         proxy.enviar(extra); //parsearExtra(extra);
     }
     for (auto& unAuto : autos){
         proxy.enviar(unAuto);
-    }
+    }*/
 }

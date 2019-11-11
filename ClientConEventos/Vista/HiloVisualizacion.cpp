@@ -11,14 +11,14 @@
 HiloVisualizacion::HiloVisualizacion(ServidorProxy& servidor, bool& keepTalking) : servidor(servidor),\
 renderizador("microMachines.exe", ANCHO_PANTALLA, ALTURA_PANTALLA), keepTalking(keepTalking) {
     this->receptor = nullptr;
+    enJuego = false;
 }
 
 void HiloVisualizacion::run() {
     try{
-        bool enJuego = false;
         receptor = new HiloReceptor(renderizador, servidor, keepTalking, enJuego);
         receptor->start();
-        esperarInicioPartida(enJuego);
+        esperarInicioPartida();
         while(keepTalking) {
             renderizador.limpiar();
             renderizador.copiarTodo();
@@ -43,7 +43,7 @@ HiloVisualizacion::~HiloVisualizacion() {
     }
 }
 
-void HiloVisualizacion::esperarInicioPartida(bool &enJuego) {
+void HiloVisualizacion::esperarInicioPartida() {
     Posicion posicion(0,0, ANCHO_PANTALLA, ALTURA_PANTALLA, 0);
     renderizador.agregarTrecho("../inicio.jpeg", &posicion);
     while(!enJuego){

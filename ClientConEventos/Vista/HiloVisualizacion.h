@@ -19,7 +19,8 @@ private:
     Renderizador renderizador;
     HiloReceptor* receptor;
     bool& keepTalking;
-    void esperarInicioPartida(bool &enJuego);
+    bool enJuego;
+    void esperarInicioPartida();
 
 public:
     explicit HiloVisualizacion(ServidorProxy& servidor, bool& keepTalking);

@@ -64,9 +64,9 @@ void Administrador::ejecutarModificar(std::vector<std::string> &eventos) {
 void Administrador::ejecutarPosicionarAuto(std::vector<std::string> &eventos) {
     auto it = desplazables.find(eventos[0]);
     if(it == desplazables.end()){
-        desplazables.emplace(eventos[0], new Auto(renderizador, std::stoi(eventos[1])));
+        desplazables.emplace(eventos[0], new Auto(renderizador, 1)); //hardcodeo el tam xq falta hacer en el servidor
         it = desplazables.find(eventos[0]);
-        eventos.erase(eventos.begin());
+//        eventos.erase(eventos.begin());
     }
     eventos.erase(eventos.begin());
     it->second->mover(std::stof(eventos[0]), std::stof(eventos[1]), std::stoi(eventos[2]));
@@ -85,7 +85,7 @@ void Administrador::crearPista(std::vector<std::string> &planos) {
 
 void Administrador::crearMiAuto(std::vector<std::string> &evento) {
     evento.erase(evento.begin());
-    desplazables.emplace(evento[0], new Auto(renderizador, std::stoi(evento[1])));
+    desplazables.emplace(evento[0], new Auto(renderizador, 1));
     auto it = desplazables.find(evento[0]);
     renderizador.configurarCamara(it->second->getPosicion());
 }

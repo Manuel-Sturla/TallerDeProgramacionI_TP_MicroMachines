@@ -55,7 +55,7 @@ void ServidorProxy::terminarConexion() {
 std::vector<std::string> ServidorProxy::obtenerEventosJuego() {
     std::vector<std::string> eventos;
     std::vector<std::string> aux = obtenerEvento();
-    while(aux[0] != "fin simulacion"){
+    while(aux[0] != "finSimulacion"){
         for(auto & i : aux){
             eventos.emplace_back(i);
         }
