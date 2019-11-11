@@ -5,6 +5,8 @@
 #include "CrearPartida.h"
 #include "../../Utilidades.h"
 #include "../EventosParseables/PartidaInvalida.h"
+#include "../EventosParseables/NoSePudoUnir.h"
+#include "../../../PartidaLlenaExcepcion.h"
 
 #define MSJ_PARTIDA_INVALIDA "Partida Ya existente"
 
@@ -13,7 +15,6 @@ CrearPartida::CrearPartida(HashProtegido &partidas,
 }
 
 void CrearPartida::ejecutar(ClienteProxy &cliente, std::vector<std::string> argumentos) {
-    std::string datosPartida = cliente.recibir();
     std::string clave = argumentos[0];
     int cantJugadores = std::stoi(argumentos[1]);
     if (partidas.ubicar(clave, new Partida(cantJugadores, mapasYAutos.darPlanoDePista("Prueba 1")))){
@@ -21,7 +22,6 @@ void CrearPartida::ejecutar(ClienteProxy &cliente, std::vector<std::string> argu
     }else{
         cliente.encolarEvento(new PartidaInvalida());
     }
-
     //EL MAPA SE ELIJE ANTES
 /*    for (auto& mapa : mapasYAutos.obtenerNombresPlanos()){
         cliente.enviar(mapa);

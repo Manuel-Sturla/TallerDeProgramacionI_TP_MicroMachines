@@ -44,12 +44,9 @@ HiloVisualizacion::~HiloVisualizacion() {
 }
 
 void HiloVisualizacion::esperarInicioPartida() {
-    Posicion posicion(0,0, ANCHO_PANTALLA, ALTURA_PANTALLA, 0);
-    renderizador.agregarTrecho("../inicio.jpeg", &posicion);
     while(!enJuego){
         renderizador.limpiar();
         renderizador.copiarTodo();
         renderizador.imprimir(100);
     }
-    posicion.invalidar();
 }
