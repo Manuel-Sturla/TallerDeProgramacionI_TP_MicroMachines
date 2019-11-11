@@ -3,7 +3,6 @@
 
 void Protocolo::enviar(const std::string &mensaje) {
     socket.enviarLongitud(mensaje.length());
-    std::cout << "enviando " << mensaje << std::endl;
     socket.enviar(mensaje);
 }
 
@@ -11,7 +10,6 @@ std::string Protocolo::recibir() {
     size_t longitud = socket.recibirLongitud();
     std::string mensaje;
     socket.recibir(mensaje, longitud);
-    std::cout << "recibi " << mensaje << std::endl;
     return mensaje;
 }
 

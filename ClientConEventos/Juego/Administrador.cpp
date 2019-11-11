@@ -46,7 +46,7 @@ void Administrador::ejecutarPosicionarExtra(std::vector<std::string> &eventos) {
         eventos.erase(eventos.begin());
     }
     eventos.erase(eventos.begin());
-    it->second->mover(std::stof(eventos[0]), std::stof(eventos[1]), 0);
+    it->second->mover(std::stof(eventos[0]), (-1)*std::stof(eventos[1]), 0);
     //Hardcodeo un 0 porque el extra no tiene angulo, lo podria recibir igual pero depende de que me manden.
     eventos.erase(eventos.begin());
     eventos.erase(eventos.begin());
@@ -69,7 +69,7 @@ void Administrador::ejecutarPosicionarAuto(std::vector<std::string> &eventos) {
 //        eventos.erase(eventos.begin());
     }
     eventos.erase(eventos.begin());
-    it->second->mover(std::stof(eventos[0]), std::stof(eventos[1]), std::stoi(eventos[2]));
+    it->second->mover(std::stof(eventos[0]), (-1)*std::stof(eventos[1]), std::stoi(eventos[2]));
     eventos.erase(eventos.begin());
     eventos.erase(eventos.begin());
     eventos.erase(eventos.begin());

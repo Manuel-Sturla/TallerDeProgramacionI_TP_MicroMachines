@@ -1,3 +1,0 @@
-# Hashes of file build rules.
-7f77ed592d21ef577149760a9fd5db8c ui_inicio.h
-67ac6684b1a01d0315fa68aff79cb029 ui_lobby.h
