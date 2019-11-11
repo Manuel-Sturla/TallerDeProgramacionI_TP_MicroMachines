@@ -3,9 +3,10 @@
 #include "../../Acciones/GiroAIzquierda.h"
 #include <iostream>
 
-Carro::Carro(MundoBox2D *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y):
+Carro::Carro(MundoBox2D *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y, int idCliente):
 estadoVelocidad(velocidadMaxima), agarre(agarre) {
   this -> anguloDeGiro = anguloDeGiro;
+  idConductor = idCliente;
   agregarseA(pista, x, y);
   id = "Carro";
   coeficienteDeRozamiento = 0;
@@ -85,8 +86,9 @@ void Carro::reducirAgarre() {
 }
 
 void Carro::empaquetar(std::vector<std::string> *destino) {
-  empaquetarPosicion(destino);
-  empaquetarAngulo(destino);
+    destino -> emplace_back(std::to_string(idConductor));
+    empaquetarPosicion(destino);
+    empaquetarAngulo(destino);
 }
 
 void Carro::actualizarPosicion(int numeroDeSuelo) {

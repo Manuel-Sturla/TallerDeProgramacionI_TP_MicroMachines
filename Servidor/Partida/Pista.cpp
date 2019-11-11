@@ -44,7 +44,6 @@ void Pista::simular() {
 
 void Pista::empaquetarCarro(std::vector<std::string> *destino) {
     std::list<Carro>::iterator itCarros;
-    destino->emplace_back("A0"); //ID HARDCODEAO
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
         itCarros -> empaquetar(destino);
     }
@@ -63,7 +62,7 @@ void Pista::empaquetarSuelos(std::vector<std::string> *destino) {
 }
 
 Carro *Pista::crearCarro(int velocidad, float32 anguloEnRadianes, int agarre) {
-    carros.emplace_back(&mundoBox2D, velocidad, anguloEnRadianes, agarre, 0.0f, 0.0f);
+    carros.emplace_back(&mundoBox2D, velocidad, anguloEnRadianes, agarre, 0.0f, 0.0f, carros.size());
     return &carros.back();
 }
 

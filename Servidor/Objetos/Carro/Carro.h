@@ -16,6 +16,7 @@
 class Carro: public Objeto {
   private:
     b2BodyDef bodyDef;
+    int idConductor;
     Vida vida;
     Visibilidad visibilidad;
     EstadoVelocidad estadoVelocidad;
@@ -26,7 +27,7 @@ class Carro: public Objeto {
 
   public:
 
-    Carro(MundoBox2D *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32 agarre, float32 x,  float32 y);
+    Carro(MundoBox2D *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32 agarre, float32 x,  float32 y, int idCliente);
 
     void agregarseA(MundoBox2D *pista, float32 x, float32 y);
 
