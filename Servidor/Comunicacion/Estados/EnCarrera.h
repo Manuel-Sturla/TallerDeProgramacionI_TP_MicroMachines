@@ -6,10 +6,12 @@
 #include "EstadoPartida.h"
 #include "../../Partida/Pista.h"
 #include "../ClienteProxy.h"
+#include "../../Partida/Podio.h"
 
 class EnCarrera: public EstadoPartida {
 private:
     Pista& pista;
+    Podio podio;
     std::vector<std::string> extras;
     std::vector<std::shared_ptr<EventosParseables>> eventos;
     std::vector<ClienteProxy*>& clientes;

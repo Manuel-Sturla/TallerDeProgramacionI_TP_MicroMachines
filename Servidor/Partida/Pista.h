@@ -10,6 +10,7 @@
 #include "../Objetos/Suelos/Recta.h"
 #include "../Objetos/Suelos/Curva.h"
 #include "../Comunicacion/Eventos/EventosParseables/EventosParseables.h"
+#include "Podio.h"
 
 class Pista {
 private:
@@ -44,6 +45,8 @@ public:
     agregarRecta(std::string &material, float32 x, float32 y, float32 angulo, int numeroDeSuelo);
 
     void agregarCurva(float32 x, float32 y, float32 angulo, int numeroDeSuelo);
+
+    void inicializarPodio(Podio *podio);
 
     ~Pista();
 };

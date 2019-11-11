@@ -10,11 +10,13 @@ private:
     std::list<Carro*> carros;
 
 public:
-    explicit Podio(int cantidadDeVueltas);
+    Podio(int cantidadDeVueltas);
 
     void agregarCarro(Carro *carro);
 
     void actualizarPodio();
+
+    void analizarVictoria();
 
     ~Podio();
 

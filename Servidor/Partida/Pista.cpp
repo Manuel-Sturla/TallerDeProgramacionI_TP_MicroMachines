@@ -78,3 +78,10 @@ int Pista::cantidadDeCarros() {
 void Pista::agregarPosicionDeInicio(b2Vec2& posicion) {
     posicionesInicio.push_back(posicion);
 }
+
+void Pista::inicializarPodio(Podio *podio) {
+    std::list<Carro>::iterator itCarros;
+    for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
+        podio->agregarCarro(&(*itCarros));
+    }
+}

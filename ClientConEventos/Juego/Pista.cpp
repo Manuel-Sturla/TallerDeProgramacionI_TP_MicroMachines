@@ -17,7 +17,7 @@ void Pista::crear(std::vector<std::string>& mensaje) {
     tamImagen = std::stoi(mensaje[0]);
     mensaje.erase(mensaje.begin());
     if(mensaje.size()%4 != 0){
-        tamImagen = 0;
+        tamImagen    = 0;
         throw ExcepcionConPos(__FILE__, __LINE__, "Mensaje incompleto");
     }
     for(unsigned long i = 0; i < mensaje.size()/4; ++i){

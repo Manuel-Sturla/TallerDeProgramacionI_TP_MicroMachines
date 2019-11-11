@@ -69,7 +69,6 @@ void Carro::recibirBoost() {
 }
 
 void Carro::imprimirPosicion() {
-
   b2Vec2 position = cuerpo -> GetPosition();
   float32 angle = cuerpo -> GetAngle();
   b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
@@ -106,4 +105,8 @@ bool Carro::operator<(const Carro &otroCarro) {
 
 std::string Carro::darIdConductor() {
     return std::to_string(idConductor);
+}
+
+bool Carro::termineCarrera(int cantidadDeVueltasParaTerminar) {
+    return posicion.termineLaCarrera(cantidadDeVueltasParaTerminar);
 }

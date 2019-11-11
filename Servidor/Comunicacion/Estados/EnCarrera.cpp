@@ -5,8 +5,8 @@
 #include "../Eventos/EventosParseables/FinSimulacion.h"
 
 EnCarrera::EnCarrera(Pista &pista, std::vector<ClienteProxy *>& clientes):
-    pista(pista), clientes(clientes){
-
+    pista(pista), clientes(clientes), podio(1){ //CANTIDAD DE VUELTAS HARDCODEADA
+    pista.inicializarPodio(&podio);
 }
 
 void EnCarrera::ejecutar() {
@@ -17,6 +17,8 @@ void EnCarrera::ejecutar() {
     }
     pista.simular();
     actualizarEventos();
+    podio.actualizarPodio();
+    podio.analizarVictoria();
     enviarPosiciones();
 }
 
