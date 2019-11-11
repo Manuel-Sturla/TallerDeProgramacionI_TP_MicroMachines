@@ -45,6 +45,7 @@ void Pista::simular() {
 void Pista::empaquetarCarro(std::vector<std::string> *destino) {
     std::list<Carro>::iterator itCarros;
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
+        destino -> insert(destino -> end() -1 , "posicionarAuto");
         itCarros -> empaquetar(destino);
     }
 }
