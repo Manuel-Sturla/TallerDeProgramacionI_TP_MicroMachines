@@ -9,9 +9,6 @@ Posicion::Posicion() {
 void Posicion::actualizar(int nuevoNumeroDeSuelo) {
     if (nuevoNumeroDeSuelo == 0 && numeroDeSuelo > 1) {
         numeroDeVueltas += 1;
-        std::cout << "Mi suelo actual es: " << numeroDeSuelo << std::endl;
-        std::cout << "Mi nuevo suelo es: " << nuevoNumeroDeSuelo << std::endl;
-        std::cout << "Una sola vueltaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" << std::endl;
     }
     numeroDeSuelo = nuevoNumeroDeSuelo;
 }
@@ -21,4 +18,14 @@ bool Posicion::termineLaCarrera(int vueltasParaTerminar) {
 }
 
 Posicion::~Posicion() {
+}
+
+bool Posicion::operator<(const Posicion &otraposicion) {
+    if (this->numeroDeVueltas < otraposicion.numeroDeVueltas) {
+        return true;
+    } else if (this->numeroDeVueltas > otraposicion.numeroDeVueltas) {
+        return false;
+    } else {
+        return this->numeroDeSuelo <= otraposicion.numeroDeSuelo;
+    }
 }

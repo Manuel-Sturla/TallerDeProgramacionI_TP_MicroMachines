@@ -9,7 +9,6 @@
 
 Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
 continuar(true), estado(new EnEspera(cantJugadores, clientes)) {
-    cantidadMaximaDeJugadores = cantJugadores;
     crearPista(planoPista);
     suelos.clear();
     pista.empaquetarSuelos(&suelos);

@@ -14,6 +14,8 @@ public:
 
     bool termineLaCarrera(int vueltasParaTerminar);
 
+    bool operator< (const Posicion& otraposicion);
+
     ~Posicion();
 
 };

@@ -96,3 +96,7 @@ void Carro::actualizarPosicion(int numeroDeSuelo) {
 void Carro::interactuar(Carro *otroCarro) {
     otroCarro->recibirDanio(5);
 }
+
+bool Carro::operator<(const Carro &otroCarro) {
+    return (this -> posicion < otroCarro.posicion);
+}

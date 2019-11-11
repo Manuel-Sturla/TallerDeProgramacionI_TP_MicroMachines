@@ -13,13 +13,11 @@
 class Partida: public Hilo {
 private:
     Pista pista;
-    int cantidadMaximaDeJugadores;
     std::vector<ClienteProxy*> clientes;
     std::unique_ptr<EstadoPartida> estado;
     std::atomic<bool> continuar;
     std::vector<std::string> suelos;
 
-    void enviarMapa();
 public:
 
     Partida(int cantJugadores, PlanoDePista *pista);
@@ -37,10 +35,6 @@ public:
     void crearPista(PlanoDePista *planoDePista);
 
     ~Partida();
-
-    void enviarComenzoLaPartida();
-
-    void enviarAutosPropios();
 
     void enviarMensajesInicio();
 };

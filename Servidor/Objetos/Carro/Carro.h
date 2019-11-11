@@ -58,6 +58,8 @@ class Carro: public Objeto {
 
     void interactuar(Carro *otroCarro);
 
+    bool operator< (const Carro& otroCarro);
+
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };
 

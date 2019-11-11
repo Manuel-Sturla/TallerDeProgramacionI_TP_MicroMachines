@@ -14,7 +14,6 @@ Material *Pista::darMaterial(const std::string& materialPedido) {
 }
 
 Pista::~Pista() {
-    //Liberar memoria de punteros o que manu ponga los unique pointers
 }
 
 void Pista::agregarRecta(std::string &material, float32 x, float32 y,

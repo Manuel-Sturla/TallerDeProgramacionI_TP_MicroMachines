@@ -1,7 +1,3 @@
-//
-// Created by manfer on 5/11/19.
-//
-
 #include "EnMenu.h"
 #include "../Sockets/SocketPeerException.h"
 #include "../Eventos/EventosEjecutables/CrearPartida.h"
