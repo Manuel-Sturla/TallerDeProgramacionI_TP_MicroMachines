@@ -28,3 +28,15 @@
   {x: 8, y: -4, tipo: 3, numero: 5},
   {x: 0, y: -4, tipo: 2, numero: 7}
   ]
+  # agregar cantidad maxima de jugadores???
+  posicionesInicio: [
+  {x: -2, y: 2},
+  {x: 0, y: 2},
+  {x: 2, y: 2},
+  {x: -2, y: 0},
+  {x: 0, y: 0},
+  {x: 2, y: 0},
+  {x: -2, y: -2},
+  {x: 0, y: -2},
+  {x: 2, y: 2}
+  ]

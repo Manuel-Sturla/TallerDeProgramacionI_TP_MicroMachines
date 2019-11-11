@@ -32,6 +32,12 @@ void ConfiguracionServidor::levantarPistas() {
             int numero = curvasInfo["numero"].as<int>();
             planosDePistas[nombre] -> agregarCurva(x, y, tipo, numero);
         }
+        YAML::Node posicionesInicio = configuracion[i]["posicionesInicio"];
+        for (auto &&posicionesInfo : posicionesInicio) {
+            int x = posicionesInfo["x"].as<int>();
+            int y = posicionesInfo["y"].as<int>();
+            planosDePistas[nombre] -> agregarPosicionDeInicio(x, y);
+        }
     }
 }
 

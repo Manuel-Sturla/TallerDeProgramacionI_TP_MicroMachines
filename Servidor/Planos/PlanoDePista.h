@@ -10,12 +10,15 @@
 class PlanoDePista {
 private:
   std::list<std::unique_ptr<PlanoDeSuelo>> planosDeSuelos;
+  std::list<b2Vec2> posicionesDeInicio;
 public:
   PlanoDePista();
 
   void agregarRecta(std::string material, int x, int y, int tipo, int numero);
 
   void agregarCurva(int x, int y, int tipo, int numero);
+
+  void agregarPosicionDeInicio(int x, int y);
 
   void crearPista(Pista *mapa);
 
