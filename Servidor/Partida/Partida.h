@@ -15,7 +15,6 @@ private:
     Pista pista;
     std::vector<ClienteProxy*> clientes;
     std::unique_ptr<EstadoPartida> estado;
-    std::atomic<bool> continuar;
     std::vector<std::string> suelos;
 
 public:

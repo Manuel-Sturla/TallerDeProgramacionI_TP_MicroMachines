@@ -2,6 +2,7 @@
 #include <thread>
 #include "EnCarrera.h"
 #include "../Utilidades.h"
+#include "../Eventos/EventosParseables/FinSimulacion.h"
 
 EnCarrera::EnCarrera(Pista &pista, std::vector<ClienteProxy *>& clientes):
     pista(pista), clientes(clientes){
@@ -16,28 +17,25 @@ void EnCarrera::ejecutar() {
     }
     pista.simular();
     actualizarEventos();
-    for (cliente = clientes.begin(); cliente != clientes.end(); cliente++) {
-        enviarPosicion(**cliente);
-    }
+    enviarPosiciones();
 }
 
 void EnCarrera::actualizarEventos() {
-    autos.clear();
-    pista.empaquetarCarro(&autos);
+    eventos.clear();
+    pista.empaquetarCarro(&eventos);
 }
 
 bool EnCarrera::enJuego() {
     return true;
 }
 
-void EnCarrera::enviarPosicion(ClienteProxy &proxy) {
-    proxy.enviar(unir(autos, SEPARADOR));
-    proxy.enviar("finSimulacion");
-    /*
-    for (auto& extra : extras){
-        proxy.enviar(extra); //parsearExtra(extra);
+void EnCarrera::enviarPosiciones() {
+    std::shared_ptr<EventosParseables> eventoFinSimulacion (new FinSimulacion());
+    for (auto& cliente : clientes){
+        for (auto& evento : eventos){
+            cliente->encolarEvento(evento);
+        }
+        cliente->encolarEvento(eventoFinSimulacion);
     }
-    for (auto& unAuto : autos){
-        proxy.enviar(unAuto);
-    }*/
+
 }

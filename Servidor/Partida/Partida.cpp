@@ -8,7 +8,7 @@
 
 
 Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
-continuar(true), estado(new EnEspera(cantJugadores, clientes)) {
+estado(new EnEspera(cantJugadores, clientes)) {
     crearPista(planoPista);
     suelos.clear();
     pista.empaquetarSuelos(&suelos);
@@ -35,28 +35,25 @@ void Partida::run() {
     estado->ejecutar();
     enviarMensajesInicio();
     estado = std::unique_ptr<EstadoPartida> (new EnCarrera(pista, clientes));
-    while(continuar)
+    while(!clientes.empty()) {
         try {
             estado->ejecutar();
-        }catch (SocketPeerException &e){
-            continuar = false;
+        } catch (SocketPeerException &e) {
+            clientes.clear();
+        }
     }
 }
 
 
 bool Partida::estaMuerto() {
-    return !continuar;
+    return !clientes.empty();
 }
 
 
 void Partida::cerrar() {
-    continuar = false;
     //Para asegurarme que no envíe nada a ningun cliente porque la quiero cerrar
     clientes.clear();
-    if (!estado->enJuego()){
-        EnEspera* estadoEnEspera = dynamic_cast<EnEspera *>(estado.get());
-        estadoEnEspera->cerrar();
-    }
+    //estado->cerrar();
 }
 
 

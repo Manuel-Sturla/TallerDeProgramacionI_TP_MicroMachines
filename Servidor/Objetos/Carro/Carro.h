@@ -61,6 +61,8 @@ class Carro: public Objeto {
 
     bool operator< (const Carro& otroCarro);
 
+    std::string darIdConductor();
+
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };
 

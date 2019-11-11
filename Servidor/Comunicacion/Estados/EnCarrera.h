@@ -11,14 +11,15 @@ class EnCarrera: public EstadoPartida {
 private:
     Pista& pista;
     std::vector<std::string> extras;
-    std::vector<std::string> autos;
+    std::vector<std::shared_ptr<EventosParseables>> eventos;
     std::vector<ClienteProxy*>& clientes;
     void actualizarEventos();
 public:
     EnCarrera(Pista& pista, std::vector<ClienteProxy*>& clientes);
     void ejecutar() override;
     bool enJuego() override;
-    void enviarPosicion(ClienteProxy &proxy);
+    void enviarPosiciones();
+    void cerrar();
 };
 
 

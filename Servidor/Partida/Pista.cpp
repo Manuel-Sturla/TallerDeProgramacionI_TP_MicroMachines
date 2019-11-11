@@ -1,5 +1,7 @@
 #include "Pista.h"
 #include "../Acciones/GiroAIzquierda.h"
+#include "../Comunicacion/Eventos/EventosParseables/EventosParseables.h"
+#include "../Comunicacion/Eventos/EventosParseables/EnviarCarro.h"
 
 #define LONGITUD_DE_PISTA "4"
 
@@ -42,11 +44,10 @@ void Pista::simular() {
     }
 }
 
-void Pista::empaquetarCarro(std::vector<std::string> *destino) {
+void Pista::empaquetarCarro(std::vector<std::shared_ptr<EventosParseables>> *destino) {
     std::list<Carro>::iterator itCarros;
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
-        destino -> insert(destino -> end() -1 , "posicionarAuto");
-        itCarros -> empaquetar(destino);
+        destino->emplace_back(new EnviarCarro(*itCarros));
     }
 }
 
