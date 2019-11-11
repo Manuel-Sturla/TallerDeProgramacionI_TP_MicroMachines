@@ -1,18 +1,17 @@
+#include <iostream>
 #include "Protocolo.h"
-#define LONG_EN_BYTES 1
+
 void Protocolo::enviar(const std::string &mensaje) {
-    char longitud = mensaje.length();
-    std::string l_s (1, longitud);
-    socket.enviar(l_s);
+    socket.enviarLongitud(mensaje.length());
+    std::cout << "enviando " << mensaje << std::endl;
     socket.enviar(mensaje);
 }
 
 std::string Protocolo::recibir() {
-    std::string msj_longitud;
-    socket.recibir(msj_longitud, LONG_EN_BYTES);
-    auto longitud = static_cast<size_t>(*msj_longitud.c_str());
+    size_t longitud = socket.recibirLongitud();
     std::string mensaje;
     socket.recibir(mensaje, longitud);
+    std::cout << "recibi " << mensaje << std::endl;
     return mensaje;
 }
 

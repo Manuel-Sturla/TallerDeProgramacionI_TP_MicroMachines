@@ -6,12 +6,17 @@
 class SocketAmigo {
 protected:
     int fd;
+
 public:
     explicit SocketAmigo(int aFd);
 
     SocketAmigo(SocketAmigo&& other);
 
     SocketAmigo& operator=(SocketAmigo&& other);
+
+    void enviarLongitud(unsigned int longitud);
+
+    unsigned int recibirLongitud();
 
     void enviar(std::string message);
 

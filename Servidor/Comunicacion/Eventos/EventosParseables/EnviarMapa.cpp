@@ -12,6 +12,5 @@ std::string EnviarMapa::obtenerParseado() {
     std::vector<std::string> mapa;
     //No agrega el nombre del evento al comienzo
     pista.empaquetarSuelos(&mapa);
-    for ()
     return unir(mapa, SEPARADOR);
 }

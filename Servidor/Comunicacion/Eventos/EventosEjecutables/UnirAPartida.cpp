@@ -13,7 +13,8 @@ UnirAPartida::UnirAPartida(HashProtegido &partidas,
 
 void UnirAPartida::ejecutar(ClienteProxy &cliente, std::vector<std::string> argumento) {
     //Recibo el nombre de la partida a la cual el usuario quiere agregarse o crear
-    std::string nombrePartida = cliente.recibir();
+    //std::string nombrePartida = cliente.recibir();
+    std::string nombrePartida = argumento[0];
     if (!partidas.contiene(nombrePartida)) {
         cliente.encolarEvento(new NoSePudoUnir());
         return;

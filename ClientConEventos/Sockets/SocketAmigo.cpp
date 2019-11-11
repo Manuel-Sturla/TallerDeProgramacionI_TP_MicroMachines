@@ -54,14 +54,47 @@ void SocketAmigo::recibir(std::string& answer, size_t lenght) {
 }
 
 void SocketAmigo::cerrar() {
-    shutdown(fd, SHUT_RDWR);
-    ::close(fd);
-    fd = -1;
+    if (fd > 1){
+        shutdown(fd, SHUT_RDWR);
+        ::close(fd);
+        fd = -1;
+    }
 }
 
 SocketAmigo::~SocketAmigo() {
-    if (fd != -1) {
+    if (fd > -1) {
         cerrar();
     }
 }
 
+void SocketAmigo::enviarLongitud(unsigned int longitud) {
+    ssize_t lastSent;
+    size_t sent = 0;
+    size_t lenght = sizeof(unsigned int);
+    while (sent < lenght) {
+        lastSent = ::send(fd, &longitud, lenght - sent, MSG_NOSIGNAL);
+        if (lastSent == 0) {
+            throw SocketPeerException("Comunicacion Perdida", strerror(errno), __FILE__, __LINE__);
+        } else if (lastSent < 0) {
+            throw SocketPeerException("Error al enviar: ", strerror(errno), __FILE__, __LINE__);
+        }
+        sent += lastSent;
+    }
+}
+
+unsigned int SocketAmigo::recibirLongitud() {
+    int newChars;
+    char buffer[sizeof(unsigned int)];
+    size_t recieved = 0;
+    unsigned int longitud;
+    while (recieved < sizeof(unsigned int)) {
+        newChars = recv(fd, &longitud, sizeof(unsigned int) - recieved, 0);
+        if (newChars == 0) {
+            throw SocketPeerException("Comunicacion terminada: ", strerror(errno), __FILE__, __LINE__);
+        } else if (newChars < 0) {
+            throw SocketPeerException("Error al recibir, conexion perdida: ", strerror(errno), __FILE__, __LINE__);
+        }
+        recieved += newChars;
+    }
+    return longitud;
+}

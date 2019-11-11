@@ -1,7 +1,3 @@
-//
-// Created by manfer on 31/10/19.
-//
-
 #ifndef PROTOCOLO_PROTOCOLO_H
 #define PROTOCOLO_PROTOCOLO_H
 
