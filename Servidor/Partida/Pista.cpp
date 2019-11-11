@@ -39,7 +39,7 @@ void Pista::simular() {
     mundoBox2D.actualizar();
     std::list<Carro>::iterator itCarros;
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
-        itCarros -> imprimirPosicion();
+        //itCarros -> imprimirPosicion();
         itCarros -> actualizar();
     }
 }

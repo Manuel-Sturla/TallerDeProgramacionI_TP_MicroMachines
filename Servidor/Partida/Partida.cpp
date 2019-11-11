@@ -46,14 +46,14 @@ void Partida::run() {
 
 
 bool Partida::estaMuerto() {
-    return !clientes.empty();
+    return clientes.empty() && estado->enJuego();
 }
 
 
 void Partida::cerrar() {
     //Para asegurarme que no envíe nada a ningun cliente porque la quiero cerrar
     clientes.clear();
-    //estado->cerrar();
+    estado->cerrar();
 }
 
 

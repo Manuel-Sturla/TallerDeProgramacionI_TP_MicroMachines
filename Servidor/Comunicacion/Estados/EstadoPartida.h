@@ -12,6 +12,7 @@ class EstadoPartida {
 public:
     virtual void ejecutar() = 0;
     virtual bool enJuego() = 0;
+    virtual void cerrar() = 0;
 };
 
 

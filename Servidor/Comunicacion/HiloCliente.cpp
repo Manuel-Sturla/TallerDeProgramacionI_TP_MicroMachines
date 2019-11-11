@@ -24,7 +24,7 @@ void HiloCliente::run() {
             estado->ejecutar(cliente);
         }
     }catch (SocketPeerException & e){
-        desconectar();
+        conectado = false;
     }
 }
 

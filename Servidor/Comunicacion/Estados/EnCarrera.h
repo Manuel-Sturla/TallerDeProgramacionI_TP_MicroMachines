@@ -19,7 +19,7 @@ public:
     void ejecutar() override;
     bool enJuego() override;
     void enviarPosiciones();
-    void cerrar();
+    void cerrar() override;
 };
 
 

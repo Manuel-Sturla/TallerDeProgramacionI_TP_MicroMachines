@@ -69,6 +69,7 @@ void Carro::recibirBoost() {
 }
 
 void Carro::imprimirPosicion() {
+
   b2Vec2 position = cuerpo -> GetPosition();
   float32 angle = cuerpo -> GetAngle();
   b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
