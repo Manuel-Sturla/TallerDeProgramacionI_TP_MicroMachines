@@ -6,7 +6,8 @@
 #include <SDL2/SDL_events.h>
 #include "HiloLector.h"
 
-HiloLector::HiloLector(ServidorProxy& servidor) : comandos(servidor){}
+HiloLector::HiloLector(ServidorProxy &servidor, bool &keepTalking) :\
+comandos(servidor), keepTalking(keepTalking) {}
 
 void HiloLector::run() {
     int comando = 0;
@@ -15,5 +16,6 @@ void HiloLector::run() {
         comandos.ejecutar(comando);
         comando = LectorTeclado::leer();
     }
+    keepTalking = false;
     comandos.cerrarPrograma();
 }

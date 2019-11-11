@@ -11,6 +11,8 @@
 #include "../Objetos/Suelos/Curva.h"
 #include "../Comunicacion/Eventos/EventosParseables/EventosParseables.h"
 #include "Podio.h"
+#include "../Objetos/Modificadores/Modificador.h"
+
 
 class Pista {
 private:
@@ -19,6 +21,7 @@ private:
     Pasto pasto;
     LimiteDePista limiteDePista;
     std::map<int, std::unique_ptr<Suelo>> BloquesDeasfalto;
+    std::list<std::unique_ptr<Modificador>> extras;
     std::list<b2Vec2> posicionesInicio;
     std::list<Recta> rectas;
     std::list<Carro> carros;
@@ -36,7 +39,7 @@ public:
     int cantidadDeCarros();
 
     void empaquetarCarro(std::vector<std::shared_ptr<EventosParseables>> *destino);
-
+    void empaquetarExtras(std::vector<std::shared_ptr<EventosParseables>> * destino);
     void empaquetarSuelos(std::vector<std::string> *destino);
 
     void agregarPosicionDeInicio(b2Vec2 &posicion);

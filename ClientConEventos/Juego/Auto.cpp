@@ -7,7 +7,7 @@
 #include "../Sdl/Renderizador.h"
 
 Auto::Auto(Renderizador &renderizador, int tam) : Desplazable(renderizador, tam) {
-    renderizador.agregarTextura("../auto.png", &posicion);
+    renderizador.agregarTextura("../Sprites/auto.png", &posicion);
 }
 
 void Auto::mover(float posX, float posY, int angulo) {

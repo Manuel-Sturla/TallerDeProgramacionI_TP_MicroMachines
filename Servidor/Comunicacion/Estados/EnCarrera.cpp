@@ -25,6 +25,7 @@ void EnCarrera::ejecutar() {
 void EnCarrera::actualizarEventos() {
     eventos.clear();
     pista.empaquetarCarro(&eventos);
+    pista.empaquetarExtras(&eventos);
 }
 
 bool EnCarrera::enJuego() {
@@ -39,7 +40,6 @@ void EnCarrera::enviarPosiciones() {
         }
         cliente->encolarEvento(eventoFinSimulacion);
     }
-
 }
 
 void EnCarrera::cerrar() {
