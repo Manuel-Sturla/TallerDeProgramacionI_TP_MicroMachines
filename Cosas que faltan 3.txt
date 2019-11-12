@@ -4,3 +4,32 @@ Cuando explota en box2d se sigue moviendo.
 Race condition: pure virtual method called (y algo mas)
 
 A veces no aparece el mapa, puede que lleguen en desorden el numero de jugadores, inicio, mapa y auto.
+strace ... -e trace=network
+
+Errores:
+1- Manda mmorir todas las iteraciones sin un id!!!!
+2- Manda morir mas de una vez por autoo (pero eso es porque tarda en revivir) no tiene que mandar el evento mas veces.
+3- tira segmentetaion fault el servidor cuando tenes una partida con 7777 jugadores y creas mas partidas (por ejemplo una con 7777) revienta.
+4- Que haga todas las acciones de la cola de acciones de cada cliente por simulacion.
+5- Arreglar que funcione como un juego de carreras twekeando las fuerzas.
+6- El carro que devuevle agregarCliente tiene que ser una referencia. Porque si la pista realloca el vector despues de varios esa referencia a memoria ya no sirve. (el problema son los resize)
+7- falta pulir a la interfaz qt
+8- Falta multimedia en el cliente - sonido
+9- Hacer la documentacion de las cosas que tenemos: configuracion.
+10- posiciones en el cliente.
+11- condiciones de victoria 
+
+
+codeado prolijo
+jugabilidad
+interfaz de usuario
+performance
+funcionalidad -- plugins | lua | ffmpeg
+
+dos partidas con el mismo nombre!
+
+
+prueba de estabilidad .. poner un cliente y sacarlo mal.
+					  .. que se vaya un cliente en medio de la partida
+					  .. configurabilidad
+					  .. 
