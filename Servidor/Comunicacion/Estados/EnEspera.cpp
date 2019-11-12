@@ -18,6 +18,7 @@ void EnEspera::sumarJugador(ClienteProxy &cliente, Pista &pista,
     if (enJuego()){
         throw PartidaLlenaExcepcion("La partida se encuentra llena", __LINE__);
     }
+    cantActualJugadores++;
     contadorId ++;
     if (!clientes.ubicar(std::to_string(contadorId), cliente)){
         //Si no se lo pudo ubicar es porque ya hay un jugador con ese Id (no deberia pasar)

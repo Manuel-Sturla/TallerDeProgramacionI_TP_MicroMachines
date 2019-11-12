@@ -42,8 +42,7 @@ void Partida::run() {
             std::this_thread::sleep_for(std::chrono::milliseconds(1000/60));
             estado->ejecutar();
         } catch (SocketPeerException &e) {
-            //VER LUEGO!
-            clientes.estaVacio();
+
         }
     }
 }
@@ -56,7 +55,7 @@ bool Partida::estaMuerto() {
 
 void Partida::cerrar() {
     //Para asegurarme que no envíe nada a ningun cliente porque la quiero cerrar
-    clientes.estaVacio();
+    clientes.eliminarTodos();
     estado->cerrar();
 }
 

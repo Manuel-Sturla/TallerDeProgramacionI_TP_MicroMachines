@@ -8,7 +8,7 @@ estadoVelocidad(velocidadMaxima), agarre(agarre) {
   this -> anguloDeGiro = anguloDeGiro;
   idConductor = std::to_string(idCliente);
   agregarseA(pista, x, y);
-    tipo = "Carro";
+  tipo = "Carro";
   coeficienteDeRozamiento = 0;
 }
 

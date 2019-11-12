@@ -3,10 +3,6 @@
 #include "../EventosParseables/NoSePudoUnir.h"
 #include "../EventosParseables/UnirAPartidaCorrecto.h"
 
-#define MSJ_NO_UNIDO "UnirNoOK"
-
-#define MSJ_UNIR_OK "UnirOK"
-
 UnirAPartida::UnirAPartida(HashProtegido &partidas,
                            ConfiguracionServidor& config): partidas(partidas), mapasYAutos(config) {
 }
