@@ -42,5 +42,4 @@ void EnCarrera::enviarPosiciones() {
 }
 
 void EnCarrera::cerrar() {
-
 }
