@@ -21,15 +21,14 @@ void Auto::mover(float posX, float posY, int angulo) {
 }
 
 void Auto::morir() {
-    etapaExplosion++;
-    if(etapaExplosion == 1){
+    if(etapaExplosion == 0){
         idExplosion = renderizador.agregarTextura("../Sprites/explosion0.png", &posicion);
         etapaExplosion++;
-    } else if(etapaExplosion == 2) {
+    } else if(etapaExplosion == 1) {
         renderizador.borrarTextura(idExplosion);
         idExplosion = renderizador.agregarTextura("../Sprites/explosion1.png", &posicion);
         etapaExplosion++;
-    } else if(etapaExplosion == 3) {
+    } else if(etapaExplosion == 2) {
         renderizador.borrarTextura(idExplosion);
         idExplosion = renderizador.agregarTextura("../Sprites/explosion2.png", &posicion);
         etapaExplosion++;

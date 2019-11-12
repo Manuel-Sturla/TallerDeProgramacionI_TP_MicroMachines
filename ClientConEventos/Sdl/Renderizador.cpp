@@ -70,7 +70,6 @@ Renderizador::~Renderizador() {
 
 void Renderizador::borrarTextura(unsigned long idTextura) {
     if(idTextura >= 0 && idTextura < texturas.size()){
-        texturas[idTextura].destruir();
         texturas.erase(texturas.begin() + idTextura);
     }
 }
