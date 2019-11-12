@@ -36,11 +36,13 @@ void Partida::run() {
     estado->ejecutar();
     enviarMensajesInicio();
     estado = std::unique_ptr<EstadoPartida> (new EnCarrera(pista, clientes));
+
     while(!clientes.estaVacio()) {
         try {
             std::this_thread::sleep_for(std::chrono::milliseconds(1000/60));
             estado->ejecutar();
         } catch (SocketPeerException &e) {
+            //VER LUEGO!
             clientes.estaVacio();
         }
     }

@@ -17,6 +17,7 @@ private:
     std::map<std::string, Desplazable*> desplazables;
     Pista pista;
     Posicion posTexto;
+    size_t idTexto;
 
     void ejecutarMorir(std::vector<std::string> &eventos);
     void ejecutarPosicionarExtra(std::vector<std::string> &eventos);

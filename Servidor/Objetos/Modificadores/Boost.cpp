@@ -14,7 +14,7 @@ Boost::Boost(MundoBox2D *pista, float32 x, float32 y) {
   validez = true;
   fixtureDef.isSensor = true;
   cuerpo -> CreateFixture(&fixtureDef);
-  id = "Boost";
+    tipo = "Boost";
 }
 
 void Boost::interactuar(Carro *unCarro) {

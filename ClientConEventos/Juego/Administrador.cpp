@@ -17,7 +17,7 @@ void Administrador::ejecutarEventos(std::vector<std::string> &eventos) {
         if(eventos[0] == "morir" && eventos.size() >= 2){
             eventos.erase(eventos.begin());
             ejecutarMorir(eventos);
-        } else if(eventos[0] == "posicionarExtra" && eventos.size() >= 5){
+        } else if(eventos[0] == "posicionarExtra" && eventos.size() >= 4){
             eventos.erase(eventos.begin());
             ejecutarPosicionarExtra(eventos);
         } else if(eventos[0] == "posicionarAuto" && eventos.size() >= 5){
@@ -42,14 +42,15 @@ void Administrador::ejecutarMorir(std::vector<std::string> &eventos) {
 void Administrador::ejecutarPosicionarExtra(std::vector<std::string> &eventos) {
     auto it = desplazables.find(eventos[0]);
     if(it == desplazables.end()){
-        desplazables.emplace(eventos[0], new Extra(renderizador, std::stoi(eventos[1]), std::__cxx11::string()));
+        desplazables.emplace(eventos[0], new Extra(renderizador, 1, eventos[1]));
         it = desplazables.find(eventos[0]);
+        eventos.erase(eventos.begin());
+    } else {
         eventos.erase(eventos.begin());
     }
     eventos.erase(eventos.begin());
     it->second->mover(std::stof(eventos[0]), (-1)*std::stof(eventos[1]), 0);
     //Hardcodeo un 0 porque el extra no tiene angulo, lo podria recibir igual pero depende de que me manden.
-    eventos.erase(eventos.begin());
     eventos.erase(eventos.begin());
     eventos.erase(eventos.begin());
 }
@@ -77,10 +78,12 @@ void Administrador::ejecutarPosicionarAuto(std::vector<std::string> &eventos) {
 }
 
 void Administrador::actualizarJugadores(std::vector<std::string> &evento) {
-    renderizador.agregarTexto("Cantidad de jugadores: " + evento[0], &posTexto);
+    renderizador.borrarTextura(idTexto);
+    idTexto = renderizador.agregarTexto("Cantidad de jugadores: " + evento[0], &posTexto);
 }
 
 void Administrador::crearPista(std::vector<std::string> &planos) {
+    renderizador.borrarTextura(idTexto);
     pista.crear(planos);
 }
 

@@ -14,7 +14,7 @@ Aceite::Aceite(MundoBox2D *pista, float32 x, float32 y) {
   fixtureDef.isSensor = true;
   validez = true;
   cuerpo -> CreateFixture(&fixtureDef);
-  id = "Aceite";
+    tipo = "Aceite";
 }
 
 void Aceite::interactuar(Carro *unCarro) {

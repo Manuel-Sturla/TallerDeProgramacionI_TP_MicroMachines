@@ -7,7 +7,9 @@
 class Modificador: public Interactuable {
   protected:
     bool validez;
+    std::string tipo;
     std::string id;
+
   public:
     std::string darId();
 

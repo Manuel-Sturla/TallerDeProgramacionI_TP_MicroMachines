@@ -15,7 +15,7 @@ CajaDeSalud::CajaDeSalud(MundoBox2D *pista, float32 x, float32 y) {
   fixtureDef.isSensor = true;
   validez = true;
   cuerpo -> CreateFixture(&fixtureDef);
-  id = "Caja";
+    tipo = "Caja";
 }
 
 void CajaDeSalud::interactuar(Carro *unCarro) {

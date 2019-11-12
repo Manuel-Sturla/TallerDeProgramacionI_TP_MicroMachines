@@ -29,7 +29,7 @@ public:
 
     void agregarTrecho(const std::string &archivo, Posicion* pos);
 
-    void agregarTexto(const std::string &texto, Posicion *posicion);
+    size_t agregarTexto(const std::string &texto, Posicion *posicion);
 
     void borrarTextura(unsigned long idTextura);
 

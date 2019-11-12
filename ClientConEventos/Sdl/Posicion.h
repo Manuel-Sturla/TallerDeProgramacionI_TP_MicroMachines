@@ -20,7 +20,6 @@ class Posicion {
 private:
     pos_t posicion;
     int angulo;
-    bool valida;
 
 public:
     Posicion(float posX, float posY, float ancho, float altura, int angulo);
@@ -32,10 +31,6 @@ public:
     void rotar(int angulo);
 
     int getAngulo();
-
-    bool esValida();
-
-    void invalidar();
 };
 
 

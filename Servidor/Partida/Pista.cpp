@@ -4,6 +4,8 @@
 #include "../Comunicacion/Eventos/EventosParseables/EventoParseable.h"
 #include "../Comunicacion/Eventos/EventosParseables/EnviarCarro.h"
 #include "../Comunicacion/Eventos/EventosParseables/EnviarExtra.h"
+#include "../Objetos/Modificadores/CajaDeSalud.h"
+#include "../Objetos/Modificadores/Barro.h"
 
 #define LONGITUD_DE_PISTA "4"
 
@@ -97,4 +99,8 @@ void Pista::inicializarPodio(Podio *podio) {
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
         podio->agregarCarro(&(*itCarros));
     }
+}
+
+Pista::Pista() {
+    extras.emplace_back(new Barro(&mundoBox2D, 0,1, extras.size()));
 }
