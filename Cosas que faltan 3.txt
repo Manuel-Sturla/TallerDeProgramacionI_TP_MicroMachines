@@ -1,0 +1,6 @@
+Cosas que faltan 3
+
+Cuando explota en box2d se sigue moviendo.
+Race condition: pure virtual method called (y algo mas)
+
+A veces no aparece el mapa, puede que lleguen en desorden el numero de jugadores, inicio, mapa y auto.

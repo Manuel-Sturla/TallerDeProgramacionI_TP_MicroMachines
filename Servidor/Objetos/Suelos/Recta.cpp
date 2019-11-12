@@ -18,7 +18,7 @@ Recta::Recta(MundoBox2D *pista, Material *unMaterial, float32 x, float32 y,
     cuerpo -> CreateFixture(&fixtureDef);
     cuerpo -> SetTransform(cuerpo -> GetPosition(), angulo);
     this -> numeroDeSuelo = numeroDeSuelo;
-    id = "Recta";
+    tipo = "Recta";
 }
 
 Recta::~Recta() {

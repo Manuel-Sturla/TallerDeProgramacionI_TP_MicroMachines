@@ -9,7 +9,7 @@ estadoVelocidad(velocidadMaxima), agarre(agarre) {
   idConductor = "A";
   idConductor += std::to_string(idCliente);
   agregarseA(pista, x, y);
-  id = "Carro";
+    tipo = "Carro";
   coeficienteDeRozamiento = 0;
 }
 
@@ -52,7 +52,7 @@ void Carro::reducirVisibilidad() {
 }
 
 std::string Carro::darId() {
-  return id;
+  return tipo;
 }
 
 void Carro::recibirDanio(int danio) {

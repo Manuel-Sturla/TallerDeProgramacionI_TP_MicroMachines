@@ -22,7 +22,6 @@ class EnEspera: public EstadoPartida {
     size_t contadorId = 0;
 
     void enviarCantidadDeJugadores();
-    void sacarCliente(size_t posicion);
 public:
 
     explicit EnEspera(size_t cantMaxima, HashProtegidoClientes &clientes);

@@ -38,6 +38,7 @@ void HiloReceptor::esperarInicioPartida() {
     std::vector<std::string> evento;
     evento = servidor.obtenerEvento();
     while(evento[0] != "inicioPartida" && keepTalking){
+        std::cout<<evento[0]<<'\n';
         admin.actualizarJugadores(evento);
         evento = servidor.obtenerEvento();
     }

@@ -1,6 +1,7 @@
 #include "Barro.h"
 
-Barro::Barro(MundoBox2D *pista, float32 x, float32 y) {
+Barro::Barro(MundoBox2D *pista, float32 x, float32 y, size_t idRecibido) {
+    id = "E" + std::to_string(idRecibido);
   b2BodyDef bodyDef;
   bodyDef.type = b2_staticBody;
   bodyDef.position.Set(x, y);
@@ -14,7 +15,7 @@ Barro::Barro(MundoBox2D *pista, float32 x, float32 y) {
   fixtureDef.isSensor = true;
   validez = true;
   cuerpo -> CreateFixture(&fixtureDef);
-  id = "Barro";
+  tipo = "Barro";
 }
 
 void Barro::interactuar(Carro *unCarro) {

@@ -35,23 +35,11 @@ void Renderizador::limpiar() {
 
 void Renderizador::copiarTodo() {
     int i = 0;
-    while(i < pista.size()){
-        if(!pista[i].copiar(renderizador, camara)){
-            std::iter_swap(pista.begin()+i, pista.end()-1);
-            pista.pop_back();
-        } else {
-            i++;
-        }
+    for(auto& trecho : pista){
+        trecho.copiar(renderizador, camara);
     }
-    i = 0;
-    std::unique_lock<std::mutex> lock(m);
-    while(i < texturas.size()){
-        if(!texturas[i].copiar(renderizador, camara)){
-            std::iter_swap(texturas.begin()+i, texturas.end()-1);
-            texturas.pop_back();
-        } else {
-            i++;
-        }
+    for(auto& textura : texturas){
+        textura.copiar(renderizador, camara);
     }
 }
 
@@ -59,12 +47,13 @@ void Renderizador::configurarCamara(Posicion* posicion) {
     camara.setAuto(posicion);
 }
 
-void Renderizador::agregarTexto(const std::string &texto, Posicion *posicion) {
+size_t Renderizador::agregarTexto(const std::string &texto, Posicion *posicion) {
     TTF_Font* fuente = TTF_OpenFont("../fuente.ttf", 24);
     SDL_Color color = {255, 255, 255};
     SDL_Surface* superficie = TTF_RenderText_Solid(fuente, texto.c_str(), color);
     SDL_Texture* mensaje = SDL_CreateTextureFromSurface(renderizador, superficie);
     texturas.emplace_back(mensaje, posicion);
+    return texturas.size()-1;
 }
 
 Renderizador::~Renderizador() {
@@ -80,7 +69,8 @@ Renderizador::~Renderizador() {
 }
 
 void Renderizador::borrarTextura(unsigned long idTextura) {
-    if(idTextura > 0 && idTextura < texturas.size()){
+    if(idTextura >= 0 && idTextura < texturas.size()){
+        texturas[idTextura].destruir();
         texturas.erase(texturas.begin() + idTextura);
     }
 }

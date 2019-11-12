@@ -30,7 +30,7 @@ private:
     Material* darMaterial(const std::string& materialPedido);
 
 public:
-    Pista() = default;
+    Pista();
 
     void simular();
 

@@ -15,7 +15,7 @@ Piedra::Piedra(MundoBox2D *pista, float32 x, float32 y) {
   fixtureDef.isSensor = true;
   validez = true;
   cuerpo -> CreateFixture(&fixtureDef);
-  id = "Piedra";
+    tipo = "Piedra";
 }
 
 void Piedra::interactuar(Carro *unCarro) {

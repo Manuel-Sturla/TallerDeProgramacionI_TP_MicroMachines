@@ -7,7 +7,7 @@
 
 class Objeto {
 protected:
-    std::string id;
+    std::string tipo;
     b2Body *cuerpo;
 
     void empaquetarPosicion(std::vector<std::string> *destino);

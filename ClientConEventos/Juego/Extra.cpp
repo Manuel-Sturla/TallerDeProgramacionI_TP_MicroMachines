@@ -6,7 +6,7 @@
 #include "../Excepciones/ExcepcionConPos.h"
 
 Extra::Extra(Renderizador &renderizador, int tam, std::string tipo) : Desplazable(renderizador, tam) {
-    if(tipo == "barro"){
+    if(tipo == "Barro"){
         renderizador.agregarTextura("../Sprites/barro.png", &posicion);
     } else {
         throw ExcepcionConPos(__FILE__, __LINE__, "Tipo de extra invalido");
@@ -18,7 +18,7 @@ void Extra::mover(float posX, float posY, int angulo) {
 }
 
 void Extra::morir() {
-    posicion.invalidar(); //sacar y usar borrar textura.
+//    posicion.invalidar(); //sacar y usar borrar textura.
 }
 
 void Extra::modificar(std::string &mensaje) {}
