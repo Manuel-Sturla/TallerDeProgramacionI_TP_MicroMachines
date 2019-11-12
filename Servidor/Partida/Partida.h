@@ -23,8 +23,6 @@ public:
 
     void run() override;
 
-    std::vector<std::string>& obtenerMapa();
-
     Carro * agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente);
 
     bool estaMuerto();

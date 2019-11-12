@@ -31,6 +31,8 @@ class Carro: public Objeto {
 
     void agregarseA(MundoBox2D *pista, float32 x, float32 y);
 
+    int obtenerSueloParaRevivir();
+
     void actualizar();
 
     void ejecutarAccion(Accion* unaAccion);

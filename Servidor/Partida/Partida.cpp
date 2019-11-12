@@ -21,10 +21,6 @@ void Partida::crearPista(PlanoDePista *planoDePista) {
     planoDePista -> crearPista(&pista);
 }
 
-std::vector<std::string> &Partida::obtenerMapa() {
-    return suelos;
-}
-
 Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente) {
     EnEspera* estadoEnEspera = dynamic_cast<EnEspera *>(estado.get());
     estadoEnEspera->sumarJugador(cliente);
@@ -37,6 +33,7 @@ void Partida::run() {
     estado = std::unique_ptr<EstadoPartida> (new EnCarrera(pista, clientes));
     while(!clientes.empty()) {
         try {
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000/60));
             estado->ejecutar();
         } catch (SocketPeerException &e) {
             clientes.clear();

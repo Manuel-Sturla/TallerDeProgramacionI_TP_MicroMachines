@@ -36,8 +36,6 @@ public:
 
     Carro *crearCarro(int velocidad, float32 anguloEnRadianes, int agarre);
 
-    int cantidadDeCarros();
-
     void empaquetarCarro(std::vector<std::shared_ptr<EventoParseable>> *destino);
     void empaquetarExtras(std::vector<std::shared_ptr<EventoParseable>> * destino);
     void empaquetarSuelos(std::vector<std::string> *destino);

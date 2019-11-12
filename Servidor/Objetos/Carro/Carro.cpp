@@ -13,17 +13,20 @@ estadoVelocidad(velocidadMaxima), agarre(agarre) {
 }
 
 void Carro::agregarseA(MundoBox2D *pista, float32 x, float32 y) {
-  bodyDef.type = b2_dynamicBody;
-  bodyDef.position.Set(x, y);
-  cuerpo = pista -> agregarObjeto(&bodyDef);
-  cuerpo -> SetUserData(this);
-  b2PolygonShape dynamicBox;
-  dynamicBox.SetAsBox(0.5f, 0.5f);
-  b2FixtureDef fixtureDef;
-  fixtureDef.shape = &dynamicBox;
-  fixtureDef.density = 1.0f;
-  fixtureDef.friction = 0.3f;
-  cuerpo -> CreateFixture(&fixtureDef);
+    if(!vida.estoyVivo()) {
+        vida.aumentarVida(100);
+    }
+    bodyDef.type = b2_dynamicBody;
+    bodyDef.position.Set(x, y);
+    cuerpo = pista -> agregarObjeto(&bodyDef);
+    cuerpo -> SetUserData(this);
+    b2PolygonShape dynamicBox;
+    dynamicBox.SetAsBox(0.5f, 0.5f);
+    b2FixtureDef fixtureDef;
+    fixtureDef.shape = &dynamicBox;
+    fixtureDef.density = 1.0f;
+    fixtureDef.friction = 0.3f;
+    cuerpo -> CreateFixture(&fixtureDef);
 }
 
 void Carro::ejecutarAccion(Accion *unaAccion) {
@@ -109,4 +112,8 @@ std::string Carro::darIdConductor() {
 
 bool Carro::termineCarrera(int cantidadDeVueltasParaTerminar) {
     return posicion.termineLaCarrera(cantidadDeVueltasParaTerminar);
+}
+
+int Carro::obtenerSueloParaRevivir() {
+    return posicion.obtenerSueloParaRevivir();
 }
