@@ -30,7 +30,21 @@
   {material: Limite, x: 4, y: 12, tipo: 1, numero: 1},
   {material: Limite, x: 8, y: 12, tipo: 1, numero: 1},
   {material: Limite, x: 12, y: 12, tipo: 1, numero: 1},
-  {material: Limite, x: 16, y: 12, tipo: 1, numero: 1}
+  {material: Limite, x: 16, y: 12, tipo: 1, numero: 1},
+  {material: Limite, x: 16, y: 8, tipo: 1, numero: 1},
+  {material: Limite, x: 16, y: 4, tipo: 1, numero: 1},
+  {material: Limite, x: 16, y: 0, tipo: 1, numero: 1},
+  {material: Limite, x: 16, y: -4, tipo: 1, numero: 1},
+  {material: Limite, x: 16, y: -8, tipo: 1, numero: 1},
+  {material: Limite, x: 16, y: -12, tipo: 1, numero: 1},
+  {material: Limite, x: 12, y: -12, tipo: 1, numero: 1},
+  {material: Limite, x: 8, y: -12, tipo: 1, numero: 1},
+  {material: Limite, x: 4, y: -12, tipo: 1, numero: 1},
+  {material: Limite, x: 0, y: -12, tipo: 1, numero: 1},
+  {material: Limite, x: -4, y: -12, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: -12, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: -8, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: -4, tipo: 1, numero: 1},
   ]
   curvas: [
   {x: 0, y: 4, tipo: 1, numero: 1},
