@@ -28,8 +28,8 @@ void UnirAPartida::ejecutar(ClienteProxy &cliente, std::vector<std::string> argu
     */
     std::string carro = "ManuMovil";
     try {
-        cliente.setCarro(partidas.obtener(nombrePartida)->agregarCliente(mapasYAutos.darPlanoDeCarro(carro), &cliente));
-        cliente.jugar();
+        cliente.setCarro(partidas.obtener(nombrePartida)->agregarCliente(mapasYAutos.darPlanoDeCarro(carro), cliente));
+        cliente.jugar(nombrePartida);
     } catch (PartidaLlenaExcepcion &e) {  //Catcheo excepcion de que no existe el carro
         cliente.encolarEvento(new NoSePudoUnir());
     }

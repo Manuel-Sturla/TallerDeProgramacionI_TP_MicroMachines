@@ -4,12 +4,13 @@
 
 #define EVENTO_MI_AUTO "posicionarAuto"
 
-EnviarAutoPropio::EnviarAutoPropio(Carro *carro) : carro(carro){
+EnviarAutoPropio::EnviarAutoPropio(Carro &carro) {
+    std::vector<std::string> mensaje;
+    mensaje.emplace_back(EVENTO_MI_AUTO);
+    carro.empaquetar(&mensaje);
+    parseado =  unir(mensaje, SEPARADOR);
 }
 
 std::string EnviarAutoPropio::obtenerParseado() {
-    std::vector<std::string> mensaje;
-    mensaje.emplace_back(EVENTO_MI_AUTO);
-    carro->empaquetar(&mensaje);
-    return unir(mensaje, SEPARADOR);
+    return parseado;
 }

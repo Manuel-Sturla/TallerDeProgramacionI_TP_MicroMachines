@@ -12,6 +12,9 @@ std::string EnviarPartidas::obtenerParseado() {
     std::vector<std::string> nombrePartidas;
     nombrePartidas.emplace_back(EVENTO_ENVIAR_PARTIDAS);
     for(auto& partida : partidas.obtenerClaves()){
+        if (partidas.obtener(partida)->estaEnJuego()){
+            continue;
+        }
         nombrePartidas.push_back(partida);
     }
     return unir(nombrePartidas, SEPARADOR);

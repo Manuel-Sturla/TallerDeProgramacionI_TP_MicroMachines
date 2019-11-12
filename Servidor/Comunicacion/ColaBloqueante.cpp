@@ -23,3 +23,19 @@ std::shared_ptr<EventoParseable> ColaBloqueante::desencolar() {
     cola.pop();
     return aux;
 }
+
+ColaBloqueante::ColaBloqueante(ColaBloqueante &&otra) :
+cola(std::move(otra.cola)){
+}
+
+ColaBloqueante &ColaBloqueante::operator=(ColaBloqueante &&otra) {
+    if (this == &otra) {
+        return *this;
+    }
+    this->cola = otra.cola;
+    return *this;
+}
+
+ColaBloqueante::~ColaBloqueante() {
+
+}

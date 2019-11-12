@@ -17,11 +17,12 @@ class HiloCliente: public Hilo {
     EnMenu& menu;
     EnJuego& juego;
     EstadoCliente* estado;
+    HashProtegido& partidas;
     std::atomic<bool> conectado;
     HiloEnviador enviador;
 
 public:
-    HiloCliente(SocketAmigo& socketCliente, EnMenu& enMenu, EnJuego& enJuego);
+    HiloCliente(SocketAmigo &socketCliente, EnMenu &enMenu, EnJuego &enJuego, HashProtegido &partidas);
     void desconectar();
     bool estaMuerto();
     void run() override;

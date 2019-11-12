@@ -42,14 +42,21 @@ void ClienteProxy::encolarAccion(Accion* accion) {
     movimientos.push(std::unique_ptr<Accion> (accion));
 }
 
-void ClienteProxy::jugar() {
+void ClienteProxy::jugar(const std::string &nombrePartida) {
     enJuego = true;
+    enPartida = nombrePartida;
 }
 
-ClienteProxy::ClienteProxy(ClienteProxy&& otro): protocolo(std::move(otro.protocolo)){
+ClienteProxy::ClienteProxy(ClienteProxy&& otro):
+protocolo(std::move(otro.protocolo)),
+eventosAEnviar(std::move(otro.eventosAEnviar)){
     movimientos = std::move(otro.movimientos);
     miCarro = otro.miCarro;
+    enPartida = otro.enPartida;
+    enJuego = otro.enJuego;
 
+    enPartida = "";
+    enJuego = false;
     otro.miCarro = nullptr;
 }
 
@@ -79,5 +86,22 @@ void ClienteProxy::encolarEvento(std::shared_ptr<EventoParseable>& evento) {
 }
 
 void ClienteProxy::mandarAutoPropio() {
-    eventosAEnviar.encolar(new EnviarAutoPropio(miCarro));
+    eventosAEnviar.encolar(new EnviarAutoPropio(*miCarro));
+}
+
+void ClienteProxy::borrarAutoPropio() {
+    //FALTA
+    //miCarro->borrar();
+}
+
+std::string &ClienteProxy::obtenerPartida() {
+    return enPartida;
+}
+
+void ClienteProxy::setID(size_t id) {
+    idCliente = id;
+}
+
+size_t ClienteProxy::obtenerID() {
+    return idCliente;
 }

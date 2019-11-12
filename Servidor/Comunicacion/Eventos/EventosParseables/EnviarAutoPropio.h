@@ -11,8 +11,9 @@
 
 class EnviarAutoPropio: public EventoParseable {
     Carro* carro;
+    std::string parseado;
 public:
-    explicit EnviarAutoPropio(Carro* carro);
+    explicit EnviarAutoPropio(Carro &carro);
 
     std::string obtenerParseado() override;
 };

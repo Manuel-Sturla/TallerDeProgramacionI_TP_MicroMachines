@@ -16,24 +16,32 @@ class ClienteProxy{
     std::queue<std::unique_ptr<Accion>> movimientos;
     ColaBloqueante eventosAEnviar;
     Carro *miCarro;
+    std::string enPartida;
     bool enJuego;
+    size_t idCliente;
 public:
     explicit ClienteProxy(SocketAmigo socketCliente);
     ClienteProxy(ClienteProxy&& otro);
     void enviarEvento();
-    void jugar();
+    void jugar(const std::string &nombrePartida);
+    std::string& obtenerPartida();
     bool estaEnJuego();
     void setCarro(Carro* carringuis);
     void encolarAccion(Accion* accion);
-
-    void encolarEvento(EventoParseable* evento);
-    void encolarEvento(std::shared_ptr<EventoParseable>& evento);
+    void encolarEvento(EventoParseable *evento);
+    void encolarEvento(std::shared_ptr<EventoParseable> &evento);
     void mandarAutoPropio();
+    void borrarAutoPropio();
     void ejecutarAccion();
     void desconectar();
     void enviar(const std::string&  mensaje);
+
     std::string recibir();
+
     ~ClienteProxy();
+
+    void setID(size_t i);
+    size_t obtenerID();
 };
 
 #endif
