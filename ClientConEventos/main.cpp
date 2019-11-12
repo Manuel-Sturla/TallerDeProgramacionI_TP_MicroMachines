@@ -4,9 +4,9 @@
 #include <QtWidgets/QApplication>
 #include <SDL2/SDL_ttf.h>
 #include "Excepciones/ExcepcionConPos.h"
-#include "Juego/Partida.h"
 #include "Menu/Lobby.h"
 #include "Menu/Inicio.h"
+#include "Vista/HiloVisualizacion.h"
 
 int ejecutarInicio(int argc, char* argv[], std::string& host, std::string& servicio){
     QApplication app(argc, argv);
@@ -32,13 +32,9 @@ int main(int argc, char* argv[]) {
         ejecutarInicio(argc, argv, host, servicio);
         ServidorProxy servidor(host, servicio);
         ejecutarLobby(argc, argv, servidor);
-        bool keepTalking = true;
-        HiloLector lector(servidor, keepTalking);
-        lector.start();
-        HiloVisualizacion partida(servidor, keepTalking);
-        partida.start();
-        partida.join();
-        lector.join();
+        HiloVisualizacion partida(servidor);
+        partida.esperarInicioPartida();
+        partida.ejecutarPartida();
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';
         IMG_Quit();

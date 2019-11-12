@@ -9,8 +9,8 @@
 #include "../Sockets/SocketPeerException.h"
 
 HiloReceptor::HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor,\
-bool &keepTalking,bool &enJuego) : keepTalking(keepTalking), servidor(servidor),\
-admin(renderizador), enJuego(enJuego) {}
+bool &keepTalking,bool &enJuego, std::mutex& m) : keepTalking(keepTalking), servidor(servidor),\
+admin(renderizador, m), enJuego(enJuego) {}
 
 void HiloReceptor::run() {
     try {

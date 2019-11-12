@@ -7,8 +7,8 @@
 #include "../Excepciones/ExcepcionConPos.h"
 #include <SDL2/SDL_ttf.h>
 
-Renderizador::Renderizador(const char* titulo, int ancho, int altura) : ventana(titulo, ancho, altura),\
-camara(1000, 100) {
+Renderizador::Renderizador(const char *titulo, int ancho, int altura, std::mutex &m) :\
+ventana(titulo, ancho, altura), m(m), camara(1000, 100) {
     renderizador = ventana.crearRenderizador(-1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if(renderizador == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, "No pude crear el renderizador");
@@ -20,8 +20,9 @@ void Renderizador::imprimir(Uint32 tiempoMs) {
     SDL_Delay(tiempoMs);
 }
 
-void Renderizador::agregarTextura(const std::string &archivo, Posicion* pos) {
+unsigned long Renderizador::agregarTextura(const std::string &archivo, Posicion* pos) {
     texturas.emplace_back(renderizador, archivo, pos);
+    return texturas.size()-1;
 }
 
 void Renderizador::agregarTrecho(const std::string &archivo, Posicion* pos) {
@@ -33,6 +34,7 @@ void Renderizador::limpiar() {
 }
 
 void Renderizador::copiarTodo() {
+    std::unique_lock<std::mutex> lock(m);
     int i = 0;
     while(i < pista.size()){
         if(!pista[i].copiar(renderizador, camara)){
@@ -74,5 +76,11 @@ Renderizador::~Renderizador() {
     }
     if(renderizador != nullptr){
         SDL_DestroyRenderer(renderizador);
+    }
+}
+
+void Renderizador::borrarTextura(unsigned long idTextura) {
+    if(idTextura > 0 && idTextura < texturas.size()){
+        texturas.erase(texturas.begin() + idTextura);
     }
 }
