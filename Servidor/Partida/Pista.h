@@ -34,7 +34,8 @@ public:
 
     void simular();
 
-    Carro *crearCarro(int velocidad, float32 anguloEnRadianes, int agarre);
+    Carro *crearCarro(int velocidad, float32 anguloEnRadianes, int agarre,
+                      size_t id);
 
     void empaquetarCarro(std::vector<std::shared_ptr<EventoParseable>> *destino);
     void empaquetarExtras(std::vector<std::shared_ptr<EventoParseable>> * destino);

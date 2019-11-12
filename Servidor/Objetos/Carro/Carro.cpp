@@ -3,11 +3,10 @@
 #include "../../Acciones/GiroAIzquierda.h"
 #include <iostream>
 
-Carro::Carro(MundoBox2D *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y, int idCliente):
+Carro::Carro(MundoBox2D *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y, size_t idCliente):
 estadoVelocidad(velocidadMaxima), agarre(agarre) {
   this -> anguloDeGiro = anguloDeGiro;
-  idConductor = "A";
-  idConductor += std::to_string(idCliente);
+  idConductor = std::to_string(idCliente);
   agregarseA(pista, x, y);
   id = "Carro";
   coeficienteDeRozamiento = 0;
@@ -15,7 +14,7 @@ estadoVelocidad(velocidadMaxima), agarre(agarre) {
 
 void Carro::agregarseA(MundoBox2D *pista, float32 x, float32 y) {
     if(!vida.estoyVivo()) {
-        vida.aumentarVida(100);
+        vida.revivir();
     }
     bodyDef.type = b2_dynamicBody;
     bodyDef.position.Set(x, y);
@@ -117,4 +116,15 @@ bool Carro::termineCarrera(int cantidadDeVueltasParaTerminar) {
 
 int Carro::obtenerSueloParaRevivir() {
     return posicion.obtenerSueloParaRevivir();
+}
+
+void Carro::revivir(MundoBox2D *pista, float32 x, float32 y) {
+    if (!vida.estoyVivo() && vida.puedoRevivir()) {
+        agregarseA(pista, x, y);
+    }
+}
+
+void Carro::borrar() {
+    std::cout << "Me voy" << std::endl;
+    vida.salirDeJuego();
 }

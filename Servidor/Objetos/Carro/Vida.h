@@ -4,6 +4,8 @@
 class Vida {
   private:
     int vida;
+    int esperaParaRevivir;
+    bool enJuego;
   public:
     Vida();
 
@@ -13,9 +15,13 @@ class Vida {
 
     void matar();
 
+    bool puedoRevivir();
+
     bool estoyVivo();
 
     void revivir();
+
+    void salirDeJuego();
 
     ~Vida();
 

@@ -64,5 +64,5 @@ void Recta::empaquetar(std::vector<std::string> *destino) {
 
 void Recta::revivirCarro(MundoBox2D *mundoBox2D, Carro *unCarro) {
     b2Vec2 posicion = cuerpo->GetPosition();
-    unCarro -> agregarseA(mundoBox2D, posicion.x, posicion.y);
+    unCarro -> revivir(mundoBox2D, posicion.x, posicion.y);
 }

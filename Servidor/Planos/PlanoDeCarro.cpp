@@ -7,8 +7,8 @@ PlanoDeCarro::PlanoDeCarro(int velocidadMax, float32 anguloDeGiro, int agarre) {
     this -> agarre = agarre;
 }
 
-Carro * PlanoDeCarro::crearCarro(Pista *pista) {
-    return pista->crearCarro(velocidadMax, anguloDeGiro, agarre);
+Carro * PlanoDeCarro::crearCarro(Pista *pista, size_t id) {
+    return pista->crearCarro(velocidadMax, anguloDeGiro, agarre, id);
 }
 
 PlanoDeCarro::~PlanoDeCarro() {

@@ -2,7 +2,8 @@
 #include "Vida.h"
 
 Vida::Vida() {
-  revivir();
+    enJuego = true;
+    revivir();
 }
 
 void Vida::recibirDanio(int danio) {
@@ -11,6 +12,7 @@ void Vida::recibirDanio(int danio) {
     vida = nuevaVida;
   } else {
     matar();
+    esperaParaRevivir = 3;
   }
 }
 
@@ -23,7 +25,14 @@ void Vida::matar() {
 }
 
 void Vida::revivir() {
-  vida = 100;
+    if (enJuego) {
+        std::cout << "Revivi" << std::endl;
+        vida = 100;
+        esperaParaRevivir = 0;
+    } else {
+        std::cout << "Yo no revivi" << std::endl;
+    }
+
 }
 
 Vida::~Vida() {
@@ -31,4 +40,16 @@ Vida::~Vida() {
 
 bool Vida::estoyVivo() {
   return vida != 0;
+}
+
+bool Vida::puedoRevivir() {
+    if (!estoyVivo()) {
+        esperaParaRevivir -= 1;
+    }
+    return (esperaParaRevivir == 0) && enJuego;
+}
+
+void Vida::salirDeJuego() {
+    enJuego = false;
+    matar();
 }

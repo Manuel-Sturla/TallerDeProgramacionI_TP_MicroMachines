@@ -116,5 +116,5 @@ Curva &Curva::operator=(const Curva &otraCurva) {
 
 void Curva::revivirCarro(MundoBox2D *mundoBox2D, Carro *unCarro) {
     b2Vec2 posicion = cuerpo->GetPosition();
-    unCarro -> agregarseA(mundoBox2D, posicion.x, posicion.y);
+    unCarro -> revivir(mundoBox2D, posicion.x, posicion.y);
 }

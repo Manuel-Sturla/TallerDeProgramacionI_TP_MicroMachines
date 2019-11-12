@@ -12,6 +12,8 @@
 #include "EstadoPartida.h"
 #include "../ClienteProxy.h"
 #include "../../Partida/HashProtegidoClientes.h"
+#include "../../Partida/Pista.h"
+#include "../../Planos/PlanoDeCarro.h"
 
 class EnEspera: public EstadoPartida {
     std::mutex mutex;
@@ -27,7 +29,8 @@ public:
 
     explicit EnEspera(size_t cantMaxima, HashProtegidoClientes &clientes);
 
-    void sumarJugador(ClienteProxy &cliente);
+    void sumarJugador(ClienteProxy &cliente, Pista &pista,
+                      PlanoDeCarro *planoCarro);
 
     bool enJuego() override;
 

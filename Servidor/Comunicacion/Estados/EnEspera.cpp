@@ -3,6 +3,8 @@
 #include "EnEspera.h"
 #include "../Sockets/SocketPeerException.h"
 #include "../../PartidaLlenaExcepcion.h"
+#include "../../Partida/Pista.h"
+#include "../../Planos/PlanoDeCarro.h"
 
 EnEspera::EnEspera(size_t cantMaxima, HashProtegidoClientes &clientes) :
     cantMaximaJugadores(cantMaxima),
@@ -10,7 +12,8 @@ EnEspera::EnEspera(size_t cantMaxima, HashProtegidoClientes &clientes) :
     clientes(clientes){
 }
 
-void EnEspera::sumarJugador(ClienteProxy &cliente) {
+void EnEspera::sumarJugador(ClienteProxy &cliente, Pista &pista,
+                            PlanoDeCarro *planoCarro) {
     std::unique_lock<std::mutex> lock(mutex);
     if (enJuego()){
         throw PartidaLlenaExcepcion("La partida se encuentra llena", __LINE__);
@@ -22,6 +25,7 @@ void EnEspera::sumarJugador(ClienteProxy &cliente) {
         return;
     }
     cliente.setID(contadorId);
+    cliente.setCarro(planoCarro->crearCarro(&pista, cliente.obtenerID()));
     enviarCantidadDeJugadores();
     std::cout << "Cantidad actual de jugadores: " << cantActualJugadores << std::endl;
     if (enJuego()){

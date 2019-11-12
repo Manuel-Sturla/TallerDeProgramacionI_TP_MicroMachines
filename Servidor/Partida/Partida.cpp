@@ -5,6 +5,7 @@
 #include "../Comunicacion/Estados/EnEspera.h"
 #include "../Comunicacion/Eventos/EventosParseables/ComenzoLaPartida.h"
 #include "../Comunicacion/Eventos/EventosParseables/EnviarMapa.h"
+#include "../Comunicacion/Eventos/EventosParseables/EliminarCarro.h"
 
 
 Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
@@ -27,8 +28,8 @@ std::vector<std::string> &Partida::obtenerMapa() {
 
 Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy &cliente) {
     EnEspera* estadoEnEspera = dynamic_cast<EnEspera *>(estado.get());
-    estadoEnEspera->sumarJugador(cliente);
-    return planoDeCarro -> crearCarro(&pista);
+    //Aca hay / habia una race condition porque la partida comienza antes de que se devuelva el auto
+    estadoEnEspera->sumarJugador(cliente, pista,  planoDeCarro);
 }
 
 void Partida::run() {
@@ -73,6 +74,11 @@ void Partida::enviarMensajesInicio() {
 
 void Partida::eliminarCliente(ClienteProxy &cliente) {
     clientes.eliminar(std::to_string(cliente.obtenerID()));
+    std::shared_ptr<EventoParseable> eventoEliminarCarro (new EliminarCarro(cliente.obtenerID()));
+    for (auto& clave : clientes.obtenerClaves()){
+        ClienteProxy& cliente = clientes.obtener(clave);
+        cliente.encolarEvento(eventoEliminarCarro);
+    }
 }
 
 bool Partida::estaEnJuego() {

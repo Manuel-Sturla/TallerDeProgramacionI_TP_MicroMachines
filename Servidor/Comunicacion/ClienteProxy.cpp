@@ -90,8 +90,7 @@ void ClienteProxy::mandarAutoPropio() {
 }
 
 void ClienteProxy::borrarAutoPropio() {
-    //FALTA
-    //miCarro->borrar();
+    miCarro->borrar();
 }
 
 std::string &ClienteProxy::obtenerPartida() {

@@ -79,10 +79,11 @@ void Pista::empaquetarSuelos(std::vector<std::string> *destino) {
 }
 
 
-Carro *Pista::crearCarro(int velocidad, float32 anguloEnRadianes, int agarre) {
+Carro *Pista::crearCarro(int velocidad, float32 anguloEnRadianes, int agarre,
+                         size_t id) {
     std::unique_lock<std::mutex> lock (mutex);
     b2Vec2 posicion = posicionesInicio.front();
-    carros.emplace_back(&mundoBox2D, velocidad, anguloEnRadianes, agarre, posicion.x, posicion.y, carros.size());
+    carros.emplace_back(&mundoBox2D, velocidad, anguloEnRadianes, agarre, posicion.x, posicion.y, id);
     posicionesInicio.erase(posicionesInicio.begin());
     return &carros.back();
 }
