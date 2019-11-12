@@ -17,9 +17,12 @@ class ColaBloqueante {
     std::queue<std::shared_ptr<EventosParseables>> cola;
 public:
     ColaBloqueante() = default;
+    ColaBloqueante(ColaBloqueante&& otra);
+    ColaBloqueante& operator=(ColaBloqueante&& otra);
     void encolar(EventosParseables* evento);
     void encolar(std::shared_ptr<EventosParseables>& evento);
     std::shared_ptr<EventosParseables> desencolar();
+    ~ColaBloqueante();
 };
 
 

@@ -9,11 +9,12 @@
 #include "../Hilo.h"
 #include "../Comunicacion/ClienteProxy.h"
 #include "../Comunicacion/Estados/EstadoPartida.h"
+#include "HashProtegidoClientes.h"
 
 class Partida: public Hilo {
 private:
     Pista pista;
-    std::vector<ClienteProxy*> clientes;
+    HashProtegidoClientes clientes;
     std::unique_ptr<EstadoPartida> estado;
     std::vector<std::string> suelos;
 
@@ -25,7 +26,9 @@ public:
 
     std::vector<std::string>& obtenerMapa();
 
-    Carro * agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy* cliente);
+    Carro * agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy &cliente);
+
+    void eliminarCliente(ClienteProxy& cliente);
 
     bool estaMuerto();
 
@@ -36,6 +39,8 @@ public:
     ~Partida();
 
     void enviarMensajesInicio();
+
+    bool estaEnJuego();
 };
 
 #endif

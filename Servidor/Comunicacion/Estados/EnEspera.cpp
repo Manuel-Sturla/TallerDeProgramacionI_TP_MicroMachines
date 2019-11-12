@@ -4,19 +4,24 @@
 #include "../Sockets/SocketPeerException.h"
 #include "../../PartidaLlenaExcepcion.h"
 
-EnEspera::EnEspera(size_t cantMaxima, std::vector<ClienteProxy*>& clientes) :
+EnEspera::EnEspera(size_t cantMaxima, HashProtegidoClientes &clientes) :
     cantMaximaJugadores(cantMaxima),
     cantActualJugadores(0),
     clientes(clientes){
 }
 
-void EnEspera::sumarJugador(ClienteProxy *cliente) {
+void EnEspera::sumarJugador(ClienteProxy &cliente) {
     std::unique_lock<std::mutex> lock(mutex);
     if (enJuego()){
         throw PartidaLlenaExcepcion("La partida se encuentra llena", __LINE__);
     }
     cantActualJugadores++;
-    clientes.push_back(cliente);
+    contadorId ++;
+    if (!clientes.ubicar(std::to_string(contadorId), cliente)){
+        //Si no se lo pudo ubicar es porque ya hay un jugador con ese Id (no deberia pasar)
+        return;
+    }
+    cliente.setID(contadorId);
     enviarCantidadDeJugadores();
     std::cout << "Cantidad actual de jugadores: " << cantActualJugadores << std::endl;
     if (enJuego()){
@@ -37,24 +42,16 @@ bool EnEspera::enJuego() {
 }
 
 void EnEspera::enviarCantidadDeJugadores() {
-    size_t i = 0;
-    while (i < clientes.size()){
+    std::vector<std::string> claves = clientes.obtenerClaves();
+    for (auto& clave : claves){
         try{
-            clientes.at(i)->enviar(std::to_string(cantActualJugadores));
+            clientes.obtener(clave).enviar(std::to_string(cantActualJugadores));
         }catch (SocketPeerException &e){
-            sacarCliente(i);
+            clientes.obtener(clave).desconectar();
+            clientes.eliminar(clave);
             cantActualJugadores--;
-            continue;
         }
-        i++;
     }
-}
-
-void EnEspera::sacarCliente(size_t posicion){
-    std::iter_swap(clientes.begin() + posicion, clientes.end()-1);
-    //cierro el cliente, dado que asumo que murió.
-    clientes.back()->desconectar();
-    clientes.pop_back();
 }
 
 void EnEspera::cerrar() {

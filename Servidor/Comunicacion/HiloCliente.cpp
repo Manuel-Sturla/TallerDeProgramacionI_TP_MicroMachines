@@ -5,11 +5,12 @@
 #include "HiloCliente.h"
 #include "Sockets/SocketPeerException.h"
 
-HiloCliente::HiloCliente(SocketAmigo& socketCliente, EnMenu &enMenu, EnJuego &enJuego):
+HiloCliente::HiloCliente(SocketAmigo &socketCliente, EnMenu &enMenu, EnJuego &enJuego, HashProtegido &partidas) :
     cliente(std::move(socketCliente)),
     menu(enMenu),
     juego(enJuego),
     estado(&menu),
+    partidas(partidas),
     conectado(true),
     enviador(cliente, conectado) {
     enviador.start();
@@ -17,14 +18,19 @@ HiloCliente::HiloCliente(SocketAmigo& socketCliente, EnMenu &enMenu, EnJuego &en
 
 void HiloCliente::run() {
     try {
-        while (conectado) {
-            if (cliente.estaEnJuego()){
-                estado = &juego;
-            }
+        while (conectado and !cliente.estaEnJuego()) {
+            estado->ejecutar(cliente);
+        }
+        estado = &juego;
+        while(conectado){
             estado->ejecutar(cliente);
         }
     }catch (SocketPeerException & e){
         conectado = false;
+        if (cliente.estaEnJuego()){
+            auto partida = partidas.obtener(cliente.obtenerPartida());
+            partida->eliminarCliente(cliente);
+        }
     }
 }
 

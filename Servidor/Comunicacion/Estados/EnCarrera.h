@@ -7,6 +7,7 @@
 #include "../../Partida/Pista.h"
 #include "../ClienteProxy.h"
 #include "../../Partida/Podio.h"
+#include "../../Partida/HashProtegidoClientes.h"
 
 class EnCarrera: public EstadoPartida {
 private:
@@ -14,10 +15,10 @@ private:
     Podio podio;
     std::vector<std::string> extras;
     std::vector<std::shared_ptr<EventosParseables>> eventos;
-    std::vector<ClienteProxy*>& clientes;
+    HashProtegidoClientes& clientes;
     void actualizarEventos();
 public:
-    EnCarrera(Pista& pista, std::vector<ClienteProxy*>& clientes);
+    EnCarrera(Pista& pista, HashProtegidoClientes &clientes);
     void ejecutar() override;
     bool enJuego() override;
     void enviarPosiciones();

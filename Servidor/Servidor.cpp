@@ -25,7 +25,7 @@ void Servidor::run() {
    while (continuar){
         try{
             SocketAmigo socketCliente = socketPasivo.aceptarCliente();
-            clientes.emplace_back(new HiloCliente(socketCliente, enMenu, enJuego));
+            clientes.emplace_back(new HiloCliente(socketCliente, enMenu, enJuego, partidas));
             clientes.back()->start();
             cerrar_clientes_desconectados();
             cerrar_partidas_terminadas();
@@ -38,7 +38,7 @@ void Servidor::run() {
         cliente->desconectar();
         cliente->join();
     }
-    //Mato a las partidas
+    //Mato a las clientes
     for (auto& partida : partidas.obtenerClaves()) {
         partidas.obtener(partida)->cerrar();
         partidas.obtener(partida)->join();

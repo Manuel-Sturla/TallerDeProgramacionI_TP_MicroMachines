@@ -11,21 +11,23 @@
 #include <condition_variable>
 #include "EstadoPartida.h"
 #include "../ClienteProxy.h"
+#include "../../Partida/HashProtegidoClientes.h"
 
 class EnEspera: public EstadoPartida {
     std::mutex mutex;
     std::condition_variable estaLLena;
     size_t cantMaximaJugadores;
     size_t cantActualJugadores;
-    std::vector<ClienteProxy*> & clientes;
+    HashProtegidoClientes & clientes;
+    size_t contadorId = 0;
 
     void enviarCantidadDeJugadores();
     void sacarCliente(size_t posicion);
 public:
 
-    explicit EnEspera(size_t cantMaxima, std::vector<ClienteProxy*>& clientes);
+    explicit EnEspera(size_t cantMaxima, HashProtegidoClientes &clientes);
 
-    void sumarJugador(ClienteProxy *cliente);
+    void sumarJugador(ClienteProxy &cliente);
 
     bool enJuego() override;
 
