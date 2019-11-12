@@ -28,8 +28,8 @@ public:
     bool estaEnJuego();
     void setCarro(Carro* carringuis);
     void encolarAccion(Accion* accion);
-    void encolarEvento(EventosParseables* evento);
-    void encolarEvento(std::shared_ptr<EventosParseables>& evento);
+    void encolarEvento(EventoParseable *evento);
+    void encolarEvento(std::shared_ptr<EventoParseable> &evento);
     void mandarAutoPropio();
     void borrarAutoPropio();
     void ejecutarAccion();

@@ -19,9 +19,9 @@ public:
     ColaBloqueante() = default;
     ColaBloqueante(ColaBloqueante&& otra);
     ColaBloqueante& operator=(ColaBloqueante&& otra);
-    void encolar(EventosParseables* evento);
-    void encolar(std::shared_ptr<EventosParseables>& evento);
-    std::shared_ptr<EventosParseables> desencolar();
+    void encolar(EventoParseable *evento);
+    void encolar(std::shared_ptr<EventoParseable> &evento);
+    std::shared_ptr<EventoParseable> desencolar();
     ~ColaBloqueante();
 };
 

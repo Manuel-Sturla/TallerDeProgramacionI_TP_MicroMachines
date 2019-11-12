@@ -61,8 +61,8 @@ void Partida::cerrar() {
 
 
 void Partida::enviarMensajesInicio() {
-    std::shared_ptr<EventosParseables> eventoComenzo (new ComenzoLaPartida());
-    std::shared_ptr<EventosParseables> eventoEnviarMapa (new EnviarMapa(pista));
+    std::shared_ptr<EventoParseable> eventoComenzo (new ComenzoLaPartida());
+    std::shared_ptr<EventoParseable> eventoEnviarMapa (new EnviarMapa(pista));
     for (auto& clave : clientes.obtenerClaves()){
         ClienteProxy& cliente = clientes.obtener(clave);
         cliente.encolarEvento(eventoComenzo);
