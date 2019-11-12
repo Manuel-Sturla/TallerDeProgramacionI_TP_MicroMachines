@@ -6,9 +6,9 @@
 #define SERVIDOR_NOSEPUDOUNIR_H
 
 
-#include "EventosParseables.h"
+#include "EventoParseable.h"
 
-class NoSePudoUnir: public EventosParseables{
+class NoSePudoUnir: public EventoParseable{
 public:
     std::string obtenerParseado() override;
 };

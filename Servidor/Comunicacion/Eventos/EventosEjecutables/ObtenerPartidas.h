@@ -9,9 +9,9 @@
 #include <map>
 #include "../../../Partida/Partida.h"
 #include "../../../Partida/HashProtegido.h"
-#include "EventoEjecutables.h"
+#include "EventoEjecutable.h"
 
-class ObtenerPartidas : public EventoEjecutables {
+class ObtenerPartidas : public EventoEjecutable {
 private:
     HashProtegido& partidas;
 

@@ -10,9 +10,9 @@
 #include "../../../Partida/Partida.h"
 #include "../../../ConfiguracionServidor.h"
 #include "../../../Partida/HashProtegido.h"
-#include "EventoEjecutables.h"
+#include "EventoEjecutable.h"
 
-class UnirAPartida: public EventoEjecutables {
+class UnirAPartida: public EventoEjecutable {
     HashProtegido& partidas;
     ConfiguracionServidor& mapasYAutos;
 public:

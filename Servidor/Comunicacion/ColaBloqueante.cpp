@@ -4,22 +4,22 @@
 
 #include "ColaBloqueante.h"
 
-void ColaBloqueante::encolar(EventosParseables *evento) {
+void ColaBloqueante::encolar(EventoParseable *evento) {
     cola.emplace(evento);
     estaVacia.notify_all();
 }
 
-void ColaBloqueante::encolar(std::shared_ptr<EventosParseables>& evento) {
+void ColaBloqueante::encolar(std::shared_ptr<EventoParseable>& evento) {
     cola.push(evento);
     estaVacia.notify_all();
 }
 
-std::shared_ptr<EventosParseables> ColaBloqueante::desencolar() {
+std::shared_ptr<EventoParseable> ColaBloqueante::desencolar() {
     std::unique_lock<std::mutex> lock(mutex);
     while (cola.empty()){
         estaVacia.wait(lock);
     }
-    std::shared_ptr<EventosParseables> aux = cola.front();
+    std::shared_ptr<EventoParseable> aux = cola.front();
     cola.pop();
     return aux;
 }

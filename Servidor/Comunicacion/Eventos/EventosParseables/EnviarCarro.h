@@ -7,10 +7,10 @@
 
 
 
-#include "EventosParseables.h"
+#include "EventoParseable.h"
 #include "../../../Objetos/Carro/Carro.h"
 
-class EnviarCarro: public EventosParseables {
+class EnviarCarro: public EventoParseable {
     std::string parseo;
 public:
     explicit EnviarCarro(Carro& carro);

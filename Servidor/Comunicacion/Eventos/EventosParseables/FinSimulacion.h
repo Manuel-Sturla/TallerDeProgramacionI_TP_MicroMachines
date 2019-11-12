@@ -7,9 +7,9 @@
 
 
 
-#include "EventosParseables.h"
+#include "EventoParseable.h"
 
-class FinSimulacion: public EventosParseables {
+class FinSimulacion: public EventoParseable {
 public:
     std::string obtenerParseado() override;
 };

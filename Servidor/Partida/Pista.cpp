@@ -1,6 +1,7 @@
+#include <thread>
 #include "Pista.h"
 #include "../Acciones/GiroAIzquierda.h"
-#include "../Comunicacion/Eventos/EventosParseables/EventosParseables.h"
+#include "../Comunicacion/Eventos/EventosParseables/EventoParseable.h"
 #include "../Comunicacion/Eventos/EventosParseables/EnviarCarro.h"
 #include "../Comunicacion/Eventos/EventosParseables/EnviarExtra.h"
 
@@ -33,6 +34,7 @@ void Pista::agregarCurva(float32 x, float32 y, float32 angulo, int numeroDeSuelo
 }
 
 void Pista::simular() {
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000/60));
     float32 timeStep = 1.0f / 60.0f;
     int32 velocidadDeIteraciones = 6;
     int32 positionIterations = 2;
@@ -40,18 +42,22 @@ void Pista::simular() {
     mundoBox2D.actualizar();
     std::list<Carro>::iterator itCarros;
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
-        //itCarros -> imprimirPosicion();
+        if (!itCarros -> esValido()) {
+            int numeroDeSuelo = itCarros -> obtenerSueloParaRevivir();
+            BloquesDeasfalto[numeroDeSuelo] ->revivirCarro(&mundoBox2D, &*itCarros);
+        }
+        itCarros -> imprimirPosicion();
         itCarros -> actualizar();
     }
 }
 
-void Pista::empaquetarCarro(std::vector<std::shared_ptr<EventosParseables>> *destino) {
+void Pista::empaquetarCarro(std::vector<std::shared_ptr<EventoParseable>> *destino) {
     std::list<Carro>::iterator itCarros;
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
         destino->emplace_back(new EnviarCarro(*itCarros));
     }
 }
-void Pista::empaquetarExtras(std::vector<std::shared_ptr<EventosParseables>> *destino) {
+void Pista::empaquetarExtras(std::vector<std::shared_ptr<EventoParseable>> *destino) {
     for (auto& extra : extras){
         destino->emplace_back(new EnviarExtra(extra));
     }
@@ -76,10 +82,6 @@ Carro *Pista::crearCarro(int velocidad, float32 anguloEnRadianes, int agarre) {
     carros.emplace_back(&mundoBox2D, velocidad, anguloEnRadianes, agarre, posicion.x, posicion.y, carros.size());
     posicionesInicio.erase(posicionesInicio.begin());
     return &carros.back();
-}
-
-int Pista::cantidadDeCarros() {
-    return carros.size();
 }
 
 void Pista::agregarPosicionDeInicio(b2Vec2& posicion) {

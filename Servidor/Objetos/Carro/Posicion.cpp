@@ -29,3 +29,7 @@ bool Posicion::operator<(const Posicion &otraposicion) {
         return this->numeroDeSuelo <= otraposicion.numeroDeSuelo;
     }
 }
+
+int Posicion::obtenerSueloParaRevivir() {
+    return numeroDeSuelo;
+}

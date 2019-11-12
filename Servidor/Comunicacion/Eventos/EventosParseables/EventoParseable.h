@@ -11,7 +11,7 @@
 #define MSJ_FIN "F"
 #define SEPARADOR ';'
 
-class EventosParseables {
+class EventoParseable {
 
 public:
     virtual std::string obtenerParseado() = 0;

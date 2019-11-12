@@ -6,9 +6,9 @@
 #define SERVIDOR_COMENZOLAPARTIDA_H
 
 
-#include "EventosParseables.h"
+#include "EventoParseable.h"
 
-class ComenzoLaPartida: public EventosParseables {
+class ComenzoLaPartida: public EventoParseable {
 public:
     std::string obtenerParseado() override;
 };

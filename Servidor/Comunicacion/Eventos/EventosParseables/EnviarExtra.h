@@ -6,10 +6,10 @@
 #define SERVIDOR_ENVIAREXTRA_H
 
 
-#include "EventosParseables.h"
+#include "EventoParseable.h"
 #include "../../../Objetos/Modificadores/Modificador.h"
 
-class EnviarExtra: public EventosParseables {
+class EnviarExtra: public EventoParseable {
     std::string parseado;
 public:
     EnviarExtra(std::unique_ptr<Modificador> &modificable);

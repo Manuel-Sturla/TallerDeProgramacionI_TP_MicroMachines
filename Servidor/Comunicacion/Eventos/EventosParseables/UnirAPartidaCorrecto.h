@@ -6,9 +6,9 @@
 #define SERVIDOR_UNIRAPARTIDACORRECTO_H
 
 
-#include "EventosParseables.h"
+#include "EventoParseable.h"
 
-class UnirAPartidaCorrecto: public EventosParseables {
+class UnirAPartidaCorrecto: public EventoParseable {
 
 public:
     std::string obtenerParseado() override;

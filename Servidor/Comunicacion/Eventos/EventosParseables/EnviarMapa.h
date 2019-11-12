@@ -6,10 +6,10 @@
 #define SERVIDOR_ENVIARMAPA_H
 
 
-#include "EventosParseables.h"
+#include "EventoParseable.h"
 #include "../../../Partida/Pista.h"
 
-class EnviarMapa: public EventosParseables {
+class EnviarMapa: public EventoParseable {
     Pista& pista;
 public:
     explicit EnviarMapa(Pista& pista);

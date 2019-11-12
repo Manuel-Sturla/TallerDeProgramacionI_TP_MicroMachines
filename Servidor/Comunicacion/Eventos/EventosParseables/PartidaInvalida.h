@@ -6,9 +6,9 @@
 #define SERVIDOR_PARTIDAINVALIDA_H
 
 
-#include "EventosParseables.h"
+#include "EventoParseable.h"
 
-class PartidaInvalida: public EventosParseables {
+class PartidaInvalida: public EventoParseable {
 public:
     std::string obtenerParseado() override;
 };

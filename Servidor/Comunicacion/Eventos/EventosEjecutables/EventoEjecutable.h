@@ -7,7 +7,7 @@
 
 #include "../../ClienteProxy.h"
 
-class EventoEjecutables {
+class EventoEjecutable {
 public:
     virtual void ejecutar(ClienteProxy &cliente, std::vector<std::string> argumentos) = 0;
 
