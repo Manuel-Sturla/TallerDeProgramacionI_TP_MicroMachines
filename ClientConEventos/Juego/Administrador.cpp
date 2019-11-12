@@ -2,16 +2,17 @@
 // Created by diego on 9/11/19.
 //
 
+#include <iostream>
 #include "Administrador.h"
 #include "Extra.h"
 #include "Auto.h"
 
-Administrador::Administrador(Renderizador &renderizador) : renderizador(renderizador), pista(renderizador),\
-posTexto(0,200,100,1000,-90){
-    cantJugadores = 1;
-}
+Administrador::Administrador(Renderizador &renderizador, std::mutex& m) :\
+renderizador(renderizador), pista(renderizador), m(m),\
+posTexto(0,200,100,1000,-90){}
 
 void Administrador::ejecutarEventos(std::vector<std::string> &eventos) {
+    std::unique_lock<std::mutex> lock(m);
     while(!eventos.empty()){
         if(eventos[0] == "morir" && eventos.size() >= 2){
             eventos.erase(eventos.begin());

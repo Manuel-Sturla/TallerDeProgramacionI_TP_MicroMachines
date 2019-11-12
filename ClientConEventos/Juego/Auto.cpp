@@ -8,6 +8,7 @@
 
 Auto::Auto(Renderizador &renderizador, int tam) : Desplazable(renderizador, tam) {
     renderizador.agregarTextura("../Sprites/auto.png", &posicion);
+    etapaExplosion = 0;
 }
 
 void Auto::mover(float posX, float posY, int angulo) {
@@ -16,7 +17,22 @@ void Auto::mover(float posX, float posY, int angulo) {
 }
 
 void Auto::morir() {
-    //Aca iria lo de la explosion
+    etapaExplosion++;
+    if(etapaExplosion == 1){
+        idExplosion = renderizador.agregarTextura("../Sprites/explosion0.png", &posicion);
+        etapaExplosion++;
+    } else if(etapaExplosion == 2) {
+        renderizador.borrarTextura(idExplosion);
+        idExplosion = renderizador.agregarTextura("../Sprites/explosion1.png", &posicion);
+        etapaExplosion++;
+    } else if(etapaExplosion == 3) {
+        renderizador.borrarTextura(idExplosion);
+        idExplosion = renderizador.agregarTextura("../Sprites/explosion2.png", &posicion);
+        etapaExplosion++;
+    } else {
+        idExplosion = -1;
+        etapaExplosion = 0;
+    }
 }
 
 void Auto::modificar(std::string &mensaje) {

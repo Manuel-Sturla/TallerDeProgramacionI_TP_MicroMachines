@@ -7,26 +7,31 @@
 
 #include <SDL2/SDL_system.h>
 #include <vector>
+#include <map>
 #include "Ventana.h"
 #include "Posicion.h"
 #include "Textura.h"
 
 class Renderizador {
 private:
+    std::mutex& m;
     SDL_Renderer* renderizador;
     Ventana ventana;
     std::vector<Textura> texturas;
     std::vector<Textura> pista;
+    std::map<int, Textura> textIdentificables;
     Camara camara;
 
 public:
-    Renderizador(const char* titulo, int ancho, int altura);
+    Renderizador(const char *titulo, int ancho, int altura, std::mutex &m);
 
-    void agregarTextura(const std::string &archivo, Posicion* pos);
+    unsigned long agregarTextura(const std::string &archivo, Posicion* pos);
 
     void agregarTrecho(const std::string &archivo, Posicion* pos);
 
     void agregarTexto(const std::string &texto, Posicion *posicion);
+
+    void borrarTextura(unsigned long idTextura);
 
     void imprimir(Uint32 tiempoMs);
 

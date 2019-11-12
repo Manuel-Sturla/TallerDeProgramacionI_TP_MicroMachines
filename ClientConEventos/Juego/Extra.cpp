@@ -18,7 +18,7 @@ void Extra::mover(float posX, float posY, int angulo) {
 }
 
 void Extra::morir() {
-    posicion.invalidar();
+    posicion.invalidar(); //sacar y usar borrar textura.
 }
 
 void Extra::modificar(std::string &mensaje) {}

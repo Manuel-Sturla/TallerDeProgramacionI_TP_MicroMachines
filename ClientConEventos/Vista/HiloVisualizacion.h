@@ -12,22 +12,25 @@
 #include "Camara.h"
 #include "HiloReceptor.h"
 #include "../Juego/Pista.h"
+#include "../Lector/HiloLector.h"
 
-class HiloVisualizacion : public Hilo {
+class HiloVisualizacion {
 private:
     ServidorProxy& servidor;
     Renderizador renderizador;
     HiloReceptor* receptor;
-    bool& keepTalking;
+    HiloLector* lector;
+    bool keepTalking;
     bool enJuego;
+    std::mutex m;
+public:
+    explicit HiloVisualizacion(ServidorProxy &servidor);
+
     void esperarInicioPartida();
 
-public:
-    explicit HiloVisualizacion(ServidorProxy& servidor, bool& keepTalking);
+    void ejecutarPartida();
 
-    void run() override;
-
-    ~HiloVisualizacion() override;
+    ~HiloVisualizacion();
 };
 
 

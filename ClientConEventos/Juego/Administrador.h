@@ -12,10 +12,10 @@
 
 class Administrador {
 private:
+    std::mutex& m;
     Renderizador& renderizador;
     std::map<std::string, Desplazable*> desplazables;
     Pista pista;
-    int cantJugadores;
     Posicion posTexto;
 
     void ejecutarMorir(std::vector<std::string> &eventos);
@@ -24,7 +24,7 @@ private:
     void ejecutarPosicionarAuto(std::vector<std::string> &vector);
 
 public:
-    explicit Administrador(Renderizador& renderizador);
+    explicit Administrador(Renderizador& renderizador, std::mutex& m);
 
     void ejecutarEventos(std::vector<std::string>& eventos);
 

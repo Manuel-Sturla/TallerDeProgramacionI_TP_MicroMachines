@@ -11,6 +11,10 @@
 #include "Desplazable.h"
 
 class Auto : public Desplazable {
+private:
+    int etapaExplosion;
+    unsigned long idExplosion;
+
 public:
     Auto(Renderizador &renderizador, int tam);
 

@@ -21,7 +21,7 @@ private:
 
 public:
 
-    explicit HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor, bool &keepTalking, bool &enJuego);
+    explicit HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor, bool &keepTalking, bool &enJuego, std::mutex& m);
 
     void run() override;
 };
