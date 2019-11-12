@@ -4,12 +4,14 @@
 void Protocolo::enviar(const std::string &mensaje) {
     socket.enviarLongitud(mensaje.length());
     socket.enviar(mensaje);
+    std::cout << "Envie :" << mensaje << std::endl;
 }
 
 std::string Protocolo::recibir() {
     size_t longitud = socket.recibirLongitud();
     std::string mensaje;
     socket.recibir(mensaje, longitud);
+    std::cout << "Recibi :" << mensaje << std::endl;
     return mensaje;
 }
 

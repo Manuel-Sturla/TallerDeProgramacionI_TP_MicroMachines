@@ -34,19 +34,22 @@ void Pista::agregarCurva(float32 x, float32 y, float32 angulo, int numeroDeSuelo
 }
 
 void Pista::simular() {
+    std::list<Carro>::iterator itCarros;
+    for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
+        if (!itCarros->esValido()) {
+            int numeroDeSuelo = itCarros->obtenerSueloParaRevivir();
+            BloquesDeasfalto[numeroDeSuelo]->revivirCarro(&mundoBox2D,
+                                                          &*itCarros);
+        }
+    }
     std::this_thread::sleep_for(std::chrono::milliseconds(1000/60));
     float32 timeStep = 1.0f / 60.0f;
     int32 velocidadDeIteraciones = 6;
     int32 positionIterations = 2;
     mundoBox2D.simular(timeStep, velocidadDeIteraciones, positionIterations);
     mundoBox2D.actualizar();
-    std::list<Carro>::iterator itCarros;
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
-        if (!itCarros -> esValido()) {
-            int numeroDeSuelo = itCarros -> obtenerSueloParaRevivir();
-            BloquesDeasfalto[numeroDeSuelo] ->revivirCarro(&mundoBox2D, &*itCarros);
-        }
-        itCarros -> imprimirPosicion();
+        //itCarros -> imprimirPosicion();
         itCarros -> actualizar();
     }
 }

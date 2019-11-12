@@ -6,7 +6,8 @@
 Carro::Carro(MundoBox2D *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y, int idCliente):
 estadoVelocidad(velocidadMaxima), agarre(agarre) {
   this -> anguloDeGiro = anguloDeGiro;
-  idConductor = idCliente;
+  idConductor = "A";
+  idConductor += std::to_string(idCliente);
   agregarseA(pista, x, y);
   id = "Carro";
   coeficienteDeRozamiento = 0;
@@ -89,7 +90,7 @@ void Carro::reducirAgarre() {
 }
 
 void Carro::empaquetar(std::vector<std::string> *destino) {
-    destino -> emplace_back(std::to_string(idConductor));
+    destino -> emplace_back(idConductor);
     empaquetarPosicion(destino);
     empaquetarAngulo(destino);
 }
@@ -107,7 +108,7 @@ bool Carro::operator<(const Carro &otroCarro) {
 }
 
 std::string Carro::darIdConductor() {
-    return std::to_string(idConductor);
+    return idConductor;
 }
 
 bool Carro::termineCarrera(int cantidadDeVueltasParaTerminar) {

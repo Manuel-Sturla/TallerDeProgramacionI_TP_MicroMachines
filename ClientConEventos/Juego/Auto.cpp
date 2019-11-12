@@ -12,8 +12,12 @@ Auto::Auto(Renderizador &renderizador, int tam) : Desplazable(renderizador, tam)
 }
 
 void Auto::mover(float posX, float posY, int angulo) {
-    posicion.moverA(posX, posY);
-    posicion.rotar(angulo);
+    if(etapaExplosion == 0){
+        posicion.moverA(posX, posY);
+        posicion.rotar(angulo);
+    } else {
+        morir();
+    }
 }
 
 void Auto::morir() {
@@ -30,6 +34,7 @@ void Auto::morir() {
         idExplosion = renderizador.agregarTextura("../Sprites/explosion2.png", &posicion);
         etapaExplosion++;
     } else {
+        renderizador.borrarTextura(idExplosion);
         idExplosion = -1;
         etapaExplosion = 0;
     }

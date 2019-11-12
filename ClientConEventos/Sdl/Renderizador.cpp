@@ -34,7 +34,6 @@ void Renderizador::limpiar() {
 }
 
 void Renderizador::copiarTodo() {
-    std::unique_lock<std::mutex> lock(m);
     int i = 0;
     while(i < pista.size()){
         if(!pista[i].copiar(renderizador, camara)){
@@ -45,6 +44,7 @@ void Renderizador::copiarTodo() {
         }
     }
     i = 0;
+    std::unique_lock<std::mutex> lock(m);
     while(i < texturas.size()){
         if(!texturas[i].copiar(renderizador, camara)){
             std::iter_swap(texturas.begin()+i, texturas.end()-1);
