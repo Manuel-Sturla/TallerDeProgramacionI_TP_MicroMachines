@@ -10,7 +10,6 @@ EnCarrera::EnCarrera(Pista &pista, HashProtegidoClientes &clientes):
 }
 
 void EnCarrera::ejecutar() {
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000/60));
     std::vector<std::string> claves = clientes.obtenerClaves();
     for (auto& cliente : claves){
         clientes.obtener(cliente).ejecutarAccion();
