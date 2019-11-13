@@ -94,10 +94,11 @@ void Pista::agregarPosicionDeInicio(b2Vec2& posicion) {
     posicionesInicio.push_back(posicion);
 }
 
+//Recibir una referencia a podio
 void Pista::inicializarPodio(Podio *podio) {
     std::list<Carro>::iterator itCarros;
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
-        podio->agregarCarro(&(*itCarros));
+        podio -> agregarCarro(&(*itCarros));
     }
 }
 

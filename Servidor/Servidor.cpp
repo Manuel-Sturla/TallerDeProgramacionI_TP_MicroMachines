@@ -6,6 +6,7 @@
 #include <map>
 #include <chrono>
 #include <string>
+#include <iostream>
 
 
 Servidor::Servidor(const std::string& servicio):
@@ -25,6 +26,7 @@ void Servidor::run() {
    while (continuar){
         try{
             SocketAmigo socketCliente = socketPasivo.aceptarCliente();
+            std::cout << "aceptado!" << std::endl;
             clientes.emplace_back(new HiloCliente(socketCliente, enMenu, enJuego, partidas));
             clientes.back()->start();
             cerrar_clientes_desconectados();
