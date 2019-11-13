@@ -125,6 +125,9 @@ void Carro::revivir(MundoBox2D *pista, float32 x, float32 y) {
 }
 
 void Carro::borrar() {
-    std::cout << "Me voy" << std::endl;
     vida.salirDeJuego();
+}
+
+bool Carro::moriRecientemente() {
+    return vida.moriRecientemente();
 }

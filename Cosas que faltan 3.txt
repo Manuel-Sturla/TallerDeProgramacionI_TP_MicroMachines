@@ -8,7 +8,7 @@ strace ... -e trace=network
 
 Errores:
 1- Manda mmorir todas las iteraciones sin un id!!!! (HECHO - era el extra con el que iteractuaba)
-2- Manda morir mas de una vez por autoo (pero eso es porque tarda en revivir) no tiene que mandar el evento mas veces.
+2- Manda morir mas de una vez por autoo (pero eso es porque tarda en revivir) no tiene que mandar el evento mas veces. (HECHO - cuando esta muerto si murio en la simulacion que se esta enviando se manda un morir y si no se manda un carroReviviendo)
 3- tira segmentetaion fault el servidor cuando tenes una partida con 7777 jugadores y creas mas partidas (por ejemplo una con 7777) revienta.
 4- Que haga todas las acciones de la cola de acciones de cada cliente por simulacion.
 5- Arreglar que funcione como un juego de carreras twekeando las fuerzas.

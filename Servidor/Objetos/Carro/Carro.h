@@ -69,6 +69,8 @@ class Carro: public Objeto {
 
     std::string darIdConductor();
 
+    bool moriRecientemente();
+
     bool termineCarrera(int cantidadDeVueltasParaTerminar);
 
     void imprimirPosicion(); //FUNCION DE PRUEBA
