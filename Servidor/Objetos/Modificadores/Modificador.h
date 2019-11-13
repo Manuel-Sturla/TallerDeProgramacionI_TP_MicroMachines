@@ -13,6 +13,8 @@ class Modificador: public Interactuable {
   public:
     std::string darId();
 
+    void empaquetarId(std::vector<std::string> *destino);
+
     void empaquetar(std::vector<std::string> *destino);
 };
 

@@ -103,5 +103,5 @@ void Pista::inicializarPodio(Podio *podio) {
 }
 
 Pista::Pista() {
-    extras.emplace_back(new Barro(&mundoBox2D, 0,1, extras.size()));
+    extras.emplace_back(new Barro(&mundoBox2D, 4,4, extras.size())); //El barro interactua con el segundo carro y por eso manda morir
 }

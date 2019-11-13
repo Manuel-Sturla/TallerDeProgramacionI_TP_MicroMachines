@@ -1,7 +1,3 @@
-//
-// Created by manfer on 11/11/19.
-//
-
 #include "EnviarExtra.h"
 #include "../../Utilidades.h"
 
@@ -15,6 +11,7 @@ EnviarExtra::EnviarExtra(std::unique_ptr<Modificador> &modificable) {
         aux.emplace_back(EVENTO_POS_EXTRA);
         modificable->empaquetar(&aux);
     }else{
+        modificable->empaquetarId(&aux);
         aux.emplace_back(EVENTO_EXTRA_MURIO);
     }
     parseado = unir(aux, SEPARADOR);

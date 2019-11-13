@@ -7,7 +7,8 @@
 
 class CajaDeSalud: public Modificador {
   public:
-    CajaDeSalud(MundoBox2D *pista, float32 x, float32 y);
+    CajaDeSalud(MundoBox2D *pista, float32 x, float32 y,
+                unsigned long idRecibido);
 
     void interactuar(Carro* unCarro);
 

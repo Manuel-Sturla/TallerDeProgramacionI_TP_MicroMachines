@@ -2,7 +2,6 @@
 #include "../../Utilidades.h"
 
 #define EVENTO_POS_AUTO "posicionarAuto"
-
 #define EVENTO_AUTO_MURIO "morir"
 
 EnviarCarro::EnviarCarro(Carro &carro) {

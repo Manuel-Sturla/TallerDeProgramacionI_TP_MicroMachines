@@ -5,7 +5,7 @@
 
 class Boost: public Modificador {
   public:
-    Boost(MundoBox2D *pista, float32 x, float32 y);
+    Boost(MundoBox2D *pista, float32 x, float32 y, unsigned long id);
 
     bool esValido();
 

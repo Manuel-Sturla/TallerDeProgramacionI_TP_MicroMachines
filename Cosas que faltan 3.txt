@@ -7,7 +7,7 @@ A veces no aparece el mapa, puede que lleguen en desorden el numero de jugadores
 strace ... -e trace=network
 
 Errores:
-1- Manda mmorir todas las iteraciones sin un id!!!!
+1- Manda mmorir todas las iteraciones sin un id!!!! (HECHO - era el extra con el que iteractuaba)
 2- Manda morir mas de una vez por autoo (pero eso es porque tarda en revivir) no tiene que mandar el evento mas veces.
 3- tira segmentetaion fault el servidor cuando tenes una partida con 7777 jugadores y creas mas partidas (por ejemplo una con 7777) revienta.
 4- Que haga todas las acciones de la cola de acciones de cada cliente por simulacion.
