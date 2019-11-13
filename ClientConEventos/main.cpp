@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_mixer.h>
 #include <QtWidgets/QApplication>
 #include <SDL2/SDL_ttf.h>
 #include "Excepciones/ExcepcionConPos.h"
@@ -25,6 +26,8 @@ int ejecutarLobby(int argc, char* argv[], ServidorProxy& servidor){
 int main(int argc, char* argv[]) {
     if(SDL_Init(SDL_INIT_VIDEO) != 0 || TTF_Init() == -1){
         SDL_Log("No pude incializar el SDL %s", SDL_GetError());
+        return 0;
+    } if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) {
         return 0;
     }
     std::string host, servicio;
@@ -54,6 +57,7 @@ int main(int argc, char* argv[]) {
     }
     IMG_Quit();
     TTF_Quit();
+    Mix_CloseAudio();
     SDL_Quit();
     return 0;
 }

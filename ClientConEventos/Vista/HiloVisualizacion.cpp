@@ -5,6 +5,8 @@
 #include <iostream>
 #include "HiloVisualizacion.h"
 #include "../Excepciones/ExcepcionConPos.h"
+#include "../Sdl/Sonido.h"
+
 #define ANCHO_PANTALLA 1000
 #define ALTURA_PANTALLA 1000
 
@@ -20,6 +22,7 @@ renderizador("microMachines.exe", ANCHO_PANTALLA, ALTURA_PANTALLA, m) {
 
 void HiloVisualizacion::ejecutarPartida() {
     try{
+        Sonido sonido("../abba.wav");
         while(keepTalking) {
             renderizador.limpiar();
             renderizador.copiarTodo();

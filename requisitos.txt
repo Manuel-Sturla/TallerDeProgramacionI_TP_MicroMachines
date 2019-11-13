@@ -3,3 +3,4 @@ Cosas que hay que instalar:
     - SDL2-dev
     - SDL2_ttf-dev
     - SDL2_Image-dev
+    - SDL2_Mixer-dev
