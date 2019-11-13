@@ -7,7 +7,7 @@
 #include "../Sdl/Renderizador.h"
 
 Auto::Auto(Renderizador &renderizador, int tam) : Desplazable(renderizador, tam) {
-    renderizador.agregarTextura("../Sprites/auto.png", &posicion);
+    id = renderizador.agregarTextura("../Sprites/auto.png", &posicion);
     etapaExplosion = 0;
 }
 
@@ -40,4 +40,8 @@ void Auto::morir() {
 }
 
 void Auto::modificar(std::string &mensaje) {
+}
+
+void Auto::eliminar() {
+    renderizador.borrarTextura(id);
 }

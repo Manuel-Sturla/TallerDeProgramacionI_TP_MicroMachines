@@ -13,6 +13,7 @@ class Desplazable {
 protected:
     Posicion posicion;
     Renderizador& renderizador;
+    size_t id;
 
 public:
     Desplazable(Renderizador& renderizador, int tam);
@@ -24,6 +25,10 @@ public:
     virtual void modificar(std::string& mensaje) = 0;
 
     Posicion* getPosicion();
+
+    virtual void eliminar() = 0;
+
+    virtual ~Desplazable() = default;
 };
 
 

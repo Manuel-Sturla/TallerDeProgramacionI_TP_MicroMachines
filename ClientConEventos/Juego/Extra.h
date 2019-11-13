@@ -17,6 +17,8 @@ public:
     void morir() override;
 
     void modificar(std::string &mensaje) override;
+
+    void eliminar() override;
 };
 
 

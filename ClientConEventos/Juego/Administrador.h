@@ -23,8 +23,10 @@ private:
     void ejecutarPosicionarExtra(std::vector<std::string> &eventos);
     void ejecutarModificar(std::vector<std::string> &eventos);
     void ejecutarPosicionarAuto(std::vector<std::string> &vector);
+    void ejecutarDestruirAuto(std::vector<std::string> &eventos);
 
 public:
+
     explicit Administrador(Renderizador& renderizador, std::mutex& m);
 
     void ejecutarEventos(std::vector<std::string>& eventos);

@@ -7,7 +7,7 @@
 
 Extra::Extra(Renderizador &renderizador, int tam, std::string tipo) : Desplazable(renderizador, tam) {
     if(tipo == "Barro"){
-        renderizador.agregarTextura("../Sprites/barro.png", &posicion);
+        id = renderizador.agregarTextura("../Sprites/barro.png", &posicion);
     } else {
         throw ExcepcionConPos(__FILE__, __LINE__, "Tipo de extra invalido");
     }
@@ -22,3 +22,5 @@ void Extra::morir() {
 }
 
 void Extra::modificar(std::string &mensaje) {}
+
+void Extra::eliminar() {}

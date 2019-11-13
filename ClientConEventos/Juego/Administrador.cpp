@@ -6,6 +6,7 @@
 #include "Administrador.h"
 #include "Extra.h"
 #include "Auto.h"
+#include "../Excepciones/ExcepcionConPos.h"
 
 Administrador::Administrador(Renderizador &renderizador, std::mutex& m) :\
 renderizador(renderizador), pista(renderizador), m(m),\
@@ -26,6 +27,9 @@ void Administrador::ejecutarEventos(std::vector<std::string> &eventos) {
         }else if(eventos[0] == "modificar" && eventos.size() >= 2){
             eventos.erase(eventos.begin());
             ejecutarModificar(eventos);
+        } else if(eventos[0] == "eliminarAuto"){
+            eventos.erase(eventos.begin());
+            ejecutarDestruirAuto(eventos);
         } else {
             eventos.erase(eventos.begin());
         }
@@ -92,4 +96,15 @@ void Administrador::crearMiAuto(std::vector<std::string> &evento) {
     desplazables.emplace(evento[0], new Auto(renderizador, 1));
     auto it = desplazables.find(evento[0]);
     renderizador.configurarCamara(it->second->getPosicion());
+}
+
+void Administrador::ejecutarDestruirAuto(std::vector<std::string> &eventos) {
+    auto it = desplazables.find(eventos[0]);
+    if(it == desplazables.end()){
+        throw ExcepcionConPos(__FILE__, __LINE__, "Error: borrar auto invalido: auto no encontrado");
+    }
+    eventos.erase(eventos.begin());
+    it->second->eliminar();
+    delete(it->second);
+    desplazables.erase(it);
 }
