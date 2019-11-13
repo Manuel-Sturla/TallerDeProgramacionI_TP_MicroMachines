@@ -6,6 +6,7 @@ class Vida {
     int vida;
     int esperaParaRevivir;
     bool enJuego;
+    bool moriEnLaSimulacionActual;
   public:
     Vida();
 
@@ -18,6 +19,8 @@ class Vida {
     bool puedoRevivir();
 
     bool estoyVivo();
+
+    bool moriRecientemente();
 
     void revivir();
 

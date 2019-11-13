@@ -5,7 +5,11 @@ std::string Modificador::darId() {
 }
 
 void Modificador::empaquetar(std::vector<std::string> *destino) {
-    destino -> emplace_back(id);
+    empaquetarId(destino);
     destino -> emplace_back(tipo);
     empaquetarPosicion(destino);
+}
+
+void Modificador::empaquetarId(std::vector<std::string> *destino) {
+    destino -> emplace_back(id);
 }

@@ -1,9 +1,11 @@
-#include <iostream>
 #include "Vida.h"
+#define VIDA_MAX 100
+#define ESPERA_PARA_REVIVIR 3
 
 Vida::Vida() {
     enJuego = true;
     revivir();
+    moriEnLaSimulacionActual = false;
 }
 
 void Vida::recibirDanio(int danio) {
@@ -12,7 +14,8 @@ void Vida::recibirDanio(int danio) {
     vida = nuevaVida;
   } else {
     matar();
-    esperaParaRevivir = 3;
+    esperaParaRevivir = ESPERA_PARA_REVIVIR;
+      moriEnLaSimulacionActual = true;
   }
 }
 
@@ -26,13 +29,10 @@ void Vida::matar() {
 
 void Vida::revivir() {
     if (enJuego) {
-        std::cout << "Revivi" << std::endl;
-        vida = 100;
+        vida = VIDA_MAX;
         esperaParaRevivir = 0;
-    } else {
-        std::cout << "Yo no revivi" << std::endl;
+        moriEnLaSimulacionActual = false;
     }
-
 }
 
 Vida::~Vida() {
@@ -45,6 +45,7 @@ bool Vida::estoyVivo() {
 bool Vida::puedoRevivir() {
     if (!estoyVivo()) {
         esperaParaRevivir -= 1;
+        moriEnLaSimulacionActual = false;
     }
     return (esperaParaRevivir == 0) && enJuego;
 }
@@ -52,4 +53,8 @@ bool Vida::puedoRevivir() {
 void Vida::salirDeJuego() {
     enJuego = false;
     matar();
+}
+
+bool Vida::moriRecientemente() {
+    return moriEnLaSimulacionActual;
 }

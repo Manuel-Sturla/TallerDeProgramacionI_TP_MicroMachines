@@ -6,7 +6,7 @@
 
 class Piedra: public Modificador {
   public:
-    Piedra(MundoBox2D *pista, float32 x, float32 y);
+    Piedra(MundoBox2D *pista, float32 x, float32 y, unsigned long idRecibido);
 
     void interactuar(Carro* unCarro);
 

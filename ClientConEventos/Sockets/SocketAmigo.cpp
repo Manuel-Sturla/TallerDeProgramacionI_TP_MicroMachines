@@ -1,6 +1,7 @@
 #include <sys/socket.h>
 #include <unistd.h>
 #include <cstring>
+#include <vector>
 #include "SocketAmigo.h"
 #include "SocketPeerException.h"
 
@@ -39,7 +40,7 @@ void SocketAmigo::enviar (std::string mensaje) {
 
 void SocketAmigo::recibir(std::string& answer, size_t lenght) {
     int newChars;
-    char buffer[lenght];
+    std::vector<char> buffer(lenght);
     size_t recieved = 0;
     while (recieved < lenght) {
         newChars = recv(fd, &buffer[recieved], lenght - recieved, 0);
@@ -50,7 +51,7 @@ void SocketAmigo::recibir(std::string& answer, size_t lenght) {
         }
         recieved += newChars;
     }
-    answer.assign(buffer, lenght);
+    answer.assign(buffer.data(), lenght);
 }
 
 void SocketAmigo::cerrar() {
