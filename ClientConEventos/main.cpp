@@ -8,6 +8,7 @@
 #include "Menu/Lobby.h"
 #include "Menu/Inicio.h"
 #include "Vista/HiloVisualizacion.h"
+#include "Sockets/Utilidades.h"
 
 int ejecutarInicio(int argc, char* argv[], std::string& host, std::string& servicio){
     QApplication app(argc, argv);
@@ -23,6 +24,43 @@ int ejecutarLobby(int argc, char* argv[], ServidorProxy& servidor){
     return QApplication::exec();
 }
 
+void menuConQT(int argc, char* argv[]) {
+    std::string host, servicio;
+    ejecutarInicio(argc, argv, host, servicio);
+    ServidorProxy servidor(host, servicio);
+    ejecutarLobby(argc, argv, servidor);
+    HiloVisualizacion partida(servidor);
+    partida.esperarInicioPartida();
+    partida.ejecutarPartida();
+}
+
+void menuSinQT(int argc, char *argv[]) {
+    ServidorProxy servidor(argv[1], argv[2]);
+    std::vector<std::string> partidas = servidor.obtenerPartidas();
+    std::cout<<"Partidas:\n";
+    for (int i = 0; i < partidas.size(); ++i) {
+        std::cout<<partidas[i]<<'\n';
+    }
+    std::string aux;
+    std::getline(std::cin, aux);
+    std::vector<std::string> partida = separar(aux, ',');
+    bool conectado = false;
+    for (int i = 0; i < partidas.size(); ++i) {
+        if(partida[0] == partidas[i]){
+            std::cout<<"AAAAAAAA\n";
+            servidor.elegirPartida(partida[0]);
+            conectado = true;
+        }
+    }
+    if(!conectado){
+        servidor.crearPartida(partida[0], partida[1]);
+        servidor.elegirPartida(partida[0]);
+    }
+    HiloVisualizacion part(servidor);
+    part.esperarInicioPartida();
+    part.ejecutarPartida();
+}
+
 int main(int argc, char* argv[]) {
     if(SDL_Init(SDL_INIT_VIDEO) != 0 || TTF_Init() == -1){
         SDL_Log("No pude incializar el SDL %s", SDL_GetError());
@@ -30,14 +68,9 @@ int main(int argc, char* argv[]) {
     } if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 ) {
         return 0;
     }
-    std::string host, servicio;
     try {
-        ejecutarInicio(argc, argv, host, servicio);
-        ServidorProxy servidor(host, servicio);
-        ejecutarLobby(argc, argv, servidor);
-        HiloVisualizacion partida(servidor);
-        partida.esperarInicioPartida();
-        partida.ejecutarPartida();
+//        menuConQT(argc, argv);
+        menuSinQT(argc, argv);
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';
         IMG_Quit();

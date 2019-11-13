@@ -22,7 +22,7 @@ renderizador("microMachines.exe", ANCHO_PANTALLA, ALTURA_PANTALLA, m) {
 
 void HiloVisualizacion::ejecutarPartida() {
     try{
-        Sonido sonido("../abba.wav");
+//        Sonido sonido("../abba.wav");
         while(keepTalking) {
             renderizador.limpiar();
             renderizador.copiarTodo();

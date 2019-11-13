@@ -8,4 +8,5 @@
 void ComandoAcelerar::ejecutar() {
     std::cout<<"Acelere\n";
     servidor.ejecutarMovimiento("acelerar");
+    std::cout<<"Deje de acelerar\n";
 }

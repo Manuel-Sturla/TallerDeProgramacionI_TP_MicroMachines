@@ -10,10 +10,9 @@ Sonido::Sonido(std::string archivo) {
     if(sonido == nullptr){
         throw  ExcepcionConPos(__FILE__, __LINE__, "Archivo de sonido no encontrado");
     }
-    Mix_PlayMusic( sonido, -1 );
+    Mix_PlayMusic( sonido, 1 );
 }
 
 Sonido::~Sonido() {
     Mix_FreeMusic(sonido);
-
 }
