@@ -6,11 +6,11 @@
 #define OPENGLTEST_COMANDOCERRAR_H
 
 
-#include "Comando.h"
+#include "ComandoTeclado.h"
 
-class ComandoCerrar : public Comando {
+class ComandoCerrar : public ComandoTeclado {
 public:
-    explicit ComandoCerrar(ServidorProxy &servidor) : Comando(servidor) {}
+    explicit ComandoCerrar(ServidorProxy &servidor) : ComandoTeclado(servidor) {}
 
     void ejecutar() override;
 };

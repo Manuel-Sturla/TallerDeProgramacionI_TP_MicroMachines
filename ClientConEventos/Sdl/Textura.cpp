@@ -23,6 +23,9 @@ Textura::Textura(Textura&& text) noexcept : posicion(text.posicion) {
 }
 
 bool Textura::copiar(SDL_Renderer *renderizador, Camara& camara) {
+    if(posicion == nullptr){
+        throw ExcepcionConPos(__FILE__, __LINE__, "Posicion invalida");
+    }
     if(!camara.estaEnRango(posicion->getPosicion())){
         return true;
     }

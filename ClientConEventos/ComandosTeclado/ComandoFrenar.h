@@ -6,11 +6,11 @@
 #define OPENGLTEST_COMANDOFRENAR_H
 
 
-#include "Comando.h"
+#include "ComandoTeclado.h"
 
-class ComandoFrenar : public Comando {
+class ComandoFrenar : public ComandoTeclado {
 public:
-    explicit ComandoFrenar(ServidorProxy &servidor) : Comando(servidor) {}
+    explicit ComandoFrenar(ServidorProxy &servidor) : ComandoTeclado(servidor) {}
 
     void ejecutar() override;
 };

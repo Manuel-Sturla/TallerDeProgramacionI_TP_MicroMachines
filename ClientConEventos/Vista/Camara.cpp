@@ -17,8 +17,8 @@ SDL_Rect Camara::obtenerPosImpresion(pos_t posTextura) {
         SDL_Rect posImpresion;
         posImpresion.x = (int)posTextura.x;
         posImpresion.y = (int)posTextura.y;
-        posImpresion.h = (int)posTextura.w;
-        posImpresion.w = (int)posTextura.h;
+        posImpresion.h = (int)posTextura.w*aumento;
+        posImpresion.w = (int)posTextura.h*aumento;
         return posImpresion;
     }
     pos_t aux = posAuto->getPosicion();
