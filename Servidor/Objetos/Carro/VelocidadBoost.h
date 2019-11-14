@@ -5,7 +5,6 @@
 
 class VelocidadBoost: public Velocidad {
   private:
-    float32 velocidadBase;
     int32 duracion;
   public:
     VelocidadBoost(float32 velocidadBase);

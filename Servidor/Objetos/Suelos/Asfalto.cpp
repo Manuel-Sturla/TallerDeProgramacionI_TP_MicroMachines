@@ -1,7 +1,7 @@
 #include "Asfalto.h"
 
 Asfalto::Asfalto() {
-  coeficienteDeRozamiento = 0.3f;
+  coeficienteDeRozamiento = 0.1f;
   id = "Asfalto";
 }
 

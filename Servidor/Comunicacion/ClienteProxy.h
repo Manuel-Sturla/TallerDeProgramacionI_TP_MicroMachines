@@ -18,6 +18,7 @@ class ClienteProxy{
     Carro *miCarro;
     std::string enPartida;
     bool enJuego;
+    std::mutex mutex;
     size_t idCliente;
 public:
     explicit ClienteProxy(SocketAmigo socketCliente);

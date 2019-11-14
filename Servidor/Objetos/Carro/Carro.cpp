@@ -30,16 +30,15 @@ void Carro::agregarseA(MundoBox2D *pista, float32 x, float32 y) {
 }
 
 void Carro::ejecutarAccion(Accion *unaAccion) {
-  unaAccion -> ejecutar(cuerpo, &estadoVelocidad, anguloDeGiro);
+    unaAccion -> ejecutar(cuerpo, &estadoVelocidad, anguloDeGiro);
 }
 
 void Carro::actualizar() {
-  b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
-  float32 factorDeFuerza = -2 * velocidad.Normalize();
-  agarre.actualizar(cuerpo);
-  cuerpo -> ApplyForce(coeficienteDeRozamiento * factorDeFuerza * velocidad, cuerpo -> GetWorldCenter(), true);
-  visibilidad.actualizar();
-  estadoVelocidad.actualizar(cuerpo);
+    b2Vec2 fuerza(-coeficienteDeRozamiento * cuerpo->GetLinearVelocity().x, -coeficienteDeRozamiento *cuerpo->GetLinearVelocity().y);
+    cuerpo -> ApplyLinearImpulseToCenter(fuerza, true);
+    agarre.actualizar(cuerpo);
+    visibilidad.actualizar();
+    estadoVelocidad.actualizar(cuerpo);
 }
 
 void Carro::aplicarFriccion(float32 coeficienteDeRozamiento) {
@@ -63,8 +62,8 @@ void Carro::curar(int aumentoDeVida) {
 }
 
 void Carro::reducirVelocidad(float32 factor) {
-  b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
-  cuerpo -> SetLinearVelocity(factor * velocidad);
+    b2Vec2 fuerza(-factor * cuerpo->GetLinearVelocity().x, -factor *cuerpo->GetLinearVelocity().y);
+    cuerpo -> ApplyLinearImpulseToCenter(fuerza, true);
 }
 
 void Carro::recibirBoost() {

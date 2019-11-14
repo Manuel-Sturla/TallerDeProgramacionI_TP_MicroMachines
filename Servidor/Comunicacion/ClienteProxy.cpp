@@ -24,12 +24,12 @@ void ClienteProxy::desconectar() {
 
 }
 void ClienteProxy::ejecutarAccion() {
-    if (!movimientos.empty()){
-      miCarro->ejecutarAccion(movimientos.front().get());
-      movimientos.pop();
+    std::unique_lock<std::mutex> lock (mutex);
+    while(!movimientos.empty()) {
+        miCarro->ejecutarAccion(movimientos.front().get());
+        movimientos.pop();
     }
 }
-
 
 void ClienteProxy::enviar(const std::string &mensaje) {
     protocolo.enviar(mensaje);
@@ -38,6 +38,7 @@ void ClienteProxy::enviar(const std::string &mensaje) {
 std::string ClienteProxy::recibir() {
     return protocolo.recibir();
 }
+
 void ClienteProxy::encolarAccion(Accion* accion) {
     movimientos.push(std::unique_ptr<Accion> (accion));
 }
@@ -54,7 +55,6 @@ eventosAEnviar(std::move(otro.eventosAEnviar)){
     miCarro = otro.miCarro;
     enPartida = otro.enPartida;
     enJuego = otro.enJuego;
-
     enPartida = "";
     enJuego = false;
     otro.miCarro = nullptr;
