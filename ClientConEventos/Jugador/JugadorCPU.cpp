@@ -18,8 +18,13 @@ JugadorCPU::JugadorCPU(const std::string &rutaScript) : Jugador(true), interpret
 int JugadorCPU::obtenerComando() {
     //Hace un sleep para que tarde en dar una nueva accion
     std::this_thread::sleep_for(std::chrono::milliseconds(1000/60));
+    //Si todavia no se seteo mi auto devuelvo 0
+    if (!miAuto){
+        return 0;
+    }
     std::vector<std::unique_ptr<ParametroLua>> params;
-    params.emplace_back(new CadenaLua ("0-0"));
+    pos_t pos = miAuto->getPosicion()->getPosicion();
+    params.emplace_back(new CadenaLua (std::to_string(std::floor(pos.x)) + "," + std::to_string(std::floor(pos.y))));
     std::vector<std::unique_ptr<ParametroLua>> ret = interprete.ejecutarFuncion(FUNC_NUEVA_ACCION, params);
     std::string valor = ret[0]->obtenerValor().cadena;
     if ( valor == "A"){
@@ -48,5 +53,9 @@ void JugadorCPU::ponerMapa(std::vector<std::string> &comando) {
     std::vector<std::string> vars = {nombreTabla};
     interprete.ejecutarFuncion(FUNC_NUEVO_MAPA, vars);
     interprete.ejecutarFuncion("MostrarMapa");
+}
+
+void JugadorCPU::ponerAuto(Desplazable* unAuto) {
+    miAuto = unAuto;
 }
 

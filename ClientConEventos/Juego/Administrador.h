@@ -31,7 +31,7 @@ public:
 
     void crearPista(std::vector<std::string> &planos);
 
-    void crearMiAuto(std::vector<std::string> &evento);
+    Desplazable * crearMiAuto(std::vector<std::string> &evento);
 
     virtual ~Administrador();
 };
