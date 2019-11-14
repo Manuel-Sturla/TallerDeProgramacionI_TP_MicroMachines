@@ -49,6 +49,10 @@ void HiloReceptor::esperarInicioPartida() {
         jug->ponerMapa(evento);
     }
     evento = servidor.obtenerMiAuto();
-    admin.crearMiAuto(evento);
+    Desplazable* miAuto = admin.crearMiAuto(evento);
+    if (jugador->esCpu()){
+        std::shared_ptr<JugadorCPU> jug = std::dynamic_pointer_cast<JugadorCPU>(jugador);
+        jug->ponerAuto(miAuto);
+    }
     enJuego = true;
 }

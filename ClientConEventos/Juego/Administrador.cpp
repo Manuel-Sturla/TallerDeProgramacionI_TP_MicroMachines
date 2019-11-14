@@ -43,11 +43,12 @@ void Administrador::crearPista(std::vector<std::string> &planos) {
     pista.crear(planos);
 }
 
-void Administrador::crearMiAuto(std::vector<std::string> &evento) {
+Desplazable * Administrador::crearMiAuto(std::vector<std::string> &evento) {
     evento.erase(evento.begin());
     desplazables.emplace(evento[0], new Auto(renderizador, 1));
     auto it = desplazables.find(evento[0]);
     renderizador.configurarCamara(it->second->getPosicion());
+    return it->second;
 }
 
 Administrador::~Administrador() {
