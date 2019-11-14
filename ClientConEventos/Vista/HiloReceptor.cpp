@@ -43,11 +43,11 @@ void HiloReceptor::esperarInicioPartida() {
         evento = servidor.obtenerEvento();
     }
     evento = servidor.obtenerMapa();
+    admin.crearPista(evento);
     if (jugador->esCpu()){
         std::shared_ptr<JugadorCPU> jug = std::static_pointer_cast<JugadorCPU>(jugador);
         jug->ponerMapa(evento);
     }
-    admin.crearPista(evento);
     evento = servidor.obtenerMiAuto();
     admin.crearMiAuto(evento);
     enJuego = true;
