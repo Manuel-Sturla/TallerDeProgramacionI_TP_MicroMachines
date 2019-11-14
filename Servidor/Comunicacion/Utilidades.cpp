@@ -1,9 +1,6 @@
-//
-// Created by manfer on 31/10/19.
-//
-
 #include <sstream>
 #include "Utilidades.h"
+
 std::string unir(const std::vector<std::string>& elementos, char separador){
     std::string retorno;
     for (auto& cad : elementos){

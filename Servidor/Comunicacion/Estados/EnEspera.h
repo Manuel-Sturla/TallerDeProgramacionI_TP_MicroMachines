@@ -1,7 +1,3 @@
-//
-// Created by manfer on 7/11/19.
-//
-
 #ifndef SERVIDOR_ENESPERA_H
 #define SERVIDOR_ENESPERA_H
 

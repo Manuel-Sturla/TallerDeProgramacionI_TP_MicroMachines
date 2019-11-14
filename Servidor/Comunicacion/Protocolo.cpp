@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Protocolo.h"
 
 void Protocolo::enviar(const std::string &mensaje) {

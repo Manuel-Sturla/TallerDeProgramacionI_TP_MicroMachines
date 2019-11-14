@@ -6,7 +6,7 @@
 
 class Frenar: public Accion {
 public:
-    void ejecutar(b2Body* body, EstadoVelocidad *estadoVelocidad, float32 angulo);
+    void ejecutar(b2Body& body, EstadoVelocidad &estadoVelocidad, float32 angulo);
 };
 
 

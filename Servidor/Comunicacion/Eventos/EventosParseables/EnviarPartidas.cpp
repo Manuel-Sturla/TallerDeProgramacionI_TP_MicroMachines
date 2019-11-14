@@ -1,11 +1,9 @@
-
 #include "EnviarPartidas.h"
 #include "../../Utilidades.h"
 
 #define EVENTO_ENVIAR_PARTIDAS "ObtenerPartidas"
 
 EnviarPartidas::EnviarPartidas(HashProtegido &partidas) : partidas(partidas){
-
 }
 
 std::string EnviarPartidas::obtenerParseado() {

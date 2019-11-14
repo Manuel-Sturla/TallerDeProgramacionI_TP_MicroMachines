@@ -1,7 +1,3 @@
-//
-// Created by manfer on 5/11/19.
-//
-
 #ifndef SERVIDOR_ENJUEGO_H
 #define SERVIDOR_ENJUEGO_H
 

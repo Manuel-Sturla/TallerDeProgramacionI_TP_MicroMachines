@@ -30,7 +30,7 @@ void Carro::agregarseA(MundoBox2D *pista, float32 x, float32 y) {
 }
 
 void Carro::ejecutarAccion(Accion *unaAccion) {
-    unaAccion -> ejecutar(cuerpo, &estadoVelocidad, anguloDeGiro);
+    unaAccion -> ejecutar(*cuerpo, estadoVelocidad, anguloDeGiro);
 }
 
 void Carro::actualizar() {
@@ -38,7 +38,7 @@ void Carro::actualizar() {
     cuerpo -> ApplyLinearImpulseToCenter(fuerza, true);
     agarre.actualizar(cuerpo);
     visibilidad.actualizar();
-    estadoVelocidad.actualizar(cuerpo);
+    estadoVelocidad.actualizar();
 }
 
 void Carro::aplicarFriccion(float32 coeficienteDeRozamiento) {

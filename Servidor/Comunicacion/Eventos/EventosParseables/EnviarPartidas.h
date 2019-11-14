@@ -1,7 +1,6 @@
 #ifndef SERVIDOR_ENVIARPARTIDAS_H
 #define SERVIDOR_ENVIARPARTIDAS_H
 
-
 #include "../../../Partida/HashProtegido.h"
 #include "EventoParseable.h"
 

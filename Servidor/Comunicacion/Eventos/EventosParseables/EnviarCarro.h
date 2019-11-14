@@ -1,7 +1,3 @@
-//
-// Created by hugo on 11/11/19.
-//
-
 #ifndef _ENVIARCARRO_H_
 #define _ENVIARCARRO_H_
 

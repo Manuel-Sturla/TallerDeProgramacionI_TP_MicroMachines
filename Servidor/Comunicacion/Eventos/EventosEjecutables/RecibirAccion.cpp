@@ -1,7 +1,3 @@
-//
-// Created by manfer on 5/11/19.
-//
-
 #include "RecibirAccion.h"
 #include "../../../Acciones/Acelerar.h"
 #include "../../../Acciones/Frenar.h"

@@ -5,7 +5,6 @@
 
 HiloEnviador::HiloEnviador(ClienteProxy &clienteProxy, std::atomic<bool> &continuar)
         : cliente(clienteProxy), continuar(continuar){
-
 }
 
 void HiloEnviador::run() {

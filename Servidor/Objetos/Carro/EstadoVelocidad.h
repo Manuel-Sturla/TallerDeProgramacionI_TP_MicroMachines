@@ -15,17 +15,17 @@ class EstadoVelocidad {
     std::unordered_map<std::string, Velocidad*> estados;
     std::string estadoActual;
 
-    void aplicarFuerza(b2Body *cuerpo, float32 factorDeFuerza);
+    void aplicarFuerza(b2Body &cuerpo, float32 factorDeFuerza);
   public:
     explicit EstadoVelocidad(float32 velocidadMaxima);
 
-    void acelerar(b2Body *cuerpo);
+    void acelerar(b2Body &cuerpo);
 
-    void frenar(b2Body *cuerpo);
+    void frenar(b2Body &cuerpo);
 
     void boost();
 
-    void actualizar(b2Body *cuerpo);
+    void actualizar();
 
     bool alcanzoLaVelocidadMaxima(b2Vec2 velocidadActual);
 

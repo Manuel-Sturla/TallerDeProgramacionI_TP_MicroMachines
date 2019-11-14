@@ -1,7 +1,6 @@
 #ifndef SERVIDOR_HILOENVIADOR_H
 #define SERVIDOR_HILOENVIADOR_H
 
-
 #include <atomic>
 #include "../Hilo.h"
 #include "ColaBloqueante.h"

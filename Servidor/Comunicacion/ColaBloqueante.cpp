@@ -1,7 +1,3 @@
-//
-// Created by manfer on 10/11/19.
-//
-
 #include "ColaBloqueante.h"
 
 void ColaBloqueante::encolar(EventoParseable *evento) {

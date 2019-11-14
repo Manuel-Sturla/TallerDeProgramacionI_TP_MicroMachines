@@ -1,7 +1,3 @@
-//
-// Created by diego on 7/11/19.
-//
-
 #ifndef SERVIDOR_OBTENERPARTIDAS_H
 #define SERVIDOR_OBTENERPARTIDAS_H
 

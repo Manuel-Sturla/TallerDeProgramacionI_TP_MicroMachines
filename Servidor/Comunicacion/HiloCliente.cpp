@@ -1,7 +1,3 @@
-//
-// Created by manfer on 5/11/19.
-//
-
 #include "HiloCliente.h"
 #include "Sockets/SocketPeerException.h"
 

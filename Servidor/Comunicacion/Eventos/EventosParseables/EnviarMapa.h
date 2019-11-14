@@ -1,7 +1,3 @@
-//
-// Created by manfer on 10/11/19.
-//
-
 #ifndef SERVIDOR_ENVIARMAPA_H
 #define SERVIDOR_ENVIARMAPA_H
 

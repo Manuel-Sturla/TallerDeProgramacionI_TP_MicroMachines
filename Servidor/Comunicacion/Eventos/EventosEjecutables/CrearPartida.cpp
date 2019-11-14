@@ -1,7 +1,3 @@
-//
-// Created by manfer on 5/11/19.
-//
-
 #include "CrearPartida.h"
 #include "../../Utilidades.h"
 #include "../EventosParseables/PartidaInvalida.h"

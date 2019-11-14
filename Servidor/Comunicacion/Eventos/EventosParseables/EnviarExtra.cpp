@@ -2,7 +2,6 @@
 #include "../../Utilidades.h"
 
 #define EVENTO_POS_EXTRA "posicionarExtra"
-
 #define EVENTO_EXTRA_MURIO "eliminar"
 
 EnviarExtra::EnviarExtra(std::unique_ptr<Modificador> &modificable) {

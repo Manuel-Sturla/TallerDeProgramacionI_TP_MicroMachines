@@ -1,7 +1,3 @@
-//
-// Created by manfer on 5/11/19.
-//
-
 #ifndef SERVIDOR_CREARPARTIDA_H
 #define SERVIDOR_CREARPARTIDA_H
 

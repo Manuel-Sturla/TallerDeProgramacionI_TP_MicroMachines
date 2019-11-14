@@ -1,7 +1,3 @@
-//
-// Created by diego on 7/11/19.
-//
-
 #include "ObtenerPartidas.h"
 #include "../../../Partida/HashProtegido.h"
 #include "../EventosParseables/EnviarPartidas.h"

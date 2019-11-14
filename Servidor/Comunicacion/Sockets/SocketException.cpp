@@ -1,7 +1,3 @@
-//
-// Created by manfer on 31/10/19.
-//
-
 #include "SocketException.h"
 
 SocketException::SocketException(const std::string &mensaje, std::string error, std::string archivo, int linea):

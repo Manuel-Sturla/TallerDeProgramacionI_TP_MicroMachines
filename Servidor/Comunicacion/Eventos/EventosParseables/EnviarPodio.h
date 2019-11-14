@@ -1,8 +1,6 @@
 #ifndef _ENVIARPODIO_H_
 #define _ENVIARPODIO_H_
 
-
-
 #include "../../../Partida/Podio.h"
 #include "EventoParseable.h"
 
