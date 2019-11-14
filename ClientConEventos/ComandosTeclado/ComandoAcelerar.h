@@ -6,11 +6,11 @@
 #define OPENGLTEST_COMANDOACELERAR_H
 
 
-#include "Comando.h"
+#include "ComandoTeclado.h"
 
-class ComandoAcelerar : public Comando {
+class ComandoAcelerar : public ComandoTeclado {
 public:
-    explicit ComandoAcelerar(ServidorProxy &servidor) : Comando(servidor) {}
+    explicit ComandoAcelerar(ServidorProxy &servidor) : ComandoTeclado(servidor) {}
 
     void ejecutar() override;
 };

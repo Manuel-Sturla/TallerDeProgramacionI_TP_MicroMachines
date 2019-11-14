@@ -6,11 +6,11 @@
 #define OPENGLTEST_COMANDODERECHA_H
 
 
-#include "Comando.h"
+#include "ComandoTeclado.h"
 
-class ComandoDerecha : public Comando {
+class ComandoDerecha : public ComandoTeclado {
 public:
-    explicit ComandoDerecha(ServidorProxy &servidor) : Comando(servidor) {}
+    explicit ComandoDerecha(ServidorProxy &servidor) : ComandoTeclado(servidor) {}
 
     void ejecutar() override;
 };

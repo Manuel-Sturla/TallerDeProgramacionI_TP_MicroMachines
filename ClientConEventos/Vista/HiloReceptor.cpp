@@ -10,12 +10,12 @@
 
 HiloReceptor::HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor,\
 bool &keepTalking,bool &enJuego, std::mutex& m) : keepTalking(keepTalking), servidor(servidor),\
-admin(renderizador, m), enJuego(enJuego) {}
+admin(renderizador, m, enJuego), enJuego(enJuego) {}
 
 void HiloReceptor::run() {
     try {
         esperarInicioPartida();
-        while(keepTalking){
+        while(keepTalking && enJuego){
             std::vector<std::string> eventos;
             eventos = servidor.obtenerEventosJuego();
             admin.ejecutarEventos(eventos);
@@ -38,7 +38,6 @@ void HiloReceptor::esperarInicioPartida() {
     std::vector<std::string> evento;
     evento = servidor.obtenerEvento();
     while(evento[0] != "inicioPartida" && keepTalking){
-        std::cout<<evento[0]<<'\n';
         admin.actualizarJugadores(evento);
         evento = servidor.obtenerEvento();
     }

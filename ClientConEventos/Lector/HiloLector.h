@@ -8,11 +8,11 @@
 
 #include "../Hilo.h"
 #include "LectorTeclado.h"
-#include "../Comandos/AdministradorComandos.h"
+#include "../ComandosTeclado/AdministradorComandosTeclado.h"
 
 class HiloLector : public Hilo {
 private:
-    AdministradorComandos comandos;
+    AdministradorComandosTeclado comandos;
     bool& keepTalking;
 
 public:

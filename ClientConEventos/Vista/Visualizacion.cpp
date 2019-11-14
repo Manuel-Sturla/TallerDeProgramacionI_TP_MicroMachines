@@ -23,7 +23,7 @@ renderizador("microMachines.exe", ANCHO_PANTALLA, ALTURA_PANTALLA, m) {
 void Visualizacion::ejecutarPartida() {
     try{
 //        Sonido sonido("../abba.wav");
-        while(keepTalking) {
+        while(keepTalking && enJuego) {
             renderizador.limpiar();
             renderizador.copiarTodo();
             renderizador.imprimir(20);

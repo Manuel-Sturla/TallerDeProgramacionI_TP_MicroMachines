@@ -8,17 +8,17 @@
 
 #include <map>
 #include <SDL2/SDL_keycode.h>
-#include "Comando.h"
+#include "ComandoTeclado.h"
 #include "ComandoCerrar.h"
 
-class AdministradorComandos {
+class AdministradorComandosTeclado {
 private:
-    std::map<SDL_Keycode, Comando*> comandos;
+    std::map<SDL_Keycode, ComandoTeclado*> comandos;
     ComandoCerrar cerrar;
 public:
-    explicit AdministradorComandos(ServidorProxy& servidor);
+    explicit AdministradorComandosTeclado(ServidorProxy& servidor);
 
-    virtual ~AdministradorComandos();
+    virtual ~AdministradorComandosTeclado();
 
     void ejecutar(SDL_Keycode &comando);
 

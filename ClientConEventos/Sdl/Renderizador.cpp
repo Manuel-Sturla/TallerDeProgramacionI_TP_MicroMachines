@@ -49,7 +49,7 @@ void Renderizador::configurarCamara(Posicion* posicion) {
     camara.setAuto(posicion);
 }
 
-size_t Renderizador::agregarTexto(const std::string &texto, Posicion *posicion) {
+size_t Renderizador::agregarTexto(const std::string& texto, Posicion *posicion) {
     TTF_Font* fuente = TTF_OpenFont("../fuente.ttf", 24);
     SDL_Color color = {255, 255, 255};
     SDL_Surface* superficie = TTF_RenderText_Solid(fuente, texto.c_str(), color);

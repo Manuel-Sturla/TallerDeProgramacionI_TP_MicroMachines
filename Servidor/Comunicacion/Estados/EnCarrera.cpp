@@ -3,6 +3,7 @@
 #include "EnCarrera.h"
 #include "../Utilidades.h"
 #include "../Eventos/EventosParseables/FinSimulacion.h"
+#include "../Eventos/EventosParseables/EnviarPodio.h"
 
 EnCarrera::EnCarrera(Pista &pista, HashProtegidoClientes &clientes):
     pista(pista), clientes(clientes), podio(1){ //CANTIDAD DE VUELTAS HARDCODEADA
@@ -17,7 +18,12 @@ void EnCarrera::ejecutar() {
     pista.simular();
     actualizarEventos();
     podio.actualizarPodio();
-    podio.analizarVictoria();
+    if(podio.analizarVictoria()){
+        std::shared_ptr<EventoParseable> eventoPodio (new EnviarPodio(podio));
+        for (auto& cliente : clientes.obtenerClaves()){
+            clientes.obtener(cliente).encolarEvento(eventoPodio);
+        }
+    }
     enviarPosiciones();
 }
 

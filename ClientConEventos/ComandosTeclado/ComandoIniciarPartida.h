@@ -6,11 +6,11 @@
 #define OPENGLTEST_COMANDOINICIARPARTIDA_H
 
 
-#include "Comando.h"
+#include "ComandoTeclado.h"
 
-class ComandoIniciarPartida : public Comando {
+class ComandoIniciarPartida : public ComandoTeclado {
 public:
-    explicit ComandoIniciarPartida(ServidorProxy &servidor) : Comando(servidor) {}
+    explicit ComandoIniciarPartida(ServidorProxy &servidor) : ComandoTeclado(servidor) {}
 
     void ejecutar() override;
 };

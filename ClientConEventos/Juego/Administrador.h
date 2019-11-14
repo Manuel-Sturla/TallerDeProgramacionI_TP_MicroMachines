@@ -9,24 +9,21 @@
 #include <map>
 #include "Desplazable.h"
 #include "Pista.h"
+#include "../ComandosVisualizacion/ComandoVisualizacion.h"
 
 class Administrador {
 private:
     std::mutex& m;
-    Renderizador& renderizador;
+    std::map<std::string, ComandoVisualizacion*> comandos;
     std::map<std::string, Desplazable*> desplazables;
+    Renderizador& renderizador;
     Pista pista;
     Posicion posTexto;
     size_t idTexto;
-
-    void ejecutarMorir(std::vector<std::string> &eventos);
-    void ejecutarPosicionarExtra(std::vector<std::string> &eventos);
-    void ejecutarModificar(std::vector<std::string> &eventos);
-    void ejecutarPosicionarAuto(std::vector<std::string> &vector);
-    void ejecutarEliminar(std::vector<std::string> &eventos);
+    bool& keepTalking;
 
 public:
-    explicit Administrador(Renderizador& renderizador, std::mutex& m);
+    explicit Administrador(Renderizador& renderizador, std::mutex& m, bool& keepTalking);
 
     void ejecutarEventos(std::vector<std::string>& eventos);
 
@@ -35,6 +32,8 @@ public:
     void crearPista(std::vector<std::string> &planos);
 
     void crearMiAuto(std::vector<std::string> &evento);
+
+    virtual ~Administrador();
 };
 
 

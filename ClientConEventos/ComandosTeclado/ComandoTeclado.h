@@ -8,15 +8,15 @@
 
 #include "../Sockets/ServidorProxy.h"
 
-class Comando {
+class ComandoTeclado {
 protected:
     ServidorProxy& servidor;
 public:
-    explicit Comando(ServidorProxy &servidor) : servidor(servidor) {}
+    explicit ComandoTeclado(ServidorProxy &servidor) : servidor(servidor) {}
 
     virtual void ejecutar() = 0;
 
-    virtual ~Comando() = default;
+    virtual ~ComandoTeclado() = default;
 };
 
 
