@@ -14,7 +14,7 @@ class Agarre {
   public:
     Agarre(float agarre);
 
-    void actualizar(b2Body *cuerpo);
+    void actualizar(b2Body& cuerpo);
 
     void reducirAgarre();
 

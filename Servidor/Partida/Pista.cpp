@@ -25,14 +25,14 @@ Pista::~Pista() {
 void Pista::agregarRecta(std::string &material, float32 x, float32 y,
                          float32 angulo, int numeroDeSuelo) {
     if (material == "Asfalto") {
-        BloquesDeasfalto.emplace(std::pair<int, std::unique_ptr<Suelo>>(numeroDeSuelo, new Recta(&mundoBox2D, darMaterial(material), x, y, angulo, numeroDeSuelo) ));
+        BloquesDeasfalto.emplace(std::pair<int, std::unique_ptr<Suelo>>(numeroDeSuelo, new Recta(mundoBox2D, darMaterial(material), x, y, angulo, numeroDeSuelo) ));
     } else {
-        rectas.emplace_back(&mundoBox2D, darMaterial(material), x, y, angulo, numeroDeSuelo);
+        rectas.emplace_back(mundoBox2D, darMaterial(material), x, y, angulo, numeroDeSuelo);
     }
 }
 
 void Pista::agregarCurva(float32 x, float32 y, float32 angulo, int numeroDeSuelo) {
-    BloquesDeasfalto.emplace(std::pair<int, Suelo*>(numeroDeSuelo, new Curva(&mundoBox2D, &asfalto, &pasto, x, y, angulo, numeroDeSuelo)));
+    BloquesDeasfalto.emplace(std::pair<int, Suelo*>(numeroDeSuelo, new Curva(mundoBox2D, &asfalto, &pasto, x, y, angulo, numeroDeSuelo)));
 }
 
 void Pista::simular() {
@@ -40,7 +40,7 @@ void Pista::simular() {
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
         if (!itCarros->esValido()) {
             int numeroDeSuelo = itCarros->obtenerSueloParaRevivir();
-            BloquesDeasfalto[numeroDeSuelo]->revivirCarro(&mundoBox2D,
+            BloquesDeasfalto[numeroDeSuelo]->revivirCarro(mundoBox2D,
                                                           &*itCarros);
         }
     }
@@ -85,7 +85,7 @@ Carro *Pista::crearCarro(int velocidad, float32 anguloEnRadianes, int agarre,
                          size_t id) {
     std::unique_lock<std::mutex> lock (mutex);
     b2Vec2 posicion = posicionesInicio.front();
-    carros.emplace_back(&mundoBox2D, velocidad, anguloEnRadianes, agarre, posicion.x, posicion.y, id);
+    carros.emplace_back(mundoBox2D, velocidad, anguloEnRadianes, agarre, posicion.x, posicion.y, id);
     posicionesInicio.erase(posicionesInicio.begin());
     return &carros.back();
 }
@@ -103,5 +103,5 @@ void Pista::inicializarPodio(Podio *podio) {
 }
 
 Pista::Pista() {
-    extras.emplace_back(new Barro(&mundoBox2D, 4,4, extras.size())); //El barro interactua con el segundo carro y por eso manda morir
+    extras.emplace_back(new Barro(mundoBox2D, 4,4, extras.size())); //El barro interactua con el segundo carro y por eso manda morir
 }

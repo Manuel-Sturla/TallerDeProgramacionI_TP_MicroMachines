@@ -3,7 +3,7 @@
 #include "../../Acciones/GiroAIzquierda.h"
 #include <iostream>
 
-Carro::Carro(MundoBox2D *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y, size_t idCliente):
+Carro::Carro(MundoBox2D &pista, float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y, size_t idCliente):
 estadoVelocidad(velocidadMaxima), agarre(agarre) {
   this -> anguloDeGiro = anguloDeGiro;
   idConductor = std::to_string(idCliente);
@@ -12,13 +12,13 @@ estadoVelocidad(velocidadMaxima), agarre(agarre) {
   coeficienteDeRozamiento = 0;
 }
 
-void Carro::agregarseA(MundoBox2D *pista, float32 x, float32 y) {
+void Carro::agregarseA(MundoBox2D &pista, float32 x, float32 y) {
     if(!vida.estoyVivo()) {
         vida.revivir();
     }
     bodyDef.type = b2_dynamicBody;
     bodyDef.position.Set(x, y);
-    cuerpo = pista -> agregarObjeto(&bodyDef);
+    cuerpo = pista.agregarObjeto(&bodyDef);
     cuerpo -> SetUserData(this);
     b2PolygonShape dynamicBox;
     dynamicBox.SetAsBox(0.5f, 0.5f);
@@ -29,14 +29,14 @@ void Carro::agregarseA(MundoBox2D *pista, float32 x, float32 y) {
     cuerpo -> CreateFixture(&fixtureDef);
 }
 
-void Carro::ejecutarAccion(Accion *unaAccion) {
-    unaAccion -> ejecutar(*cuerpo, estadoVelocidad, anguloDeGiro);
+void Carro::ejecutarAccion(Accion &unaAccion) {
+    unaAccion.ejecutar(*cuerpo, estadoVelocidad, anguloDeGiro);
 }
 
 void Carro::actualizar() {
     b2Vec2 fuerza(-coeficienteDeRozamiento * cuerpo->GetLinearVelocity().x, -coeficienteDeRozamiento *cuerpo->GetLinearVelocity().y);
     cuerpo -> ApplyLinearImpulseToCenter(fuerza, true);
-    agarre.actualizar(cuerpo);
+    agarre.actualizar(*cuerpo);
     visibilidad.actualizar();
     estadoVelocidad.actualizar();
 }
@@ -117,7 +117,7 @@ int Carro::obtenerSueloParaRevivir() {
     return posicion.obtenerSueloParaRevivir();
 }
 
-void Carro::revivir(MundoBox2D *pista, float32 x, float32 y) {
+void Carro::revivir(MundoBox2D &pista, float32 x, float32 y) {
     if (!vida.estoyVivo() && vida.puedoRevivir()) {
         agregarseA(pista, x, y);
     }

@@ -27,9 +27,9 @@ class Carro: public Objeto {
 
   public:
 
-    Carro(MundoBox2D *pista, float32 velocidadMaxima, float32 anguloDeGiro, float32 agarre, float32 x,  float32 y, size_t idCliente);
+    Carro(MundoBox2D &mundoBox2D, float32 velocidadMaxima, float32 anguloDeGiro, float32 agarre, float32 x,  float32 y, size_t idCliente);
 
-    void agregarseA(MundoBox2D *pista, float32 x, float32 y);
+    void agregarseA(MundoBox2D &mundoBox2D, float32 x, float32 y);
 
     int obtenerSueloParaRevivir();
 
@@ -37,9 +37,9 @@ class Carro: public Objeto {
 
     void borrar();
 
-    void ejecutarAccion(Accion* unaAccion);
+    void ejecutarAccion(Accion& unaAccion);
 
-    void revivir(MundoBox2D *pista, float32 x, float32 y);
+    void revivir(MundoBox2D &pista, float32 x, float32 y);
 
     void aplicarFriccion(float32 coeficienteDeRozamiento);
 

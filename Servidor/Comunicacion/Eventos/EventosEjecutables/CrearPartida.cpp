@@ -1,7 +1,6 @@
 #include "CrearPartida.h"
 #include "../../Utilidades.h"
 #include "../EventosParseables/PartidaInvalida.h"
-#include "../EventosParseables/NoSePudoUnir.h"
 #include "../../../PartidaLlenaExcepcion.h"
 
 #define MSJ_PARTIDA_INVALIDA "Partida Ya existente"

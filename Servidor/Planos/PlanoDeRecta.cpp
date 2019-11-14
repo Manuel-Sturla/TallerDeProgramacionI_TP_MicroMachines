@@ -13,8 +13,8 @@ PlanoDeRecta::PlanoDeRecta(std::string material, int x, int y, int tipo,
     this -> numero = numero;
 }
 
-void PlanoDeRecta::agregarSueloA(Pista *mapa) {
-    mapa->agregarRecta(material, posicionX, posicionY, obtenerAngulo(), numero);
+void PlanoDeRecta::agregarSueloA(Pista &mapa) {
+    mapa.agregarRecta(material, posicionX, posicionY, obtenerAngulo(), numero);
 }
 
 PlanoDeRecta::~PlanoDeRecta() {

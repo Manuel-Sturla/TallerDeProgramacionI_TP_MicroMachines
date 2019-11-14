@@ -26,7 +26,7 @@ void ClienteProxy::desconectar() {
 void ClienteProxy::ejecutarAccion() {
     std::unique_lock<std::mutex> lock (mutex);
     while(!movimientos.empty()) {
-        miCarro->ejecutarAccion(movimientos.front().get());
+        miCarro->ejecutarAccion(*movimientos.front().get());
         movimientos.pop();
     }
 }

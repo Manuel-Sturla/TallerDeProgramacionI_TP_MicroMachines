@@ -20,7 +20,7 @@ public:
 
   void agregarPosicionDeInicio(int x, int y);
 
-  void crearPista(Pista *mapa);
+  void crearPista(Pista &mapa);
 
   ~PlanoDePista();
 };

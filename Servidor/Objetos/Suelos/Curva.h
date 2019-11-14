@@ -18,10 +18,10 @@ class Curva: public Suelo {
     Pasto *pasto;
 
   public:
-    Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x,
+    Curva(MundoBox2D &pista, Asfalto *asfalto, Pasto *pasto, float32 x,
           float32 y, float32 angulo, int numeroDeSuelo);
 
-    void agregarseAPista(MundoBox2D *pista, float32 angulo);
+    void agregarseAPista(MundoBox2D &pista, float32 angulo);
 
     std::string darId() override;
 
@@ -39,7 +39,7 @@ class Curva: public Suelo {
 
     void interactuar(Carro *unCarro);
 
-    void revivirCarro(MundoBox2D *mundoBox2D, Carro *unCarro);
+    void revivirCarro(MundoBox2D &mundoBox2D, Carro *unCarro);
 
     void empaquetar(std::vector<std::string> *destino);
 

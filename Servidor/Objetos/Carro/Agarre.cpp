@@ -6,9 +6,9 @@ Agarre::Agarre(float agarre) {
   agarreReducido = false;
 }
 
-void Agarre::actualizar(b2Body *cuerpo) {
-  float32 nuevaVelocidadAngular = (1 / agarreBase) * cuerpo -> GetAngularVelocity();
-  cuerpo -> SetAngularVelocity(nuevaVelocidadAngular);
+void Agarre::actualizar(b2Body &cuerpo) {
+  float32 nuevaVelocidadAngular = (1 / agarreBase) * cuerpo.GetAngularVelocity();
+  cuerpo.SetAngularVelocity(nuevaVelocidadAngular); //Esto esta mal, aplicar torques
   if (agarreReducido) {
     actualizarAgarreReducido();
   }

@@ -6,7 +6,7 @@
 
 class PlanoDeSuelo {
 public:
-    virtual void agregarSueloA(Pista *mapa) = 0;
+    virtual void agregarSueloA(Pista &mapa) = 0;
 };
 
 #endif

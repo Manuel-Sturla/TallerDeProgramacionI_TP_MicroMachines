@@ -14,7 +14,7 @@ private:
 public:
     PlanoDeCurva(int x, int y, int tipo, int numero);
 
-    void agregarSueloA(Pista *mapa) override;
+    void agregarSueloA(Pista &mapa) override;
 
     ~PlanoDeCurva();
 };

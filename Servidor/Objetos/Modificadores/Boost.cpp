@@ -1,11 +1,11 @@
 #include "Boost.h"
 
-Boost::Boost(MundoBox2D *pista, float32 x, float32 y, unsigned long idRecibido) {
+Boost::Boost(MundoBox2D &pista, float32 x, float32 y, unsigned long idRecibido) {
     id = "E" + std::to_string(idRecibido);
     b2BodyDef bodyDef;
     bodyDef.type = b2_staticBody;
     bodyDef.position.Set(x, y);
-    cuerpo = pista -> agregarObjeto(&bodyDef);
+    cuerpo = pista.agregarObjeto(&bodyDef);
     cuerpo -> SetUserData(this);
     b2PolygonShape staticBox;
     staticBox.SetAsBox(1.0f, 1.0f);

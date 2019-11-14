@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Posicion.h"
 
 Posicion::Posicion() {

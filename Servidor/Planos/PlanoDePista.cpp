@@ -6,14 +6,14 @@
 PlanoDePista::PlanoDePista() {
 }
 
-void PlanoDePista::crearPista(Pista *pista) {
+void PlanoDePista::crearPista(Pista &pista) {
     std::list<std::unique_ptr<PlanoDeSuelo>>::iterator it;
     for (it = planosDeSuelos.begin(); it != planosDeSuelos.end(); it ++) {
         (*it)->agregarSueloA(pista);
     }
     std::list<b2Vec2>::iterator posiciones;
     for (posiciones = posicionesDeInicio.begin(); posiciones != posicionesDeInicio.end(); posiciones++) {
-        pista -> agregarPosicionDeInicio(*posiciones);
+        pista.agregarPosicionDeInicio(*posiciones);
     }
 }
 

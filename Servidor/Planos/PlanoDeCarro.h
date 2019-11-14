@@ -13,7 +13,7 @@ private:
 public:
     explicit PlanoDeCarro(int velocidadMax, float32 anguloDeGiro, int agarre);
 
-    Carro *crearCarro(Pista *pista, size_t id);
+    Carro *crearCarro(Pista &pista, size_t id);
 
     ~PlanoDeCarro();
 };

@@ -10,7 +10,7 @@ class Recta: public Suelo {
     Material *material;
 
   public:
-    Recta(MundoBox2D *pista, Material *unMaterial, float32 x, float32 y,
+    Recta(MundoBox2D &pista, Material *unMaterial, float32 x, float32 y,
           float32 angulo, int numeroDeSuelo);
 
     Recta(Recta &&otraRecta);
@@ -27,7 +27,7 @@ class Recta: public Suelo {
 
     bool esValido();
 
-    void revivirCarro(MundoBox2D *mundoBox2D, Carro *unCarro);
+    void revivirCarro(MundoBox2D &mundoBox2D, Carro *unCarro);
 
     void empaquetar(std::vector<std::string> *destino);
 

@@ -1,12 +1,12 @@
 #include "Recta.h"
 
-Recta::Recta(MundoBox2D *pista, Material *unMaterial, float32 x, float32 y,
+Recta::Recta(MundoBox2D &pista, Material *unMaterial, float32 x, float32 y,
              float32 angulo, int numeroDeSuelo) {
     material = unMaterial;
     b2BodyDef defCuerpo;
     defCuerpo.type = b2_staticBody;
     defCuerpo.position.Set(x, y);
-    cuerpo = pista -> agregarObjeto(&defCuerpo);
+    cuerpo = pista.agregarObjeto(&defCuerpo);
     cuerpo -> SetUserData(this);
     b2PolygonShape cajaEstatica;
     cajaEstatica.SetAsBox(2.0f, 2.0f); //TAMANIO DE CUADRADO HARDCODEADO
@@ -62,7 +62,7 @@ void Recta::empaquetar(std::vector<std::string> *destino) {
     empaquetarAngulo(destino);
 }
 
-void Recta::revivirCarro(MundoBox2D *mundoBox2D, Carro *unCarro) {
+void Recta::revivirCarro(MundoBox2D &mundoBox2D, Carro *unCarro) {
     b2Vec2 posicion = cuerpo->GetPosition();
     unCarro -> revivir(mundoBox2D, posicion.x, posicion.y);
 }

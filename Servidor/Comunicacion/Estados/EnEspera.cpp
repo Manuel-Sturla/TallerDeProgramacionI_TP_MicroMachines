@@ -24,7 +24,7 @@ void EnEspera::sumarJugador(ClienteProxy &cliente, Pista &pista,
         return;
     }
     cliente.setID(contadorId);
-    cliente.setCarro(planoCarro->crearCarro(&pista, cliente.obtenerID()));
+    cliente.setCarro(planoCarro->crearCarro(pista, cliente.obtenerID()));
     enviarCantidadDeJugadores();
     std::cout << "Cantidad actual de jugadores: " << cantActualJugadores << std::endl;
     if (enJuego()){

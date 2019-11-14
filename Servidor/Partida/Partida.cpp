@@ -19,7 +19,7 @@ Partida::~Partida() {
 }
 
 void Partida::crearPista(PlanoDePista *planoDePista) {
-    planoDePista -> crearPista(&pista);
+    planoDePista -> crearPista(pista);
 }
 
 std::vector<std::string> &Partida::obtenerMapa() {

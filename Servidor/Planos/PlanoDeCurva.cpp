@@ -11,8 +11,8 @@ PlanoDeCurva::PlanoDeCurva(int x, int y, int tipo, int numero) {
     this -> numero = numero;
 }
 
-void PlanoDeCurva::agregarSueloA(Pista *mapa) {
-    mapa->agregarCurva(posicionX, posicionY, obtenerAngulo(), numero);
+void PlanoDeCurva::agregarSueloA(Pista &mapa) {
+    mapa.agregarCurva(posicionX, posicionY, obtenerAngulo(), numero);
 }
 
 PlanoDeCurva::~PlanoDeCurva() {

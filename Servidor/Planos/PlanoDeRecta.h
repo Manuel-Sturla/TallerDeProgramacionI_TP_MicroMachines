@@ -16,7 +16,7 @@ private:
 public:
     PlanoDeRecta(std::string material, int x, int y, int tipo, int numero);
 
-    void agregarSueloA(Pista *mapa) override;
+    void agregarSueloA(Pista &mapa) override;
 
     ~PlanoDeRecta();
 };

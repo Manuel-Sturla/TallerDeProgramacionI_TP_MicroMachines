@@ -3,12 +3,12 @@
 #define EN_ASFALTO 3
 #define EN_PASTO 2
 
-Curva::Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x,
+Curva::Curva(MundoBox2D &pista, Asfalto *asfalto, Pasto *pasto, float32 x,
              float32 y, float32 angulo, int numeroDeSuelo) {
     b2BodyDef defCuerpo;
     defCuerpo.type = b2_staticBody;
     defCuerpo.position.Set(x, y);
-    cuerpo = pista -> agregarObjeto(&defCuerpo);
+    cuerpo = pista.agregarObjeto(&defCuerpo);
     agregarseAPista(pista, angulo);
     this -> asfalto = asfalto;
     this -> pasto = pasto;
@@ -16,7 +16,7 @@ Curva::Curva(MundoBox2D *pista, Asfalto *asfalto, Pasto *pasto, float32 x,
     this -> numeroDeSuelo = numeroDeSuelo;
 }
 
-void Curva::agregarseAPista(MundoBox2D *pista, float32 angulo) {
+void Curva::agregarseAPista(MundoBox2D &pista, float32 angulo) {
     cuerpo -> SetUserData(this);
     b2PolygonShape caja;
     caja.SetAsBox(2.0f, 2.0f);
@@ -114,7 +114,7 @@ Curva &Curva::operator=(const Curva &otraCurva) {
     return *this;
 }
 
-void Curva::revivirCarro(MundoBox2D *mundoBox2D, Carro *unCarro) {
+void Curva::revivirCarro(MundoBox2D &mundoBox2D, Carro *unCarro) {
     b2Vec2 posicion = cuerpo->GetPosition();
     unCarro -> revivir(mundoBox2D, posicion.x, posicion.y);
 }
