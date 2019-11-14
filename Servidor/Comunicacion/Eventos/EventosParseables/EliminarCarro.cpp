@@ -1,7 +1,7 @@
 #include "EliminarCarro.h"
 #include "../../Utilidades.h"
 
-#define EVENTO_ELIMINAR_AUTO "eliminarAuto"
+#define EVENTO_ELIMINAR_AUTO "eliminar"
 
 EliminarCarro::EliminarCarro(size_t idCarro) {
     std::vector<std::string> aux;

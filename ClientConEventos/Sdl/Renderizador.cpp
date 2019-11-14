@@ -25,8 +25,9 @@ unsigned long Renderizador::agregarTextura(const std::string &archivo, Posicion*
     return texturas.size()-1;
 }
 
-void Renderizador::agregarTrecho(const std::string &archivo, Posicion* pos) {
+size_t Renderizador::agregarTrecho(const std::string &archivo, Posicion* pos) {
     pista.emplace_back(renderizador, archivo, pos);
+    return pista.size()-1;
 }
 
 void Renderizador::limpiar() {
@@ -72,5 +73,11 @@ Renderizador::~Renderizador() {
 void Renderizador::borrarTextura(unsigned long idTextura) {
     if(idTextura >= 0 && idTextura < texturas.size()){
         texturas.erase(texturas.begin() + idTextura);
+    }
+}
+
+void Renderizador::borrarTrecho(size_t idTrecho){
+    if(idTrecho >= 0 && idTrecho < pista.size()){
+        pista.erase(pista.begin() + idTrecho);
     }
 }

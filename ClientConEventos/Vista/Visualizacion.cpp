@@ -3,14 +3,14 @@
 //
 
 #include <iostream>
-#include "HiloVisualizacion.h"
+#include "Visualizacion.h"
 #include "../Excepciones/ExcepcionConPos.h"
 #include "../Sdl/Sonido.h"
 
 #define ANCHO_PANTALLA 1000
 #define ALTURA_PANTALLA 1000
 
-HiloVisualizacion::HiloVisualizacion(ServidorProxy &servidor) : servidor(servidor),\
+Visualizacion::Visualizacion(ServidorProxy &servidor) : servidor(servidor),\
 renderizador("microMachines.exe", ANCHO_PANTALLA, ALTURA_PANTALLA, m) {
     enJuego = false;
     keepTalking = true;
@@ -20,7 +20,7 @@ renderizador("microMachines.exe", ANCHO_PANTALLA, ALTURA_PANTALLA, m) {
     lector->start();
 }
 
-void HiloVisualizacion::ejecutarPartida() {
+void Visualizacion::ejecutarPartida() {
     try{
 //        Sonido sonido("../abba.wav");
         while(keepTalking) {
@@ -40,7 +40,7 @@ void HiloVisualizacion::ejecutarPartida() {
     }
 }
 
-void HiloVisualizacion::esperarInicioPartida() {
+void Visualizacion::esperarInicioPartida() {
     try {
         while(!enJuego && keepTalking){
             renderizador.limpiar();
@@ -59,7 +59,7 @@ void HiloVisualizacion::esperarInicioPartida() {
     }
 }
 
-HiloVisualizacion::~HiloVisualizacion() {
+Visualizacion::~Visualizacion() {
     if(receptor != nullptr){
         receptor->join();
         delete(receptor);

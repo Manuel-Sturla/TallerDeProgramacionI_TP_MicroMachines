@@ -7,7 +7,7 @@
 #include "Excepciones/ExcepcionConPos.h"
 #include "Menu/Lobby.h"
 #include "Menu/Inicio.h"
-#include "Vista/HiloVisualizacion.h"
+#include "Vista/Visualizacion.h"
 #include "Sockets/Utilidades.h"
 
 int ejecutarInicio(int argc, char* argv[], std::string& host, std::string& servicio){
@@ -29,7 +29,7 @@ void menuConQT(int argc, char* argv[]) {
     ejecutarInicio(argc, argv, host, servicio);
     ServidorProxy servidor(host, servicio);
     ejecutarLobby(argc, argv, servidor);
-    HiloVisualizacion partida(servidor);
+    Visualizacion partida(servidor);
     partida.esperarInicioPartida();
     partida.ejecutarPartida();
 }
@@ -56,7 +56,7 @@ void menuSinQT(int argc, char *argv[]) {
         servidor.crearPartida(partida[0], partida[1]);
         servidor.elegirPartida(partida[0]);
     }
-    HiloVisualizacion part(servidor);
+    Visualizacion part(servidor);
     part.esperarInicioPartida();
     part.ejecutarPartida();
 }

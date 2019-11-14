@@ -27,7 +27,7 @@ public:
 
     unsigned long agregarTextura(const std::string &archivo, Posicion* pos);
 
-    void agregarTrecho(const std::string &archivo, Posicion* pos);
+    size_t agregarTrecho(const std::string &archivo, Posicion* pos);
 
     size_t agregarTexto(const std::string &texto, Posicion *posicion);
 
@@ -42,6 +42,8 @@ public:
     void configurarCamara(Posicion* posicion);
 
     virtual ~Renderizador();
+
+    void borrarTrecho(size_t idTrecho);
 };
 
 #endif //OPENGLTEST_RENDERIZADOR_H

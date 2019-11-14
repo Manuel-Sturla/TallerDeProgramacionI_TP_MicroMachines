@@ -27,9 +27,9 @@ void Administrador::ejecutarEventos(std::vector<std::string> &eventos) {
         }else if(eventos[0] == "modificar" && eventos.size() >= 2){
             eventos.erase(eventos.begin());
             ejecutarModificar(eventos);
-        } else if(eventos[0] == "eliminarAuto"){
+        } else if(eventos[0] == "eliminar"){
             eventos.erase(eventos.begin());
-            ejecutarDestruirAuto(eventos);
+            ejecutarEliminar(eventos);
         } else {
             eventos.erase(eventos.begin());
         }
@@ -98,10 +98,11 @@ void Administrador::crearMiAuto(std::vector<std::string> &evento) {
     renderizador.configurarCamara(it->second->getPosicion());
 }
 
-void Administrador::ejecutarDestruirAuto(std::vector<std::string> &eventos) {
+void Administrador::ejecutarEliminar(std::vector<std::string> &eventos) {
     auto it = desplazables.find(eventos[0]);
     if(it == desplazables.end()){
-        throw ExcepcionConPos(__FILE__, __LINE__, "Error: borrar auto invalido: auto no encontrado");
+        eventos.erase(eventos.begin());
+        return;
     }
     eventos.erase(eventos.begin());
     it->second->eliminar();
