@@ -5,8 +5,10 @@ MOVER_IZQ = "A"
 MOVER_DER = "D"
 ACELERAR = "W"
 FRENAR = "S"
-PASTO = "P"
-SEPARADOR = "-"
+PASTO = "Pasto"
+CURVA = "Curva"
+ASFALTO = "Asfalto"
+SEPARADOR = ","
 
 mapa = {}
 
@@ -43,20 +45,39 @@ end
 imprimir_tabla(split('321-022', "-"))
 pos1, pos2 = split("3-2", "-")
 ]]
+
 function agregarPiso(tipo, x, y, ang)
 	if tipo == CURVA then
-		tipo += ang
+		tipo = tipo .. math.floor(tonumber(ang))
 	end
-	mapa[x .. "-" .. y] = tipo
+	x = math.floor(tonumber(x))
+	y = math.floor(tonumber(y))
+	mapa[x .. SEPARADOR .. y] = tipo
 end
-agregarPiso("Asfalto", "3", "5", "23")
-imprimir_matriz(mapa)
 -- Funciones del Script
-function crearMapa(posPasto)
-	for i,pos in pairs(posPasto) do
-		--pos = split(valor, SEPARADOR)
-		mapa[pos] = PASTO
+function MostrarMapa()
+	imprimir_tabla(mapa)
+end
+
+function crearMapa(datosMapa)
+	tipo = ASFALTO
+	x = 0
+	y = 0
+	ang = 0
+	for i,dato in pairs(datosMapa) do
+		resto = (i-1)%4
+		if resto == 0 then
+			agregarPiso(tipo, x, y, ang)
+			tipo = dato
+		elseif resto == 1 then
+			x = dato
+		elseif resto == 2 then
+			y = dato
+		elseif resto == 3 then
+			ang = dato
+		end
 	end	
+	agregarPiso(tipo, x, y, ang)
 end
 
 

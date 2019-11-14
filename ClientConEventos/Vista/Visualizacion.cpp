@@ -10,11 +10,11 @@
 #define ANCHO_PANTALLA 1000
 #define ALTURA_PANTALLA 1000
 
-Visualizacion::Visualizacion(ServidorProxy &servidor) : servidor(servidor),\
+Visualizacion::Visualizacion(ServidorProxy &servidor, std::shared_ptr<Jugador> &jugador) : servidor(servidor),\
 renderizador("microMachines.exe", ANCHO_PANTALLA, ALTURA_PANTALLA, m) {
     enJuego = false;
     keepTalking = true;
-    receptor = new HiloReceptor(renderizador, servidor, keepTalking, enJuego, m);
+    receptor = new HiloReceptor(renderizador, servidor, keepTalking, enJuego, m, jugador);
     lector = new HiloLector(servidor, keepTalking);
     receptor->start();
     lector->start();

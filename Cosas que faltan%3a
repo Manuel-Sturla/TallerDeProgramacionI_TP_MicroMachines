@@ -1,0 +1,34 @@
+Cosas que faltan:
+Manu: el servidorProxi transforma los metros a pixeles (con una clase nueva) y puede devolver un vector de structs o algo asi para que diego no haga un recorrido horrible del vectors
+
+
+
+Nuevo: 
+Hacer time wait en el servidor para que espere tantos milisegundos como simula el box2d
+
+
+Como hacer la configuracion? #DEberiaSerUnJason
+Cola en el servidor con los mensajes para que los pueda acceder el script de lua?
+
+normalizar el angulo??
+reaparecer carros? --> vida
+confi para podios?
+
+
+Crear Partida
+Ver partidas	 [VER]
+Unir a partida   [UNIR, "NOMBRE"]
+
+[ACCion, "acelerar"]
+[Auto, id, posX, posY, ang]
+
+Hay evento de el carro se murio.
+Si el carro esta muerto no encolo.
+Falta el partida->start()
+json cpp n*
+
+multijugador si en un juego
+
+
+
+--leak-check=full --track-origins=yes --show-reachable=yes --tool=memcheck --trace-children=yes --track-fds=yes --time-stamp=yes --num-callers=20 --leak-resolution=med

@@ -3,4 +3,5 @@ Cosas que hay que instalar:
     - SDL2-dev
     - SDL2_ttf-dev
     - SDL2_Image-dev
-    - SDL2_Mixer-dev
+    - SDL2_Mixer-dev (libsdl2-mixer-dev)
+    - Lua5.3

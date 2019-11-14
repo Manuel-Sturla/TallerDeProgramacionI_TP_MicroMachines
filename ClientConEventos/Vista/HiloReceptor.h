@@ -10,6 +10,7 @@
 #include "../Sockets/ServidorProxy.h"
 #include "../Juego/Auto.h"
 #include "../Juego/Administrador.h"
+#include "../Jugador/Jugador.h"
 
 class HiloReceptor : public Hilo {
 private:
@@ -17,11 +18,13 @@ private:
     bool& keepTalking;
     Administrador admin;
     bool& enJuego;
+    std::shared_ptr<Jugador> jugador;
     void esperarInicioPartida();
 
 public:
 
-    explicit HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor, bool &keepTalking, bool &enJuego, std::mutex& m);
+    explicit HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor, bool &keepTalking, bool &enJuego,
+                          std::mutex &m, std::shared_ptr<Jugador> &jugador);
 
     void run() override;
 };

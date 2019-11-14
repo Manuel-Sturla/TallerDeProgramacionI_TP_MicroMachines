@@ -9,6 +9,8 @@
 #include "Menu/Inicio.h"
 #include "Vista/Visualizacion.h"
 #include "Sockets/Utilidades.h"
+#include "Jugador/Jugador.h"
+#include "Jugador/JugadorCPU.h"
 
 int ejecutarInicio(int argc, char* argv[], std::string& host, std::string& servicio){
     QApplication app(argc, argv);
@@ -29,7 +31,9 @@ void menuConQT(int argc, char* argv[]) {
     ejecutarInicio(argc, argv, host, servicio);
     ServidorProxy servidor(host, servicio);
     ejecutarLobby(argc, argv, servidor);
-    Visualizacion partida(servidor);
+    //Inicializo un jugador
+    std::shared_ptr<Jugador> jugador (new Jugador());
+    Visualizacion partida(servidor, jugador);
     partida.esperarInicioPartida();
     partida.ejecutarPartida();
 }
@@ -56,7 +60,9 @@ void menuSinQT(int argc, char *argv[]) {
         servidor.crearPartida(partida[0], partida[1]);
         servidor.elegirPartida(partida[0]);
     }
-    Visualizacion part(servidor);
+
+    std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
+    Visualizacion part(servidor, jugador);
     part.esperarInicioPartida();
     part.ejecutarPartida();
 }

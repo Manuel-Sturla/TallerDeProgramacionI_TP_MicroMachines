@@ -7,10 +7,11 @@
 #include "../Excepciones/ExcepcionConPos.h"
 #include "Camara.h"
 #include "../Sockets/SocketPeerException.h"
+#include "../Jugador/JugadorCPU.h"
 
-HiloReceptor::HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor,\
-bool &keepTalking,bool &enJuego, std::mutex& m) : keepTalking(keepTalking), servidor(servidor),\
-admin(renderizador, m), enJuego(enJuego) {}
+HiloReceptor::HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor, bool &keepTalking, bool &enJuego,
+                           std::mutex &m, std::shared_ptr<Jugador> &jugador) : keepTalking(keepTalking), servidor(servidor),\
+admin(renderizador, m), enJuego(enJuego), jugador(jugador) {}
 
 void HiloReceptor::run() {
     try {
@@ -43,6 +44,10 @@ void HiloReceptor::esperarInicioPartida() {
         evento = servidor.obtenerEvento();
     }
     evento = servidor.obtenerMapa();
+    if (jugador->esCpu()){
+        std::shared_ptr<JugadorCPU> jug = std::static_pointer_cast<JugadorCPU>(jugador);
+        jug->ponerMapa(evento);
+    }
     admin.crearPista(evento);
     evento = servidor.obtenerMiAuto();
     admin.crearMiAuto(evento);

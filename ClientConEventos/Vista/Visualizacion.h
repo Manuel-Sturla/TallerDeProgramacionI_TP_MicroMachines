@@ -13,6 +13,7 @@
 #include "HiloReceptor.h"
 #include "../Juego/Pista.h"
 #include "../Lector/HiloLector.h"
+#include "../Jugador/Jugador.h"
 
 class Visualizacion {
 private:
@@ -24,7 +25,7 @@ private:
     bool enJuego;
     std::mutex m;
 public:
-    explicit Visualizacion(ServidorProxy &servidor);
+    explicit Visualizacion(ServidorProxy &servidor, std::shared_ptr<Jugador> &jugador);
 
     void esperarInicioPartida();
 
