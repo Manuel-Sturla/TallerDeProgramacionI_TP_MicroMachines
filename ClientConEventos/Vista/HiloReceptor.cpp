@@ -11,7 +11,7 @@
 
 HiloReceptor::HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor, bool &keepTalking, bool &enJuego,
                            std::mutex &m, std::shared_ptr<Jugador> &jugador) : keepTalking(keepTalking), servidor(servidor),\
-admin(renderizador, m), enJuego(enJuego), jugador(jugador) {}
+admin(renderizador, m, keepTalking), enJuego(enJuego), jugador(jugador) {}
 
 void HiloReceptor::run() {
     try {
