@@ -10,7 +10,7 @@
 #include "../Sockets/ServidorProxy.h"
 #include "../Juego/Auto.h"
 #include "../Juego/Administrador.h"
-#include "../Jugador/Jugador.h"
+#include "../Jugador/JugadorReal.h"
 
 class HiloReceptor : public Hilo {
 private:

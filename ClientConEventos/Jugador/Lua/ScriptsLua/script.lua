@@ -115,9 +115,9 @@ function obtenerNuevaAccion(posAuto, posOtros, posExtras)
 	-- Necesito saber hacia que lado esta avanzando? podria ser un indicador que modifica un +/- en el resto
 	-- esto no funciona bien porque podría cambiar una coordenada si esta yendo para abajo en vez de arriba, 
 	-- pero ni idea de como hacer si esta yendo para uno de los costados!!
-	if hayPastoIzq(posAuto) then return MOVER_DER end
-	if hayPastoDer(posAuto) then return MOVER_IZQ end
-	if hayPastoEnf(posAuto) then return FRENAR end
+	--if hayPastoIzq(posAuto) then return MOVER_DER end
+	---if hayPastoDer(posAuto) then return MOVER_IZQ end
+	--if hayPastoEnf(posAuto) then return FRENAR end
 	return ACELERAR
 end
 --[[

@@ -6,14 +6,15 @@
 #define CLIENT_JUGADORCPU_H
 
 
-#include "Jugador.h"
+#include "JugadorReal.h"
 #include "Lua/InterpreteLua.h"
+#include "Jugador.h"
 
 class JugadorCPU: public Jugador {
     InterpreteLua interprete;
 public:
     JugadorCPU(const std::string& rutaScript);
-    int obtenerComando();
+    int obtenerComando() override ;
     void ponerMapa(std::vector<std::string> &comando);
 };
 

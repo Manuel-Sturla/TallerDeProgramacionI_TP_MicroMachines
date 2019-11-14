@@ -9,7 +9,7 @@
 #include "Menu/Inicio.h"
 #include "Vista/Visualizacion.h"
 #include "Sockets/Utilidades.h"
-#include "Jugador/Jugador.h"
+#include "Jugador/JugadorReal.h"
 #include "Jugador/JugadorCPU.h"
 
 int ejecutarInicio(int argc, char* argv[], std::string& host, std::string& servicio){
@@ -32,7 +32,7 @@ void menuConQT(int argc, char* argv[]) {
     ServidorProxy servidor(host, servicio);
     ejecutarLobby(argc, argv, servidor);
     //Inicializo un jugador
-    std::shared_ptr<Jugador> jugador (new Jugador());
+    std::shared_ptr<Jugador> jugador (new JugadorReal());
     Visualizacion partida(servidor, jugador);
     partida.esperarInicioPartida();
     partida.ejecutarPartida();

@@ -6,15 +6,13 @@
 #define CLIENT_JUGADOR_H
 
 
-#include "../Lector/LectorTeclado.h"
-
 class Jugador {
-    LectorTeclado lector;
-protected:
-    bool cpu = false;
+    bool cpu;
 public:
-    int obtenerComando();
+    explicit Jugador(bool cpu);
+    virtual int obtenerComando() = 0;
     bool esCpu();
+
 };
 
 

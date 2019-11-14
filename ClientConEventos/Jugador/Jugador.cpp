@@ -4,8 +4,7 @@
 
 #include "Jugador.h"
 
-int Jugador::obtenerComando() {
-    return lector.leer();
+Jugador::Jugador(bool cpu) : cpu(cpu){
 }
 
 bool Jugador::esCpu() {

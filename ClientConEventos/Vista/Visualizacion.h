@@ -13,7 +13,7 @@
 #include "HiloReceptor.h"
 #include "../Juego/Pista.h"
 #include "../Lector/HiloLector.h"
-#include "../Jugador/Jugador.h"
+#include "../Jugador/JugadorReal.h"
 
 class Visualizacion {
 private:

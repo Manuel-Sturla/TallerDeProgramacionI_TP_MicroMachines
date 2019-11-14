@@ -15,7 +15,7 @@ renderizador("microMachines.exe", ANCHO_PANTALLA, ALTURA_PANTALLA, m) {
     enJuego = false;
     keepTalking = true;
     receptor = new HiloReceptor(renderizador, servidor, keepTalking, enJuego, m, jugador);
-    lector = new HiloLector(servidor, keepTalking);
+    lector = new HiloLector(servidor, keepTalking, jugador);
     receptor->start();
     lector->start();
 }
