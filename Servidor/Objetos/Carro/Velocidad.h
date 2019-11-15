@@ -7,12 +7,15 @@
 class Velocidad {
   protected:
     float32 velocidadMaxima;
+    float32 aceleracion;
   public:
-    Velocidad(float32 velocidadMaxima);
+    Velocidad(float32 velocidadMaxima, float32 aceleracion);
 
     virtual std::string boost() = 0;
 
     virtual std::string actualizar() = 0;
+
+    float32 darImpulso();
 
     bool alcanzoLaVelocidadMaxima(b2Vec2 velocidadActual);
 };

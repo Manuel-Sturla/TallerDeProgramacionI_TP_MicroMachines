@@ -17,7 +17,7 @@ class EstadoVelocidad {
 
     void aplicarFuerza(b2Body &cuerpo, float32 factorDeFuerza);
   public:
-    explicit EstadoVelocidad(float32 velocidadMaxima);
+    explicit EstadoVelocidad(float32 velocidadMaxima, float32 aceleracion);
 
     void acelerar(b2Body &cuerpo);
 

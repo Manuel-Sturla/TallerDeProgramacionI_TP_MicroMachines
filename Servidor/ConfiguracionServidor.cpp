@@ -58,11 +58,11 @@ void ConfiguracionServidor::levantarCarros() {
     //Tirar excepcion si el archivo no se abrio
     for (auto &&autoInfo : autos) {
         std::string nombreDeCarro = autoInfo["nombre"].as<std::string>();
-        int velocidadMax = autoInfo["velocidad_max"].as<int>();
+        int velocidadMax = autoInfo["velocidad_max"].as<float32 >();
+        float32 aceleracion = autoInfo["aceleracion"].as<float32 >();
         float32 anguloDeGiro = autoInfo["angulo_de_giro"].as<float32 >();
-        int agarre = autoInfo ["agarre"].as<int>();
-        std::cout << nombreDeCarro << std::endl;
-        planosDeCarros.emplace(nombreDeCarro, new PlanoDeCarro(velocidadMax, anguloDeGiro, agarre));
+        int agarre = autoInfo ["agarre"].as<float32>();
+        planosDeCarros.emplace(nombreDeCarro, new PlanoDeCarro(velocidadMax, aceleracion, anguloDeGiro, agarre));
     }
 }
 

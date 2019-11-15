@@ -3,8 +3,8 @@
 #define AUMENTO_VEL 5
 #define DURACION_INICIAL 5
 
-VelocidadBoost::VelocidadBoost(float32 velocidadBase) :
-    Velocidad(velocidadBase + AUMENTO_VEL){
+VelocidadBoost::VelocidadBoost(float32 velocidadBase, float32 aceleracion) :
+    Velocidad(velocidadBase + AUMENTO_VEL, aceleracion) {
   duracion = DURACION_INICIAL;
 }
 

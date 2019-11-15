@@ -5,7 +5,7 @@
 
 class VelocidadBase: public Velocidad {
   public:
-    explicit VelocidadBase(float32 velocidadMaxima);
+    explicit VelocidadBase(float32 velocidadMaxima, float32 aceleracion);
 
     std::string boost() override;
 

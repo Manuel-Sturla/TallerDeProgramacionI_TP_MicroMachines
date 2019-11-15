@@ -1,8 +1,8 @@
 #include "VelocidadBase.h"
 #include <iostream>
 
-VelocidadBase::VelocidadBase(float32 velocidadMaxima):
-    Velocidad(velocidadMaxima){
+VelocidadBase::VelocidadBase(float32 velocidadMaxima, float32 aceleracion) :
+    Velocidad(velocidadMaxima, aceleracion) {
 }
 
 std::string VelocidadBase::actualizar() {

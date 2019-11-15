@@ -3,8 +3,9 @@
 #include "../../Acciones/GiroAIzquierda.h"
 #include <iostream>
 
-Carro::Carro(MundoBox2D &pista, float32 velocidadMaxima, float32 anguloDeGiro, float32  agarre, float32 x, float32 y, size_t idCliente):
-estadoVelocidad(velocidadMaxima), agarre(agarre) {
+Carro::Carro(MundoBox2D &pista, float32 velocidadMaxima, float32 aceleracion,
+    float32 anguloDeGiro, float32  agarre, float32 x, float32 y, size_t idCliente):
+estadoVelocidad(velocidadMaxima, aceleracion), agarre(agarre) {
   this -> anguloDeGiro = anguloDeGiro;
   idConductor = std::to_string(idCliente);
   agregarseA(pista, x, y);

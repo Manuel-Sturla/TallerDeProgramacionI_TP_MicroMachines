@@ -1,7 +1,7 @@
 #include "EstadoVelocidad.h"
 
-EstadoVelocidad::EstadoVelocidad(float32 velocidadMaxima): velocidadBase(velocidadMaxima),
-velocidadBoost(velocidadMaxima) {
+EstadoVelocidad::EstadoVelocidad(float32 velocidadMaxima, float32 aceleracion):
+velocidadBase(velocidadMaxima, aceleracion), velocidadBoost(velocidadMaxima, aceleracion) {
   estados["Base"] = &velocidadBase;
   estados["Boost"] = &velocidadBoost;
   estadoActual = "Base";
@@ -25,7 +25,7 @@ EstadoVelocidad::~EstadoVelocidad() {
 void EstadoVelocidad::acelerar(b2Body &cuerpo) {
     b2Vec2 velocidad = cuerpo.GetLinearVelocity();
     if (!alcanzoLaVelocidadMaxima(velocidad)) {
-        aplicarFuerza(cuerpo, 5*0.2);
+        aplicarFuerza(cuerpo, estados[estadoActual] -> darImpulso());
     }
 }
 
@@ -38,6 +38,6 @@ void EstadoVelocidad::aplicarFuerza(b2Body &cuerpo, float32 factorDeFuerza) {
 void EstadoVelocidad::frenar(b2Body &cuerpo) {
     b2Vec2 velocidad = cuerpo.GetLinearVelocity();
     if (!alcanzoLaVelocidadMaxima(velocidad)) {
-        aplicarFuerza(cuerpo, -5*0.2);
+        aplicarFuerza(cuerpo, -estados[estadoActual] -> darImpulso());
     }
 }

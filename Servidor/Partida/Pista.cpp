@@ -52,7 +52,7 @@ void Pista::simular() {
     mundoBox2D.actualizar();
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
         itCarros -> actualizar();
-        itCarros -> imprimirPosicion();
+        //itCarros -> imprimirPosicion();
     }
 }
 
@@ -81,12 +81,13 @@ void Pista::empaquetarSuelos(std::vector<std::string> *destino) {
 }
 
 
-Carro *Pista::crearCarro(int velocidad, float32 anguloEnRadianes, int agarre,
-                         size_t id) {
+Carro *Pista::crearCarro(float32 velocidad, float32 aceleracion,
+                         float32 anguloEnRadianes, float32 agarre, size_t id) {
     std::unique_lock<std::mutex> lock (mutex);
     b2Vec2 posicion = posicionesInicio.front();
-    carros.emplace_back(mundoBox2D, velocidad, anguloEnRadianes, agarre, posicion.x, posicion.y, id);
-    posicionesInicio.erase(posicionesInicio.begin());
+    carros.emplace_back(mundoBox2D, velocidad, aceleracion, anguloEnRadianes,
+        agarre, posicion.x, posicion.y, id);
+    posicionesInicio.erase(posicionesInicio.begin()); //PASAR LAS POSICIONES USADAS A UN VECTOR DE POSICIONES USADAS Y SI ALGUNO SE SALE VOLVERLO A LAS POSICIONES NO USADAS
     return &carros.back();
 }
 
@@ -103,5 +104,5 @@ void Pista::inicializarPodio(Podio *podio) {
 }
 
 Pista::Pista() {
-    extras.emplace_back(new Barro(mundoBox2D, 4,4, extras.size())); //El barro interactua con el segundo carro y por eso manda morir
+    extras.emplace_back(new Barro(mundoBox2D, 4,4, extras.size()));
 }
