@@ -7,12 +7,12 @@
 class Podio {
 private:
     int cantidadDeVueltas;
-    std::list<Carro> carros;
+    std::list<Carro*> carros;
 
 public:
     Podio(int cantidadDeVueltas);
 
-    void agregarCarro(Carro carro);
+    void agregarCarro(Carro *carro);
 
     void actualizarPodio();
 
