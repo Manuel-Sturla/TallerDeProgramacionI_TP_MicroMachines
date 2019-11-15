@@ -6,7 +6,7 @@
 
 EnCarrera::EnCarrera(Pista &pista, HashProtegidoClientes &clientes):
     pista(pista), clientes(clientes), podio(1){ //CANTIDAD DE VUELTAS HARDCODEADA
-    pista.inicializarPodio(&podio);
+    pista.inicializarPodio(podio);
 }
 
 void EnCarrera::ejecutar() {

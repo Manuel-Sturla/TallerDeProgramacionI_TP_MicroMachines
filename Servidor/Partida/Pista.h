@@ -48,7 +48,7 @@ public:
 
     void agregarCurva(float32 x, float32 y, float32 angulo, int numeroDeSuelo);
 
-    void inicializarPodio(Podio *podio);
+    void inicializarPodio(Podio &podio);
 
     ~Pista();
 };
