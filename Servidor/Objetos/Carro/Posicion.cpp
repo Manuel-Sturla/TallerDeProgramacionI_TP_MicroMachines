@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Posicion.h"
 
 Posicion::Posicion() {
@@ -8,6 +9,7 @@ Posicion::Posicion() {
 void Posicion::actualizar(int nuevoNumeroDeSuelo) {
     if (nuevoNumeroDeSuelo == 0 && numeroDeSuelo > 1) {
         numeroDeVueltas += 1;
+        std::cout << "Estoy en vuelta: " << numeroDeVueltas << std::endl;
     }
     numeroDeSuelo = nuevoNumeroDeSuelo;
 }

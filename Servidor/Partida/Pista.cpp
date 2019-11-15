@@ -36,6 +36,7 @@ void Pista::agregarCurva(float32 x, float32 y, float32 angulo, int numeroDeSuelo
 }
 
 void Pista::simular() {
+    agregarExtra();
     std::list<Carro>::iterator itCarros;
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
         if (!itCarros->esValido()) {
@@ -98,10 +99,20 @@ void Pista::agregarPosicionDeInicio(b2Vec2& posicion) {
 void Pista::inicializarPodio(Podio &podio) {
     std::list<Carro>::iterator itCarros;
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
-        podio.agregarCarro(*itCarros);
+        podio.agregarCarro(&*itCarros);
     }
 }
 
 Pista::Pista() {
     extras.emplace_back(new Barro(mundoBox2D, 4,4, extras.size()));
+    //extras.emplace_back(new Barro(mundoBox2D, 0,0, extras.size()));
+    //extras.emplace_back(new Barro(mundoBox2D, 8,8, extras.size()));
+    //extras.emplace_back(new Barro(mundoBox2D, -4,-4, extras.size()));
+}
+
+void Pista::agregarExtra() {
+    int numeroAleatorio = rand() % 1000;
+    if (numeroAleatorio == 1) {
+        //extras.emplace_back(new Barro(mundoBox2D, 0,0, extras.size()));
+    }
 }

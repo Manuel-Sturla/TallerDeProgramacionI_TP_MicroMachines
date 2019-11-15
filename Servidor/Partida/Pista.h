@@ -28,6 +28,7 @@ private:
     std::mutex mutex;
 
     Material* darMaterial(const std::string& materialPedido);
+    void agregarExtra();
 
 public:
     Pista();

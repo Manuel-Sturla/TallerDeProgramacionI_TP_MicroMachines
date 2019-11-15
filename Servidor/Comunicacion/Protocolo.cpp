@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Protocolo.h"
 
 void Protocolo::enviar(const std::string &mensaje) {
@@ -9,6 +10,7 @@ std::string Protocolo::recibir() {
     size_t longitud = socket.recibirLongitud();
     std::string mensaje;
     socket.recibir(mensaje, longitud);
+    std::cout << "Recibi: " << mensaje << std::endl;
     return mensaje;
 }
 
