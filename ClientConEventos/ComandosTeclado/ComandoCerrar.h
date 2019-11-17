@@ -6,11 +6,12 @@
 #define OPENGLTEST_COMANDOCERRAR_H
 
 
+#include <SDL2/SDL_stdinc.h>
 #include "ComandoTeclado.h"
 
 class ComandoCerrar : public ComandoTeclado {
 public:
-    explicit ComandoCerrar(ServidorProxy &servidor) : ComandoTeclado(servidor) {}
+    explicit ComandoCerrar(ServidorProxy &servidor, const Uint8* estados) : ComandoTeclado(servidor, estados) {}
 
     void ejecutar() override;
 };

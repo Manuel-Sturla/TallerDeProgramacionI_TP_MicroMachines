@@ -19,7 +19,9 @@ private:
     Administrador admin;
     bool& enJuego;
     std::shared_ptr<Jugador> jugador;
+    std::mutex& m;
     void esperarInicioPartida();
+    void inicializarPartida();
 
 public:
 

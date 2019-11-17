@@ -6,11 +6,12 @@
 #define OPENGLTEST_COMANDODERECHA_H
 
 
+#include <SDL2/SDL_stdinc.h>
 #include "ComandoTeclado.h"
 
 class ComandoDerecha : public ComandoTeclado {
 public:
-    explicit ComandoDerecha(ServidorProxy &servidor) : ComandoTeclado(servidor) {}
+    explicit ComandoDerecha(ServidorProxy &servidor, const Uint8* estados) : ComandoTeclado(servidor, estados) {}
 
     void ejecutar() override;
 };

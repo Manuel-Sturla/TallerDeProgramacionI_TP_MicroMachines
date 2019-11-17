@@ -11,7 +11,7 @@
 
 HiloReceptor::HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor, bool &keepTalking, bool &enJuego,
                            std::mutex &m, std::shared_ptr<Jugador> &jugador) : keepTalking(keepTalking), servidor(servidor),\
-admin(renderizador, m, enJuego), enJuego(enJuego), jugador(jugador) {}
+admin(renderizador, m, enJuego), enJuego(enJuego), jugador(jugador), m(m) {}
 
 void HiloReceptor::run() {
     try {
@@ -36,13 +36,17 @@ void HiloReceptor::run() {
 }
 
 void HiloReceptor::esperarInicioPartida() {
-    std::vector<std::string> evento;
-    evento = servidor.obtenerEvento();
+    std::vector<std::string> evento = servidor.obtenerEvento();
     while(evento[0] != "inicioPartida" && keepTalking){
         admin.actualizarJugadores(evento);
         evento = servidor.obtenerEvento();
     }
-    evento = servidor.obtenerMapa();
+    inicializarPartida();
+}
+
+void HiloReceptor::inicializarPartida() {
+    std::unique_lock<std::mutex> lock(m);
+    std::vector<std::string> evento = servidor.obtenerMapa();
     admin.crearPista(evento);
     if (jugador->esCpu()){
         std::shared_ptr<JugadorCPU> jug = std::dynamic_pointer_cast<JugadorCPU>(jugador);

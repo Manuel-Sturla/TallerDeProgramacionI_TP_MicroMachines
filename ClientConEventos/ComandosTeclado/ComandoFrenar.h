@@ -6,11 +6,12 @@
 #define OPENGLTEST_COMANDOFRENAR_H
 
 
+#include <SDL2/SDL_stdinc.h>
 #include "ComandoTeclado.h"
 
 class ComandoFrenar : public ComandoTeclado {
 public:
-    explicit ComandoFrenar(ServidorProxy &servidor) : ComandoTeclado(servidor) {}
+    explicit ComandoFrenar(ServidorProxy &servidor, const Uint8* estados) : ComandoTeclado(servidor, estados) {}
 
     void ejecutar() override;
 };

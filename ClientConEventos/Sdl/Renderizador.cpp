@@ -35,11 +35,10 @@ void Renderizador::limpiar() {
 }
 
 void Renderizador::copiarTodo() {
-    int i = 0;
+    std::unique_lock<std::mutex> lock(m);
     for(auto& trecho : pista){
         trecho.copiar(renderizador, camara);
     }
-    std::unique_lock<std::mutex> lock(m);
     for(auto& textura : texturas){
         textura.copiar(renderizador, camara);
     }

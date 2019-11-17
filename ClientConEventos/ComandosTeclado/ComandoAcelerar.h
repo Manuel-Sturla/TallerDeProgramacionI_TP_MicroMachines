@@ -6,11 +6,12 @@
 #define OPENGLTEST_COMANDOACELERAR_H
 
 
+#include <SDL2/SDL_stdinc.h>
 #include "ComandoTeclado.h"
 
 class ComandoAcelerar : public ComandoTeclado {
 public:
-    explicit ComandoAcelerar(ServidorProxy &servidor) : ComandoTeclado(servidor) {}
+    explicit ComandoAcelerar(ServidorProxy &servidor, const Uint8* estados) : ComandoTeclado(servidor, estados) {}
 
     void ejecutar() override;
 };
