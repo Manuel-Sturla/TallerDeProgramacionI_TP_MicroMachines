@@ -13,14 +13,16 @@
 
 class AdministradorComandosTeclado {
 private:
-    std::map<SDL_Keycode, ComandoTeclado*> comandos;
+    std::vector<ComandoTeclado*> comandos;
     ComandoCerrar cerrar;
+    const Uint8* estados;
+
 public:
     explicit AdministradorComandosTeclado(ServidorProxy& servidor);
 
     virtual ~AdministradorComandosTeclado();
 
-    void ejecutar(SDL_Keycode &comando);
+    void ejecutar();
 
     void cerrarPrograma();
 };

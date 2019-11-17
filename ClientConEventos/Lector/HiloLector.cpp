@@ -14,7 +14,7 @@ void HiloLector::run() {
     int comando = 0;
     comando = jugador->obtenerComando();
     while(comando != -1){
-        comandos.ejecutar(comando);
+        comandos.ejecutar();
         comando = jugador->obtenerComando();
     }
     keepTalking = false;

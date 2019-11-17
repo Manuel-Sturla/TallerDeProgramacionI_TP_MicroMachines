@@ -3,10 +3,13 @@
 //
 
 #include <iostream>
+#include <SDL2/SDL_keycode.h>
 #include "ComandoAcelerar.h"
 
 void ComandoAcelerar::ejecutar() {
-    std::cout<<"Acelere\n";
-    servidor.ejecutarMovimiento("acelerar");
-    std::cout<<"Deje de acelerar\n";
+    if(estados[SDL_SCANCODE_UP]){
+        std::cout<<"Acelere\n";
+        servidor.ejecutarMovimiento("acelerar");
+        std::cout<<"Deje de acelerar\n";
+    }
 }

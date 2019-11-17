@@ -2,7 +2,6 @@
 // Created by diego on 29/10/19.
 //
 
-#include <iostream>
 #include "Camara.h"
 #include "../Excepciones/ExcepcionConPos.h"
 

@@ -2,8 +2,11 @@
 // Created by diego on 22/10/19.
 //
 
+#include <SDL2/SDL_scancode.h>
 #include "ComandoIzquierda.h"
 
 void ComandoIzquierda::ejecutar() {
-    servidor.ejecutarMovimiento("doblar izquierda");
+    if(estados[SDL_SCANCODE_LEFT]){
+        servidor.ejecutarMovimiento("doblar izquierda");
+    }
 }
