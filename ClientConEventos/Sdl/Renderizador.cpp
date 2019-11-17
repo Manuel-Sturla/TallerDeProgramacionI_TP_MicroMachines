@@ -81,3 +81,15 @@ void Renderizador::borrarTrecho(size_t idTrecho){
         pista.erase(pista.begin() + idTrecho);
     }
 }
+
+void Renderizador::borrarTodo() {
+    camara.setAuto(nullptr);
+    for(auto & texura : texturas){
+        texura.destruir();
+    }
+    for(auto & trecho : pista){
+        trecho.destruir();
+    }
+    texturas.clear();
+    pista.clear();
+}

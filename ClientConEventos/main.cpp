@@ -51,7 +51,6 @@ void menuSinQT(int argc, char *argv[]) {
     bool conectado = false;
     for (int i = 0; i < partidas.size(); ++i) {
         if(partida[0] == partidas[i]){
-            std::cout<<"AAAAAAAA\n";
             servidor.elegirPartida(partida[0]);
             conectado = true;
         }
@@ -61,7 +60,8 @@ void menuSinQT(int argc, char *argv[]) {
         servidor.elegirPartida(partida[0]);
     }
 
-    std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
+//    std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
+    std::shared_ptr<Jugador> jugador (new JugadorReal());
     Visualizacion part(servidor, jugador);
     part.esperarInicioPartida();
     part.ejecutarPartida();

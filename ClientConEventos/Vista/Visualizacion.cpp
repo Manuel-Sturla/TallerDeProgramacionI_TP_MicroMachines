@@ -28,6 +28,9 @@ void Visualizacion::ejecutarPartida() {
             renderizador.copiarTodo();
             renderizador.imprimir(20);
         }
+        renderizador.limpiar();
+        renderizador.copiarTodo();
+        renderizador.imprimir(1000);
     } catch(const ExcepcionConPos& e){
         keepTalking = false;
         std::cerr<<e.what()<<'\n';

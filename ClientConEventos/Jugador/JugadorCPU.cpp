@@ -22,6 +22,9 @@ int JugadorCPU::obtenerComando() {
     if (!miAuto){
         return 0;
     }
+    if(LectorTeclado::leer() == -1){
+        return -1;
+    }
     std::vector<std::unique_ptr<ParametroLua>> params;
     pos_t pos = miAuto->getPosicion()->getPosicion();
     params.emplace_back(new CadenaLua (std::to_string(std::floor(pos.x)) + "," + std::to_string(std::floor(pos.y))));

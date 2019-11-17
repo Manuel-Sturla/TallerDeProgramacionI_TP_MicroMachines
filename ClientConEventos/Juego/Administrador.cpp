@@ -10,6 +10,7 @@
 #include "../ComandosVisualizacion/ComandoPosicionarExtra.h"
 #include "../ComandosVisualizacion/ComandoPosicionarAuto.h"
 #include "../ComandosVisualizacion/ComandoEliminar.h"
+#include "../ComandosVisualizacion/ComandoPodio.h"
 
 Administrador::Administrador(Renderizador &renderizador, std::mutex& m, bool& keepTalking) : renderizador(renderizador),\
 pista(renderizador), m(m), keepTalking(keepTalking), posTexto(0,200,100,1000,-90){
@@ -17,6 +18,7 @@ pista(renderizador), m(m), keepTalking(keepTalking), posTexto(0,200,100,1000,-90
     comandos["posicionarExtra"] = new ComandoPosicionarExtra(desplazables, renderizador);
     comandos["posicionarAuto"] = new ComandoPosicionarAuto(desplazables, renderizador);
     comandos["eliminar"] = new ComandoEliminar(desplazables, renderizador);
+    comandos["podio"] = new ComandoPodio(desplazables, renderizador, keepTalking);
     idTexto = -1;
 }
 
@@ -43,7 +45,7 @@ void Administrador::crearPista(std::vector<std::string> &planos) {
     pista.crear(planos);
 }
 
-Desplazable * Administrador::crearMiAuto(std::vector<std::string> &evento) {
+Desplazable* Administrador::crearMiAuto(std::vector<std::string> &evento) {
     evento.erase(evento.begin());
     desplazables.emplace(evento[0], new Auto(renderizador, 1));
     auto it = desplazables.find(evento[0]);

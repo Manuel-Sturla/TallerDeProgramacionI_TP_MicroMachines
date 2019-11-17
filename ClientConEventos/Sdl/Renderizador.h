@@ -19,7 +19,6 @@ private:
     Ventana ventana;
     std::vector<Textura> texturas;
     std::vector<Textura> pista;
-    std::map<int, Textura> textIdentificables;
     Camara camara;
 
 public:
@@ -44,6 +43,8 @@ public:
     virtual ~Renderizador();
 
     void borrarTrecho(size_t idTrecho);
+
+    void borrarTodo();
 };
 
 #endif //OPENGLTEST_RENDERIZADOR_H
