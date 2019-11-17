@@ -20,6 +20,7 @@ private:
     Asfalto asfalto;
     Pasto pasto;
     LimiteDePista limiteDePista;
+    float32 anguloInicial;
     std::map<int, std::unique_ptr<Suelo>> BloquesDeasfalto;
     std::list<std::unique_ptr<Modificador>> extras;
     std::list<b2Vec2> posicionesInicio;
@@ -43,6 +44,8 @@ public:
     void empaquetarSuelos(std::vector<std::string> *destino);
 
     void agregarPosicionDeInicio(b2Vec2 &posicion);
+
+    void setAnguloInicial(float32 anguloInicial);
 
     void
     agregarRecta(std::string &material, float32 x, float32 y, float32 angulo, int numeroDeSuelo);

@@ -3,10 +3,12 @@
 #include "PlanoDeRecta.h"
 #include "PlanoDeCurva.h"
 
-PlanoDePista::PlanoDePista() {
+PlanoDePista::PlanoDePista(float32 anguloInicial) {
+    this -> anguloInicial = (anguloInicial * b2_pi) / 180;;
 }
 
 void PlanoDePista::crearPista(Pista &pista) {
+    pista.setAnguloInicial(anguloInicial);
     std::list<std::unique_ptr<PlanoDeSuelo>>::iterator it;
     for (it = planosDeSuelos.begin(); it != planosDeSuelos.end(); it ++) {
         (*it)->agregarSueloA(pista);

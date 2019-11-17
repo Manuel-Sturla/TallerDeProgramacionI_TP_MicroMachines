@@ -11,8 +11,9 @@ class PlanoDePista {
 private:
   std::list<std::unique_ptr<PlanoDeSuelo>> planosDeSuelos;
   std::list<b2Vec2> posicionesDeInicio;
+  float32 anguloInicial;
 public:
-  PlanoDePista();
+  PlanoDePista(float32 anguloInicial);
 
   void agregarRecta(std::string material, int x, int y, int tipo, int numero);
 
