@@ -15,6 +15,7 @@ class HiloLector : public Hilo {
 private:
     AdministradorComandosTeclado comandos;
     bool& keepTalking;
+    ServidorProxy& servidor;
     std::shared_ptr<Jugador> jugador;
 
 public:

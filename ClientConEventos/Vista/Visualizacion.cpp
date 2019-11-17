@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <SDL2/SDL_events.h>
 #include "Visualizacion.h"
 #include "../Excepciones/ExcepcionConPos.h"
 #include "../Sdl/Sonido.h"
