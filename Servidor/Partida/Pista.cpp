@@ -83,11 +83,11 @@ void Pista::empaquetarSuelos(std::vector<std::string> *destino) {
 
 
 Carro *Pista::crearCarro(float32 velocidad, float32 aceleracion,
-                         float32 anguloEnRadianes, float32 agarre, size_t id) {
+                         float32 anguloDeGiroEnRadianes, float32 agarre, size_t id) {
     std::unique_lock<std::mutex> lock (mutex);
     b2Vec2 posicion = posicionesInicio.front();
-    carros.emplace_back(mundoBox2D, velocidad, aceleracion, anguloEnRadianes,
-        agarre, posicion.x, posicion.y, id);
+    carros.emplace_back(mundoBox2D, velocidad, aceleracion, anguloDeGiroEnRadianes,
+        agarre, posicion.x, posicion.y, anguloInicial, id);
     posicionesInicio.erase(posicionesInicio.begin()); //PASAR LAS POSICIONES USADAS A UN VECTOR DE POSICIONES USADAS Y SI ALGUNO SE SALE VOLVERLO A LAS POSICIONES NO USADAS
     return &carros.back();
 }
@@ -104,6 +104,7 @@ void Pista::inicializarPodio(Podio &podio) {
 }
 
 Pista::Pista() {
+    this -> anguloInicial = 0;
     extras.emplace_back(new Barro(mundoBox2D, 4,4, extras.size()));
     //extras.emplace_back(new Barro(mundoBox2D, 0,0, extras.size()));
     //extras.emplace_back(new Barro(mundoBox2D, 8,8, extras.size()));
@@ -115,4 +116,8 @@ void Pista::agregarExtra() {
     if (numeroAleatorio == 1) {
         //extras.emplace_back(new Barro(mundoBox2D, 0,0, extras.size()));
     }
+}
+
+void Pista::setAnguloInicial(float32 anguloInicial) {
+    this -> anguloInicial = anguloInicial;
 }

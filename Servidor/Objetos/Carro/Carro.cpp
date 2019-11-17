@@ -3,22 +3,24 @@
 #include "../../Acciones/GiroAIzquierda.h"
 #include <iostream>
 
-Carro::Carro(MundoBox2D &pista, float32 velocidadMaxima, float32 aceleracion,
-    float32 anguloDeGiro, float32  agarre, float32 x, float32 y, size_t idCliente):
+Carro::Carro(MundoBox2D &mundoBox2D, float32 velocidadMaxima, float32 aceleracion,
+    float32 anguloDeGiro, float32  agarre, float32 x, float32 y, float32  anguloInicial,
+    size_t idCliente):
 estadoVelocidad(velocidadMaxima, aceleracion), agarre(agarre) {
   this -> anguloDeGiro = anguloDeGiro;
   idConductor = std::to_string(idCliente);
-  agregarseA(pista, x, y);
+  agregarseA(mundoBox2D, x, y, anguloInicial);
   tipo = "Carro";
   coeficienteDeRozamiento = 0;
 }
 
-void Carro::agregarseA(MundoBox2D &pista, float32 x, float32 y) {
+void Carro::agregarseA(MundoBox2D &pista, float32 x, float32 y, float32 anguloInicial) {
     if(!vida.estoyVivo()) {
         vida.revivir();
     }
     bodyDef.type = b2_dynamicBody;
     bodyDef.position.Set(x, y);
+    bodyDef.angle = anguloInicial;
     bodyDef.linearDamping = 0.5f;
     cuerpo = pista.agregarObjeto(&bodyDef);
     cuerpo -> SetUserData(this);
@@ -121,7 +123,7 @@ int Carro::obtenerSueloParaRevivir() {
 
 void Carro::revivir(MundoBox2D &pista, float32 x, float32 y) {
     if (!vida.estoyVivo() && vida.puedoRevivir()) {
-        agregarseA(pista, x, y);
+        agregarseA(pista, x, y, cuerpo -> GetAngle());
     }
 }
 

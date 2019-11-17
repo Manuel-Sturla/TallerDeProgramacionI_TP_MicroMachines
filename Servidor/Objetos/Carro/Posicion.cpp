@@ -11,6 +11,9 @@ void Posicion::actualizar(int nuevoNumeroDeSuelo) {
     if (nuevoNumeroDeSuelo == 0 && suelosPorLosQuePase.top() > 1) {
         numeroDeVueltas += 1;
     }
+    if (!suelosPorLosQuePase.empty()) {
+        numeroDeSuelo = suelosPorLosQuePase.top();
+    }
 }
 
 bool Posicion::termineLaCarrera(int vueltasParaTerminar) {

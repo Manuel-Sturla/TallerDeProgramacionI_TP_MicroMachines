@@ -14,7 +14,8 @@ void ConfiguracionServidor::levantarPistas() {
     //lanzar excepcion si no logro abrir el arhivo
     for (unsigned i = 0; i < configuracion.size(); i++) {
         std::string nombre = configuracion[i]["nombre"].as<std::string>();
-        planosDePistas.emplace(nombre, new PlanoDePista());
+        float32 anugloInicial = configuracion[i]["anguloInicial"].as<float32>();
+        planosDePistas.emplace(nombre, new PlanoDePista(anugloInicial));
         YAML::Node rectas = configuracion[i]["rectas"];
         for (auto &&rectasInfo : rectas) {
             std::string material = rectasInfo["material"].as<std::string>();
