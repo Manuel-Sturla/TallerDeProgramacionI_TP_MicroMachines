@@ -15,6 +15,7 @@ class Textura {
 private:
     SDL_Texture* textura;
     Posicion* posicion;
+    std::mutex m;
 
 public:
     Textura(SDL_Renderer* renderizador, const std::string& archivo, Posicion* pos);

@@ -7,9 +7,8 @@
 #include "ComandoAcelerar.h"
 
 void ComandoAcelerar::ejecutar() {
+    std::cout<<estados[SDL_SCANCODE_UP]<<'\n';
     if(estados[SDL_SCANCODE_UP]){
-        std::cout<<"Acelere\n";
         servidor.ejecutarMovimiento("acelerar");
-        std::cout<<"Deje de acelerar\n";
     }
 }

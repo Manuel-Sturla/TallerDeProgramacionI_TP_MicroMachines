@@ -12,9 +12,12 @@ class ComandoTeclado {
 protected:
     ServidorProxy& servidor;
     const Uint8* estados;
+    bool estaApretado;
 
 public:
-    explicit ComandoTeclado(ServidorProxy &servidor, const Uint8 *estados) : servidor(servidor), estados(estados) {}
+    explicit ComandoTeclado(ServidorProxy &servidor, const Uint8 *estados) : servidor(servidor), estados(estados) {
+        estaApretado = false;
+    }
 
     virtual void ejecutar() = 0;
 
