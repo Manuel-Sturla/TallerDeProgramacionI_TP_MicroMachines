@@ -7,6 +7,7 @@
 
 
 #include <SDL2/SDL_stdinc.h>
+#include <SDL2/SDL_events.h>
 #include "ComandoTeclado.h"
 
 class ComandoAcelerar : public ComandoTeclado {

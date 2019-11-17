@@ -9,24 +9,23 @@
 #include "ComandoFrenar.h"
 #include "ComandoIzquierda.h"
 #include "ComandoDerecha.h"
-#include "../Lector/LectorTeclado.h"
 
 AdministradorComandosTeclado::AdministradorComandosTeclado(ServidorProxy &servidor) : \
 estados(SDL_GetKeyboardState(nullptr)) {
-    comandos.emplace_back(new ComandoAcelerar(servidor, estados));
-    comandos.emplace_back(new ComandoFrenar(servidor, estados));
-    comandos.emplace_back(new ComandoIzquierda(servidor, estados));
-    comandos.emplace_back(new ComandoDerecha(servidor, estados));
+    comandos[SDLK_UP] = new ComandoAcelerar(servidor, estados);
+    comandos[SDLK_DOWN] = new ComandoFrenar(servidor, estados);
+    comandos[SDLK_LEFT] = new ComandoIzquierda(servidor, estados);
+    comandos[SDLK_RIGHT] = new ComandoDerecha(servidor, estados);
 }
 
 AdministradorComandosTeclado::~AdministradorComandosTeclado() {
     for(auto & comando : comandos){
-        delete(comando);
+        delete(comando.second);
     }
 }
 
 void AdministradorComandosTeclado::ejecutar() {
     for(auto & comando : comandos){
-        comando->ejecutar();
+        comando.second->ejecutar();
     }
 }

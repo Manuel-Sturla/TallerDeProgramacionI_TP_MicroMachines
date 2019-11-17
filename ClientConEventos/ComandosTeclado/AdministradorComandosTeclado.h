@@ -12,7 +12,7 @@
 
 class AdministradorComandosTeclado {
 private:
-    std::vector<ComandoTeclado*> comandos;
+    std::map<SDL_Keycode, ComandoTeclado*> comandos;
     const Uint8* estados;
 
 public:

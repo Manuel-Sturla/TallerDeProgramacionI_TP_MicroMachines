@@ -8,7 +8,6 @@
 #include <SDL2/SDL_image.h>
 
 Textura::Textura(SDL_Renderer *renderizador, const std::string &archivo, Posicion* pos) : posicion(pos) {
-    std::unique_lock<std::mutex> lock(m);
     textura = IMG_LoadTexture(renderizador, archivo.c_str());
     if(textura == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
@@ -24,7 +23,6 @@ Textura::Textura(Textura&& text) noexcept : posicion(text.posicion) {
 }
 
 bool Textura::copiar(SDL_Renderer *renderizador, Camara& camara) {
-    std::unique_lock<std::mutex> lock(m);
     if(posicion == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, "Posicion invalida");
     }
