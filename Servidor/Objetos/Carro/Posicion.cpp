@@ -7,11 +7,10 @@ Posicion::Posicion() {
 }
 
 void Posicion::actualizar(int nuevoNumeroDeSuelo) {
-    if (nuevoNumeroDeSuelo == 0 && numeroDeSuelo > 1) {
+    actualizarSuelosPorLosQuePase(nuevoNumeroDeSuelo);
+    if (nuevoNumeroDeSuelo == 0 && suelosPorLosQuePase.top() > 1) {
         numeroDeVueltas += 1;
-        std::cout << "Estoy en vuelta: " << numeroDeVueltas << std::endl;
     }
-    numeroDeSuelo = nuevoNumeroDeSuelo;
 }
 
 bool Posicion::termineLaCarrera(int vueltasParaTerminar) {
@@ -33,4 +32,16 @@ bool Posicion::operator<(const Posicion &otraposicion) {
 
 int Posicion::obtenerSueloParaRevivir() {
     return numeroDeSuelo;
+}
+
+void Posicion::actualizarSuelosPorLosQuePase(int nuevoNumeroDeSuelo) {
+    if (suelosPorLosQuePase.empty() && nuevoNumeroDeSuelo == 0) {
+        suelosPorLosQuePase.push(nuevoNumeroDeSuelo);
+    } else if (!suelosPorLosQuePase.empty()) {
+        if (suelosPorLosQuePase.top() == nuevoNumeroDeSuelo -1) {
+            suelosPorLosQuePase.push(nuevoNumeroDeSuelo);
+        } else if (suelosPorLosQuePase.top() - 1 == nuevoNumeroDeSuelo) {
+            suelosPorLosQuePase.pop();
+        }
+    }
 }
