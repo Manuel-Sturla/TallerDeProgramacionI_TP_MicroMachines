@@ -1,7 +1,7 @@
 #include "Pasto.h"
 
 Pasto::Pasto() {
-  coeficienteDeRozamiento = 0.9f;
+  coeficienteDeRozamiento = 1.0f;
   id = "Pasto";
 }
 

@@ -9,9 +9,10 @@
 #include "ComandoFrenar.h"
 #include "ComandoIzquierda.h"
 #include "ComandoDerecha.h"
+#include "../Lector/LectorTeclado.h"
 
-AdministradorComandosTeclado::AdministradorComandosTeclado(ServidorProxy& servidor) : cerrar(servidor, nullptr) {
-    estados = SDL_GetKeyboardState(nullptr);
+AdministradorComandosTeclado::AdministradorComandosTeclado(ServidorProxy &servidor) : \
+estados(SDL_GetKeyboardState(nullptr)) {
     comandos.emplace_back(new ComandoAcelerar(servidor, estados));
     comandos.emplace_back(new ComandoFrenar(servidor, estados));
     comandos.emplace_back(new ComandoIzquierda(servidor, estados));
@@ -28,8 +29,4 @@ void AdministradorComandosTeclado::ejecutar() {
     for(auto & comando : comandos){
         comando->ejecutar();
     }
-}
-
-void AdministradorComandosTeclado::cerrarPrograma() {
-    cerrar.ejecutar();
 }

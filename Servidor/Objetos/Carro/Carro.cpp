@@ -19,6 +19,7 @@ void Carro::agregarseA(MundoBox2D &pista, float32 x, float32 y) {
     }
     bodyDef.type = b2_dynamicBody;
     bodyDef.position.Set(x, y);
+    bodyDef.linearDamping = 0.5f;
     cuerpo = pista.agregarObjeto(&bodyDef);
     cuerpo -> SetUserData(this);
     b2PolygonShape dynamicBox;

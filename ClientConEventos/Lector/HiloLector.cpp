@@ -8,15 +8,18 @@
 #include "../Jugador/JugadorReal.h"
 
 HiloLector::HiloLector(ServidorProxy &servidor, bool &keepTalking, std::shared_ptr<Jugador> &jugador) :\
-comandos(servidor), keepTalking(keepTalking), jugador(jugador) {}
+comandos(servidor), keepTalking(keepTalking), jugador(jugador), servidor(servidor) {}
 
 void HiloLector::run() {
-    int comando = 0;
-    comando = jugador->obtenerComando();
-    while(comando != -1){
-        comandos.ejecutar();
-        comando = jugador->obtenerComando();
+    SDL_Event evento;
+    while(keepTalking){
+        while(SDL_PollEvent(&evento)){
+            if(evento.type == SDL_QUIT){
+                keepTalking = false;
+            } else {
+                comandos.ejecutar();
+            }
+        }
     }
-    keepTalking = false;
-    comandos.cerrarPrograma();
+    servidor.terminarConexion();
 }
