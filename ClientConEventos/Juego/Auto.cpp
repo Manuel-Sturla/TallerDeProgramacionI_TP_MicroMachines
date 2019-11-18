@@ -6,9 +6,10 @@
 #include "Auto.h"
 #include "../Sdl/Renderizador.h"
 
-Auto::Auto(Renderizador &renderizador, int tam) : Desplazable(renderizador, tam) {
-    id = renderizador.agregarTextura("../Sprites/auto.png", &posicion);
+Auto::Auto(Renderizador &renderizador, int tam, std::string id) : Desplazable(renderizador, tam, id) {
+    renderizador.agregarAuto("../Sprites/auto.png", &posicion, id);
     etapaExplosion = 0;
+    idExplosion = "explosion";
 }
 
 void Auto::mover(float posX, float posY, int angulo) {
@@ -22,19 +23,18 @@ void Auto::mover(float posX, float posY, int angulo) {
 
 void Auto::morir() {
     if(etapaExplosion == 0){
-        idExplosion = renderizador.agregarTextura("../Sprites/explosion0.png", &posicion);
+        renderizador.agregarAuto("../Sprites/explosion0.png", &posicion, idExplosion);
         etapaExplosion++;
     } else if(etapaExplosion == 1) {
-        renderizador.borrarTextura(idExplosion);
-        idExplosion = renderizador.agregarTextura("../Sprites/explosion1.png", &posicion);
+        renderizador.borrarExtra(idExplosion);
+        renderizador.agregarAuto("../Sprites/explosion1.png", &posicion, idExplosion);
         etapaExplosion++;
     } else if(etapaExplosion == 2) {
-        renderizador.borrarTextura(idExplosion);
-        idExplosion = renderizador.agregarTextura("../Sprites/explosion2.png", &posicion);
+        renderizador.borrarExtra(idExplosion);
+        renderizador.agregarAuto("../Sprites/explosion2.png", &posicion, idExplosion);
         etapaExplosion++;
     } else {
-        renderizador.borrarTextura(idExplosion);
-        idExplosion = -1;
+        renderizador.borrarExtra(idExplosion);
         etapaExplosion = 0;
     }
 }
@@ -43,5 +43,5 @@ void Auto::modificar(std::string &mensaje) {
 }
 
 void Auto::eliminar() {
-    renderizador.borrarTextura(id);
+    renderizador.borrarExtra(id);
 }

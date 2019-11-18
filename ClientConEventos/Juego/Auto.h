@@ -13,10 +13,10 @@
 class Auto : public Desplazable {
 private:
     int etapaExplosion;
-    unsigned long idExplosion;
+    std::string idExplosion;
 
 public:
-    Auto(Renderizador &renderizador, int tam);
+    Auto(Renderizador &renderizador, int tam, std::string id);
 
     void mover(float posX, float posY, int angulo) override;
 

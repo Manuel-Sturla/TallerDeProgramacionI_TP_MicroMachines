@@ -12,6 +12,7 @@ class ComandoPodio : public ComandoVisualizacion {
 private:
     Posicion posPodio;
     bool& keepTalking;
+    std::string idPodio;
 
 public:
     ComandoPodio(std::map<std::string, Desplazable *> &desplazables, Renderizador &renderizador, bool &keepTalking);

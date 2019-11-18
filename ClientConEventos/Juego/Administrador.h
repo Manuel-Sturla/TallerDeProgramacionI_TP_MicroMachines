@@ -19,7 +19,7 @@ private:
     Renderizador& renderizador;
     Pista pista;
     Posicion posTexto;
-    size_t idTexto;
+    std::string idTexto;
     bool& keepTalking;
 
 public:

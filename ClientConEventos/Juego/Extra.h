@@ -10,7 +10,7 @@
 
 class Extra : public Desplazable {
 public:
-    Extra(Renderizador &renderizador, int tam, std::string tipo);
+    Extra(Renderizador &renderizador, int tam, const std::string& tipo, std::string id);
 
     void mover(float posX, float posY, int angulo) override;
 

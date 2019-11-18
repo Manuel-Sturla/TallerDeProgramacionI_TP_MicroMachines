@@ -106,9 +106,9 @@ void Pista::inicializarPodio(Podio &podio) {
 Pista::Pista() {
     this -> anguloInicial = 0;
     extras.emplace_back(new Barro(mundoBox2D, 4,4, extras.size()));
-    //extras.emplace_back(new Barro(mundoBox2D, 0,0, extras.size()));
-    //extras.emplace_back(new Barro(mundoBox2D, 8,8, extras.size()));
-    //extras.emplace_back(new Barro(mundoBox2D, -4,-4, extras.size()));
+    extras.emplace_back(new Barro(mundoBox2D, 2,2, extras.size()));
+    extras.emplace_back(new Barro(mundoBox2D, 8,8, extras.size()));
+//    extras.emplace_back(new Barro(mundoBox2D, -4,-4, extras.size()));
 }
 
 void Pista::agregarExtra() {

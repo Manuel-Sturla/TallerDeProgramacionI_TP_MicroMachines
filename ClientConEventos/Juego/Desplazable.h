@@ -13,10 +13,10 @@ class Desplazable {
 protected:
     Posicion posicion;
     Renderizador& renderizador;
-    size_t id;
+    std::string id;
 
 public:
-    Desplazable(Renderizador& renderizador, int tam);
+    Desplazable(Renderizador& renderizador, int tam, std::string id);
 
     virtual void mover(float posX, float posY, int angulo) = 0;
 

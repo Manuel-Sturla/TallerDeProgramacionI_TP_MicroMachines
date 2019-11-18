@@ -5,9 +5,9 @@
 #include "Extra.h"
 #include "../Excepciones/ExcepcionConPos.h"
 
-Extra::Extra(Renderizador &renderizador, int tam, std::string tipo) : Desplazable(renderizador, tam) {
+Extra::Extra(Renderizador &renderizador, int tam, const std::string& tipo, std::string id) : Desplazable(renderizador, tam, id) {
     if(tipo == "Barro"){
-        id = renderizador.agregarTrecho("../Sprites/barro.png", &posicion);
+        renderizador.agregarTrecho("../Sprites/barro.png", &posicion);
     } else {
         throw ExcepcionConPos(__FILE__, __LINE__, "Tipo de extra invalido");
     }
@@ -19,10 +19,8 @@ void Extra::mover(float posX, float posY, int angulo) {
 
 void Extra::morir() {}
 
-void Extra::modificar(std::string &mensaje) {
-
-}
+void Extra::modificar(std::string &mensaje) {}
 
 void Extra::eliminar() {
-    renderizador.borrarTrecho(id);
+    renderizador.borrarExtra(id);
 }

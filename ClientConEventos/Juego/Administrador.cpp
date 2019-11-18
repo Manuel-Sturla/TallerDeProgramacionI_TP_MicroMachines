@@ -19,7 +19,7 @@ pista(renderizador), m(m), keepTalking(keepTalking), posTexto(0,200,100,1000,-90
     comandos["posicionarAuto"] = new ComandoPosicionarAuto(desplazables, renderizador);
     comandos["eliminar"] = new ComandoEliminar(desplazables, renderizador);
     comandos["podio"] = new ComandoPodio(desplazables, renderizador, keepTalking);
-    idTexto = -1;
+    idTexto = "cant jugadores";
 }
 
 void Administrador::ejecutarEventos(std::vector<std::string> &eventos) {
@@ -34,20 +34,19 @@ void Administrador::ejecutarEventos(std::vector<std::string> &eventos) {
 }
 
 void Administrador::actualizarJugadores(std::vector<std::string> &evento) {
-    renderizador.borrarTextura(idTexto);
-    idTexto = renderizador.agregarTexto("Cantidad de jugadores: " + evento[0], &posTexto);
+    renderizador.borrarExtra(idTexto);
+    renderizador.agregarTexto("Cantidad de jugadores: " + evento[0], &posTexto, idTexto);
     evento.erase(evento.begin());
 }
 
 void Administrador::crearPista(std::vector<std::string> &planos) {
-    renderizador.borrarTextura(idTexto);
-    idTexto = -1;
+    renderizador.borrarExtra(idTexto);
     pista.crear(planos);
 }
 
 Desplazable* Administrador::crearMiAuto(std::vector<std::string> &evento) {
     evento.erase(evento.begin());
-    desplazables.emplace(evento[0], new Auto(renderizador, 1));
+    desplazables.emplace(evento[0], new Auto(renderizador, 1, evento[0]));
     auto it = desplazables.find(evento[0]);
     renderizador.configurarCamara(it->second->getPosicion());
     return it->second;

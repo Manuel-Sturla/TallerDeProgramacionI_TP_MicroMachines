@@ -8,5 +8,7 @@ Posicion* Desplazable::getPosicion() {
     return &posicion;
 }
 
-Desplazable::Desplazable(Renderizador &renderizador, int tam)\
-: posicion(0,0, tam, tam, 0), renderizador(renderizador){}
+Desplazable::Desplazable(Renderizador &renderizador, int tam, std::string id)\
+: posicion(0,0, tam, tam, 0), renderizador(renderizador){
+    this->id = id;
+}

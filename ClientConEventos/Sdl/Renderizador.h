@@ -17,20 +17,23 @@ private:
     std::mutex& m;
     SDL_Renderer* renderizador;
     Ventana ventana;
-    std::vector<Textura> texturas;
+    std::map<std::string, Textura> autos;
+    std::map<std::string, Textura> extras;
     std::vector<Textura> pista;
     Camara camara;
 
 public:
     Renderizador(const char *titulo, int ancho, int altura, std::mutex &m);
 
-    unsigned long agregarTextura(const std::string &archivo, Posicion* pos);
+    void agregarAuto(const std::string &archivo, Posicion *pos, std::string &id);
+
+    void agregarExtra(const std::string &archivo, Posicion *pos, std::string &id);
 
     size_t agregarTrecho(const std::string &archivo, Posicion* pos);
 
-    size_t agregarTexto(const std::string &texto, Posicion *posicion);
+    size_t agregarTexto(const std::string &texto, Posicion *posicion, std::string &id);
 
-    void borrarTextura(unsigned long idTextura);
+    void borrarExtra(std::string id);
 
     void imprimir(Uint32 tiempoMs);
 
@@ -45,6 +48,8 @@ public:
     void borrarTrecho(size_t idTrecho);
 
     void borrarTodo();
+
+    void borrarAuto(std::string id);
 };
 
 #endif //OPENGLTEST_RENDERIZADOR_H

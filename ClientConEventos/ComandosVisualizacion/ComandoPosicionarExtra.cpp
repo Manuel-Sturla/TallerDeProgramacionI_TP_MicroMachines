@@ -11,7 +11,7 @@ ComandoPosicionarExtra::ComandoPosicionarExtra(std::map<std::string, Desplazable
 void ComandoPosicionarExtra::ejecutar(std::vector<std::string> &eventos) {
     auto it = desplazables.find(eventos[0]);
     if(it == desplazables.end()){
-        desplazables.emplace(eventos[0], new Extra(renderizador, 1, eventos[1]));
+        desplazables.emplace(eventos[0], new Extra(renderizador, 1, eventos[1], std::__cxx11::string()));
         it = desplazables.find(eventos[0]);
         eventos.erase(eventos.begin());
     } else {

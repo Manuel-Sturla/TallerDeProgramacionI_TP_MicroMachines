@@ -5,10 +5,12 @@
 #include "ComandoPodio.h"
 
 ComandoPodio::ComandoPodio(std::map<std::string, Desplazable *> &desplazables, Renderizador &renderizador,bool &keepTalking)\
-: ComandoVisualizacion(desplazables, renderizador), keepTalking(keepTalking), posPodio(0,200,100,1000,-90) {}
+: ComandoVisualizacion(desplazables, renderizador), keepTalking(keepTalking), posPodio(0,200,100,1000,-90) {
+    idPodio = "podio";
+}
 
 void ComandoPodio::ejecutar(std::vector<std::string> &eventos) {
     renderizador.borrarTodo();
-    renderizador.agregarTexto(eventos[0], &posPodio);
+    renderizador.agregarTexto(eventos[0], &posPodio, idPodio);
     keepTalking = false;
 }

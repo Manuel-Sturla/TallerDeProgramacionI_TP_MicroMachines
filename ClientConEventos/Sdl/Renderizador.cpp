@@ -20,9 +20,8 @@ void Renderizador::imprimir(Uint32 tiempoMs) {
     SDL_Delay(tiempoMs);
 }
 
-unsigned long Renderizador::agregarTextura(const std::string &archivo, Posicion* pos) {
-    texturas.emplace_back(renderizador, archivo, pos);
-    return texturas.size()-1;
+void Renderizador::agregarAuto(const std::string &archivo, Posicion *pos, std::string &id) {
+    autos.insert(std::pair<std::string, Textura> (id, Textura(renderizador, archivo, pos)));
 }
 
 size_t Renderizador::agregarTrecho(const std::string &archivo, Posicion* pos) {
@@ -39,8 +38,11 @@ void Renderizador::copiarTodo() {
     for(auto& trecho : pista){
         trecho.copiar(renderizador, camara);
     }
-    for(auto& textura : texturas){
-        textura.copiar(renderizador, camara);
+    for(auto& extra : extras){
+        extra.second.copiar(renderizador, camara);
+    }
+    for(auto& autito : autos){
+        autito.second.copiar(renderizador, camara);
     }
 }
 
@@ -48,30 +50,31 @@ void Renderizador::configurarCamara(Posicion* posicion) {
     camara.setAuto(posicion);
 }
 
-size_t Renderizador::agregarTexto(const std::string& texto, Posicion *posicion) {
+size_t Renderizador::agregarTexto(const std::string &texto, Posicion *posicion, std::string &id) {
     TTF_Font* fuente = TTF_OpenFont("../fuente.ttf", 24);
     SDL_Color color = {255, 255, 255};
     SDL_Surface* superficie = TTF_RenderText_Solid(fuente, texto.c_str(), color);
     SDL_Texture* mensaje = SDL_CreateTextureFromSurface(renderizador, superficie);
-    texturas.emplace_back(mensaje, posicion);
-    return texturas.size()-1;
+    extras.insert(std::pair<std::string, Textura> (id, Textura(mensaje, posicion)));
 }
 
-Renderizador::~Renderizador() {
-    for(auto & texura : texturas){
-        texura.destruir();
-    }
-    for(auto & trecho : pista){
-        trecho.destruir();
-    }
-    if(renderizador != nullptr){
-        SDL_DestroyRenderer(renderizador);
+void Renderizador::agregarExtra(const std::string &archivo, Posicion *pos, std::string &id) {
+    autos.insert(std::pair<std::string, Textura> (id, Textura(renderizador, archivo, pos)));
+}
+
+void Renderizador::borrarExtra(std::string id) {
+    auto it = extras.find(id);
+    if(it != extras.end()){
+        it->second.destruir();
+        extras.erase(it);
     }
 }
 
-void Renderizador::borrarTextura(unsigned long idTextura) {
-    if(idTextura >= 0 && idTextura < texturas.size()){
-        texturas.erase(texturas.begin() + idTextura);
+void Renderizador::borrarAuto(std::string id) {
+    auto it = autos.find(id);
+    if(it != autos.end()){
+        it->second.destruir();
+        extras.erase(it);
     }
 }
 
@@ -83,12 +86,23 @@ void Renderizador::borrarTrecho(size_t idTrecho){
 
 void Renderizador::borrarTodo() {
     camara.setAuto(nullptr);
-    for(auto & texura : texturas){
-        texura.destruir();
+    for(auto & extra : extras){
+        extra.second.destruir();
+    }
+    for(auto & autito : extras){
+        autito.second.destruir();
     }
     for(auto & trecho : pista){
         trecho.destruir();
     }
-    texturas.clear();
+    extras.clear();
+    autos.clear();
     pista.clear();
+}
+
+Renderizador::~Renderizador() {
+    borrarTodo();
+    if(renderizador != nullptr){
+        SDL_DestroyRenderer(renderizador);
+    }
 }
