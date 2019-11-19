@@ -92,7 +92,7 @@ void Carro::reducirAgarre() {
 }
 
 void Carro::empaquetar(std::vector<std::string> *destino) {
-    destino -> emplace_back(idConductor);
+    empaquetarId(destino);
     empaquetarPosicion(destino);
     empaquetarAngulo(destino);
 }
@@ -136,6 +136,10 @@ bool Carro::moriRecientemente() {
 }
 
 void Carro::empaquetarVida(std::vector<std::string> *destino) {
-    destino -> emplace_back(idConductor);
+    empaquetarId(destino);
     vida.empaquetar(destino);
+}
+
+void Carro::empaquetarId(std::vector<std::string> *destino) {
+    destino -> emplace_back(idConductor);
 }
