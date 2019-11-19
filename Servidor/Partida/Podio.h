@@ -20,6 +20,8 @@ public:
 
     std::string obtenerGanador();
 
+    void empaquetarPodio(std::vector<std::string> *destino);
+
     ~Podio();
 
 };

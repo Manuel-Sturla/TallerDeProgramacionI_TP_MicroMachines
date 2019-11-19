@@ -9,7 +9,7 @@ Recta::Recta(MundoBox2D &pista, Material *unMaterial, float32 x, float32 y,
     cuerpo = pista.agregarObjeto(&defCuerpo);
     cuerpo -> SetUserData(this);
     b2PolygonShape cajaEstatica;
-    cajaEstatica.SetAsBox(2.0f, 2.0f); //TAMANIO DE CUADRADO HARDCODEADO
+    cajaEstatica.SetAsBox(2.0f, 2.0f); //TAMANIO DE CUADRADO
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &cajaEstatica;
     fixtureDef.density = 0.0f;

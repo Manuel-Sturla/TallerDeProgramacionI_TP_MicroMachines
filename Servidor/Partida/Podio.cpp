@@ -31,3 +31,9 @@ std::string Podio::obtenerGanador() {
     mensaje += (*it) -> darIdConductor();
     return mensaje;
 }
+
+void Podio::empaquetarPodio(std::vector<std::string> *destino) {
+    for (auto it = carros.begin(); it != carros.end(); it++) {
+        (*it) -> empaquetarId(destino);
+    }
+}
