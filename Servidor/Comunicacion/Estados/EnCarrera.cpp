@@ -17,6 +17,7 @@ void EnCarrera::ejecutar() {
     pista.simular();
     actualizarEventos();
     podio.actualizarPodio();
+    //std::shared_ptr<EventoParseable> eventoPodio (new EnviarPodio(podio));
     if(podio.analizarVictoria()){
         std::shared_ptr<EventoParseable> eventoPodio (new EnviarPodio(podio));
         for (auto& cliente : clientes.obtenerClaves()){
