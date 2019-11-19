@@ -11,6 +11,7 @@
 #include "../ComandosVisualizacion/ComandoPosicionarAuto.h"
 #include "../ComandosVisualizacion/ComandoEliminar.h"
 #include "../ComandosVisualizacion/ComandoPodio.h"
+#include "../ComandosVisualizacion/ComandoActualizarVida.h"
 
 Administrador::Administrador(Renderizador &renderizador, std::mutex& m, bool& keepTalking) : renderizador(renderizador),\
 pista(renderizador), m(m), keepTalking(keepTalking), posTexto(0,200,100,1000,-90){
@@ -47,6 +48,7 @@ void Administrador::crearPista(std::vector<std::string> &planos) {
 Desplazable* Administrador::crearMiAuto(std::vector<std::string> &evento) {
     evento.erase(evento.begin());
     desplazables.emplace(evento[0], new Auto(renderizador, 1, evento[0]));
+    comandos["actualizarVida"] = new ComandoActualizarVida(desplazables, renderizador, evento[0]);
     auto it = desplazables.find(evento[0]);
     renderizador.configurarCamara(it->second->getPosicion());
     return it->second;
