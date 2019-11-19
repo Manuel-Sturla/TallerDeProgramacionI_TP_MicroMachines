@@ -116,11 +116,11 @@ Pista::Pista() {
 
 void Pista::agregarExtra() {
     int numeroAleatorio = rand() % 100;
-    //if (numeroAleatorio == 1) {
-        //int sueloDeAsfalto = rand() % extras.size();
-        //BloquesDeasfalto[sueloDeAsfalto]->colocarExtra(mundoBox2D,
-                                                     // &extras);
-    //}
+    if (numeroAleatorio == 1) {
+        int sueloDeAsfalto = rand() % BloquesDeasfalto.size();
+        BloquesDeasfalto[sueloDeAsfalto]->colocarExtra(mundoBox2D,
+                                                      &extras);
+    }
 }
 
 void Pista::setAnguloInicial(float32 anguloInicial) {
