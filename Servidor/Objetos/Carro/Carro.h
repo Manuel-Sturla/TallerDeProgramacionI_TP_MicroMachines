@@ -75,6 +75,8 @@ class Carro: public Objeto {
 
     bool termineCarrera(int cantidadDeVueltasParaTerminar);
 
+    void empaquetarVida(std::vector<std::string> *destino);
+
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };
 
