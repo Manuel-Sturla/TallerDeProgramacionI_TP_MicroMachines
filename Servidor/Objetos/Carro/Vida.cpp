@@ -60,5 +60,5 @@ bool Vida::moriRecientemente() {
 }
 
 void Vida::empaquetar(std::vector<std::string> *destino) {
-    destino -> emplace_back(vida);
+    destino -> emplace_back(std::to_string(vida));
 }
