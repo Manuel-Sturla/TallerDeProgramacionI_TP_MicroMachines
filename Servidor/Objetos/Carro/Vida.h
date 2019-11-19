@@ -1,6 +1,9 @@
 #ifndef _VIDA_H_
 #define _VIDA_H_
 
+#include <string>
+#include <vector>
+
 class Vida {
   private:
     int vida;
@@ -25,6 +28,8 @@ class Vida {
     void revivir();
 
     void salirDeJuego();
+
+    void empaquetar(std::vector<std::string> *destino);
 
     ~Vida();
 

@@ -134,3 +134,8 @@ void Carro::borrar() {
 bool Carro::moriRecientemente() {
     return vida.moriRecientemente();
 }
+
+void Carro::empaquetarVida(std::vector<std::string> *destino) {
+    destino -> emplace_back(idConductor);
+    vida.empaquetar(destino);
+}

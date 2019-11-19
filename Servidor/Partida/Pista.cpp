@@ -6,6 +6,7 @@
 #include "../Comunicacion/Eventos/EventosParseables/EnviarExtra.h"
 #include "../Objetos/Modificadores/CajaDeSalud.h"
 #include "../Objetos/Modificadores/Barro.h"
+#include "../Comunicacion/Eventos/EventosParseables/EnviarVida.h"
 
 #define LONGITUD_DE_PISTA "4"
 
@@ -61,6 +62,8 @@ void Pista::empaquetarCarro(std::vector<std::shared_ptr<EventoParseable>> *desti
     std::list<Carro>::iterator itCarros;
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
         destino->emplace_back(new EnviarCarro(*itCarros));
+        destino->emplace_back(new EnviarVida(*itCarros));
+
     }
 }
 void Pista::empaquetarExtras(std::vector<std::shared_ptr<EventoParseable>> *destino) {
@@ -105,17 +108,19 @@ void Pista::inicializarPodio(Podio &podio) {
 
 Pista::Pista() {
     this -> anguloInicial = 0;
-    extras.emplace_back(new Barro(mundoBox2D, 4,4, extras.size()));
-    extras.emplace_back(new Barro(mundoBox2D, 2,2, extras.size()));
-    extras.emplace_back(new Barro(mundoBox2D, 8,8, extras.size()));
-//    extras.emplace_back(new Barro(mundoBox2D, -4,-4, extras.size()));
+    //extras.emplace_back(new Barro(mundoBox2D, 4,4, extras.size()));
+    //extras.emplace_back(new Barro(mundoBox2D, 2,2, extras.size()));
+    //extras.emplace_back(new Barro(mundoBox2D, 8,8, extras.size()));
+    //extras.emplace_back(new Barro(mundoBox2D, -4,-4, extras.size()));
 }
 
 void Pista::agregarExtra() {
-    int numeroAleatorio = rand() % 1000;
-    if (numeroAleatorio == 1) {
-        //extras.emplace_back(new Barro(mundoBox2D, 0,0, extras.size()));
-    }
+    int numeroAleatorio = rand() % 100;
+    //if (numeroAleatorio == 1) {
+        //int sueloDeAsfalto = rand() % extras.size();
+        //BloquesDeasfalto[sueloDeAsfalto]->colocarExtra(mundoBox2D,
+                                                     // &extras);
+    //}
 }
 
 void Pista::setAnguloInicial(float32 anguloInicial) {

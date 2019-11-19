@@ -58,3 +58,7 @@ void Vida::salirDeJuego() {
 bool Vida::moriRecientemente() {
     return moriEnLaSimulacionActual;
 }
+
+void Vida::empaquetar(std::vector<std::string> *destino) {
+    destino -> emplace_back(vida);
+}
