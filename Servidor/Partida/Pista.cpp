@@ -1,11 +1,9 @@
 #include <thread>
 #include "Pista.h"
-#include "../Acciones/GiroAIzquierda.h"
 #include "../Comunicacion/Eventos/EventosParseables/EventoParseable.h"
 #include "../Comunicacion/Eventos/EventosParseables/EnviarCarro.h"
 #include "../Comunicacion/Eventos/EventosParseables/EnviarExtra.h"
 #include "../Objetos/Modificadores/CajaDeSalud.h"
-#include "../Objetos/Modificadores/Barro.h"
 #include "../Comunicacion/Eventos/EventosParseables/EnviarVida.h"
 
 #define LONGITUD_DE_PISTA "4"
@@ -56,6 +54,7 @@ void Pista::simular() {
         itCarros -> actualizar();
         //itCarros -> imprimirPosicion();
     }
+
 }
 
 void Pista::empaquetarCarro(std::vector<std::shared_ptr<EventoParseable>> *destino) {
@@ -63,7 +62,6 @@ void Pista::empaquetarCarro(std::vector<std::shared_ptr<EventoParseable>> *desti
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
         destino->emplace_back(new EnviarCarro(*itCarros));
         destino->emplace_back(new EnviarVida(*itCarros));
-
     }
 }
 void Pista::empaquetarExtras(std::vector<std::shared_ptr<EventoParseable>> *destino) {
@@ -108,10 +106,6 @@ void Pista::inicializarPodio(Podio &podio) {
 
 Pista::Pista() {
     this -> anguloInicial = 0;
-    extras.emplace_back(new Barro(mundoBox2D, 4,4, extras.size()));
-    extras.emplace_back(new Barro(mundoBox2D, 2,2, extras.size()));
-    extras.emplace_back(new Barro(mundoBox2D, 8,8, extras.size()));
-    extras.emplace_back(new Barro(mundoBox2D, -4,-4, extras.size()));
 }
 
 void Pista::agregarExtra() {

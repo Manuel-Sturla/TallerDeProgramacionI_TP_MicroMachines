@@ -7,7 +7,7 @@ Visibilidad::Visibilidad() {
 
 void Visibilidad::reducirVisibilidad() {
   visibilidadReducida = true;
-  duracion += 5;
+  duracion += 250;
 }
 
 void Visibilidad::actualizar() {
@@ -24,4 +24,12 @@ void Visibilidad::actualizarVisibilidadReducida() {
 }
 
 Visibilidad::~Visibilidad() {
+}
+
+void Visibilidad::empaquetar(std::vector<std::string> *destino) {
+    if (visibilidadReducida) {
+        destino->emplace_back("Sucio");
+    } else {
+        destino-> emplace_back("Limpio");
+    }
 }

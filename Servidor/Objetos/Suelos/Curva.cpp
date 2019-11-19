@@ -1,5 +1,5 @@
 #include "Curva.h"
-#define FUERA_DE_CURVA 0
+#define FUERA_DE_CURVA 1
 #define EN_ASFALTO 3
 #define EN_PASTO 2
 

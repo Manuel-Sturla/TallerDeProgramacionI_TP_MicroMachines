@@ -19,4 +19,6 @@ void ComandoPosicionarAuto::ejecutar(std::vector<std::string> &eventos) {
     eventos.erase(eventos.begin());
     eventos.erase(eventos.begin());
     eventos.erase(eventos.begin());
+    it->second->modificar(eventos[0]);
+    eventos.erase(eventos.begin());
 }

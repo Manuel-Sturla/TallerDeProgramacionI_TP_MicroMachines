@@ -13,7 +13,7 @@ posVida(10, 900, 100,40, 0), idMiAuto(idMiAuto) {
 void ComandoActualizarVida::ejecutar(std::vector<std::string> &eventos) {
     if(eventos[0] == idMiAuto){
         renderizador.borrarTexto(idVida);
-        renderizador.agregarTexto("Vida: " + eventos[1], &posVida, idVida);
+        renderizador.agregarTexto("Vida: " + eventos[1], &posVida, idVida, 255, 255, 255);
     }
     eventos.erase(eventos.begin());
     eventos.erase(eventos.begin());

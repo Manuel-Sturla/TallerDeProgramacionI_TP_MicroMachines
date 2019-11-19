@@ -4,8 +4,8 @@
 EnviarPodio::EnviarPodio(Podio &podio) {
     std::vector<std::string> aux;
     aux.emplace_back("podio");
-    //podio.empaquetarPodio(&aux);
-    aux.emplace_back(podio.obtenerGanador());
+    podio.empaquetarPodio(&aux);
+    aux.emplace_back("fin podio");
     mensaje = unir(aux, SEPARADOR);
 }
 

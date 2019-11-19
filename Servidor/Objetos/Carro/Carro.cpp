@@ -95,6 +95,7 @@ void Carro::empaquetar(std::vector<std::string> *destino) {
     empaquetarId(destino);
     empaquetarPosicion(destino);
     empaquetarAngulo(destino);
+    visibilidad.empaquetar(destino);
 }
 
 void Carro::actualizarPosicion(int numeroDeSuelo) {

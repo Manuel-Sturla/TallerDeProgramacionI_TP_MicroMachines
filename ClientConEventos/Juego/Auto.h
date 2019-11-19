@@ -14,6 +14,9 @@ class Auto : public Desplazable {
 private:
     int etapaExplosion;
     std::string idExplosion;
+    Posicion posBarro;
+    bool sucio;
+    std::string idBarro;
 
 public:
     Auto(Renderizador &renderizador, int tam, std::string id);

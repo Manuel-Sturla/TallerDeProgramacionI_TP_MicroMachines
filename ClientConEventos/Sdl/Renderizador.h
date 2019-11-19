@@ -8,6 +8,7 @@
 #include <SDL2/SDL_system.h>
 #include <vector>
 #include <map>
+#include <SDL2/SDL_ttf.h>
 #include "Ventana.h"
 #include "Posicion.h"
 #include "Textura.h"
@@ -19,8 +20,9 @@ private:
     Ventana ventana;
     std::map<std::string, Textura> autos;
     std::map<std::string, Textura> extras;
-    std::map<std::string, Textura> textos;
+    std::map<std::string, Textura> otros;
     std::vector<Textura> pista;
+    TTF_Font* fuente;
     Camara camara;
 
 public:
@@ -32,9 +34,11 @@ public:
 
     size_t agregarTrecho(const std::string &archivo, Posicion* pos);
 
-    size_t agregarTexto(const std::string &texto, Posicion *posicion, std::string &id);
+    size_t agregarTexto(const std::string &texto, Posicion *posicion, std::string &id, Uint8 r, Uint8 g, Uint8 b);
 
-    void borrarExtra(std::string id);
+    void agregarTextura(const std::string &archivo, Posicion *pos, std::string &id);
+
+    void borrarExtra(const std::string& id);
 
     void imprimir(Uint32 tiempoMs);
 
@@ -48,7 +52,7 @@ public:
 
     void borrarTodo();
 
-    void borrarAuto(std::string id);
+    void borrarAuto(const std::string& id);
 
     void borrarTexto(std::string& id);
 };
