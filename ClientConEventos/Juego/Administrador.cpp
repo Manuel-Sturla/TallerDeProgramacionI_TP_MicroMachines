@@ -10,8 +10,9 @@
 #include "../ComandosVisualizacion/ComandoPosicionarExtra.h"
 #include "../ComandosVisualizacion/ComandoPosicionarAuto.h"
 #include "../ComandosVisualizacion/ComandoEliminar.h"
-#include "../ComandosVisualizacion/ComandoPodio.h"
+#include "../ComandosVisualizacion/ComandoGanador.h"
 #include "../ComandosVisualizacion/ComandoActualizarVida.h"
+#include "../ComandosVisualizacion/ComandoPodio.h"
 
 Administrador::Administrador(Renderizador &renderizador, std::mutex& m, bool& keepTalking) : renderizador(renderizador),\
 pista(renderizador), m(m), keepTalking(keepTalking), posTexto(0,200,1000,100,0){
@@ -19,7 +20,7 @@ pista(renderizador), m(m), keepTalking(keepTalking), posTexto(0,200,1000,100,0){
     comandos["posicionarExtra"] = new ComandoPosicionarExtra(desplazables, renderizador);
     comandos["posicionarAuto"] = new ComandoPosicionarAuto(desplazables, renderizador);
     comandos["eliminar"] = new ComandoEliminar(desplazables, renderizador);
-    comandos["podio"] = new ComandoPodio(desplazables, renderizador, keepTalking);
+    comandos["ganador"] = new ComandoGanador(desplazables, renderizador, keepTalking);
     idTexto = "cant jugadores";
 }
 
@@ -36,7 +37,7 @@ void Administrador::ejecutarEventos(std::vector<std::string> &eventos) {
 
 void Administrador::actualizarJugadores(std::vector<std::string> &evento) {
     renderizador.borrarTexto(idTexto);
-    renderizador.agregarTexto("Cantidad de jugadores: " + evento[0], &posTexto, idTexto);
+    renderizador.agregarTexto("Cantidad de jugadores: " + evento[0], &posTexto, idTexto, 255, 255, 255);
     evento.erase(evento.begin());
 }
 
@@ -49,6 +50,7 @@ Desplazable* Administrador::crearMiAuto(std::vector<std::string> &evento) {
     evento.erase(evento.begin());
     desplazables.emplace(evento[0], new Auto(renderizador, 1, evento[0]));
     comandos["actualizarVida"] = new ComandoActualizarVida(desplazables, renderizador, evento[0]);
+    comandos["podio"] = new ComandoPodio(desplazables, renderizador, evento[0]);
     auto it = desplazables.find(evento[0]);
     renderizador.configurarCamara(it->second->getPosicion());
     return it->second;

@@ -77,7 +77,7 @@ class Carro: public Objeto {
 
     void empaquetarVida(std::vector<std::string> *destino);
 
-    void empaquetarId(c);
+    void empaquetarId(std::vector<std::string> *destino);
 
     void imprimirPosicion(); //FUNCION DE PRUEBA
 };

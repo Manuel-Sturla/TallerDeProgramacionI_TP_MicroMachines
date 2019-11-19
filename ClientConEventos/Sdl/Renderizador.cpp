@@ -13,6 +13,10 @@ ventana(titulo, ancho, altura), m(m), camara(1000, 100) {
     if(renderizador == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, "No pude crear el renderizador");
     }
+    fuente = TTF_OpenFont("../fuente.ttf", 24);
+    if(fuente == nullptr){
+        throw ExcepcionConPos(__FILE__, __LINE__, TTF_GetError());
+    }
 }
 
 void Renderizador::imprimir(Uint32 tiempoMs) {
@@ -53,11 +57,16 @@ void Renderizador::configurarCamara(Posicion* posicion) {
     camara.setAuto(posicion);
 }
 
-size_t Renderizador::agregarTexto(const std::string &texto, Posicion *posicion, std::string &id) {
-    TTF_Font* fuente = TTF_OpenFont("../fuente.ttf", 24);
-    SDL_Color color = {255, 255, 255};
+size_t Renderizador::agregarTexto(const std::string &texto, Posicion *posicion, std::string &id, Uint8 r, Uint8 g, Uint8 b) {
+    SDL_Color color = {r, g, b};
     SDL_Surface* superficie = TTF_RenderText_Solid(fuente, texto.c_str(), color);
+    if(superficie == nullptr){
+        throw ExcepcionConPos(__FILE__, __LINE__, TTF_GetError());
+    }
     SDL_Texture* mensaje = SDL_CreateTextureFromSurface(renderizador, superficie);
+    if(mensaje == nullptr){
+        throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
+    }
     textos.insert(std::pair<std::string, Textura> (id, Textura(mensaje, posicion)));
 }
 
@@ -65,7 +74,7 @@ void Renderizador::agregarExtra(const std::string &archivo, Posicion *pos, std::
     autos.insert(std::pair<std::string, Textura> (id, Textura(renderizador, archivo, pos)));
 }
 
-void Renderizador::borrarExtra(std::string id) {
+void Renderizador::borrarExtra(const std::string& id) {
     auto it = extras.find(id);
     if(it != extras.end()){
         it->second.destruir();
@@ -73,7 +82,7 @@ void Renderizador::borrarExtra(std::string id) {
     }
 }
 
-void Renderizador::borrarAuto(std::string id) {
+void Renderizador::borrarAuto(const std::string& id) {
     auto it = autos.find(id);
     if(it != autos.end()){
         it->second.destruir();

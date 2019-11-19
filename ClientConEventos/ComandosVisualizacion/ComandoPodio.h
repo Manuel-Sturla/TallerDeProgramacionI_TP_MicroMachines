@@ -1,5 +1,5 @@
 //
-// Created by diego on 17/11/19.
+// Created by diego on 19/11/19.
 //
 
 #ifndef CLIENT_COMANDOPODIO_H
@@ -10,16 +10,16 @@
 
 class ComandoPodio : public ComandoVisualizacion {
 private:
-    Posicion posPodio;
-    bool& keepTalking;
-    std::string idPodio;
+    std::string idMiAuto;
+    std::vector<std::string> idPodio;
+    std::vector<Posicion> posPodio;
 
 public:
-    ComandoPodio(std::map<std::string, Desplazable *> &desplazables, Renderizador &renderizador, bool &keepTalking);
+    ComandoPodio(std::map<std::string, Desplazable *> &desplazables, Renderizador &renderizador,
+                 std::string idMiAuto);
 
+private:
     void ejecutar(std::vector<std::string> &eventos) override;
-
-    ~ComandoPodio() override = default;
 };
 
 
