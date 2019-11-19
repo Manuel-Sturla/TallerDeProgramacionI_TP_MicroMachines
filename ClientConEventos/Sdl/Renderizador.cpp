@@ -44,6 +44,9 @@ void Renderizador::copiarTodo() {
     for(auto& autito : autos){
         autito.second.copiar(renderizador, camara);
     }
+    for(auto& texto : textos){
+        texto.second.copiar(renderizador);
+    }
 }
 
 void Renderizador::configurarCamara(Posicion* posicion) {
@@ -55,7 +58,7 @@ size_t Renderizador::agregarTexto(const std::string &texto, Posicion *posicion, 
     SDL_Color color = {255, 255, 255};
     SDL_Surface* superficie = TTF_RenderText_Solid(fuente, texto.c_str(), color);
     SDL_Texture* mensaje = SDL_CreateTextureFromSurface(renderizador, superficie);
-    extras.insert(std::pair<std::string, Textura> (id, Textura(mensaje, posicion)));
+    textos.insert(std::pair<std::string, Textura> (id, Textura(mensaje, posicion)));
 }
 
 void Renderizador::agregarExtra(const std::string &archivo, Posicion *pos, std::string &id) {
@@ -78,12 +81,6 @@ void Renderizador::borrarAuto(std::string id) {
     }
 }
 
-void Renderizador::borrarTrecho(size_t idTrecho){
-    if(idTrecho >= 0 && idTrecho < pista.size()){
-        pista.erase(pista.begin() + idTrecho);
-    }
-}
-
 void Renderizador::borrarTodo() {
     camara.setAuto(nullptr);
     for(auto & extra : extras){
@@ -95,14 +92,26 @@ void Renderizador::borrarTodo() {
     for(auto & trecho : pista){
         trecho.destruir();
     }
+    for(auto & texto : textos){
+        texto.second.destruir();
+    }
     extras.clear();
     autos.clear();
     pista.clear();
+    textos.clear();
 }
 
 Renderizador::~Renderizador() {
     borrarTodo();
     if(renderizador != nullptr){
         SDL_DestroyRenderer(renderizador);
+    }
+}
+
+void Renderizador::borrarTexto(std::string &id) {
+    auto it = textos.find(id);
+    if(it != textos.end()){
+        it->second.destruir();
+        textos.erase(it);
     }
 }

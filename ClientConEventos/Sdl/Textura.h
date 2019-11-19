@@ -28,6 +28,8 @@ public:
 
     bool copiar(SDL_Renderer* renderizador, Camara& camara);
 
+    bool copiar(SDL_Renderer* renderizador);
+
     void destruir();
 
     virtual ~Textura();

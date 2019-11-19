@@ -37,6 +37,19 @@ bool Textura::copiar(SDL_Renderer *renderizador, Camara& camara) {
     return true;
 }
 
+bool Textura::copiar(SDL_Renderer* renderizador){
+    pos_t aux = posicion->getPosicion();
+    SDL_Rect posImpresion;
+    posImpresion.x = aux.x;
+    posImpresion.y = aux.y;
+    posImpresion.w = aux.w;
+    posImpresion.h = aux.h;
+    if(SDL_RenderCopyEx(renderizador, textura, nullptr, &posImpresion,\
+    posicion->getAngulo(), nullptr, SDL_FLIP_NONE)<0){
+        throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
+    }
+}
+
 void Textura::destruir() {
     if(textura != nullptr){
         SDL_DestroyTexture(textura);

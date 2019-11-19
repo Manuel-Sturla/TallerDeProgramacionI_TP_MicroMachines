@@ -5,7 +5,7 @@
 #include "ComandoPodio.h"
 
 ComandoPodio::ComandoPodio(std::map<std::string, Desplazable *> &desplazables, Renderizador &renderizador,bool &keepTalking)\
-: ComandoVisualizacion(desplazables, renderizador), keepTalking(keepTalking), posPodio(0,200,100,1000,-90) {
+: ComandoVisualizacion(desplazables, renderizador), keepTalking(keepTalking), posPodio(0,200,1000,100,0) {
     idPodio = "podio";
 }
 

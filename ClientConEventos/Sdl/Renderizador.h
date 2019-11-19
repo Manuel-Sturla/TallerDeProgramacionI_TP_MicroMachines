@@ -19,6 +19,7 @@ private:
     Ventana ventana;
     std::map<std::string, Textura> autos;
     std::map<std::string, Textura> extras;
+    std::map<std::string, Textura> textos;
     std::vector<Textura> pista;
     Camara camara;
 
@@ -45,11 +46,11 @@ public:
 
     virtual ~Renderizador();
 
-    void borrarTrecho(size_t idTrecho);
-
     void borrarTodo();
 
     void borrarAuto(std::string id);
+
+    void borrarTexto(std::string& id);
 };
 
 #endif //OPENGLTEST_RENDERIZADOR_H

@@ -7,7 +7,7 @@
 
 Extra::Extra(Renderizador &renderizador, int tam, const std::string& tipo, std::string id) : Desplazable(renderizador, tam, id) {
     if(tipo == "Barro"){
-        renderizador.agregarTrecho("../Sprites/barro.png", &posicion);
+        renderizador.agregarExtra("../Sprites/barro.png", &posicion, id);
     } else {
         throw ExcepcionConPos(__FILE__, __LINE__, "Tipo de extra invalido");
     }

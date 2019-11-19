@@ -35,13 +35,13 @@ void Administrador::ejecutarEventos(std::vector<std::string> &eventos) {
 }
 
 void Administrador::actualizarJugadores(std::vector<std::string> &evento) {
-    renderizador.borrarExtra(idTexto);
+    renderizador.borrarTexto(idTexto);
     renderizador.agregarTexto("Cantidad de jugadores: " + evento[0], &posTexto, idTexto);
     evento.erase(evento.begin());
 }
 
 void Administrador::crearPista(std::vector<std::string> &planos) {
-    renderizador.borrarExtra(idTexto);
+    renderizador.borrarTexto(idTexto);
     pista.crear(planos);
 }
 

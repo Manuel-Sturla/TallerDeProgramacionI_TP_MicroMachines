@@ -6,13 +6,13 @@
 
 ComandoActualizarVida::ComandoActualizarVida(std::map<std::string, Desplazable *> &desplazables,\
 Renderizador &renderizador, std::string& idMiAuto) : ComandoVisualizacion(desplazables,renderizador),\
-posVida(0, 8, 1,1, -90), idMiAuto(idMiAuto) {
+posVida(10, 900, 100,40, 0), idMiAuto(idMiAuto) {
     idVida = "vida";
 }
 
 void ComandoActualizarVida::ejecutar(std::vector<std::string> &eventos) {
     if(eventos[0] == idMiAuto){
-        renderizador.borrarAuto(idVida);
+        renderizador.borrarTexto(idVida);
         renderizador.agregarTexto("Vida: " + eventos[1], &posVida, idVida);
     }
     eventos.erase(eventos.begin());
