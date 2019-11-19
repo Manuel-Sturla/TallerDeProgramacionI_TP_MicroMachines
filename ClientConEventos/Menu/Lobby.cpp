@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Lobby.h"
+#include "../Excepciones/ExcepcionConPos.h"
 
 Lobby::Lobby(ServidorProxy &servidor, QWidget* parent) : servidor(servidor) {
     Ui::Lobby lobby;
@@ -21,6 +22,10 @@ void Lobby::conectar() {
 void Lobby::crearPartida() {
     std::string nombre = findChild<QLineEdit*>("nombre")->text().toStdString();
     std::string cantJugadores = findChild<QLineEdit*>("cantJug")->text().toStdString();
+    int aux = std::stoi(cantJugadores);
+    if(aux <=0 || aux > 6){
+        throw ExcepcionConPos(__FILE__, __LINE__, "cantidad de jugadores invalida");
+    }
     servidor.crearPartida(nombre, cantJugadores);
     servidor.elegirPartida(nombre);
 }
