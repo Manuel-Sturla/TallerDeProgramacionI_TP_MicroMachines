@@ -20,7 +20,7 @@ private:
     Ventana ventana;
     std::map<std::string, Textura> autos;
     std::map<std::string, Textura> extras;
-    std::map<std::string, Textura> textos;
+    std::map<std::string, Textura> otros;
     std::vector<Textura> pista;
     TTF_Font* fuente;
     Camara camara;
@@ -35,6 +35,8 @@ public:
     size_t agregarTrecho(const std::string &archivo, Posicion* pos);
 
     size_t agregarTexto(const std::string &texto, Posicion *posicion, std::string &id, Uint8 r, Uint8 g, Uint8 b);
+
+    void agregarTextura(const std::string &archivo, Posicion *pos, std::string &id);
 
     void borrarExtra(const std::string& id);
 

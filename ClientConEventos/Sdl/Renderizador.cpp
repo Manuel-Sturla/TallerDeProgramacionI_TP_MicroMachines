@@ -6,6 +6,7 @@
 #include "Renderizador.h"
 #include "../Excepciones/ExcepcionConPos.h"
 #include <SDL2/SDL_ttf.h>
+#include <iostream>
 
 Renderizador::Renderizador(const char *titulo, int ancho, int altura, std::mutex &m) :\
 ventana(titulo, ancho, altura), m(m), camara(1000, 100) {
@@ -48,7 +49,7 @@ void Renderizador::copiarTodo() {
     for(auto& autito : autos){
         autito.second.copiar(renderizador, camara);
     }
-    for(auto& texto : textos){
+    for(auto& texto : otros){
         texto.second.copiar(renderizador);
     }
 }
@@ -67,7 +68,7 @@ size_t Renderizador::agregarTexto(const std::string &texto, Posicion *posicion, 
     if(mensaje == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
     }
-    textos.insert(std::pair<std::string, Textura> (id, Textura(mensaje, posicion)));
+    otros.insert(std::pair<std::string, Textura> (id, Textura(mensaje, posicion)));
 }
 
 void Renderizador::agregarExtra(const std::string &archivo, Posicion *pos, std::string &id) {
@@ -101,13 +102,13 @@ void Renderizador::borrarTodo() {
     for(auto & trecho : pista){
         trecho.destruir();
     }
-    for(auto & texto : textos){
+    for(auto & texto : otros){
         texto.second.destruir();
     }
     extras.clear();
     autos.clear();
     pista.clear();
-    textos.clear();
+    otros.clear();
 }
 
 Renderizador::~Renderizador() {
@@ -118,9 +119,13 @@ Renderizador::~Renderizador() {
 }
 
 void Renderizador::borrarTexto(std::string &id) {
-    auto it = textos.find(id);
-    if(it != textos.end()){
+    auto it = otros.find(id);
+    if(it != otros.end()){
         it->second.destruir();
-        textos.erase(it);
+        otros.erase(it);
     }
+}
+
+void Renderizador::agregarTextura(const std::string &archivo, Posicion *pos, std::string &id) {
+    otros.insert(std::pair<std::string, Textura> (id, Textura(renderizador, archivo, pos)));
 }

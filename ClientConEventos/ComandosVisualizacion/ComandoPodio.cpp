@@ -28,7 +28,7 @@ void ComandoPodio::ejecutar(std::vector<std::string> &eventos) {
     int i = 1;
     std::string aux;
     while(eventos[0] != "fin podio"){
-        aux = std::to_string(i) + ". " + eventos[0];
+        aux = std::to_string(i) + ". " + "Jugador "+eventos[0];
         if(eventos[0] == idMiAuto){
             renderizador.agregarTexto(aux, &posPodio[i], idPodio[i], 0, 0, 255);
         } else {
