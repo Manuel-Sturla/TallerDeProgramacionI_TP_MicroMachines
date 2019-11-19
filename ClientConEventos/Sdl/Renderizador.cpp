@@ -77,7 +77,7 @@ void Renderizador::borrarAuto(std::string id) {
     auto it = autos.find(id);
     if(it != autos.end()){
         it->second.destruir();
-        extras.erase(it);
+        autos.erase(it);
     }
 }
 

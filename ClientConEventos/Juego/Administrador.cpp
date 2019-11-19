@@ -14,7 +14,7 @@
 #include "../ComandosVisualizacion/ComandoActualizarVida.h"
 
 Administrador::Administrador(Renderizador &renderizador, std::mutex& m, bool& keepTalking) : renderizador(renderizador),\
-pista(renderizador), m(m), keepTalking(keepTalking), posTexto(0,200,100,1000,-90){
+pista(renderizador), m(m), keepTalking(keepTalking), posTexto(0,200,1000,100,0){
     comandos["morir"] = new ComandoMorir(desplazables, renderizador);
     comandos["posicionarExtra"] = new ComandoPosicionarExtra(desplazables, renderizador);
     comandos["posicionarAuto"] = new ComandoPosicionarAuto(desplazables, renderizador);

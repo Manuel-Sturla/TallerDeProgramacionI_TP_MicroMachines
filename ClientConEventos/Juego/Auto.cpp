@@ -26,15 +26,15 @@ void Auto::morir() {
         renderizador.agregarAuto("../Sprites/explosion0.png", &posicion, idExplosion);
         etapaExplosion++;
     } else if(etapaExplosion == 1) {
-        renderizador.borrarExtra(idExplosion);
+        renderizador.borrarAuto(idExplosion);
         renderizador.agregarAuto("../Sprites/explosion1.png", &posicion, idExplosion);
         etapaExplosion++;
     } else if(etapaExplosion == 2) {
-        renderizador.borrarExtra(idExplosion);
+        renderizador.borrarAuto(idExplosion);
         renderizador.agregarAuto("../Sprites/explosion2.png", &posicion, idExplosion);
         etapaExplosion++;
     } else {
-        renderizador.borrarExtra(idExplosion);
+        renderizador.borrarAuto(idExplosion);
         etapaExplosion = 0;
     }
 }
@@ -43,5 +43,5 @@ void Auto::modificar(std::string &mensaje) {
 }
 
 void Auto::eliminar() {
-    renderizador.borrarExtra(id);
+    renderizador.borrarAuto(id);
 }
