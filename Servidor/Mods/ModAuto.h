@@ -8,17 +8,16 @@
 
 #include <string>
 #include "Mod.h"
-#include "../Objetos/Carro/Carro.h"
 
 class ModAuto: public Mod {
-    int(*funcionActivar)(void*);
+    void(*funcionActivar)(CarroDTO_t*);
     const std::string nombreFuncion = "activar";
 
 public:
     ModAuto(const std::string& ruta);
     ModAuto(ModAuto&& otro);
     ModAuto& operator=(ModAuto &&otro);
-    int activar(Carro& carro) override;
+    void activar(Carro& carro) override;
 };
 
 

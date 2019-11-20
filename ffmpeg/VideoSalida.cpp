@@ -4,15 +4,20 @@
 
 #include "VideoSalida.h"
 #include "ErrorFfmpeg.h"
-
-void VideoSalida::escribirFrame() {
-    codec.codificarFrame(frame);
+void VideoSalida::escribirPaquetes(){
     while (codec.obtenerPaquete(paquete)){
         archivoSalida.write(reinterpret_cast<const char *>(paquete->data), paquete->size);
     }
+    ptsActual++;
 }
 
-VideoSalida::VideoSalida(const std::string &nombre){
+void VideoSalida::escribirFrame() {
+    frame.setPts(ptsActual);
+    codec.codificarFrame(frame);
+
+}
+
+VideoSalida::VideoSalida(const std::string &nombre, Frame &frame) : frame(frame){
     this->paquete = av_packet_alloc();
     // Intenta deducir formato según extensión
     this->formatoSalida = av_guess_format(NULL, nombre.c_str(), NULL);
@@ -28,4 +33,22 @@ VideoSalida::VideoSalida(const std::string &nombre){
     if (!archivoSalida.is_open()){
         throw ErrorFfmpeg("No se pudo crear el archivo de salida", __LINE__, __FILE__);
     }
+
+    inicializarFrame();
+}
+
+void VideoSalida::inicializarFrame() {
+    codec.inicializarFrame(frame);
+    ptsActual = 0;
+}
+
+VideoSalida::~VideoSalida() {
+    av_packet_free(&paquete);
+}
+
+void VideoSalida::terminar() {
+    codec.finalizar();
+    escribirPaquetes();
+    uint8_t fin[] = { 0, 0, 1, 0xb7 };
+    archivoSalida.write(reinterpret_cast<const char *>(fin), sizeof(fin));
 }

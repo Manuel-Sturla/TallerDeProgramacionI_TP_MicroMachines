@@ -4,6 +4,7 @@
 
 #include <string>
 #include <vector>
+#include "../../Mods/Implementaciones/CarroDTO.h"
 
 class Visibilidad {
   private:
@@ -21,6 +22,10 @@ class Visibilidad {
     void empaquetar(std::vector<std::string> *destino);
 
     ~Visibilidad();
+
+    void obtenerDatos(CarroDTO &dto);
+
+    void actualizarDatos(CarroDTO_t &dto);
 };
 
 

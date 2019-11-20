@@ -11,6 +11,7 @@
 #include "Agarre.h"
 #include "Posicion.h"
 #include "../Objeto.h"
+#include "../../Mods/Implementaciones/CarroDTO.h"
 
 
 class Carro: public Objeto {
@@ -80,6 +81,9 @@ class Carro: public Objeto {
     void empaquetarId(std::vector<std::string> *destino);
 
     void imprimirPosicion(); //FUNCION DE PRUEBA
+
+    CarroDTO_t crearDTO();
+    void cargarDatos(CarroDTO_t& carroDto);
 };
 
 

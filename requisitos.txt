@@ -5,3 +5,6 @@ Cosas que hay que instalar:
     - SDL2_Image-dev
     - SDL2_Mixer-dev (libsdl2-mixer-dev)
     - Lua5.3
+
+
+    export LIBGL_ALWAYS_SOFTWARE=1

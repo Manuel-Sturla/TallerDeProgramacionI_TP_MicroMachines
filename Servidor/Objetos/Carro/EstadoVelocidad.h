@@ -7,6 +7,7 @@
 #include "VelocidadBase.h"
 #include "VelocidadBoost.h"
 #include "Box2D/Box2D.h"
+#include "../../Mods/Implementaciones/CarroDTO.h"
 
 class EstadoVelocidad {
   private:
@@ -30,6 +31,10 @@ class EstadoVelocidad {
     bool alcanzoLaVelocidadMaxima(b2Vec2 velocidadActual);
 
     ~EstadoVelocidad();
+
+    void obtenerDatos(CarroDTO &dto);
+
+    void actualizarDatos(CarroDTO_t &dto);
 };
 
 

@@ -18,6 +18,7 @@ class Vida {
     void aumentarVida(int aumento);
 
     void matar();
+    int obtenerVida();
 
     bool puedoRevivir();
 
@@ -33,6 +34,7 @@ class Vida {
 
     ~Vida();
 
+    void setVida(int vida);
 };
 
 #endif

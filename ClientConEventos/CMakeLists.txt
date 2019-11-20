@@ -3,9 +3,9 @@ project(client)
 
 set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
 find_package(Qt5Widgets)
+find_package(Lua REQUIRED)
 include_directories(${PROJECT_BINARY_DIR})
 include_directories(${LUA_INCLUDE_DIR})
-find_package(Lua REQUIRED)
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 qt5_wrap_ui(UIS_HEADERS
         Ui/inicio.ui

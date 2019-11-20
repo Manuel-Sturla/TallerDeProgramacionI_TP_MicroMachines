@@ -5,7 +5,7 @@
 #include "GrabadorVideo.h"
 #include "ErrorFfmpeg.h"
 
-GrabadorVideo::GrabadorVideo() : escalador(ancho, alto){
+GrabadorVideo::GrabadorVideo() : escalador(ancho, alto), continuar(true){
     av_register_all();
     contexto = avformat_alloc_context();
 }
@@ -15,16 +15,18 @@ GrabadorVideo::~GrabadorVideo() {
 }
 
 void GrabadorVideo::grabarVideo(const std::string &nombre) {
-    std::unique_ptr<VideoSalida> aux (new VideoSalida(nombre));
+    std::unique_ptr<VideoSalida> aux (new VideoSalida(nombre, frame));
     video = std::move(aux);
 }
 
 void GrabadorVideo::run() {
-    //int res = SDL_RenderReadPixels(renderizador, NULL, SDL_PIXELFORMAT_RGB24, dataBuffer.data(), ancho * 3);
-    //if (res != 0) {
-    //    throw ErrorFfmpeg("Error al obtener el renderizado del video", __LINE__, __FILE__);
-    //}
-    escalador
-    video->escribirFrame();
-
+    while (continuar){
+        //int res = SDL_RenderReadPixels(renderizador, NULL, SDL_PIXELFORMAT_RGB24, dataBuffer.data(), ancho * 3);
+        //if (res != 0) {
+        //    throw ErrorFfmpeg("Error al obtener el renderizado del video", __LINE__, __FILE__);
+        //}
+        escalador.escalar(frame, datos);
+        video->escribirFrame();
+    }
+    video->terminar();
 }

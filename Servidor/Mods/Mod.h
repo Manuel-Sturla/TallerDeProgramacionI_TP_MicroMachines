@@ -14,7 +14,7 @@ protected:
     BibliotecaDinamica biblioteca;
 public:
     Mod(const std::string& ruta);
-    virtual int activar(Carro& param) = 0; //esta es la funcion que transoforma de cosas de C++ a C para llamarla
+    virtual void activar(Carro& param) = 0; //esta es la funcion que transoforma de cosas de C++ a C para llamarla
     Mod(Mod&& otro);
     Mod& operator=(Mod&& otro);
     Mod(const Mod& otro) = delete;

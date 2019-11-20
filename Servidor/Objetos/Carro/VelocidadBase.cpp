@@ -12,3 +12,7 @@ std::string VelocidadBase::actualizar() {
 std::string VelocidadBase::boost() {
   return "Boost";
 }
+
+void VelocidadBase::actualizarDatos(CarroDTO_t &dto) {
+    velocidadMaxima = dto.velocidadMax;
+}

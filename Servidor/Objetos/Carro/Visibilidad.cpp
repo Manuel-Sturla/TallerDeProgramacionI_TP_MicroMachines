@@ -33,3 +33,13 @@ void Visibilidad::empaquetar(std::vector<std::string> *destino) {
         destino-> emplace_back("Limpio");
     }
 }
+
+void Visibilidad::obtenerDatos(CarroDTO &dto) {
+    dto.visibilidadReducida = visibilidadReducida;
+    dto.duracionBarro = duracion;
+}
+
+void Visibilidad::actualizarDatos(CarroDTO_t &dto) {
+    visibilidadReducida = dto.visibilidadReducida;
+    duracion = dto.duracionBarro;
+}

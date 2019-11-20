@@ -11,3 +11,7 @@ bool Velocidad::alcanzoLaVelocidadMaxima(b2Vec2 velocidadActual) {
 float32 Velocidad::darImpulso() {
     return velocidadMaxima * aceleracion;
 }
+
+void Velocidad::obtenerDatos(CarroDTO_t &dto) {
+    dto.velocidadMax = velocidadMaxima;
+}

@@ -7,19 +7,27 @@
 
 
 #include <fstream>
-#include <libavformat/avformat.h>
+extern "C"{
+    #include <libavformat/avformat.h>
+};
 #include "Codec.h"
+#include "Frame.h"
 
 class VideoSalida {
     //Codec
     Codec codec;
     std::ofstream archivoSalida;
-    AVFrame* frame;
     AVPacket* paquete;
     AVOutputFormat* formatoSalida;
+    int ptsActual = 0;
+    Frame& frame;
+    void inicializarFrame();
+    void escribirPaquetes();
 public:
-    VideoSalida(const std::string& nombre);
+    VideoSalida(const std::string &nombre, Frame &frame);
     void escribirFrame();
+    void terminar();
+    ~VideoSalida();
 };
 
 

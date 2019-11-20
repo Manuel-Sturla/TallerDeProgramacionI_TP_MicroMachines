@@ -4,6 +4,7 @@
 
 #include "Codec.h"
 #include "ErrorFfmpeg.h"
+#include "Frame.h"
 
 Codec::Codec() {
     codec = avcodec_find_encoder(id);
@@ -12,7 +13,7 @@ Codec::Codec() {
     }
     this->contexto = avcodec_alloc_context3(codec);
 
-    this->contexto->width = 352;
+    this->contexto->width = 352; //Podria recibirlo por parametro
     this->contexto->height = 288;
     this->contexto->time_base = {1,25};
     this->contexto->framerate = {25,1};
@@ -34,8 +35,8 @@ Codec::~Codec() {
     avcodec_free_context(&contexto);
 }
 
-void Codec::codificarFrame(AVFrame *frame) {
-    int ret = avcodec_send_frame(contexto, frame);
+void Codec::codificarFrame(Frame &frame) {
+    int ret = avcodec_send_frame(contexto, frame.obtenerFrame());
     if (ret < 0){
         throw ErrorFfmpeg("Error al codificar frame: ", strerror(ret), __LINE__, __FILE__);
     }
@@ -53,4 +54,15 @@ bool Codec::obtenerPaquete(AVPacket *paquete) {
 
 AVCodecID Codec::obtenerID() {
     return id;
+}
+
+void Codec::inicializarFrame(Frame &frame) {
+    frame.inicializar(contexto->pix_fmt, contexto->width, contexto->height);
+}
+
+void Codec::finalizar() {
+    int ret = avcodec_send_frame(contexto, NULL);
+    if (ret < 0){
+        throw ErrorFfmpeg("Error al codificar frame: ", strerror(ret), __LINE__, __FILE__);
+    }
 }

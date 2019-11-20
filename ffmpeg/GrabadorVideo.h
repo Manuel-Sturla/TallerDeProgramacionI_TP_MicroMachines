@@ -12,14 +12,19 @@ extern "C" {
 
 #include <string>
 #include <memory>
+#include <vector>
 #include "VideoSalida.h"
 #include "Escalador.h"
+#include <atomic>
 
 class GrabadorVideo {
     AVFormatContext* contexto;
     std::unique_ptr<VideoSalida> video;
     const long ancho = 352, alto = 288;
     Escalador escalador;
+    Frame frame;
+    std::vector<char> datos;
+    std::atomic<bool> continuar;
 public:
     GrabadorVideo(); //Tendria que recibir el renderizador sobre la que va a grabar
     void grabarVideo(const std::string &nombre);

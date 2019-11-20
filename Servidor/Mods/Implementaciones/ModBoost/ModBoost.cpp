@@ -1,20 +1,17 @@
 //
 // Created by manfer on 28/10/19.
 //
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
+#include <stdlib.h>
+#include <time.h>
 
 #include "ModBoost.h"
-#include "../../../Objetos/Carro/Carro.h"
 
 #define PROB_ACTIVAR 100
-void activar(void* carro){
-	/* initialize random seed: */
+void activar(CarroDTO_t* carro){
   	srand (time(NULL));
   	int numero = rand() % 100;
   	if (numero > PROB_ACTIVAR){
-  		return
+  		return;
   	}
-    Carro* autito = static_cast<Carro*>(carro);
-    autito->darBoost();
+    carro->boost = true;
 }

@@ -11,6 +11,7 @@ class VelocidadBase: public Velocidad {
 
     std::string actualizar() override;
 
+    void actualizarDatos(CarroDTO_t &dto);
 };
 
 

@@ -13,9 +13,11 @@ extern "C"{
 
 class Escalador {
     SwsContext* escalador;
+    int alto;
+    int ancho;
 public:
-    Escalador(const long &ancho, const long &alto);
-    void escalar(Frame frame);
+    Escalador(const int &anchoNuevo, const int &altoNuevo);
+    void escalar(Frame& frame, std::vector<char> &datos);
     ~Escalador();
 };
 

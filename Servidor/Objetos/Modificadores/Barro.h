@@ -5,7 +5,7 @@
 
 class Barro: public Modificador {
   public:
-    Barro(MundoBox2D &pista, float32 x, float32 y, unsigned long id);
+    Barro(MundoBox2D &pista, float32 x, float32 y, size_t id);
 
     void interactuar(Carro* unCarro);
 

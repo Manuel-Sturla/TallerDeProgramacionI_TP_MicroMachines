@@ -5,6 +5,8 @@
 #ifndef FFMPEG_CODEC_H
 #define FFMPEG_CODEC_H
 
+#include "Frame.h"
+
 extern "C" {
 #include <libavcodec/avcodec.h>
 #include <libavutil/opt.h>
@@ -16,12 +18,14 @@ class Codec {
     AVCodecContext* contexto;
 public:
     Codec();
-    void codificarFrame(AVFrame* frame);
-
+    void codificarFrame(Frame &frame);
+    void finalizar();
+    void inicializarFrame(Frame &frame);
     /* Guarda un paquete codificado en <paquete> y devuelve true en
      * caso de que se haya guardado correctamente */
     bool obtenerPaquete(AVPacket* paquete);
     AVCodecID obtenerID();
+
     ~Codec();
 };
 

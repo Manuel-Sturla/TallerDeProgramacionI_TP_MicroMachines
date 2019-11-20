@@ -41,3 +41,16 @@ void EstadoVelocidad::frenar(b2Body &cuerpo) {
         aplicarFuerza(cuerpo, -estados[estadoActual] -> darImpulso());
     }
 }
+
+void EstadoVelocidad::obtenerDatos(CarroDTO &dto) {
+    estados["Base"]->obtenerDatos(dto);
+    dto.boost = estadoActual == "Boost";
+}
+
+void EstadoVelocidad::actualizarDatos(CarroDTO_t &dto) {
+    //Por ahora solo actualiza la velocidad maxima de la vel Base
+    velocidadBase.actualizarDatos(dto);
+    if (dto.boost && (estadoActual!="Boost")){
+        boost();
+    }
+}

@@ -3,6 +3,7 @@
 
 
 #include <Box2D/Dynamics/b2Body.h>
+#include "../../Mods/Implementaciones/CarroDTO.h"
 
 class Agarre {
   private:
@@ -19,6 +20,10 @@ class Agarre {
     void reducirAgarre();
 
     ~Agarre();
+
+    void obtenerDatos(CarroDTO &dto);
+
+    void actualizarDatos(CarroDTO_t &dto);
 };
 
 

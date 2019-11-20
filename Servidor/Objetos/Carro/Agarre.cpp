@@ -28,3 +28,15 @@ void Agarre::actualizarAgarreReducido() {
 
 Agarre::~Agarre() {
 }
+
+void Agarre::obtenerDatos(CarroDTO &dto) {
+    dto.agarreBase = agarreBase;
+    dto.agarreReducido = agarreReducido;
+    dto.duracionAgarreReducido = duracion;
+}
+
+void Agarre::actualizarDatos(CarroDTO_t &dto) {
+    agarreBase = dto.agarreBase;
+    agarreReducido = dto.agarreReducido;
+    duracion = dto.duracionAgarreReducido;
+}

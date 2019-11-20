@@ -144,3 +144,26 @@ void Carro::empaquetarVida(std::vector<std::string> *destino) {
 void Carro::empaquetarId(std::vector<std::string> *destino) {
     destino -> emplace_back(idConductor);
 }
+
+CarroDTO_t Carro::crearDTO() {
+    CarroDTO_t aux;
+    aux.idConductor = idConductor.c_str();
+    aux.vida = vida.obtenerVida();
+    estadoVelocidad.obtenerDatos(aux);
+    visibilidad.obtenerDatos(aux);
+    agarre.obtenerDatos(aux);
+    //Podria tener el numreo de vueltas
+    aux.anguloDeGiro = anguloDeGiro;
+    aux.coeficienteDeRozamiento = coeficienteDeRozamiento;
+    return aux;
+}
+
+void Carro::cargarDatos(CarroDTO_t& dto) {
+    idConductor = dto.idConductor;
+    anguloDeGiro = dto.anguloDeGiro;
+    coeficienteDeRozamiento = dto.coeficienteDeRozamiento;
+    vida.setVida(dto.vida);
+    estadoVelocidad.actualizarDatos(dto);
+    agarre.actualizarDatos(dto);
+    visibilidad.actualizarDatos(dto);
+}

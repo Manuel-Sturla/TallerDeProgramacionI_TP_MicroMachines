@@ -62,3 +62,11 @@ bool Vida::moriRecientemente() {
 void Vida::empaquetar(std::vector<std::string> *destino) {
     destino -> emplace_back(std::to_string(vida));
 }
+
+int Vida::obtenerVida() {
+    return vida;
+}
+
+void Vida::setVida(int vidaNueva) {
+    this->vida = vidaNueva;
+}

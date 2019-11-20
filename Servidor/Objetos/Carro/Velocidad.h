@@ -2,6 +2,7 @@
 #define _VELOCIDAD_H_
 
 #include "Box2D/Box2D.h"
+#include "../../Mods/Implementaciones/CarroDTO.h"
 #include <string>
 
 class Velocidad {
@@ -18,6 +19,8 @@ class Velocidad {
     float32 darImpulso();
 
     bool alcanzoLaVelocidadMaxima(b2Vec2 velocidadActual);
+
+    void obtenerDatos(CarroDTO_t& dto);
 };
 
 #endif

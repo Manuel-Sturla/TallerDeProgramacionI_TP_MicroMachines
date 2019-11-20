@@ -31,3 +31,25 @@ int Frame::obtenerAltura() {
 int Frame::obtenerAncho() {
     return frame->width;
 }
+
+AVFrame *Frame::obtenerFrame() {
+    return frame;
+}
+
+void Frame::inicializar(AVPixelFormat formatoPixeles, int ancho, int alto) {
+    frame->format = formatoPixeles;
+    frame->width = ancho;
+    frame->height = alto;
+    int ret = av_frame_get_buffer(this->frame, 0);
+    if (ret < 0){
+        throw ErrorFfmpeg("Error al reservar buffers del frame", __LINE__, __FILE__);
+    }
+}
+
+int * Frame::obtenerTamanioLinea() {
+    return frame->linesize;
+}
+
+void Frame::limpiar() {
+    av_frame_unref(frame);
+}

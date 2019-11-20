@@ -8,8 +8,10 @@ ModAuto::ModAuto(const std::string &ruta) : Mod(ruta){
     *(void**)(&funcionActivar) = biblioteca.buscar_funcion(nombreFuncion);
 }
 
-int ModAuto::activar(Carro& carro) {
-    return funcionActivar((void*)& carro);
+void ModAuto::activar(Carro& carro) {
+    CarroDTO_t carroDTO = carro.crearDTO();
+    funcionActivar(&carroDTO);
+    carro.cargarDatos(carroDTO);
 }
 
 ModAuto::ModAuto(ModAuto &&otro) : Mod(std::move(otro)){

@@ -2,3 +2,14 @@ Dudas 4.txt
 - Para grabar la textura, tengo que crear una textura nueva o grabo desde la textura del juego?
 - Para que se usa el output format??...
 - La idea es que sea una sola grabacion que se pausa y reanuda o varias?
+- av_frame_get_buffer leakea memoria si reservas antes?
+- tengo que tener un escalador distinto para cada video? O puedo usar el mismo? Tendría que "limpiarlo"?
+
+mp4.
+
+reanuda. en el mismo archivo.
+cmake que englobe a todos.
+
+install del cmake --> make install
+
+gestor de ventanas
