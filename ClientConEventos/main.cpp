@@ -13,14 +13,12 @@
 #include "Jugador/JugadorCPU.h"
 
 int ejecutarInicio(int argc, char* argv[], std::string& host, std::string& servicio){
-    QApplication app(argc, argv);
     Inicio inicio(host, servicio);
     inicio.show();
     return QApplication::exec();
 }
 
 int ejecutarLobby(int argc, char* argv[], ServidorProxy& servidor){
-    QApplication app(argc, argv);
     Lobby lobby(servidor);
     lobby.show();
     return QApplication::exec();
@@ -68,6 +66,7 @@ void menuSinQT(int argc, char *argv[]) {
 }
 
 int main(int argc, char* argv[]) {
+    QApplication app(argc, argv);
     if(SDL_Init(SDL_INIT_VIDEO) != 0 || TTF_Init() == -1){
         SDL_Log("No pude incializar el SDL %s", SDL_GetError());
         return 0;

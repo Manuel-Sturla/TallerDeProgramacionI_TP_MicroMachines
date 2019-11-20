@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <SDL2/SDL_events.h>
+#include <SDL2/SDL_timer.h>
 #include "HiloLector.h"
 #include "../Jugador/JugadorReal.h"
 
@@ -18,8 +19,11 @@ void HiloLector::run() {
                 keepTalking = false;
             } else {
                 comandos.ejecutar();
+
             }
+
         }
+        SDL_Delay(20);
     }
     servidor.terminarConexion();
 }
