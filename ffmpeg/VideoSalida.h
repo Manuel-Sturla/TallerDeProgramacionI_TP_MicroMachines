@@ -19,7 +19,7 @@ class VideoSalida {
     std::ofstream archivoSalida;
     AVPacket* paquete;
     AVOutputFormat* formatoSalida;
-    int ptsActual = 0;
+    int64_t ptsActual = 0;
     Frame& frame;
     void inicializarFrame();
     void escribirPaquetes();

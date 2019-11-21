@@ -28,6 +28,7 @@ int main() {
     BufferBloqueante buffer;
     GrabadorVideo grabador (buffer);
     grabador.grabarVideo("prueba.mp4");
+    int nro = 0;
     while (running) {
         // Muevo textura con flechas direccionales
         handleSDLEvent(x, y, running);
@@ -44,17 +45,19 @@ int main() {
         window.render();
         // Obtengo los bytes de la textura en el buffer
         std::vector<char> aux(ANCHO*ALTO*3);
-        std::cout << "Llegue antes de renderizar pixeles" << std::endl;
+        std::cout << "Nro Frame: " << nro << std::endl;
+        nro++;
         int res = SDL_RenderReadPixels(window.getRenderer(), NULL, SDL_PIXELFORMAT_RGB24, aux.data(), ANCHO * 3);
-        std::cout << "El resultado de renderizar pixeles es: " << res << std::endl;
 
         if (res) {
             SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "RendererReadPixels error", SDL_GetError(), NULL);
             break;
         }
+
         buffer.guardar(aux);
         grabador.run();
     }
+    grabador.terminar();
     return 0;
 }
 

@@ -30,6 +30,7 @@ public:
     GrabadorVideo(BufferBloqueante &buffer); //Tendria que recibir el renderizador sobre la que va a grabar
     void grabarVideo(const std::string &nombre);
     void run();
+    void terminar();
     ~GrabadorVideo();
 };
 

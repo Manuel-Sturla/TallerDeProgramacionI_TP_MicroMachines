@@ -20,7 +20,7 @@ uint8_t** Frame::obtenerDatos() {
     return frame->data;
 }
 
-void Frame::setPts(uint64_t nuevoPts) {
+void Frame::setPts(int64_t nuevoPts) {
     frame->pts = nuevoPts;
 }
 
