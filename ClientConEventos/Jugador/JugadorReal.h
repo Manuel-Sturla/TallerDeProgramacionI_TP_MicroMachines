@@ -13,7 +13,7 @@ class JugadorReal: public Jugador {
     LectorTeclado lector;
 public:
     JugadorReal();
-    int obtenerComando() override;
+    int obtenerComando(AdministradorComandosTeclado &comandos) override;
 };
 
 

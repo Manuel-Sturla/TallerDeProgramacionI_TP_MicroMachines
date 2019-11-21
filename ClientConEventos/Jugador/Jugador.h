@@ -6,11 +6,14 @@
 #define CLIENT_JUGADOR_H
 
 
+#include "../ComandosTeclado/AdministradorComandosTeclado.h"
+
 class Jugador {
     bool cpu;
+
 public:
     explicit Jugador(bool cpu);
-    virtual int obtenerComando() = 0;
+    virtual int obtenerComando(AdministradorComandosTeclado &comandos) = 0;
     bool esCpu();
 
 };
