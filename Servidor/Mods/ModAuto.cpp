@@ -2,16 +2,22 @@
 // Created by manfer on 17/11/19.
 //
 
+#include <iostream>
 #include "ModAuto.h"
 
 ModAuto::ModAuto(const std::string &ruta) : Mod(ruta){
     *(void**)(&funcionActivar) = biblioteca.buscar_funcion(nombreFuncion);
 }
 
-void ModAuto::activar(Carro& carro) {
-    CarroDTO_t carroDTO = carro.crearDTO();
-    funcionActivar(&carroDTO);
-    carro.cargarDatos(carroDTO);
+void ModAuto::activar(std::list<Carro> &carros) {
+    std::cout << "Llamo al mod" << std::endl;
+    for (Carro& carro : carros){
+        CarroDTO_t carroDTO = carro.crearDTO();
+        std::cout << "Vel max antes: " << carroDTO.boost;
+        funcionActivar(&carroDTO);
+        std::cout << " Vel max despues: " << carroDTO.boost << std::endl;
+        carro.cargarDatos(carroDTO);
+    }
 }
 
 ModAuto::ModAuto(ModAuto &&otro) : Mod(std::move(otro)){

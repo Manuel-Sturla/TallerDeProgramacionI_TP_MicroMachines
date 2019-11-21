@@ -7,6 +7,7 @@
 
 
 #include <string>
+#include <list>
 #include "Mod.h"
 
 class ModAuto: public Mod {
@@ -14,10 +15,10 @@ class ModAuto: public Mod {
     const std::string nombreFuncion = "activar";
 
 public:
-    ModAuto(const std::string& ruta);
+    explicit ModAuto(const std::string& ruta);
     ModAuto(ModAuto&& otro);
     ModAuto& operator=(ModAuto &&otro);
-    void activar(Carro& carro) override;
+    void activar(std::list<Carro> &carros) override;
 };
 
 

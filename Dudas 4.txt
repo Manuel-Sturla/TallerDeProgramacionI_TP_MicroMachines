@@ -13,3 +13,6 @@ cmake que englobe a todos.
 install del cmake --> make install
 
 gestor de ventanas
+
+
+desharcodear la cantidad de vueltas de la partida :: configuracion del servidor

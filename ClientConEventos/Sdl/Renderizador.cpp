@@ -113,6 +113,7 @@ void Renderizador::borrarTodo() {
 
 Renderizador::~Renderizador() {
     borrarTodo();
+    TTF_CloseFont(fuente);
     if(renderizador != nullptr){
         SDL_DestroyRenderer(renderizador);
     }

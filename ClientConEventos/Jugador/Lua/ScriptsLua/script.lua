@@ -78,6 +78,7 @@ function crearMapa(datosMapa)
 		end
 	end	
 	agregarPiso(tipo, x, y, ang)
+	imprimir_tabla(mapa)
 end
 
 
