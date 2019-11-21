@@ -17,12 +17,15 @@ void HiloLector::run() {
         while(SDL_PollEvent(&evento)){
             if(evento.type == SDL_QUIT){
                 keepTalking = false;
-            } else {
-                comandos.ejecutar();
-
+            } else if(evento.type == SDL_KEYDOWN) {
+                auto& keyEvent = (SDL_KeyboardEvent&) evento;
+                comandos.apretar(keyEvent.keysym.sym);
+            } else if(evento.type == SDL_KEYUP){
+                auto& keyEvent = (SDL_KeyboardEvent&) evento;
+                comandos.desapretar(keyEvent.keysym.sym);
             }
-
         }
+        comandos.ejecutar();
         SDL_Delay(20);
     }
     servidor.terminarConexion();

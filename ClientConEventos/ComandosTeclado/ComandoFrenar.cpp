@@ -7,7 +7,7 @@
 #include "ComandoFrenar.h"
 
 void ComandoFrenar::ejecutar() {
-    if(estados[SDL_SCANCODE_DOWN]){
+    if(estaApretado){
         servidor.ejecutarMovimiento("frenar");
     }
 }
