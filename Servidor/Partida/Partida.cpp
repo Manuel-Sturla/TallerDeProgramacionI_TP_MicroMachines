@@ -6,6 +6,7 @@
 #include "../Comunicacion/Eventos/EventosParseables/ComenzoLaPartida.h"
 #include "../Comunicacion/Eventos/EventosParseables/EnviarMapa.h"
 #include "../Comunicacion/Eventos/EventosParseables/EliminarCarro.h"
+#include "../Mods/ModAuto.h"
 
 
 Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
@@ -13,6 +14,7 @@ estado(new EnEspera(cantJugadores, clientes)) {
     crearPista(planoPista);
     suelos.clear();
     pista.empaquetarSuelos(&suelos);
+    mods.emplace_back(new ModAuto("../Mods/Implementaciones/ModBoost/Lib/libBoost.so"));
 }
 
 Partida::~Partida() {
@@ -40,6 +42,7 @@ void Partida::run() {
     while(!clientes.estaVacio()) {
         try {
             std::this_thread::sleep_for(std::chrono::milliseconds(1000/60));
+            llamarMods();
             estado->ejecutar();
         } catch (SocketPeerException &e) {
 
@@ -84,5 +87,11 @@ void Partida::eliminarCliente(ClienteProxy &cliente) {
 
 bool Partida::estaEnJuego() {
     return estado->enJuego();
+}
+
+void Partida::llamarMods() {
+    for (auto& mod : mods){
+        mod->activar(pista.obtenerCarros());
+    }
 }
 

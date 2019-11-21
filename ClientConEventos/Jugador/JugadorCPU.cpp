@@ -42,7 +42,7 @@ int JugadorCPU::obtenerComando() {
 }
 
 void JugadorCPU::ponerMapa(std::vector<std::string> &comando) {
-    comando.erase(comando.begin());
+    //comando.erase(comando.begin());
     for (auto& c : comando){
         std::cout << c << "; ";
     }

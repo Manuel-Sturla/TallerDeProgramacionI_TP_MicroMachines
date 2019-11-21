@@ -89,7 +89,7 @@ Carro *Pista::crearCarro(float32 velocidad, float32 aceleracion,
     b2Vec2 posicion = posicionesInicio.front();
     carros.emplace_back(mundoBox2D, velocidad, aceleracion, anguloDeGiroEnRadianes,
         agarre, posicion.x, posicion.y, anguloInicial, id);
-    posicionesInicio.erase(posicionesInicio.begin()); //PASAR LAS POSICIONES USADAS A UN VECTOR DE POSICIONES USADAS Y SI ALGUNO SE SALE VOLVERLO A LAS POSICIONES NO USADAS
+    posicionesInicio.erase(posicionesInicio.begin());
     return &carros.back();
 }
 
@@ -117,6 +117,10 @@ void Pista::agregarExtra() {
     }
 }
 
-void Pista::setAnguloInicial(float32 anguloInicial) {
-    this -> anguloInicial = anguloInicial;
+void Pista::setAnguloInicial(float32 anguloInicialRecibido) {
+    this -> anguloInicial = anguloInicialRecibido;
+}
+
+std::list<Carro> &Pista::obtenerCarros() {
+    return carros;
 }

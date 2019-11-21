@@ -48,7 +48,7 @@ public:
 
     void configurarCamara(Posicion* posicion);
 
-    virtual ~Renderizador();
+    ~Renderizador();
 
     void borrarTodo();
 

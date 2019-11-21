@@ -45,7 +45,7 @@ public:
 
     void agregarPosicionDeInicio(b2Vec2 &posicion);
 
-    void setAnguloInicial(float32 anguloInicial);
+    void setAnguloInicial(float32 anguloInicialRecibido);
 
     void
     agregarRecta(std::string &material, float32 x, float32 y, float32 angulo, int numeroDeSuelo);
@@ -54,6 +54,7 @@ public:
 
     void inicializarPodio(Podio &podio);
 
+    std::list<Carro>& obtenerCarros();
     ~Pista();
 };
 

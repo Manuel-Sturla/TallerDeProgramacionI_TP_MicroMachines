@@ -10,6 +10,7 @@
 #include "../Comunicacion/ClienteProxy.h"
 #include "../Comunicacion/Estados/EstadoPartida.h"
 #include "HashProtegidoClientes.h"
+#include "../Mods/Mod.h"
 
 class Partida: public Hilo {
 private:
@@ -17,6 +18,7 @@ private:
     HashProtegidoClientes clientes;
     std::unique_ptr<EstadoPartida> estado;
     std::vector<std::string> suelos;
+    std::vector<std::unique_ptr<Mod>> mods;
 
 public:
 
@@ -41,6 +43,8 @@ public:
     void enviarMensajesInicio();
 
     bool estaEnJuego();
+
+    void llamarMods();
 };
 
 #endif

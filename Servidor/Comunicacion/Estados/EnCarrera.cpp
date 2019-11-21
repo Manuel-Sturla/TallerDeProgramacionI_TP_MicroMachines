@@ -18,6 +18,7 @@ void EnCarrera::ejecutar() {
     pista.simular();
     actualizarEventos();
     podio.actualizarPodio();
+
     std::shared_ptr<EventoParseable> eventoPodio (new EnviarPodio(podio));
     for (auto& cliente : clientes.obtenerClaves()){
         clientes.obtener(cliente).encolarEvento(eventoPodio);

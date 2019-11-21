@@ -58,15 +58,15 @@ void menuSinQT(int argc, char *argv[]) {
         servidor.elegirPartida(partida[0]);
     }
 
-//    std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
-    std::shared_ptr<Jugador> jugador (new JugadorReal());
+    std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
+//    std::shared_ptr<Jugador> jugador (new JugadorReal());
     Visualizacion part(servidor, jugador);
     part.esperarInicioPartida();
     part.ejecutarPartida();
 }
 
 int main(int argc, char* argv[]) {
-    QApplication app(argc, argv);
+    //QApplication app(argc, argv);
     if(SDL_Init(SDL_INIT_VIDEO) != 0 || TTF_Init() == -1){
         SDL_Log("No pude incializar el SDL %s", SDL_GetError());
         return 0;

@@ -15,6 +15,7 @@ extern "C" {
 #include <vector>
 #include "VideoSalida.h"
 #include "Escalador.h"
+#include "BufferBloqueante.h"
 #include <atomic>
 
 class GrabadorVideo {
@@ -23,10 +24,10 @@ class GrabadorVideo {
     const long ancho = 352, alto = 288;
     Escalador escalador;
     Frame frame;
-    std::vector<char> datos;
     std::atomic<bool> continuar;
+    BufferBloqueante& bufferDatos;
 public:
-    GrabadorVideo(); //Tendria que recibir el renderizador sobre la que va a grabar
+    GrabadorVideo(BufferBloqueante &buffer); //Tendria que recibir el renderizador sobre la que va a grabar
     void grabarVideo(const std::string &nombre);
     void run();
     ~GrabadorVideo();
