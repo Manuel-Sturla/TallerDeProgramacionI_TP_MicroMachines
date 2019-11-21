@@ -8,13 +8,13 @@ void VideoSalida::escribirPaquetes(){
     while (codec.obtenerPaquete(paquete)){
         archivoSalida.write(reinterpret_cast<const char *>(paquete->data), paquete->size);
     }
-    ptsActual++;
 }
 
 void VideoSalida::escribirFrame() {
     frame.setPts(ptsActual);
+    ptsActual++;
     codec.codificarFrame(frame);
-
+    escribirPaquetes();
 }
 
 VideoSalida::VideoSalida(const std::string &nombre, Frame &frame) : frame(frame){

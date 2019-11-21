@@ -20,7 +20,7 @@ Codec::Codec() {
     this->contexto->pix_fmt = AV_PIX_FMT_YUV420P;
     this->contexto->gop_size = 10;
     this->contexto->max_b_frames = 2;
-    if (codec->id == AV_CODEC_ID_H265) {
+    if (codec->id == AV_CODEC_ID_H264) {
         this->contexto->profile = FF_PROFILE_H264_BASELINE;
         int ret = av_opt_set(contexto->priv_data, "preset", "slow", 0);
         if (ret != 0){

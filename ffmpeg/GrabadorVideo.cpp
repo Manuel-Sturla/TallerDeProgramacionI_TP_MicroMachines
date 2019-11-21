@@ -3,6 +3,7 @@
 //
 
 #include <SDL2/SDL_system.h>
+#include <iostream>
 #include "GrabadorVideo.h"
 #include "ErrorFfmpeg.h"
 #include "BufferBloqueante.h"
@@ -30,8 +31,13 @@ void GrabadorVideo::run() {
         //    throw ErrorFfmpeg("Error al obtener el renderizado del video", __LINE__, __FILE__);
         //}
         std::vector<char> aux = bufferDatos.sacar();
+        std::cout << aux.size() <<std::endl;
         escalador.escalar(frame, aux);
         video->escribirFrame();
     //}
+    //video->terminar();
+}
+
+void GrabadorVideo::terminar() {
     video->terminar();
 }

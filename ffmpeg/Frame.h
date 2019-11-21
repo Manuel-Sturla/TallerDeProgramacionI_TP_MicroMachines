@@ -15,7 +15,7 @@ public:
     uint8_t** obtenerDatos();
     int obtenerAltura();
     int obtenerAncho();
-    void setPts(uint64_t nuevoPts);
+    void setPts(int64_t nuevoPts);
     AVFrame* obtenerFrame();
     void inicializar(AVPixelFormat formatoPixeles, int ancho, int alto);
     int * obtenerTamanioLinea();
