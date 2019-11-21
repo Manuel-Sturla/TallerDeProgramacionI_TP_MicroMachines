@@ -16,7 +16,7 @@ class JugadorCPU: public Jugador {
     Desplazable* miAuto = nullptr;
 public:
     JugadorCPU(const std::string& rutaScript);
-    int obtenerComando() override ;
+    int obtenerComando(AdministradorComandosTeclado &comandos) override ;
     void ponerAuto(Desplazable* unAuto);
     void ponerMapa(std::vector<std::string> &comando);
 };

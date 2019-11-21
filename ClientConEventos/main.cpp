@@ -59,8 +59,8 @@ void menuSinQT(int argc, char *argv[]) {
         servidor.elegirPartida(partida[0]);
     }
 
-//    std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
-    std::shared_ptr<Jugador> jugador (new JugadorReal());
+    std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
+//    std::shared_ptr<Jugador> jugador (new JugadorReal());
     Visualizacion part(servidor, jugador);
     part.esperarInicioPartida();
     part.ejecutarPartida();

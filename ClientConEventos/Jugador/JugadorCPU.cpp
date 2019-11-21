@@ -15,15 +15,22 @@
 JugadorCPU::JugadorCPU(const std::string &rutaScript) : Jugador(true), interprete(rutaScript){
 }
 
-int JugadorCPU::obtenerComando() {
+int JugadorCPU::obtenerComando(AdministradorComandosTeclado &comandos) {
+    comandos.desapretar(SDLK_LEFT);
+    comandos.desapretar(SDLK_RIGHT);
+    comandos.desapretar(SDLK_DOWN);
+    comandos.desapretar(SDLK_UP);
     //Hace un sleep para que tarde en dar una nueva accion
     std::this_thread::sleep_for(std::chrono::milliseconds(1000/60));
     //Si todavia no se seteo mi auto devuelvo 0
     if (!miAuto){
         return 0;
     }
-    if(LectorTeclado::leer() == -1){
-        return -1;
+    SDL_Event evento;
+    if(SDL_PollEvent(&evento)){
+        if(evento.type == SDL_QUIT){
+            return -1;
+        }
     }
     std::vector<std::unique_ptr<ParametroLua>> params;
     pos_t pos = miAuto->getPosicion()->getPosicion();
@@ -31,14 +38,15 @@ int JugadorCPU::obtenerComando() {
     std::vector<std::unique_ptr<ParametroLua>> ret = interprete.ejecutarFuncion(FUNC_NUEVA_ACCION, params);
     std::string valor = ret[0]->obtenerValor().cadena;
     if ( valor == "A"){
-        return SDLK_LEFT;
+        comandos.apretar(SDLK_LEFT);
     }else if (valor == "D"){
-        return SDLK_RIGHT;
+        comandos.apretar(SDLK_RIGHT);
     }else if (valor == "S"){
-        return SDLK_DOWN;
+        comandos.apretar(SDLK_DOWN);
     }else if (valor == "W"){
-        return SDLK_UP;
+        comandos.apretar(SDLK_UP);
     }
+    return 0;
 }
 
 void JugadorCPU::ponerMapa(std::vector<std::string> &comando) {
