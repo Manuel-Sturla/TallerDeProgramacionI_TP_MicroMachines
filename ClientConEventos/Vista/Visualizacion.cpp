@@ -3,16 +3,13 @@
 //
 
 #include <iostream>
-#include <SDL2/SDL_events.h>
 #include "Visualizacion.h"
 #include "../Excepciones/ExcepcionConPos.h"
 #include "../Sdl/Sonido.h"
 
-#define ANCHO_PANTALLA 1000
-#define ALTURA_PANTALLA 1000
-
-Visualizacion::Visualizacion(ServidorProxy &servidor, std::shared_ptr<Jugador> &jugador) : servidor(servidor),\
-renderizador("microMachines.exe", ANCHO_PANTALLA, ALTURA_PANTALLA, m) {
+Visualizacion::Visualizacion(ServidorProxy &servidor, std::shared_ptr<Jugador> &jugador, int anchoPantalla,
+                             int alturaPantalla) : servidor(servidor),\
+renderizador("microMachines.exe", anchoPantalla, alturaPantalla, m) {
     enJuego = false;
     keepTalking = true;
     receptor = new HiloReceptor(renderizador, servidor, keepTalking, enJuego, m, jugador);

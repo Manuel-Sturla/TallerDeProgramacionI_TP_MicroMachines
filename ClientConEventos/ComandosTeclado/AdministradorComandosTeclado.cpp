@@ -18,12 +18,6 @@ estados(SDL_GetKeyboardState(nullptr)) {
     comandos[SDLK_RIGHT] = new ComandoDerecha(servidor, estados);
 }
 
-AdministradorComandosTeclado::~AdministradorComandosTeclado() {
-    for(auto & comando : comandos){
-        delete(comando.second);
-    }
-}
-
 void AdministradorComandosTeclado::ejecutar() {
     for(auto & comando : comandos){
         comando.second->ejecutar();
@@ -41,5 +35,11 @@ void AdministradorComandosTeclado::desapretar(SDL_Keycode comando) {
     auto it = comandos.find(comando);
     if(it != comandos.end()){
         it->second->desapretar();
+    }
+}
+
+AdministradorComandosTeclado::~AdministradorComandosTeclado() {
+    for(auto & comando : comandos){
+        delete(comando.second);
     }
 }

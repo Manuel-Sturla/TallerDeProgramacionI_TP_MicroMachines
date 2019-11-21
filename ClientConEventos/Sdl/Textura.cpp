@@ -8,18 +8,21 @@
 #include <SDL2/SDL_image.h>
 
 Textura::Textura(SDL_Renderer *renderizador, const std::string &archivo, Posicion* pos) : posicion(pos) {
+    superficie = nullptr;
     textura = IMG_LoadTexture(renderizador, archivo.c_str());
     if(textura == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
     }
 }
 
-Textura::Textura(SDL_Texture *textura, Posicion *pos) : textura(textura), posicion(pos) {}
+Textura::Textura(SDL_Texture *textura, Posicion *pos, SDL_Surface *superificie) : textura(textura), posicion(pos), superficie(superificie) {}
 
 Textura::Textura(Textura&& text) noexcept : posicion(text.posicion) {
     this->textura = text.textura;
+    this->superficie = text.superficie;
     text.posicion = nullptr;
     text.textura = nullptr;
+    text.superficie = nullptr;
 }
 
 bool Textura::copiar(SDL_Renderer *renderizador, Camara& camara) {
@@ -51,6 +54,9 @@ bool Textura::copiar(SDL_Renderer* renderizador){
 }
 
 void Textura::destruir() {
+    if(superficie != nullptr){
+        SDL_FreeSurface(superficie);
+    }
     if(textura != nullptr){
         SDL_DestroyTexture(textura);
     }

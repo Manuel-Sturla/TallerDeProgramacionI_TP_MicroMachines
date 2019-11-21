@@ -4,6 +4,7 @@ project(client)
 set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
 find_package(Qt5Widgets)
 find_package(Lua REQUIRED)
+add_subdirectory(yaml-cpp)
 include_directories(${PROJECT_BINARY_DIR})
 include_directories(${LUA_INCLUDE_DIR})
 link_directories(${PROJECT_SOURCE_DIR}/lib)
@@ -11,7 +12,6 @@ qt5_wrap_ui(UIS_HEADERS
         Ui/inicio.ui
         Ui/lobby.ui
         )
-
 
 
 
@@ -28,6 +28,6 @@ if ( TIFF_FOUND )
     target_link_libraries(client ${TIFF_LIBRARIES} )
 endif( TIFF_FOUND )
 
-target_link_libraries(client SDL2_ttf SDL2main SDL2_image SDL2 Qt5::Widgets SDL2_mixer lua5.3)
+target_link_libraries(client yaml-cpp SDL2_ttf SDL2main SDL2_image SDL2 Qt5::Widgets SDL2_mixer lua5.3)
 
 #install(FILES assets/cat.gif DESTINATION ${CMAKE_BINARY_DIR})

@@ -6,10 +6,9 @@
 #include "Renderizador.h"
 #include "../Excepciones/ExcepcionConPos.h"
 #include <SDL2/SDL_ttf.h>
-#include <iostream>
 
 Renderizador::Renderizador(const char *titulo, int ancho, int altura, std::mutex &m) :\
-ventana(titulo, ancho, altura), m(m), camara(1000, 100) {
+ventana(titulo, ancho, altura), m(m), camara(ancho, 100, altura) {
     renderizador = ventana.crearRenderizador(-1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if(renderizador == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, "No pude crear el renderizador");
@@ -68,11 +67,15 @@ size_t Renderizador::agregarTexto(const std::string &texto, Posicion *posicion, 
     if(mensaje == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
     }
-    otros.insert(std::pair<std::string, Textura> (id, Textura(mensaje, posicion)));
+    otros.insert(std::pair<std::string, Textura> (id, Textura(mensaje, posicion, nullptr)));
 }
 
 void Renderizador::agregarExtra(const std::string &archivo, Posicion *pos, std::string &id) {
     autos.insert(std::pair<std::string, Textura> (id, Textura(renderizador, archivo, pos)));
+}
+
+void Renderizador::agregarTextura(const std::string &archivo, Posicion *pos, std::string &id) {
+    otros.insert(std::pair<std::string, Textura> (id, Textura(renderizador, archivo, pos)));
 }
 
 void Renderizador::borrarExtra(const std::string& id) {
@@ -88,6 +91,14 @@ void Renderizador::borrarAuto(const std::string& id) {
     if(it != autos.end()){
         it->second.destruir();
         autos.erase(it);
+    }
+}
+
+void Renderizador::borrarTexto(std::string &id) {
+    auto it = otros.find(id);
+    if(it != otros.end()){
+        it->second.destruir();
+        otros.erase(it);
     }
 }
 
@@ -117,16 +128,4 @@ Renderizador::~Renderizador() {
     if(renderizador != nullptr){
         SDL_DestroyRenderer(renderizador);
     }
-}
-
-void Renderizador::borrarTexto(std::string &id) {
-    auto it = otros.find(id);
-    if(it != otros.end()){
-        it->second.destruir();
-        otros.erase(it);
-    }
-}
-
-void Renderizador::agregarTextura(const std::string &archivo, Posicion *pos, std::string &id) {
-    otros.insert(std::pair<std::string, Textura> (id, Textura(renderizador, archivo, pos)));
 }

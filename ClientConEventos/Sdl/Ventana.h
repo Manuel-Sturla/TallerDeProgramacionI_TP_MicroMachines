@@ -12,14 +12,13 @@
 class Ventana {
 private:
     SDL_Window* ventana;
+
 public:
     Ventana(const char* titulo, int ancho, int largo);
 
-    Ventana(const char* titulo, int ancho, int largo, int posX, int posY);
+    SDL_Renderer *crearRenderizador(int indice, Uint32 flags);
 
     virtual ~Ventana();
-
-    SDL_Renderer *crearRenderizador(int indice, Uint32 flags);
 };
 
 #endif //OPENGLTEST_VENTANA_H

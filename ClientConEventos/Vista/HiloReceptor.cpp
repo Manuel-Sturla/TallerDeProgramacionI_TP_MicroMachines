@@ -15,11 +15,12 @@ admin(renderizador, m, enJuego), enJuego(enJuego), jugador(jugador), m(m) {}
 
 void HiloReceptor::run() {
     try {
-        esperarInicioPartida();
+       esperarInicioPartida();
         while(keepTalking && enJuego){
             std::vector<std::string> eventos;
             eventos = servidor.obtenerEventosJuego();
             admin.ejecutarEventos(eventos);
+            SDL_Delay(20);
         }
     } catch (const SocketPeerException& e){
         keepTalking = false;

@@ -12,13 +12,6 @@ Ventana::Ventana(const char* titulo, int ancho, int largo) {
     }
 }
 
-Ventana::Ventana(const char *titulo, int ancho, int largo, int posX, int posY) {
-    ventana = SDL_CreateWindow(titulo, posX, posY, ancho, largo, SDL_WINDOW_OPENGL);
-    if(ventana == nullptr){
-        throw ExcepcionConPos(__FILE__, __LINE__, "No pude abrir la ventana");
-    }
-}
-
 Ventana::~Ventana() {
     if(ventana != nullptr){
         SDL_DestroyWindow(ventana);

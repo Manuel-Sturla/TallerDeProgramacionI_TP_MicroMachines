@@ -15,12 +15,12 @@ class Textura {
 private:
     SDL_Texture* textura;
     Posicion* posicion;
-    std::mutex m;
+    SDL_Surface* superficie;
 
 public:
     Textura(SDL_Renderer* renderizador, const std::string& archivo, Posicion* pos);
 
-    Textura(SDL_Texture* textura, Posicion* pos);
+    Textura(SDL_Texture *textura, Posicion *pos, SDL_Surface *superificie);
 
     Textura& operator=(const Textura& text);
 

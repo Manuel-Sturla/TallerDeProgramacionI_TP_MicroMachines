@@ -25,7 +25,8 @@ private:
     bool enJuego;
     std::mutex m;
 public:
-    explicit Visualizacion(ServidorProxy &servidor, std::shared_ptr<Jugador> &jugador);
+    explicit Visualizacion(ServidorProxy &servidor, std::shared_ptr<Jugador> &jugador, int anchoPantalla,
+                           int alturaPantalla);
 
     void esperarInicioPartida();
 

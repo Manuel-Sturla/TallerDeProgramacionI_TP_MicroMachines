@@ -2,15 +2,17 @@
 #include <iostream>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
-#include <QtWidgets/QApplication>
 #include <SDL2/SDL_ttf.h>
+#include <QtWidgets/QApplication>
+#include <yaml-cpp/node/node.h>
+#include <yaml-cpp/yaml.h>
 #include "Excepciones/ExcepcionConPos.h"
 #include "Menu/Lobby.h"
 #include "Menu/Inicio.h"
 #include "Vista/Visualizacion.h"
 #include "Sockets/Utilidades.h"
-#include "Jugador/JugadorReal.h"
 #include "Jugador/JugadorCPU.h"
+
 
 int ejecutarInicio(int argc, char* argv[], std::string& host, std::string& servicio){
     Inicio inicio(host, servicio);
@@ -32,7 +34,7 @@ void menuConQT(int argc, char* argv[]) {
     ejecutarLobby(argc, argv, servidor);
     //Inicializo un jugador
     std::shared_ptr<Jugador> jugador (new JugadorReal());
-    Visualizacion partida(servidor, jugador);
+    Visualizacion partida(servidor, jugador, 0, 0);
     partida.esperarInicioPartida();
     partida.ejecutarPartida();
 }
@@ -59,9 +61,10 @@ void menuSinQT(int argc, char *argv[]) {
         servidor.elegirPartida(partida[0]);
     }
 
-    std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
-//    std::shared_ptr<Jugador> jugador (new JugadorReal());
-    Visualizacion part(servidor, jugador);
+//    std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
+    std::shared_ptr<Jugador> jugador (new JugadorReal());
+    YAML::Node config = YAML::LoadFile("../config.yaml")["configuraciones"];
+    Visualizacion part(servidor, jugador, config["anchoPantalla"].as<int>(), config["alturaPantalla"].as<int>());
     part.esperarInicioPartida();
     part.ejecutarPartida();
 }

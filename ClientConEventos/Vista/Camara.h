@@ -11,13 +11,13 @@
 class Camara {
 private:
     Posicion* posAuto;
-    int tamPantalla;
+    int anchoPantalla;
+    int alturaPantalla;
     int aumento;
-    int offset;
     void amplificarValores(pos_t &pos);
 
 public:
-    explicit Camara(int tamPantalla, int aumento);
+    explicit Camara(int anchoPantalla, int aumento, int alturaPantalla);
 
     void setAuto(Posicion *pos);
 
