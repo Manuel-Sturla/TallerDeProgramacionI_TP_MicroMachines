@@ -21,6 +21,10 @@ public:
     virtual ~AdministradorComandosTeclado();
 
     void ejecutar();
+
+    void apretar(SDL_Keycode comando);
+
+    void desapretar(SDL_Keycode comando);
 };
 
 

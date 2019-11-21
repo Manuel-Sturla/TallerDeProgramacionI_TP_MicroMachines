@@ -7,7 +7,7 @@
 #include "ComandoAcelerar.h"
 
 void ComandoAcelerar::ejecutar() {
-    if(estados[SDL_SCANCODE_UP]){
+    if(estaApretado){
         servidor.ejecutarMovimiento("acelerar");
     }
 }

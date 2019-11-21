@@ -25,6 +25,7 @@ int ejecutarLobby(int argc, char* argv[], ServidorProxy& servidor){
 }
 
 void menuConQT(int argc, char* argv[]) {
+    QApplication app (argc, argv);
     std::string host, servicio;
     ejecutarInicio(argc, argv, host, servicio);
     ServidorProxy servidor(host, servicio);
@@ -66,7 +67,6 @@ void menuSinQT(int argc, char *argv[]) {
 }
 
 int main(int argc, char* argv[]) {
-    //QApplication app(argc, argv);
     if(SDL_Init(SDL_INIT_VIDEO) != 0 || TTF_Init() == -1){
         SDL_Log("No pude incializar el SDL %s", SDL_GetError());
         return 0;

@@ -29,3 +29,17 @@ void AdministradorComandosTeclado::ejecutar() {
         comando.second->ejecutar();
     }
 }
+
+void AdministradorComandosTeclado::apretar(SDL_Keycode comando) {
+    auto it = comandos.find(comando);
+    if(it != comandos.end()){
+        it->second->apretar();
+    }
+}
+
+void AdministradorComandosTeclado::desapretar(SDL_Keycode comando) {
+    auto it = comandos.find(comando);
+    if(it != comandos.end()){
+        it->second->desapretar();
+    }
+}

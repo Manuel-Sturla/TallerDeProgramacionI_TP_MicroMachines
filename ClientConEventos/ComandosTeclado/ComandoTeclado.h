@@ -21,6 +21,14 @@ public:
 
     virtual void ejecutar() = 0;
 
+    void apretar(){
+        estaApretado = true;
+    }
+
+    void desapretar(){
+        estaApretado = false;
+    }
+
     virtual ~ComandoTeclado() = default;
 };
 

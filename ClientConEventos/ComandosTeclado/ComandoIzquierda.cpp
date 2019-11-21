@@ -7,7 +7,7 @@
 #include "ComandoIzquierda.h"
 
 void ComandoIzquierda::ejecutar() {
-    if(estados[SDL_SCANCODE_LEFT]){
+    if(estaApretado){
         servidor.ejecutarMovimiento("doblar izquierda");
     }
 }
