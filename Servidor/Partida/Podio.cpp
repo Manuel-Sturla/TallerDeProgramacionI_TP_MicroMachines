@@ -9,7 +9,7 @@ Podio::Podio(int cantidadDeVueltas) {
 }
 
 bool comparar(Carro *primerCarro, Carro *segundoCarro) {
-    return *segundoCarro < *primerCarro;
+    return *segundoCarro <= *primerCarro;
 }
 
 void Podio::actualizarPodio() {

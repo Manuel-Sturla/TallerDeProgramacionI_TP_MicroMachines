@@ -19,7 +19,7 @@ public:
 
     int obtenerSueloParaRevivir();
 
-    bool operator< (const Posicion& otraposicion);
+    bool operator<= (const Posicion& otraposicion);
 
     ~Posicion();
 

@@ -10,7 +10,7 @@ CajaDeSalud::CajaDeSalud(MundoBox2D &pista, float32 x, float32 y,
     cuerpo = pista.agregarObjeto(&bodyDef);
     cuerpo -> SetUserData(this);
     b2PolygonShape staticBox;
-    staticBox.SetAsBox(1.0f, 1.0f);
+    staticBox.SetAsBox(0.5f, 0.5f);
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &staticBox;
     fixtureDef.density = 1.0f;

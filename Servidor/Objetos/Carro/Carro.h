@@ -68,7 +68,7 @@ class Carro: public Objeto {
 
     void interactuar(Carro *otroCarro);
 
-    bool operator< (const Carro& otroCarro);
+    bool operator<= (const Carro& otroCarro);
 
     std::string darIdConductor();
 

@@ -106,8 +106,8 @@ void Carro::interactuar(Carro *otroCarro) {
     otroCarro->recibirDanio(5);
 }
 
-bool Carro::operator<(const Carro &otroCarro) {
-    return (this -> posicion < otroCarro.posicion);
+bool Carro::operator<=(const Carro &otroCarro) {
+    return (this -> posicion <= otroCarro.posicion);
 }
 
 std::string Carro::darIdConductor() {

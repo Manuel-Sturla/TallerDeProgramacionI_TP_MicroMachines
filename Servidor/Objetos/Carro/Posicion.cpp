@@ -10,6 +10,8 @@ void Posicion::actualizar(int nuevoNumeroDeSuelo) {
     actualizarSuelosPorLosQuePase(nuevoNumeroDeSuelo);
     if (nuevoNumeroDeSuelo == 0 && suelosPorLosQuePase.top() > 1) {
         numeroDeVueltas += 1;
+        suelosPorLosQuePase.empty();
+        suelosPorLosQuePase.push(nuevoNumeroDeSuelo);
     }
     if (!suelosPorLosQuePase.empty()) {
         numeroDeSuelo = suelosPorLosQuePase.top();
@@ -23,13 +25,13 @@ bool Posicion::termineLaCarrera(int vueltasParaTerminar) {
 Posicion::~Posicion() {
 }
 
-bool Posicion::operator<(const Posicion &otraposicion) {
+bool Posicion::operator<=(const Posicion &otraposicion) {
     if (this->numeroDeVueltas < otraposicion.numeroDeVueltas) {
         return true;
     } else if (this->numeroDeVueltas > otraposicion.numeroDeVueltas) {
         return false;
     } else {
-        return this->numeroDeSuelo <= otraposicion.numeroDeSuelo;
+        return this->numeroDeSuelo < otraposicion.numeroDeSuelo;
     }
 }
 
