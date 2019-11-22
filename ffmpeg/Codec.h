@@ -13,7 +13,7 @@ extern "C" {
 }
 
 class Codec {
-    AVCodecID id = AV_CODEC_ID_H265;
+    AVCodecID id = AV_CODEC_ID_H264;
     AVCodec* codec;
     AVCodecContext* contexto;
 public:
