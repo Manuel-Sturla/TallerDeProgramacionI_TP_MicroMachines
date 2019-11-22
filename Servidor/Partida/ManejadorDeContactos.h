@@ -15,6 +15,8 @@ class ManejadorDeContactos: public b2ContactListener {
 
     void manejarFinDeContacto(b2Fixture *objeto1, b2Fixture *objeto2);
 
+    void buscarNuevoContactoEInteractuar(b2Body *carro, b2Body *suelo);
+
     int tipoDeInteraccionCarroCurva(b2Body *carro, b2Body *curva);
 
     ~ManejadorDeContactos();
