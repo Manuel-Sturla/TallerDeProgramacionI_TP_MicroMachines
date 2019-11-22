@@ -22,11 +22,13 @@ private:
     std::mutex& m;
     void esperarInicioPartida();
     void inicializarPartida();
+    int fpsRenderizacion;
 
 public:
 
     explicit HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor, bool &keepTalking, bool &enJuego,
-                          std::mutex &m, std::shared_ptr<Jugador> &jugador);
+                          std::mutex &m,
+                          std::shared_ptr<Jugador> &jugador, int fpsRenderizacion);
 
     void run() override;
 };

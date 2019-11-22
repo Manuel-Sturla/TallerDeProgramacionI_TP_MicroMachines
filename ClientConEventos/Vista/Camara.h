@@ -17,7 +17,7 @@ private:
     void amplificarValores(pos_t &pos);
 
 public:
-    explicit Camara(int anchoPantalla, int aumento, int alturaPantalla);
+    explicit Camara(int anchoPantalla, int alturaPantalla, int aumento);
 
     void setAuto(Posicion *pos);
 

@@ -7,8 +7,8 @@
 #include "../Excepciones/ExcepcionConPos.h"
 #include <SDL2/SDL_ttf.h>
 
-Renderizador::Renderizador(const char *titulo, int ancho, int altura, std::mutex &m) :\
-ventana(titulo, ancho, altura), m(m), camara(ancho, 100, altura) {
+Renderizador::Renderizador(const char *titulo, int ancho, int altura, std::mutex &m, int aumentoCamara) :\
+ventana(titulo, ancho, altura), m(m), camara(ancho, altura, aumentoCamara) {
     renderizador = ventana.crearRenderizador(-1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if(renderizador == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, "No pude crear el renderizador");
@@ -128,4 +128,12 @@ Renderizador::~Renderizador() {
     if(renderizador != nullptr){
         SDL_DestroyRenderer(renderizador);
     }
+}
+
+int Renderizador::obtenerAltura() {
+    return ventana.obtenerAltura();
+}
+
+int Renderizador::obtenerAncho() {
+    return ventana.obtenerAncho();
 }

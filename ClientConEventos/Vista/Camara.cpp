@@ -5,7 +5,7 @@
 #include "Camara.h"
 #include "../Excepciones/ExcepcionConPos.h"
 
-Camara::Camara(int anchoPantalla, int aumento, int alturaPantalla) {
+Camara::Camara(int anchoPantalla, int alturaPantalla, int aumento) {
     this->aumento = aumento;
     this->posAuto = nullptr;
     this->anchoPantalla = anchoPantalla;

@@ -17,9 +17,11 @@ private:
     bool& keepTalking;
     ServidorProxy& servidor;
     std::shared_ptr<Jugador> jugador;
+    int fpsRenderizacion;
 
 public:
-    explicit HiloLector(ServidorProxy &servidor, bool &keepTalking, std::shared_ptr<Jugador> &jugador);
+    explicit HiloLector(ServidorProxy &servidor, bool &keepTalking, std::shared_ptr<Jugador> &jugador,
+                        int fpsRenderizacion);
 
     void run() override;
 };

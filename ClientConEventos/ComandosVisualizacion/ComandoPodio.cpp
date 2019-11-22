@@ -9,9 +9,11 @@
 
 ComandoPodio::ComandoPodio(std::map<std::string, Desplazable *> &desplazables, Renderizador &renderizador,std::string idMiAuto)\
 : ComandoVisualizacion(desplazables, renderizador), idMiAuto(std::move(idMiAuto)){
+    int anchoPantalla = renderizador.obtenerAncho();
+    int alturaPantalla = renderizador.obtenerAltura();
     int posY = 10;
     for(int i = 0; i < 7; i++){
-        posPodio.emplace_back(10, posY, 150, 50, 0);
+        posPodio.emplace_back(10, posY, anchoPantalla/5, alturaPantalla/20, 0);
         posY += 60;
     }
     for(int i = 0; i < 7; i++){

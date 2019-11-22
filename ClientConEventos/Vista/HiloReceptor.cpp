@@ -10,8 +10,9 @@
 #include "../Jugador/JugadorCPU.h"
 
 HiloReceptor::HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor, bool &keepTalking, bool &enJuego,
-                           std::mutex &m, std::shared_ptr<Jugador> &jugador) : keepTalking(keepTalking), servidor(servidor),\
-admin(renderizador, m, enJuego), enJuego(enJuego), jugador(jugador), m(m) {}
+                           std::mutex &m,
+                           std::shared_ptr<Jugador> &jugador, int fpsRenderizacion) : keepTalking(keepTalking), servidor(servidor),\
+admin(renderizador, m, enJuego), enJuego(enJuego), jugador(jugador), m(m), fpsRenderizacion(fpsRenderizacion) {}
 
 void HiloReceptor::run() {
     try {
@@ -20,7 +21,6 @@ void HiloReceptor::run() {
             std::vector<std::string> eventos;
             eventos = servidor.obtenerEventosJuego();
             admin.ejecutarEventos(eventos);
-            SDL_Delay(20);
         }
     } catch (const SocketPeerException& e){
         keepTalking = false;

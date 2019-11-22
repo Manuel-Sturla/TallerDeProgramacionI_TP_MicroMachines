@@ -15,7 +15,8 @@
 #include "../ComandosVisualizacion/ComandoPodio.h"
 
 Administrador::Administrador(Renderizador &renderizador, std::mutex& m, bool& keepTalking) : renderizador(renderizador),\
-pista(renderizador), m(m), keepTalking(keepTalking), posTexto(0,200,1000,100,0){
+pista(renderizador), m(m), keepTalking(keepTalking), posTexto(0,renderizador.obtenerAltura()/5,\
+renderizador.obtenerAncho(),renderizador.obtenerAltura()/10,0){
     comandos["morir"] = new ComandoMorir(desplazables, renderizador);
     comandos["posicionarExtra"] = new ComandoPosicionarExtra(desplazables, renderizador);
     comandos["posicionarAuto"] = new ComandoPosicionarAuto(desplazables, renderizador);

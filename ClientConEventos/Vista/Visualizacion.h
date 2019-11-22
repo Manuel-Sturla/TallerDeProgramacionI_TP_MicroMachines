@@ -24,9 +24,11 @@ private:
     bool keepTalking;
     bool enJuego;
     std::mutex m;
+    int fpsRenderizacion;
+
 public:
     explicit Visualizacion(ServidorProxy &servidor, std::shared_ptr<Jugador> &jugador, int anchoPantalla,
-                           int alturaPantalla);
+                           int alturaPantalla, int fpsRenderizacion, int aumentoCamara);
 
     void esperarInicioPartida();
 

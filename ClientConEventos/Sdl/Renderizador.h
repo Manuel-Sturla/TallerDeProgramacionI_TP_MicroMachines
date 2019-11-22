@@ -26,7 +26,7 @@ private:
     Camara camara;
 
 public:
-    Renderizador(const char *titulo, int ancho, int altura, std::mutex &m);
+    Renderizador(const char *titulo, int ancho, int altura, std::mutex &m, int aumentoCamara);
 
     void agregarAuto(const std::string &archivo, Posicion *pos, std::string &id);
 
@@ -48,13 +48,17 @@ public:
 
     void configurarCamara(Posicion* posicion);
 
-    ~Renderizador();
-
     void borrarTodo();
 
     void borrarAuto(const std::string& id);
 
     void borrarTexto(std::string& id);
+
+    int obtenerAltura();
+
+    int obtenerAncho();
+
+    ~Renderizador();
 };
 
 #endif //OPENGLTEST_RENDERIZADOR_H

@@ -8,8 +8,9 @@
 #include "HiloLector.h"
 #include "../Jugador/JugadorReal.h"
 
-HiloLector::HiloLector(ServidorProxy &servidor, bool &keepTalking, std::shared_ptr<Jugador> &jugador) :\
-comandos(servidor), keepTalking(keepTalking), jugador(jugador), servidor(servidor) {}
+HiloLector::HiloLector(ServidorProxy &servidor, bool &keepTalking, std::shared_ptr<Jugador> &jugador,
+                       int fpsRenderizacion) :\
+comandos(servidor), keepTalking(keepTalking), jugador(jugador), servidor(servidor), fpsRenderizacion(fpsRenderizacion) {}
 
 void HiloLector::run() {
     while(keepTalking){
@@ -17,7 +18,7 @@ void HiloLector::run() {
             keepTalking = false;
         }
         comandos.ejecutar();
-        SDL_Delay(20);
+        SDL_Delay(1000/fpsRenderizacion);
     }
     servidor.terminarConexion();
 }
