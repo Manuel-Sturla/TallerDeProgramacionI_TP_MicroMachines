@@ -8,15 +8,18 @@
 
 #include <string>
 #include <QtWidgets/QWidget>
+#include <QtWidgets/QStackedWidget>
 #include "ui_inicio.h"
+#include "Lobby.h"
 
 class Inicio : public QWidget {
 private:
-    std::string& host;
-    std::string& servicio;
+    QStackedWidget* menu;
+    ServidorProxy& servidor;
+    Lobby& lobby;
 
 public:
-    Inicio(std::string &host, std::string& servicio, QWidget* parent = nullptr);
+    explicit Inicio(QStackedWidget *menu, ServidorProxy &servidor,Lobby& lobby, QWidget *parent = nullptr);
 
     void leerPantalla();
 

@@ -8,19 +8,21 @@
 
 #include "ui_lobby.h"
 #include "../Sockets/ServidorProxy.h"
+#include <QtWidgets/QStackedWidget>
 
 class Lobby : public QWidget {
 private:
     ServidorProxy& servidor;
+    QStackedWidget& menu;
 
 public:
-    explicit Lobby(ServidorProxy &servidor, QWidget* parent = nullptr);
+    Lobby(QStackedWidget &menu, ServidorProxy &servidor, QWidget *parent = nullptr);
 
     void conectar();
 
     void crearPartida();
 
-    void copiarPistas(std::vector<std::string> &vector);
+    void copiarPartidas();
 
     void unirPartida();
 };

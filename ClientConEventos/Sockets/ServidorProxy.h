@@ -13,6 +13,7 @@
 class ServidorProxy {
     Protocolo protocolo;
 public:
+    ServidorProxy();
     ServidorProxy(const std::string& host, const std::string& servicio);
     void ejecutarMovimiento(const std::string& comando);
     void elegirPartida(const std::string& nombre);
@@ -23,6 +24,7 @@ public:
     std::vector<std::string> obtenerMiAuto();
     std::vector<std::string> obtenerMapa();
     void terminarConexion();
+    void conectar(std::string &host, std::string &servicio);
 };
 
 

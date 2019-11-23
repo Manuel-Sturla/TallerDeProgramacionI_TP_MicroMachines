@@ -7,36 +7,17 @@
 #include <yaml-cpp/node/node.h>
 #include <yaml-cpp/yaml.h>
 #include "Excepciones/ExcepcionConPos.h"
-#include "Menu/Lobby.h"
-#include "Menu/Inicio.h"
 #include "Vista/Visualizacion.h"
 #include "Sockets/Utilidades.h"
 #include "Jugador/JugadorCPU.h"
+#include "Menu/Menu.h"
 
-
-int ejecutarInicio(int argc, char* argv[], std::string& host, std::string& servicio){
-    Inicio inicio(host, servicio);
-    inicio.show();
-    return QApplication::exec();
-}
-
-int ejecutarLobby(int argc, char* argv[], ServidorProxy& servidor){
-    Lobby lobby(servidor);
-    lobby.show();
-    return QApplication::exec();
-}
-
-void menuConQT(int argc, char* argv[]) {
+int menuConQT(int argc, char* argv[]) {
     QApplication app (argc, argv);
-    std::string host, servicio;
-    ejecutarInicio(argc, argv, host, servicio);
-    ServidorProxy servidor(host, servicio);
-    ejecutarLobby(argc, argv, servidor);
-    //Inicializo un jugador
-    std::shared_ptr<Jugador> jugador (new JugadorReal());
-    Visualizacion partida(servidor, jugador, 0, 0, 0, 0);
-    partida.esperarInicioPartida();
-    partida.ejecutarPartida();
+    ServidorProxy servidor;
+    Menu menu(servidor);
+    menu.ejecutarMenu();
+    return app.exec();
 }
 
 void menuSinQT(int argc, char *argv[]) {
@@ -78,8 +59,8 @@ int main(int argc, char* argv[]) {
         return 0;
     }
     try {
-//        menuConQT(argc, argv);
-        menuSinQT(argc, argv);
+        menuConQT(argc, argv);
+//        menuSinQT(argc, argv);
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';
         IMG_Quit();

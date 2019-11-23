@@ -3,64 +3,48 @@
 //
 
 #include <iostream>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QStackedWidget>
 #include "Lobby.h"
-#include "../Excepciones/ExcepcionConPos.h"
 
-Lobby::Lobby(ServidorProxy &servidor, QWidget* parent) : servidor(servidor) {
+Lobby::Lobby(QStackedWidget &menu, ServidorProxy &servidor, QWidget *parent) : servidor(servidor), menu(menu) {
     Ui::Lobby lobby;
     lobby.setupUi(this);
-    std::vector<std::string> partidas = servidor.obtenerPartidas();
-    copiarPistas(partidas);
     conectar();
 }
 
 void Lobby::conectar() {
     QObject::connect(findChild<QPushButton*>("crear"), &QPushButton::clicked, this, &Lobby::crearPartida);
-    QObject::connect(findChild<QPushButton*>("crear"), &QPushButton::clicked, this, &QWidget::close);
 }
 
 void Lobby::crearPartida() {
-    std::string nombre = findChild<QLineEdit*>("nombre")->text().toStdString();
-    std::string cantJugadores = findChild<QLineEdit*>("cantJug")->text().toStdString();
-    int aux = std::stoi(cantJugadores);
-    if(aux <=0 || aux > 6){
-        throw ExcepcionConPos(__FILE__, __LINE__, "cantidad de jugadores invalida");
-    }
-    servidor.crearPartida(nombre, cantJugadores);
-    servidor.elegirPartida(nombre);
+    menu.setCurrentIndex(2);
 }
 
-void Lobby::copiarPistas(std::vector<std::string> &partidas) {
+void Lobby::copiarPartidas() {
+    std::vector<std::string> partidas = servidor.obtenerPartidas();
     if(!partidas.empty()){
         QObject::connect(findChild<QPushButton*>("pista1"), &QPushButton::clicked, this, &Lobby::unirPartida);
-        QObject::connect(findChild<QPushButton*>("pista1"), &QPushButton::clicked, this, &QWidget::close);
         findChild<QPushButton*>("pista1")->setText(QString::fromUtf8(partidas[0].c_str()));
     }
     if(partidas.size() > 1){
         QObject::connect(findChild<QPushButton*>("pista2"), &QPushButton::clicked, this, &Lobby::unirPartida);
-        QObject::connect(findChild<QPushButton*>("pista2"), &QPushButton::clicked, this, &QWidget::close);
         findChild<QPushButton*>("pista2")->setText(QString::fromUtf8(partidas[1].c_str()));
     }
     if(partidas.size() > 2){
         QObject::connect(findChild<QPushButton*>("pista3"), &QPushButton::clicked, this, &Lobby::unirPartida);
-        QObject::connect(findChild<QPushButton*>("pista3"), &QPushButton::clicked, this, &QWidget::close);
         findChild<QPushButton*>("pista3")->setText(QString::fromUtf8(partidas[2].c_str()));
     }
     if(partidas.size() > 3){
         QObject::connect(findChild<QPushButton*>("pista4"), &QPushButton::clicked, this, &Lobby::unirPartida);
-        QObject::connect(findChild<QPushButton*>("pista4"), &QPushButton::clicked, this, &QWidget::close);
         findChild<QPushButton*>("pista4")->setText(QString::fromUtf8(partidas[3].c_str()));
     }
     if(partidas.size() > 4){
         QObject::connect(findChild<QPushButton*>("pista5"), &QPushButton::clicked, this, &Lobby::unirPartida);
-        QObject::connect(findChild<QPushButton*>("pista5"), &QPushButton::clicked, this, &QWidget::close);
         findChild<QPushButton*>("pista5")->setText(QString::fromUtf8(partidas[4].c_str()));
     }
 }
 
 void Lobby::unirPartida() {
     auto* boton = qobject_cast<QPushButton*>(sender());
-    servidor.elegirPartida(boton->text().toStdString());
 }
-
-

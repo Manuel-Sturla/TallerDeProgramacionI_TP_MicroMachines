@@ -13,7 +13,7 @@ std::string Protocolo::recibir() {
     return mensaje;
 }
 
-Protocolo::Protocolo(SocketAmigo socketAmigo) :socket(std::move(socketAmigo)){
+Protocolo::Protocolo(SocketActivo socketAmigo) : socket(std::move(socketAmigo)){
 
 }
 
@@ -27,4 +27,8 @@ Protocolo &Protocolo::operator=(Protocolo &&otro) {
 
 void Protocolo::terminarConexion() {
     socket.cerrar();
+}
+
+void Protocolo::conectar(std::string &host, std::string &servicio) {
+    socket.conectar(host, servicio);
 }

@@ -7,18 +7,23 @@
 
 
 #include "SocketAmigo.h"
+#include "SocketActivo.h"
 #include <vector>
 #include <string>
 
 class Protocolo {
-    SocketAmigo socket;
+    SocketActivo socket;
+
 public:
-    explicit Protocolo(SocketAmigo socketAmigo);
+
+    explicit Protocolo(SocketActivo socketAmigo);
     Protocolo(Protocolo&& otro) noexcept;
     Protocolo& operator=(Protocolo&& otro);
     void enviar(const std::string &mensaje);
     std::string recibir();
     void terminarConexion();
+
+    void conectar(std::string &host, std::string &servicio);
 };
 
 #endif

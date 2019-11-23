@@ -51,6 +51,7 @@ void Renderizador::copiarTodo() {
     for(auto& texto : otros){
         texto.second.copiar(renderizador);
     }
+
 }
 
 void Renderizador::configurarCamara(Posicion* posicion) {
