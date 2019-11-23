@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.6)
 project(client)
 
 set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
-find_package(Qt5Widgets)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11 -pthread")
 find_package(Lua REQUIRED)
 add_subdirectory(yaml-cpp)
 include_directories(${PROJECT_BINARY_DIR})

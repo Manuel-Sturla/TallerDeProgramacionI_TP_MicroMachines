@@ -3,7 +3,7 @@ project(Servidor)
 set(CMAKE_BUILD_TYPE Debug)
 
 set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
-SET(CMAKE_CXX_FLAGS -pthread)
+SET(CMAKE_CXX_FLAGS "-pthread -Wall -std=c++11")
 
 add_subdirectory(yaml-cpp)
 add_subdirectory(3rd_party/Box2D-cmake)
