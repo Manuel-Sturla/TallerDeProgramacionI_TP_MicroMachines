@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.6)
 project(client)
 
 set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
-find_package(Qt5Widgets)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11 -pthread")
 find_package(Lua REQUIRED)
 add_subdirectory(yaml-cpp)
 include_directories(${PROJECT_BINARY_DIR})
@@ -19,14 +19,8 @@ set(SOURCE_FILES main.cpp Hilo.h Juego/Pista.cpp Juego/Pista.h Vista/Visualizaci
         Jugador/Lua/InterpreteLua.cpp Jugador/Lua/InterpreteLua.h
         Jugador/Lua/ParametrosLua/CadenaLua.cpp Jugador/Lua/ParametrosLua/CadenaLua.h Jugador/Lua/ParametrosLua/EnteroLua.cpp Jugador/Lua/ParametrosLua/EnteroLua.h
         Jugador/Lua/ParametrosLua/FlotanteLua.cpp Jugador/Lua/ParametrosLua/FlotanteLua.h Jugador/Lua/ParametrosLua/ParametroLua.cpp Jugador/Lua/ParametrosLua/ParametroLua.h Jugador/Lua/ErrorLua.cpp Jugador/Lua/ErrorLua.h Jugador/JugadorReal.cpp Jugador/JugadorReal.h Jugador/JugadorCPU.cpp Jugador/JugadorCPU.h Jugador/Jugador.cpp Jugador/Jugador.h ComandosVisualizacion/ComandoGanador.cpp ComandosVisualizacion/ComandoGanador.h ComandosVisualizacion/ComandoActualizarVida.cpp ComandosVisualizacion/ComandoActualizarVida.h ComandosVisualizacion/ComandoPodio.cpp ComandosVisualizacion/ComandoPodio.h)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 add_executable(client Ui/inicio.ui Ui/lobby.ui ${SOURCE_FILES})
 
-find_package(TIFF)
-if ( TIFF_FOUND )
-    include_directories( ${TIFF_INCLUDE_DIRS} )
-    target_link_libraries(client ${TIFF_LIBRARIES} )
-endif( TIFF_FOUND )
 
 target_link_libraries(client yaml-cpp SDL2_ttf SDL2main SDL2_image SDL2 Qt5::Widgets SDL2_mixer lua5.3)
 
