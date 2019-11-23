@@ -21,11 +21,23 @@ renderizador("microMachines.exe", anchoPantalla, alturaPantalla, m, aumentoCamar
 
 void Visualizacion::ejecutarPartida() {
     try{
-//        Sonido sonido("../abba.wav");
+        Sonido sonido("../abba.wav");
+    	std::chrono::high_resolution_clock::time_point t2;
+    	std::chrono::high_resolution_clock::time_point t1 = std::chrono::high_resolution_clock::now();
+    	int espera = 0;
         while(keepTalking && enJuego) {
             renderizador.limpiar();
             renderizador.copiarTodo();
-            renderizador.imprimir(1000/fpsRenderizacion);
+            t2 = std::chrono::high_resolution_clock::now();
+            espera += (1000/fpsRenderizacion) - std::chrono::duration_cast<std::chrono::milliseconds>(t2 - t1).count();
+            if(espera < 0){
+            	t1 = t2;
+            	continue;
+            } else {
+	            renderizador.imprimir(espera);
+	            t1 = t2 + std::chrono::milliseconds(espera);
+	        	espera = 0;
+            }
         }
         renderizador.limpiar();
         renderizador.copiarTodo();
