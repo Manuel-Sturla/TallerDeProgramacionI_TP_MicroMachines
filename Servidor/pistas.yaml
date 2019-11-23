@@ -45,7 +45,7 @@
   {material: Limite, x: -4, y: -12, tipo: 1, numero: 1},
   {material: Limite, x: -8, y: -12, tipo: 1, numero: 1},
   {material: Limite, x: -8, y: -8, tipo: 1, numero: 1},
-  {material: Limite, x: -8, y: -4, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: -4, tipo: 1, numero: 1}
   ]
   curvas: [
   {x: 0, y: 4, tipo: 1, numero: 1},
@@ -54,6 +54,101 @@
   {x: 0, y: -4, tipo: 2, numero: 7}
   ]
   # agregar cantidad maxima de jugadores???
+  posicionesInicio: [
+  {x: -1, y: 0},
+  {x: 1, y: 0},
+  {x: -1, y: -1},
+  {x: 1, y: -1},
+  {x: -1, y: 1},
+  {x: 1, y: 1}
+  ]
+- nombre: Dona
+  anguloInicial: 90
+  rectas: [
+  {material: Asfalto, x: 0, y: 0, tipo: 1, numero: 0},
+  {material: Asfalto, x: 0, y: 4, tipo: 1, numero: 1},
+  {material: Asfalto, x: 4, y: 8, tipo: 2, numero: 3},
+  {material: Asfalto, x: 8, y: 8, tipo: 2, numero: 4},
+  {material: Asfalto, x: 12, y: 8, tipo: 2, numero: 5},
+  {material: Asfalto, x: 16, y: 4, tipo: 1, numero: 7},
+  {material: Asfalto, x: 16, y: 0, tipo: 1, numero: 8},
+  {material: Asfalto, x: 16, y: -4, tipo: 1, numero: 9},
+  {material: Asfalto, x: 12, y: -8, tipo: 2, numero: 11},
+  {material: Asfalto, x: 8, y: -8, tipo: 2, numero: 12},
+  {material: Asfalto, x: 4, y: -8, tipo: 2, numero: 13},
+  {material: Asfalto, x: 0, y: -4, tipo: 1, numero: 15},
+  {material: Pasto, x: -4, y: 0, tipo: 1, numero: 0},
+  {material: Pasto, x: 4, y: 0, tipo: 1, numero: 0},
+  {material: Pasto, x: -4, y: 4, tipo: 1, numero: 1},
+  {material: Pasto, x: 4, y: 4, tipo: 1, numero: 1}, # ESTE PASTO TIENE MAL EL NUMERO
+  {material: Pasto, x: -4, y: 8, tipo: 1, numero: 2},
+  {material: Pasto, x: -4, y: 12, tipo: 1, numero: 2},
+  {material: Pasto, x: 0, y: 12, tipo: 1, numero: 2},
+  {material: Pasto, x: 4, y: 12, tipo: 1, numero: 3},
+  {material: Pasto, x: 8, y: 4, tipo: 1, numero: 3},
+  {material: Pasto, x: 8, y: 12, tipo: 1, numero: 4},
+  {material: Pasto, x: 12, y: 4, tipo: 1, numero: 4}, # ESTE PASTO TIENE MAL EL NUMERO
+  {material: Pasto, x: 12, y: 12, tipo: 1, numero: 5},
+  {material: Pasto, x: 12, y: 0, tipo: 1, numero: 5},
+  {material: Pasto, x: 16, y: 12, tipo: 1, numero: 6},
+  {material: Pasto, x: 20, y: 12, tipo: 1, numero: 6},
+  {material: Pasto, x: 12, y: -4, tipo: 1, numero: 6}, # ESTE PASTO TIENE MAL EL NUMERO
+  {material: Pasto, x: 20, y: 8, tipo: 1, numero: 6},
+  {material: Pasto, x: 20, y: 4, tipo: 1, numero: 7},
+  {material: Pasto, x: 8, y: -4, tipo: 1, numero: 7},
+  {material: Pasto, x: 20, y: 0, tipo: 1, numero: 8},
+  {material: Pasto, x: 4, y: -4, tipo: 1, numero: 8}, # ESTE PASTO TIENE MAL EL NUMERO
+  {material: Pasto, x: 20, y: -4, tipo: 1, numero: 9},
+  {material: Pasto, x: 20, y: -8, tipo: 1, numero: 10},
+  {material: Pasto, x: 20, y: -12, tipo: 1, numero: 10},
+  {material: Pasto, x: 16, y: -12, tipo: 1, numero: 10},
+  {material: Pasto, x: 12, y: -12, tipo: 1, numero: 11},
+  {material: Pasto, x: 8, y: -12, tipo: 1, numero: 12},
+  {material: Pasto, x: 4, y: -12, tipo: 1, numero: 13},
+  {material: Pasto, x: 0, y: -12, tipo: 1, numero: 14},
+  {material: Pasto, x: -4, y: -12, tipo: 1, numero: 14},
+  {material: Pasto, x: -4, y: -8, tipo: 1, numero: 14},
+  {material: Pasto, x: -4, y: -4, tipo: 1, numero: 15},
+  {material: Limite, x: 8, y: 0, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: 0, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: 4, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: 8, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: 12, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: 16, tipo: 1, numero: 1},
+  {material: Limite, x: -4, y: 16, tipo: 1, numero: 1},
+  {material: Limite, x: 0, y: 16, tipo: 1, numero: 1},
+  {material: Limite, x: 4, y: 16, tipo: 1, numero: 1},
+  {material: Limite, x: 8, y: 16, tipo: 1, numero: 1},
+  {material: Limite, x: 12, y: 16, tipo: 1, numero: 1},
+  {material: Limite, x: 16, y: 16, tipo: 1, numero: 1},
+  {material: Limite, x: 20, y: 16, tipo: 1, numero: 1},
+  {material: Limite, x: 24, y: 16, tipo: 1, numero: 1},
+  {material: Limite, x: 24, y: 12, tipo: 1, numero: 1},
+  {material: Limite, x: 24, y: 8, tipo: 1, numero: 1},
+  {material: Limite, x: 24, y: 4, tipo: 1, numero: 1},
+  {material: Limite, x: 24, y: 0, tipo: 1, numero: 1},
+  {material: Limite, x: 24, y: -4, tipo: 1, numero: 1},
+  {material: Limite, x: 24, y: -8, tipo: 1, numero: 1},
+  {material: Limite, x: 24, y: -12, tipo: 1, numero: 1},
+  {material: Limite, x: 24, y: -16, tipo: 1, numero: 1},
+  {material: Limite, x: 20, y: -16, tipo: 1, numero: 1},
+  {material: Limite, x: 16, y: -16, tipo: 1, numero: 1},
+  {material: Limite, x: 12, y: -16, tipo: 1, numero: 1},
+  {material: Limite, x: 8, y: -16, tipo: 1, numero: 1},
+  {material: Limite, x: 4, y: -16, tipo: 1, numero: 1},
+  {material: Limite, x: 0, y: -16, tipo: 1, numero: 1},
+  {material: Limite, x: -4, y: -16, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: -16, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: -12, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: -8, tipo: 1, numero: 1},
+  {material: Limite, x: -8, y: -4, tipo: 1, numero: 1}
+  ]
+  curvas: [
+  {x: 0, y: 8, tipo: 1, numero: 2},
+  {x: 16, y: 8, tipo: 4, numero: 6},
+  {x: 16, y: -8, tipo: 3, numero: 10},
+  {x: 0, y: -8, tipo: 2, numero: 14}
+  ]
   posicionesInicio: [
   {x: -1, y: 0},
   {x: 1, y: 0},
