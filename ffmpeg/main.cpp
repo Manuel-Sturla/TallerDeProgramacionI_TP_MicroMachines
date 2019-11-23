@@ -45,7 +45,6 @@ int main() {
         window.render();
         // Obtengo los bytes de la textura en el buffer
         std::vector<char> aux(ANCHO*ALTO*3);
-        std::cout << "Nro Frame: " << nro << std::endl;
         nro++;
         int res = SDL_RenderReadPixels(window.getRenderer(), NULL, SDL_PIXELFORMAT_RGB24, aux.data(), ANCHO * 3);
 
@@ -55,8 +54,8 @@ int main() {
         }
 
         buffer.guardar(aux);
-        grabador.run();
     }
+    std::cout << "Llegue al terminar" << std::endl;
     grabador.terminar();
     return 0;
 }
