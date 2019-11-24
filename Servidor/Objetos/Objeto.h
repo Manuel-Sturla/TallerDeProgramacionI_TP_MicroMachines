@@ -7,6 +7,7 @@
 
 class Objeto {
 protected:
+    b2BodyDef bodyDef;
     std::string tipo;
     b2Body *cuerpo;
 

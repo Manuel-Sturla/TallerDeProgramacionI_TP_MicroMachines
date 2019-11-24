@@ -1,6 +1,6 @@
 configuraciones: {
 aumentoCamara: 100,
 fpsRenderizacion: 30,
-alturaPantalla: 700,
-anchoPantalla: 1000
+alturaPantalla: 600,
+anchoPantalla: 600
 }

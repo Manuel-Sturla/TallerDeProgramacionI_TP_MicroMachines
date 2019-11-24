@@ -2,7 +2,6 @@
 
 Barro::Barro(MundoBox2D &pista, float32 x, float32 y, size_t idRecibido) {
     id = "E" + std::to_string(idRecibido);
-    b2BodyDef bodyDef;
     bodyDef.type = b2_staticBody;
     bodyDef.position.Set(x, y);
     cuerpo = pista.agregarObjeto(&bodyDef);
