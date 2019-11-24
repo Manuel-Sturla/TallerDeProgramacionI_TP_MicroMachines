@@ -12,3 +12,7 @@ Desplazable::Desplazable(Renderizador &renderizador, int tam, std::string id)\
 : posicion(0,0, tam, tam, 0), renderizador(renderizador){
     this->id = id;
 }
+
+int Desplazable::getAngulo() {
+    return posicion.getAngulo();
+}

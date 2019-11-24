@@ -33,8 +33,9 @@ int JugadorCPU::obtenerComando(AdministradorComandosTeclado &comandos) {
         }
     }
     std::vector<std::unique_ptr<ParametroLua>> params;
-    pos_t pos = miAuto->getPosicion()->getPosicion();
-    params.emplace_back(new CadenaLua (std::to_string(std::floor(pos.x)) + "," + std::to_string(std::floor(pos.y))));
+    Posicion* pos = miAuto->getPosicion();
+    params.emplace_back(new CadenaLua (std::to_string(std::floor(pos->getPosicion().x)) + "," + std::to_string(std::floor(pos->getPosicion().y))));
+    params.emplace_back(new EnteroLua(pos->getAngulo()));
     std::vector<std::unique_ptr<ParametroLua>> ret = interprete.ejecutarFuncion(FUNC_NUEVA_ACCION, params);
     std::string valor = ret[0]->obtenerValor().cadena;
     if ( valor == "A"){
@@ -63,7 +64,7 @@ void JugadorCPU::ponerMapa(std::vector<std::string> &comando) {
     }
     std::vector<std::string> vars = {nombreTabla};
     interprete.ejecutarFuncion(FUNC_NUEVO_MAPA, vars);
-    interprete.ejecutarFuncion("MostrarMapa");
+    //interprete.ejecutarFuncion("MostrarMapa");
 }
 
 void JugadorCPU::ponerAuto(Desplazable* unAuto) {
