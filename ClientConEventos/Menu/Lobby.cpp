@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include "Lobby.h"
-#include "../Excepciones/EmpezarJuego.h"
 
 Lobby::Lobby(QStackedWidget &menu, ServidorProxy &servidor, QWidget *parent) : servidor(servidor), menu(menu) {
     Ui::Lobby lobby;
