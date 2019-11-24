@@ -8,12 +8,7 @@
 
 #define SEPARADOR ';'
 
-#define CMD_PARTIDAS "PAR"
-#define MSJ_FIN "F"
-
-#define MSJ_COMIENZO_PARTIDA "PartidaComienza"
-
-ServidorProxy::ServidorProxy(const std::string &host, const std::string &servicio):
+ServidorProxy::ServidorProxy(const std::string& host, const std::string& servicio):
         protocolo(std::move(SocketActivo(host, servicio))){
 }
 
@@ -78,3 +73,8 @@ std::vector<std::string> ServidorProxy::obtenerMiAuto() {
     return evento;
 }
 
+ServidorProxy::ServidorProxy() : protocolo(std::move(SocketActivo())){}
+
+void ServidorProxy::conectar(std::string &host, std::string &servicio) {
+    protocolo.conectar(host, servicio);
+}

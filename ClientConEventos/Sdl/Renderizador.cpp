@@ -51,6 +51,7 @@ void Renderizador::copiarTodo() {
     for(auto& texto : otros){
         texto.second.copiar(renderizador);
     }
+
 }
 
 void Renderizador::configurarCamara(Posicion* posicion) {
@@ -71,7 +72,7 @@ size_t Renderizador::agregarTexto(const std::string &texto, Posicion *posicion, 
 }
 
 void Renderizador::agregarExtra(const std::string &archivo, Posicion *pos, std::string &id) {
-    autos.insert(std::pair<std::string, Textura> (id, Textura(renderizador, archivo, pos)));
+    extras.insert(std::pair<std::string, Textura> (id, Textura(renderizador, archivo, pos)));
 }
 
 void Renderizador::agregarTextura(const std::string &archivo, Posicion *pos, std::string &id) {

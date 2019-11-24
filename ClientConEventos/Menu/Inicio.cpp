@@ -3,10 +3,15 @@
 //
 
 #include <iostream>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QMessageBox>
 #include "Inicio.h"
+#include "Lobby.h"
+#include "../Sockets/SocketPeerException.h"
 
-Inicio::Inicio(std::string &host, std::string& servicio, QWidget* parent) :\
-host(host), servicio(servicio) {
+Inicio::Inicio(QStackedWidget *menu, ServidorProxy &servidor,Lobby& lobby, QWidget *parent) :\
+menu(menu), servidor(servidor), lobby(lobby) {
     Ui::Inicio inicio;
     inicio.setupUi(this);
     conectar();
@@ -18,12 +23,12 @@ void Inicio::conectar() {
         std::cerr<<"Boton no encontrado\n";
     } else {
         QObject::connect(boton, &QPushButton::clicked,this, &Inicio::leerPantalla);
-        QObject::connect(boton, &QPushButton::clicked,this, &QWidget::close);
     }
 }
 
 void Inicio::leerPantalla() {
     auto* aux = findChild<QLineEdit*>("Servicio");
+    std::string host, servicio;
     if(aux != nullptr){
         servicio = aux->text().toStdString();
     }
@@ -31,4 +36,14 @@ void Inicio::leerPantalla() {
     if(aux != nullptr){
         host = aux->text().toStdString();
     }
+    try {
+        servidor.conectar(host, servicio);
+    } catch(SocketPeerException& e){
+        QMessageBox msgBox;
+        msgBox.setText("El servidor no existe");
+        msgBox.exec();
+        return;
+    }
+    lobby.copiarPartidas();
+    menu->setCurrentIndex(1);
 }

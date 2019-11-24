@@ -13,7 +13,9 @@ private:
 
 public:
     SocketActivo();
+    SocketActivo(SocketActivo&& other);
     SocketActivo(const std::string &hostName, const std::string &service);
+    SocketActivo& operator=(SocketActivo&& other);
 
     void conectar(const std::string &hostName, const std::string &service);
 

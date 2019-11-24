@@ -3,40 +3,33 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
 #include <SDL2/SDL_ttf.h>
-#include <QtWidgets/QApplication>
 #include <yaml-cpp/node/node.h>
 #include <yaml-cpp/yaml.h>
+#include <QtWidgets/QApplication>
+#include <QtGui/QWindow>
 #include "Excepciones/ExcepcionConPos.h"
-#include "Menu/Lobby.h"
-#include "Menu/Inicio.h"
 #include "Vista/Visualizacion.h"
 #include "Sockets/Utilidades.h"
 #include "Jugador/JugadorCPU.h"
+#include "Menu/Menu.h"
 
-
-int ejecutarInicio(int argc, char* argv[], std::string& host, std::string& servicio){
-    Inicio inicio(host, servicio);
-    inicio.show();
-    return QApplication::exec();
-}
-
-int ejecutarLobby(int argc, char* argv[], ServidorProxy& servidor){
-    Lobby lobby(servidor);
-    lobby.show();
-    return QApplication::exec();
-}
-
-void menuConQT(int argc, char* argv[]) {
+int aux(int argc, char* argv[], ServidorProxy& servidor){
     QApplication app (argc, argv);
-    std::string host, servicio;
-    ejecutarInicio(argc, argv, host, servicio);
-    ServidorProxy servidor(host, servicio);
-    ejecutarLobby(argc, argv, servidor);
-    //Inicializo un jugador
+    Menu menu(servidor);
+    menu.ejecutarMenu();
+    return app.exec();
+}
+
+int menuConQT(int argc, char* argv[]) {
+    ServidorProxy servidor;
+    aux(argc, argv, servidor);
     std::shared_ptr<Jugador> jugador (new JugadorReal());
-    Visualizacion partida(servidor, jugador, 0, 0, 0, 0);
-    partida.esperarInicioPartida();
-    partida.ejecutarPartida();
+    YAML::Node config = YAML::LoadFile("../config.yaml")["configuraciones"];
+    Visualizacion part(servidor, jugador, config["anchoPantalla"].as<int>(), \
+    config["alturaPantalla"].as<int>(), config["fpsRenderizacion"].as<int>(), config["aumentoCamara"].as<int>());
+    part.esperarInicioPartida();
+    part.ejecutarPartida();
+    return 0;
 }
 
 void menuSinQT(int argc, char *argv[]) {
@@ -78,8 +71,8 @@ int main(int argc, char* argv[]) {
         return 0;
     }
     try {
-//        menuConQT(argc, argv);
-        menuSinQT(argc, argv);
+        menuConQT(argc, argv);
+//        menuSinQT(argc, argv);
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';
         IMG_Quit();

@@ -51,3 +51,13 @@ SocketActivo::SocketActivo(const std::string &hostName, const std::string &servi
         SocketAmigo(-1){
     conectar(hostName, service);
 }
+
+SocketActivo::SocketActivo(SocketActivo &&other) : SocketAmigo(std::move(other)){}
+
+SocketActivo &SocketActivo::operator=(SocketActivo &&other) {
+    if (this == &other) {
+        return *this;
+    }
+    SocketAmigo::operator=(std::move(other));
+    return *this;
+}
