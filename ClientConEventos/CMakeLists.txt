@@ -4,14 +4,15 @@ project(client)
 set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11 -pthread")
 find_package(Lua REQUIRED)
+find_package(Qt5Widgets REQUIRED)
 add_subdirectory(yaml-cpp)
 include_directories(${PROJECT_BINARY_DIR})
 include_directories(${LUA_INCLUDE_DIR})
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 qt5_wrap_ui(UIS_HEADERS
+        Ui/crearPartida.ui
         Ui/inicio.ui
         Ui/lobby.ui
-        Ui/crearPartida.ui
         )
 
 

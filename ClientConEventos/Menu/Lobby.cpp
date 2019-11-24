@@ -3,8 +3,6 @@
 //
 
 #include <iostream>
-#include <QtWidgets/QMessageBox>
-#include <QtWidgets/QStackedWidget>
 #include "Lobby.h"
 
 Lobby::Lobby(QStackedWidget &menu, ServidorProxy &servidor, QWidget *parent) : servidor(servidor), menu(menu) {
