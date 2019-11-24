@@ -13,7 +13,7 @@
 #include "BufferBloqueante.h"
 #include "../Hilo.h"
 
-class HiloGrabador: public Hilo {
+class HiloEscritor: public Hilo {
     std::atomic<bool> continuar;
     Frame& frame;
     Escalador& escalador;
@@ -21,7 +21,7 @@ class HiloGrabador: public Hilo {
     BufferBloqueante& bufferDatos;
     const std::vector<char> senialFin;
 public:
-    HiloGrabador(Frame& frame, Escalador& escalador, VideoSalida& video, BufferBloqueante& buffer);
+    HiloEscritor(Frame& frame, Escalador& escalador, VideoSalida& video, BufferBloqueante& buffer);
 
     void run() override;
 

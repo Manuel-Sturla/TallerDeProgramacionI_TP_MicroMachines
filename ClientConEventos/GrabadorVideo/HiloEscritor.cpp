@@ -4,11 +4,11 @@
 
 #include <vector>
 #include <iostream>
-#include "HiloGrabador.h"
+#include "HiloEscritor.h"
 
 #define SENIAL_FIN 'F'
 
-void HiloGrabador::run() {
+void HiloEscritor::run() {
     //FALTA try catch
     while (continuar){
         std::vector<char> aux = bufferDatos.sacar();
@@ -20,20 +20,20 @@ void HiloGrabador::run() {
     }
 }
 
-HiloGrabador::HiloGrabador(Frame &frameRecibido,\
+HiloEscritor::HiloEscritor(Frame &frameRecibido,\
 Escalador &escaladorRecibido, VideoSalida &videoRecibido, BufferBloqueante& bufferRecibido):
-        frame(frameRecibido),
-        video(videoRecibido),
-        escalador(escaladorRecibido),
-        bufferDatos(bufferRecibido),
         continuar(true),
+        frame(frameRecibido),
+        escalador(escaladorRecibido),
+        video(videoRecibido),
+        bufferDatos(bufferRecibido),
         senialFin(1,SENIAL_FIN){
 }
 
-void HiloGrabador::pausar() {
+void HiloEscritor::pausar() {
     continuar = false;
 }
 
-void HiloGrabador::reanudar() {
+void HiloEscritor::reanudar() {
     continuar = true;
 }

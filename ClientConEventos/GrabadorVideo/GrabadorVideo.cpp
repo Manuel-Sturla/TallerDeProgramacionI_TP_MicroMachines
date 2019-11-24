@@ -23,7 +23,7 @@ GrabadorVideo::~GrabadorVideo() {
 void GrabadorVideo::grabarVideo(const std::string &nombre) {
     std::unique_ptr<VideoSalida> aux (new VideoSalida(nombre, frame));
     video = std::move(aux);
-    std::unique_ptr<HiloGrabador> hilo (new HiloGrabador(frame, escalador, *video, bufferDatos));
+    std::unique_ptr<HiloEscritor> hilo (new HiloEscritor(frame, escalador, *video, bufferDatos));
     hiloGrabador = std::move(hilo);
     hiloGrabador->start();
 }

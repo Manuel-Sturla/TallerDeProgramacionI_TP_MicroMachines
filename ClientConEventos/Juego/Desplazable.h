@@ -25,10 +25,12 @@ public:
     virtual void modificar(std::string& mensaje) = 0;
 
     Posicion* getPosicion();
+    int getAngulo();
 
     virtual void eliminar() = 0;
 
     virtual ~Desplazable() = default;
+
 };
 
 

@@ -26,8 +26,8 @@ set(SOURCE_FILES main.cpp Hilo.h Juego/Pista.cpp Juego/Pista.h Vista/Visualizaci
         GrabadorVideo/Frame.h
         GrabadorVideo/GrabadorVideo.cpp
         GrabadorVideo/GrabadorVideo.h
-        GrabadorVideo/HiloGrabador.cpp
-        GrabadorVideo/HiloGrabador.h
+        GrabadorVideo/HiloEscritor.cpp
+        GrabadorVideo/HiloEscritor.h
         GrabadorVideo/VideoSalida.cpp
         GrabadorVideo/VideoSalida.h
         Jugador/Lua/ParametrosLua/CadenaLua.cpp Jugador/Lua/ParametrosLua/CadenaLua.h Jugador/Lua/ParametrosLua/EnteroLua.cpp Jugador/Lua/ParametrosLua/EnteroLua.h

@@ -16,7 +16,7 @@ extern "C" {
 #include "VideoSalida.h"
 #include "Escalador.h"
 #include "BufferBloqueante.h"
-#include "HiloGrabador.h"
+#include "HiloEscritor.h"
 #include <atomic>
 
 class GrabadorVideo {
@@ -26,7 +26,7 @@ class GrabadorVideo {
     Escalador escalador;
     Frame frame;
     BufferBloqueante& bufferDatos;
-    std::unique_ptr<HiloGrabador> hiloGrabador;
+    std::unique_ptr<HiloEscritor> hiloGrabador;
 public:
     explicit GrabadorVideo(BufferBloqueante &buffer);
     void grabarVideo(const std::string &nombre);
