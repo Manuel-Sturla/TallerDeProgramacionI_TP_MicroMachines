@@ -19,7 +19,6 @@ pista(renderizador), m(m), keepTalking(keepTalking), posTexto(0,renderizador.obt
 renderizador.obtenerAncho(),renderizador.obtenerAltura()/10,0){
     comandos["morir"] = new ComandoMorir(desplazables, renderizador);
     comandos["posicionarExtra"] = new ComandoPosicionarExtra(desplazables, renderizador);
-    comandos["posicionarAuto"] = new ComandoPosicionarAuto(desplazables, renderizador);
     comandos["eliminar"] = new ComandoEliminar(desplazables, renderizador);
     comandos["ganador"] = new ComandoGanador(desplazables, renderizador, keepTalking);
     idTexto = "cant jugadores";
@@ -52,6 +51,7 @@ Desplazable* Administrador::crearMiAuto(std::vector<std::string> &evento) {
     desplazables.emplace(evento[0], new Auto(renderizador, 1, evento[0]));
     comandos["actualizarVida"] = new ComandoActualizarVida(desplazables, renderizador, evento[0]);
     comandos["podio"] = new ComandoPodio(desplazables, renderizador, evento[0]);
+    comandos["posicionarAuto"] = new ComandoPosicionarAuto(desplazables, renderizador, evento[0]);
     auto it = desplazables.find(evento[0]);
     renderizador.configurarCamara(it->second->getPosicion());
     return it->second;
