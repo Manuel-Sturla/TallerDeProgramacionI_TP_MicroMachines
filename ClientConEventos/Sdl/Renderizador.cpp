@@ -68,7 +68,7 @@ size_t Renderizador::agregarTexto(const std::string &texto, Posicion *posicion, 
     if(mensaje == nullptr){
         throw ExcepcionConPos(__FILE__, __LINE__, SDL_GetError());
     }
-    otros.insert(std::pair<std::string, Textura> (id, Textura(mensaje, posicion, nullptr)));
+    otros.insert(std::pair<std::string, Textura> (id, Textura(mensaje, posicion, superficie)));
 }
 
 void Renderizador::agregarExtra(const std::string &archivo, Posicion *pos, std::string &id) {
