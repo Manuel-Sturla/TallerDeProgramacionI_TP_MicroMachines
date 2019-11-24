@@ -17,7 +17,8 @@ void VideoSalida::escribirFrame() {
     escribirPaquetes();
 }
 
-VideoSalida::VideoSalida(const std::string &nombre, Frame &frame) : frame(frame){
+VideoSalida::VideoSalida(const std::string &nombre, Frame &frame, const int &ancho, const int &alto) :
+frame(frame), codec(ancho, alto) {
     this->paquete = av_packet_alloc();
     // Intenta deducir formato según extensión
     this->formatoSalida = av_guess_format(NULL, nombre.c_str(), NULL);

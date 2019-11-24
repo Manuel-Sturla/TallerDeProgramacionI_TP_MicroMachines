@@ -10,11 +10,13 @@
 
 
 Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
-estado(new EnEspera(cantJugadores, clientes)) {
+    estadoEnEspera(cantJugadores, clientes),
+    estadoEnCarrera(pista, clientes),
+    enJuego(false){
     crearPista(planoPista);
     suelos.clear();
     pista.empaquetarSuelos(&suelos);
-    mods.emplace_back(new ModAuto("../Mods/Implementaciones/ModBoost/Lib/libBoost.so"));
+    //mods.emplace_back(new ModAuto("../Mods/Implementaciones/ModBoost/Lib/libBoost.so"));
 }
 
 Partida::~Partida() {
@@ -29,21 +31,26 @@ std::vector<std::string> &Partida::obtenerMapa() {
 }
 
 Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy &cliente) {
-    EnEspera* estadoEnEspera = dynamic_cast<EnEspera *>(estado.get());
-    //Aca hay / habia una race condition porque la partida comienza antes de que se devuelva el auto
-    estadoEnEspera->sumarJugador(cliente, pista,  planoDeCarro);
+    std::unique_lock<std::mutex> lock(mutex);
+    estadoEnEspera.sumarJugador(cliente, pista,  planoDeCarro);
+    if (estadoEnEspera.enJuego()){
+        estaLlena.notify_all();
+    }
 }
 
 void Partida::run() {
-    estado->ejecutar();
+    std::unique_lock<std::mutex> lock(mutex);
+    while(!estadoEnEspera.enJuego()){
+        estaLlena.wait(lock);
+    }
     enviarMensajesInicio();
-    estado = std::unique_ptr<EstadoPartida> (new EnCarrera(pista, clientes));
-
+    estadoEnCarrera.inicializar();
+    enJuego = true;
     while(!clientes.estaVacio()) {
         try {
             std::this_thread::sleep_for(std::chrono::milliseconds(1000/60));
             llamarMods();
-            estado->ejecutar();
+            estadoEnCarrera.ejecutar();
         } catch (SocketPeerException &e) {
 
         }
@@ -52,14 +59,13 @@ void Partida::run() {
 
 
 bool Partida::estaMuerto() {
-    return clientes.estaVacio() && estado->enJuego();
+    return clientes.estaVacio() && enJuego;
 }
 
 
 void Partida::cerrar() {
     //Para asegurarme que no envíe nada a ningun cliente porque la quiero cerrar
     clientes.eliminarTodos();
-    estado->cerrar();
 }
 
 
@@ -86,7 +92,7 @@ void Partida::eliminarCliente(ClienteProxy &cliente) {
 }
 
 bool Partida::estaEnJuego() {
-    return estado->enJuego();
+    return enJuego;
 }
 
 void Partida::llamarMods() {

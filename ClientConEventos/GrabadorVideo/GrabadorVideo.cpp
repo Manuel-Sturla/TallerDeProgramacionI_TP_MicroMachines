@@ -9,19 +9,27 @@
 #include "BufferBloqueante.h"
 
 #define SENIAL_FIN 'F'
-GrabadorVideo::GrabadorVideo(BufferBloqueante &buffer) :
-escalador(ancho, alto),
-bufferDatos(buffer){
+GrabadorVideo::GrabadorVideo(Renderizador& render) :
+        renderizador(render),
+        escalador(render.obtenerAncho(), render.obtenerAltura()),
+        ancho(render.obtenerAncho()),
+        alto(render.obtenerAltura()),
+        bufferDatos(),
+        grabando(false){
     av_register_all();
     contexto = avformat_alloc_context();
 }
 
 GrabadorVideo::~GrabadorVideo() {
+    if (grabando){
+        terminar();
+    }
     avformat_free_context(contexto);
 }
 
 void GrabadorVideo::grabarVideo(const std::string &nombre) {
-    std::unique_ptr<VideoSalida> aux (new VideoSalida(nombre, frame));
+    grabando = true;
+    std::unique_ptr<VideoSalida> aux (new VideoSalida(nombre, frame, ancho, alto));
     video = std::move(aux);
     std::unique_ptr<HiloEscritor> hilo (new HiloEscritor(frame, escalador, *video, bufferDatos));
     hiloGrabador = std::move(hilo);
@@ -36,6 +44,7 @@ void GrabadorVideo::terminar() {
     hiloGrabador->join();
     std::cout << "Hice el join" << std::endl;
     video->terminar();
+    grabando = false;
 }
 
 void GrabadorVideo::pausar() {
@@ -44,4 +53,13 @@ void GrabadorVideo::pausar() {
 
 void GrabadorVideo::reanudar() {
     hiloGrabador->reanudar();
+}
+
+void GrabadorVideo::obtenerDatosTextura() {
+    std::vector<char> aux = renderizador.obtenerDatos(alto, ancho, formato);
+    bufferDatos.guardar(aux);
+}
+
+bool GrabadorVideo::estaGrabando() {
+    return grabando;
 }

@@ -11,14 +11,20 @@
 #include "../Comunicacion/Estados/EstadoPartida.h"
 #include "HashProtegidoClientes.h"
 #include "../Mods/Mod.h"
+#include "../Comunicacion/Estados/EnEspera.h"
+#include "../Comunicacion/Estados/EnCarrera.h"
 
 class Partida: public Hilo {
 private:
     Pista pista;
     HashProtegidoClientes clientes;
-    std::unique_ptr<EstadoPartida> estado;
+    EnEspera estadoEnEspera;
+    EnCarrera estadoEnCarrera;
     std::vector<std::string> suelos;
     std::vector<std::unique_ptr<Mod>> mods;
+    std::mutex mutex;
+    std::condition_variable estaLlena;
+    std::atomic<bool> enJuego;
 
 public:
 

@@ -46,6 +46,8 @@ public:
 
     void copiarTodo();
 
+    std::vector<char> obtenerDatos(const int alto, const int ancho, uint32_t formato);
+
     void configurarCamara(Posicion* posicion);
 
     void borrarTodo();

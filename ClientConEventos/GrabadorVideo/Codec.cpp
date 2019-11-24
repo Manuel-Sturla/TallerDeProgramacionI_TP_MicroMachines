@@ -6,15 +6,15 @@
 #include "ErrorFfmpeg.h"
 #include "Frame.h"
 
-Codec::Codec() {
+Codec::Codec(const int &ancho, const int &alto) {
     codec = avcodec_find_encoder(id);
     if (!codec){
         throw ErrorFfmpeg("No se pudo instanciar el codec", __LINE__, __FILE__);
     }
     this->contexto = avcodec_alloc_context3(codec);
 
-    this->contexto->width = 352; //Podria recibirlo por parametro
-    this->contexto->height = 288;
+    this->contexto->width = ancho; //Podria recibirlo por parametro
+    this->contexto->height = alto;
     this->contexto->time_base = {1,25};
     this->contexto->framerate = {25,1};
     this->contexto->pix_fmt = AV_PIX_FMT_YUV420P;

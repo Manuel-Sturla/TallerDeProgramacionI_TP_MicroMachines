@@ -12,7 +12,7 @@ CrearPartida::CrearPartida(HashProtegido &partidas,
 void CrearPartida::ejecutar(ClienteProxy &cliente, std::vector<std::string> argumentos) {
     std::string clave = argumentos[0];
     int cantJugadores = std::stoi(argumentos[1]);
-    if (partidas.ubicar(clave, new Partida(cantJugadores, mapasYAutos.darPlanoDePista("Prueba 1")))){
+    if (partidas.ubicar(clave, new Partida(cantJugadores, mapasYAutos.darPlanoDePista("Dona")))){
         partidas.obtener(clave)->start();
     }else{
         cliente.encolarEvento(new PartidaInvalida());
