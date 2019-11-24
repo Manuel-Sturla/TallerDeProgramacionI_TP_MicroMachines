@@ -16,8 +16,8 @@
 
 class Partida: public Hilo {
 private:
-    Pista pista;
     HashProtegidoClientes clientes;
+    Pista pista;
     EnEspera estadoEnEspera;
     EnCarrera estadoEnCarrera;
     std::vector<std::string> suelos;
@@ -34,7 +34,7 @@ public:
 
     std::vector<std::string>& obtenerMapa();
 
-    Carro * agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy &cliente);
+    void agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy &cliente);
 
     void eliminarCliente(ClienteProxy& cliente);
 

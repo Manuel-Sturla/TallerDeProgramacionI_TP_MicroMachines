@@ -14,7 +14,7 @@ Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
     estadoEnCarrera(pista, clientes),
     enJuego(false){
     crearPista(planoPista);
-    suelos.clear();
+suelos.clear();
     pista.empaquetarSuelos(&suelos);
     //mods.emplace_back(new ModAuto("../Mods/Implementaciones/ModBoost/Lib/libBoost.so"));
 }
@@ -30,7 +30,7 @@ std::vector<std::string> &Partida::obtenerMapa() {
     return suelos;
 }
 
-Carro *Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy &cliente) {
+void Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy &cliente) {
     std::unique_lock<std::mutex> lock(mutex);
     estadoEnEspera.sumarJugador(cliente, pista,  planoDeCarro);
     if (estadoEnEspera.enJuego()){

@@ -54,8 +54,8 @@ void menuSinQT(int argc, char *argv[]) {
         servidor.elegirPartida(partida[0]);
     }
 
-//    std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
-    std::shared_ptr<Jugador> jugador (new JugadorReal());
+    std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
+//    std::shared_ptr<Jugador> jugador (new JugadorReal());
     YAML::Node config = YAML::LoadFile("../config.yaml")["configuraciones"];
     Visualizacion part(servidor, jugador, config["anchoPantalla"].as<int>(), \
     config["alturaPantalla"].as<int>(), config["fpsRenderizacion"].as<int>(), config["aumentoCamara"].as<int>());

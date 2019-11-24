@@ -19,7 +19,15 @@ public:
     void join() {
         hilo.join();
     }
-    void runSeguro();
+    void runSeguro(){
+        try{
+            run();
+        }catch (std::exception &e){
+            std::cerr << "Error en un hilo: " << e.what() << std::endl;
+        }catch (...){
+            std::cerr << "Error deconocido" << std::endl;
+        }
+    }
     virtual void run() = 0;
     virtual ~Hilo() {}
 
@@ -35,16 +43,5 @@ public:
         return *this;
     }
 };
-
-void Hilo::runSeguro() {
-    try{
-        run();
-    }catch (std::exception &e){
-        std::cerr << "Error en un hilo: " << e.what() << std::endl;
-    }catch (...){
-        std::cerr << "Error deconocido" << std::endl;
-    }
-}
-
 
 #endif
