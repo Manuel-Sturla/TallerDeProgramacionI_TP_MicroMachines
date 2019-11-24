@@ -14,6 +14,7 @@
 #include "../Juego/Pista.h"
 #include "../Lector/HiloLector.h"
 #include "../Jugador/JugadorReal.h"
+#include "../GrabadorVideo/GrabadorVideo.h"
 
 class Visualizacion {
 private:
@@ -21,6 +22,7 @@ private:
     Renderizador renderizador;
     HiloReceptor* receptor;
     HiloLector* lector;
+    GrabadorVideo grabador;
     bool keepTalking;
     bool enJuego;
     std::mutex m;

@@ -17,22 +17,28 @@ extern "C" {
 #include "Escalador.h"
 #include "BufferBloqueante.h"
 #include "HiloEscritor.h"
+#include "../Sdl/Renderizador.h"
 #include <atomic>
 
 class GrabadorVideo {
-    AVFormatContext* contexto;
-    std::unique_ptr<VideoSalida> video;
-    const long ancho = 352, alto = 288;
+    Renderizador& renderizador;
     Escalador escalador;
+    AVFormatContext* contexto;
+    const int ancho , alto;
     Frame frame;
-    BufferBloqueante& bufferDatos;
+    BufferBloqueante bufferDatos;
     std::unique_ptr<HiloEscritor> hiloGrabador;
+    std::atomic<bool> grabando;
+    uint32_t formato = SDL_PIXELFORMAT_RGB24;
+    std::unique_ptr<VideoSalida> video;
 public:
-    explicit GrabadorVideo(BufferBloqueante &buffer);
+    explicit GrabadorVideo(Renderizador& render);
+    void obtenerDatosTextura();
     void grabarVideo(const std::string &nombre);
     void pausar();
     void reanudar();
     void terminar();
+    bool estaGrabando();
     ~GrabadorVideo();
 };
 

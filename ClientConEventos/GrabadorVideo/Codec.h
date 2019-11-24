@@ -17,7 +17,7 @@ class Codec {
     AVCodec* codec;
     AVCodecContext* contexto;
 public:
-    Codec();
+    Codec(const int &ancho, const int &alto);
     void codificarFrame(Frame &frame);
     void finalizar();
     void inicializarFrame(Frame &frame);

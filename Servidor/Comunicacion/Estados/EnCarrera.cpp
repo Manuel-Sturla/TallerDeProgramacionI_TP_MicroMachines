@@ -7,7 +7,6 @@
 
 EnCarrera::EnCarrera(Pista &pista, HashProtegidoClientes &clientes):
     pista(pista), clientes(clientes), podio(1){ //CANTIDAD DE VUELTAS HARDCODEADA
-    pista.inicializarPodio(podio);
 }
 
 void EnCarrera::ejecutar() {
@@ -38,9 +37,6 @@ void EnCarrera::actualizarEventos() {
     pista.empaquetarExtras(&eventos);
 }
 
-bool EnCarrera::enJuego() {
-    return true;
-}
 
 void EnCarrera::enviarPosiciones() {
     std::shared_ptr<EventoParseable> eventoFinSimulacion (new FinSimulacion());
@@ -52,5 +48,7 @@ void EnCarrera::enviarPosiciones() {
     }
 }
 
-void EnCarrera::cerrar() {
+void EnCarrera::inicializar() {
+    pista.inicializarPodio(podio);
 }
+

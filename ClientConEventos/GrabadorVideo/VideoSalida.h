@@ -14,17 +14,16 @@ extern "C"{
 #include "Frame.h"
 
 class VideoSalida {
-    //Codec
+    Frame& frame;
     Codec codec;
     std::ofstream archivoSalida;
     AVPacket* paquete;
     AVOutputFormat* formatoSalida;
     int64_t ptsActual = 0;
-    Frame& frame;
     void inicializarFrame();
     void escribirPaquetes();
 public:
-    VideoSalida(const std::string &nombre, Frame &frame);
+    VideoSalida(const std::string &nombre, Frame &frame, const int &ancho, const int &alto);
     void escribirFrame();
     void terminar();
     ~VideoSalida();

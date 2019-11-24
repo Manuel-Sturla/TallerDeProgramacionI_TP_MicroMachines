@@ -5,6 +5,7 @@
 #include <SDL2/SDL_timer.h>
 #include "Renderizador.h"
 #include "../Excepciones/ExcepcionConPos.h"
+#include "../GrabadorVideo/ErrorFfmpeg.h"
 #include <SDL2/SDL_ttf.h>
 
 Renderizador::Renderizador(const char *titulo, int ancho, int altura, std::mutex &m, int aumentoCamara) :\
@@ -137,4 +138,14 @@ int Renderizador::obtenerAltura() {
 
 int Renderizador::obtenerAncho() {
     return ventana.obtenerAncho();
+}
+
+std::vector<char> Renderizador::obtenerDatos(const int alto, const int ancho, uint32_t formato) {
+    std::unique_lock<std::mutex> lock(m);
+    std::vector<char> aux ( obtenerAltura()* obtenerAncho() * 3);
+    int ret = SDL_RenderReadPixels(renderizador, NULL, formato, aux.data(), obtenerAncho() * 3);
+    if (ret < 0){
+        throw ErrorFfmpeg("No se pudo obtener los pixeles para grabar", __LINE__, __FILE__);
+    }
+    return aux;
 }
