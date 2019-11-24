@@ -3,6 +3,8 @@
 //
 
 #include "Menu.h"
+#include <iostream>
+#include "../Excepciones/EmpezarJuego.h"
 
 Menu::Menu(ServidorProxy &servidor) : servidor(servidor), lobby(etapas, servidor), inicio(&etapas, servidor, lobby),\
  crearPartida(etapas, servidor) {
@@ -12,5 +14,5 @@ Menu::Menu(ServidorProxy &servidor) : servidor(servidor), lobby(etapas, servidor
 }
 
 void Menu::ejecutarMenu() {
-    etapas.show();
+	    etapas.show();
 }

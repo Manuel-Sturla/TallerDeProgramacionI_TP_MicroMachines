@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Lobby.h"
+#include "../Excepciones/EmpezarJuego.h"
 
 Lobby::Lobby(QStackedWidget &menu, ServidorProxy &servidor, QWidget *parent) : servidor(servidor), menu(menu) {
     Ui::Lobby lobby;
@@ -45,4 +46,6 @@ void Lobby::copiarPartidas() {
 
 void Lobby::unirPartida() {
     auto* boton = qobject_cast<QPushButton*>(sender());
+    servidor.elegirPartida(boton->text().toUtf8().constData());
+    QCoreApplication::quit();
 }

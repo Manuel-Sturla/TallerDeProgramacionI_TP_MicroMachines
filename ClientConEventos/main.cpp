@@ -13,12 +13,23 @@
 #include "Jugador/JugadorCPU.h"
 #include "Menu/Menu.h"
 
-int menuConQT(int argc, char* argv[]) {
+int aux(int argc, char* argv[], ServidorProxy& servidor){
     QApplication app (argc, argv);
-    ServidorProxy servidor;
     Menu menu(servidor);
     menu.ejecutarMenu();
     return app.exec();
+}
+
+int menuConQT(int argc, char* argv[]) {
+    ServidorProxy servidor;
+    aux(argc, argv, servidor);
+    std::shared_ptr<Jugador> jugador (new JugadorReal());
+    YAML::Node config = YAML::LoadFile("../config.yaml")["configuraciones"];
+    Visualizacion part(servidor, jugador, config["anchoPantalla"].as<int>(), \
+    config["alturaPantalla"].as<int>(), config["fpsRenderizacion"].as<int>(), config["aumentoCamara"].as<int>());
+    part.esperarInicioPartida();
+    part.ejecutarPartida();
+    return 0;
 }
 
 void menuSinQT(int argc, char *argv[]) {
