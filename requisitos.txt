@@ -6,6 +6,10 @@ Cosas que hay que instalar:
     - SDL2_Mixer-dev (libsdl2-mixer-dev)
     - Lua5.3
     - libgl-dev
+    - avformat 
+    - avcodec 
+    - avutil 
+    - swscale
 
 
     export LIBGL_ALWAYS_SOFTWARE=1
