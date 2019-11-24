@@ -16,7 +16,6 @@
 
 class Carro: public Objeto {
   private:
-    b2BodyDef bodyDef;
     std::string idConductor;
     Vida vida;
     Visibilidad visibilidad;

@@ -5,10 +5,9 @@
 
 Curva::Curva(MundoBox2D &pista, Asfalto *asfalto, Pasto *pasto, float32 x,
              float32 y, float32 angulo, int numeroDeSuelo) {
-    b2BodyDef defCuerpo;
-    defCuerpo.type = b2_staticBody;
-    defCuerpo.position.Set(x, y);
-    cuerpo = pista.agregarObjeto(&defCuerpo);
+    bodyDef.type = b2_staticBody;
+    bodyDef.position.Set(x, y);
+    cuerpo = pista.agregarObjeto(&bodyDef);
     agregarseAPista(pista, angulo);
     this -> asfalto = asfalto;
     this -> pasto = pasto;

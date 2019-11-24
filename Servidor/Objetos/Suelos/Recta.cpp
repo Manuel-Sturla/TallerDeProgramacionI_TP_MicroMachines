@@ -3,10 +3,9 @@
 Recta::Recta(MundoBox2D &pista, Material *unMaterial, float32 x, float32 y,
              float32 angulo, int numeroDeSuelo) {
     material = unMaterial;
-    b2BodyDef defCuerpo;
-    defCuerpo.type = b2_staticBody;
-    defCuerpo.position.Set(x, y);
-    cuerpo = pista.agregarObjeto(&defCuerpo);
+    bodyDef.type = b2_staticBody;
+    bodyDef.position.Set(x, y);
+    cuerpo = pista.agregarObjeto(&bodyDef);
     cuerpo -> SetUserData(this);
     b2PolygonShape cajaEstatica;
     cajaEstatica.SetAsBox(2.0f, 2.0f); //TAMANIO DE CUADRADO

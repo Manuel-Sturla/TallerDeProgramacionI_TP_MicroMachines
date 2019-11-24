@@ -52,7 +52,7 @@ void ManejadorDeContactos::manejarFinDeContacto(b2Fixture *fixture1, b2Fixture *
                                             fixture2->GetBody());
         }
     }
-}  
+}
 
 ManejadorDeContactos::~ManejadorDeContactos() {
 }
