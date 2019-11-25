@@ -5,6 +5,7 @@
 #include "ServidorProxy.h"
 #include "SocketActivo.h"
 #include "Utilidades.h"
+#include "../Excepciones/ExcepcionConPos.h"
 
 #define SEPARADOR ';'
 
@@ -50,7 +51,7 @@ void ServidorProxy::terminarConexion() {
 std::vector<std::string> ServidorProxy::obtenerEventosJuego() {
     std::vector<std::string> eventos;
     std::vector<std::string> aux = obtenerEvento();
-    while(aux[0] != "finSimulacion"){
+    while(!aux.empty() && aux[0] != "finSimulacion"){
         for(auto & i : aux){
             eventos.emplace_back(i);
         }
