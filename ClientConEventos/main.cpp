@@ -13,22 +13,27 @@
 #include "Jugador/JugadorCPU.h"
 #include "Menu/Menu.h"
 
-int aux(int argc, char* argv[], ServidorProxy& servidor){
+int aux(int argc, char* argv[], ServidorProxy& servidor, bool& esCpu){
     QApplication app (argc, argv);
-    Menu menu(servidor);
+    Menu menu(servidor, esCpu);
     menu.ejecutarMenu();
     return app.exec();
 }
 
 int menuConQT(int argc, char* argv[]) {
     ServidorProxy servidor;
-    aux(argc, argv, servidor);
-    std::shared_ptr<Jugador> jugador (new JugadorReal());
-    YAML::Node config = YAML::LoadFile("../config.yaml")["configuraciones"];
+    bool esCpu = false;
+    aux(argc, argv, servidor, esCpu);
+    if(esCpu){
+        std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
+    } else {
+        std::shared_ptr<Jugador> jugador (new JugadorReal());
+    }
+/*    YAML::Node config = YAML::LoadFile("../config.yaml")["configuraciones"];
     Visualizacion part(servidor, jugador, config["anchoPantalla"].as<int>(), \
     config["alturaPantalla"].as<int>(), config["fpsRenderizacion"].as<int>(), config["aumentoCamara"].as<int>());
     part.esperarInicioPartida();
-    part.ejecutarPartida();
+    part.ejecutarPartida();*/
     return 0;
 }
 
@@ -71,8 +76,8 @@ int main(int argc, char* argv[]) {
         return 0;
     }
     try {
-//        menuConQT(argc, argv);
-        menuSinQT(argc, argv);
+        menuConQT(argc, argv);
+//        menuSinQT(argc, argv);
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';
         IMG_Quit();
