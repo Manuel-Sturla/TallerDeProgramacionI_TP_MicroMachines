@@ -70,7 +70,7 @@ void ClienteProxy::setCarro(Carro* carro) {
 
 void ClienteProxy::enviarEvento() {
     auto evento = eventosAEnviar.desencolar();
-    if (evento.get() == nullptr){
+    if (evento == nullptr){
         throw ClienteCerradoExcepcion();
     }
     std::string eventoParseado = evento->obtenerParseado();

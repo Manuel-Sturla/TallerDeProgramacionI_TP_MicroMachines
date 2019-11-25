@@ -25,8 +25,8 @@ void HiloCliente::run() {
         conectado = false;
         if (cliente.estaEnJuego()){
             auto partida = partidas.obtener(cliente.obtenerPartida());
-            cliente.borrarAutoPropio();
             partida->eliminarCliente(cliente);
+            cliente.borrarAutoPropio();
         }
     }
 }

@@ -7,19 +7,19 @@
 
 
 void Suelo::colocarExtra(MundoBox2D &mundoBox2D,
-    std::list<std::unique_ptr<Modificador>> *extras) {
+                         std::list<std::unique_ptr<Modificador>> &extras) {
 
     b2Vec2 posicion = cuerpo->GetPosition();
     int numeroDeExtra = rand() % 5;
     if (numeroDeExtra == 0) {
-        extras->emplace_back(new Barro(mundoBox2D, posicion.x,posicion.y, extras->size()));
+        extras.emplace_back(new Barro(mundoBox2D, posicion.x,posicion.y, extras.size()));
     } else if (numeroDeExtra == 1) {
-        extras->emplace_back(new Aceite(mundoBox2D, posicion.x,posicion.y, extras->size()));
+        extras.emplace_back(new Aceite(mundoBox2D, posicion.x,posicion.y, extras.size()));
     } else if (numeroDeExtra == 2) {
-        extras->emplace_back(new Boost(mundoBox2D, posicion.x,posicion.y, extras->size()));
+        extras.emplace_back(new Boost(mundoBox2D, posicion.x,posicion.y, extras.size()));
     } else if (numeroDeExtra == 3) {
-        extras->emplace_back(new CajaDeSalud(mundoBox2D, posicion.x,posicion.y, extras->size()));
+        extras.emplace_back(new CajaDeSalud(mundoBox2D, posicion.x,posicion.y, extras.size()));
     } else {
-        extras->emplace_back(new Piedra(mundoBox2D, posicion.x,posicion.y, extras->size()));
+        extras.emplace_back(new Piedra(mundoBox2D, posicion.x,posicion.y, extras.size()));
     }
 }

@@ -113,7 +113,7 @@ void Pista::agregarExtra() {
     if (numeroAleatorio == 1) {
         int sueloDeAsfalto = rand() % BloquesDeasfalto.size();
         BloquesDeasfalto[sueloDeAsfalto]->colocarExtra(mundoBox2D,
-                                                      &extras);
+                                                      extras);
     }
 }
 

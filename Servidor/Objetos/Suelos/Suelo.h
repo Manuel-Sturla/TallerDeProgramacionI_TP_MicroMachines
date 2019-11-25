@@ -13,7 +13,7 @@ public:
 
     virtual void revivirCarro(MundoBox2D &mundoBox2D, Carro *unCarro) = 0;
 
-    void colocarExtra(MundoBox2D &mundoBox2D, std::list<std::unique_ptr<Modificador>> *extras);
+    void colocarExtra(MundoBox2D &mundoBox2D, std::list<std::unique_ptr<Modificador>> &extras);
 };
 
 #endif

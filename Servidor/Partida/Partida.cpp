@@ -16,7 +16,7 @@ Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
     crearPista(planoPista);
 suelos.clear();
     pista.empaquetarSuelos(&suelos);
-    //mods.emplace_back(new ModAuto("../Mods/Implementaciones/ModBoost/Lib/libBoost.so"));
+   // mods.emplace_back(new ModAuto("../Mods/Implementaciones/ModBoost/Lib/libBoost.so"));
 }
 
 Partida::~Partida() {
@@ -72,23 +72,18 @@ void Partida::cerrar() {
 
 
 void Partida::enviarMensajesInicio() {
-    std::shared_ptr<EventoParseable> eventoComenzo (new ComenzoLaPartida());
-    std::shared_ptr<EventoParseable> eventoEnviarMapa (new EnviarMapa(pista));
-    for (auto& clave : clientes.obtenerClaves()){
-        ClienteProxy& cliente = clientes.obtener(clave);
-        cliente.encolarEvento(eventoComenzo);
-        cliente.encolarEvento(eventoEnviarMapa);
-        cliente.mandarAutoPropio();
-    }
+    std::vector<std::shared_ptr<EventoParseable>> eventosInicio;
+    eventosInicio.emplace_back(new ComenzoLaPartida());
+    eventosInicio.emplace_back(new EnviarMapa(pista));
+    clientes.enviarEventos(eventosInicio);
+    clientes.enviarAutosPropios();
 }
 
 void Partida::eliminarCliente(ClienteProxy &cliente) {
     clientes.eliminar(std::to_string(cliente.obtenerID()));
-    std::shared_ptr<EventoParseable> eventoEliminarCarro (new EliminarCarro(cliente.obtenerID()));
-    for (auto& clave : clientes.obtenerClaves()){
-        ClienteProxy& cliente = clientes.obtener(clave);
-        cliente.encolarEvento(eventoEliminarCarro);
-    }
+    std::vector<std::shared_ptr<EventoParseable>> eventoEliminarCarro;
+    eventoEliminarCarro.emplace_back(new EliminarCarro(cliente.obtenerID()));
+    clientes.enviarEventos(eventoEliminarCarro);
 }
 
 bool Partida::estaEnJuego() {

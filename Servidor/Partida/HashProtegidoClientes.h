@@ -21,6 +21,9 @@ public:
     ClienteProxy & obtener(const std::string& clave);
     std::vector<std::string> obtenerClaves();
     bool contiene(const std::string& clave);
+    void enviarEventos(std::vector<std::shared_ptr<EventoParseable>>& eventos);
+    void ejecutarAccionesClientes();
+    void enviarAutosPropios();
     bool estaVacio();
     void eliminarTodos();
 };

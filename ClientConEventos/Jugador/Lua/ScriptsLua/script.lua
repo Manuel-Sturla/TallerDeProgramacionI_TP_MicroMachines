@@ -23,11 +23,6 @@ end
 
 function imprimir_matriz(matriz)
 	for k,v in pairs(matriz) do
-		--[[
-		for i,j in pairs(v) do
-			io.write(j)
-		end
-		]]
 		imprimir_tabla(v)
 		print()
 	end
@@ -41,11 +36,6 @@ function imprimir_tabla(tabla)
 		io.write(", ")
 	end
 end
---[[
-imprimir_tabla(split('321-022', "-"))
-pos1, pos2 = split("3-2", "-")
-]]
-
 function round(x)
   return x>=0 and math.floor(x+0.5) or math.ceil(x-0.5)
 end
@@ -85,35 +75,6 @@ function crearMapa(datosMapa)
 	imprimir_tabla(mapa)
 end
 
-
-function obtenerNuevaPos(posActual, mod1, mod2, dir)
-	if dir == nil then 
-		dir = 1
-	end
-	tablaNueva = {math.tointeger(posActual[1] + mod1*dir), math.tointeger(posActual[2] + mod2*dir)}
-	return tablaNueva  
-end
-
-function hayPastoIzq(pos)
-	elementos = split(pos, SEPARADOR)
-	pos_izq = table.concat(obtenerNuevaPos(elementos, 0,-1) , SEPARADOR)
-	pos_izq_adelante = table.concat(obtenerNuevaPos(elementos, -1,-1), SEPARADOR)
-	--print("Posiciones a chequear: ", pos_izq, pos_izq_adelante)
-	return mapa[pos_izq] == PASTO or mapa[pos_izq_adelante] == PASTO
-end
-function hayPastoDer(pos)
-	elementos = split(pos, SEPARADOR)
-	pos_der = table.concat(obtenerNuevaPos(elementos, 0, 1) , SEPARADOR)
-	pos_der_adelante = table.concat(obtenerNuevaPos(elementos, -1, 1), SEPARADOR)
-	return mapa[pos_der] == PASTO or mapa[pos_der_adelante] == PASTO
-end
-
-function hayPastoEnf(pos)
-	elementos = split(pos, SEPARADOR)
-	pos_enfrente = table.concat(obtenerNuevaPos(elementos, -1, 0) , SEPARADOR)
-	return mapa[pos_enfrente] == PASTO
-end
-
 function obtenerAnguloAprox(angulo)
 	aux = angulo
 	while math.abs(aux // 360) > 1 do
@@ -123,14 +84,12 @@ function obtenerAnguloAprox(angulo)
 			aux = aux - 360 * math.abs(aux // 360)
 		end
 	end
-	print("Angulo normalizado", aux)
 	if math.abs(aux) <= 15 then return 0 end
 	if math.abs(aux - 90) <= 15 then return 90 end
 	if math.abs(aux - 180) <= 15  then return 180 end
 	if math.abs(aux - 270) <= 15 then return 270 end
 	return nil
 end
-pos_anterior = "0,0"
 ultimoMov = ACELERAR
 anguloEsperado = nil
 function obtenerNuevaAccion(posAuto, angulo)
@@ -208,49 +167,6 @@ function obtenerNuevaAccion(posAuto, angulo)
 			movimiento = FRENAR
 		end					
 	end
-
-
---[[]	separados = split(pos_anterior, SEPARADOR)
-	x_ant = tonumber(separados[1])
-	y_ant = tonumber(separados[2])
-
-	--Faltaria chequear si la diferencia es muy grande por si exploto
-	dif_x = x_actual - x_ant
-	dif_y = y_actual - y_ant
-	if dif_x > 1 or dif_y > 1 then
-		pos_anterior = posActual
-		return ACELERAR
-	end
-	x_sig = x_actual + dif_x
-	y_sig = y_actual + dif_y
-
-	posSiguiente = x_sig .. SEPARADOR .. y_sig
-	print("Pos sig: ", posSiguiente, ".Mapa: ", mapa[posSiguiente])
-	if mapa[posSiguiente] == ASFALTO then 
-		movimiento = ACELERAR
-	elseif mapa[posSiguiente] == (CURVA .. 0) then 
-		movimiento = MOVER_DER
-	elseif mapa[posSiguiente] == (CURVA .. 90) then 
-		movimiento = MOVER_DER 
-	elseif mapa[posSiguiente] == (CURVA .. 180) then 
-		movimiento = MOVER_DER
-	elseif mapa[posSiguiente] == (CURVA .. 270) then 
-		movimiento = MOVER_DER
-	elseif mapa[posSiguiente] == PASTO then 
-		movimiento = FRENAR
-	end
-	pos_anterior = posActual
-	--local posActual = split(posAuto, separador)
-
-	-- Necesito saber hacia que lado esta avanzando? podria ser un indicador que modifica un +/- en el resto
-	-- esto no funciona bien porque podría cambiar una coordenada si esta yendo para abajo en vez de arriba, 
-	-- pero ni idea de como hacer si esta yendo para uno de los costados!!
-	--if hayPastoIzq(posAuto) then return MOVER_DER end
-	---if hayPastoDer(posAuto) then return MOVER_IZQ end
-	--if hayPastoEnf(posAuto) then return FRENAR end
-	]]
 	ultimoMov = movimiento
 	return movimiento
 end
-
---print(obtenerNuevaAccion("1.78,3.00012"))

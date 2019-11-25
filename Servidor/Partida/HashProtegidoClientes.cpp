@@ -40,3 +40,26 @@ void HashProtegidoClientes::eliminarTodos() {
     std::unique_lock<std::mutex> lock(mutex);
     clientes.clear();
 }
+
+void HashProtegidoClientes::enviarEventos(std::vector<std::shared_ptr<EventoParseable>> &eventos) {
+    std::unique_lock<std::mutex> lock(mutex);
+    for (auto& cliente : clientes){
+        for (auto& evento : eventos){
+            cliente.second.encolarEvento(evento);
+        }
+    }
+}
+
+void HashProtegidoClientes::ejecutarAccionesClientes() {
+    std::unique_lock<std::mutex> lock(mutex);
+    for (auto& cliente : clientes){
+        cliente.second.ejecutarAccion();
+    }
+}
+
+void HashProtegidoClientes::enviarAutosPropios() {
+    std::unique_lock<std::mutex> lock(mutex);
+    for (auto& cliente : clientes){
+        cliente.second.mandarAutoPropio();
+    }
+}

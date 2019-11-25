@@ -6,27 +6,23 @@
 #include "../Eventos/EventosParseables/EnviarGanador.h"
 
 EnCarrera::EnCarrera(Pista &pista, HashProtegidoClientes &clientes):
-    pista(pista), clientes(clientes), podio(1){ //CANTIDAD DE VUELTAS HARDCODEADA
+    pista(pista), podio(1),clientes(clientes) { //CANTIDAD DE VUELTAS HARDCODEADA
 }
 
 void EnCarrera::ejecutar() {
-    std::vector<std::string> claves = clientes.obtenerClaves();
-    for (auto& cliente : claves){
-        clientes.obtener(cliente).ejecutarAccion();
-    }
+    clientes.ejecutarAccionesClientes();
     pista.simular();
     actualizarEventos();
     podio.actualizarPodio();
 
-    std::shared_ptr<EventoParseable> eventoPodio (new EnviarPodio(podio));
-    for (auto& cliente : clientes.obtenerClaves()){
-        clientes.obtener(cliente).encolarEvento(eventoPodio);
-    }
+    std::vector<std::shared_ptr<EventoParseable>> eventoPodio;
+    eventoPodio.emplace_back(new EnviarPodio(podio));
+    clientes.enviarEventos(eventoPodio);
+
     if(podio.analizarVictoria()){
-        std::shared_ptr<EventoParseable> eventoGanador (new EnviarGanador(podio));
-        for (auto& cliente : clientes.obtenerClaves()){
-            clientes.obtener(cliente).encolarEvento(eventoGanador);
-        }
+        std::vector<std::shared_ptr<EventoParseable>> eventoGanador;
+        eventoGanador.emplace_back(new EnviarGanador(podio));
+        clientes.enviarEventos(eventoGanador);
     }
     enviarPosiciones();
 }
@@ -40,12 +36,9 @@ void EnCarrera::actualizarEventos() {
 
 void EnCarrera::enviarPosiciones() {
     std::shared_ptr<EventoParseable> eventoFinSimulacion (new FinSimulacion());
-    for (auto& cliente : clientes.obtenerClaves()){
-        for (auto& evento : eventos){
-            clientes.obtener(cliente).encolarEvento(evento);
-        }
-        clientes.obtener(cliente).encolarEvento(eventoFinSimulacion);
-    }
+    eventos.emplace_back(eventoFinSimulacion);
+    clientes.enviarEventos(eventos);
+    eventos.clear();
 }
 
 void EnCarrera::inicializar() {
