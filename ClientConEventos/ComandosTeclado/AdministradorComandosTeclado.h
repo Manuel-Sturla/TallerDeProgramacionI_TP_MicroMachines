@@ -9,6 +9,7 @@
 #include <map>
 #include <SDL2/SDL_keycode.h>
 #include "ComandoTeclado.h"
+#include "../GrabadorVideo/GrabadorVideo.h"
 
 class AdministradorComandosTeclado {
 private:
@@ -16,7 +17,7 @@ private:
     const Uint8* estados;
 
 public:
-    explicit AdministradorComandosTeclado(ServidorProxy &servidor);
+    explicit AdministradorComandosTeclado(ServidorProxy &servidor, GrabadorVideo &grabador);
 
     virtual ~AdministradorComandosTeclado();
 
