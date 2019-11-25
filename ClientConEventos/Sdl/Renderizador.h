@@ -34,7 +34,7 @@ public:
 
     size_t agregarTrecho(const std::string &archivo, Posicion* pos);
 
-    size_t agregarTexto(const std::string &texto, Posicion *posicion, std::string &id, Uint8 r, Uint8 g, Uint8 b);
+    void agregarTexto(const std::string &texto, Posicion *posicion, std::string &id, Uint8 r, Uint8 g, Uint8 b);
 
     void agregarTextura(const std::string &archivo, Posicion *pos, std::string &id);
 

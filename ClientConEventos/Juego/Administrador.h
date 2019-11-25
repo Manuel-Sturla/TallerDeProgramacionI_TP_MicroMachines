@@ -13,14 +13,14 @@
 
 class Administrador {
 private:
-    std::mutex& m;
-    std::map<std::string, ComandoVisualizacion*> comandos;
-    std::map<std::string, Desplazable*> desplazables;
     Renderizador& renderizador;
     Pista pista;
+    std::mutex& m;
+    bool& keepTalking;
+    std::map<std::string, ComandoVisualizacion*> comandos;
+    std::map<std::string, Desplazable*> desplazables;
     Posicion posTexto;
     std::string idTexto;
-    bool& keepTalking;
 
 public:
     explicit Administrador(Renderizador& renderizador, std::mutex& m, bool& keepTalking);

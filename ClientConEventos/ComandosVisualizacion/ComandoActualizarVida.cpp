@@ -6,7 +6,8 @@
 
 ComandoActualizarVida::ComandoActualizarVida(std::map<std::string, Desplazable *> &desplazables,\
 Renderizador &renderizador, std::string& idMiAuto) : ComandoVisualizacion(desplazables,renderizador),\
-posVida(10, renderizador.obtenerAltura()-100, renderizador.obtenerAncho()/5,renderizador.obtenerAltura()/20, 0), idMiAuto(idMiAuto) {
+posVida(10, renderizador.obtenerAltura()-100, renderizador.obtenerAncho()/5,renderizador.obtenerAltura()/20, 0),\
+idMiAuto(idMiAuto) {
     idVida = "vida";
 }
 

@@ -28,7 +28,7 @@ public:
 
     bool copiar(SDL_Renderer* renderizador, Camara& camara);
 
-    bool copiar(SDL_Renderer* renderizador);
+    void copiar(SDL_Renderer* renderizador);
 
     void destruir();
 

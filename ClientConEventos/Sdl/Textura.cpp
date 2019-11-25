@@ -40,7 +40,7 @@ bool Textura::copiar(SDL_Renderer *renderizador, Camara& camara) {
     return true;
 }
 
-bool Textura::copiar(SDL_Renderer* renderizador){
+void Textura::copiar(SDL_Renderer* renderizador){
     pos_t aux = posicion->getPosicion();
     SDL_Rect posImpresion;
     posImpresion.x = aux.x;
@@ -63,13 +63,14 @@ void Textura::destruir() {
     textura = nullptr;
 }
 
+Textura &Textura::operator=(const Textura &text) {
+    this->posicion = text.posicion;
+    this->textura = text.textura;
+    return *this;
+}
+
 Textura::~Textura() {
     if(textura != nullptr){
         SDL_DestroyTexture(textura);
     }
-}
-
-Textura &Textura::operator=(const Textura &text) {
-    this->posicion = text.posicion;
-    this->textura = text.textura;
 }

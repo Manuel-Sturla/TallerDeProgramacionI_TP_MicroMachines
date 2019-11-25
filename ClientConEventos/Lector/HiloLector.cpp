@@ -10,7 +10,7 @@
 
 HiloLector::HiloLector(ServidorProxy &servidor, bool &keepTalking, std::shared_ptr<Jugador> &jugador,
                        int fpsRenderizacion, GrabadorVideo &grabador) :\
-comandos(servidor, grabador), keepTalking(keepTalking), jugador(jugador), servidor(servidor), fpsRenderizacion(fpsRenderizacion) {}
+comandos(servidor, grabador), keepTalking(keepTalking), servidor(servidor), jugador(jugador), fpsRenderizacion(fpsRenderizacion) {}
 
 void HiloLector::run() {
     while(keepTalking){

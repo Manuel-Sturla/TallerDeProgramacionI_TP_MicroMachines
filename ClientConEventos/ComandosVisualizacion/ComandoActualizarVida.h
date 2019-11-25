@@ -11,8 +11,8 @@
 class ComandoActualizarVida : public ComandoVisualizacion {
 private:
     std::string idVida;
-    std::string idMiAuto;
     Posicion posVida;
+    std::string idMiAuto;
 
 public:
     ComandoActualizarVida(std::map<std::string, Desplazable *> &desplazables,

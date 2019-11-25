@@ -85,9 +85,8 @@ void SocketAmigo::enviarLongitud(unsigned int longitud) {
 
 unsigned int SocketAmigo::recibirLongitud() {
     int newChars;
-    char buffer[sizeof(unsigned int)];
     size_t recieved = 0;
-    unsigned int longitud;
+    unsigned int longitud = 0;
     while (recieved < sizeof(unsigned int)) {
         newChars = recv(fd, &longitud, sizeof(unsigned int) - recieved, 0);
         if (newChars == 0) {

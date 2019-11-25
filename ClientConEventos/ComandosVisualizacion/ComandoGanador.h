@@ -10,8 +10,8 @@
 
 class ComandoGanador : public ComandoVisualizacion {
 private:
-    Posicion posPodio;
     bool& keepTalking;
+    Posicion posPodio;
     std::string idGanador;
 
 public:
