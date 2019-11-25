@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Posicion.h"
 
 Posicion::Posicion() {
@@ -12,9 +13,7 @@ void Posicion::actualizar(int nuevoNumeroDeSuelo) {
         suelosPorLosQuePase.empty();
         suelosPorLosQuePase.push(nuevoNumeroDeSuelo);
     }
-    if (!suelosPorLosQuePase.empty()) {
-        numeroDeSuelo = suelosPorLosQuePase.top();
-    }
+    numeroDeSuelo = nuevoNumeroDeSuelo;
 }
 
 bool Posicion::termineLaCarrera(int vueltasParaTerminar) {
