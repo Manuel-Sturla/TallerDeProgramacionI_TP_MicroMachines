@@ -52,7 +52,6 @@ void Pista::simular() {
     mundoBox2D.actualizar();
     for (itCarros = carros.begin(); itCarros != carros.end(); itCarros++) {
         itCarros -> actualizar();
-        //itCarros -> imprimirPosicion();
     }
 
 }
