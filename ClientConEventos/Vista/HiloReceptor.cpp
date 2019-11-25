@@ -9,9 +9,8 @@
 #include "../Sockets/SocketPeerException.h"
 #include "../Jugador/JugadorCPU.h"
 
-HiloReceptor::HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor, bool &keepTalking, bool &enJuego,
-                           std::mutex &m,
-                           std::shared_ptr<Jugador> &jugador, int fpsRenderizacion) : keepTalking(keepTalking), servidor(servidor),\
+HiloReceptor::HiloReceptor(Renderizador &renderizador, ServidorProxy &servidor, bool &keepTalking, bool &enJuego,std::mutex &m,\
+std::shared_ptr<Jugador> &jugador, int fpsRenderizacion) : servidor(servidor),keepTalking(keepTalking),\
 admin(renderizador, m, enJuego), enJuego(enJuego), jugador(jugador), m(m), fpsRenderizacion(fpsRenderizacion) {}
 
 void HiloReceptor::run() {
