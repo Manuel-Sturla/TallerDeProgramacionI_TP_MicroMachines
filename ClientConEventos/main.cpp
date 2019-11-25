@@ -24,16 +24,17 @@ int menuConQT(int argc, char* argv[]) {
     ServidorProxy servidor;
     bool esCpu = false;
     aux(argc, argv, servidor, esCpu);
+    std::shared_ptr<Jugador> jugador;
     if(esCpu){
-        std::shared_ptr<Jugador> jugador (new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
+        jugador = std::shared_ptr<Jugador>(new JugadorCPU("../Jugador/Lua/ScriptsLua/script.lua"));
     } else {
-        std::shared_ptr<Jugador> jugador (new JugadorReal());
+        jugador = std::shared_ptr<Jugador>(new JugadorReal());
     }
-/*    YAML::Node config = YAML::LoadFile("../config.yaml")["configuraciones"];
+    YAML::Node config = YAML::LoadFile("../config.yaml")["configuraciones"];
     Visualizacion part(servidor, jugador, config["anchoPantalla"].as<int>(), \
     config["alturaPantalla"].as<int>(), config["fpsRenderizacion"].as<int>(), config["aumentoCamara"].as<int>());
     part.esperarInicioPartida();
-    part.ejecutarPartida();*/
+    part.ejecutarPartida();
     return 0;
 }
 
