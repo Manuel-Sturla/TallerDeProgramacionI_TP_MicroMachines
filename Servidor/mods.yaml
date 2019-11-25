@@ -1,0 +1,6 @@
+mods:
+  # La ruta debe ser relativa desde donde se ejecuto el servidor y debe apuntar al la biblioteca dinamica a cargar como Mod
+  [
+  # En este caso la ruta relativa es suponiendo una ejecucion en una carpeta de build
+  {tipo: auto, ruta: ../Mods/Implementaciones/ModBoost/Lib/libBoost.so}
+  ]

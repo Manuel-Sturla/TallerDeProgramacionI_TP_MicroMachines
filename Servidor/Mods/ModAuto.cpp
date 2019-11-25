@@ -10,12 +10,9 @@ ModAuto::ModAuto(const std::string &ruta) : Mod(ruta){
 }
 
 void ModAuto::activar(std::list<Carro> &carros) {
-    std::cout << "Llamo al mod" << std::endl;
     for (Carro& carro : carros){
         CarroDTO_t carroDTO = carro.crearDTO();
-        std::cout << "Vel max antes: " << carroDTO.boost;
         funcionActivar(&carroDTO);
-        std::cout << " Vel max despues: " << carroDTO.boost << std::endl;
         carro.cargarDatos(carroDTO);
     }
 }

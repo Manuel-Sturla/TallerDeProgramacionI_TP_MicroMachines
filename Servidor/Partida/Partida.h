@@ -21,14 +21,14 @@ private:
     EnEspera estadoEnEspera;
     EnCarrera estadoEnCarrera;
     std::vector<std::string> suelos;
-    std::vector<std::unique_ptr<Mod>> mods;
+    std::vector<std::unique_ptr<Mod>>& mods;
     std::mutex mutex;
     std::condition_variable estaLlena;
     std::atomic<bool> enJuego;
 
 public:
 
-    Partida(int cantJugadores, PlanoDePista *pista);
+    Partida(int cantJugadores, PlanoDePista *planoPista, std::vector<std::unique_ptr<Mod>> &modsAUsar);
 
     void run() override;
 

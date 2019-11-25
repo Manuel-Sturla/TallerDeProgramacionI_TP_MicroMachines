@@ -11,7 +11,7 @@ continuar(true),
 enJuego(partidas),
 enMenu(partidas, configuracion){
     //Partida hardcodeada para probar
-    partidas.ubicar("prueba", new Partida(1, configuracion.darPlanoDePista("Dona")));
+    partidas.ubicar("prueba", new Partida(1, configuracion.darPlanoDePista("Dona"), configuracion.obtenerMods()));
     partidas.obtener("prueba") -> start();
 }
 

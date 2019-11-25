@@ -9,14 +9,14 @@
 #include "../Mods/ModAuto.h"
 
 
-Partida::Partida(int cantJugadores, PlanoDePista *planoPista) :
+Partida::Partida(int cantJugadores, PlanoDePista *planoPista, std::vector<std::unique_ptr<Mod>> &modsAUsar) :
     estadoEnEspera(cantJugadores, clientes),
     estadoEnCarrera(pista, clientes),
+    mods(modsAUsar),
     enJuego(false){
     crearPista(planoPista);
 suelos.clear();
     pista.empaquetarSuelos(&suelos);
-   // mods.emplace_back(new ModAuto("../Mods/Implementaciones/ModBoost/Lib/libBoost.so"));
 }
 
 Partida::~Partida() {
@@ -37,6 +37,7 @@ void Partida::agregarCliente(PlanoDeCarro *planoDeCarro, ClienteProxy &cliente) 
         estaLlena.notify_all();
     }
 }
+
 
 void Partida::run() {
     std::unique_lock<std::mutex> lock(mutex);

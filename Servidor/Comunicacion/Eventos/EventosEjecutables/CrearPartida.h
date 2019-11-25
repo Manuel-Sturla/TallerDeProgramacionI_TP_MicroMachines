@@ -11,6 +11,7 @@
 class CrearPartida: public EventoEjecutable {
     HashProtegido& partidas;
     ConfiguracionServidor& mapasYAutos;
+
 public:
     CrearPartida(HashProtegido &partidas,
                  ConfiguracionServidor &mapasYAutos);
