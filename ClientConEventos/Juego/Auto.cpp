@@ -6,8 +6,13 @@
 #include "Auto.h"
 #include "../Sdl/Renderizador.h"
 
-Auto::Auto(Renderizador &renderizador, int tam, std::string id) : Desplazable(renderizador, tam, id), posBarro(100, 100, 800, 800, 0) {
-    renderizador.agregarAuto("../Sprites/auto.png", &posicion, id);
+Auto::Auto(Renderizador &renderizador, int tam, std::string id, bool esMiAuto) : Desplazable(renderizador, tam, id),\
+ posBarro(20, 20, renderizador.obtenerAncho()*0.95, renderizador.obtenerAltura()*0.95, 0) {
+    if(esMiAuto){
+        renderizador.agregarAuto("../Sprites/autoMio.png", &posicion, id);
+    } else {
+        renderizador.agregarAuto("../Sprites/auto.png", &posicion, id);
+    }
     etapaExplosion = 0;
     idExplosion = "explosion";
     sucio = false;
@@ -46,7 +51,7 @@ void Auto::modificar(std::string &mensaje) {
         renderizador.borrarTexto(idBarro);
         sucio = false;
     } else if(mensaje == "Sucio" && !sucio){
-        renderizador.agregarTextura("../Sprites/barro.png", &posBarro, idBarro);
+        renderizador.agregarTextura("../Sprites/barroPantalla.png", &posBarro, idBarro);
         sucio = true;
     }
 }

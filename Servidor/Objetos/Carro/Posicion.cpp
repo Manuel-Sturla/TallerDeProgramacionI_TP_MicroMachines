@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Posicion.h"
 
 Posicion::Posicion() {
@@ -8,7 +7,7 @@ Posicion::Posicion() {
 
 void Posicion::actualizar(int nuevoNumeroDeSuelo) {
     actualizarSuelosPorLosQuePase(nuevoNumeroDeSuelo);
-    if (nuevoNumeroDeSuelo == 0 && suelosPorLosQuePase.top() > 1) {
+    if (nuevoNumeroDeSuelo == 0 && suelosPorLosQuePase.top() > 5) {
         numeroDeVueltas += 1;
         suelosPorLosQuePase.empty();
         suelosPorLosQuePase.push(nuevoNumeroDeSuelo);

@@ -9,7 +9,7 @@
 #include "../../Partida/Podio.h"
 #include "../../Partida/HashProtegidoClientes.h"
 
-class EnCarrera: public EstadoPartida {
+class EnCarrera {
 private:
     Pista& pista;
     Podio podio;
@@ -19,10 +19,9 @@ private:
     void actualizarEventos();
 public:
     EnCarrera(Pista& pista, HashProtegidoClientes &clientes);
-    void ejecutar() override;
-    bool enJuego() override;
+    void ejecutar();
     void enviarPosiciones();
-    void cerrar() override;
+    void inicializar();
 };
 
 

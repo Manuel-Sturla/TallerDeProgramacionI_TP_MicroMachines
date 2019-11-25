@@ -13,6 +13,7 @@ class Pista {
     Renderizador& renderizador;
     int tamImagen;
     std::vector<Posicion*> pistaPos;
+    std::string idInicio;
 
     void agregarPasto(int posX, int posY, int angulo);
 

@@ -49,4 +49,7 @@ void CrearPartida::crearPartida() {
         msgBox.exec();
         return;
     }
+    servidor.crearPartida(nombre, cantJugadores);
+    servidor.elegirPartida(nombre);
+    QCoreApplication::quit();
 }

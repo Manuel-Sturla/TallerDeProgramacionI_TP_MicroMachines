@@ -11,7 +11,7 @@
 #include "../../Partida/Pista.h"
 #include "../../Planos/PlanoDeCarro.h"
 
-class EnEspera: public EstadoPartida {
+class EnEspera {
     std::mutex mutex;
     std::condition_variable estaLLena;
     size_t cantMaximaJugadores;
@@ -27,11 +27,8 @@ public:
     void sumarJugador(ClienteProxy &cliente, Pista &pista,
                       PlanoDeCarro *planoCarro);
 
-    bool enJuego() override;
+    bool enJuego();
 
-    void ejecutar() override;
-
-    void cerrar();
 };
 
 

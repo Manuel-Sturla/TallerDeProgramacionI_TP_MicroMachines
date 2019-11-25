@@ -45,4 +45,6 @@ void Lobby::copiarPartidas() {
 
 void Lobby::unirPartida() {
     auto* boton = qobject_cast<QPushButton*>(sender());
+    servidor.elegirPartida(boton->text().toUtf8().constData());
+    QCoreApplication::quit();
 }

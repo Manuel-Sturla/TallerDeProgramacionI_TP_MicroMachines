@@ -8,6 +8,7 @@
 
 Pista::Pista(Renderizador &renderizador) : renderizador(renderizador) {
     tamImagen = 0;
+    idInicio = "inicio";
 }
 
 void Pista::crear(std::vector<std::string>& mensaje) {
@@ -31,6 +32,8 @@ void Pista::crear(std::vector<std::string>& mensaje) {
             throw ExcepcionConPos(__FILE__, __LINE__, "Tipo de pista invalido" + mensaje[i]);
         }
     }
+    pistaPos.push_back(new Posicion(std::stoi(mensaje[1]), -1*std::stoi(mensaje[2]), tamImagen, tamImagen, std::stoi(mensaje[3])));
+    renderizador.agregarExtra("../Sprites/inicio.png", pistaPos[pistaPos.size()-1], idInicio);
 }
 
 void Pista::agregarRecta(int posX, int posY, int angulo) {

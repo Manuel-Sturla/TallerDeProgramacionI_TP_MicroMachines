@@ -52,7 +52,7 @@ void ManejadorDeContactos::manejarFinDeContacto(b2Fixture *fixture1, b2Fixture *
                                             fixture2->GetBody());
         }
     }
-}  
+}
 
 ManejadorDeContactos::~ManejadorDeContactos() {
 }
@@ -78,7 +78,6 @@ int ManejadorDeContactos::tipoDeInteraccionCarroCurva(b2Body *carro, b2Body *cur
 
 void ManejadorDeContactos::buscarNuevoContactoEInteractuar(b2Body *carro,
                                                            b2Body *suelo) {
-    b2Fixture *texturaDeSuelo = suelo -> GetFixtureList();
     for (b2ContactEdge* iterador = carro -> GetContactList(); iterador != nullptr; iterador = iterador -> next) {
         b2Contact * contacto = iterador -> contact;
         b2Body *cuerpoAux1 = contacto -> GetFixtureA() -> GetBody();

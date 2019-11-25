@@ -5,13 +5,14 @@
 #include "ComandoPosicionarAuto.h"
 #include "../Juego/Auto.h"
 
-ComandoPosicionarAuto::ComandoPosicionarAuto(std::map<std::string, Desplazable*>& desplazables,
-                                             Renderizador &renderizador) : ComandoVisualizacion(desplazables, renderizador) {}
+ComandoPosicionarAuto::ComandoPosicionarAuto(std::map<std::string, Desplazable*>& desplazables,Renderizador &renderizador, std::string idMiAuto):\
+ ComandoVisualizacion(desplazables, renderizador), idMiAuto(idMiAuto) {}
 
 void ComandoPosicionarAuto::ejecutar(std::vector<std::string> &eventos) {
     auto it = desplazables.find(eventos[0]);
+    bool esMiAuto = (eventos[0] == idMiAuto);
     if(it == desplazables.end()){
-        desplazables.emplace(eventos[0], new Auto(renderizador, 1, eventos[0]));
+        desplazables.emplace(eventos[0], new Auto(renderizador, 1, eventos[0], false));
         it = desplazables.find(eventos[0]);
     }
     eventos.erase(eventos.begin());
@@ -19,6 +20,8 @@ void ComandoPosicionarAuto::ejecutar(std::vector<std::string> &eventos) {
     eventos.erase(eventos.begin());
     eventos.erase(eventos.begin());
     eventos.erase(eventos.begin());
-    it->second->modificar(eventos[0]);
+    if(esMiAuto){
+        it->second->modificar(eventos[0]);
+    }
     eventos.erase(eventos.begin());
 }
