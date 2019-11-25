@@ -28,7 +28,7 @@ private:
 
 public:
 
-    Partida(int cantJugadores, PlanoDePista *planoPista, std::vector<std::unique_ptr<Mod>> &modsAUsar);
+    Partida(int cantJugadores, PlanoDePista *planoPista, int cantVueltas, std::vector<std::unique_ptr<Mod>> &modsAUsar);
 
     void run() override;
 

@@ -17,8 +17,7 @@ class EnMenu: public EstadoCliente {
     std::map<std::string, std::shared_ptr<EventoEjecutable>> comandos;
 
 public:
-    EnMenu(HashProtegido &partidas,
-           ConfiguracionServidor &config);
+    EnMenu(HashProtegido &partidas, ConfiguracionServidor &config);
 
     void ejecutar(ClienteProxy &cliente) override;
 

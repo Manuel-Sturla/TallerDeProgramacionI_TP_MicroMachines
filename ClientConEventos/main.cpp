@@ -77,8 +77,8 @@ int main(int argc, char* argv[]) {
         return 0;
     }
     try {
-//        menuConQT(argc, argv);
-        menuSinQT(argc, argv);
+        menuConQT(argc, argv);
+//        menuSinQT(argc, argv);
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';
         IMG_Quit();

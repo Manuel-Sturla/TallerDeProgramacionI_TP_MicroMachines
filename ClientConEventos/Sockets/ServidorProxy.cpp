@@ -36,7 +36,13 @@ std::vector<std::string> ServidorProxy::obtenerPartidas() {
     resultado.erase(resultado.begin());
     return resultado;
 }
-
+std::vector<std::string> ServidorProxy::obtenerPistas() {
+    protocolo.enviar("PIS");
+    std::vector<std::string> resultado;
+    std::string aux = protocolo.recibir();
+    resultado = separar(aux, ';');
+    return resultado;
+}
 std::vector<std::string> ServidorProxy::obtenerMapa() {
     std::vector<std::string> resultado;
     std::string aux = protocolo.recibir();

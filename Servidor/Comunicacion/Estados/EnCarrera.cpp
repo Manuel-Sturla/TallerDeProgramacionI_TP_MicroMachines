@@ -5,8 +5,8 @@
 #include "../Eventos/EventosParseables/EnviarPodio.h"
 #include "../Eventos/EventosParseables/EnviarGanador.h"
 
-EnCarrera::EnCarrera(Pista &pista, HashProtegidoClientes &clientes):
-    pista(pista), podio(1),clientes(clientes) { //CANTIDAD DE VUELTAS HARDCODEADA
+EnCarrera::EnCarrera(Pista &pista, HashProtegidoClientes &clientes, int cantVueltas) :
+    pista(pista), podio(cantVueltas),clientes(clientes) {
 }
 
 void EnCarrera::ejecutar() {

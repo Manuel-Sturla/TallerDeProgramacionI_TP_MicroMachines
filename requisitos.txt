@@ -10,7 +10,7 @@ Cosas que hay que instalar:
     - avcodec 
     - avutil 
     - swscale
-    - libgl-dev
+    - libgl-dev (este es como problematico porque es una version anterior de uno que usa SDL)
 
 
     export LIBGL_ALWAYS_SOFTWARE=1

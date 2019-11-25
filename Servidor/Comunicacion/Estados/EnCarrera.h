@@ -18,7 +18,7 @@ private:
     HashProtegidoClientes& clientes;
     void actualizarEventos();
 public:
-    EnCarrera(Pista& pista, HashProtegidoClientes &clientes);
+    EnCarrera(Pista &pista, HashProtegidoClientes &clientes, int cantVueltas);
     void ejecutar();
     void enviarPosiciones();
     void inicializar();

@@ -3,16 +3,23 @@
 //
 
 #include <QtWidgets/QMessageBox>
+#include <iostream>
 #include "CrearPartida.h"
 
 CrearPartida::CrearPartida(QStackedWidget &menu, ServidorProxy &servidor, QWidget *parent) :\
 servidor(servidor), menu(menu){
+    std::cout << std::endl;
     Ui::CrearPartida crearPartida;
     crearPartida.setupUi(this);
     QObject::connect(findChild<QPushButton*>("pushButton"), &QPushButton::clicked, this, &CrearPartida::crearPartida);
 }
 
 void CrearPartida::crearPartida() {
+    std::vector<std::string> pistas = servidor.obtenerPistas();
+    std::cout << "Imprimo las pistas: " << pistas.size() << std::endl;
+    for (auto& pista: pistas){
+        std::cout << pista << ". ";
+    }
     auto* aux = findChild<QLineEdit*>("nombre");
     std::string nombre, cantJugadores, cantVueltas;
     if(aux != nullptr){

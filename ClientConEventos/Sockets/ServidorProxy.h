@@ -25,6 +25,8 @@ public:
     std::vector<std::string> obtenerMapa();
     void terminarConexion();
     void conectar(std::string &host, std::string &servicio);
+
+    std::vector<std::string> obtenerPistas();
 };
 
 

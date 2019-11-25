@@ -4,18 +4,16 @@
 #include "../Eventos/EventosEjecutables/UnirAPartida.h"
 #include "../Eventos/EventosEjecutables/ObtenerPartidas.h"
 #include "../Utilidades.h"
+#include "../Eventos/EventosEjecutables/ObtenerPistas.h"
 
 #define MSJ_CMD_INVALIDO "ComandoInvalido"
 
 EnMenu::EnMenu(HashProtegido &partidas, ConfiguracionServidor &config):
     partidas(partidas), mapasYAutos(config){
-    //Creo comando CrearPartida y UnirseAPartida
     comandos.emplace("CrearPAR", new CrearPartida(partidas, mapasYAutos));
     comandos.emplace("PAR", new ObtenerPartidas(partidas));
     comandos.emplace("UnirPAR", new UnirAPartida(partidas, mapasYAutos));
-    //ObtenerPartidas
-    //ObtenerMapa
-    //ObtenerAutos ?
+    comandos.emplace("PIS", new ObtenerPistas(mapasYAutos));
 }
 
 void EnMenu::ejecutar(ClienteProxy &cliente) {

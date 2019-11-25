@@ -9,9 +9,10 @@
 #include "../Mods/ModAuto.h"
 
 
-Partida::Partida(int cantJugadores, PlanoDePista *planoPista, std::vector<std::unique_ptr<Mod>> &modsAUsar) :
+Partida::Partida(int cantJugadores, PlanoDePista *planoPista, int cantVueltas,
+                 std::vector<std::unique_ptr<Mod>> &modsAUsar) :
     estadoEnEspera(cantJugadores, clientes),
-    estadoEnCarrera(pista, clientes),
+    estadoEnCarrera(pista, clientes, cantVueltas),
     mods(modsAUsar),
     enJuego(false){
     crearPista(planoPista);

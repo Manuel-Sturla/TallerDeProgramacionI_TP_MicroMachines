@@ -1,0 +1,6 @@
+carros:
+  # La velocidad es en m/s. EL angulo en grados y el agarre es un porcentaje distinto de 0.
+  #la aceleracion debe ser menor a 0.4f
+  [
+  {nombre: ManuMovil, velocidad_max: 15, aceleracion: 0.2, angulo_de_giro: 10, agarre: 100}
+  ]
