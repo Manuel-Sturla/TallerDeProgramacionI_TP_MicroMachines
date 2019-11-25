@@ -21,11 +21,11 @@ public:
 
     virtual void ejecutar() = 0;
 
-    void apretar(){
+    virtual void apretar(){
         estaApretado = true;
     }
 
-    void desapretar(){
+    virtual void desapretar(){
         estaApretado = false;
     }
 

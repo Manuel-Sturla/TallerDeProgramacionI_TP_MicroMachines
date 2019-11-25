@@ -1,5 +1,6 @@
 
 #include <dlfcn.h>
+#include <iostream>
 #include "BibliotecaDinamica.h"
 #include "ErrorBiblioteca.h"
 

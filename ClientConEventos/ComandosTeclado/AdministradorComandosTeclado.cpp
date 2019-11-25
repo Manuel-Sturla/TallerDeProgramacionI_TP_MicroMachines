@@ -9,13 +9,15 @@
 #include "ComandoFrenar.h"
 #include "ComandoIzquierda.h"
 #include "ComandoDerecha.h"
+#include "ComandoGrabar.h"
 
-AdministradorComandosTeclado::AdministradorComandosTeclado(ServidorProxy &servidor) : \
+AdministradorComandosTeclado::AdministradorComandosTeclado(ServidorProxy &servidor, GrabadorVideo &grabador) : \
 estados(SDL_GetKeyboardState(nullptr)) {
     comandos[SDLK_UP] = new ComandoAcelerar(servidor, estados);
     comandos[SDLK_DOWN] = new ComandoFrenar(servidor, estados);
     comandos[SDLK_LEFT] = new ComandoIzquierda(servidor, estados);
     comandos[SDLK_RIGHT] = new ComandoDerecha(servidor, estados);
+    comandos[SDLK_g] = new ComandoGrabar(grabador, servidor, estados);
 }
 
 void AdministradorComandosTeclado::ejecutar() {

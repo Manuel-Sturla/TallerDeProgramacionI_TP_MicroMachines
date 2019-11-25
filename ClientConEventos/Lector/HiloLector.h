@@ -21,7 +21,7 @@ private:
 
 public:
     explicit HiloLector(ServidorProxy &servidor, bool &keepTalking, std::shared_ptr<Jugador> &jugador,
-                        int fpsRenderizacion);
+                        int fpsRenderizacion, GrabadorVideo &grabador);
 
     void run() override;
 };

@@ -15,7 +15,7 @@ void Vida::recibirDanio(int danio) {
   } else {
     matar();
     esperaParaRevivir = ESPERA_PARA_REVIVIR;
-      moriEnLaSimulacionActual = true;
+    moriEnLaSimulacionActual = true;
   }
 }
 

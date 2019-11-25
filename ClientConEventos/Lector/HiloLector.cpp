@@ -9,8 +9,8 @@
 #include "../Jugador/JugadorReal.h"
 
 HiloLector::HiloLector(ServidorProxy &servidor, bool &keepTalking, std::shared_ptr<Jugador> &jugador,
-                       int fpsRenderizacion) :\
-comandos(servidor), keepTalking(keepTalking), jugador(jugador), servidor(servidor), fpsRenderizacion(fpsRenderizacion) {}
+                       int fpsRenderizacion, GrabadorVideo &grabador) :\
+comandos(servidor, grabador), keepTalking(keepTalking), jugador(jugador), servidor(servidor), fpsRenderizacion(fpsRenderizacion) {}
 
 void HiloLector::run() {
     while(keepTalking){

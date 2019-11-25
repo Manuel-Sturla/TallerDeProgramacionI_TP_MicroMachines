@@ -2,6 +2,7 @@
 #define _HILO_H
 #include <pthread.h>
 #include <thread>
+#include <iostream>
 
 class Hilo {
 private:

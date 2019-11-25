@@ -1,12 +1,15 @@
-#include <fstream>
 #include "ConfiguracionServidor.h"
 #include "ServidorException.h"
 #include "yaml-cpp/yaml.h"
 #include "yaml-cpp/node/node.h"
+#include "ErrorConfiguracion.h"
+#include "Mods/ModAuto.h"
 
+#define MOD_AUTO "auto"
 ConfiguracionServidor::ConfiguracionServidor() {
     levantarPistas();
     levantarCarros();
+    levantarMods();
 }
 
 void ConfiguracionServidor::levantarPistas() {
@@ -54,7 +57,12 @@ ConfiguracionServidor::~ConfiguracionServidor() {
 }
 
 void ConfiguracionServidor::levantarCarros() {
-    YAML::Node configuracion = YAML::LoadFile("../configuracion.yaml");
+    YAML::Node configuracion;
+    try {
+        configuracion = YAML::LoadFile("../carros.yaml");
+    } catch (YAML::BadFile &e){
+        throw ErrorConfiguracion("Error al abrir el archivo de configuracion de los carros", __LINE__, __FILE__);
+    }
     YAML::Node autos = configuracion["carros"];
     //Tirar excepcion si el archivo no se abrio
     for (auto &&autoInfo : autos) {
@@ -67,6 +75,20 @@ void ConfiguracionServidor::levantarCarros() {
     }
 }
 
+void ConfiguracionServidor::levantarMods() {
+    YAML::Node configuracion;
+    try {
+        configuracion = YAML::LoadFile("../mods.yaml");
+    } catch (YAML::BadFile &e){
+        throw ErrorConfiguracion("Error al abrir el archivo de configuracion de los mods", __LINE__, __FILE__);
+    }
+    YAML::Node modsACargar = configuracion["mods"];
+    for (auto&& mod : modsACargar) {
+        if (mod["tipo"].as<std::string>() == MOD_AUTO) {
+            mods.emplace_back(new ModAuto(mod["ruta"].as<std::string>()));
+        }
+    }
+}
 PlanoDePista *ConfiguracionServidor::darPlanoDePista(std::string planoBuscado) {
     return planosDePistas[planoBuscado];
 }
@@ -89,4 +111,8 @@ std::vector<std::string> ConfiguracionServidor::obtenerNombresCarros() {
         nombres.push_back(it->first);
     }
     return nombres;
+}
+
+std::vector<std::unique_ptr<Mod>> &ConfiguracionServidor::obtenerMods() {
+    return mods;
 }
