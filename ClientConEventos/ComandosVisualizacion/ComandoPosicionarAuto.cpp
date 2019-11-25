@@ -12,7 +12,7 @@ void ComandoPosicionarAuto::ejecutar(std::vector<std::string> &eventos) {
     auto it = desplazables.find(eventos[0]);
     bool esMiAuto = (eventos[0] == idMiAuto);
     if(it == desplazables.end()){
-        desplazables.emplace(eventos[0], new Auto(renderizador, 1, eventos[0]));
+        desplazables.emplace(eventos[0], new Auto(renderizador, 1, eventos[0], false));
         it = desplazables.find(eventos[0]);
     }
     eventos.erase(eventos.begin());

@@ -19,7 +19,7 @@ private:
     std::string idBarro;
 
 public:
-    Auto(Renderizador &renderizador, int tam, std::string id);
+    Auto(Renderizador &renderizador, int tam, std::string id, bool esMiAuto);
 
     void mover(float posX, float posY, int angulo) override;
 

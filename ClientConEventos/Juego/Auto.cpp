@@ -6,9 +6,13 @@
 #include "Auto.h"
 #include "../Sdl/Renderizador.h"
 
-Auto::Auto(Renderizador &renderizador, int tam, std::string id) : Desplazable(renderizador, tam, id),\
+Auto::Auto(Renderizador &renderizador, int tam, std::string id, bool esMiAuto) : Desplazable(renderizador, tam, id),\
  posBarro(20, 20, renderizador.obtenerAncho()*0.95, renderizador.obtenerAltura()*0.95, 0) {
-    renderizador.agregarAuto("../Sprites/auto.png", &posicion, id);
+    if(esMiAuto){
+        renderizador.agregarAuto("../Sprites/autoMio.png", &posicion, id);
+    } else {
+        renderizador.agregarAuto("../Sprites/auto.png", &posicion, id);
+    }
     etapaExplosion = 0;
     idExplosion = "explosion";
     sucio = false;

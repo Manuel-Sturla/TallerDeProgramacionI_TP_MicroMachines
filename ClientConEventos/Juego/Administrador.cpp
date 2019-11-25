@@ -48,7 +48,7 @@ void Administrador::crearPista(std::vector<std::string> &planos) {
 
 Desplazable* Administrador::crearMiAuto(std::vector<std::string> &evento) {
     evento.erase(evento.begin());
-    desplazables.emplace(evento[0], new Auto(renderizador, 1, evento[0]));
+    desplazables.emplace(evento[0], new Auto(renderizador, 1, evento[0], true));
     comandos["actualizarVida"] = new ComandoActualizarVida(desplazables, renderizador, evento[0]);
     comandos["podio"] = new ComandoPodio(desplazables, renderizador, evento[0]);
     comandos["posicionarAuto"] = new ComandoPosicionarAuto(desplazables, renderizador, evento[0]);
