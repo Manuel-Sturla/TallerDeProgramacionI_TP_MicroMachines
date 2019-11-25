@@ -20,7 +20,11 @@ void Vida::recibirDanio(int danio) {
 }
 
 void Vida::aumentarVida(int aumento) {
-  vida += aumento;
+    if (vida + aumento <= VIDA_MAX) {
+        vida += aumento;
+    } else {
+        vida = VIDA_MAX;
+    }
 }
 
 void Vida::matar() {

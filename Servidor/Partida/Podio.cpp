@@ -27,8 +27,7 @@ bool Podio::analizarVictoria() {
 
 std::string Podio::obtenerGanador() {
     auto it = carros.begin();
-    std::string mensaje = "El ganador es: ";
-    mensaje += (*it) -> darIdConductor();
+    std::string mensaje = (*it) -> darIdConductor();
     return mensaje;
 }
 

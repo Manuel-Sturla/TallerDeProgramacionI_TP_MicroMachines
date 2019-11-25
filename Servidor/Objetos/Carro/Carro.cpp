@@ -74,15 +74,6 @@ void Carro::recibirBoost() {
   estadoVelocidad.boost();
 }
 
-void Carro::imprimirPosicion() {
-  b2Vec2 position = cuerpo -> GetPosition();
-  float32 angle = cuerpo -> GetAngle();
-  b2Vec2 velocidad = cuerpo -> GetLinearVelocity();
-  printf("Nueva iteracion\n");
-  std::cout << "Posicion: " << position.x << " " << position.y << " " <<  angle << std::endl;
-  std::cout << "Velocidad: " << velocidad.x << " " << velocidad.y << std::endl;
-}
-
 bool Carro::esValido() {
   return vida.estoyVivo();
 }
