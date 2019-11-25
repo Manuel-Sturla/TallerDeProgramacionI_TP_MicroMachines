@@ -9,6 +9,7 @@
 #include <QtWidgets/QStackedWidget>
 #include "Inicio.h"
 #include "CrearPartida.h"
+#include "ElegirJugador.h"
 
 class Menu {
 private:
@@ -17,9 +18,10 @@ private:
     Lobby lobby;
     Inicio inicio;
     CrearPartida crearPartida;
+    ElegirJugador elegirJugador;
 
 public:
-    explicit Menu(ServidorProxy &servidor);
+    explicit Menu(ServidorProxy &servidor, bool &esCpu);
 
     void ejecutarMenu();
 };

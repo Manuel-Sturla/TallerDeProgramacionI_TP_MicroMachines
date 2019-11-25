@@ -16,7 +16,7 @@ void Lobby::conectar() {
 }
 
 void Lobby::crearPartida() {
-    menu.setCurrentIndex(2);
+    menu.setCurrentIndex(3);
 }
 
 void Lobby::copiarPartidas() {
