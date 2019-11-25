@@ -3,14 +3,12 @@
 
 void ColaBloqueante::encolar(EventoParseable *evento) {
     std::unique_lock<std::mutex> lock(mutex);
-    std::cout << "Elemento encolado1" << evento <<std::endl;
     cola.emplace(evento);
     estaVacia.notify_all();
 }
 
 void ColaBloqueante::encolar(std::shared_ptr<EventoParseable> evento) {
     std::unique_lock<std::mutex> lock(mutex);
-    std::cout << "Elemento encolado2" << evento <<std::endl;
     cola.push(evento);
     estaVacia.notify_all();
 }
@@ -20,7 +18,6 @@ std::shared_ptr<EventoParseable> ColaBloqueante::desencolar() {
     while (cola.empty()){
         estaVacia.wait(lock);
     }
-    std::cout << "Elemento desencolado" << cola.front() <<std::endl;
     std::shared_ptr<EventoParseable> aux = cola.front();
     cola.pop();
     return aux;

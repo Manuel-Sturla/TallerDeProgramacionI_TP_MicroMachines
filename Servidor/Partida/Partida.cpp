@@ -66,6 +66,8 @@ bool Partida::estaMuerto() {
 void Partida::cerrar() {
     //Para asegurarme que no envíe nada a ningun cliente porque la quiero cerrar
     clientes.eliminarTodos();
+    estadoEnEspera.cerrar();
+    estaLlena.notify_all();
 }
 
 

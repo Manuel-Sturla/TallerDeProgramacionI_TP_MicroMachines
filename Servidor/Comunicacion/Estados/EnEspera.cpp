@@ -45,6 +45,10 @@ void EnEspera::enviarCantidadDeJugadores() {
     }
 }
 
+void EnEspera::cerrar() {
+    cantActualJugadores = cantMaximaJugadores;
+}
+
 
 
 
