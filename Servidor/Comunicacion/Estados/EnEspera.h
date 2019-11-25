@@ -29,6 +29,7 @@ public:
 
     bool enJuego();
 
+    void cerrar();
 };
 
 
