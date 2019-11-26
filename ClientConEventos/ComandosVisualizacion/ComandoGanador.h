@@ -13,9 +13,11 @@ private:
     bool& keepTalking;
     Posicion posPodio;
     std::string idGanador;
+    std::string idMiAuto;
 
 public:
-    ComandoGanador(std::map<std::string, Desplazable *> &desplazables, Renderizador &renderizador, bool &keepTalking);
+    ComandoGanador(std::map<std::string, Desplazable *> &desplazables, Renderizador &renderizador,
+                   bool &keepTalking, std::string idMiAuto);
 
     void ejecutar(std::vector<std::string> &eventos) override;
 

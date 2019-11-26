@@ -13,30 +13,49 @@ ComandoPodio::ComandoPodio(std::map<std::string, Desplazable *> &desplazables, R
     int alturaPantalla = renderizador.obtenerAltura();
     int posY = 10;
     for(int i = 0; i < 7; i++){
-        posPodio.emplace_back(10, posY, anchoPantalla/5, alturaPantalla/20, 0);
-        posY += 60;
-    }
-    for(int i = 0; i < 7; i++){
         idPodio.emplace_back("posicion"+std::to_string(i));
+    }
+    posPodio.emplace_back(10, posY, anchoPantalla/5, alturaPantalla/20, 0);
+    for(int i = 0; i < 6; i++){
+        posY += alturaPantalla/30;
+        posPodio.emplace_back(10, posY, anchoPantalla/20, alturaPantalla/20, 0);
+    }
+    for(int i = 1; i < 7; ++i){
+        renderizador.agregarTexto(std::to_string(i)+". ", &posPodio[i], idPodio[i], 255, 255, 255);
     }
     std::string aux = "Posiciones:";
     renderizador.agregarTexto(aux, &posPodio[0], idPodio[0], 255, 255, 255);
 }
 
 void ComandoPodio::ejecutar(std::vector<std::string> &eventos) {
-    for (int j = 1; j < 7; ++j) {
-        renderizador.borrarTexto(idPodio[j]);
-    }
     int i = 1;
-    std::string aux;
     while(eventos[0] != "fin podio"){
-        aux = std::to_string(i) + ". " + "Jugador "+eventos[0];
-        if(eventos[0] == idMiAuto){
-            renderizador.agregarTexto(aux, &posPodio[i], idPodio[i], 0, 0, 255);
+        auto it = posJugadores.find(eventos[0]);
+        if(it == posJugadores.end()){
+            agregarJugador(posPodio[i], eventos[0]);
         } else {
-            renderizador.agregarTexto(aux, &posPodio[i], idPodio[i], 255, 255, 255);
+            ponerEnPosicion(posPodio[i], it->second);
         }
         eventos.erase(eventos.begin());
         i++;
+    }
+}
+
+void ComandoPodio::ponerEnPosicion(Posicion &puesto, Posicion &posJugador) {
+    pos_t aux = puesto.getPosicion();
+    posJugador.moverA(aux.x+aux.w+5, aux.y);
+}
+
+void ComandoPodio::agregarJugador(Posicion &posicion, std::string &idJugador) {
+    pos_t aux = posicion.getPosicion();
+    posJugadores.insert(std::pair<std::string, Posicion>(idJugador, Posicion(aux.x+aux.w+5, aux.y,\
+    aux.w*3, aux.h, 0)));
+    auto it = posJugadores.find(idJugador);
+    if(idJugador == idMiAuto){
+        renderizador.agregarTexto("Jugador "+idJugador, &it->second,\
+        idJugador, 0, 0, 255);
+    } else {
+        renderizador.agregarTexto("Jugador "+idJugador, &it->second,\
+        idJugador, 255,255, 255);
     }
 }

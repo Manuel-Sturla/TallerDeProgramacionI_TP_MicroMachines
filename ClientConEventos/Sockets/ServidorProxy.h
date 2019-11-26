@@ -17,7 +17,8 @@ public:
     ServidorProxy(const std::string& host, const std::string& servicio);
     void ejecutarMovimiento(const std::string& comando);
     void elegirPartida(const std::string& nombre);
-    void crearPartida(const std::string& nombre, const std::string& cantJugadores);
+    void crearPartida(const std::string &nombre, const std::string &cantJugadores, const std::string &cantVueltas,
+                      const std::string &pista);
     std::vector<std::string> obtenerPartidas();
     std::vector<std::string> obtenerEventosJuego();
     std::vector<std::string> obtenerEvento();
