@@ -8,15 +8,17 @@
 
 #include "ui_lobby.h"
 #include "../Sockets/ServidorProxy.h"
+#include "CrearPartida.h"
 #include <QtWidgets/QStackedWidget>
 
 class Lobby : public QWidget {
 private:
     ServidorProxy& servidor;
     QStackedWidget& menu;
+    CrearPartida& crear;
 
 public:
-    Lobby(QStackedWidget &menu, ServidorProxy &servidor, QWidget *parent = nullptr);
+    Lobby(QStackedWidget &menu, ServidorProxy &servidor, CrearPartida &crear, QWidget *parent = nullptr);
 
     void conectar();
 

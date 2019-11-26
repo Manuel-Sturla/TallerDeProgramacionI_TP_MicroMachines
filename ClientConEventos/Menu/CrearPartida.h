@@ -13,11 +13,15 @@ class CrearPartida : public QWidget {
 private:
     ServidorProxy& servidor;
     QStackedWidget& menu;
-
+    std::string pista;
 public:
     CrearPartida(QStackedWidget &menu, ServidorProxy &servidor, QWidget *parent = nullptr);
 
     void crearPartida();
+
+    void setPistas(std::vector<std::string>& pistas);
+
+    void elegirPista();
 };
 
 
