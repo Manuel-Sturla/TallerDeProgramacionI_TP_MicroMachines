@@ -4,6 +4,7 @@
 #include "../../PartidaLlenaExcepcion.h"
 #include "../../Partida/Pista.h"
 #include "../../Planos/PlanoDeCarro.h"
+#include "../Eventos/EventosParseables/EnviarCantJugadores.h"
 
 EnEspera::EnEspera(size_t cantMaxima, HashProtegidoClientes &clientes) :
     cantMaximaJugadores(cantMaxima),
@@ -33,20 +34,17 @@ bool EnEspera::enJuego() {
 }
 
 void EnEspera::enviarCantidadDeJugadores() {
-    std::vector<std::string> claves = clientes.obtenerClaves();
-    for (auto& clave : claves){
-        try{
-            clientes.obtener(clave).enviar(std::to_string(cantActualJugadores));
-        }catch (SocketPeerException &e){
-            clientes.obtener(clave).desconectar();
-            clientes.eliminar(clave);
-            cantActualJugadores--;
-        }
-    }
+    std::vector<std::shared_ptr<EventoParseable>> aux;
+    aux.emplace_back(new EnviarCantJugadores(cantActualJugadores));
+    clientes.enviarEventos(aux);
 }
 
 void EnEspera::cerrar() {
     cantActualJugadores = cantMaximaJugadores;
+}
+
+void EnEspera::eliminarCliente() {
+    cantActualJugadores--;
 }
 
 

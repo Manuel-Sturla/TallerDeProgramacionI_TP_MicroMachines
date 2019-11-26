@@ -16,7 +16,7 @@ Partida::Partida(int cantJugadores, PlanoDePista *planoPista, int cantVueltas,
     mods(modsAUsar),
     enJuego(false){
     crearPista(planoPista);
-suelos.clear();
+    suelos.clear();
     pista.empaquetarSuelos(&suelos);
 }
 
@@ -85,6 +85,9 @@ void Partida::enviarMensajesInicio() {
 
 void Partida::eliminarCliente(ClienteProxy &cliente) {
     clientes.eliminar(std::to_string(cliente.obtenerID()));
+    if (!enJuego){
+        estadoEnEspera.eliminarCliente();
+    }
     std::vector<std::shared_ptr<EventoParseable>> eventoEliminarCarro;
     eventoEliminarCarro.emplace_back(new EliminarCarro(cliente.obtenerID()));
     clientes.enviarEventos(eventoEliminarCarro);

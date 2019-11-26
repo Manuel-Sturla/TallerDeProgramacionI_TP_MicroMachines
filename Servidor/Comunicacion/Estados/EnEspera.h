@@ -30,6 +30,8 @@ public:
     bool enJuego();
 
     void cerrar();
+
+    void eliminarCliente();
 };
 
 
