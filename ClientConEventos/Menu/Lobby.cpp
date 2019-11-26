@@ -5,7 +5,8 @@
 #include <iostream>
 #include "Lobby.h"
 
-Lobby::Lobby(QStackedWidget &menu, ServidorProxy &servidor, QWidget *parent) : servidor(servidor), menu(menu) {
+Lobby::Lobby(QStackedWidget &menu, ServidorProxy &servidor, CrearPartida &crear, QWidget *parent)
+        : servidor(servidor), menu(menu), crear(crear) {
     Ui::Lobby lobby;
     lobby.setupUi(this);
     conectar();
@@ -16,6 +17,8 @@ void Lobby::conectar() {
 }
 
 void Lobby::crearPartida() {
+    std::vector<std::string> pistas = servidor.obtenerPistas();
+    crear.setPistas(pistas);
     menu.setCurrentIndex(3);
 }
 

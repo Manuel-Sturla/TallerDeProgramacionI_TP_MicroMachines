@@ -6,8 +6,9 @@
 #include <iostream>
 
 Menu::Menu(ServidorProxy &servidor, bool &esCpu)
-        : servidor(servidor), lobby(etapas, servidor), inicio(&etapas, servidor, lobby),\
- crearPartida(etapas, servidor), elegirJugador(etapas, esCpu) {
+        : servidor(servidor), crearPartida(etapas, servidor),\
+        lobby(etapas, servidor, crearPartida), inicio(&etapas, servidor, lobby),\
+  elegirJugador(etapas, esCpu) {
     etapas.addWidget(&inicio);
     etapas.addWidget(&elegirJugador);
     etapas.addWidget(&lobby);

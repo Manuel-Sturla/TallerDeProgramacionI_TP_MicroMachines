@@ -15,9 +15,9 @@ class Menu {
 private:
     ServidorProxy& servidor;
     QStackedWidget etapas;
+    CrearPartida crearPartida;
     Lobby lobby;
     Inicio inicio;
-    CrearPartida crearPartida;
     ElegirJugador elegirJugador;
 
 public:

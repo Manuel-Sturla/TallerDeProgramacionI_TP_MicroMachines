@@ -8,18 +8,12 @@
 
 CrearPartida::CrearPartida(QStackedWidget &menu, ServidorProxy &servidor, QWidget *parent) :\
 servidor(servidor), menu(menu){
-    std::cout << std::endl;
     Ui::CrearPartida crearPartida;
     crearPartida.setupUi(this);
     QObject::connect(findChild<QPushButton*>("pushButton"), &QPushButton::clicked, this, &CrearPartida::crearPartida);
 }
 
 void CrearPartida::crearPartida() {
-    std::vector<std::string> pistas = servidor.obtenerPistas();
-    std::cout << "Imprimo las pistas: " << pistas.size() << std::endl;
-    for (auto& pista: pistas){
-        std::cout << pista << ". ";
-    }
     auto* aux = findChild<QLineEdit*>("nombre");
     std::string nombre, cantJugadores, cantVueltas;
     if(aux != nullptr){
@@ -56,7 +50,33 @@ void CrearPartida::crearPartida() {
         msgBox.exec();
         return;
     }
-    servidor.crearPartida(nombre, cantJugadores, cantVueltas, "Dona");
+    if(pista.empty()){
+        QMessageBox msgBox;
+        msgBox.setText("Debe seleccionar una pista para poder crear la partida");
+        msgBox.exec();
+        return;
+    }
+    servidor.crearPartida(nombre, cantJugadores, cantVueltas, pista);
     servidor.elegirPartida(nombre);
     QCoreApplication::quit();
+}
+
+void CrearPartida::setPistas(std::vector<std::string> &pistas) {
+    if(!pistas.empty()){
+        QObject::connect(findChild<QPushButton*>("pista1"), &QPushButton::clicked, this, &CrearPartida::elegirPista);
+        findChild<QPushButton*>("pista1")->setText(QString::fromUtf8(pistas[0].c_str()));
+    }
+    if(pistas.size() > 1){
+        QObject::connect(findChild<QPushButton*>("pista2"), &QPushButton::clicked, this, &CrearPartida::elegirPista);
+        findChild<QPushButton*>("pista2")->setText(QString::fromUtf8(pistas[1].c_str()));
+    }
+    if(pistas.size() > 2){
+        QObject::connect(findChild<QPushButton*>("pista3"), &QPushButton::clicked, this, &CrearPartida::elegirPista);
+        findChild<QPushButton*>("pista3")->setText(QString::fromUtf8(pistas[2].c_str()));
+    }
+}
+
+void CrearPartida::elegirPista() {
+    auto* boton = qobject_cast<QPushButton*>(sender());
+    pista = boton->text().toUtf8().constData();
 }
