@@ -9,7 +9,6 @@
 #include "../../Partida/HashProtegido.h"
 
 class EnJuego: public EstadoCliente {
-    RecibirAccion recibirAccion;
     std::map<std::string, std::shared_ptr<EventoEjecutable>> comandos;
 
 public:

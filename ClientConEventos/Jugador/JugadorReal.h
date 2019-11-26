@@ -10,7 +10,6 @@
 #include "Jugador.h"
 
 class JugadorReal: public Jugador {
-    LectorTeclado lector;
 public:
     JugadorReal();
     int obtenerComando(AdministradorComandosTeclado &comandos) override;

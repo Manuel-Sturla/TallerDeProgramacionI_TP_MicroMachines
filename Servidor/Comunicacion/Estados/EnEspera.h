@@ -13,7 +13,6 @@
 
 class EnEspera {
     std::mutex mutex;
-    std::condition_variable estaLLena;
     size_t cantMaximaJugadores;
     size_t cantActualJugadores;
     HashProtegidoClientes & clientes;

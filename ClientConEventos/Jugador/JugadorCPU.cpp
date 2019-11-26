@@ -51,11 +51,6 @@ int JugadorCPU::obtenerComando(AdministradorComandosTeclado &comandos) {
 }
 
 void JugadorCPU::ponerMapa(std::vector<std::string> &comando) {
-    //comando.erase(comando.begin());
-    for (auto& c : comando){
-        std::cout << c << "; ";
-    }
-    std::cout << std::endl;
     std::string nombreTabla = "tablaAuxiliar";
     for (size_t i = 1; i <= comando.size(); i++) {
         CadenaLua posicion(comando[i-1]);

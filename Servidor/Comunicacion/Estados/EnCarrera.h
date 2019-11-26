@@ -17,10 +17,10 @@ private:
     std::vector<std::shared_ptr<EventoParseable>> eventos;
     HashProtegidoClientes& clientes;
     void actualizarEventos();
+    void enviarPosiciones();
 public:
     EnCarrera(Pista &pista, HashProtegidoClientes &clientes, int cantVueltas);
     void ejecutar();
-    void enviarPosiciones();
     void inicializar();
 };
 
