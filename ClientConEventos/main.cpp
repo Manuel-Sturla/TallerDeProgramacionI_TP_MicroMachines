@@ -39,7 +39,15 @@ int menuConQT(int argc, char* argv[]) {
 }
 
 void menuSinQT(int argc, char *argv[]) {
+    if(argc < 3){
+        std::cerr<<"Cantidad de parametros incorrecta\n";
+    }
     ServidorProxy servidor(argv[1], argv[2]);
+    std::vector<std::string> pistas = servidor.obtenerPistas();
+    std::cout<<"Pistas:\n";
+    for (int i = 0; i < pistas.size(); ++i) {
+        std::cout<<pistas[i]<<'\n';
+    }
     std::vector<std::string> partidas = servidor.obtenerPartidas();
     std::cout<<"Partidas:\n";
     for (int i = 0; i < partidas.size(); ++i) {
@@ -55,8 +63,12 @@ void menuSinQT(int argc, char *argv[]) {
             conectado = true;
         }
     }
+    if(!conectado && partida.size() < 3){
+        std::cout<<"Datos ingresados incorrectos";
+        return;
+    }
     if(!conectado){
-        servidor.crearPartida(partida[0], partida[1]);
+        servidor.crearPartida(partida[0], partida[1], partida[2], partida[3]);
         servidor.elegirPartida(partida[0]);
     }
 
@@ -77,8 +89,8 @@ int main(int argc, char* argv[]) {
         return 0;
     }
     try {
-        menuConQT(argc, argv);
-//        menuSinQT(argc, argv);
+//        menuConQT(argc, argv);
+        menuSinQT(argc, argv);
     } catch(const ExcepcionConPos& e){
         std::cerr<<e.what()<<'\n';
         IMG_Quit();

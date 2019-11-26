@@ -13,12 +13,14 @@ private:
     std::string idMiAuto;
     std::vector<std::string> idPodio;
     std::vector<Posicion> posPodio;
+    std::map<std::string, Posicion> posJugadores;
+    void ponerEnPosicion(Posicion& puesto, Posicion& posJugador);
+    void agregarJugador(Posicion &posicion, std::string &idJugador);
 
 public:
     ComandoPodio(std::map<std::string, Desplazable *> &desplazables, Renderizador &renderizador,
                  std::string idMiAuto);
 
-private:
     void ejecutar(std::vector<std::string> &eventos) override;
 };
 

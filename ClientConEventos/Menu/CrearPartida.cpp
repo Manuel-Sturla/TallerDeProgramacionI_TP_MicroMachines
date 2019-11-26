@@ -56,7 +56,7 @@ void CrearPartida::crearPartida() {
         msgBox.exec();
         return;
     }
-    servidor.crearPartida(nombre, cantJugadores);
+    servidor.crearPartida(nombre, cantJugadores, cantVueltas, "Dona");
     servidor.elegirPartida(nombre);
     QCoreApplication::quit();
 }
