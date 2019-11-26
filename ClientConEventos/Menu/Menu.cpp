@@ -13,7 +13,7 @@ Menu::Menu(ServidorProxy &servidor, bool &esCpu)
     etapas.addWidget(&elegirJugador);
     etapas.addWidget(&lobby);
     etapas.addWidget(&crearPartida);
-	etapas.setFixedSize(700,400);
+	etapas.setFixedSize(500,500);
 }
 
 void Menu::ejecutarMenu() {

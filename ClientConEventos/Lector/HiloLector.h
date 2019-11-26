@@ -7,7 +7,6 @@
 
 
 #include "../Hilo.h"
-#include "LectorTeclado.h"
 #include "../ComandosTeclado/AdministradorComandosTeclado.h"
 #include "../Jugador/JugadorReal.h"
 
