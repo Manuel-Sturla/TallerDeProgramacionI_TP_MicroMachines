@@ -14,13 +14,6 @@ void UnirAPartida::ejecutar(ClienteProxy &cliente, std::vector<std::string> argu
         cliente.encolarEvento(new NoSePudoUnir());
         return;
     }
-    //Elije un auto
-    /*for (auto& carro : mapasYAutos.obtenerNombresCarros()){
-        cliente.enviar(carro);
-    }
-    cliente.enviar(MSJ_FIN);
-    std::string carro = cliente.recibir();
-    */
     std::string carro = "ManuMovil";
     try {
         partidas.obtener(nombrePartida)->agregarCliente(mapasYAutos.darPlanoDeCarro(carro), cliente);

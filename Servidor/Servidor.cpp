@@ -10,8 +10,7 @@ socketPasivo(servicio),
 continuar(true),
 enJuego(partidas),
 enMenu(partidas, configuracion){
-    //Partida hardcodeada para probar
-    partidas.ubicar("prueba", new Partida(1, configuracion.darPlanoDePista("Dona"), 0, configuracion.obtenerMods()));
+    partidas.ubicar("prueba", new Partida(1, configuracion.darPlanoDePista("Dona"), 1, configuracion.obtenerMods()));
     partidas.obtener("prueba") -> start();
 }
 
