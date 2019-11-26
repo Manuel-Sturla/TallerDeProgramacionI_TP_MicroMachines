@@ -19,7 +19,7 @@ void EnCarrera::ejecutar() {
     eventoPodio.emplace_back(new EnviarPodio(podio));
     clientes.enviarEventos(eventoPodio);
 
-    if(podio.analizarVictoria()){
+    if(podio.analizarVictoria()) {
         std::vector<std::shared_ptr<EventoParseable>> eventoGanador;
         eventoGanador.emplace_back(new EnviarGanador(podio));
         clientes.enviarEventos(eventoGanador);
