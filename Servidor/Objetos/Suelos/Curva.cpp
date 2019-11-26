@@ -112,8 +112,3 @@ Curva &Curva::operator=(const Curva &otraCurva) {
     this -> interaccion = otraCurva.interaccion;
     return *this;
 }
-
-void Curva::revivirCarro(MundoBox2D &mundoBox2D, Carro *unCarro) {
-    b2Vec2 posicion = cuerpo->GetPosition();
-    unCarro -> revivir(mundoBox2D, posicion.x, posicion.y);
-}

@@ -39,8 +39,6 @@ class Curva: public Suelo {
 
     void interactuar(Carro *unCarro);
 
-    void revivirCarro(MundoBox2D &mundoBox2D, Carro *unCarro);
-
     void empaquetar(std::vector<std::string> *destino);
 
     ~Curva();

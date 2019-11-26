@@ -60,8 +60,3 @@ void Recta::empaquetar(std::vector<std::string> *destino) {
     empaquetarPosicion(destino);
     empaquetarAngulo(destino);
 }
-
-void Recta::revivirCarro(MundoBox2D &mundoBox2D, Carro *unCarro) {
-    b2Vec2 posicion = cuerpo->GetPosition();
-    unCarro -> revivir(mundoBox2D, posicion.x, posicion.y);
-}

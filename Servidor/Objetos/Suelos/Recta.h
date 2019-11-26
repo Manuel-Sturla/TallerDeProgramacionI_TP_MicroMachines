@@ -27,8 +27,6 @@ class Recta: public Suelo {
 
     bool esValido();
 
-    void revivirCarro(MundoBox2D &mundoBox2D, Carro *unCarro);
-
     void empaquetar(std::vector<std::string> *destino);
 
     ~Recta();

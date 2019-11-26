@@ -11,7 +11,7 @@ protected:
 public:
     virtual void interactuar(Carro *unCarro) = 0;
 
-    virtual void revivirCarro(MundoBox2D &mundoBox2D, Carro *unCarro) = 0;
+    void revivirCarro(MundoBox2D &mundoBox2D, Carro *unCarro);
 
     void colocarExtra(MundoBox2D &mundoBox2D, std::list<std::unique_ptr<Modificador>> &extras);
 };

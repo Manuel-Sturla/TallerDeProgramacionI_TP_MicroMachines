@@ -23,3 +23,8 @@ void Suelo::colocarExtra(MundoBox2D &mundoBox2D,
         extras.emplace_back(new Piedra(mundoBox2D, posicion.x,posicion.y, extras.size()));
     }
 }
+
+void Suelo::revivirCarro(MundoBox2D &mundoBox2D, Carro *unCarro) {
+    b2Vec2 posicion = cuerpo->GetPosition();
+    unCarro -> revivir(mundoBox2D, posicion.x, posicion.y);
+}
