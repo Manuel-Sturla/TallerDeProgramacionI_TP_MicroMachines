@@ -5,7 +5,7 @@ set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=c++11 -pthread")
 find_package(Lua REQUIRED)
 find_package(Qt5Widgets)
-add_subdirectory(yaml-cpp)
+add_subdirectory(../yaml-cpp [binary_dir])
 
 include_directories(${PROJECT_BINARY_DIR})
 include_directories(${LUA_INCLUDE_DIR})
