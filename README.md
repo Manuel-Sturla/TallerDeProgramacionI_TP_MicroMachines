@@ -17,3 +17,9 @@ Trabajaron en este proyecto:
  - Diego Balestieri: https://github.com/diegobalestieri  
  - Manuel Sturla: https://github.com/Manuel-Sturla  
 
+
+## Expresiones de Gratitud 🎁
+
+* Comenta a otros sobre este proyecto 📢
+* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
+* Da las gracias públicamente 🤓.
